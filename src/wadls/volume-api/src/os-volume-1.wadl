@@ -21,7 +21,7 @@
                     <method href="#createVolume" />
                     <method href="#getVolumesSimple" />
 
-                    <resource path="detail">
+                    <resource path="detail" id="detail">
                         <method href="#getVolumesDetail" />
                     </resource>
 
@@ -56,7 +56,7 @@
                     <method href="#createSnapshot" />
                     <method href="#getSnapshotsSimple" />
 
-                    <resource path="detail">
+                    <resource path="detail" id="snapshot_detail">
                         <method href="#getSnapshotsDetail" />
                     </resource>
 

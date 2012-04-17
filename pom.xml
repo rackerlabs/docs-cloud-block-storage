@@ -126,8 +126,12 @@
             <phase>generate-sources</phase>
             <configuration>
               <highlightSource>false</highlightSource>
+              <enableDisqus>intranet</enableDisqus>
+              <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
               <enableGoogleAnalytics>1</enableGoogleAnalytics>
               <googleAnalyticsId>UA-17511903-8</googleAnalyticsId>
+              <trimWadlUriCount>2</trimWadlUriCount>
+              <security>writeronly</security>
             </configuration>
           </execution>
         </executions>
@@ -136,7 +140,7 @@
           <xincludeSupported>true</xincludeSupported>
           <sourceDirectory>src/docbkx</sourceDirectory>
           <includes>
-	    index.xml
+	    cbs-devguide.xml
           </includes>
           <profileSecurity>reviewer</profileSecurity>
           <branding>rackspace</branding>
