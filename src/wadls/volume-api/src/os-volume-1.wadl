@@ -25,7 +25,7 @@
                         <method href="#getVolumesDetail" />
                     </resource>
 
-                    <resource path="{volume_id}">
+                    <resource path="{volume_id}" id="volume_id">
                         <param name="volume_id" style="template" required="true">
                             <doc><p xmlns="http://www.w3.org/1999/xhtml">
                                 The unique identifier of an existing Volume.
@@ -41,7 +41,7 @@
                 <resource id="volume_types" path="volume_types">
                     <method href="#getVolumeTypes" />
 
-                    <resource path="{volume_type_id}">
+                    <resource path="{volume_type_id}" id="volume_type_id">
                         <param name="volume_type_id" style="template" required="true">
                             <doc><p xmlns="http://www.w3.org/1999/xhtml">
                                 The unique identifier of an existing Volume Type.
@@ -60,7 +60,7 @@
                         <method href="#getSnapshotsDetail" />
                     </resource>
 
-                    <resource path="{snapshot_id}">
+                    <resource path="{snapshot_id}" id="snapshot_id">
                         <param name="snapshot_id" style="template" required="true">
                             <doc><p xmlns="http://www.w3.org/1999/xhtml">
                                 The unique identifier of an existing Snapshot.
