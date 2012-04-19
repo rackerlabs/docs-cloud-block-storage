@@ -109,7 +109,7 @@ format="SVG" scale="60"/>
       their Rackspace Next Generation Cloud Servers<trademark/>.  The
       two primary use cases are: (1) allow customers to scale their
       storage independently from their compute resources, and (2)
-      allow customers to utilize highly performing storage to serve
+      allow customers to utilize high performance storage to serve
       database or I/O-intensive applications. </para>
     <para>Interactions with Cloud Block Storage (CBS) occur
       programmatically via the Cloud Block Storage API as described in
@@ -122,8 +122,9 @@ format="SVG" scale="60"/>
         <listitem>
           <para><emphasis role="bold">High performance</emphasis>
             option for databases and high performance applications,
-            leveraging <emphasis role="bold">solid state drives
-            </emphasis>for speed and consistent performance.</para>
+            leveraging <emphasis role="bold">solid state
+              drives</emphasis> for speed and consistent
+            performance.</para>
         </listitem>
         <listitem>
           <para>Lower speed option for customers who just need
@@ -146,8 +147,8 @@ format="SVG" scale="60"/>
       </itemizedlist><itemizedlist>
         <listitem>
           <para>Mount a drive to a Cloud Server to scale storage
-              <emphasis role="bold">without paying for more</emphasis> compute
-            capability</para>
+              <emphasis role="bold">without paying for more</emphasis>
+            compute capability.</para>
         </listitem>
       </itemizedlist></para>
     <note><title>Notes</title>
@@ -1041,8 +1042,13 @@ format="SVG" scale="60"/>
           give me your updates.</remark>
         <para>Refer to the following table for the absolute limits
           that are set.</para>
-        <table rules="all">
+        <table rules="all" width="870">
           <caption>Absolute Limits</caption>
+          <col width="185pt"/>
+          <col width="201pt"/>
+          <col width="201pt"/>
+          <col width="200pt"/>
+          <col width="75pt"/>
           <thead>
             <tr>
               <td colspan="1">Name</td>
@@ -1052,16 +1058,22 @@ format="SVG" scale="60"/>
           </thead>
           <tbody>
             <tr>
-              <td colspan="1">Instances</td>
-              <td colspan="3">Maximum number of instances allowed for
-                your account</td>
-              <td colspan="1">10</td>
+              <td colspan="1">Basic Performance Storage</td>
+              <td colspan="3">Maximum amount of <emphasis role="bold"
+                  >Basic performance</emphasis> storage (in gigabytes
+                [GB]) for applications that just need additional
+                storage on their Cloud Server. </td>
+              <td colspan="1">200</td>
             </tr>
             <tr>
-              <td colspan="1">Volume Size</td>
-              <td colspan="3">Maximum volume size per instance in
-                gigabytes (GB) for your account</td>
-              <td colspan="1">10</td>
+              <td colspan="1">High Performance Storage</td>
+              <td colspan="3">Maximum amount of <emphasis role="bold"
+                  >High performance</emphasis> storage (in terabytes
+                [TB]) for databases and high performance applications
+                leveraging <emphasis role="bold">solid state
+                  drives</emphasis> for speed and consistent
+                performance. </td>
+              <td colspan="1">1</td>
             </tr>
           </tbody>
         </table>
