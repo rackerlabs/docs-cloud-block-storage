@@ -125,6 +125,11 @@
             </goals>
             <phase>generate-sources</phase>
             <configuration>
+              <xincludeSupported>true</xincludeSupported>
+              <sourceDirectory>src/docbkx</sourceDirectory>
+              <includes>
+                cbs-devguide.xml
+              </includes>
               <highlightSource>false</highlightSource>
               <enableDisqus>intranet</enableDisqus>
               <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
@@ -134,17 +139,30 @@
               <security>writeronly</security>
             </configuration>
           </execution>
+          <execution>
+            <id>g2</id>
+            <goals>
+              <goal>generate-webhelp</goal>
+              <goal>generate-pdf</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <xincludeSupported>true</xincludeSupported>
+              <sourceDirectory>src/docbkx</sourceDirectory>
+              <includes>
+                cbs-getting-started.xml
+              </includes>
+              <highlightSource>false</highlightSource>
+              <enableDisqus>intranet</enableDisqus>
+              <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
+              <enableGoogleAnalytics>1</enableGoogleAnalytics>
+              <googleAnalyticsId>UA-17511903-8</googleAnalyticsId>
+              <security>writeronly</security>
+            </configuration>
+          </execution>
         </executions>
         <configuration>
-          <!-- These parameters apply to pdf and webhelp -->
-          <xincludeSupported>true</xincludeSupported>
-          <sourceDirectory>src/docbkx</sourceDirectory>
-          <includes>
-	    cbs-devguide.xml
-          </includes>
-          <profileSecurity>reviewer</profileSecurity>
-          <branding>rackspace</branding>
-          <trimWadlUriCount>1</trimWadlUriCount>
+          <branding>rackspace</branding>      
           <showXslMessages>true</showXslMessages>
         </configuration>
       </plugin>

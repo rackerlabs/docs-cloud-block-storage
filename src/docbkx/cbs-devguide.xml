@@ -50,7 +50,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0 Preview</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2012-04-17</pubdate>
+    <pubdate>2012-04-23</pubdate>
     <legalnotice role="rs-api">
       <annotation xmlns:svg="http://www.w3.org/2000/svg"
         xmlns:m="http://www.w3.org/1998/Math/MathML"
@@ -69,7 +69,7 @@ format="SVG" scale="60"/>
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <revision>
-        <date>2012-05-04</date>
+        <date>2012-05-01</date>
         <revdescription>
           <itemizedlist spacing="compact">
             <listitem>
@@ -120,9 +120,9 @@ format="SVG" scale="60"/>
       provide more predictable performance (at a higher cost/GB). </para>
     <para>Highlights of Rackspace Cloud Block Storage are:<itemizedlist>
         <listitem>
-          <para><emphasis role="bold">High performance</emphasis>
+          <para><emphasis>High performance</emphasis>
             option for databases and high performance applications,
-            leveraging <emphasis role="bold">solid state
+            leveraging <emphasis >solid state
               drives</emphasis> for speed and consistent
             performance.</para>
         </listitem>
@@ -131,7 +131,7 @@ format="SVG" scale="60"/>
             additional storage on their Cloud Server.</para>
         </listitem>
         <listitem>
-          <para>Two simple <emphasis role="bold">per GB price
+          <para>Two simple <emphasis>per gigabyte (GB) price
               options:</emphasis></para>
           <itemizedlist>
             <listitem>
@@ -147,38 +147,47 @@ format="SVG" scale="60"/>
       </itemizedlist><itemizedlist>
         <listitem>
           <para>Mount a drive to a Cloud Server to scale storage
-              <emphasis role="bold">without paying for more</emphasis>
+              <emphasis>without paying for more</emphasis>
             compute capability.</para>
         </listitem>
       </itemizedlist></para>
     <note><title>Notes</title>
       <itemizedlist>
         <listitem>
-          <para> Cloud Block Storage is currently an add-on feature to
+          <para>Cloud Block Storage is currently an add-on feature to
             Next Generation Cloud Servers.  Customers may not attach
             CBS volumes to any other instances. </para>
         </listitem>
         <listitem>
-          <para> This product only works with Next Generation Cloud
+          <para>This product only works with Next Generation Cloud
             Servers. It does not work with first generation Cloud
             Servers.</para>
         </listitem>
         <listitem>
-          <para> Existing customers that are invited to participate in
+          <para>Existing customers that are invited to participate in
             the Cloud Block Storage Preview will be given an
             additional Next Generation Cloud Servers endpoint for
             Cloud Block Storage. They will only be able to use Cloud
             Block Storage while using this endpoint.</para>
         </listitem>
         <listitem>
-          <para> Cloud Block Storage is multi-tenant rather than
+          <para>Cloud Block Storage is multi-tenant rather than
             dedicated.</para>
         </listitem>
         <listitem>
-          <para> When volumes are destroyed, Rackspace keeps that disk
+          <para>When volumes are destroyed, Rackspace keeps that disk
             space unavailable until zeros have been written to the
             space to ensure that data is not accessible by any other
             customers.</para>
+        </listitem>
+        <listitem>
+          <para>Cloud Block Storage allows you to create snapshots
+            that you can then save, list, and restore using Cloud
+            Files.</para>
+          <para>
+            <remark>Reviewer: please check the previous sentence for
+              accuracy and give me any corrections.</remark>
+          </para>
         </listitem>
       </itemizedlist>
     </note>
@@ -190,6 +199,9 @@ format="SVG" scale="60"/>
         xlink:href="http://www.rackspace.com/cloud/legal/#BetaServices"
         >http://www.rackspace.com/cloud/legal/#BetaServices</link>) in
       our Rackspace Cloud Terms of Service.</para>
+    <remark>Writer: need to get updated wording for previous paragraph
+      (as well as items in the list below that are marked "internal"
+      in blue font) from Jerry Schwartz in Marketing.</remark>
     <para security="internal">The Preview Program has some
       limitations. By using the Rackspace Cloud Block Storage API, you
       agree and understand that:<itemizedlist spacing="compact">
@@ -225,11 +237,8 @@ format="SVG" scale="60"/>
         </listitem>
       </itemizedlist>
     </para>
-    <remark>Writer: need to check with Daniel for correct product name
-      once we have settled on that name; then get product name
-      modified throughout entire manual .</remark>
     <para security="writeronly">The following figure shows an overview
-      of Cloud Databases Infrastructure: <informalfigure>
+      of Cloud Block Storage: <informalfigure>
         <mediaobject>
           <imageobject role="fo">
             <imagedata fileref="images/Cloud_DB_Infographic-1.svg"
@@ -241,9 +250,8 @@ format="SVG" scale="60"/>
         </mediaobject>
       </informalfigure>
     </para>
-    <remark>Writer: need to get architecture diagram for DBaaS. Daniel
-      emailed 11/17 that he would work on this during the Private Beta
-      and have it done for the Public Beta.</remark>
+    <remark>Writer: need to get architecture diagram for CBS and
+      include it above. Ask Megan to provide.</remark>
     <para security="writeronly">We welcome feedback, comments, and bug
       reports at <link xlink:href="http://feedback.rackspacecloud.com"
         >http://feedback.rackspacecloud.com</link>.</para>
@@ -312,11 +320,13 @@ format="SVG" scale="60"/>
         offers links to Rackspace's official support channels,
         including knowledge base articles, forums, phone, chat, and
         email. </para>
-      <para security="internal">Request access to the Cloud Block Storage Forum during the
-        Preview Program by sending an email to:
-          <email>clouddb_beta@rackspace.com</email>. Once received, we
-        will send you an invitation to join our forum group and you
+      <para security="internal">Request access to the Cloud Block
+        Storage Forum during the Preview Program by sending an email
+        to: <email>cloudbs_beta@rackspace.com</email>. Once received,
+        we will send you an invitation to join our forum group and you
         may set up your account if you don’t already have one.</para>
+      <remark>Reviewer- check if email address in previous paragraph
+        is correct.</remark>
       <para>Email all support questions to:
           <email>CBSPrivateBeta@rackspace.com</email>. </para>
       <para security="internal">Please visit our <link

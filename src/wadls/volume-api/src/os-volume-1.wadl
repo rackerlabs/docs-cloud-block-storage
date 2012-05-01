@@ -90,7 +90,7 @@
             <representation mediaType="application/xml">
                 <doc xml:lang="EN">
                     <xsdxt:code href="samples/volume_create.xml" />
-                </doc>
+                </doc>                            
             </representation>
             <representation mediaType="application/json">
                 <doc xml:lang="EN">
@@ -108,6 +108,11 @@
                 <doc xml:lang="EN">
                     <xsdxt:code href="samples/volume_show.json" />
                 </doc>
+                <doc><p xmlns="http://www.w3.org/1999/xhtml">
+                    Note that you use the os-volume_attachments API call (/servers/{server_id}/os-volume_attachments) to attach the new volume to your Next Generation Cloud Server (with the specified {server_id}). 
+                    Refer to the <i>Next Generation Cloud Servers Developer Guide</i> at <a href="api.openstack.org">api.openstack.org</a> for details of the call. Once the volume is attached, the new volume will appear 
+                    as another device on the Next Generation Cloud Server. It can then be partitioned, formatted, and mounted for use on the system.    
+                </p></doc>
             </representation>
         </response>
     </method>
@@ -189,6 +194,9 @@
                 <doc xml:lang="EN">
                     <xsdxt:code href="samples/volume_type_list.json" />
                 </doc>
+                <doc><p xmlns="http://www.w3.org/1999/xhtml">
+                    Note that two storage types are currently supported: SATA and SSD. SATA is the standard performance storage and SSD is the high performance storage. 
+                </p></doc>
             </representation>
         </response>
     </method>
@@ -214,8 +222,18 @@
     <method name="POST" id="createSnapshot">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" 
             title="Create Snapshot">
-            <p xmlns="http://www.w3.org/1999/xhtml">Create a Snapshot.</p>
+            <p class="shortdesc" xmlns="http://www.w3.org/1999/xhtml">Create a Snapshot.</p>
         </wadl:doc>
+        <doc><p xmlns="http://www.w3.org/1999/xhtml">
+            Creating a snapshot makes a consistent point-in-time backup of the
+            volume. All writes to the volume should be flushed <i>before</i>
+            creating the snapshot, either by un-mounting any file systems on the
+            volume, or even better, detaching the volume before creating the snapshot.
+            Snapshots are incremental, so each time you create a new snapshot, you are
+            appending the incremental changes for the new snapshot to the previous
+            snapshot. The previous snapshot is still available. Note that you can
+            create a new volume from the snapshot if desired.       
+        </p></doc>
         <request>
             <param name="snapshot" style="plain" required="true">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
