@@ -50,7 +50,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0 Preview</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2012-04-23</pubdate>
+    <pubdate>2012-05-02</pubdate>
     <legalnotice role="rs-api">
       <annotation xmlns:svg="http://www.w3.org/2000/svg"
         xmlns:m="http://www.w3.org/1998/Math/MathML"
@@ -69,7 +69,7 @@ format="SVG" scale="60"/>
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <revision>
-        <date>2012-05-01</date>
+        <date>2012-05-14</date>
         <revdescription>
           <itemizedlist spacing="compact">
             <listitem>
@@ -470,8 +470,8 @@ format="SVG" scale="60"/>
             (<errorcode>400</errorcode>), authFault
             (<errorcode>500</errorcode>), serviceUnavailable
             (<errorcode>503</errorcode>) </simpara>
-        <para> The authenticate operation provides clients with an
-          authentication token and a list of regional cloud endpoints. </para>
+        <para>The authenticate operation provides clients with an
+          authentication token and a list of regional cloud endpoints.</para>
         <example>
           <title>Auth Request: XML</title>
           <programlistingco>
@@ -501,11 +501,11 @@ format="SVG" scale="60"/>
           </programlistingco>
         </example>
         <calloutlist>
-          <callout arearefs="credentials.xml.user">
+          <callout arearefs="credentials.json.user">
             <para> The username supplied here is your common Rackspace
               Cloud username. </para>
           </callout>
-          <callout arearefs="credentials.xml.key">
+          <callout arearefs="credentials.json.key">
             <para> The key is your API access key. The key can be
               obtained from the Rackspace Cloud Control Panel in the
                 <guimenu>Your Account</guimenu>/<guimenuitem>API
@@ -652,11 +652,11 @@ format="SVG" scale="60"/>
             developers have found the service type attribute to be
             useful in parsing the service catalog. For Auth 2.0 (also
             known as the Cloud Identity Service), you can see the
-            service type attribute in the "Authentication Response
-            with Headers" sample in the Cloud Identity Client
-            Developer Guide at <link
-              xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Request_Response_Types-d1e149.html"
-              >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Request_Response_Types-d1e149.html</link>.</para>
+            service type attribute in the "Service Catalog in
+            Authentication Response" samples in the <citetitle>Cloud
+              Identity Client Developer Guide</citetitle> at <link
+              xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html"
+              >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html</link>.</para>
         </tip>
       </section>
     </section>
