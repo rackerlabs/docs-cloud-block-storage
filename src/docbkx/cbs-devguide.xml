@@ -12,7 +12,7 @@
 <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
 
 <!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
-<!ENTITY ENDPOINT-US "https://identity.api.rackspacecloud.com/v1.1/">
+<!ENTITY ENDPOINT-US "https://auth.api.rackspacecloud.com/v2.0/">
 <!ENTITY ENDPOINT-UK "https://lon.identity.api.rackspacecloud.com/v1.1/">
 
 <!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
@@ -50,7 +50,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0 Preview</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2012-05-02</pubdate>
+    <pubdate>2012-07-25</pubdate>
     <legalnotice role="rs-api">
       <annotation xmlns:svg="http://www.w3.org/2000/svg"
         xmlns:m="http://www.w3.org/1998/Math/MathML"
@@ -69,7 +69,7 @@ format="SVG" scale="60"/>
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <revision>
-        <date>2012-05-14</date>
+        <date>2012-07-25</date>
         <revdescription>
           <itemizedlist spacing="compact">
             <listitem>
@@ -80,7 +80,7 @@ format="SVG" scale="60"/>
       </revision>
     </revhistory>
   </info>
-  <preface xml:id="Overview" security="internal">
+  <preface xml:id="Overview" security="writeronly">
     <title>OpenStack API Reference</title>
 
     <para>The OpenStack system has several key projects that are
@@ -100,75 +100,62 @@ format="SVG" scale="60"/>
     for specifications of each API.
     </para>
   </preface>
-  <chapter xml:id="overview" xmlns:svg="http://www.w3.org/2000/svg"
+  <preface xml:id="overview" xmlns:svg="http://www.w3.org/2000/svg"
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:html="http://www.w3.org/1999/xhtml">
     <title>Overview</title>
-    <para>Rackspace Cloud Block Storage is a block level storage
+    <para>Rackspace Cloud Block Storage (CBS) is a block level storage
       solution that allows customers to mount drives or volumes to
-      their Rackspace Next Generation Cloud Servers<trademark/>.  The
-      two primary use cases are: (1) allow customers to scale their
+      their Rackspace Next Generation Cloud Servers<trademark/>. The
+      two primary use cases are (1) to allow customers to scale their
       storage independently from their compute resources, and (2)
-      allow customers to utilize high performance storage to serve
-      database or I/O-intensive applications. </para>
-    <para>Interactions with Cloud Block Storage (CBS) occur
-      programmatically via the Cloud Block Storage API as described in
-      this developer guide.</para>
+      to allow customers to utilize high performance storage to serve
+      database or I/O-intensive applications. 
+    </para>
+    <para>Interactions with CBS occur programmatically via the Cloud Block 
+      Storage API as described in this developer guide.
+    </para>
     <para>Rackspace offers both a low cost/gigabyte (GB) option with
-      basic performance for customers that simply require more storage
-      and a high performance option based on SSD drives that also
-      provide more predictable performance (at a higher cost/GB). </para>
-    <para>Highlights of Rackspace Cloud Block Storage are:<itemizedlist>
-        <listitem>
-          <para><emphasis>High performance</emphasis>
-            option for databases and high performance applications,
-            leveraging <emphasis >solid state
-              drives</emphasis> for speed and consistent
-            performance.</para>
+      standard performance for customers who only require more storage
+      and a high performance option that provides increased storage
+      with higher performance (at a higher cost/GB). 
+    </para>
+    <para>Highlights of Rackspace Cloud Block Storage include:<itemizedlist>
+      <listitem>
+        <para>Mount a drive to a Cloud Server to scale storage
+          without paying for more compute capability.</para>
+      </listitem>
+      <listitem>
+          <para>A high performance option
+            for databases and high performance applications,
+            leveraging solid state drives for speed.</para>
         </listitem>
         <listitem>
-          <para>Lower speed option for customers who just need
+          <para>A standard speed option 
+            for customers who just need
             additional storage on their Cloud Server.</para>
         </listitem>
         <listitem>
-          <para>Two simple <emphasis>per gigabyte (GB) price
-              options:</emphasis></para>
+          <para>Two simple price options:</para>
           <itemizedlist>
             <listitem>
-              <para>Lower cost per GB for customers that just need
-                additional storage.  </para>
+              <para>Lower cost per GB for standard performance 
+                and additional storage.</para>
             </listitem>
             <listitem>
-              <para>Higher cost per GB for customers that need higher
-                performance storage.</para>
+              <para>Higher cost per GB for high performance
+                and additional storage.</para>
             </listitem>
           </itemizedlist>
         </listitem>
-      </itemizedlist><itemizedlist>
-        <listitem>
-          <para>Mount a drive to a Cloud Server to scale storage
-              <emphasis>without paying for more</emphasis>
-            compute capability.</para>
-        </listitem>
-      </itemizedlist></para>
+      </itemizedlist>
+      </para>
     <note><title>Notes</title>
       <itemizedlist>
         <listitem>
-          <para>Cloud Block Storage is currently an add-on feature to
+          <para>Cloud Block Storage is an add-on feature to
             Next Generation Cloud Servers.  Customers may not attach
-            CBS volumes to any other instances. </para>
-        </listitem>
-        <listitem>
-          <para>This product only works with Next Generation Cloud
-            Servers. It does not work with first generation Cloud
-            Servers.</para>
-        </listitem>
-        <listitem>
-          <para>Existing customers that are invited to participate in
-            the Cloud Block Storage Preview will be given an
-            additional Next Generation Cloud Servers endpoint for
-            Cloud Block Storage. They will only be able to use Cloud
-            Block Storage while using this endpoint.</para>
+            CBS volumes to other instances, like first generation Cloud Servers.</para>
         </listitem>
         <listitem>
           <para>Cloud Block Storage is multi-tenant rather than
@@ -182,12 +169,7 @@ format="SVG" scale="60"/>
         </listitem>
         <listitem>
           <para>Cloud Block Storage allows you to create snapshots
-            that you can then save, list, and restore using Cloud
-            Files.</para>
-          <para>
-            <remark>Reviewer: please check the previous sentence for
-              accuracy and give me any corrections.</remark>
-          </para>
+            that you can save, list, and restore.</para>
         </listitem>
       </itemizedlist>
     </note>
@@ -196,13 +178,10 @@ format="SVG" scale="60"/>
       product and capabilities. The CBS Preview Program is a
       pre-production service offering covered by the Beta Services
       terms (<link
-        xlink:href="http://www.rackspace.com/cloud/legal/#BetaServices"
-        >http://www.rackspace.com/cloud/legal/#BetaServices</link>) in
+        xlink:href="http://www.rackspace.com/information/legal/testterms/"
+        >rackspace.com/information/legal/testterms/</link>) in
       our Rackspace Cloud Terms of Service.</para>
-    <remark>Writer: need to get updated wording for previous paragraph
-      (as well as items in the list below that are marked "internal"
-      in blue font) from Jerry Schwartz in Marketing.</remark>
-    <para security="internal">The Preview Program has some
+    <para>The Preview Program has some
       limitations. By using the Rackspace Cloud Block Storage API, you
       agree and understand that:<itemizedlist spacing="compact">
         <listitem>
@@ -210,10 +189,13 @@ format="SVG" scale="60"/>
         </listitem>
         <listitem>
           <para>During Preview, customers will be limited to no more
-            than 200GB of high performance storage, and no more than 1
-            TB of basic performance storage.  These limits will ensure
+            than 5 TB total CBS storage, using any mix of standard and 
+            high performance. There is a limit of 10 volumes per instance
+            and 20 total volumes per customer. There is no limit on how many
+            snapshots you may create. These limits will ensure
             that Rackspace can accommodate the ideal amount of Preview
-            participants. </para>
+            participants. 
+          </para>
         </listitem>
         <listitem>
           <para>There is no charge for this service during the Preview
@@ -232,11 +214,12 @@ format="SVG" scale="60"/>
           <para>There is no Service Level Agreement. </para>
         </listitem>
         <listitem>
-          <para>Support is available from 8 am–5 pm (Central Time)
+          <para>Support is available from 8 AM – 5 PM (Central Time)
             Monday–Friday.</para>
         </listitem>
       </itemizedlist>
     </para>
+<!-- 
     <para security="writeronly">The following figure shows an overview
       of Cloud Block Storage: <informalfigure>
         <mediaobject>
@@ -250,15 +233,16 @@ format="SVG" scale="60"/>
         </mediaobject>
       </informalfigure>
     </para>
-    <remark>Writer: need to get architecture diagram for CBS and
+    <remark security="reviewer">Writer: need to get architecture diagram for CBS and
       include it above. Ask Megan to provide.</remark>
     <para security="writeronly">We welcome feedback, comments, and bug
       reports at <link xlink:href="http://feedback.rackspacecloud.com"
         >http://feedback.rackspacecloud.com</link>.</para>
-    <remark>Writer: check whether following statement should be added
+    <remark security="reviewer">Writer: check whether following statement should be added
       back in for public (not private) beta: Issues and bug reports
       can be directed to your support team via ticket, chat, email, or
       phone.</remark>
+-->
     <section xml:id="Intended_Audience-d1e122">
       <title>Intended Audience</title>
       <para> This Guide is intended to assist software developers who
@@ -275,9 +259,6 @@ format="SVG" scale="60"/>
         <listitem>
           <para>JSON and/or XML data serialization formats</para>
         </listitem>
-        <listitem>
-          <para>ATOM Syndication Format</para>
-        </listitem>
       </itemizedlist>
     </section>
     <?hard-pagebreak?>
@@ -290,10 +271,12 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="Additional_Resources-d1e532">
       <title>Additional Resources</title>
+<!-- 
       <para>Descriptive information about Cloud Block Storage is also
         published in its Web Application Description Language (WADL)
         and XML Schema Definition (XSD). You are welcome to read this
-        information here:</para>
+        information here:
+        </para>
       <itemizedlist>
         <listitem>
           <para>The WADL is <link
@@ -306,41 +289,45 @@ format="SVG" scale="60"/>
             />. </para>
         </listitem>
       </itemizedlist>
-      <para>You can download the most current versions of other
+      -->
+      <para>You can download the most current versions of the
         API-related documents from <link
           xlink:href="http://docs.rackspace.com/api/"
-          >http://docs.rackspace.com/api/</link>. </para>
-      <para security="internal">For information about getting started using Cloud Block
+          >docs.rackspace.com/api/</link>. 
+      </para>
+      <para>For information about getting started using Cloud Block
         Storage and Cloud Servers, refer to <citetitle>Getting Started
           with Rackspace Cloud Block Storage and
         Servers</citetitle>.</para>
       <para>For information about Rackspace Cloud products, refer to
           <link xlink:href="http://www.rackspace.com/cloud/"
-          >http://www.rackspace.com/cloud</link>. This site also
+          >www.rackspace.com/cloud</link>. This site also
         offers links to Rackspace's official support channels,
         including knowledge base articles, forums, phone, chat, and
         email. </para>
-      <para security="internal">Request access to the Cloud Block
+      <para>Request access to the Cloud Block
         Storage Forum during the Preview Program by sending an email
-        to: <email>cloudbs_beta@rackspace.com</email>. Once received,
+        to: <email>cbspreview@rackspace.com</email>. Once received,
         we will send you an invitation to join our forum group and you
         may set up your account if you don’t already have one.</para>
-      <remark>Reviewer- check if email address in previous paragraph
-        is correct.</remark>
       <para>Email all support questions to:
-          <email>CBSPrivateBeta@rackspace.com</email>. </para>
-      <para security="internal">Please visit our <link
+          <email>cbspreview@rackspace.com</email>. 
+      </para>
+<!-- 
+      <para>Please visit our <link
           xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
           >Product Feedback Forum</link> and let us know what you
-        think about Cloud Block Storage!</para>
-      <para>You can also follow Rackspace updates and announcements
+        think about Cloud Block Storage!
+        </para>
+        -->
+      <para>You can follow Rackspace updates and announcements
         via twitter at: <link
           xlink:href="http://www.twitter.com/rackspace"
-          >http://www.twitter.com/rackspace</link>. </para>
+          >www.twitter.com/rackspace</link>. </para>
       <para>This API uses standard HTTP 1.1 response codes as
         documented at: <link
           xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
-          >http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>.
+          >www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>.
       </para>
     </section>
     <section xml:id="API_Contract_Changes-d1e363">
@@ -350,40 +337,54 @@ format="SVG" scale="60"/>
       <para>Rackspace will notify customers in Release Notes when and
         if the contract does change.</para>
     </section>
-  </chapter>
+<!-- </chapter>
   <chapter xml:id="Concepts-d1e563"
     xmlns:svg="http://www.w3.org/2000/svg"
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:html="http://www.w3.org/1999/xhtml">
+-->
+    <section xml:id="Concepts">
     <title>Concepts</title>
     <?dbhtml stop-chunking?>
     <para> To use the Cloud Block Storage API effectively, you should
       understand several key concepts: </para>
     <section xml:id="Instance">
       <title>Instance</title>
-      <para>An <emphasis>instance</emphasis> is a virtual machine that
+      <para>An instance is a virtual machine that
         runs inside the cloud.</para>
     </section>
     <section xml:id="Instance_Type">
       <title>Instance Type</title>
-      <para>An <emphasis>instance type</emphasis> describes the
+      <para>An instance type describes the
         compute, memory and storage capacity of Nova computing
         instances. In layman's terms, this is the size (in terms of
         vCPUs, RAM, and so forth) of the virtual server that you will
         be launching.</para>
     </section>
+      <section xml:id="Snapshot">
+        <title>Snapshot</title>
+        <para>A snapshot is a point in time copy of the data
+          contained in a volume. 
+        </para>
+      </section>
     <section xml:id="Volume">
       <title>Volume</title>
-      <para>A <emphasis>volume</emphasis> is a detachable block
+      <para>A volume is a detachable block
         storage device. You can think of it as a USB hard drive. It
-        can only be attached to one instance at a time, so it does not
-        work like a SAN. If you wish to expose the same volume to
-        multiple instances, you will have to use an NFS or SAMBA share
-        from an existing instance.</para>
-      <remark>Reviewer: what other concepts should be provided here?
-        Please provide list of concepts and definitions.</remark>
+        can only be attached to one instance at a time.
+      </para>
     </section>
-  </chapter>
+      <section xml:id="Volumetype">
+        <title>Volume Type</title>
+        <para>The volume type is the type of a block storage volume.
+          There are two types: SATA for standard performance and
+          SSD for high performance.
+        </para>
+      </section>      
+      
+    </section>
+  </preface>
+  
   <chapter xml:id="General_API_Information-d1e633"
     xmlns:svg="http://www.w3.org/2000/svg"
     xmlns:m="http://www.w3.org/1998/Math/MathML"
@@ -406,226 +407,133 @@ format="SVG" scale="60"/>
         supplied by the <code>X-Auth-Token</code> HTTP header.
         Customers obtain this token by first using the Rackspace Cloud
         Authentication Service and supplying a valid username and API
-        access key. </para>
-      <section xml:id="Geographic_Endpoints">
-        <title>Geographic Endpoints</title>
-        <para> The Rackspace Cloud Authentication Service serves as
-          the entry point to all Rackspace Cloud APIs and is itself a
-          ReSTful web service. </para>
-        <para> To access the Authentication Service, you must know
-          whether your account is US-based or UK-based: </para>
+        access key. 
+      </para>
+      <para>
+        To authenticate, submit a <code>POST/v2.0/tokens</code> request, 
+        presenting valid Rackspace customer credentials 
+        in the message body to a Rackspace authentication endpoint
+        . 
+      </para>
+      <para>
+        <emphasis role="bold">GET YOUR CREDENTIALS</emphasis>
+      </para>
+      <para> You can use either of two sets of credentials: <itemizedlist>
+        <listitem>
+          <para>your <code>username</code> and
+            <code>password</code></para>
+        </listitem>
+        <listitem>
+          <para>your <code>username</code> and <code>API
+            key</code></para>
+        </listitem>
+      </itemizedlist>
+      </para>
+      <para>
+        Your <code>username</code> and
+        <code>password</code> are the ones you use to login to the 
+        Rackspace control panel. Once you are logged in, you can use 
+        the Rackspace control panel to obtain your <code>API key</code>.
+      </para>
+      <para>
+        Use the control panel for the region in which your account is based: 
         <itemizedlist spacing="compact">
           <listitem>
-            <para> US-based accounts authenticate through <link
-                xlink:href="&ENDPOINT-US;">&ENDPOINT-US;</link>.
+            <para>
+              US-based accounts use the control panel at <link xlink:href="https://manage.rackspacecloud.com/">https://manage.rackspacecloud.com/</link>.
             </para>
           </listitem>
+<!--
           <listitem>
-            <para> UK-based accounts authenticate through <link
-                xlink:href="&ENDPOINT-UK;">&ENDPOINT-UK;</link>.
-            </para>
+            <para> UK-based accounts use the control panel at
+              <link
+                xlink:href="https://lon.manage.rackspacecloud.com/"
+                >https://lon.manage.rackspacecloud.com/</link>. </para>
           </listitem>
-        </itemizedlist>
-        <para> Your account may be based in either the US or the UK;
-          this is not determined by your physical location but by the
-          location of the Rackspace retail site which was used to
-          create your account: </para>
+          -->
+        </itemizedlist> 
+      </para>
+      <para>
+        <emphasis role="bold">CHOOSE YOUR AUTHENTICATION ENDPOINT</emphasis>
+      </para>
+      <para>
+        Use the authentication endpoint for the region in which your account is based:
         <itemizedlist spacing="compact">
           <listitem>
-            <para> If your account was created via <link
-                xlink:href="http://www.rackspacecloud.com"
-                >http://www.rackspacecloud.com</link>, it is a
-              US-based account. </para>
+            <para> US-based accounts authenticate through
+              <link xlink:href="&ENDPOINT-US;">&ENDPOINT-US;</link>.</para>
+          </listitem>
+<!--
+         <listitem>
+            <para> UK-based accounts authenticate through
+              <link xlink:href="&ENDPOINT-UK;">&ENDPOINT-UK;</link>.</para>
+          </listitem>
+          -->
+        </itemizedlist>
+      </para>
+      <para>
+        <emphasis role="bold">SEND YOUR CREDENTIALS TO YOUR AUTHENTICATION
+          ENDPOINT</emphasis>
+      </para>
+      <para> If you know your credentials and your authentication
+        endpoint, and you can issue a <code>POST
+          /v2.0/tokens</code> request in an API call, you have
+        all the basic information you need to use the Rackspace
+        Cloud Identity Service. 
+      </para>
+      <para> You can use <link xlink:href="http://curl.haxx.se/"
+        >cURL</link> to try the authentication process in two
+        steps: get a token; send the token to a service.<orderedlist>
+          <listitem>
+            <para>Get an authentication token by providing
+              your username and either your API key or your
+              password. Here are examples of both
+              approaches:</para>
+            <para><emphasis>You can request a token by
+              providing your username and your API
+              key.</emphasis></para>
+            <para>
+              <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
+'{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"theUserName", "apiKey":"00a00000a000a0000000a000a00aaa0a" } } }' -H "Content-type: application/json"</literallayout>
+            </para>
+            <para><emphasis>You can request a token by
+              providing your username and your
+              password.</emphasis></para>
+            <para>
+              <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
+'{"auth":{"passwordCredentials":{"username":"theUserName","password":"thePassword"}}}' -H "Content-type: application/json"</literallayout>
+            </para>
+            <para> Successful authentication returns a token
+              which you can use as evidence that your
+              identity has already been authenticated. To
+              use the token, pass it to other services as an
+              <code>X-Auth-Token</code> header. </para>
+            <para> Authentication also returns a service
+              catalog, listing the endpoints you can use for
+              Cloud services. </para>
           </listitem>
           <listitem>
-            <para> If your account was created via <link
-                xlink:href="http:/www.rackspace.co.uk"
-                >http:/www.rackspace.co.uk</link>, it is a UK-based
-              account. </para>
-          </listitem>
-        </itemizedlist>
-        <para> If you are unsure how your account was created, use the
-          Rackspace contact information at either site to ask for
-          help. </para>
-      </section>
-      <section xml:id="Retrieving_Auth_Token">
-        <title>Retrieving the Authentication Token</title>
-        <informaltable rules="all">
-          <tbody>
-            <tr>
-              <td colspan="1">&POST; </td>
-              <td colspan="1">/auth</td>
-              <td colspan="4"> Authenticate to receive a token and a
-                service catalog. </td>
-            </tr>
-          </tbody>
-        </informaltable>
-        <simpara> Normal Response Code(s):
-            <returnvalue>200</returnvalue>,
-            <returnvalue>203</returnvalue>
-        </simpara>
-        <simpara> Error Response Code(s): unauthorized
-            (<errorcode>401</errorcode>), userDisabled
-            (<errorcode>403</errorcode>), badRequest
-            (<errorcode>400</errorcode>), authFault
-            (<errorcode>500</errorcode>), serviceUnavailable
-            (<errorcode>503</errorcode>) </simpara>
-        <para>The authenticate operation provides clients with an
-          authentication token and a list of regional cloud endpoints.</para>
-        <example>
-          <title>Auth Request: XML</title>
-          <programlistingco>
-            <areaspec>
-              <area xml:id="credentials.xml.user" units="linecolumn"
-                coords="11 23"/>
-              <area xml:id="credentials.xml.key" units="linecolumn"
-                coords="12 18"/>
-            </areaspec>
-            <programlisting language="xml">
-<xi:include href="../wadls/volume-api/src/samples/db-credentials.xml" parse="text"/>
-                    </programlisting>
-          </programlistingco>
-        </example>
-        <example>
-          <title>Auth Request: JSON</title>
-          <programlistingco>
-            <areaspec>
-              <area xml:id="credentials.json.user" units="linecolumn"
-                coords="11 22"/>
-              <area xml:id="credentials.json.key" units="linecolumn"
-                coords="12 18"/>
-            </areaspec>
-            <programlisting language="json">
-<xi:include href="../wadls/volume-api/src/samples/db-credentials.json" parse="text"/>
-                    </programlisting>
-          </programlistingco>
-        </example>
-        <calloutlist>
-          <callout arearefs="credentials.json.user">
-            <para> The username supplied here is your common Rackspace
-              Cloud username. </para>
-          </callout>
-          <callout arearefs="credentials.json.key">
-            <para> The key is your API access key. The key can be
-              obtained from the Rackspace Cloud Control Panel in the
-                <guimenu>Your Account</guimenu>/<guimenuitem>API
-                Access</guimenuitem> section. </para>
-          </callout>
-        </calloutlist>
-        <example>
-          <title>Auth Response: XML</title>
-          <?dbfo keep-together="always"?>
-          <programlistingco>
-            <areaspec>
-              <area xml:id="auth.xml.token.expires" units="linecolumn"
-                coords="10 13"/>
-              <area xml:id="auth.xml.service.catalog"
-                units="linecolumn" coords="11 18"/>
-              <area xml:id="auth.xml.service.name" units="linecolumn"
-                coords="12 19"/>
-              <area xml:id="auth.xml.sc.s.e.region" units="linecolumn"
-                coords="13 24"/>
-              <area xml:id="auth.xml.sc.s.e.v1d" units="linecolumn"
-                coords="13 40"/>
-              <area xml:id="auth.xml.sc.s.e.pu" units="linecolumn"
-                coords="14 19"/>
-              <area xml:id="auth.xml.sc.s.e.iu" units="linecolumn"
-                coords="42 21"/>
-            </areaspec>
-            <programlisting language="xml">
-<xi:include href="../wadls/volume-api/src/samples/db-auth.xml" parse="text"/></programlisting>
-          </programlistingco>
-        </example>
-        <example xml:id="auth-response-example-json">
-          <title>Auth Response: JSON</title>
-          <programlistingco>
-            <areaspec>
-              <area xml:id="auth.json.token.expires"
-                units="linecolumn" coords="69 24"/>
-              <area xml:id="auth.json.service.catalog"
-                units="linecolumn" coords="9 25"/>
-              <area xml:id="auth.json.service.name" units="linecolumn"
-                coords="15 29"/>
-              <area xml:id="auth.json.sc.s.e.region"
-                units="linecolumn" coords="18 31"/>
-              <area xml:id="auth.json.sc.s.e.v1d" units="linecolumn"
-                coords="30 34"/>
-              <area xml:id="auth.json.sc.s.e.pu" units="linecolumn"
-                coords="17 34"/>
-              <area xml:id="auth.json.sc.s.e.iu" units="linecolumn"
-                coords="27 36"/>
-            </areaspec>
-            <programlisting language="json">
-<xi:include href="../wadls/volume-api/src/samples/db-auth.json" parse="text"/>
-                    </programlisting>
-          </programlistingco>
-        </example>
-        <note>
-          <para>The information shown in the Auth Response examples is
-            for US-based accounts. If you authenticate against the
-            UK-endpoint for auth, you will see the service catalog
-            information for UK-based accounts.</para>
-        </note>
-        <calloutlist>
-          <callout arearefs="auth.xml.token.expires">
-            <para>This token can be presented to a service as evidence
-              of authentication. Tokens are valid for a finite
-              duration.</para>
-            <para>The <code>expires</code> attribute denotes the time
-              after which the token will automatically become invalid.
-              A token may be manually revoked before the time
-              identified by the <code>expires</code> attribute;
-                <code>expires</code> predicts a token's maximum
-              possible lifespan but does not guarantee that it will
-              reach that lifespan. Clients are encouraged to cache a
-              token until it expires. </para>
-          </callout>
-          <callout arearefs="auth.xml.service.catalog">
-            <para>The service catalog lists the services this user can
-              access. In this example, the user can access two compute
-              services (Cloud Servers OpenStack and Cloud Servers) and
-              two object storage services (Cloud Files Content
-              Distribution Network [CDN] and Cloud Files), along with
-              other services. The catalog listing for each service
-              provides at least one endpoint URL for that service.
-              Other information, such as regions and versions and
-              tenants, is provided if it's relevant to this user's
-              access to this service. </para>
-          </callout>
-          <callout arearefs="auth.xml.service.name">
-            <para>The service name attribute identifies each unique
-              service in the catalog. Once a service is created, its
-              name does not change. </para>
-          </callout>
-          <callout arearefs="auth.xml.sc.s.e.region">
-            <para>A service may expose endpoints in different regions.
-              Regional endpoints allow clients to provision resources
-              in a manner that provides high availability.</para>
-            <para>Some services are not region-specific. These
-              services supply a single non-regional endpoint and do
-              not provide access to internal URLs. </para>
-          </callout>
-          <callout arearefs="auth.xml.sc.s.e.v1d">
-            <para>The <code>v1Default</code> attribute denotes that an
-              endpoint is being returned in version 1.0 of the Cloud
-              Authentication Service. The default value of
-                <code>v1Default</code> is <code>false</code>; clients
-              should assume the value is <code>false</code> when the
-              attribute is missing. Auth 1.0 does not offer support
-              for regional endpoints and therefore only returns one
-              endpoint per service. Resources stored in endpoints
-              where <code>v1Default</code> is <code>false</code> will
-              not be seen by Auth 1.0 clients. </para>
-          </callout>
-          <callout arearefs="auth.xml.sc.s.e.pu auth.xml.sc.s.e.iu">
-            <para>An endpoint can be assigned public and internal
-              URLs. A public URL is accessible from anywhere. Access
-              to a public URL usually incurs traffic charges. Internal
-              URLs are only accessible to services within the same
-              region. Access to an internal URL is free of charge.
+            <para>Use the authentication token to send a GET
+              to a service you would like to use. Here is an
+              example of passing an authentication token to
+              the Cloud Files service, using the Cloud Files
+              service catalog endpoint that was returned
+              along with the token.</para>
+            <para><emphasis>You can use a token and a service endpoint to tell a service that your credentials are valid.</emphasis></para>
+            <para>
+              <literallayout class="monospaced">curl -X GET https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+-H 'X-Auth-Token:11111111-aaaa-2222-bbbb-3333cccc4444' --verbose</literallayout>
             </para>
-          </callout>
-        </calloutlist>
+          </listitem>
+        </orderedlist>
+      </para>
+      <tip>
+        <para> For links to language binding examples you can adapt to
+          work with the Cloud Identity service, visit <link
+            xlink:href="https://github.com/rackspace"
+            >https://github.com/rackspace</link>.</para>
+      </tip>
+             
         <para>Authentication tokens are typically valid for 24 hours.
           Applications should be designed to re-authenticate after
           receiving a 401 (Unauthorized) response from a service
@@ -658,7 +566,7 @@ format="SVG" scale="60"/>
               xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html"
               >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html</link>.</para>
         </tip>
-      </section>
+
     </section>
     <section xml:id="Service_Access_Endpoints-d1e753">
       <title>Service Access/Endpoints</title>
@@ -680,41 +588,23 @@ format="SVG" scale="60"/>
             </tr>
           </thead>
           <tbody>
-            <tr align="left">
-              <td colspan="2">Chicago (ORD)</td>
-              <td colspan="5"
-                  ><code>https://ord.databases.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
-              </td>
-            </tr>
+
             <tr align="left">
               <td colspan="2">Dallas/Ft. Worth (DFW)</td>
               <td colspan="5"
-                  ><code>https://dfw.databases.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
-              </td>
-            </tr>
-            <tr align="left">
-              <td colspan="2">London (LON)</td>
-              <td colspan="5">
-                <code>https://lon.databases.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
-              </td>
+                  ><code>https://dfw.blockstorage.api.rackspacecloud.com/v1/</code><parameter>1234</parameter>/
+               </td>
             </tr>
           </tbody>
         </table>
       </para>
-      <remark>Reviewer: please provide the service access URLs for
-        CBS.</remark>
       <para>Replace the sample account ID number,
           <parameter>1234</parameter>, with your actual account number
         returned as part of the authentication service
         response.</para>
       <para>You will find the actual account number after the final
         '/' in the <code>publicURL</code> field returned by the
-        authentication response. For example, in <xref
-          linkend="auth-response-example-json"/> you can see from the
-          <code>publicURL</code> field for <code>cloudServers</code>
-          ("https://servers.api.rackspacecloud.com/v1.0/<emphasis
-          role="bold">1234</emphasis>") that the account number is
-        1234.</para>
+        authentication response.</para>
     </section>
     <section xml:id="DB_service_versions">
       <title>Cloud Block Storage Service Versions</title>
@@ -730,10 +620,8 @@ format="SVG" scale="60"/>
         <example>
           <title>Example Request URL (contract version in <emphasis
               role="strong">bold</emphasis>)</title>
-          <programlisting>https://ord.databases.api.rackspacecloud.com/<emphasis role="strong">v1.0</emphasis>/1234</programlisting>
+          <programlisting>https://dfw.blockstorage.api.rackspacecloud.com/v1/1234/</programlisting>
         </example>
-        <remark>Reviewer: please provide the service access URL for
-          CBS.</remark>
         <note>
           <para>This document pertains to contract version 1.0.</para>
         </note>
@@ -744,7 +632,7 @@ format="SVG" scale="60"/>
       <para> The Cloud Block Storage API supports both the JSON and
         XML data serialization formats. The request format is
         specified using the <code>Content-Type</code> header and is
-          <emphasis>required</emphasis> for calls that have a request
+          required for calls that have a request
         body. The response format can be specified in requests either
         by using the <code>Accept</code> header or by adding an
           <code>.xml</code> or <code>.json</code> extension to the
@@ -757,9 +645,7 @@ format="SVG" scale="60"/>
       <para security="writeronly">Some operations support an Atom
         representation that can be used to efficiently determine when
         the state of services has changed. </para>
-      <remark>Reviewer: the previous sentence will be hidden for the
-        Private Beta, since it does not appear that Atom will be
-        supported yet. Correct?</remark>
+      
       <table rules="all">
         <caption>Response Formats</caption>
         <?dbfo keep-together="always"?>
@@ -784,52 +670,65 @@ format="SVG" scale="60"/>
             <td>.xml</td>
             <td>No</td>
           </tr>
-          <tr security="writeronly">
-            <td>ATOM</td>
-            <td>application/atom+xml</td>
-            <td>.atom</td>
-            <td>No</td>
-          </tr>
         </tbody>
       </table>
-      <remark>Reviewer: the ATOM row in the table above will be hidden
-        for the Private Beta, since it does not appear that Atom will
-        be supported yet. Correct?</remark>
+
       <para>In the request example below, notice that
           <parameter>Content-Type</parameter> is set to
           <parameter>application/json</parameter>, but
           <parameter>application/xml</parameter> is requested via the
           <parameter>Accept</parameter> header:</para>
-      <example xml:id="request_with_headers_json">
-        <title>Request with Headers: JSON</title>
-        <?dbfo keep-together="always"?>
-        <programlisting language="json"><xi:include href="../wadls/volume-api/src/samples/db-request-types.json" parse="text"><xi:fallback>Missing code sample!<?rax fail?></xi:fallback></xi:include></programlisting>
+
+      <example>
+        <title>Request with Headers (Getting Volume Types)</title>
+        <literallayout class="monospaced">
+  GET /v1/441446/types HTTP/1.1
+  Host: dfw.blockstorage.api.rackspacecloud.com
+  X-Auth-Token: eaaafd18-0fed-4b3a-81b4-663c99ec1cbb
+  Accept: application/xml
+                    </literallayout>
       </example>
-      <remark>Reviewer: Please provide updated example for the above
-        request.</remark>
+
       <para><?rax-fo keep-with-next?>Therefore an XML response format
         is returned:</para>
+
       <example>
-        <title>Response with Headers: XML</title>
-        <?dbfo keep-together="always"?>
-        <programlisting language="xml"><xi:include href="../wadls/volume-api/src/samples/db-response-types.xml" parse="text"><xi:fallback>Missing code sample!<?rax fail?></xi:fallback></xi:include></programlisting>
+        <title>Response with Headers</title>
+        <literallayout class="monospaced">
+  HTTP/1.1 200 OK
+  Date: Fri, 20 Jul 2012 20:32:13 GMT
+  Content-Length: 187
+  Content-Type: application/xml
+  X-Compute-Request-Id: req-8e0295cd-a283-46e4-96da-cae05cbfd1c7
+  
+  &lt;?xml version='1.0' encoding='UTF-8'?&gt;
+  &lt;volume_types&gt;
+      &lt;volume_type id="1" name="SATA"&gt;
+          &lt;extra_specs/&gt;
+      &lt;/volume_type&gt;
+      &lt;volume_type id="2" name="SSD"&gt;
+          &lt;extra_specs/&gt;
+      &lt;/volume_type&gt;
+  &lt;/volume_types&gt;
+     </literallayout>
       </example>
-      <remark>Reviewer: Please provide updated example for the above
-        response.</remark>
+
     </section>
+    
+    <!-- 
     <section xml:id="sync_asynch_responses" security="writeronly">
       <title>Synchronous and Asynchronous Responses</title>
-      <remark>Reviewer: please give me the updated info for this
+      <remark security="reviewer">Reviewer: please give me the updated info for this
         section. Need to replace info about callback URL,
         etc.</remark>
       <para> All successful &GET; requests are
-          <emphasis>synchronous</emphasis> calls, since they are
+          synchronous calls, since they are
         always retrieving (reading) existing information. With these
         requests, the caller waits until the call returns with the
         specified code and response body. For an example, see
         XXXX.</para>
       <para>&PUT;, &POST;, and &DELETE; calls are
-          <emphasis>asynchronous</emphasis>, however, since they may
+          asynchronous, however, since they may
         take some time to process. Therefore they return 202 ACCEPTED
         responses containing information with a callback URL, which
         allows the progress, status, and/or response information of
@@ -916,7 +815,7 @@ format="SVG" scale="60"/>
     <section xml:id="Content_Compression-d1e1120"
       security="writeronly">
       <title>Content Compression</title>
-      <remark>Reviewer: I am hiding this entire section for the
+      <remark security="reviewer">Reviewer: I am hiding this entire section for the
         Private Beta, since I'm not sure that it applies. Is that
         correct?</remark>
       <para> Request and response body data may be encoded with gzip
@@ -953,7 +852,7 @@ format="SVG" scale="60"/>
     <section xml:id="Persistent_Connections-d1e1187"
       security="writeronly">
       <title>Persistent Connections</title>
-      <remark>Reviewer: I am hiding this entire section for the
+      <remark security="reviewer">Reviewer: I am hiding this entire section for the
         Private Beta, since I'm not sure that it applies. Is that
         correct?</remark>
       <para> By default, the API supports persistent connections via
@@ -966,6 +865,7 @@ format="SVG" scale="60"/>
           clients should not rely on this behavior. </para>
       </note>
     </section>
+    -->
     <?hard-pagebreak?>
     <section xml:id="Limits-d1e1208">
       <title>Limits</title>
@@ -976,7 +876,7 @@ format="SVG" scale="60"/>
           limits</firstterm>. Rate limits are thresholds that are
         reset after a certain amount of time passes. Absolute limits
         are fixed. </para>
-      <section xml:id="Rate_Limits-d1e1222">
+      <section xml:id="Rate_Limits-d1e1222" security="writeronly">
         <title>Rate Limits</title>
         <para> Rate limits are specified in terms of both a
           human-readable wild-card URI and a machine-processable
@@ -984,10 +884,8 @@ format="SVG" scale="60"/>
           '^' takes effect after the root URI path. For example, the
           regular expression ^/v1.0/instances would match the bolded
           portion of the following URI:
-            https://ord.databases.api.rackspacecloud.com<emphasis
+          https://dfw.blockstorage.api.rackspacecloud.com<emphasis
             role="bold">/v1.0/instances</emphasis>. </para>
-        <remark>Reviewer: Please provide updated URL for previous
-          sentence.</remark>
         <para>The following table specifies the default rate limits
           for all API operations for all &GET;, &POST;, &PUT;, and
           &DELETE; calls for volumes: </para>
@@ -1034,8 +932,7 @@ format="SVG" scale="60"/>
             </tr>
           </tbody>
         </table>
-        <remark>Reviewer: Please provide updates for the above
-          table.</remark>
+
         <para> Rate limits are applied in order relative to the verb,
           going from least to most specific. For example, although the
           threshold for &POST; to /v1.0/* is 10 per minute, one cannot
@@ -1048,42 +945,38 @@ format="SVG" scale="60"/>
       </section>
       <section xml:id="Absolute_Limits-d1e1397">
         <title>Absolute Limits</title>
-        <remark>Reviewer: Need to update this entire section. Please
-          give me your updates.</remark>
+
         <para>Refer to the following table for the absolute limits
           that are set.</para>
-        <table rules="all" width="870">
+        <table rules="all">
           <caption>Absolute Limits</caption>
-          <col width="185pt"/>
+          <col width="120pt"/>
           <col width="201pt"/>
-          <col width="201pt"/>
-          <col width="200pt"/>
-          <col width="75pt"/>
+          <col width="50pt"/>
           <thead>
             <tr>
               <td colspan="1">Name</td>
-              <td colspan="3">Description</td>
+              <td colspan="1">Description</td>
               <td colspan="1">Limit</td>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td colspan="1">Basic Performance Storage</td>
-              <td colspan="3">Maximum amount of <emphasis role="bold"
-                  >Basic performance</emphasis> storage (in gigabytes
-                [GB]) for applications that just need additional
+              <td colspan="1">Standard Performance Storage</td>
+              <td colspan="1">Maximum amount of <emphasis role="bold"> 
+                standard performance</emphasis> storage (in gigabytes) 
+                for applications that just need additional
                 storage on their Cloud Server. </td>
-              <td colspan="1">200</td>
+              <td colspan="1">1 TB</td>
             </tr>
             <tr>
               <td colspan="1">High Performance Storage</td>
-              <td colspan="3">Maximum amount of <emphasis role="bold"
-                  >High performance</emphasis> storage (in terabytes
-                [TB]) for databases and high performance applications
+              <td colspan="1">Maximum amount of <emphasis role="bold">
+                High performance</emphasis> storage (in terabytes) 
+                for databases and high performance applications
                 leveraging <emphasis role="bold">solid state
-                  drives</emphasis> for speed and consistent
-                performance. </td>
-              <td colspan="1">1</td>
+                  drives</emphasis> for speed and performance. </td>
+              <td colspan="1">1 TB</td>
             </tr>
           </tbody>
         </table>
@@ -1153,25 +1046,25 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="pagination" security="writeronly">
       <title>Pagination</title>
-      <remark>Reviewer: please review and give me your updates for
+      <remark security="reviewer">Reviewer: please review and give me your updates for
         this section. Dev needs to determine which API calls support
         pagination and then supply examples. I have hidden this entire
         section for now, since we do not believe that it will be
         supported for Private Beta. Correct?</remark>
       <para>To reduce load on the service, list operations will return
         a maximum of 100 items at a time. This is referred to as
-          <emphasis>pagination</emphasis>.</para>
+          pagination.</para>
       <para> Pagination is the ability to limit the size of the
         returned data as well as retrieve a specified subset of a
         large data set. Pagination has two key concepts: limit and
-        offset. <emphasis>Limit</emphasis> is the restriction on the
+        offset. Limit is the restriction on the
         maximum number of items for that type that can be returned.
-          <emphasis>Offset</emphasis> is the starting point for the
+          Offset is the starting point for the
         return data. For example, an offset of 50 specifies that the
         items that are returned should start with item number 51
         (since the numbering is one-based) in the collection. </para>
       <para>It is important to note that offset
-          <emphasis>must</emphasis> be a multiple of the limit (or
+          must be a multiple of the limit (or
         zero), otherwise a Bad Request Exception will be thrown. Both
         limit and offset are specified via request parameters on the
         URI. The parameters are named <code>limit</code> and
@@ -1186,7 +1079,7 @@ format="SVG" scale="60"/>
       </example>
       <para>Pagination applies only to the calls listed in the
         following table: </para>
-      <remark>Reviewer: need to update the table of paginated API
+      <remark security="reviewer">Reviewer: need to update the table of paginated API
         calls below:</remark>
       <informaltable rules="all">
         <thead>
@@ -1233,7 +1126,7 @@ format="SVG" scale="60"/>
         Databases calls.</para>
       <section xml:id="Pagination_Elements_and_Attributes-d1e1754">
         <title>Pagination Elements and Attributes</title>
-        <remark>Reviewer: please review and give me your updates for
+        <remark security="reviewer">Reviewer: please review and give me your updates for
           this section.</remark>
         <para>For any collection in a result, there is a
             <code>totalEntries</code> attribute representing the total
@@ -1328,7 +1221,7 @@ format="SVG" scale="60"/>
       security="writeronly">
       <title>Efficient Polling with the
           <parameter>Changes-Since</parameter> Parameter</title>
-      <remark>Reviewer: I have hidden this section, since it does not
+      <remark security="reviewer">Reviewer: I have hidden this section, since it does not
         appear that it will be supported for Private Beta.
         Correct?</remark>
       <para> The ReST API allows you to poll for the status of certain
@@ -1345,7 +1238,7 @@ format="SVG" scale="60"/>
           <returnvalue>304 (Not Modified)</returnvalue> response will
         be returned. If data has changed, only the items changed since
         the specified time will be returned in the response. </para>
-      <remark>Reviewer: does the following sentence apply, and should
+      <remark security="reviewer">Reviewer: does the following sentence apply, and should
         it be included?</remark>
       <para>For example, performing a &GET; against
           https://api.servers.rackspacecloud.com/v1.0/224532/servers?<parameter>changes-since</parameter>=1244012982
@@ -1444,13 +1337,10 @@ format="SVG" scale="60"/>
           </tr>
         </tbody>
       </informaltable>
-      <remark>Reviewer: Please provide updates for the table
-        above.</remark>
-      <para>The following two <code>instanceFault</code> examples show
+      <para>
+        The following two <code>instanceFault</code> examples show
         errors when the server has erred or cannot perform the
         requested operation:</para>
-      <remark>Reviewer: Please provide updated examples for the
-        following 6 fault examples.</remark>
       <example>
         <title>Example instanceFault Response: XML</title>
         <?dbfo keep-together="always"?>
@@ -1515,36 +1405,30 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="volume_status">
       <title>Volume Status</title>
-      <remark>Reviewer: Please provide updates as needed for this
-        section</remark>
       <para><?rax-fo keep-with-next?>When making an API call to
         create, list, or delete volume(s), the following volume status
         values are possible:</para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>BUILD &ndash; The database instance is being
-            provisioned.</para>
+          <para>CREATING &ndash; The volume is being created.</para>
         </listitem>
         <listitem>
-          <para>ACTIVE &ndash; The database instance is online and
-            available to take requests.</para>
+          <para>AVAILABLE &ndash; The volume is read to be attached to an instance.</para>
         </listitem>
         <listitem>
-          <para>BLOCKED &ndash; The database instance is unresponsive
-            at the moment.</para>
+          <para>ATTACHING &ndash; The volume is attaching to an instance.</para>
         </listitem>
         <listitem>
-          <para>RESIZE &ndash; The database instance is being resized
-            at the moment.</para>
+          <para>IN-USE &ndash; The volume is attached to an instance.</para>
         </listitem>
         <listitem>
-          <para>SHUTDOWN &ndash; The database instance is terminating
-            services. Also, SHUTDOWN is returned if for any reason the
-            MySQL instance is shut down but not the actual server. </para>
+          <para>DELETING &ndash; The volume is being deleted.</para>
         </listitem>
         <listitem>
-          <para>FAILED &ndash; The database instance was not created
-            due to an error.</para>
+          <para>ERROR &ndash; There has been some error with the volume.</para>
+        </listitem>
+        <listitem>
+          <para>ERROR_DELETING &ndash; There was an error deleting the volume.</para>
         </listitem>
       </itemizedlist>
     </section>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<snapshots xmlns="http://docs.openstack.org/volume/api/v1">
+<snapshots xmlns="http://docs.rackspace.com/volume/api/v1">
     <snapshot id="3fbbcccf-d058-4502-8844-6feeffdf4cb5"
               displayName="snap-001"
               displayDescription="Daily backup"

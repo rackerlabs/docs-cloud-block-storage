@@ -36,7 +36,7 @@
   </profiles>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <doctools.version>1.1.0</doctools.version>
+    <doctools.version>1.2.0</doctools.version>
   </properties>
 
   <dependencies>
@@ -132,11 +132,11 @@
               </includes>
               <highlightSource>false</highlightSource>
               <enableDisqus>intranet</enableDisqus>
-              <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
+              <feedbackEmail>david.hendler@rackspace.com</feedbackEmail>
               <enableGoogleAnalytics>1</enableGoogleAnalytics>
               <googleAnalyticsId>UA-17511903-8</googleAnalyticsId>
               <trimWadlUriCount>2</trimWadlUriCount>
-              <security>writeronly</security>
+             <security>external</security>
             </configuration>
           </execution>
           <execution>
@@ -154,12 +154,35 @@
               </includes>
               <highlightSource>false</highlightSource>
               <enableDisqus>intranet</enableDisqus>
-              <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
+              <feedbackEmail>david.hendler@rackspace.com</feedbackEmail>
               <enableGoogleAnalytics>1</enableGoogleAnalytics>
               <googleAnalyticsId>UA-17511903-8</googleAnalyticsId>
               <security>writeronly</security>
             </configuration>
           </execution>
+<!--          
+          <execution>
+            <id>g3</id>
+            <goals>
+              <goal>generate-webhelp</goal>
+              <goal>generate-pdf</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <xincludeSupported>true</xincludeSupported>
+              <sourceDirectory>src/docbkx</sourceDirectory>
+              <includes>
+                cm-getting-started.xml
+              </includes>
+              <highlightSource>false</highlightSource>
+              <enableDisqus>intranet</enableDisqus>
+              <feedbackEmail>david.hendler@rackspace.com</feedbackEmail>
+              <enableGoogleAnalytics>1</enableGoogleAnalytics>
+              <googleAnalyticsId>UA-17511903-8</googleAnalyticsId>
+              <security>writeronly</security>
+            </configuration>
+          </execution>          
+          -->
         </executions>
         <configuration>
           <branding>rackspace</branding>      

@@ -4,9 +4,8 @@
         "displayName": "vol-001",
         "displayDescription": "Another volume.",
         "size": 30,
-        "volumeType": "289da7f8-6440-407c-9fb4-7db01ec49164",
-        "metadata": {"contents": "junk"},
-        "availabilityZone": "us-east1",
+        "volumeType": "1",
+         "availabilityZone": "nova",
         "snapshotId": null,
         "attachments": [],
         "createdAt": "2012-02-14T20:53:07Z"
