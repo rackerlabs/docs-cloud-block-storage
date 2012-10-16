@@ -1,14 +1,75 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <!-- POM Build file for the Keystone Developer Guide -->
   <modelVersion>4.0.0</modelVersion>
-
-  <groupId>org.openstack.identity</groupId>
-  <artifactId>docs</artifactId>
+  <groupId>com.rackspace.cloud.apidocs</groupId>
+  <artifactId>cloud-block-storage</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
-  <name>OpenStack API Page Test Project</name>
+  <name>Cloud Block Storage Doc Project</name>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.rackspace.cloud.api</groupId>
+        <artifactId>clouddocs-maven-plugin</artifactId>
+        <version>1.5.1-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <id>cbs-devguide</id>
+            <goals>
+              <goal>generate-webhelp</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <includes>cbs-devguide.xml</includes>
+              <trimWadlUriCount>2</trimWadlUriCount>
+            </configuration>
+          </execution>
+          <!-- <execution> -->
+          <!--   <id>cbs-getting-started</id> -->
+          <!--   <goals> -->
+          <!--     <goal>generate-webhelp</goal> -->
+          <!--   </goals> -->
+          <!--   <phase>generate-sources</phase> -->
+          <!--   <configuration> -->
+          <!--     <includes>cbs-getting-started.xml</includes> -->
+          <!--     <security>writeronly</security> -->
+          <!--   </configuration> -->
+          <!-- </execution> -->
+        </executions>
+        <configuration>
+	  <enableDisqus>intranet</enableDisqus>
+	  <feedbackEmail>david.hendler@rackspace.com</feedbackEmail>
+	  <!-- <enableGoogleAnalytics>1</enableGoogleAnalytics> -->
+	  <!-- <googleAnalyticsId>UA-17511903-8</googleAnalyticsId> -->
+          <branding>rackspace</branding>      
+          <showXslMessages>true</showXslMessages>
+	  <highlightSource>false</highlightSource>
+        </configuration>
+      </plugin>
+      <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-assembly-plugin</artifactId>
+	<version>2.3</version>
+	<configuration>
+	  <descriptors>
+	    <descriptor>includewars.xml</descriptor>
+	  </descriptors>
+	</configuration>
+	<executions>
+	  <execution>
+	    <id>assembly</id>
+	    <goals>
+	      <goal>single</goal>
+	    </goals>
+	    <phase>package</phase>
+	  </execution>
+	</executions>
+      </plugin>
+    </plugins>
+  </build>
   <profiles>                                                                                              
     <profile>                                                                                           
       <id>Rackspace Research Repositories</id>                                                        
@@ -34,161 +95,18 @@
       </pluginRepositories>                                                                           
     </profile> 
   </profiles>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <doctools.version>1.2.0</doctools.version>
-  </properties>
-
-  <dependencies>
-    <!-- We need Saxon 9 and clouddocs-maven-plugin here to normalize wadls -->
-    <dependency>
-      <groupId>net.sourceforge.saxon</groupId>
-      <artifactId>saxon</artifactId>
-      <version>9.1.0.8</version>
-    </dependency>
-    <dependency>
-      <groupId>com.rackspace.cloud.api</groupId>
-      <artifactId>clouddocs-maven-plugin</artifactId>
-      <version>${doctools.version}</version>
-    </dependency>
-  </dependencies>
-  <build>
-    <plugins>
-      <!-- Unpack the wadl normalization xslts -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>unpack-shared-resources</id>
-            <goals>
-              <goal>unpack-dependencies</goal>
-            </goals>
-            <phase>generate-sources</phase>
-            <configuration>
-              <outputDirectory>${project.build.directory}/generated-resources</outputDirectory>
-              <includeGroupIds>com.rackspace.cloud.api</includeGroupIds>
-              <includeArtifactIds>clouddocs-maven-plugin</includeArtifactIds>
-              <!-- <includeClassifiers>ns-resources</includeClassifiers> -->
-              <excludeTransitive>true</excludeTransitive>
-              <includes>**/normalizeWadl/*.xsl</includes>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>xml-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>transform</goal>
-            </goals>
-	   <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-	   <!-- Comment out this phase and uncomment the phase for the -->
-	   <!--	plugin above to switch to grabbing the wadl from the   -->
-	   <!--	web.                                                   -->
-	   <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-            <phase>generate-sources</phase>
-          </execution>
-        </executions>
-        <configuration>
-          <transformationSets>
-
-            <transformationSet>
-              <dir>src/wadls/volume-api/src</dir>
-              <includes>
-                <include>os-volume-*.wadl</include>
-              </includes>
-              <stylesheet>${project.build.directory}/generated-resources/cloud/normalizeWadl/normalizeWadl.xsl</stylesheet>
-            </transformationSet>
-          </transformationSets>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>net.sf.saxon</groupId>
-            <artifactId>saxon</artifactId>
-            <version>8.7</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-      <plugin>
-        <groupId>com.rackspace.cloud.api</groupId>
-        <artifactId>clouddocs-maven-plugin</artifactId>
-        <version>${doctools.version}</version>
-        <executions>
-          <execution>
-            <id>g1</id>
-            <goals>
-              <goal>generate-webhelp</goal>
-             <goal>generate-pdf</goal>
-            </goals>
-            <phase>generate-sources</phase>
-            <configuration>
-              <xincludeSupported>true</xincludeSupported>
-              <sourceDirectory>src/docbkx</sourceDirectory>
-              <includes>
-                cbs-devguide.xml
-              </includes>
-              <highlightSource>false</highlightSource>
-              <enableDisqus>intranet</enableDisqus>
-              <feedbackEmail>david.hendler@rackspace.com</feedbackEmail>
-              <enableGoogleAnalytics>1</enableGoogleAnalytics>
-              <googleAnalyticsId>UA-17511903-8</googleAnalyticsId>
-              <trimWadlUriCount>2</trimWadlUriCount>
-             <security>external</security>
-            </configuration>
-          </execution>
-          <execution>
-            <id>g2</id>
-            <goals>
-              <goal>generate-webhelp</goal>
-              <goal>generate-pdf</goal>
-            </goals>
-            <phase>generate-sources</phase>
-            <configuration>
-              <xincludeSupported>true</xincludeSupported>
-              <sourceDirectory>src/docbkx</sourceDirectory>
-              <includes>
-                cbs-getting-started.xml
-              </includes>
-              <highlightSource>false</highlightSource>
-              <enableDisqus>intranet</enableDisqus>
-              <feedbackEmail>david.hendler@rackspace.com</feedbackEmail>
-              <enableGoogleAnalytics>1</enableGoogleAnalytics>
-              <googleAnalyticsId>UA-17511903-8</googleAnalyticsId>
-              <security>writeronly</security>
-            </configuration>
-          </execution>
-<!--          
-          <execution>
-            <id>g3</id>
-            <goals>
-              <goal>generate-webhelp</goal>
-              <goal>generate-pdf</goal>
-            </goals>
-            <phase>generate-sources</phase>
-            <configuration>
-              <xincludeSupported>true</xincludeSupported>
-              <sourceDirectory>src/docbkx</sourceDirectory>
-              <includes>
-                cm-getting-started.xml
-              </includes>
-              <highlightSource>false</highlightSource>
-              <enableDisqus>intranet</enableDisqus>
-              <feedbackEmail>david.hendler@rackspace.com</feedbackEmail>
-              <enableGoogleAnalytics>1</enableGoogleAnalytics>
-              <googleAnalyticsId>UA-17511903-8</googleAnalyticsId>
-              <security>writeronly</security>
-            </configuration>
-          </execution>          
-          -->
-        </executions>
-        <configuration>
-          <branding>rackspace</branding>      
-          <showXslMessages>true</showXslMessages>
-        </configuration>
-      </plugin>
-        </plugins>
-    </build>
+  <scm>
+    <connection>scm:git:ssh://git@github.rackspace.com:IX/cloud-files.git</connection>
+  </scm>
+  <distributionManagement>
+    <site>
+      <id>docs-stagging</id>
+      <url>http://10.14.208.16:8081/nexus/content/repositories/docs-stagging/</url>
+    </site>
+    <repository>
+      <id>docs-stagging</id>
+      <name>docs-stagging</name>
+      <url>http://10.14.208.16:8081/nexus/content/repositories/docs-stagging/</url>
+    </repository>
+  </distributionManagement>
 </project>

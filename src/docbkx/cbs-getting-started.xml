@@ -1930,6 +1930,8 @@ Content-Type: text/plain
       </para>
     </section>
   </chapter>
-  <xi:include href="glossary.xml"/>
+  <xi:include href="glossary.xml">
+    <xi:fallback/>
+  </xi:include>
   
 </book>
