@@ -40,7 +40,8 @@
           <!-- </execution> -->
         </executions>
         <configuration>
-	  <enableDisqus>intranet</enableDisqus>
+	  <enableDisqus>1</enableDisqus>
+	  <socalIcons>1</socalIcons>
 	  <feedbackEmail>david.hendler@rackspace.com</feedbackEmail>
 	  <!-- <enableGoogleAnalytics>1</enableGoogleAnalytics> -->
 	  <!-- <googleAnalyticsId>UA-17511903-8</googleAnalyticsId> -->

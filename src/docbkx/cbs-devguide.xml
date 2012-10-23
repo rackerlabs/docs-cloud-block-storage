@@ -39,20 +39,15 @@ format="SVG" scale="60"/>
   <?rax title.font.size="35px" subtitle.font.size="20px"?>
   <info>
     <title>Rackspace Cloud Block Storage Developer Guide</title>
-    <titleabbrev>Rackspace Cloud Block Storage
-      Developer Guide</titleabbrev>
+    <titleabbrev>CBS Developer Guide</titleabbrev>
     <copyright>
-      <year>2010</year>
-      <year>2011</year>
       <year>2012</year>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
     <pubdate>2012-10-23</pubdate>
     <legalnotice role="rs-api">
-      <annotation xmlns:svg="http://www.w3.org/2000/svg"
-        xmlns:m="http://www.w3.org/1998/Math/MathML"
-        xmlns:html="http://www.w3.org/1999/xhtml">
+      <annotation>
         <remark>Copyright details are filled in by the
           template.</remark>
       </annotation>
@@ -63,25 +58,13 @@ format="SVG" scale="60"/>
         Rackspace Cloud Block Storage Application Programming
         Interface (<abbrev>API</abbrev>). </para>
     </abstract>
-    <revhistory xmlns:svg="http://www.w3.org/2000/svg"
-      xmlns:m="http://www.w3.org/1998/Math/MathML"
-      xmlns:html="http://www.w3.org/1999/xhtml">
+    <revhistory>
       <revision>
         <date>2012-10-23</date>
         <revdescription>
           <itemizedlist spacing="compact">
             <listitem>
               <para>First public release.</para>
-            </listitem>
-          </itemizedlist>
-        </revdescription>
-      </revision>
-      <revision>
-        <date>2012-07-25</date>
-        <revdescription>
-          <itemizedlist spacing="compact">
-            <listitem>
-              <para>Initial Preview release.</para>
             </listitem>
           </itemizedlist>
         </revdescription>
