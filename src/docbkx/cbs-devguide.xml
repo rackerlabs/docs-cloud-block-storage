@@ -36,8 +36,6 @@ format="SVG" scale="60"/>
     xmlns:wadl="http://wadl.dev.java.net/2009/02"
     version="5.0-extension RackBook-2.0" 
     xml:id="cbs-devguide">
-  <?rax status.bar.text="Preview"?>
-  <?rax status.bar.text="DRAFT"?>
   <?rax title.font.size="35px" subtitle.font.size="20px"?>
   <info>
     <title>Rackspace Cloud Block Storage Developer Guide</title>
@@ -48,9 +46,9 @@ format="SVG" scale="60"/>
       <year>2011</year>
       <year>2012</year>
     </copyright>
-    <releaseinfo>API v1.0 Preview</releaseinfo>
+    <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2012-07-25</pubdate>
+    <pubdate>2012-10-23</pubdate>
     <legalnotice role="rs-api">
       <annotation xmlns:svg="http://www.w3.org/2000/svg"
         xmlns:m="http://www.w3.org/1998/Math/MathML"
@@ -68,6 +66,16 @@ format="SVG" scale="60"/>
     <revhistory xmlns:svg="http://www.w3.org/2000/svg"
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
+      <revision>
+        <date>2012-10-23</date>
+        <revdescription>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>First public release.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
       <revision>
         <date>2012-07-25</date>
         <revdescription>
@@ -173,52 +181,6 @@ format="SVG" scale="60"/>
         </listitem>
       </itemizedlist>
     </note>
-    <para>The Preview program enables customers by invitation to test
-      an early version of the product and provide feedback of the
-      product and capabilities. The CBS Preview Program is a
-      pre-production service offering covered by the Beta Services
-      terms (<link
-        xlink:href="http://www.rackspace.com/information/legal/testterms/"
-        >rackspace.com/information/legal/testterms/</link>) in
-      our Rackspace Cloud Terms of Service.</para>
-    <para>The Preview Program has some
-      limitations. By using the Rackspace Cloud Block Storage API, you
-      agree and understand that:<itemizedlist spacing="compact">
-        <listitem>
-          <para>Rackspace Cloud Block Storage is API-only.</para>
-        </listitem>
-        <listitem>
-          <para>During Preview, customers will be limited to no more
-            than 5 TB total CBS storage, using any mix of standard and 
-            high performance. There is a limit of 10 volumes per instance
-            and 20 total volumes per customer. There is no limit on how many
-            snapshots you may create. These limits will ensure
-            that Rackspace can accommodate the ideal amount of Preview
-            participants. 
-          </para>
-        </listitem>
-        <listitem>
-          <para>There is no charge for this service during the Preview
-            period.</para>
-        </listitem>
-        <listitem>
-          <para>We will charge for Rackspace Cloud Block Storage when
-            this service becomes generally available.</para>
-        </listitem>
-        <listitem>
-          <para>If you participate in this Preview Program, you will
-            receive a notification prior to general
-            availability.</para>
-        </listitem>
-        <listitem>
-          <para>There is no Service Level Agreement. </para>
-        </listitem>
-        <listitem>
-          <para>Support is available from 8 AM – 5 PM (Central Time)
-            Monday–Friday.</para>
-        </listitem>
-      </itemizedlist>
-    </para>
 <!-- 
     <para security="writeronly">The following figure shows an overview
       of Cloud Block Storage: <informalfigure>
@@ -305,21 +267,6 @@ format="SVG" scale="60"/>
         offers links to Rackspace's official support channels,
         including knowledge base articles, forums, phone, chat, and
         email. </para>
-      <para>Request access to the Cloud Block
-        Storage Forum during the Preview Program by sending an email
-        to: <email>cbspreview@rackspace.com</email>. Once received,
-        we will send you an invitation to join our forum group and you
-        may set up your account if you don’t already have one.</para>
-      <para>Email all support questions to:
-          <email>cbspreview@rackspace.com</email>. 
-      </para>
-<!-- 
-      <para>Please visit our <link
-          xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
-          >Product Feedback Forum</link> and let us know what you
-        think about Cloud Block Storage!
-        </para>
-        -->
       <para>You can follow Rackspace updates and announcements
         via twitter at: <link
           xlink:href="http://www.twitter.com/rackspace"
@@ -332,8 +279,6 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="API_Contract_Changes-d1e363">
       <title>API Contract Changes</title>
-      <para>The API contract is not locked and may change during the
-        Preview Program.</para>
       <para>Rackspace will notify customers in Release Notes when and
         if the contract does change.</para>
     </section>
@@ -964,19 +909,19 @@ format="SVG" scale="60"/>
             <tr>
               <td colspan="1">Standard Performance Storage</td>
               <td colspan="1">Maximum amount of <emphasis role="bold"> 
-                standard performance</emphasis> storage (in gigabytes) 
+                standard performance</emphasis> storage per region
                 for applications that just need additional
                 storage on their Cloud Server. </td>
-              <td colspan="1">1 TB</td>
+              <td colspan="1">10 TB or 50 Volumes</td>
             </tr>
             <tr>
               <td colspan="1">High Performance Storage</td>
               <td colspan="1">Maximum amount of <emphasis role="bold">
-                High performance</emphasis> storage (in terabytes) 
+                High performance</emphasis> storage per region 
                 for databases and high performance applications
                 leveraging <emphasis role="bold">solid state
                   drives</emphasis> for speed and performance. </td>
-              <td colspan="1">1 TB</td>
+              <td colspan="1">10 TB or 50 Volumes</td>
             </tr>
           </tbody>
         </table>
