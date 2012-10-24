@@ -121,12 +121,12 @@
                     The name of the volume. 
                 </p></doc>
             </param>
-            <param name="snampshot_id" style="query" type="string" required="false">
+            <param name="snapshot_id" style="query" type="string" required="false">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     The optional snapshot from which to create a volume.
                 </p></doc>
             </param>
-            <param name="voume_type" style="query" type="string" required="false">
+            <param name="volume_type" style="query" type="string" required="false">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     The type of volume to create, either SATA or SSD. If not defined,
                     then the default, SATA, is used.
