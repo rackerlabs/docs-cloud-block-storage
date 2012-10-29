@@ -539,6 +539,18 @@ format="SVG" scale="60"/>
                   ><code>https://dfw.blockstorage.api.rackspacecloud.com/v1/</code><parameter>1234</parameter>/
                </td>
             </tr>
+            <tr align="left">
+              <td colspan="2">Chicago (ORD)</td>
+              <td colspan="5"
+                ><code>https://ord.blockstorage.api.rackspacecloud.com/v1/</code><parameter>1234</parameter>/
+              </td>
+            </tr>
+            <tr align="left">
+              <td colspan="2">London (LON)</td>
+              <td colspan="5"
+                ><code>https://lon.blockstorage.api.rackspacecloud.com/v1/</code><parameter>1234</parameter>/
+              </td>
+            </tr>
           </tbody>
         </table>
       </para>
