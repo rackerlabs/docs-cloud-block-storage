@@ -5,7 +5,6 @@
         "displayDescription": "Another volume.",
         "size": 30,
         "volumeType": "1",
-         "availabilityZone": "nova",
         "snapshotId": null,
         "attachments": [],
         "createdAt": "2012-02-14T20:53:07Z"

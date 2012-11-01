@@ -3,7 +3,6 @@
         display_name="vol-001"
         display_description="Another volume."
         size="30"
-        volume_type="SATA"
-        availability_zone="nova">
+        volume_type="SATA">
 
 </volume>
