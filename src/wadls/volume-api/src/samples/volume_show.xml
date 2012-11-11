@@ -6,6 +6,5 @@
         status="active"
         size="30"
         volume_type="1"
-        availability_zone="nova"
         createdAt="2012-02-14T20:53:07Z">        
 </volume>

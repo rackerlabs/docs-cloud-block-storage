@@ -4,6 +4,5 @@
         "display_description": "Another volume.",
         "size": 30,
         "volume_type": "SATA",
-        "availability_zone": "nova"
      }
 }
