@@ -36,16 +36,18 @@ format="SVG" scale="60"/>
     xmlns:wadl="http://wadl.dev.java.net/2009/02"
     version="5.0-extension RackBook-2.0" 
     xml:id="cbs-devguide">
+
   <?rax title.font.size="35px" subtitle.font.size="20px"?>
   <info>
     <title>Rackspace Cloud Block Storage Developer Guide</title>
-    <titleabbrev>CBS Developer Guide</titleabbrev>
+    <titleabbrev>Cloud Block Storage Developer Guide</titleabbrev>
     <copyright>
       <year>2012</year>
+      <year>2013</year>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2012-10-24</pubdate>
+    <pubdate>2013-01-04</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the
@@ -59,6 +61,26 @@ format="SVG" scale="60"/>
         Interface (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory>
+      <revision>
+        <date>2013-01-04</date>
+        <revdescription>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Removed camel-case for JSON examples. Removed acronym.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
+      <revision>
+        <date>2012-10-29</date>
+        <revdescription>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Added ORD and LON endpoints.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
       <revision>
         <date>2012-10-24</date>
         <revdescription>
@@ -111,7 +133,7 @@ format="SVG" scale="60"/>
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:html="http://www.w3.org/1999/xhtml">
     <title>Overview</title>
-    <para>Rackspace Cloud Block Storage (CBS) is a block level storage
+    <para>Rackspace Cloud Block Storage is a block level storage
       solution that allows customers to mount drives or volumes to
       their Rackspace Next Generation Cloud Servers<trademark/>. The
       two primary use cases are (1) to allow customers to scale their
@@ -119,7 +141,7 @@ format="SVG" scale="60"/>
       to allow customers to utilize high performance storage to serve
       database or I/O-intensive applications. 
     </para>
-    <para>Interactions with CBS occur programmatically via the Cloud Block 
+    <para>Interactions with Cloud Block Storage occur programmatically via the Cloud Block 
       Storage API as described in this developer guide.
     </para>
     <para>Rackspace offers both a low cost/gigabyte (GB) option with
@@ -162,7 +184,7 @@ format="SVG" scale="60"/>
         <listitem>
           <para>Cloud Block Storage is an add-on feature to
             Next Generation Cloud Servers.  Customers may not attach
-            CBS volumes to other instances, like first generation Cloud Servers.</para>
+            Cloud Block Storage volumes to other instances, like first generation Cloud Servers.</para>
         </listitem>
         <listitem>
           <para>Cloud Block Storage is multi-tenant rather than

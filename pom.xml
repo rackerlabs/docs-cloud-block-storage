@@ -24,6 +24,7 @@
             <phase>generate-sources</phase>
             <configuration>
               <includes>cbs-devguide.xml</includes>
+                <security>external</security>
               <trimWadlUriCount>2</trimWadlUriCount>
             </configuration>
           </execution>

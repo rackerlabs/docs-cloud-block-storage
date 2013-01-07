@@ -238,6 +238,10 @@
     <method name="DELETE" id="deleteVolume">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" title="Delete Volume">
             <p xmlns="http://www.w3.org/1999/xhtml">Delete a single Volume.</p>
+            <doc><p xmlns="http://www.w3.org/1999/xhtml">
+                Due to a limitatin in the OpenStack source, it is not currently (October, 2012) possible
+                to delete a Volume once you have created a snapshot from it.
+            </p></doc>
         </wadl:doc>
         <response status="202" />
     </method>
