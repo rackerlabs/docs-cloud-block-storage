@@ -97,7 +97,7 @@
             The below example creates a volume called vol-001.</p>
 -->            
             <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                The below example creates a SATA volume called "vol-001" that has a size of 30 GB.
+                The below example creates a SATA volume called "vol-001" that has a size of 100 GB.
             </p></doc>
         </wadl:doc>
         <request>

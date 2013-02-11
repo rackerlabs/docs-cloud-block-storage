@@ -5,5 +5,5 @@
           display_description="Daily backup"
           volume_id="521752a6-acf6-4b2d-bc7a-119f9148cd8c"
           status="creating"
-          size="30"
+          size="100"
           createdAt="2012-02-29T03:50:07Z" />

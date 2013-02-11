@@ -5,7 +5,7 @@
             display_name="vol-001"
             display_description="Another volume."
             status="active"
-            size="30"
+            size="100"
             volume_type="1"
             createdAt="2012-02-14T20:53:07Z">
     </volume>
@@ -14,7 +14,7 @@
             display_name="vol-002"
             display_description="Yet another volume."
             status="active"
-            size="25"
+            size="100"
             volume_type="1"
             createdAt="2012-03-15T19:10:03Z" />
 </volumes>

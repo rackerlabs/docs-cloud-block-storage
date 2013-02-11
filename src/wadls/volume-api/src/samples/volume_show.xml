@@ -4,7 +4,7 @@
         display_name="vol-001"
         display_decription="Another volume"
         status="active"
-        size="30"
+        size="100"
         volume_type="1"
         createdAt="2012-02-14T20:53:07Z">        
 </volume>
