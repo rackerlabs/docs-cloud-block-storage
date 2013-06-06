@@ -14,7 +14,7 @@
       <plugin>
         <groupId>com.rackspace.cloud.api</groupId>
         <artifactId>clouddocs-maven-plugin</artifactId>
-        <version>1.6.0</version>
+        <version>1.8.0</version>
         <executions>
           <execution>
             <id>cbs-devguide</id>
@@ -25,6 +25,7 @@
             <configuration>
               <includes>cbs-devguide.xml</includes>
                 <security>external</security>
+<canonicalUrlBase>http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content</canonicalUrlBase>              
               <trimWadlUriCount>2</trimWadlUriCount>
             </configuration>
           </execution>
@@ -43,7 +44,7 @@
         <configuration>
 	  <enableDisqus>1</enableDisqus>
 	  <socalIcons>1</socalIcons>
-	  <feedbackEmail>david.hendler@rackspace.com</feedbackEmail>
+	  <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
 	  <!-- <enableGoogleAnalytics>1</enableGoogleAnalytics> -->
 	  <!-- <googleAnalyticsId>UA-17511903-8</googleAnalyticsId> -->
           <branding>rackspace</branding>      
