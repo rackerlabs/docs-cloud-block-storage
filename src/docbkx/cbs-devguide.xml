@@ -36,11 +36,10 @@ format="SVG" scale="60"/>
     xmlns:wadl="http://wadl.dev.java.net/2009/02"
     version="5.0-extension RackBook-2.0" 
     xml:id="cbs-devguide">
+  <title>Rackspace Cloud Block Storage Developer Guide</title>
 
   <?rax title.font.size="35px" subtitle.font.size="20px"?>
   <info>
-    <title>Rackspace Cloud Block Storage Developer Guide</title>
-    <titleabbrev>Cloud Block Storage Developer Guide</titleabbrev>
     <copyright>
       <year>2012</year>
       <year>2013</year>
@@ -66,7 +65,8 @@ format="SVG" scale="60"/>
         <revdescription>
           <itemizedlist spacing="compact">
             <listitem>
-              <para>Removed camel-case for JSON examples. Removed acronym.</para>
+              <para>Removed camel-case for JSON examples. Removed
+                acronym. </para>
             </listitem>
           </itemizedlist>
         </revdescription>
