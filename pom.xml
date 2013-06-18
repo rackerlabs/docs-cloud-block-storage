@@ -43,7 +43,7 @@
         </executions>
         <configuration>
 	  <enableDisqus>1</enableDisqus>
-	  <socalIcons>1</socalIcons>
+	  <socialIcons>1</socialIcons>
 	  <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
 	  <!-- <enableGoogleAnalytics>1</enableGoogleAnalytics> -->
 	  <!-- <googleAnalyticsId>UA-17511903-8</googleAnalyticsId> -->
