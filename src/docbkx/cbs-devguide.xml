@@ -46,7 +46,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2013-01-04</pubdate>
+    <pubdate/>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the
@@ -60,6 +60,37 @@ format="SVG" scale="60"/>
         Interface (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory>
+      <revision>
+        <date>2013-07-31</date>
+        <revdescription>
+          <itemizedlist>
+            <listitem>
+              <para>Added the API operation Rename Volume (<xref
+                  linkend="volume"/>.</para>
+            </listitem>
+            <listitem>
+              <para>Changed how growing a volume from a snapshot
+                works. The API for creating a volume from a snapshot
+                was ignoring the size parameter and was creating a
+                volume the same size as the snapshot. Now the new
+                volume size must be greater than snapshot size.</para>
+            </listitem>
+            <listitem>
+              <para>Added Snapshot progress. The progress is visible
+                in the "os-extended-snapshot-attributes:progress"
+                field of the snapshot. </para>
+            </listitem>
+            <listitem>
+              <para>????Added Instant snapshot deletes. (This one is
+                still "coming soon.")  You can delete your snapshots,
+                and they will show up in cinder as deleted very soon
+                after the call finishes. You can perform additional
+                operations on the snapshot's volume without getting
+                the 409 conflict.????</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
       <revision>
         <date>2013-01-04</date>
         <revdescription>
@@ -312,8 +343,8 @@ format="SVG" scale="60"/>
     <section xml:id="Concepts">
     <title>Concepts</title>
     <?dbhtml stop-chunking?>
-    <para> To use the Cloud Block Storage API effectively, you should
-      understand several key concepts: </para>
+    <para>To use the Cloud Block Storage API effectively, you should
+        understand several key concepts: </para>
     <section xml:id="Instance">
       <title>Instance</title>
       <para>An instance is a virtual machine that
@@ -356,9 +387,9 @@ format="SVG" scale="60"/>
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:html="http://www.w3.org/1999/xhtml">
     <title>General API Information</title>
-    <para> The Cloud Block Storage API is implemented using a ReSTful
+    <para>The Cloud Block Storage API is implemented using a ReSTful
       web service interface. Like other products in the Rackspace
-      Cloud suite,  Cloud Block Storage shares a common token-based
+      Cloud suite, Cloud Block Storage shares a common token-based
       authentication system that allows seamless access between
       products and services. </para>
     <note>
@@ -586,7 +617,7 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="DB_service_versions">
       <title>Cloud Block Storage Service Versions</title>
-      <para> The Cloud Block Storage version defines the contract and
+      <para>The Cloud Block Storage version defines the contract and
         build information for the API. </para>
       <section xml:id="Contract_Version-d1e825">
         <title>Contract Version</title>
@@ -607,17 +638,16 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="Request_Response_Types-d1e903">
       <title>Request/Response Types</title>
-      <para> The Cloud Block Storage API supports both the JSON and
-        XML data serialization formats. The request format is
-        specified using the <code>Content-Type</code> header and is
-          required for calls that have a request
-        body. The response format can be specified in requests either
-        by using the <code>Accept</code> header or by adding an
-          <code>.xml</code> or <code>.json</code> extension to the
-        request URI. Note that it is possible for a response to be
-        serialized using a format different from the request. If no
-        response format is specified, JSON is the default. If
-        conflicting formats are specified using both an
+      <para>The Cloud Block Storage API supports both the JSON and XML
+        data serialization formats. The request format is specified
+        using the <code>Content-Type</code> header and is required for
+        calls that have a request body. The response format can be
+        specified in requests either by using the <code>Accept</code>
+        header or by adding an <code>.xml</code> or <code>.json</code>
+        extension to the request URI. Note that it is possible for a
+        response to be serialized using a format different from the
+        request. If no response format is specified, JSON is the
+        default. If conflicting formats are specified using both an
           <code>Accept</code> header and a query extension, the query
         extension takes precedence.</para>
       <para security="writeronly">Some operations support an Atom
@@ -847,7 +877,7 @@ format="SVG" scale="60"/>
     <?hard-pagebreak?>
     <section xml:id="Limits-d1e1208">
       <title>Limits</title>
-      <para> All accounts, by default, have a preconfigured set of
+      <para>All accounts, by default, have a preconfigured set of
         thresholds (or limits) to manage capacity and prevent abuse of
         the system. The system recognizes two kinds of limits:
           <firstterm>rate limits</firstterm> and <firstterm>absolute
@@ -856,13 +886,13 @@ format="SVG" scale="60"/>
         are fixed. </para>
       <section xml:id="Rate_Limits-d1e1222" security="writeronly">
         <title>Rate Limits</title>
-        <para> Rate limits are specified in terms of both a
+        <para>Rate limits are specified in terms of both a
           human-readable wild-card URI and a machine-processable
           regular expression. The regular expression boundary matcher
           '^' takes effect after the root URI path. For example, the
           regular expression ^/v1.0/instances would match the bolded
           portion of the following URI:
-          https://dfw.blockstorage.api.rackspacecloud.com<emphasis
+            https://dfw.blockstorage.api.rackspacecloud.com<emphasis
             role="bold">/v1.0/instances</emphasis>. </para>
         <para>The following table specifies the default rate limits
           for all API operations for all &GET;, &POST;, &PUT;, and
@@ -911,11 +941,11 @@ format="SVG" scale="60"/>
           </tbody>
         </table>
 
-        <para> Rate limits are applied in order relative to the verb,
+        <para>Rate limits are applied in order relative to the verb,
           going from least to most specific. For example, although the
           threshold for &POST; to /v1.0/* is 10 per minute, one cannot
           &POST; to /v1.0/* more than 50 times within a single day. </para>
-        <para> If you exceed the thresholds established for your
+        <para>If you exceed the thresholds established for your
           account, a <errorcode>413 (Rate Control)</errorcode> HTTP
           response will be returned with a <code>Retry-After</code>
           header to notify the client when it can attempt to try
@@ -962,9 +992,9 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="datetimeformat">
       <title>Date/Time Format</title>
-      <para> The Cloud Block Storage Service uses an ISO-8601
-        compliant date format for the display and consumption of
-        date/time values. </para>
+      <para>The Cloud Block Storage Service uses an ISO-8601 compliant
+        date format for the display and consumption of date/time
+        values. </para>
       <example>
         <title>DB Service Date/Time Format</title>
         <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
@@ -1032,15 +1062,15 @@ format="SVG" scale="60"/>
       <para>To reduce load on the service, list operations will return
         a maximum of 100 items at a time. This is referred to as
           pagination.</para>
-      <para> Pagination is the ability to limit the size of the
+      <para>Pagination is the ability to limit the size of the
         returned data as well as retrieve a specified subset of a
         large data set. Pagination has two key concepts: limit and
-        offset. Limit is the restriction on the
-        maximum number of items for that type that can be returned.
-          Offset is the starting point for the
-        return data. For example, an offset of 50 specifies that the
-        items that are returned should start with item number 51
-        (since the numbering is one-based) in the collection. </para>
+        offset. Limit is the restriction on the maximum number of
+        items for that type that can be returned. Offset is the
+        starting point for the return data. For example, an offset of
+        50 specifies that the items that are returned should start
+        with item number 51 (since the numbering is one-based) in the
+        collection. </para>
       <para>It is important to note that offset
           must be a multiple of the limit (or
         zero), otherwise a Bad Request Exception will be thrown. Both
@@ -1225,7 +1255,7 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="DB_faults" >
       <title>Faults</title>
-      <para> When an error occurs, the Cloud Block Storage Service
+      <para>When an error occurs, the Cloud Block Storage Service
         returns a fault object containing an HTTP error response code
         that denotes the type of error. In the body of the response,
         the system will return additional information about the fault. </para>
@@ -1315,8 +1345,7 @@ format="SVG" scale="60"/>
           </tr>
         </tbody>
       </informaltable>
-      <para>
-        The following two <code>instanceFault</code> examples show
+      <para>The following two <code>instanceFault</code> examples show
         errors when the server has erred or cannot perform the
         requested operation:</para>
       <example>
@@ -1333,8 +1362,8 @@ format="SVG" scale="60"/>
 <xi:include href="../wadls/volume-api/src/samples/db-faults-instanceFault.json" parse="text"/>
                     </programlisting>
       </example>
-      <para> The error code (<code>code</code>) is returned in the
-        body of the response for convenience. The <code>message</code>
+      <para>The error code (<code>code</code>) is returned in the body
+        of the response for convenience. The <code>message</code>
         element returns a human-readable message that is appropriate
         for display to the end user. The <code>details</code> element
         is optional and may contain information that is useful for
@@ -1364,7 +1393,7 @@ format="SVG" scale="60"/>
 <xi:include href="../wadls/volume-api/src/samples/db-faults-badRequest.json" parse="text"/>
                     </programlisting>
       </example>
-      <para> The next two examples show <code>itemNotFound</code>
+      <para>The next two examples show <code>itemNotFound</code>
         errors:</para>
       <example>
         <title>Example itemNotFound Fault: XML</title>
@@ -1412,7 +1441,9 @@ format="SVG" scale="60"/>
     </section>
   </chapter>
 
-  <chapter xml:id="volume">
+  <chapter xml:id="volume"    
+    xmlns="http://docbook.org/ns/docbook"
+    role="api-reference" >
     <title>API Operations</title>
     <para>The Volume API allows you to manage volumes and snapshots
       that can be used with the Compute API.</para>

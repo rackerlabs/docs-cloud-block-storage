@@ -35,6 +35,7 @@
                            </param>
         
                           <method href="#getVolume" />
+                          <method href="#renameVolume" />
                           <method href="#deleteVolume" />
         
                        </resource>
@@ -233,7 +234,36 @@
             </representation>
         </response>
     </method>
-
+    
+    <method name="PUT" id="renameVolume">
+        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" title="Rename Volume">
+            <p xmlns="http://www.w3.org/1999/xhtml">Updates a volume's display name and display description.</p>
+        </wadl:doc>
+        <request>
+            <param name="display_description" style="query" type="string" required="false">
+                <doc><p xmlns="http://www.w3.org/1999/xhtml">
+                    A description of the volume.
+                </p></doc>
+            </param>
+            <param name="display_name" style="query" type="string" required="false">
+                <doc><p xmlns="http://www.w3.org/1999/xhtml">
+                    The name of the volume. 
+                </p></doc>  
+            </param>
+        </request>
+        <response status="200">
+            <representation mediaType="application/xml">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/volume_show.xml" />
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/volume_show.json" />
+                </doc>
+            </representation>
+        </response>
+    </method>
 
     <method name="DELETE" id="deleteVolume">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" title="Delete Volume">
