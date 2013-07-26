@@ -63,7 +63,7 @@
 
                     <resource path="detail" id="snapshot_detail">
                         <!-- as of 7-25-12, this is same as non-detailed   
-                           <method href="#getSnapshotsDetail" /> -->
+                           <method href="#getSnapshotsDetail" />  -->
                     </resource>
 
                     <resource path="{snapshot_id}" id="snapshot_id">
@@ -250,16 +250,27 @@
                     The name of the volume. 
                 </p></doc>  
             </param>
+            <representation mediaType="application/xml">
+                
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/volume_rename_request.xml" />
+                </doc>                            
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/volume_rename_request.json" />
+                </doc>
+            </representation>          
         </request>
         <response status="200">
             <representation mediaType="application/xml">
                 <doc xml:lang="EN">
-                    <xsdxt:code href="samples/volume_show.xml" />
+                    <xsdxt:code href="samples/volume_rename_response.xml" />
                 </doc>
             </representation>
             <representation mediaType="application/json">
                 <doc xml:lang="EN">
-                    <xsdxt:code href="samples/volume_show.json" />
+                    <xsdxt:code href="samples/volume_rename_response.json" />
                 </doc>
             </representation>
         </response>
