@@ -49,7 +49,7 @@ format="SVG" scale="60"/>
     <pubdate/>
     <legalnotice role="rs-api">
       <annotation>
-        <remark>Copyright details are filled in by the template. </remark>
+        <remark>Copyright details are filled in by the template.  </remark>
       </annotation>
     </legalnotice>
     <abstract>
@@ -68,27 +68,36 @@ format="SVG" scale="60"/>
                   linkend="volume"/>).</para>
             </listitem>
             <listitem>
-              <para>Updated the size parameter description for Create
-                Volume in because the way creating a volume from a
-                snapshot changed. The API for creating a volume from a
-                snapshot was ignoring the size parameter and was
-                creating a volume the same size as the snapshot. Now
-                the new volume size must be greater than snapshot
-                size. See the Create Volume size parameter description
-                in </para>
+              <para>Updated the <code>size</code> parameter
+                description for Create Volume in <xref
+                  linkend="volume"/> because the way creating a volume
+                from a snapshot changed. The API for creating a volume
+                from a snapshot was ignoring the size parameter and
+                was creating a volume the same size as the snapshot.
+                Now the volume size must be greater than the snapshot
+                size.  </para>
             </listitem>
             <listitem>
-              <para>Added Snapshot progress. The progress is visible
-                in the "os-extended-snapshot-attributes:progress"
-                field of the snapshot. </para>
+              <para>Updated the Create Snapshot description in <xref
+                  linkend="volume"/> adding information about snapshot
+                progress. The progress is visible in the
+                "os-extended-snapshot-attributes:progress" field of
+                the snapshot. </para>
             </listitem>
             <listitem>
-              <para>???? (This one is still "coming soon.") Added
-                Instant snapshot deletes. You can delete your
-                snapshots, and they will show up in cinder as deleted
-                very soon after the call finishes. You can perform
-                additional operations on the snapshot's volume without
-                getting the 409 conflict.????</para>
+              <para>???? (This one is still "coming soon.") Updated
+                Delete Snapshot description in <xref linkend="volume"
+                /> adding information about  instant snapshot deletes.
+                When you delete your snapshots, they will show up as
+                deleted very soon after the call finishes. You can
+                perform additional operations on the snapshot's volume
+                without getting 409 conflicts.????</para>
+            </listitem>
+            <listitem>
+              <para>Moved the definitions of terms formally in the
+                Concepts section to the <xref
+                  linkend="glossary-d1e018"/> and renamed the Concepts
+                section to <xref linkend="Terminology"/>.</para>
             </listitem>
           </itemizedlist>
         </revdescription>
@@ -332,44 +341,12 @@ format="SVG" scale="60"/>
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:html="http://www.w3.org/1999/xhtml">
 -->
-    <section xml:id="Concepts">
-    <title>Concepts</title>
+    <section xml:id="Terminology">
+    <title>Terminology</title>
     <?dbhtml stop-chunking?>
     <para>To use the Cloud Block Storage API effectively, you should
-        understand several key concepts: </para>
-    <section xml:id="Instance">
-      <title>Instance</title>
-      <para>An instance is a virtual machine that
-        runs inside the cloud.</para>
-    </section>
-    <section xml:id="Instance_Type">
-      <title>Instance Type</title>
-      <para>An instance type describes the
-        compute, memory and storage capacity of Nova computing
-        instances. In layman's terms, this is the size (in terms of
-        vCPUs, RAM, and so forth) of the virtual server that you will
-        be launching.</para>
-    </section>
-      <section xml:id="Snapshot">
-        <title>Snapshot</title>
-        <para>A snapshot is a point in time copy of the data
-          contained in a volume. 
-        </para>
-      </section>
-    <section xml:id="Volume">
-      <title>Volume</title>
-      <para>A volume is a detachable block
-        storage device. You can think of it as a USB hard drive. It
-        can only be attached to one instance at a time.
-      </para>
-    </section>
-      <section xml:id="Volumetype">
-        <title>Volume Type</title>
-        <para>The volume type is the type of a block storage volume.
-          There are two types: SATA for standard performance and
-          SSD for high performance.
-        </para>
-      </section>      
+        understand the terms defined in the <xref
+          linkend="glossary-d1e018"/>.</para>      
       
     </section>
   </preface>
@@ -967,7 +944,7 @@ format="SVG" scale="60"/>
                 standard performance</emphasis> storage per region
                 for applications that just need additional
                 storage on their Cloud Server. </td>
-              <td colspan="1">10 TB or 50 Volumes</td>
+              <td colspan="1">10 TB or 50 volumes</td>
             </tr>
             <tr>
               <td colspan="1">High Performance Storage</td>
@@ -976,7 +953,7 @@ format="SVG" scale="60"/>
                 for databases and high performance applications
                 leveraging <emphasis role="bold">solid state
                   drives</emphasis> for speed and performance. </td>
-              <td colspan="1">10 TB or 50 Volumes</td>
+              <td colspan="1">10 TB or 50 volumes</td>
             </tr>
           </tbody>
         </table>
@@ -1446,5 +1423,56 @@ format="SVG" scale="60"/>
         href="../wadls/volume-api/src/os-volume-1.wadl" 
         xmlns:wadl="http://wadl.dev.java.net/2009/02"/>
   </chapter>
+  <glossary xml:id="glossary-d1e018">
+    <title>Glossary</title>
+    <info>
+      <raxm:metadata
+        xmlns:raxm="http://docs.rackspace.com/api/metadata">
+        <raxm:type>concept</raxm:type>
+        <raxm:product version="v1.0">cdns</raxm:product>
+        <raxm:priority>50</raxm:priority>
+      </raxm:metadata>
+    </info>
+    <glossentry xml:id="claim-d1e017">
+      <glossterm>Instance</glossterm>
+      <glossdef>
+        <para> An instance is a virtual machine that runs inside the
+          cloud.</para>
+      </glossdef>
+    </glossentry>
+    <glossentry xml:id="message-d1e016">
+      <glossterm>Instance Type</glossterm>
+      <glossdef>
+        <para>An instance type describes the compute, memory, and
+          storage capacity of Nova computing instances. In layman's
+          terms, this is the size (in terms of vCPUs, RAM, and so
+          forth) of the virtual server that you will be
+          launching.</para>
+      </glossdef>
+    </glossentry>
+    <glossentry xml:id="producer-d1e020">
+      <glossterm>Snapshot</glossterm>
+      <glossdef>
+        <para>A snapshot is a point-in-time copy of the data contained
+          in a volume.</para>
+      </glossdef>
+    </glossentry>
+    <glossentry xml:id="queue-d1e019">
+      <glossterm>Volume</glossterm>
+      <glossdef>
+        <para>A volume is a detachable block storage device. You can
+          think of it as a USB hard drive. It can only be attached to
+          one instance at a time.</para>
+      </glossdef>
+    </glossentry>
+    <glossentry xml:id="subscriber-d1e018">
+      <glossterm>Volume Type</glossterm>
+      <glossdef>
+        <para>The volume type is the type of a block storage volume.
+          There are two types: SATA for standard performance and SSD
+          for high performance.</para>
+      </glossdef>
+    </glossentry>
+  </glossary>
 
 </book>

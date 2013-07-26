@@ -30,7 +30,7 @@
                        <resource path="{volume_id}" id="volume_id">
                            <param name="volume_id" style="template" required="true">
                                <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                                   The unique identifier of an existing Volume.
+                                   The unique identifier of an existing volume.
                                </p></doc>
                            </param>
         
@@ -48,7 +48,7 @@
                     <resource path="{volume_type_id}" id="volume_type_id">
                         <param name="volume_type_id" style="template" required="true">
                             <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                                The unique identifier of an existing Volume Type.
+                                The unique identifier of an existing volume type.
                             </p></doc>
                         </param>
 
@@ -69,7 +69,7 @@
                     <resource path="{snapshot_id}" id="snapshot_id">
                         <param name="snapshot_id" style="template" required="true">
                             <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                                The unique identifier of an existing Snapshot.
+                                The unique identifier of an existing snapshot.
                             </p></doc>
                         </param>
 
@@ -109,7 +109,7 @@
             </param>
             <param name="size" style="query" type="string" required="true">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                    The size (in GB) of the volume.
+                    The size (in GB) of the volume. Note: When creating a volume from a snapshot, the volume size must be greater than the snapshot size.  
                 </p></doc>
             </param>
             <param name="display_description" style="query" type="string" required="false">
@@ -196,7 +196,7 @@
     <method name="GET" id="getVolumesDetail">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E"
             title="List Volumes (Detailed)">
-            <p xmlns="http://www.w3.org/1999/xhtml">View a list of detailed Volume entities.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">View a list of detailed volume entities.</p>
 
         </wadl:doc>
         <response status="200">
@@ -217,7 +217,7 @@
 
     <method name="GET" id="getVolume">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" title="Show Volume">
-            <p xmlns="http://www.w3.org/1999/xhtml">View all information about a single Volume.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">View all information about a single volume.</p>
         </wadl:doc>
         <request>
         </request>
@@ -278,10 +278,10 @@
 
     <method name="DELETE" id="deleteVolume">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" title="Delete Volume">
-            <p xmlns="http://www.w3.org/1999/xhtml">Delete a single Volume.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">Delete a single volume.</p>
             <doc><p xmlns="http://www.w3.org/1999/xhtml">
                 Due to a limitatin in the OpenStack source, it is not currently (October, 2012) possible
-                to delete a Volume once you have created a snapshot from it.
+                to delete a volume once you have created a snapshot from it.
             </p></doc>
         </wadl:doc>
         <response status="202" />
@@ -289,7 +289,7 @@
 
     <method name="GET" id="getVolumeTypes">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" title="List Volume Types">
-            <p xmlns="http://www.w3.org/1999/xhtml">Request a list of Volume Types.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">Request a list of volume types.</p>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/xml">
@@ -312,7 +312,7 @@
 
     <method name="GET" id="getVolumeType">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" title="Describe Volume Type">
-            <p xmlns="http://www.w3.org/1999/xhtml">Request a single Volume Type.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">Request a single volume type.</p>
 
         </wadl:doc>
   
@@ -333,7 +333,7 @@
     <method name="POST" id="createSnapshot">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" 
             title="Create Snapshot">
-            <p class="shortdesc" xmlns="http://www.w3.org/1999/xhtml">Create a Snapshot.</p>
+            <p class="shortdesc" xmlns="http://www.w3.org/1999/xhtml">Create a snapshot.</p>
         </wadl:doc>
         
         <doc><p xmlns="http://www.w3.org/1999/xhtml">
@@ -344,8 +344,9 @@
             Snapshots are incremental, so each time you create a new snapshot, you are
             appending the incremental changes for the new snapshot to the previous
             one. The previous snapshot is still available. Note that you can
-            create a new volume from the snapshot if desired.       
-        </p></doc>
+            create a new volume from the snapshot if desired. Snapshot progress is visible in the "os-extended-snapshot-attributes:progress" field of the snapshot.
+        </p>
+            </doc>
         <request>
             <param name="snapshot" style="query" type="string" required="true">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
@@ -409,7 +410,7 @@
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" 
             title="List Snapshots">
             <p xmlns="http://www.w3.org/1999/xhtml">
-                View a list of simple Snapshot entities.
+                View a list of simple snapshot entities.
             </p>
         </wadl:doc>
         <response status="200">
@@ -430,7 +431,7 @@
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" 
             title="List Snapshots (Detailed)">
             <p xmlns="http://www.w3.org/1999/xhtml">
-                View a list of detailed Snapshot entities.
+                View a list of detailed snapshot entities.
             </p>
         </wadl:doc>
         <response status="200">
@@ -452,7 +453,7 @@
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" 
             title="Show Snapshot">
             <p xmlns="http://www.w3.org/1999/xhtml">
-                View all information about a single Snapshot.
+                View all information about a single snapshot. 
             </p>
         </wadl:doc>
         <response status="200">
@@ -472,8 +473,12 @@
     <method name="DELETE" id="deleteSnapshot">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" 
             title="Delete Snapshot">
-            <p xmlns="http://www.w3.org/1999/xhtml">Delete a single Snapshot.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">Delete a single snapshot.</p>
         </wadl:doc>
+        <doc><p xmlns="http://www.w3.org/1999/xhtml">
+         When you delete your snapshots, they will show up as deleted very soon after the call finishes. You can perform additional operations on the snapshot's volume without getting 409 conflicts.
+        </p>
+        </doc>
         <response status="202" />
     </method>
 
