@@ -96,11 +96,10 @@
             </p>
             <p xmlns="http://www.w3.org/1999/xhtml">Create a Volume - hey! this is old text. 
             The example below creates a volume called vol-001.</p>
-           
+ -->          
             <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                The example below creates a SATA volume called "vol-001" that has a size of 100 GB.
+                The examples below following table create a SATA volume called "vol-001" that has a size of 100 GB.
             </p></doc>
- -->
         </wadl:doc>
         <request>
             <param name="volume" style="query" type="string" required="true">
@@ -134,11 +133,7 @@
                     then the default, SATA, is used.
                 </p></doc>
             </param>
-            
             <representation mediaType="application/xml">
-                <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                    The example below creates a SATA volume called "vol-001" that has a size of 100 GB.
-                </p></doc>  
                 <doc xml:lang="EN">
                     <xsdxt:code href="samples/volume_create.xml" />
                 </doc>                            
@@ -170,10 +165,7 @@
                     of the call. Once the volume is attached, the new volume will appear 
                     as another device on the Next Generation Cloud Server. It can 
                     then be partitioned, formatted, and mounted for use on the system.    
-                </p></doc>
-                
-
-                
+                </p></doc>               
             </representation>
         </response>
     </method>
