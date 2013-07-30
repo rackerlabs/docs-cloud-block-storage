@@ -5,6 +5,6 @@
         display_decription="Another volume"
         status="active"
         size="100"
-        volume_type="1"
+        volume_type="SATA"
         createdAt="2012-02-14T20:53:07Z">        
 </volume>

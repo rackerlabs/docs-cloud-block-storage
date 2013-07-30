@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <book xmlns="http://docbook.org/ns/docbook"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xi="http://www.w3.org/2001/XInclude"
-    xml:id="cf-releasenotes"
+    xml:id="cbs-releasenotes"
     version="5.0">
-  <?rax  pdf.url="../../../cf-releasenotes-latest.pdf" canonical.url.base="http://docs.rackspace.com/cm/api/v1.0/cf-releasenotes/content"?> 
-    <title>Cloud Block Storage Release Notes</title>
+	
+<?rax title.font.size="30px" subtitle.font.size="20px"?>
+	<title>Cloud Block Storage Release Notes</title>
 
     <info>
 		<author>
@@ -26,7 +28,7 @@
 		</copyright>
 		<releaseinfo>API v1</releaseinfo>
 		<productname>Cloud Block Storage™</productname>
-		<pubdate/>
+		<pubdate>2013-07-31</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
@@ -36,31 +38,24 @@
 			<para>This document is intended for software developers interested
 				in developing applications using the Rackspace Cloud
 				Block Storage Application Programming Interface
-					(<abbrev
-					xmlns:wadl="http://wadl.dev.java.net/2009/02"
-					>API</abbrev>).</para>
+					(<abbrev>API</abbrev>).</para>
 		</abstract>
 		<revhistory>
 			<revision>
 				<date>2013-07-31</date>
 				<revdescription>
-					<para>July 31, 2013 Release</para>
+					<para>July 31, 2013</para>				
 				</revdescription>
 			</revision>
 		</revhistory>
-    	<legalnotice role="rs-api">
-    		<annotation>
-    			<remark>Copyright details are filled in by the template.</remark>
-    		</annotation>
-    	</legalnotice>
-	<raxm:metadata
-	    xmlns:raxm="http://docs.rackspace.com/api/metadata">
+  
+	<raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
 	  <raxm:displayname>Release Notes</raxm:displayname>
 	  <raxm:product version="v1">files</raxm:product>
 	  <raxm:priority>30 </raxm:priority>
 	</raxm:metadata>
     </info>
-	<chapter xml:id="May01">
+	<chapter xml:id="Jul31">
 		<?dbhtml stop-chunking?>
 		<title>July 31, 2013</title>
 		<para>This release contains new features and documentation changes
@@ -68,20 +63,20 @@
 		<!-- New Features -->
 		<itemizedlist>
 			<title>New Features</title>
-			<listitem xmlns:wadl="http://wadl.dev.java.net/2009/02">
+			<listitem >
 				<para>Added the API operation Rename Volume.</para>
 			</listitem>
 		</itemizedlist>
 		<!-- Enchancements -->
 		<itemizedlist>
 			<title>Enhancements</title>
-			<listitem xmlns:wadl="http://wadl.dev.java.net/2009/02">
+			<listitem >
 				<para>For Create Snapshot, added snapshot progress.
 					The progress is visible in the
 					"os-extended-snapshot-attributes:progress" field
 					of the snapshot. </para>
 			</listitem>
-			<listitem xmlns:wadl="http://wadl.dev.java.net/2009/02">
+			<listitem >
 				<para>???? (This one is still "coming soon.") For
 					Delete Snapshots, when you delete your snapshots,
 					they will show up as deleted very soon after the
@@ -93,7 +88,7 @@
 		<!-- Resolved Issues -->
 		<itemizedlist>
 			<title>Resolved Issues</title>
-			<listitem xmlns:wadl="http://wadl.dev.java.net/2009/02">
+			<listitem >
 				<para>For Create Volume, changed the way creating a
 					volume from a snapshot works. The API for creating
 					a volume from a snapshot was ignoring the
@@ -106,7 +101,7 @@
 		<!-- Documentation Changes -->
 		<itemizedlist>
 			<title>Documentation</title>
-			<listitem xmlns:wadl="http://wadl.dev.java.net/2009/02">
+			<listitem >
 				<para>Moved the definitions of terms formally in the
 					Concepts section to the Glossary and renamed the
 					Concepts section to Terminology.</para>
@@ -114,42 +109,12 @@
 		</itemizedlist>
 	</chapter>
 
-	<chapter xml:id="August13">
-		<?dbhtml stop-chunking?>
+	<chapter xml:id="Jan04">
 		<title>January 4, 2013</title>
 		<para>This release contains enhancements, resolved issues, and
-			documentation changes for Cloud Block Storage.</para>
-		
-		<!-- New Features -->
+			documentation changes for Cloud Block Storage.</para> 		
 		<itemizedlist>
-			<title>New Features</title>
-			<listitem>
-				<para>There were no New Features added in this release.
-				</para>
-			</listitem>
-		</itemizedlist>
-		
-		<!-- Enchancements --> 	
-		
-		<itemizedlist>
-			<title>Enhancements</title>
-			<listitem>
-				<para>There were no Enhancements added in this release.</para>
-			</listitem>
-		</itemizedlist>
-		
-		<!-- Resolved Issues --> 
-		<itemizedlist>
-			<title>Resolved Issues</title>
-			<listitem>
-				<para>There were no Resolved Issues added in this release.</para>
-			</listitem>
-		</itemizedlist>
-		
-		<!-- Documentation Changes --> 		
-		<itemizedlist>
-			<title>Documentation</title>
-			<listitem xmlns:wadl="http://wadl.dev.java.net/2009/02">
+			<listitem >
 				<para>Removed camel-case for JSON examples.  </para>
 			</listitem>
 		</itemizedlist>
@@ -157,48 +122,18 @@
 	
 	
 	
-	<chapter xml:id="june12">
-		<?dbhtml stop-chunking?>
+	<chapter xml:id="Oct29">
 		<title>October 29, 2012</title>
 		<para>This release contains new features and documentation changes
 			for Cloud Block Storage.</para>
-
-<!-- New Features -->
 		<itemizedlist>
-			<title>New Features</title>
 			<listitem>
-				<para xmlns:wadl="http://wadl.dev.java.net/2009/02"
-					>Added ORD and LON endpoints.</para>
+				<para>Added ORD and LON endpoints.</para>
 			</listitem>
 		</itemizedlist>
 		
-<!-- Enchancements --> 		
-		<itemizedlist>
-			<title>Enhancements</title>
-			<listitem>
-				<para>There were no enhancements to existing functionality in this release.
-				</para>
-			</listitem>
-		</itemizedlist>
-
-<!-- Resolved Issues --> 
-		<itemizedlist>
-			<title>Resolved Issues</title>
-			<listitem>
-				<para>There were no outstanding issues for this release.</para>
-			</listitem>
-		</itemizedlist>
-		
-<!-- Documentation Changes --> 		
-		<itemizedlist>
-			<title>Documentation</title>
-			<listitem>
-				<para>The documentation was changed to show the new endpoints. </para>
-			</listitem>			
-		</itemizedlist>
 	</chapter>
-	<chapter xml:id="chapter_four">
-		<?dbhtml stop-chunking?>
+	<chapter xml:id="Oct23">
 		<title>October 23, 2012</title>
 		<para>This is the first public release  for Cloud Block
 			Storage.</para>
