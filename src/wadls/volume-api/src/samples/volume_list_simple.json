@@ -5,7 +5,7 @@
             "display_name": "vol-001",
             "display_description": "Another volume.",
             "size": 100,
-            "volume_type": "1",
+            "volume_type": "SATA",
             "snapshot_id": null,
             "attachments": [],
             "createdAt": "2012-02-14T20:53:07Z"
@@ -15,7 +15,7 @@
             "display_name": "vol-002",
             "display_description": "Yet another volume.",
             "size": 100,
-            "volume_type": "1",
+            "volume_type": "SATA",
             "snapshot_id": null,
             "attachments": [],
             "createdAt": "2012-03-15T19:10:03Z"

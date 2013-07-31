@@ -90,7 +90,7 @@
             
 <!--
     The below are examples of how to insert new text into the wadl and have it display.
-    Two forms of text are given, Comment to the Reviewer and Straight Text
+    Two forms of text are given, Comment to the Reviewer and Straight Text 
     <p>
             <remark xmlns="http://docbook.org/ns/docbook" security="reviewer">Reviewer - Here is my question!</remark>
             </p>
@@ -155,6 +155,12 @@
                 <doc xml:lang="EN">
                     <xsdxt:code href="samples/volume_show.json" />
                 </doc>
+                <doc><p xmlns="http://www.w3.org/1999/xhtml">
+                    There are additional parameters in the response that are not described in the request parameter table above. <code>status</code> is typically <code>available</code> although 
+                    it can be <code>creating</code> if the volume is from a snapshot operation. <code>availability_zone</code> is always <code>nova</code>.
+                    <code>bootable</code> is currently always <code>false</code>. <code>source_volid</code> is currently not used by CBS. Also, you can 
+                    provide <code>metadata</code>.
+                </p></doc>   
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     Note that you use the <code>os-volume_attachments</code> API call 
                     (/servers/{server_id}/os-volume_attachments) to attach 
