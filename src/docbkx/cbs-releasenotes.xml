@@ -5,7 +5,7 @@
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xml:id="cbs-releasenotes"
     version="5.0">
-	
+
 <?rax title.font.size="30px" subtitle.font.size="20px"?>
 	<title>Cloud Block Storage Release Notes</title>
 
@@ -28,7 +28,7 @@
 		</copyright>
 		<releaseinfo>API v1</releaseinfo>
 		<productname>Cloud Block Storage™</productname>
-		<pubdate>2013-07-31</pubdate>
+		<pubdate>2013-08-09</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
@@ -42,9 +42,9 @@
 		</abstract>
 		<revhistory>
 			<revision>
-				<date>2013-07-31</date>
+				<date>2013-08-09</date>
 				<revdescription>
-					<para>July 31, 2013</para>				
+					<para>August 9, 2013</para>
 				</revdescription>
 			</revision>
 		</revhistory>
@@ -55,9 +55,9 @@
 	  <raxm:priority>30 </raxm:priority>
 	</raxm:metadata>
     </info>
-	<chapter xml:id="Jul31">
+	<chapter xml:id="Aug09">
 		<?dbhtml stop-chunking?>
-		<title>July 31, 2013</title>
+		<title>August 9, 2013</title>
 		<para>This release contains new features and documentation changes
 			for the Cloud Block Storage API.</para>
 		<!-- New Features -->
@@ -76,14 +76,14 @@
 					"os-extended-snapshot-attributes:progress" field
 					of the snapshot. </para>
 			</listitem>
-			<listitem >
+			<!--<listitem >
 				<para>???? (This one is still "coming soon.") For
 					Delete Snapshots, when you delete your snapshots,
 					they will show up as deleted very soon after the
 					call finishes. You can perform additional
 					operations on the snapshot's volume without
 					getting 409 conflicts.????</para>
-			</listitem>
+			</listitem> -->
 		</itemizedlist>
 		<!-- Resolved Issues -->
 		<itemizedlist>

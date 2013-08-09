@@ -476,10 +476,10 @@
             title="Delete Snapshot">
             <p xmlns="http://www.w3.org/1999/xhtml">Delete a single snapshot.</p>
         </wadl:doc>
-        <doc><p xmlns="http://www.w3.org/1999/xhtml">
+ <!--       <doc><p xmlns="http://www.w3.org/1999/xhtml">
          When you delete your snapshots, they will show up as deleted very soon after the call finishes. You can perform additional operations on the snapshot's volume without getting 409 conflicts.
         </p>
-        </doc>
+        </doc>  -->
         <response status="202" />
     </method>
 

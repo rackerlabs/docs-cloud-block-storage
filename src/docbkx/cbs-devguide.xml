@@ -46,7 +46,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate/>
+    <pubdate>2013-08-09</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.  </remark>
@@ -60,7 +60,7 @@ format="SVG" scale="60"/>
     </abstract>
     <revhistory>
       <revision>
-        <date>2013-07-31</date>
+        <date>2013-08-09</date>
         <revdescription>
           <itemizedlist>
             <listitem>
@@ -75,7 +75,7 @@ format="SVG" scale="60"/>
                 from a snapshot was ignoring the size parameter and
                 was creating a volume the same size as the snapshot.
                 Now the volume size must be greater than the snapshot
-                size.  </para>
+                size. </para>
             </listitem>
             <listitem>
               <para>Updated the Create Snapshot description in <xref
@@ -84,15 +84,15 @@ format="SVG" scale="60"/>
                 "os-extended-snapshot-attributes:progress" field of
                 the snapshot. </para>
             </listitem>
-            <listitem>
+            <!-- <listitem>
               <para>???? (This one is still "coming soon.") Updated
                 Delete Snapshot description in <xref linkend="volume"
                 /> adding information about  instant snapshot deletes.
                 When you delete your snapshots, they will show up as
                 deleted very soon after the call finishes. You can
                 perform additional operations on the snapshot's volume
-                without getting 409 conflicts.????</para>
-            </listitem>
+                without getting 409 conflicts.???? </para>
+            </listitem> -->
             <listitem>
               <para>Moved the definitions of terms formally in the
                 Concepts section to the <xref
