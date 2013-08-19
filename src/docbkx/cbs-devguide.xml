@@ -1408,6 +1408,7 @@ format="SVG" scale="60"/>
         </listitem>
       </itemizedlist>
     </section>
+    <!--
     <section xml:id="RBAC">
       <title>Role Based Access Control (RBAC)</title>
       <para>Role Based Access Control (RBAC) restricts access to the
@@ -1635,7 +1636,7 @@ format="SVG" scale="60"/>
           </tbody>
         </table>
       </section>
-    </section>
+    </section> -->
   </chapter>
 
   <chapter xml:id="volume"    
