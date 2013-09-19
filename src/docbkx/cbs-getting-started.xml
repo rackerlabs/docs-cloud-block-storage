@@ -242,30 +242,30 @@
             </listitem>
             <listitem>
                 <para>If you like to use a more graphical interface,
-                    the ReST client for Firefox also works well for
-                    testing and trying out commands, see <link
-                        xlink:href="https://addons.mozilla.org/en-US/firefox/addon/restclient/">
-                         addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
+            the REST client for Firefox also works well for testing
+            and trying out commands, see <link
+              xlink:href="https://addons.mozilla.org/en-US/firefox/addon/restclient/"
+              >
+              addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
             </listitem>
             <listitem>
                 <para>You can also download and install RESTclient, a
-                    Java application to test ReSTful web services,
-                    from <link
-                        xlink:href="http://code.google.com/p/rest-client/">
-                        code.google.com/p/rest-client/</link>. </para>
+            Java application to test RESTful web services, from <link
+              xlink:href="http://code.google.com/p/rest-client/">
+              code.google.com/p/rest-client/</link>. </para>
             </listitem>
         </itemizedlist>
         <section xml:id="DB_using-curl-cli">
             <title>Send API Requests Using cURL</title>
             <para>cURL is a command-line tool that is available on
-                most UNIX®-like environments and Mac OS X®; it can be
-                downloaded for Windows® so you can interact with the
-                ReST interfaces. For more information on cURL, visit
-                    <link xlink:href="http://curl.haxx.se/">
-                    curl.haxx.se</link>. </para>
-            <para>cURL allows you to transmit and receive HTTP requests and responses from the
-                command-line or from within a shell script. This makes it possible to work with the ReST API
-                directly without using one of the client APIs. </para>
+          most UNIX®-like environments and Mac OS X®; it can be
+          downloaded for Windows® so you can interact with the REST
+          interfaces. For more information on cURL, visit <link
+            xlink:href="http://curl.haxx.se/"> curl.haxx.se</link>. </para>
+            <para>cURL allows you to transmit and receive HTTP
+          requests and responses from the command-line or from within
+          a shell script. This makes it possible to work with the REST
+          API directly without using one of the client APIs. </para>
             <para>The following cURL command-line options will be used
                 in this guide to run the examples:</para>
             <variablelist>
@@ -381,13 +381,12 @@
    
     <section xml:id="Authentication-d1e647">
       <title>Authentication</title>
-      <para> Every ReST request against the Block Storage Service
+      <para> Every REST request against the Block Storage Service
         requires the inclusion of a specific authorization token,
         supplied by the <code>X-Auth-Token</code> HTTP header.
         Customers obtain this token by first using the Rackspace Cloud
         Authentication Service and supplying a valid username and API
-        access key. 
-      </para>
+        access key. </para>
       <para>
         To authenticate, submit a <code>POST/v2.0/tokens</code> request, 
         presenting valid Rackspace customer credentials 

@@ -266,7 +266,7 @@ format="SVG" scale="60"/>
         storage and is familiar with: </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>ReSTful web services</para>
+          <para>RESTful web services</para>
         </listitem>
         <listitem>
           <para>HTTP/1.1 conventions</para>
@@ -356,7 +356,7 @@ format="SVG" scale="60"/>
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:html="http://www.w3.org/1999/xhtml">
     <title>General API Information</title>
-    <para>The Cloud Block Storage API is implemented using a ReSTful
+    <para>The Cloud Block Storage API is implemented using a RESTful
       web service interface. Like other products in the Rackspace
       Cloud suite, Cloud Block Storage shares a common token-based
       authentication system that allows seamless access between
@@ -368,13 +368,12 @@ format="SVG" scale="60"/>
     </note>
     <section xml:id="Authentication-d1e647">
       <title>Authentication</title>
-      <para> Every ReST request against the Block Storage Service
+      <para> Every REST request against the Block Storage Service
         requires the inclusion of a specific authorization token,
         supplied by the <code>X-Auth-Token</code> HTTP header.
         Customers obtain this token by first using the Rackspace Cloud
         Authentication Service and supplying a valid username and API
-        access key. 
-      </para>
+        access key. </para>
       <para>
         To authenticate, submit a <code>POST/v2.0/tokens</code> request, 
         presenting valid Rackspace customer credentials 
@@ -1201,10 +1200,10 @@ format="SVG" scale="60"/>
       <remark security="reviewer">Reviewer: I have hidden this section, since it does not
         appear that it will be supported for Private Beta.
         Correct?</remark>
-      <para> The ReST API allows you to poll for the status of certain
+      <para> The REST API allows you to poll for the status of certain
         operations by performing a &GET; on various URIs. Rather than
         re-downloading and re-parsing the full status at each polling
-        interval, your ReST client may use the
+        interval, your REST client may use the
           <parameter>changes-since</parameter> parameter to check for
         changes since a previous request. The
           <parameter>changes-since</parameter> time is specified as
