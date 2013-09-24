@@ -346,8 +346,12 @@
             appending the incremental changes for the new snapshot to the previous
             one. The previous snapshot is still available. Note that you can
             create a new volume from the snapshot if desired. Snapshot progress is visible in the "os-extended-snapshot-attributes:progress" field of the snapshot.
-        </p>
+        </p>          
             </doc>
+        <doc><p  xmlns="http://www.w3.org/1999/xhtml">
+            When the <command>POST</command> operation returns the 201 response code, the snapshot is complete.
+        </p>
+        </doc>      
         <request>
             <param name="snapshot" style="query" type="string" required="true">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
