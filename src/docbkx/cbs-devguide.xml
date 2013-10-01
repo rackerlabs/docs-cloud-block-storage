@@ -46,7 +46,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2013-08-09</pubdate>
+    <pubdate>2013-10-25</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.  </remark>
@@ -62,7 +62,16 @@ format="SVG" scale="60"/>
       <revision>
         <date>2013-10-25</date>
         <revdescription>
-          <para>Added <xref linkend="RBAC"/>.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Added <xref linkend="RBAC"/>.</para>
+            </listitem>
+            <listitem>
+              <para>Updated <xref
+                  linkend="Service_Access_Endpoints-d1e753"/>.</para>
+            </listitem>
+          </itemizedlist>
+          <para/>
         </revdescription>
       </revision>
       <revision>
