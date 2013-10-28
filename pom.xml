@@ -27,7 +27,6 @@
               <includes>cbs-devguide.xml,
               cbs-releasenotes.xml</includes>
                 <security>external</security>
-              <canonicalUrlBase>http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content</canonicalUrlBase>              
               <trimWadlUriCount>2</trimWadlUriCount>
             </configuration>
           </execution>

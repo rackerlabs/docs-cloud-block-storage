@@ -38,7 +38,7 @@ format="SVG" scale="60"/>
     xml:id="cbs-devguide">
   <title>Rackspace Cloud Block Storage Developer Guide</title>
 
-  <?rax title.font.size="35px" subtitle.font.size="20px"?>
+  <?rax title.font.size="35px" subtitle.font.size="20px" canonical.url.base="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content"?>
   <info>
     <copyright>
       <year>2012</year>
