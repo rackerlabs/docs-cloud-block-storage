@@ -6,7 +6,7 @@
     xml:id="cbs-releasenotes"
     version="5.0">
 
-<?rax title.font.size="30px" subtitle.font.size="20px"?>
+<?rax title.font.size="30px" subtitle.font.size="20px" canonical.url.base="http://docs.rackspace.com/cbs/api/v1.0/cbs-releasenotes/content"?>
 	<title>Cloud Block Storage Release Notes</title>
 
     <info>
