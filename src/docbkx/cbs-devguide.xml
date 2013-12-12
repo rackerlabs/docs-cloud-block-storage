@@ -184,7 +184,7 @@ format="SVG" scale="60"/>
     for specifications of each API.
     </para>
   </preface>
-  <preface xml:id="overview" xmlns:svg="http://www.w3.org/2000/svg"
+  <chapter xml:id="overview" xmlns:svg="http://www.w3.org/2000/svg"
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:html="http://www.w3.org/1999/xhtml">
     <title>Overview</title>
@@ -372,7 +372,7 @@ format="SVG" scale="60"/>
           linkend="glossary-d1e018"/>.</para>      
       
     </section>
-  </preface>
+  </chapter>
   
   <chapter xml:id="General_API_Information-d1e633"
     xmlns:svg="http://www.w3.org/2000/svg"
@@ -417,30 +417,89 @@ format="SVG" scale="60"/>
         </listitem>
       </itemizedlist>
       </para>
-      <para>
-        Your <code>username</code> and
-        <code>password</code> are the ones you use to login to the 
-        Rackspace control panel. Once you are logged in, you can use 
-        the Rackspace control panel to obtain your <code>API key</code>.
+      <para>Your <code>username</code> and <code>password</code> are
+        the ones you use to login to the Rackspace Cloud Control
+        Panel. Once you are logged in, you can use the Cloud Control
+        Panel to obtain your <code>API key</code>. </para>
+      <para><emphasis role="bold">To find your API Key:</emphasis>
       </para>
-      <para>
-        Use the control panel for the region in which your account is based: 
-        <itemizedlist spacing="compact">
+      <orderedlist>
+        <listitem>
+          <para>Log in to the Cloud Control Panel (<link
+              xlink:href="https://mycloud.rackspace.com"
+              >https://mycloud.rackspace.com</link>).</para>
+        </listitem>
+        <listitem>
+          <para>On the upper-right side of the top navigation pane,
+            click your username.</para>
+        </listitem>
+        <listitem>
+          <para>From the menu, select <guilabel>Account
+              Settings</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>In the Login Details section of the Account Settings
+            page, locate the <guilabel>API Key</guilabel> field and
+            click <guibutton>Show</guibutton>.</para>
+        </listitem>
+        <listitem>
+          <para>Copy the value of the API Key and paste it into a text
+            editor of your choice.</para>
+        </listitem>
+        <listitem>
+          <para>Click <guibutton>Hide</guibutton> to hide the value of
+            the API Key.</para>
+        </listitem>
+      </orderedlist>
+      <para>You also need your cloud account number. In the
+        documentation, the account number is often referred to as your
+        tenant name or tenant ID (technically, the ID is different
+        from the name, but at Rackspace, they are the same thing).
+        Together, three components—your username, your API Key, and
+        your tenant ID or cloud account number—form the authentication
+        credentials that are required to connect to the Rackspace
+        cloud.</para>
+      <para>To find your tenant ID or cloud account number, locate
+        your username on the upper-right side of the top navigation
+        pane in the Cloud Control Panel. The tenant ID or account
+        number is in parentheses just to the right of your
+        username.</para>
+      <para> Your account may be based in either the US or the UK.
+        This is not determined by your physical location but by the
+        location of the Rackspace retail site which was used to create
+        your account: </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para> If your account was created via <link
+              xlink:href="http://www.rackspacecloud.com"
+              >http://www.rackspacecloud.com</link>, it is a US-based
+            account. </para>
+        </listitem>
+        <listitem>
+          <para> If your account was created via <link
+              xlink:href="http://www.rackspace.co.uk"
+              >http://www.rackspace.co.uk</link>, it is a UK-based
+            account. </para>
+        </listitem>
+      </itemizedlist>
+      <!--      
+      <para> Use the Cloud Control Panel for the region in which your
+        account is based: <itemizedlist spacing="compact">
           <listitem>
-            <para>
-              US-based accounts use the control panel at <link xlink:href="https://manage.rackspacecloud.com/">https://manage.rackspacecloud.com/</link>.
-            </para>
+            <para> US-based accounts use the control panel at <link
+              xlink:href="https://mycloud.rackspace.com"
+              >https://https://mycloud.rackspace.com</link>. </para>
           </listitem>
-<!--
           <listitem>
             <para> UK-based accounts use the control panel at
               <link
-                xlink:href="https://lon.manage.rackspacecloud.com/"
-                >https://lon.manage.rackspacecloud.com/</link>. </para>
+                xlink:href="http://mycloud.rackspace.co.uk"
+                >http://mycloud.rackspace.co.uk</link>. </para>
           </listitem>
-          -->
-        </itemizedlist> 
-      </para>
+
+        </itemizedlist>
+           -->       
+
       <para>
         <emphasis role="bold">CHOOSE YOUR AUTHENTICATION ENDPOINT</emphasis>
       </para>
@@ -733,127 +792,6 @@ format="SVG" scale="60"/>
             xlink:href="http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac"
             >the Knowledge Center article</link>.</para>
       </section>
-      <!--      
-      <section xml:id="operationsRoles">
-        <title>Cloud Block Storage Operations and Their Roles</title>
-        <para>The following table shows the roles that each Cloud
-          Block Storage operation can have.</para>
-        <table rules="all">
-          <caption>Cloud Block Storage Operations and Their
-            Roles</caption>
-          <col width="25%"/>
-          <col width="25%"/>
-          <col width="25%"/>
-          <col width="25%"/>
-          <thead>
-            <tr>
-              <th>API Operation</th>
-              <th>Creator</th>
-              <th>Observer</th>
-              <th>Admin</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><emphasis role="bold">Volumes:</emphasis></td>
-              <td/>
-              <td/>
-              <td/>
-            </tr>
-            <tr>
-              <td>Create Volume</td>
-              <td>X</td>
-              <td/>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td>List Volumes</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td>Show Volumes</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td>Rename Volume</td>
-              <td>X</td>
-              <td/>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td>Delete Volume</td>
-              <td/>
-              <td/>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td/>
-              <td/>
-              <td/>
-              <td/>
-            </tr>
-            <tr>
-              <td><emphasis role="bold">Volume Types:</emphasis></td>
-              <td/>
-              <td/>
-              <td/>
-            </tr>
-            <tr>
-              <td>List Volume Types</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td>Describe Volume Type</td>
-              <td>X</td>
-              <td/>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td/>
-              <td/>
-              <td/>
-              <td/>
-            </tr>
-            <tr>
-              <td><emphasis role="bold">Snapshots</emphasis>:</td>
-              <td/>
-              <td/>
-              <td/>
-            </tr>
-            <tr>
-              <td>Create Snapshot</td>
-              <td>X</td>
-              <td/>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td>List Snapshots</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td>Show Snapshot</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td>Delete Snapshot</td>
-              <td/>
-              <td/>
-              <td>X</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
--->
     </section>
     <section xml:id="Service_Access_Endpoints-d1e753">
       <title>Service Access/Endpoints</title>
@@ -1757,6 +1695,7 @@ format="SVG" scale="60"/>
         href="../wadls/volume-api/src/os-volume-1.wadl" 
         xmlns:wadl="http://wadl.dev.java.net/2009/02"/>
   </chapter>
+  
   <glossary xml:id="glossary-d1e018">
     <title>Glossary</title>
     <info>
