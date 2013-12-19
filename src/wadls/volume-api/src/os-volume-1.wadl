@@ -83,6 +83,8 @@
         </resource>
     </resources>
 
+
+    <!-- Volume Methods -->
     <method name="POST" id="createVolume">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Create Volume">
            <p xmlns="http://www.w3.org/1999/xhtml" class="shortdesc">Creates the volume.</p>
@@ -104,35 +106,62 @@
         <request>
             <param name="volume" style="query" type="string" required="true">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                    A partial representation of a volume used in the creation process.
+                    A partial representation of a volume used in the creation process. This parameter is required for this operation.
                 </p></doc>
             </param>
             <param name="size" style="query" type="string" required="true">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                    The size (in GB) of the volume. Note: When creating a volume from a snapshot, the volume size must be greater than the snapshot size.  
+                    The size (in GB) of the volume. This is a required parameter. Note: When creating a volume from a snapshot, the volume size must be greater than the snapshot size.  
                 </p></doc>
             </param>
             <param name="display_description" style="query" type="string" required="false">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                    A description of the volume.
+                    A description of the volume. This parameter is optional.
                 </p></doc>
             </param>
             <param name="display_name" style="query" type="string" required="false">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                    The name of the volume. 
+                    The name of the volume. This parameter is optional.
                 </p></doc>
             </param>
             <param name="snapshot_id" style="query" type="string" required="false">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                    The optional snapshot from which to create a volume.
+                    The optional snapshot from which to create a volume. This parameter is optional.
                 </p></doc>
             </param>
             <param name="volume_type" style="query" type="string" required="false">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                    The type of volume to create, either SATA or SSD. If not defined,
+                    The type of volume to create, either SATA or SSD. This parameter is optional. If not defined,
                     then the default, SATA, is used.
                 </p></doc>
             </param>
+            <param name="source_volid" style="template" type="string" required="false">
+                <doc><p xmlns="http://www.w3.org/1999/xhtml">
+                    The source identifier of an existing Cloud Block Storage volume 
+                    that you want to clone (copy) to create a new volume. This parameter is optional.
+                </p></doc>
+            </param> 
+            <param name="status" style="template" type="string" required="false">
+                <doc><p xmlns="http://www.w3.org/1999/xhtml">
+                    Status is typically <code>available</code> although 
+                    it can be <code>creating</code> if the volume is from a snapshot operation.
+                </p></doc>
+            </param> 
+            <param name="availability_zone" style="template" type="string" required="false">
+                <doc><p xmlns="http://www.w3.org/1999/xhtml">
+                    This parameter is currently is always <code>nova</code>.
+                </p></doc>
+            </param>
+            <param name="bootable" style="template" type="string" required="false">
+                <doc><p xmlns="http://www.w3.org/1999/xhtml">
+                    This parameter is currently is currently always <code>false</code>.
+                </p></doc>
+            </param>  
+            <param name="metadata" style="template" type="string" required="false">
+                <doc><p xmlns="http://www.w3.org/1999/xhtml">
+                    This optional parameter is available is you want to set any metadata values.
+                </p></doc>
+            </param>                 
             <representation mediaType="application/xml">
                 <doc xml:lang="EN">
                     <xsdxt:code href="samples/volume_create.xml" />
@@ -156,10 +185,10 @@
                     <xsdxt:code href="samples/volume_show.json" />
                 </doc>
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                    There are additional parameters in the response that are not described in the request parameter table above. <code>status</code> is typically <code>available</code> although 
-                    it can be <code>creating</code> if the volume is from a snapshot operation. <code>availability_zone</code> is always <code>nova</code>.
-                    <code>bootable</code> is currently always <code>false</code>. <code>source_volid</code> is currently not used by CBS. Also, you can 
-                    provide <code>metadata</code>.
+                    When you use <code>source_volid</code> for volume cloning, note that this feature currently 
+                    has the following constraints. You cannot create more than one clone per volume. Snapshots 
+                    and volume cloning use the same locking mechanism, so you cannot run a snapshot and a clone 
+                    of the same volume concurrently.
                 </p></doc>   
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     Note that you use the <code>os-volume_attachments</code> API call 
@@ -168,7 +197,7 @@
                     the specified {server_id}). 
                     Refer to the <i>Next Generation Cloud Servers Developer Guide</i> 
                     at <a href="http://docs.rackspace.com/api">docs.rackspace.com</a> for details 
-                    of the call. Once the volume is attached, the new volume will appear 
+                    of the call. Once the volume is attached, the new volume appears 
                     as another device on the Next Generation Cloud Server. It can 
                     then be partitioned, formatted, and mounted for use on the system.    
                 </p></doc>               
@@ -288,6 +317,8 @@
         <response status="202" />
     </method>
 
+
+<!-- Volume Types Methods -->
     <method name="GET" id="getVolumeTypes">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" title="List Volume Types">
             <p xmlns="http://www.w3.org/1999/xhtml">Request a list of volume types.</p>
@@ -330,7 +361,9 @@
             </representation>
         </response>
     </method>
-
+    
+    
+<!-- Snapshot Methods -->
     <method name="POST" id="createSnapshot">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" 
             title="Create Snapshot">
