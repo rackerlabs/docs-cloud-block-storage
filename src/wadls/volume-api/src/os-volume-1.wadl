@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- (C) 2012 OpenStack LLC., All Rights Reserved -->
 
 <application xmlns="http://wadl.dev.java.net/2009/02"
              xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
@@ -186,7 +185,7 @@
                 </doc>
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     When you use <code>source_volid</code> for volume cloning, note that this feature currently 
-                    has the following constraints. You cannot create more than one clone per volume. Snapshots 
+                    has the following constraints. You cannot create more than one clone per volume concurrently. Snapshots 
                     and volume cloning use the same locking mechanism, so you cannot run a snapshot and a clone 
                     of the same volume concurrently.
                 </p></doc>   

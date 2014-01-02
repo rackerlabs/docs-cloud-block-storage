@@ -24,11 +24,14 @@
 			<year xmlns:svg="http://www.w3.org/2000/svg"
 				xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
 				xmlns:html="http://www.w3.org/1999/xhtml">2013</year>
+			<year xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml">2014</year>
 			<holder>Rackspace US, Inc.</holder>
 		</copyright>
 		<releaseinfo>API v1</releaseinfo>
 		<productname>Cloud Block Storage™</productname>
-		<pubdate>2013-08-09</pubdate>
+		<pubdate>2014-01-02</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
@@ -42,9 +45,9 @@
 		</abstract>
 		<revhistory>
 			<revision>
-				<date>2013-08-09</date>
+				<date>2014-01-02</date>
 				<revdescription>
-					<para>August 9, 2013</para>
+					<para>January 02, 2014</para>
 				</revdescription>
 			</revision>
 		</revhistory>
@@ -55,6 +58,27 @@
 	  <raxm:priority>30 </raxm:priority>
 	</raxm:metadata>
     </info>
+	<chapter xml:id="Jan02" >
+		<?dbhtml stop-chunking?>
+		<title>January 2, 2014</title>
+		<para>This release contains new features and documentation
+			changes for the Cloud Block Storage API.</para>
+		<!-- New Features -->
+		<itemizedlist>
+			<title>New Features</title>
+			<listitem>
+				<para>Added the volume cloning capability that allows you to
+					create a new Cloud Block Storage volume from an
+					existing volume by adding the <code
+						xmlns:wadl="http://wadl.dev.java.net/2009/02"
+						>source_volid</code> parameter to the Create
+					Volume operation.</para>
+			</listitem>
+		</itemizedlist>
+		<!-- Enchancements -->
+		<!-- Resolved Issues -->
+		<!-- Documentation Changes -->
+	</chapter>
 	<chapter xml:id="Aug09">
 		<?dbhtml stop-chunking?>
 		<title>August 9, 2013</title>

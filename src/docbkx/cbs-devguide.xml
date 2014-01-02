@@ -43,10 +43,11 @@ format="SVG" scale="60"/>
     <copyright>
       <year>2012</year>
       <year>2013</year>
+      <year>2014</year>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2013-12-23</pubdate>
+    <pubdate>2014-01-02</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.  </remark>
@@ -60,7 +61,7 @@ format="SVG" scale="60"/>
     </abstract>
     <revhistory>
       <revision>
-        <date>2013-12-23</date>
+        <date>2014-01-02</date>
         <revdescription>
           <itemizedlist>
             <listitem>
@@ -562,14 +563,14 @@ format="SVG" scale="60"/>
               key.</emphasis></para>
             <para>
               <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
-'{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"theUserName", "apiKey":"00a00000a000a0000000a000a00aaa0a" } } }' -H "Content-type: application/json"</literallayout>
+'{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"yourUserName", "apiKey":"yourApiKey" } } }' -H "Content-type: application/json"</literallayout>
             </para>
             <para><emphasis>You can request a token by
               providing your username and your
               password.</emphasis></para>
             <para>
               <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
-'{"auth":{"passwordCredentials":{"username":"theUserName","password":"thePassword"}}}' -H "Content-type: application/json"</literallayout>
+'{"auth":{"passwordCredentials":{"username":"yourUserName","password":"yourPassword"}}}' -H "Content-type: application/json"</literallayout>
             </para>
             <para> Successful authentication returns a token
               which you can use as evidence that your
@@ -589,7 +590,7 @@ format="SVG" scale="60"/>
               along with the token.</para>
             <para><emphasis>You can use a token and a service endpoint to tell a service that your credentials are valid.</emphasis></para>
             <para>
-              <literallayout class="monospaced">curl -X GET https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+              <literallayout class="monospaced">curl -X GET https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
 -H 'X-Auth-Token:11111111-aaaa-2222-bbbb-3333cccc4444' --verbose</literallayout>
             </para>
           </listitem>
