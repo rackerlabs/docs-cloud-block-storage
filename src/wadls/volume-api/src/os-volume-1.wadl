@@ -98,9 +98,9 @@
             <p xmlns="http://www.w3.org/1999/xhtml">Create a Volume - hey! this is old text. 
             The example below creates a volume called vol-001.</p>
  -->          
-            <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                The examples below following table create a SATA volume called "vol-001" that has a size of 100 GB.
-            </p></doc>
+            <p xmlns="http://www.w3.org/1999/xhtml">
+                The examples in the following table create a SATA volume called "vol-001" that has a size of 100 GB.
+            </p>
         </wadl:doc>
         <request>
             <param name="volume" style="query" type="string" required="true">
@@ -381,7 +381,7 @@
         </p>          
             </doc>
         <doc><p  xmlns="http://www.w3.org/1999/xhtml">
-            When the <command>POST</command> operation returns the 201 response code, the snapshot is complete.
+            When the <code>POST</code> operation returns the 201 response code, the snapshot is complete.
         </p>
         </doc>      
         <request>
