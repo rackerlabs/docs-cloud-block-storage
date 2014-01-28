@@ -103,38 +103,48 @@
             </p>
         </wadl:doc>
         <request>
-            <param name="volume" style="query" type="string" required="true">
+            <representation mediaType="application/xml">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/volume_create.xml" />
+                </doc>                             
+                <param xmlns="http://wadl.dev.java.net/2009/02"
+                    name="volume" style="plain" type="string" required="true" path="/account/volumes/volume" >
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     A partial representation of a volume used in the creation process. This parameter is required for this operation.
                 </p></doc>
             </param>
-            <param name="size" style="query" type="string" required="true">
+                <param xmlns="http://wadl.dev.java.net/2009/02"
+                    name="size" style="plain" type="string" required="true" path="/account/volumes/size">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     The size (in GB) of the volume. This is a required parameter. Note: When creating a volume from a snapshot, the volume size must be greater than the snapshot size.  
                 </p></doc>
             </param>
-            <param name="display_description" style="query" type="string" required="false">
+                <param xmlns="http://wadl.dev.java.net/2009/02"
+                    name="display_description" style="plain" type="string" required="false" path="/account/volumes/display_description" >
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     A description of the volume. This parameter is optional.
                 </p></doc>
             </param>
-            <param name="display_name" style="query" type="string" required="false">
+                <param xmlns="http://wadl.dev.java.net/2009/02"
+                    name="display_name" style="plain" type="string" required="false" path="/account/volumes/display_name">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     The name of the volume. This parameter is optional.
                 </p></doc>
             </param>
-            <param name="snapshot_id" style="query" type="string" required="false">
+                <param xmlns="http://wadl.dev.java.net/2009/02"
+                    name="snapshot_id" style="plain" type="string" required="false" path="/account/volumes/snapshot_id" >
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     The optional snapshot from which to create a volume. This parameter is optional.
                 </p></doc>
             </param>
-            <param name="volume_type" style="query" type="string" required="false">
+                <param xmlns="http://wadl.dev.java.net/2009/02"
+                    name="volume_type" style="plain" type="string" required="false" path="/account/volumes/volume_type">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     The type of volume to create, either SATA or SSD. This parameter is optional. If not defined,
                     then the default, SATA, is used.
                 </p></doc>
             </param>
-            <param name="source_volid" style="template" type="string" required="false">
+                <param name="source_volid" style="plain" type="string" required="false" path="/account/volumes/source_volid">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     The source identifier of an existing Cloud Block Storage volume 
                     that you want to clone (copy) to create a new volume. This parameter is optional.
@@ -161,10 +171,7 @@
                     This optional parameter is available is you want to set any metadata values.
                 </p></doc>
             </param>                 
-            <representation mediaType="application/xml">
-                <doc xml:lang="EN">
-                    <xsdxt:code href="samples/volume_create.xml" />
-                </doc>                            
+
             </representation>
             <representation mediaType="application/json">
                 <doc xml:lang="EN">
@@ -269,21 +276,20 @@
             <p xmlns="http://www.w3.org/1999/xhtml">Updates a volume's display name and display description.</p>
         </wadl:doc>
         <request>
-            <param name="display_description" style="query" type="string" required="false">
+            <representation mediaType="application/xml">                
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/volume_rename_request.xml" />
+                </doc>                            
+                <param name="display_description" style="plain" type="string" required="false" path="/account/volumes/display_description">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     A description of the volume.
                 </p></doc>
             </param>
-            <param name="display_name" style="query" type="string" required="false">
+                <param name="display_name" style="plain" type="string" required="false" path="/account/volumes/display_name">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     The name of the volume. 
                 </p></doc>  
             </param>
-            <representation mediaType="application/xml">
-                
-                <doc xml:lang="EN">
-                    <xsdxt:code href="samples/volume_rename_request.xml" />
-                </doc>                            
             </representation>
             <representation mediaType="application/json">
                 <doc xml:lang="EN">
@@ -364,53 +370,59 @@
     
 <!-- Snapshot Methods -->
     <method name="POST" id="createSnapshot">
-        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" 
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="E" 
             title="Create Snapshot">
-            <p class="shortdesc" xmlns="http://www.w3.org/1999/xhtml">Create a snapshot.</p>
-        </wadl:doc>
-        
-        <doc><p xmlns="http://www.w3.org/1999/xhtml">
-            Creating a snapshot makes a point-in-time copy of the
-            volume. All writes to the volume should be flushed <i>before</i>
+            <para role="shortdesc" >Create a snapshot.</para>
+           
+        <para>Creating a snapshot makes a point-in-time copy of the
+            volume. All writes to the volume should be flushed <emphasis>before</emphasis>
             creating the snapshot, either by un-mounting any file systems on the
             volume, or by detaching the volume before creating the snapshot.
             Snapshots are incremental, so each time you create a new snapshot, you are
             appending the incremental changes for the new snapshot to the previous
             one. The previous snapshot is still available. Note that you can
-            create a new volume from the snapshot if desired. Snapshot progress is visible in the "os-extended-snapshot-attributes:progress" field of the snapshot.
-        </p>          
-            </doc>
-        <doc><p  xmlns="http://www.w3.org/1999/xhtml">
+            create a new volume from the snapshot if desired. </para>
+            <note><para>Snapshot progress is visible in <code>os-extended-snapshot-attributes:progress</code> in the Show Snapshot response body. See the response examples in <xref linkend="GET_getSnapshot_v1__tenant_id__snapshots__snapshot_id__v1__tenant_id__snapshots"/>.</para></note>         
+            <para >
             When the <code>POST</code> operation returns the 201 response code, the snapshot is complete.
-        </p>
-        </doc>      
+        </para>
+        </wadl:doc>   
         <request>
-            <param name="snapshot" style="query" type="string" required="true">
+            <representation mediaType="application/xml">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/snapshot_create.xml" />
+                </doc>
+                <param xmlns="http://wadl.dev.java.net/2009/02"
+                    name="snapshot" style="plain" type="string" required="true" path="/account/snapshots/snapshot" >
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     A partial representation of a snapshot used in the creation process.
                 </p>
                 </doc>
             </param>
-            <param name="volume_id" style="query" type="string" required="true">
+                <param xmlns="http://wadl.dev.java.net/2009/02"
+                    name="volume_id" style="plain" type="string" required="true" path="/account/snapshots/volume_id">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     The ID of the volume to snapshot.
                 </p>
                 </doc>
             </param>
-            <param name="force" style="query" type="string" required="false">
+                <param xmlns="http://wadl.dev.java.net/2009/02"
+                    name="force" style="plain" type="string" required="false" path="/account/snapshots/force">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     [True/False] Indicate whether to snapshot, even if the volume is attached. 
                     Default==False.
                 </p>
                 </doc>
             </param>            
-            <param name="display_name" style="query" type="string" required="false">
+                <param xmlns="http://wadl.dev.java.net/2009/02"
+                    name="display_name" style="plain" type="string" required="false" path="/account/snapshots/display_name">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     Name of the snapshot. Default==None.
                 </p>
                 </doc>
             </param>
-            <param name="display_description" style="query" type="string" required="false">
+                <param xmlns="http://wadl.dev.java.net/2009/02"
+                    name="display_description" style="plain" type="string" required="false" path="/account/snapshots/display_description" >
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     Description of snapshot. Default==None.
                 </p>
@@ -418,10 +430,7 @@
             </param>
             
             
-            <representation mediaType="application/xml">
-                <doc xml:lang="EN">
-                    <xsdxt:code href="samples/snapshot_create.xml" />
-                </doc>
+
             </representation>
             <representation mediaType="application/json">
                 <doc xml:lang="EN">
@@ -487,11 +496,12 @@
 
 
     <method name="GET" id="getSnapshot">
-        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" 
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="E" 
             title="Show Snapshot">
-            <p xmlns="http://www.w3.org/1999/xhtml">
+            <para role="shortdesc">
                 View all information about a single snapshot. 
-            </p>
+            </para>
+            <note><para>Snapshot progress is visible in <code>os-extended-snapshot-attributes:progress</code> in the Show Snapshot response body. See the examples below.</para></note>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/xml">

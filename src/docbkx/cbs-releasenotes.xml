@@ -7,7 +7,7 @@
     version="5.0">
 
 <?rax title.font.size="30px" subtitle.font.size="20px" canonical.url.base="http://docs.rackspace.com/cbs/api/v1.0/cbs-releasenotes/content"?>
-	<title>Rackspace Cloud Block Storage Release Notes</title>
+	<title>Cloud Block Storage Release Notes</title>
 
     <info>
 		<author>
@@ -31,7 +31,7 @@
 		</copyright>
 		<releaseinfo>API v1</releaseinfo>
 		<productname>Cloud Block Storage™</productname>
-		<pubdate>2014-01-02</pubdate>
+		<pubdate>2014-01-28</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
@@ -44,6 +44,16 @@
 				Interface (<abbrev>API</abbrev>).</para>
 		</abstract>
 		<revhistory>
+			<revision>
+				<date>2014-01-28</date>
+				<revdescription>
+					<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Updated the
+						Show Snapshot description to mention the
+						progress indicator,
+							<code>os-extended-snapshot-attributes:progress</code>,
+						and show it in the example responses. </para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2014-01-02</date>
 				<revdescription>
@@ -80,6 +90,28 @@
 		<para>Rackspace welcomes your comments, feedback, and bug
 			reports.</para>
 	</preface>
+	<chapter xml:id="Jan28" >
+		<?dbhtml stop-chunking?>
+		<title>January 28, 2014</title>
+		<para>This release contains documentation changes for the
+			Cloud Block Storage API.</para>
+		<!-- New Features -->
+		<!-- Enchancements -->
+		<!-- Resolved Issues -->
+		<!-- Documentation Changes -->
+		<itemizedlist>
+			<title>Documentation</title>
+			<listitem>
+				<para>The description of Show Snapshot in the API Operations
+					chapter of the <citetitle>Cloud Block Storage
+						Developer Guide</citetitle> was updated to
+					include the progress indicator, <code
+						xmlns:wadl="http://wadl.dev.java.net/2009/02"
+						>os-extended-snapshot-attributes:progress</code>,
+					and show it in the example responses. </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
 	<chapter xml:id="Jan02" >
 		<?dbhtml stop-chunking?>
 		<title>January 2, 2014</title>
