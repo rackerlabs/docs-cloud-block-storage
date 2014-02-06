@@ -22,8 +22,8 @@
                    <method href="#getVolumesSimple" />
 
                        <resource path="detail" id="detail">
-                           <!-- as of 7-25-12, this is same as non-detailed  
-                               <method href="#getVolumesDetail" />  -->
+                           <!-- as of 7-25-12, this is same as non-detailed -->
+                               <method href="#getVolumesDetail" /> 
                        </resource>
 
                        <resource path="{volume_id}" id="volume_id">
@@ -61,8 +61,8 @@
                     <method href="#getSnapshotsSimple" />
 
                     <resource path="detail" id="snapshot_detail">
-                        <!-- as of 7-25-12, this is same as non-detailed   
-                           <method href="#getSnapshotsDetail" />  -->
+                        <!-- as of 7-25-12, this is same as non-detailed  --> 
+                           <method href="#getSnapshotsDetail" />  
                     </resource>
 
                     <resource path="{snapshot_id}" id="snapshot_id">
@@ -213,7 +213,7 @@
 
     <method name="GET" id="getVolumesSimple">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" title="List Volumes">
-            <p xmlns="http://www.w3.org/1999/xhtml">View a list of volumes.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">Lists summary information for all block storage volumes that the tenant who submits the request can access.</p>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/xml">
@@ -232,20 +232,20 @@
     <method name="GET" id="getVolumesDetail">
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E"
             title="List Volumes (Detailed)">
-            <p xmlns="http://www.w3.org/1999/xhtml">View a list of detailed volume entities.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">Lists detailed information for all Block Storage volumes that the tenant who submits the request can access.</p>
 
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/xml">
                 <doc xml:lang="EN">
                     
-                    <xsdxt:code href="samples/volume_list_simple.xml" />
+                    <xsdxt:code href="samples/volume_list_detailed.xml" />
                     
                 </doc>
             </representation>
             <representation mediaType="application/json">
                 <doc xml:lang="EN">
-                    <xsdxt:code href="samples/volume_list_simple.json" />
+                    <xsdxt:code href="samples/volume_list_detailed.json" />
                 </doc>
             </representation>
         </response>
@@ -456,7 +456,7 @@
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" 
             title="List Snapshots">
             <p xmlns="http://www.w3.org/1999/xhtml">
-                View a list of simple snapshot entities.
+                Lists summary information for all Block Storage snapshots that the tenant who submits the request can access.
             </p>
         </wadl:doc>
         <response status="200">
@@ -477,18 +477,18 @@
         <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="E" 
             title="List Snapshots (Detailed)">
             <p xmlns="http://www.w3.org/1999/xhtml">
-                View a list of detailed snapshot entities.
+                Lists detailed information for all Block Storage snapshots that the tenant who submits the request can access. 
             </p>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/xml">
                 <doc xml:lang="EN">
-                    <xsdxt:code href="samples/snapshot_list_simple.xml" />
+                    <xsdxt:code href="samples/snapshot_list_detailed.xml" />
                 </doc>
             </representation>
             <representation mediaType="application/json">
                 <doc xml:lang="EN">
-                    <xsdxt:code href="samples/snapshot_list_simple.json" />
+                    <xsdxt:code href="samples/snapshot_list_detailed.json" />
                 </doc>
             </representation>
         </response>
