@@ -149,26 +149,28 @@
                     The source identifier of an existing Cloud Block Storage volume 
                     that you want to clone (copy) to create a new volume. This parameter is optional.
                 </p></doc>
-            </param> 
+            </param>
+<!--                
             <param name="status" style="template" type="string" required="false">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     Status is typically <code>available</code> although 
                     it can be <code>creating</code> if the volume is from a snapshot operation.
                 </p></doc>
-            </param> 
-            <param name="availability_zone" style="template" type="string" required="false">
+            </param>
+-->            
+            <param name="availability_zone" style="plain" type="string" required="false">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                    This parameter is currently is always <code>nova</code>.
+                    This parameter is currently always <code>nova</code>.
                 </p></doc>
             </param>
-            <param name="bootable" style="template" type="string" required="false">
+ <!--           <param name="bootable" style="template" type="string" required="false">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
                     This parameter is currently is currently always <code>false</code>.
                 </p></doc>
-            </param>  
-            <param name="metadata" style="template" type="string" required="false">
+            </param>  -->
+            <param name="metadata" style="plain" type="string" required="false">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                    This optional parameter is available is you want to set any metadata values.
+                    This optional parameter is available if you want to set any metadata values on the volume.
                 </p></doc>
             </param>                 
 
