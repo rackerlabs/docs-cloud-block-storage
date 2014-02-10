@@ -31,7 +31,7 @@
 		</copyright>
 		<releaseinfo>API v1</releaseinfo>
 		<productname>Rackspace Cloud Block Storage</productname>
-		<pubdate>2014-02-06</pubdate>
+		<pubdate>2014-02-10</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
@@ -44,6 +44,17 @@
 				Interface (<abbrev>API</abbrev>).</para>
 		</abstract>
 		<revhistory>
+			<revision>
+				<date>2014-02-10</date>
+				<revdescription>
+					<para>Added the <code>availability_zone</code> and
+							<code>metadata</code> request parameter
+						descriptions to the Create Volume method
+						description in the <citetitle>Cloud Block
+							Storage Developer
+						Guide</citetitle>.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2014-02-06</date>
 				<revdescription>
@@ -75,7 +86,97 @@
 			<revision>
 				<date>2014-01-02</date>
 				<revdescription>
-					<para>January 02, 2014</para>
+					<itemizedlist
+						xmlns:wadl="http://wadl.dev.java.net/2009/02">
+						<listitem>
+							<para>Added the volume cloning capability
+								that allows you to create a new Cloud
+								Block Storage volume from an existing
+								volume by adding the
+								<code>source_volid</code> parameter
+								to the Create Volume operation.</para>
+						</listitem>
+						<listitem>
+							<para>Updated the instructions for
+								locating the API Key, Tenant ID, and
+								account number in the Cloud Control
+								Panel in the Authentication section.
+							</para>
+						</listitem>
+					</itemizedlist>
+				</revdescription>
+			</revision>
+			<revision xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml"
+				xmlns:wadl="http://wadl.dev.java.net/2009/02">
+				<date>2013-10-21</date>
+				<revdescription>
+					<para>Added the HKG service endpoint.</para>
+				</revdescription>
+			</revision>
+			<revision xmlns:wadl="http://wadl.dev.java.net/2009/02">
+				<date>2013-10-03</date>
+				<revdescription>
+				
+							<para>Added RBAC.</para>
+				</revdescription>
+			</revision>
+		
+		
+			<revision>
+				<date>2013-08-09</date>
+				<revdescription>
+					<itemizedlist>
+						<listitem>
+							<para>Added the API operation Rename
+								Volume.</para>
+						</listitem>
+						<listitem>
+							<para>Updated the <code>size</code>
+								parameter description for Create
+								Volume method because the way creating
+								a volume from a snapshot changed. The
+								API for creating a volume from a
+								snapshot was ignoring the size
+								parameter and was creating a volume
+								the same size as the snapshot. Now the
+								volume size must be greater than the
+								snapshot size. </para>
+						</listitem>
+						<listitem>
+							<para>Updated the Create Snapshot
+								description,  adding information about
+								snapshot progress. The progress is
+								visible in the
+								<code>os-extended-snapshot-attributes:progress</code>
+								field of the snapshot. </para>
+						</listitem>
+						<listitem>
+							<para>Moved the definitions of terms
+								formally in the Concepts section to
+								the glossary and renamed the Concepts
+								section to Terminology.</para>
+						</listitem>
+					</itemizedlist>
+				</revdescription>
+			</revision>
+			<revision>
+				<date>2013-01-04</date>
+				<revdescription>
+					<para>Removed camel-case for JSON examples. </para>
+				</revdescription>
+			</revision>
+			<revision>
+				<date>2012-10-29</date>
+				<revdescription>
+					<para>Added ORD and LON endpoints.</para>
+				</revdescription>
+			</revision>
+			<revision>
+				<date>2012-10-23</date>
+				<revdescription>
+					<para>First public release.</para>
 				</revdescription>
 			</revision>
 		</revhistory>
@@ -108,6 +209,34 @@
 		<para>Rackspace welcomes your comments, feedback, and bug
 			reports.</para>
 	</preface>
+	<chapter xml:id="doc_change_history">
+		<title>Document Change History</title>
+		<para>This version of the release notes replaces and obsoletes
+			all earlier versions. The most recent changes are
+			described in the following table:</para>
+		<?rax revhistory?>
+	</chapter>
+	<chapter xml:id="Feb10">
+		<?dbhtml stop-chunking?>
+		<title>February 10, 2014</title>
+		<para>This release contains documentation changes for the
+			Cloud Block Storage API.</para>
+		<!-- New Features -->
+		<!-- Enchancements -->
+		<!-- Resolved Issues -->
+		<!-- Documentation Changes -->
+		<itemizedlist>
+			<title>Documentation</title>
+			<listitem>
+				<para>Added the <code>availability_zone</code> and
+						<code>metadata</code> request parameter
+					descriptions to the Create Volume method
+					description in the API Operations chapter of the
+						<citetitle>Cloud Block Storage Developer
+						Guide</citetitle>.</para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
 	<chapter xml:id="Feb06">
 		<?dbhtml stop-chunking?>
 		<title>February 6, 2014</title>
@@ -181,40 +310,69 @@
 			</listitem>
 		</itemizedlist>
 	</chapter>
-	<chapter xml:id="Aug09">
+	<chapter xml:id="Oct21">
 		<?dbhtml stop-chunking?>
-		<title>August 9, 2013</title>
-		<para>This release contains new features and documentation changes
-			for the Cloud Block Storage API.</para>
+		<title>October 21, 2013</title>
+		<para>This release contains new features for the Cloud Block Storage
+			API.</para>
 		<!-- New Features -->
 		<itemizedlist>
 			<title>New Features</title>
-			<listitem >
+			<listitem>
+				<para xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:m="http://www.w3.org/1998/Math/MathML"
+					xmlns:html="http://www.w3.org/1999/xhtml"
+					xmlns:wadl="http://wadl.dev.java.net/2009/02"
+					>Added the HKG service endpoint.</para>
+			</listitem>
+		</itemizedlist>
+		<!-- Enchancements -->
+		<!-- Resolved Issues -->
+		<!-- Documentation Changes -->
+	</chapter>
+	<chapter xml:id="Oct03">
+		<?dbhtml stop-chunking?>
+		<title>October 3, 2013</title>
+		<para>This release contains new features for the Cloud Block Storage
+			API.</para>
+		<!-- New Features -->
+		<itemizedlist>
+			<title>New Features</title>
+			<listitem>
+				<para xmlns:wadl="http://wadl.dev.java.net/2009/02"
+					>Added RBAC.</para>
+			</listitem>
+		</itemizedlist>
+		<!-- Enchancements -->
+		<!-- Resolved Issues -->
+		<!-- Documentation Changes -->
+	</chapter>
+	<chapter xml:id="Aug09">
+		<?dbhtml stop-chunking?>
+		<title>August 9, 2013</title>
+		<para>This release contains new features and documentation
+			changes for the Cloud Block Storage API.</para>
+		<!-- New Features -->
+		<itemizedlist>
+			<title>New Features</title>
+			<listitem>
 				<para>Added the API operation Rename Volume.</para>
 			</listitem>
 		</itemizedlist>
 		<!-- Enchancements -->
 		<itemizedlist>
 			<title>Enhancements</title>
-			<listitem >
+			<listitem>
 				<para>For Create Snapshot, added snapshot progress.
 					The progress is visible in the
 					"os-extended-snapshot-attributes:progress" field
 					of the snapshot. </para>
 			</listitem>
-			<!--<listitem >
-				<para>???? (This one is still "coming soon.") For
-					Delete Snapshots, when you delete your snapshots,
-					they will show up as deleted very soon after the
-					call finishes. You can perform additional
-					operations on the snapshot's volume without
-					getting 409 conflicts.????</para>
-			</listitem> -->
 		</itemizedlist>
 		<!-- Resolved Issues -->
 		<itemizedlist>
 			<title>Resolved Issues</title>
-			<listitem >
+			<listitem>
 				<para>For Create Volume, changed the way creating a
 					volume from a snapshot works. The API for creating
 					a volume from a snapshot was ignoring the
@@ -227,7 +385,7 @@
 		<!-- Documentation Changes -->
 		<itemizedlist>
 			<title>Documentation</title>
-			<listitem >
+			<listitem>
 				<para>Moved the definitions of terms formally in the
 					Concepts section to the Glossary and renamed the
 					Concepts section to Terminology.</para>
