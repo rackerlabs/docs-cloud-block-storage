@@ -160,7 +160,7 @@
 -->            
             <param name="availability_zone" style="plain" type="string" required="false">
                 <doc><p xmlns="http://www.w3.org/1999/xhtml">
-                    You can supply any value for the availability_zone parameter. If you specify no value, it defaults to <code>nova</code>.
+                    This parameter is no longer used. Therefore, you can supply any value for <code>availability_zone</code>. If you specify no value, it defaults to <code>nova</code>.
                 </p></doc>
             </param>
  <!--           <param name="bootable" style="template" type="string" required="false">
