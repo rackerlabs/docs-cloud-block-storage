@@ -86,18 +86,9 @@
     </resources>
     <!-- Volume Methods -->
     <method name="POST" id="createVolume">
-        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN"
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Create volume">
             <para role="shortdesc">Creates a volume.</para>
-            <!--
-    The below are examples of how to insert new text into the wadl and have it display.
-    Two forms of text are given, Comment to the Reviewer and Straight Text 
-    <p>
-            <remark xmlns="http://docbook.org/ns/docbook" security="reviewer">Reviewer - Here is my question!</remark>
-</para>
-            <para role="shortdesc">Create a Volume - hey! this is old text. 
-            The example below creates a volume called vol-001.</para>
- -->
             <para>When you use <code>source_volid</code> for volume
                 cloning, note that this feature currently has the
                 following constraints. You cannot create more than one
@@ -240,7 +231,7 @@
         </response>
     </method>
     <method name="GET" id="getVolumesSimple">
-        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN"
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List volumes">
             <para role="shortdesc">Lists summary information for all
                 volumes that the tenant who submits the request can
@@ -264,7 +255,7 @@
         </response>
     </method>
     <method name="GET" id="getVolumesDetail">
-        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN"
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List volumes (detailed)">
             <para role="shortdesc">Lists details for volumes that the
                 tenant who submits the request can access.</para>
@@ -287,7 +278,7 @@
         </response>
     </method>
     <method name="GET" id="getVolume">
-        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN"
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show volume details">
             <para role="shortdesc">Shows volume details.</para>
         </wadl:doc>
@@ -307,7 +298,7 @@
         </response>
     </method>
     <method name="PUT" id="renameVolume">
-        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN"
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Rename volume">
             <para role="shortdesc">Updates the name and description
                 for a volume.</para>
@@ -359,7 +350,7 @@
         </response>
     </method>
     <method name="DELETE" id="deleteVolume">
-        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN"
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete volume">
             <para role="shortdesc">Deletes a volume.</para>
             <para>Due to a limitation in the OpenStack source, it is
@@ -370,7 +361,7 @@
     </method>
     <!-- Volume Types Methods -->
     <method name="GET" id="getVolumeTypes">
-        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN"
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List volume types">
             <para role="shortdesc">Lists volume types.</para>
             <para>Note that the SATA and SSD storage types are
@@ -394,7 +385,7 @@
         </response>
     </method>
     <method name="GET" id="getVolumeType">
-        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN"
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show volume type details">
             <para role="shortdesc">Show volume type details.</para>
         </wadl:doc>
@@ -511,7 +502,7 @@
         </response>
     </method>
     <method name="GET" id="getSnapshotsSimple">
-        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN"
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List snapshots">
             <para role="shortdesc">Lists summary information for all
                 snapshots that the tenant who submits the request can
@@ -535,7 +526,7 @@
         </response>
     </method>
     <method name="GET" id="getSnapshotsDetail">
-        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN"
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List snapshots (detailed)">
             <para role="shortdesc">Lists details for snapshots that
                 the tenant who submits the request can access.</para>
@@ -582,7 +573,7 @@
         </response>
     </method>
     <method name="DELETE" id="deleteSnapshot">
-        <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN"
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete snapshot">
             <para role="shortdesc">Deletes a snapshot.</para>
         </wadl:doc>
