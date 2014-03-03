@@ -100,15 +100,13 @@
                     <code>os-volume_attachments</code> API call
                     (<code>/servers/{server_id}/os-volume_attachments</code>)
                 to attach the new volume to your Next Generation Cloud
-                Server (with the specified {server_id}). Refer to the
-                    <i>Next Generation Cloud Servers Developer
-                    Guide</i> at <a
-                    href="http://docs.rackspace.com/api"
-                    >docs.rackspace.com</a> for details of the call.
-                Once the volume is attached, the new volume appears as
-                another device on the Next Generation Cloud Server. It
-                can then be partitioned, formatted, and mounted for
-                use on the system.</para>
+                Server (with the specified {server_id}). See <link
+                    xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ch_preface.html"
+                    >Next Generation Cloud Servers Developer
+                    Guide</link> for details of the call. Once the
+                volume is attached, the new volume appears as another
+                device on your cloud server. You can then partition,
+                format, and mount it.</para>
             <para>The following examples create a 100 GB SATA volume
                 called <code>vol-001</code>.</para>
         </wadl:doc>
