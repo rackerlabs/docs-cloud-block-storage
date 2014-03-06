@@ -64,7 +64,7 @@ format="SVG" scale="60"/>
         <date>2013-02-10</date>
         <revdescription>
           <para>Added <code>availability_zone</code> and <code>metadata</code> request parameter
-            descriptions to the "Create Volume" description in <xref linkend="volume"/>.</para>
+            descriptions to the Create Volume method description in <xref linkend="volume"/>.</para>
         </revdescription>
       </revision>
       <revision>
