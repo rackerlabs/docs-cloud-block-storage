@@ -1549,10 +1549,9 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="DB_faults" >
       <title>Faults</title>
-      <para>When an error occurs, the Cloud Block Storage Service
-        returns a fault object containing an HTTP error response code
-        that denotes the type of error. In the body of the response,
-        the system will return additional information about the fault. </para>
+      <para>When an error occurs, the Cloud Block Storage Service returns a fault object containing
+        an HTTP error response code that denotes the type of error. In the body of the response, the
+        system returns additional information about the fault. </para>
       <para>The following table lists possible fault types with their
         associated error codes and descriptions.</para>
       <informaltable rules="all">
@@ -1645,16 +1644,12 @@ format="SVG" scale="60"/>
       <example>
         <title>Example instanceFault Response: XML</title>
         <?dbfo keep-together="always"?>
-        <programlisting language="xml">
-<xi:include href="../wadls/volume-api/src/samples/db-faults-instanceFault.xml" parse="text"/>
-                    </programlisting>
+        <programlisting language="xml"><xi:include href="../wadls/volume-api/src/samples/db-faults-instanceFault.xml" parse="text"/></programlisting>
       </example>
       <example>
         <title>Example Fault Response: JSON</title>
         <?dbfo keep-together="always"?>
-        <programlisting language="json">
-<xi:include href="../wadls/volume-api/src/samples/db-faults-instanceFault.json" parse="text"/>
-                    </programlisting>
+        <programlisting language="json"><xi:include href="../wadls/volume-api/src/samples/db-faults-instanceFault.json" parse="text"/></programlisting>
       </example>
       <para>The error code (<code>code</code>) is returned in the body
         of the response for convenience. The <code>message</code>
@@ -1675,33 +1670,25 @@ format="SVG" scale="60"/>
         <title>Example badRequest Fault on Volume Size Errors:
           XML</title>
         <?dbfo keep-together="always"?>
-        <programlisting language="xml">
-<xi:include href="../wadls/volume-api/src/samples/db-faults-badRequest.xml" parse="text"/>
-                    </programlisting>
+        <programlisting language="xml"><xi:include href="../wadls/volume-api/src/samples/db-faults-badRequest.xml" parse="text"/></programlisting>
       </example>
       <example>
         <title>Example badRequest Fault on Volume Size Errors:
           JSON</title>
         <?dbfo keep-together="always"?>
-        <programlisting language="json">
-<xi:include href="../wadls/volume-api/src/samples/db-faults-badRequest.json" parse="text"/>
-                    </programlisting>
+        <programlisting language="json"><xi:include href="../wadls/volume-api/src/samples/db-faults-badRequest.json" parse="text"/></programlisting>
       </example>
       <para>The next two examples show <code>itemNotFound</code>
         errors:</para>
       <example>
         <title>Example itemNotFound Fault: XML</title>
         <?dbfo keep-together="always"?>
-        <programlisting language="xml">
-<xi:include href="../wadls/volume-api/src/samples/db-faults-itemNotFound.xml" parse="text"/>
-                    </programlisting>
+        <programlisting language="xml"><xi:include href="../wadls/volume-api/src/samples/db-faults-itemNotFound.xml" parse="text"/></programlisting>
       </example>
       <example>
         <title>Example itemNotFound Fault: JSON</title>
         <?dbfo keep-together="always"?>
-        <programlisting language="json">
-<xi:include href="../wadls/volume-api/src/samples/db-faults-itemNotFound.json" parse="text"/>
-                    </programlisting>
+        <programlisting language="json"><xi:include href="../wadls/volume-api/src/samples/db-faults-itemNotFound.json" parse="text"/></programlisting>
       </example>
     </section>
     <section xml:id="volume_status">
