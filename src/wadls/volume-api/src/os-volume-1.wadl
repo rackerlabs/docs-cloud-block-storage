@@ -9,7 +9,7 @@
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     xmlns:wadl="http://wadl.dev.java.net/2009/02">
     <resources base="https://volume.example.com/">
-        <resource id="version" path="v1">
+        <resource id="version" path="{version}">
             <resource id="tenant_id" path="{tenant_id}">
                 <param name="tenant_id" style="template">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -17,7 +17,7 @@
                             multi-tenancy cloud.</para>
                     </wadl:doc>
                 </param>
-                <?rax start-sections?>
+               <?rax start-sections?>
                 <resource id="volumes" path="volumes">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN" title="Volumes"/>
@@ -445,9 +445,7 @@
             <note><para>Snapshot progress is visible in
                         <code>os-extended-snapshot-attributes:progress</code>
                     in the Show Snapshot response body. See the
-                    response examples in <xref
-                        linkend="GET_getSnapshot_v1__tenant_id__snapshots__snapshot_id__v1__tenant_id__snapshots"
-                    />.</para></note>
+                    response examples in the "Show snapshot" description.</para></note>
             <para> When the <code>POST</code> operation returns the
                 201 response code, the snapshot is complete. </para>
         </wadl:doc>
