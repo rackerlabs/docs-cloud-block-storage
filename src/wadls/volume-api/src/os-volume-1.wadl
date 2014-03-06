@@ -2,7 +2,7 @@
 <application xmlns="http://wadl.dev.java.net/2009/02"
     xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
     xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:db="http://docbook.org/ns/docbook"
     xmlns:common="http://docs.openstack.org/common/api/v1.0"
     xmlns:csapi="http://docs.openstack.org/compute/api/v2"
@@ -251,7 +251,7 @@
     <method name="GET" id="getVolumesSimple">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List volumes">
-            <para>Lists summary information for all block storage
+            <para role="shortdesc">Lists summary information for all Block Storage
                 volumes that the tenant who submits the request can
                 access.</para>
         </wadl:doc>
@@ -299,7 +299,7 @@
     <method name="GET" id="getVolume">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show volume">
-            <para role="shortdesc">Show volume details.</para>
+            <para role="shortdesc">Shows volume details.</para>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/xml">
@@ -409,7 +409,7 @@
     <method name="GET" id="getVolumeType">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show volume type details">
-            <para>Shows volume type details.</para>
+            <para role="shortdesc">Shows volume type details.</para>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/xml">
@@ -552,7 +552,7 @@
     <method name="GET" id="getSnapshotsDetail">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List snapshots (detailed)">
-            <para>Lists detailed information for all Block Storage
+            <para role="shortdesc">Lists detailed information for all Block Storage
                 snapshots that the tenant who submits the request can
                 access.</para>
         </wadl:doc>
@@ -577,10 +577,11 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Show snapshot details">
             <para role="shortdesc">Shows snapshot details.</para>
-            <note><para>Snapshot progress is visible in
+            <note><para>The
                         <code>os-extended-snapshot-attributes:progress</code>
-                    in the response body. See the following
-                    examples.</para></note>
+                    field in the response body shows snapshot
+                    progress. See the following
+                examples.</para></note>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/xml">
