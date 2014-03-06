@@ -63,8 +63,8 @@ format="SVG" scale="60"/>
       <revision>
         <date>2013-02-10</date>
         <revdescription>
-          <para>Added <code>availability_zone</code> and
-              <code>metadata</code> request parameter descriptions.</para>
+          <para>Added <code>availability_zone</code> and <code>metadata</code> request parameter
+            descriptions to the "Create Volume" description in <xref linkend="volume"/>.</para>
         </revdescription>
       </revision>
       <revision>
@@ -72,11 +72,11 @@ format="SVG" scale="60"/>
         <revdescription>
           <itemizedlist>
             <listitem>
-              <para>Added the Get Volumes Detail method description.
+              <para>Added the Get Volumes Detail method description in <xref linkend="volume"/>.
               </para>
             </listitem>
             <listitem>
-              <para>Added the Get Snapshots Detail method description.
+              <para>Added the Get Snapshots Detail method description in <xref linkend="volume"/>.
               </para>
             </listitem>
           </itemizedlist>
