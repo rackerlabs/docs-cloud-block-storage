@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application xmlns="http://wadl.dev.java.net/2009/02"
     xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
-    xmlns:wadl="http://wadl.dev.java.net/2009/02"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:raxapi="http://docs.rackspace.com/volume/api/v1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:db="http://docbook.org/ns/docbook"
+    xmlns:common="http://docs.openstack.org/common/api/v1.0"
+    xmlns:csapi="http://docs.openstack.org/compute/api/v2"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:cbd="http://docs.openstack.org/database/api/v1.0"
-    xmlns:clusters="http://docs.openstack.org/database/api/v1.0">
+    xmlns:wadl="http://wadl.dev.java.net/2009/02">
     <resources base="https://volume.example.com/">
-        <resource id="version" path="v1">
+        <resource id="v1" path="v1">
             <resource id="tenant_id" path="{tenant_id}">
-                <!-- <param name="tenant_id" style="template">
+                <param name="tenant_id" style="template"
+                    type="xsd:string">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
-						xml:lang="EN">
-                        <para>
-                            The unique identifier of the tenant or account.</para>
-                    </wadl:doc>
-                </param> -->
-                <?rax start-sections?>
+                        xml:lang="EN">
+                        <para>The unique identifier of the tenant or
+                            account.</para></wadl:doc>
+                </param>
                 <resource id="volumes" path="volumes">
-                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                        xml:lang="EN" title="Volumes"/>
                     <method href="#createVolume"/>
                     <method href="#getVolumesSimple"/>
                     <resource path="detail" id="detail">
@@ -43,8 +40,6 @@
                     </resource>
                 </resource>
                 <resource id="volume_types" path="types">
-                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                        xml:lang="EN" title="Volume types"/>
                     <method href="#getVolumeTypes"/>
                     <resource path="{volume_type_id}"
                         id="volume_type_id">
@@ -60,8 +55,6 @@
                     </resource>
                 </resource>
                 <resource id="snapshots" path="snapshots">
-                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                        xml:lang="EN" title="Snapshots"/>
                     <method href="#createSnapshot"/>
                     <method href="#getSnapshotsSimple"/>
                     <resource path="detail" id="snapshot_detail">
@@ -84,6 +77,14 @@
             </resource>
         </resource>
     </resources>
+    <resource_type id="VersionDetails">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Version details">
+            <para>Details for a version.</para>
+        </wadl:doc>
+        <method href="#versionDetails"/>
+    </resource_type>
+
     <!-- Volume Methods -->
     <method name="POST" id="createVolume">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -297,7 +298,7 @@
     </method>
     <method name="PUT" id="renameVolume">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-            title="Rename volume">
+            title="Update volume">
             <para role="shortdesc">Updates the name and description
                 for a volume.</para>
         </wadl:doc>
@@ -419,9 +420,7 @@
             <para>The
                     <code>os-extended-snapshot-attributes:progress</code>
                 field in the response body shows the snapshot
-                progress. See the response examples in <xref
-                    linkend="GET_getSnapshot_v1__tenant_id__snapshots__snapshot_id__v1__tenant_id__snapshots"
-                />.</para>
+                progress.</para>
             <para>When the <code>POST</code> operation returns the 201
                 response code, the snapshot is complete.</para>
         </wadl:doc>
