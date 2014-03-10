@@ -9,18 +9,16 @@
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     xmlns:wadl="http://wadl.dev.java.net/2009/02">
     <resources base="https://volume.example.com/">
-        <resource id="version" path="v1">
+        <resource id="v1" path="v1">
             <resource id="tenant_id" path="{tenant_id}">
-                <param name="tenant_id" style="template">
+                <param name="tenant_id" style="template"
+                    type="xsd:string">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                        xml:lang="EN"><para>The tenant ID in a
-                            multi-tenancy cloud.</para>
-                    </wadl:doc>
+                        xml:lang="EN">
+                        <para>The unique identifier of the tenant or
+                            account.</para></wadl:doc>
                 </param>
-               <?rax start-sections?>
                 <resource id="volumes" path="volumes">
-                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                        xml:lang="EN" title="Volumes"/>
                     <method href="#createVolume"/>
                     <method href="#getVolumesSimple"/>
                     <resource path="detail" id="detail">
@@ -41,8 +39,7 @@
                         <method href="#deleteVolume"/>
                     </resource>
                 </resource>
-                <resource id="volume_types" path="/types">
-                    <doc title="Volume types"/>
+                <resource id="volume_types" path="types">
                     <method href="#getVolumeTypes"/>
                     <resource path="{volume_type_id}"
                         id="volume_type_id">
@@ -58,7 +55,6 @@
                     </resource>
                 </resource>
                 <resource id="snapshots" path="snapshots">
-                    <doc title="Snapshots"/>
                     <method href="#createSnapshot"/>
                     <method href="#getSnapshotsSimple"/>
                     <resource path="detail" id="snapshot_detail">
@@ -81,6 +77,14 @@
             </resource>
         </resource>
     </resources>
+    <resource_type id="VersionDetails">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Version details">
+            <para>Details for a version.</para>
+        </wadl:doc>
+        <method href="#versionDetails"/>
+    </resource_type>
+
     <!-- Volume Methods -->
     <method name="POST" id="createVolume">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
@@ -251,9 +255,9 @@
     <method name="GET" id="getVolumesSimple">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List volumes">
-            <para role="shortdesc">Lists summary information for all Block Storage
-                volumes that the tenant who submits the request can
-                access.</para>
+            <para role="shortdesc">Lists summary information for all
+                Block Storage volumes that the tenant who submits the
+                request can access.</para>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/xml">
@@ -318,9 +322,9 @@
     </method>
     <method name="PUT" id="renameVolume">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
-            title="Rename volume">
-            <para role="shortdesc">Updates a display name and display
-                description for a volume.</para>
+            title="Update volume">
+            <para role="shortdesc">Updates the name and description
+                for a volume.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/xml">
@@ -431,23 +435,21 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Create snapshot">
             <para role="shortdesc">Creates a snapshot.</para>
-            <para>Creating a snapshot makes a point-in-time copy of
-                the volume. All writes to the volume should be flushed
-                    <emphasis>before</emphasis> creating the snapshot,
-                either by un-mounting any file systems on the volume,
-                or by detaching the volume before creating the
-                snapshot. Snapshots are incremental, so each time you
-                create a new snapshot, you are appending the
-                incremental changes for the new snapshot to the
-                previous one. The previous snapshot is still
-                available. Note that you can create a new volume from
-                the snapshot if desired. </para>
-            <note><para>Snapshot progress is visible in
-                        <code>os-extended-snapshot-attributes:progress</code>
-                    in the Show Snapshot response body. See the
-                    response examples in the "Show snapshot" description.</para></note>
-            <para> When the <code>POST</code> operation returns the
-                201 response code, the snapshot is complete. </para>
+            <para>A snapshot is a point-in-time copy of the volume.
+                You must flush all writes to the volume before you
+                create a snapshot. To do so, either un-mount any file
+                systems on the volume or detach the volume.</para>
+            <para>Snapshots are incremental, so each time that you
+                create a snapshot, the incremental changes for the new
+                snapshot are appended to the previous snapshot, which
+                is still available. Note that you can create a volume
+                from the snapshot if desired.</para>
+            <para>The
+                    <code>os-extended-snapshot-attributes:progress</code>
+                field in the response body shows the snapshot
+                progress.</para>
+            <para>When the <code>POST</code> operation returns the 201
+                response code, the snapshot is complete.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/xml">
@@ -550,9 +552,9 @@
     <method name="GET" id="getSnapshotsDetail">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List snapshots (detailed)">
-            <para role="shortdesc">Lists detailed information for all Block Storage
-                snapshots that the tenant who submits the request can
-                access.</para>
+            <para role="shortdesc">Lists detailed information for all
+                Block Storage snapshots that the tenant who submits
+                the request can access.</para>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/xml">
