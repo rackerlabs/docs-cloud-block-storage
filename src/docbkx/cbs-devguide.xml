@@ -257,6 +257,7 @@ format="SVG" scale="60"/>
         <listitem>
           <para>Mount a drive to a Cloud Server to scale storage
             without paying for more compute capability.</para>
+<<<<<<< HEAD
         </listitem>
         <listitem>
           <para>A high performance option for databases and high
@@ -264,6 +265,15 @@ format="SVG" scale="60"/>
             for speed.</para>
         </listitem>
         <listitem>
+=======
+        </listitem>
+        <listitem>
+          <para>A high performance option for databases and high
+            performance applications, leveraging solid state drives
+            for speed.</para>
+        </listitem>
+        <listitem>
+>>>>>>> bba535342da7403203c8dfc358113097b8b6f08b
           <para>A standard speed option for customers who just need
             additional storage on their Cloud Server.</para>
         </listitem>
@@ -1659,18 +1669,26 @@ format="SVG" scale="60"/>
         <title>Example badRequest Fault on Volume Size Errors:
           XML</title>
         <?dbfo keep-together="always"?>
+<<<<<<< HEAD
 
         <literallayout><xi:include href="../wadls/volume-api/src/samples/db-faults-badRequest-xml-http.txt" parse="text"/></literallayout>
 
+=======
+        <literallayout><xi:include href="../wadls/volume-api/src/samples/db-faults-badRequest-xml-http.txt" parse="text"/></literallayout>
+>>>>>>> bba535342da7403203c8dfc358113097b8b6f08b
         <programlisting language="xml"><xi:include href="../wadls/volume-api/src/samples/db-faults-badRequest.xml" parse="text"/></programlisting>
       </example>
       <example>
         <title>Example badRequest Fault on Volume Size Errors:
           JSON</title>
         <?dbfo keep-together="always"?>
+<<<<<<< HEAD
 
         <literallayout><xi:include href="../wadls/volume-api/src/samples/db-faults-badRequest-json-http.txt" parse="text"/></literallayout>
 
+=======
+        <literallayout><xi:include href="../wadls/volume-api/src/samples/db-faults-badRequest-json-http.txt" parse="text"/></literallayout>
+>>>>>>> bba535342da7403203c8dfc358113097b8b6f08b
         <programlisting language="json"><xi:include href="../wadls/volume-api/src/samples/db-faults-badRequest.json" parse="text"/></programlisting>
       </example>
       <para>The next two examples show <code>itemNotFound</code>
@@ -1678,17 +1696,25 @@ format="SVG" scale="60"/>
       <example>
         <title>Example itemNotFound Fault: XML</title>
         <?dbfo keep-together="always"?>
+<<<<<<< HEAD
 
         <literallayout><xi:include href="../wadls/volume-api/src/samples/db-faults-itemNotFound-xml-http.txt" parse="text"/></literallayout>
 
+=======
+        <literallayout><xi:include href="../wadls/volume-api/src/samples/db-faults-itemNotFound-xml-http.txt" parse="text"/></literallayout>
+>>>>>>> bba535342da7403203c8dfc358113097b8b6f08b
         <programlisting language="xml"><xi:include href="../wadls/volume-api/src/samples/db-faults-itemNotFound.xml" parse="text"/></programlisting>
       </example>
       <example>
         <title>Example itemNotFound Fault: JSON</title>
         <?dbfo keep-together="always"?>
+<<<<<<< HEAD
 
         <literallayout><xi:include href="../wadls/volume-api/src/samples/db-faults-itemNotFound-json-http.txt" parse="text"/></literallayout>
 
+=======
+        <literallayout><xi:include href="../wadls/volume-api/src/samples/db-faults-itemNotFound-json-http.txt" parse="text"/></literallayout>
+>>>>>>> bba535342da7403203c8dfc358113097b8b6f08b
         <programlisting language="json"><xi:include href="../wadls/volume-api/src/samples/db-faults-itemNotFound.json" parse="text"/></programlisting>
       </example>
     </section>
