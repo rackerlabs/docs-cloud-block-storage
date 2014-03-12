@@ -31,7 +31,7 @@
 		</copyright>
 		<releaseinfo>API v1</releaseinfo>
 		<productname>Rackspace Cloud Block Storage</productname>
-		<pubdate>2014-02-10</pubdate>
+		<pubdate>2014-03-12</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
@@ -45,14 +45,19 @@
 		</abstract>
 		<revhistory>
 			<revision>
+				<date>2014-03-12</date>
+				<revdescription>
+					<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Added the version and tenant
+						ID to URIs in the API operations chapter of the <citetitle>Cloud Block
+							Storage Developer Guide</citetitle>. </para>
+				</revdescription>
+			</revision>
+			<revision>
 				<date>2014-02-10</date>
 				<revdescription>
-					<para>Added the <code>availability_zone</code> and
-							<code>metadata</code> request parameter
-						descriptions to the Create Volume method
-						description in the <citetitle>Cloud Block
-							Storage Developer
-						Guide</citetitle>.</para>
+					<para>Added the <code>availability_zone</code> and <code>metadata</code> request parameter
+						descriptions to the create volume operation description in the API
+						operations chapter.</para>
 				</revdescription>
 			</revision>
 			<revision>
@@ -61,14 +66,12 @@
 					<para xmlns:wadl="http://wadl.dev.java.net/2009/02">
 						<itemizedlist>
 						<listitem>
-						<para>Added the Get Volumes Detail method description
-							in the Volumes section of the API Operations
-							chapter.</para>
+						<para>Added the list volumes (detailed) operation description to the Volumes section of the
+									API operations chapter.</para>
 					</listitem>
 						<listitem>
-							<para>Added the Get Snapshots Detail method
-								description in the Snapshots section of the API
-								Operations chapter.</para>
+							<para>Added the list snapshots (detailed) operation description to the Snapshots section of
+									the API operations chapter.</para>
 						</listitem>
 						</itemizedlist> </para>
 				</revdescription>
@@ -76,11 +79,10 @@
 			<revision>
 				<date>2014-01-28</date>
 				<revdescription>
-					<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Updated the
-						Show Snapshot description to mention the
-						progress indicator,
-							<code>os-extended-snapshot-attributes:progress</code>,
-						and show it in the example responses. </para>
+					<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Updated the show snapshot details operation
+						description to mention the progress indicator,
+							<code>os-extended-snapshot-attributes:progress</code>, and show it in
+						the example responses. </para>
 				</revdescription>
 			</revision>
 			<revision>
@@ -89,19 +91,14 @@
 					<itemizedlist
 						xmlns:wadl="http://wadl.dev.java.net/2009/02">
 						<listitem>
-							<para>Added the volume cloning capability
-								that allows you to create a new Cloud
-								Block Storage volume from an existing
-								volume by adding the
-								<code>source_volid</code> parameter
-								to the Create Volume operation.</para>
+							<para>Added the volume cloning capability that allows you to create a new Cloud Block Storage
+								volume from an existing volume by adding the
+									<code>source_volid</code> parameter to the create volume
+								operation.</para>
 						</listitem>
 						<listitem>
-							<para>Updated the instructions for
-								locating the API Key, Tenant ID, and
-								account number in the Cloud Control
-								Panel in the Authentication section.
-							</para>
+							<para>Updated the instructions for locating the API key, tenant ID, and account number in the
+								Cloud Control Panel in the Authentication section. </para>
 						</listitem>
 					</itemizedlist>
 				</revdescription>
@@ -118,8 +115,14 @@
 			<revision xmlns:wadl="http://wadl.dev.java.net/2009/02">
 				<date>2013-10-03</date>
 				<revdescription>
-				
+					<itemizedlist>
+						<listitem>
 							<para>Added RBAC.</para>
+						</listitem>
+						<listitem>
+							<para>Updated the service access endpoints.</para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
 			</revision>
 		
@@ -129,28 +132,20 @@
 				<revdescription>
 					<itemizedlist>
 						<listitem>
-							<para>Added the API operation Rename
-								Volume.</para>
+							<para>Added the update volume operation.</para>
 						</listitem>
 						<listitem>
-							<para>Updated the <code>size</code>
-								parameter description for Create
-								Volume method because the way creating
-								a volume from a snapshot changed. The
-								API for creating a volume from a
-								snapshot was ignoring the size
-								parameter and was creating a volume
-								the same size as the snapshot. Now the
-								volume size must be greater than the
-								snapshot size. </para>
+							<para>Updated the <code>size</code> parameter description for create volume operation because
+								the way creating a volume from a snapshot changed. The API for
+								creating a volume from a snapshot was ignoring the size parameter
+								and was creating a volume the same size as the snapshot. Now the
+								volume size must be greater than the snapshot size. </para>
 						</listitem>
 						<listitem>
-							<para>Updated the Create Snapshot
-								description,  adding information about
-								snapshot progress. The progress is
-								visible in the
-								<code>os-extended-snapshot-attributes:progress</code>
-								field of the snapshot. </para>
+							<para>Updated the create snapshot operation description adding information about snapshot
+								progress. The progress is visible in the
+									<code>os-extended-snapshot-attributes:progress</code> field of
+								the snapshot. </para>
 						</listitem>
 						<listitem>
 							<para>Moved the definitions of terms
@@ -165,12 +160,6 @@
 				<date>2013-01-04</date>
 				<revdescription>
 					<para>Removed camel-case for JSON examples. </para>
-				</revdescription>
-			</revision>
-			<revision>
-				<date>2012-10-29</date>
-				<revdescription>
-					<para>Added ORD and LON endpoints.</para>
 				</revdescription>
 			</revision>
 			<revision>
@@ -210,11 +199,28 @@
 			reports.</para>
 	</preface>
 	<chapter xml:id="doc_change_history">
-		<title>Document Change History</title>
+		<title>Document change history</title>
 		<para>This version of the release notes replaces and obsoletes
 			all earlier versions. The most recent changes are
 			described in the following table:</para>
 		<?rax revhistory?>
+	</chapter>
+	<chapter xml:id="Mar12">
+		<?dbhtml stop-chunking?>
+		<title>March 12, 2014</title>
+		<para>This release contains documentation changes for the Cloud Block Storage API.</para>
+		<!-- New Features -->
+		<!-- Enchancements -->
+		<!-- Resolved Issues -->
+		<!-- Documentation Changes -->
+		<itemizedlist>
+			<title>Documentation</title>
+			<listitem>
+				<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Added the version and tenant ID
+					to URIs in the API operations chapter of the <citetitle>Cloud Block Storage
+						Developer Guide</citetitle>. </para>
+			</listitem>
+		</itemizedlist>
 	</chapter>
 	<chapter xml:id="Feb10">
 		<?dbhtml stop-chunking?>
@@ -228,12 +234,9 @@
 		<itemizedlist>
 			<title>Documentation</title>
 			<listitem>
-				<para>Added the <code>availability_zone</code> and
-						<code>metadata</code> request parameter
-					descriptions to the Create Volume method
-					description in the API Operations chapter of the
-						<citetitle>Cloud Block Storage Developer
-						Guide</citetitle>.</para>
+				<para>Added the <code>availability_zone</code> and <code>metadata</code> request parameter
+					descriptions to the create volume operation description in the API operations
+					chapter.</para>
 			</listitem>
 		</itemizedlist>
 	</chapter>
@@ -249,14 +252,12 @@
 		<itemizedlist>
 			<title>Documentation</title>
 			<listitem>
-				<para>Added the Get Volumes Detail method description
-					in the Volumes section of the API Operations
-					chapter.</para>
+				<para>Added the list volumes (detailed) operation description in the Volumes section of the API
+					operations chapter.</para>
 			</listitem>
 			<listitem>
-				<para>Added the Get Snapshots Detail method
-					description in the Snapshots section of the API
-					Operations chapter.</para>
+				<para>Added the list snapshots (detailed) operation description in the Snapshots section of the
+					API operations chapter.</para>
 			</listitem>
 		</itemizedlist>
 	</chapter>
@@ -272,13 +273,11 @@
 		<itemizedlist>
 			<title>Documentation</title>
 			<listitem>
-				<para>The description of Show Snapshot in the API Operations
-					chapter of the <citetitle>Cloud Block Storage
-						Developer Guide</citetitle> was updated to
-					include the progress indicator, <code
+				<para>The description of the show snapshot details operation in the API operations chapter was
+					updated to include the progress indicator, <code
 						xmlns:wadl="http://wadl.dev.java.net/2009/02"
-						>os-extended-snapshot-attributes:progress</code>,
-					and show it in the example responses. </para>
+						>os-extended-snapshot-attributes:progress</code>, and show it in the example
+					responses. </para>
 			</listitem>
 		</itemizedlist>
 	</chapter>
@@ -291,12 +290,10 @@
 		<itemizedlist>
 			<title>New Features</title>
 			<listitem>
-				<para>Added the volume cloning capability that allows you to
-					create a new Cloud Block Storage volume from an
-					existing volume by adding the <code
-						xmlns:wadl="http://wadl.dev.java.net/2009/02"
-						>source_volid</code> parameter to the Create
-					Volume operation.</para>
+				<para>Added the volume cloning capability that allows you to create a new Cloud Block Storage
+					volume from an existing volume by adding the <code
+						xmlns:wadl="http://wadl.dev.java.net/2009/02">source_volid</code> parameter
+					to the create volume operation.</para>
 			</listitem>
 		</itemizedlist>
 		<!-- Enchancements -->
@@ -305,8 +302,9 @@
 		<itemizedlist>
 			<title>Documentation</title>
 			<listitem>
-				<para>The documentation was updated to include new information
-					based on the preceding code change.</para>
+				<para>The documentation was updated to include new information based on the addition of the
+						<code xmlns:wadl="http://wadl.dev.java.net/2009/02">source_volid</code>
+					parameter to the create volume operation.</para>
 			</listitem>
 		</itemizedlist>
 	</chapter>
@@ -342,6 +340,9 @@
 				<para xmlns:wadl="http://wadl.dev.java.net/2009/02"
 					>Added RBAC.</para>
 			</listitem>
+			<listitem>
+				<para>Updated the service access endpoints.</para>
+			</listitem>
 		</itemizedlist>
 		<!-- Enchancements -->
 		<!-- Resolved Issues -->
@@ -356,30 +357,25 @@
 		<itemizedlist>
 			<title>New Features</title>
 			<listitem>
-				<para>Added the API operation Rename Volume.</para>
+				<para>Added the update volume operation.</para>
 			</listitem>
 		</itemizedlist>
 		<!-- Enchancements -->
 		<itemizedlist>
 			<title>Enhancements</title>
 			<listitem>
-				<para>For Create Snapshot, added snapshot progress.
-					The progress is visible in the
-					"os-extended-snapshot-attributes:progress" field
-					of the snapshot. </para>
+				<para>For the create snapshot operation, added snapshot progress. The progress is visible in the
+					"os-extended-snapshot-attributes:progress" field of the snapshot. </para>
 			</listitem>
 		</itemizedlist>
 		<!-- Resolved Issues -->
 		<itemizedlist>
 			<title>Resolved Issues</title>
 			<listitem>
-				<para>For Create Volume, changed the way creating a
-					volume from a snapshot works. The API for creating
-					a volume from a snapshot was ignoring the
-						<code>size</code> parameter and was creating a
-					volume the same size as the snapshot. Now the
-					volume size must be greater than the snapshot
-					size. </para>
+				<para>For the create volume operation, changed the way creating a volume from a snapshot works.
+					The API for creating a volume from a snapshot was ignoring the <code>size</code>
+					parameter and was creating a volume the same size as the snapshot. Now the
+					volume size must be greater than the snapshot size. </para>
 			</listitem>
 		</itemizedlist>
 		<!-- Documentation Changes -->
@@ -402,20 +398,6 @@
 				<para>Removed camel-case for JSON examples.  </para>
 			</listitem>
 		</itemizedlist>
-	</chapter>
-	
-	
-	
-	<chapter xml:id="Oct29">
-		<title>October 29, 2012</title>
-		<para>This release contains new features and documentation changes
-			for Cloud Block Storage.</para>
-		<itemizedlist>
-			<listitem>
-				<para>Added ORD and LON endpoints.</para>
-			</listitem>
-		</itemizedlist>
-		
 	</chapter>
 	<chapter xml:id="Oct23">
 		<title>October 23, 2012</title>

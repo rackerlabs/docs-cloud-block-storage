@@ -22,7 +22,6 @@
                     <method href="#createVolume"/>
                     <method href="#getVolumesSimple"/>
                     <resource path="detail" id="detail">
-                        <!-- as of 7-25-12, this is same as non-detailed -->
                         <method href="#getVolumesDetail"/>
                     </resource>
                     <resource path="{volume_id}" id="volume_id">
@@ -58,7 +57,6 @@
                     <method href="#createSnapshot"/>
                     <method href="#getSnapshotsSimple"/>
                     <resource path="detail" id="snapshot_detail">
-                        <!-- as of 7-25-12, this is same as non-detailed  -->
                         <method href="#getSnapshotsDetail"/>
                     </resource>
                     <resource path="{snapshot_id}" id="snapshot_id">
@@ -77,27 +75,29 @@
             </resource>
         </resource>
     </resources>
-    <resource_type id="VersionDetails">
+<!--    Not a valid method.
+        <resource_type id="VersionDetails">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Version details">
             <para>Details for a version.</para>
         </wadl:doc>
         <method href="#versionDetails"/>
-    </resource_type>
+    </resource_type> -->
 
     <!-- Volume Methods -->
     <method name="POST" id="createVolume">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Create volume">
             <para role="shortdesc">Creates a volume.</para>
-            <!--
+<!--
     The below are examples of how to insert new text into the wadl and have it display.
     Two forms of text are given, Comment to the Reviewer and Straight Text 
-    <p>
+            <para>
             <remark xmlns="http://docbook.org/ns/docbook" security="reviewer">Reviewer - Here is my question!</remark>
-           </para>
+            </para>
             <para>Create a Volume - hey! this is old text. 
-            The example below creates a volume called vol-001.</para>
+            The example below creates a volume called vol-001.
+            </para>
  -->
             <para>The examples in the following table create a 100 GB
                 SATA volume called vol-001.</para>
@@ -174,13 +174,12 @@
                             new volume. This parameter is
                             optional.</para></wadl:doc>
                 </param>
-                <!--                
-            <param name="status" style="template" type="string" required="false">
+<!--            <param name="status" style="template" type="string" required="false">
                 <doc><para>
                     Status is typically <code>available</code> although 
                     it can be <code>creating</code> if the volume is from a snapshot operation.
-               </para></wadl:doc>
-            </param>
+                </para></wadl:doc>
+                </param>
 -->
                 <param name="availability_zone" style="plain"
                     type="string" required="false">
@@ -191,11 +190,12 @@
                             If you specify no value, it defaults to
                                 <code>nova</code>.</para></wadl:doc>
                 </param>
-                <!--           <param name="bootable" style="template" type="string" required="false">
+<!--           <param name="bootable" style="template" type="string" required="false">
                 <doc><para>
                     This parameter is currently is currently always <code>false</code>.
                </para></wadl:doc>
-            </param>  -->
+               </param>
+-->
                 <param name="metadata" style="plain" type="string"
                     required="false">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -377,13 +377,10 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete volume">
             <para role="shortdesc">Deletes a volume.</para>
-            <para>Due to a limitation in the OpenStack source, it is
-                not currently (October, 2012) possible to delete a
-                volume after you create a snapshot from it.
-            </para></wadl:doc>
+            </wadl:doc>
         <response status="202"/>
     </method>
-    <!-- Volume Types Methods -->
+<!-- Volume Types Methods -->
     <method name="GET" id="getVolumeTypes">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List volume types">
@@ -430,14 +427,14 @@
             </representation>
         </response>
     </method>
-    <!-- Snapshot Methods -->
+<!-- Snapshot Methods -->
     <method name="POST" id="createSnapshot">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Create snapshot">
             <para role="shortdesc">Creates a snapshot.</para>
             <para>A snapshot is a point-in-time copy of the volume.
                 You must flush all writes to the volume before you
-                create a snapshot. To do so, either un-mount any file
+                create a snapshot. To do so, either unmount any file
                 systems on the volume or detach the volume.</para>
             <para>Snapshots are incremental, so each time that you
                 create a snapshot, the incremental changes for the new
@@ -507,7 +504,7 @@
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="samples/snapshot_create.json"/>
-                </wadl:doc>
+                </wadl:doc>   
             </representation>
         </request>
         <response status="201">
@@ -603,10 +600,11 @@
             title="Delete snapshot">
             <para role="shortdesc">Deletes a snapshot.</para>
         </wadl:doc>
-        <!--       <doc><para>
+<!--    <wadl:doc><para>
          When you delete your snapshots, they will show up as deleted very soon after the call finishes. You can perform additional operations on the snapshot's volume without getting 409 conflicts.
-       </para>
-        </wadl:doc>  -->
+        </para>
+        </wadl:doc>
+-->
         <response status="202"/>
     </method>
 </application>
