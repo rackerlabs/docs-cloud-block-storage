@@ -1317,6 +1317,7 @@ format="SVG" scale="60"/>
         <wadl:resource
           href="../wadls/volume-api/src/os-volume-1.wadl#snapshot_id">
           <wadl:method href="#getSnapshot"/>
+          <wadl:method href="#updateSnapshot"/>
           <wadl:method href="#deleteSnapshot"/>
         </wadl:resource>
       </wadl:resources>

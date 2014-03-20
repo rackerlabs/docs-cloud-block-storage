@@ -69,6 +69,7 @@
                                    snapshot.</para></wadl:doc>
                         </param>
                         <method href="#getSnapshot"/>
+                        <method href="#updateSnapshot"/>
                         <method href="#deleteSnapshot"/>
                     </resource>
                 </resource>
@@ -595,6 +596,60 @@
             </representation>
         </response>
     </method>
+ 
+    <method name="PUT" id="updateSnapshot">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Update snapshot">
+            <para role="shortdesc">Updates a specified
+                snapshot.</para>
+        </wadl:doc>
+        <request>
+            <param name="display_description" style="query"
+                type="string" required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>Describes the
+                        snapshot.</para></wadl:doc>
+            </param>
+            <param name="display_name" style="query" type="string"
+                required="false">
+                
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>The name of the
+                        snapshot.</para></wadl:doc>
+            </param>
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="samples/snapshot_update_request.xml"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="samples/snapshot_update_request.json"/>
+                </wadl:doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/xml">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="samples/snapshot_update_response.xml"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="samples/snapshot_update_response.json"/>
+                </wadl:doc>
+            </representation>
+        </response>
+    </method>
+    
     <method name="DELETE" id="deleteSnapshot">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete snapshot">
