@@ -1,7 +1,7 @@
 docs-cloud-block-storage
 ========================
 
-Cloud Block Storage API Documentation
+Rackspace Cloud Block Storage API Documentation
 
 This github repository contains the source files for the Rackspace Cloud Block Storage API documentation. 
 
