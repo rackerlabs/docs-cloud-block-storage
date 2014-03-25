@@ -7,7 +7,8 @@
     xmlns:common="http://docs.openstack.org/common/api/v1.0"
     xmlns:csapi="http://docs.openstack.org/compute/api/v2"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:wadl="http://wadl.dev.java.net/2009/02">
+    xmlns:wadl="http://wadl.dev.java.net/2009/02"
+    xmlns:cbs="http://docs.openstack.org/api/openstack-block-storage/1.0">
     <resources base="https://volume.example.com/">
         <resource id="v1" path="v1">
             <resource id="tenant_id" path="{tenant_id}">
@@ -104,7 +105,7 @@
                 SATA volume called vol-001.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="samples/volume_create.xml"/>
@@ -213,7 +214,7 @@
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="samples/volume_show.xml"/>
@@ -261,7 +262,7 @@
                 request can access.</para>
         </wadl:doc>
         <response status="200">
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="samples/volume_list_simple.xml"
@@ -285,7 +286,7 @@
                 request can access.</para>
         </wadl:doc>
         <response status="200">
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -307,7 +308,7 @@
             <para role="shortdesc">Shows volume details.</para>
         </wadl:doc>
         <response status="200">
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="samples/volume_show.xml"/>
@@ -328,7 +329,7 @@
                 for a volume.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -358,7 +359,7 @@
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -388,7 +389,7 @@
             <para role="shortdesc">Lists volume types.</para>
         </wadl:doc>
         <response status="200">
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="samples/volume_type_list.xml"/>
@@ -414,7 +415,7 @@
             <para role="shortdesc">Shows volume type details.</para>
         </wadl:doc>
         <response status="200">
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="samples/volume_type_show.xml"/>
@@ -450,7 +451,7 @@
                 response code, the snapshot is complete.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="samples/snapshot_create.xml"/>
@@ -509,7 +510,7 @@
             </representation>
         </request>
         <response status="201">
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="samples/snapshot_show.xml"/>
@@ -531,7 +532,7 @@
                 the request can access.</para>
         </wadl:doc>
         <response status="200">
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -555,7 +556,7 @@
                 the request can access.</para>
         </wadl:doc>
         <response status="200">
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -582,7 +583,7 @@
                 examples.</para></note>
         </wadl:doc>
         <response status="200">
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code href="samples/snapshot_show.xml"/>
@@ -617,7 +618,7 @@
                     xml:lang="EN"><para>The name of the
                         snapshot.</para></wadl:doc>
             </param>
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
@@ -633,7 +634,7 @@
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml">
+            <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
                     <xsdxt:code
