@@ -380,7 +380,9 @@
             title="Delete volume">
             <para role="shortdesc">Deletes a volume.</para>
             </wadl:doc>
-        <response status="202"/>
+        <response status="202">
+        <representation mediaType="application/json"/>
+        </response> 
     </method>
 <!-- Volume Types Methods -->
     <method name="GET" id="getVolumeTypes">
@@ -661,6 +663,9 @@
         </para>
         </wadl:doc>
 -->
-        <response status="202"/>
+        <response status="202">
+            <representation mediaType="application/json"/>
+        </response>
+        
     </method>
 </application>
