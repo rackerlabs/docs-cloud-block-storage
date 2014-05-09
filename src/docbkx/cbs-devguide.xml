@@ -351,10 +351,10 @@ format="SVG" scale="60"/>
         API-related documents from <link
           xlink:href="http://docs.rackspace.com/api/"
           >docs.rackspace.com/api/</link>. </para>
-      <para>For information about getting started using Cloud Block
+ <!--     <para>For information about getting started using Cloud Block
         Storage and Cloud Servers, refer to <citetitle>Getting Started
           with Rackspace Cloud Block Storage and
-        Servers</citetitle>.</para>
+        Servers</citetitle>.</para> -->
       <para>For information about Rackspace Cloud products, refer to
           <link xlink:href="http://www.rackspace.com/cloud/"
           >www.rackspace.com/cloud</link>. This site also offers links
@@ -836,18 +836,17 @@ format="SVG" scale="60"/>
         build information for the API. </para>
       <section xml:id="Contract_Version-d1e825">
         <title>Contract version</title>
-        <para> The contract version denotes the data model and
-          behavior that the API supports. The requested contract
-          version is included in all request URLs. Different contract
-          versions of the API may be available at any given time and
-          are not guaranteed to be compatible with one another. </para>
+        <para>The contract version denotes the data model and behavior that the API supports. The
+          requested contract version is included in all request URLs. Different contract versions of
+          the API may be available at any given time and are not guaranteed to be compatible with
+          one another. </para>
         <example>
           <title>Example request URL (contract version in <emphasis role="strong"
             >bold</emphasis>)</title>
-          <programlisting>https://dfw.blockstorage.api.rackspacecloud.com/v1/1234/</programlisting>
+          <programlisting>https://dfw.blockstorage.api.rackspacecloud.com/<emphasis role="bold">v1</emphasis>/1234/</programlisting>
         </example>
         <note>
-          <para>This document pertains to contract version 1.0.</para>
+          <para>This document pertains to contract v1.</para>
         </note>
       </section>
     </section>

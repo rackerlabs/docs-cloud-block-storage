@@ -1,1936 +1,869 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE book[<!-- Some useful entities borrowed from HTML -->
-  <!ENTITY ndash  "&#x2013;">
-  <!ENTITY mdash  "&#x2014;">
-  <!ENTITY hellip "&#x2026;">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash "&#x2013;">
+        <!ENTITY mdash "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
 
-  <!-- Useful for describing APIs -->
-  <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
-  <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
-  <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
-  <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+        <!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
+        <!ENTITY ENDPOINT-US "https://identity.api.rackspacecloud.com/v1.1/">
+        <!ENTITY ENDPOINT-UK "https://lon.identity.api.rackspacecloud.com/v1.1/">
+        <!ENTITY ENDPOINT-US-20 "https://identity.api.rackspacecloud.com/v2.0/">
+        <!ENTITY ENDPOINT-UK-20 "https://lon.identity.api.rackspacecloud.com/v2.0/">
 
-<!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
-<!ENTITY ENDPOINT-US "https://dfw.blockstorage.api.rackspacecloud.com/v1/">
-<!-- <!ENTITY ENDPOINT-UK "https://lon.identity.api.rackspacecloud.com/v1.1/"> -->
+        <!-- Useful for specs -->
+        <!ENTITY MIGHT '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MIGHT</emphasis>'>
+        <!ENTITY SHOULD '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">SHOULD</emphasis>'>
+        <!ENTITY MUST '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST</emphasis>'>
+        <!ENTITY MUST_NOT '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST NOT</emphasis>'>
 
-<!-- Useful for specs -->
-<!ENTITY MAY    '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MAY</emphasis>'>
-<!ENTITY SHOULD '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">SHOULD</emphasis>'>
-<!ENTITY MUST   '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST</emphasis>'>
-<!ENTITY MUST_NOT   '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST NOT</emphasis>'>
+        <!ENTITY CHECK '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+                 <imageobject>
+                  <imagedata fileref="img/Check_mark_23x20_02.svg"
+                             format="SVG" scale="60"/>
+                </imageobject>
+              </inlinemediaobject>'>
 
-
-
-
-  <!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
-         <imageobject>
-          <imagedata fileref="img/Check_mark_23x20_02.svg"
-               format="SVG" scale="60"/>
-        </imageobject>
-        </inlinemediaobject>'>
-  <!ENTITY CODES       'Normal Response Code(s):'>
-  <!ENTITY ERROR_CODES 'Error Response Code(s):'>
-  <!ENTITY NO_REQUEST '<para xmlns="http://docbook.org/ns/docbook">
-              This operation does not require a request body.</para>'>
-  <!ENTITY LONG_URI_REFHEAD '
-      <thead xmlns="http://docbook.org/ns/docbook">
-      <tr>
-        <td colspan="1">Verb</td>
-        <td colspan="4">URI</td>
-        <td colspan="3">Description</td>
-      </tr>
-      </thead>'>
-  <!ENTITY URI_REFHEAD '
-      <thead xmlns="http://docbook.org/ns/docbook">
-      <tr>
-        <td colspan="1">Verb</td>
-        <td colspan="1">URI</td>
-        <td colspan="4">Description</td>
-      </tr>
-      </thead>'>
-<!ENTITY MAAS 'Rackspace Cloud Monitoring'>
-<!ENTITY CBS 'Rackspace Cloud Block Storage'>
-<!ENTITY HOST 'cbs.api.rackspacecloud.com'>
-<!ENTITY URL 'https://&HOST;/v1.0/'>
+        <!ENTITY ARROW '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+                 <imageobject>
+                  <imagedata fileref="img/Arrow_east.svg"
+                             format="SVG" scale="60"/>
+                </imageobject>
+              </inlinemediaobject>'>
 ]>
-<book 
-  xmlns="http://docbook.org/ns/docbook" 
-  xmlns:xlink="http://www.w3.org/1999/xlink" 
-  xmlns:xi="http://www.w3.org/2001/XInclude" 
-  xmlns:svg="http://www.w3.org/2000/svg" 
-  xmlns:m="http://www.w3.org/1998/Math/MathML" 
-  xmlns:html="http://www.w3.org/1999/xhtml" 
-  version="5.0-extension RackBook-2.0" 
-  xml:id="cm-getting-started">
-  <?rax  pdf.url="../../../cbs-getting-started-latest.pdf" 
-    canonical.url.base="http://docs.rackspace.com/cm/api/v1.0/cb-getting-started/content" 
-    status.bar.text="Preview"?>
-  <?rax title.font.size="35px" subtitle.font.size="20px"?>
-  <title>Rackspace Cloud Block Storage Getting Started Guide</title>
-  <titleabbrev>Rackspace Cloud Block Storage
-    Getting Started Guide</titleabbrev>
-  <info>
-  <author>
-    <personname>
-    <firstname/>
-    <surname/>
-    </personname>
-    <affiliation>
-        <orgname>Rackspace Cloud</orgname>
-      </affiliation>
-  </author>
-  <copyright>
-    <year>2012</year>
-    <holder>Rackspace</holder>
-  </copyright>
-  <releaseinfo>API v1.0 Preview</releaseinfo>
-  <productname>Rackspace Cloud Block Storage</productname>
-  <pubdate>2012-07-25</pubdate>
-    <revhistory>
-      <revision>
-        <date>2012-07-25</date>
-        <revdescription>
-          <para>Initial Preview Program release.</para>
-        </revdescription>
-      </revision>
-    </revhistory>
-  <legalnotice role="rs-api">
-    <annotation>
-      <remark>Copyright details are filled in by the template.</remark>
-    </annotation>
-  </legalnotice>
-  <abstract>
-    <para>This document provides in introduction for software developers interested in developing
-        applications using the &CBS; Application Programming Interface (<abbrev>API</abbrev>). </para>
-  </abstract>
-
-  </info>
-  
-  
-  
-  <chapter xml:id="Introduction">
-    <title>Introduction</title>
-    <para>
-      Rackspace Cloud Block Storage (CBS) is a block level storage solution 
-      that allows you to expand the storage capacity of your 
-      Next Generation Cloud Servers™ without paying for more compute capability. 
-    </para>
-    <para>
-      There are two options which allow you to mount drives or volumes to your
-      Next Generation Cloud Server:
-      <itemizedlist>
-        <listitem>
-          <para>
-            The standard performance option offers extra storage capacity with mountable
-      SATA drives
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-      The high performance option offers high speed solid state drives (SSDs) 
-      for memory-intensive applications
-          </para>
-        </listitem>
-      </itemizedlist>
-    </para>
-    <para>
-      Follow the steps in this <citetitle>Getting Started Guide</citetitle> to
-      get started with Cloud Block Storage. See the 
-      <citetitle>Cloud Block Storage Developer Guide</citetitle> 
-      for detailed instructions on interacting with the CBS API.
-    </para>
-    <section xml:id="CBS_Preview-d1e170">
-      <title>Preview Resources</title>
-      <para>
-        If you need support during the Preview period, email us at 
-        <code>cbspreview@rackspace.com</code>.
-      </para>
-      <para>The Preview program enables customers by invitation to 
-        test an
-        early version of the product and provide feedback of the
-        product and capabilities. The CBS Preview Program is a
-        pre-production service offering covered by the Beta
-        Services terms (<code><link xlink:href="http://www.rackspace.com/information/legal/testterms">www.rackspace.com/information/legal/testterms</link></code>)
-        in our Rackspace Cloud Terms of Service.</para>
-      <para>The Preview Program has some
-        limitations. By using the Rackspace Cloud Block Storage
-        API during the Preview period, you agree and understand that:<itemizedlist
-          spacing="compact">
-          <listitem>
-            <para>Rackspace Cloud Block Storage is API-only.</para>
-          </listitem>
-          <listitem>
-            <para>During Preview, customers will be limited to no more
-              than 5 TB total CBS storage, using any mix of standard and 
-              high performance. There is a limit of 10 volumes per instance
-              and 20 total volumes per customer. There is no limit on how many
-              snapshots you may create. These limits will ensure
-              that Rackspace can accommodate the ideal amount of Preview
-              participants. 
-            </para>
-          </listitem>
-          <listitem>
-            <para>There is no charge for this service during the Preview
-              period.</para>
-          </listitem>
-          <listitem>
-            <para>We will charge for Rackspace Cloud Block Storage when
-              this service becomes generally available.</para>
-          </listitem>
-          <listitem>
-            <para>If you participate in this Preview Program, you will
-              receive a notification prior to general
-              availability.</para>
-          </listitem>
-          <listitem>
-            <para>There is no Service Level Agreement. </para>
-          </listitem>
-          <listitem>
-            <para>Support is available from 8 AM – 5 PM (Central Time)
-              Monday–Friday.</para>
-          </listitem>
-        </itemizedlist>
-      </para>
-    </section>
-    <section xml:id="Prerequs-dle180">
-      <title>Prerequisites</title>
-      <para>
-        In order to use Cloud Block Storage, you must have a Next Generation
-        Cloud Server account. If you are a customer but do not yet have 
-        a Next Generation Cloud Server account, you must upgrade your server.
-      </para>
-    </section>
-    <section xml:id="Change_History-d1e190">
-      <title>Document Change History</title>
-      <para>This version of the <citetitle>Getting Started Guide</citetitle> replaces and obsolesces
-        all previous versions. The most recent changes are described
-        in the table below:</para>
-      <?rax revhistory?>
-    </section>
-
-    <section xml:id="endpoint-access">
-      <title>Accessing the API</title>
-      <para>To access the &CBS; use the following URL:</para>
-      <para>&URL;&lt;1234&gt;</para>
-      <note>
-        <para>&lt;1234&gt; represents your account number and is used as a placeholder in the examples and
-          exercises in this guide. When you work through the examples you'll need to replace 1234
-          with your Rackspace account number. If you don't know your account number now, don't
-          worry. We'll explain how to find it later. To see find that information now, read
-          <code>publicURL</code> at 
-          <link linkend="auth-response-description">Authentication Response Description</link>.
-          </para>
-      </note>
-    </section>
-    
-    
-    
-    
-    <section xml:id="DB_Sending_API_Requests">
-        <title>Send Requests to the API</title>
-        <para>You have several options for sending requests through an
-            API: </para>
-        <itemizedlist spacing="compact">
-            <listitem>
-                <para>Developers and testers may prefer to use cURL,
-                    the command-line tool from <link
-                        xlink:href="http://curl.haxx.se/">
-                        curl.haxx.se</link>. </para>
-                <para>With cURL, you can send HTTP requests and receive
-                    responses back from the command line. </para>
-            </listitem>
-            <listitem>
-                <para>If you like to use a more graphical interface,
-            the REST client for Firefox also works well for testing
-            and trying out commands, see <link
-              xlink:href="https://addons.mozilla.org/en-US/firefox/addon/restclient/"
-              >
-              addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
-            </listitem>
-            <listitem>
-                <para>You can also download and install RESTclient, a
-            Java application to test RESTful web services, from <link
-              xlink:href="http://code.google.com/p/rest-client/">
-              code.google.com/p/rest-client/</link>. </para>
-            </listitem>
-        </itemizedlist>
-        <section xml:id="DB_using-curl-cli">
-            <title>Send API Requests Using cURL</title>
-            <para>cURL is a command-line tool that is available on
-          most UNIX®-like environments and Mac OS X®; it can be
-          downloaded for Windows® so you can interact with the REST
-          interfaces. For more information on cURL, visit <link
-            xlink:href="http://curl.haxx.se/"> curl.haxx.se</link>. </para>
-            <para>cURL allows you to transmit and receive HTTP
-          requests and responses from the command-line or from within
-          a shell script. This makes it possible to work with the REST
-          API directly without using one of the client APIs. </para>
-            <para>The following cURL command-line options will be used
-                in this guide to run the examples:</para>
-            <variablelist>
-                <title>cURL Command-Line Options</title>
-                <varlistentry>
-                    <term><option>-d</option></term>
-                    <listitem>
-                        <para>Sends the specified data in a post
-                            request to the HTTP server.</para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term><option>-i</option></term>
-                    <listitem>
-                        <para>Includes the HTTP header in the
-                            output.</para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term><option>-H HEADER</option></term>
-                    <listitem>
-                        <para>Specify an HTTP header in the request.</para>
-                    </listitem>
-                </varlistentry>
-            </variablelist>
-            <note>
-                <para>If you have the tools, you can run the cURL JSON
-                    request examples with the following options to
-                    format the output from cURL: <command>&lt;curl
-                        JSON request example> | python
-                        -mjson.tool</command>.</para>
-            </note>
-        </section>
-        <section xml:id="DB_copy_paste_examples">
-            <title>Copying and Pasting cURL Request Examples into a
-                Terminal Window</title>
-            <para>To run the cURL request examples shown in this guide
-                on Linux or Mac systems, copy and paste the example
-                from this guide into an ASCII
-                editor (for example <emphasis role="bold"
-                    >vi</emphasis> or <emphasis role="bold"
-                    >TextEdit</emphasis>). Then, modify each example
-                with your account information as detailed in this guide.</para>
-            <note>
-                <para>The carriage returns in the cURL 
-                    examples that are part of the cURL syntax are
-                    escaped with a backslash ('\') to avoid
-                    prematurely terminating the command. However, you
-                    should not escape carriage returns inside the XML
-                    or JSON message within the command.</para>
-            </note>
-            <para>Consider the following cURL Authenticate Request:
-                XML example that is described in detail in <link
-                    linkend="Generating_Auth_Token">Generate an Authentication Token</link>:</para>
-            <example>
-                <title>cURL Authenticate Request: XML</title>
-                <?dbfo keep-together="always"?>
-                <screen>
-<command>curl</command> <option>-i</option> <option>-d</option> \
-'&lt;?xml version="1.0" encoding="UTF-8"?>  
-&lt;credentials xmlns="http://docs.rackspacecloud.com/auth/api/v1.1" 
-             username="<emphasis role="bold">your_username</emphasis>" 
-             key="<emphasis role="bold">your_api_key</emphasis>"/>' \
-<option>-H 'Content-Type: application/xml'</option> \
-<option>-H 'Accept: application/xml'</option> \
-<uri>'https://identity.api.rackspacecloud.com/v1.1/auth'</uri>
-                </screen>
-            </example>
-            <para>You can see that the lines that are part of the cURL
-                command syntax have all been escaped with a backslash
-                ('\') to indicate that the command continues on the
-                next line:</para>
-<screen><command>curl</command> <option>-i</option> <option>-d</option> \
-             key="<emphasis role="bold">your_api_key</emphasis>"/>' \
-<option>-H 'Content-Type: application/xml'</option> \
-<option>-H 'Accept: application/xml'</option> \
-<uri>'https://identity.api.rackspacecloud.com/v1.1/auth'</uri>
-</screen>
-
-          <para>However, the lines <emphasis>within</emphasis> the
-                XML portion of the message are
-                <emphasis>not</emphasis> escaped with a backslash
-                ('\'). This is to avoid issues with XML processing:</para>
-<screen>
-'&lt;?xml version="1.0" encoding="UTF-8"?>  
-&lt;credentials xmlns="http://docs.rackspacecloud.com/auth/api/v1.1" 
-             username="<emphasis role="bold">your_username</emphasis>" 
-             key="<emphasis role="bold">your_api_key</emphasis>"/>' \
-  
-</screen>
-            <note>
-                <para>The final line of the xml message is escaped
-                    since the backslash lies
-                        <emphasis>outside</emphasis> the xml message
-                    and continues the cURL command to the next
-                    line.</para>
-            </note>
-            <para>After you are finished modifying the text for the
-                cURL request example with your information (for
-                example, <emphasis role="bold"
-                        ><code>your_username</code></emphasis> and
-                    <emphasis role="bold"
-                    ><code>your_api_key</code></emphasis>), paste it
-                into your terminal window. Lastly, execute the cURL
-                command by pressing <guilabel>Enter</guilabel>.</para>
-            <para>If you have trouble copying and pasting the examples
-                as described, try typing the entire example on one
-                long line, removing all the backslash line
-                continuation characters.</para>
-        </section>
-    </section>
-    
-   
-    <section xml:id="Authentication-d1e647">
-      <title>Authentication</title>
-      <para> Every REST request against the Block Storage Service
-        requires the inclusion of a specific authorization token,
-        supplied by the <code>X-Auth-Token</code> HTTP header.
-        Customers obtain this token by first using the Rackspace Cloud
-        Authentication Service and supplying a valid username and API
-        access key. </para>
-      <para>
-        To authenticate, submit a <code>POST/v2.0/tokens</code> request, 
-        presenting valid Rackspace customer credentials 
-        in the message body to a Rackspace authentication endpoint
-        . 
-      </para>
-      <para>
-        <emphasis role="bold">GET YOUR CREDENTIALS</emphasis>
-      </para>
-      <para> You can use either of two sets of credentials: <itemizedlist>
-        <listitem>
-          <para>your <code>username</code> and
-            <code>password</code></para>
-        </listitem>
-        <listitem>
-          <para>your <code>username</code> and <code>API
-            key</code></para>
-        </listitem>
-      </itemizedlist>
-      </para>
-      <para>
-        Your <code>username</code> and
-        <code>password</code> are the ones you use to login to the 
-        Rackspace control panel. Once you are logged in, you can use 
-        the Rackspace control panel to obtain your <code>API key</code>.
-      </para>
-      <para>
-        Use the control panel for the region in which your account is based: 
-        <itemizedlist spacing="compact">
-          <listitem>
-            <para>
-              US-based accounts use the control panel at <link xlink:href="https://manage.rackspacecloud.com/">https://manage.rackspacecloud.com/</link>.
-            </para>
-          </listitem>
-          <!--
-            <listitem>
-            <para> UK-based accounts use the control panel at
-            <link
-            xlink:href="https://lon.manage.rackspacecloud.com/"
-            >https://lon.manage.rackspacecloud.com/</link>. </para>
-            </listitem>
-          -->
-        </itemizedlist> 
-      </para>
-      <para>
-        <emphasis role="bold">CHOOSE YOUR AUTHENTICATION ENDPOINT</emphasis>
-      </para>
-      <para>
-        Use the authentication endpoint for the region in which your account is based:
-        <itemizedlist spacing="compact">
-          <listitem>
-            <para> US-based accounts authenticate through
-              <link xlink:href="&ENDPOINT-US;">&ENDPOINT-US;</link>.</para>
-          </listitem>
-          <!--
-            <listitem>
-            <para> UK-based accounts authenticate through
-            <link xlink:href="&ENDPOINT-UK;">&ENDPOINT-UK;</link>.</para>
-            </listitem>
-          -->
-        </itemizedlist>
-      </para>
-      <para>
-        <emphasis role="bold">SEND YOUR CREDENTIALS TO YOUR AUTHENTICATION
-          ENDPOINT</emphasis>
-      </para>
-      <para> If you know your credentials and your authentication
-        endpoint, and you can issue a <code>POST
-          /v2.0/tokens</code> request in an API call, you have
-        all the basic information you need to use the Rackspace
-        Cloud Identity Service. 
-      </para>
-      <para> You can use <link xlink:href="http://curl.haxx.se/"
-        >cURL</link> to try the authentication process in two
-        steps: get a token; send the token to a service.<orderedlist>
-          <listitem>
-            <para>Get an authentication token by providing
-              your username and either your API key or your
-              password. Here are examples of both
-              approaches:</para>
-            <para><emphasis>You can request a token by
-              providing your username and your API
-              key.</emphasis></para>
-            <para>
-              <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
-'{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"theUserName", "apiKey":"00a00000a000a0000000a000a00aaa0a" } } }' -H "Content-type: application/json"</literallayout>
-            </para>
-            <para><emphasis>You can request a token by
-              providing your username and your
-              password.</emphasis></para>
-            <para>
-              <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
-'{"auth":{"passwordCredentials":{"username":"theUserName","password":"thePassword"}}}' -H "Content-type: application/json"</literallayout>
-            </para>
-            <para> Successful authentication returns a token
-              which you can use as evidence that your
-              identity has already been authenticated. To
-              use the token, pass it to other services as an
-              <code>X-Auth-Token</code> header. </para>
-            <para> Authentication also returns a service
-              catalog, listing the endpoints you can use for
-              Cloud services. </para>
-          </listitem>
-          <listitem>
-            <para>Use the authentication token to send a GET
-              to a service you would like to use. Here is an
-              example of passing an authentication token to
-              the Cloud Files service, using the Cloud Files
-              service catalog endpoint that was returned
-              along with the token.</para>
-            <para><emphasis>You can use a token and a service endpoint to tell a service that your credentials are valid.</emphasis></para>
-            <para>
-              <literallayout class="monospaced">curl -X GET https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
--H 'X-Auth-Token:11111111-aaaa-2222-bbbb-3333cccc4444' --verbose</literallayout>
-            </para>
-          </listitem>
-        </orderedlist>
-      </para>
-      <tip>
-        <para> For links to language binding examples you can adapt to
-          work with the Cloud Identity service, visit <link
-            xlink:href="https://github.com/rackspace"
-            >https://github.com/rackspace</link>.</para>
-      </tip>
-      
-      <para>Authentication tokens are typically valid for 24 hours.
-        Applications should be designed to re-authenticate after
-        receiving a 401 (Unauthorized) response from a service
-        endpoint. </para>
-      <important>
-        <para>If you are programmatically parsing an authentication
-          response, please be aware that service names are stable
-          for the life of the particular service and can be used as
-          keys. You should also be aware that a user's service
-          catalog can include multiple uniquely-named services which
-          perform similar functions. For example,
-          cloudServersOpenStack is the OpenStack version of compute
-          whereas cloudServers is the legacy version of compute; the
-          same user can have access to both services. In Auth 2.0,
-          the service type attribute can be used as a key by which
-          to recognize similar services; see the tip below.</para>
-      </important>
-      <tip>
-        <para>Beginning with Auth 2.0, the service catalog includes
-          a service type attribute to identify services that perform
-          similar functions but have different names; for example,
-          <code>type="compute"</code> identifies compute services
-          such as cloudServers and cloudServersOpenStack. Some
-          developers have found the service type attribute to be
-          useful in parsing the service catalog. For Auth 2.0 (also
-          known as the Cloud Identity Service), you can see the
-          service type attribute in the "Service Catalog in
-          Authentication Response" samples in the <citetitle>Cloud
-            Identity Client Developer Guide</citetitle> at <link
-              xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html"
-              >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html</link>.</para>
-      </tip>
-      
-    </section>
-    
-    
-    
-    
-    <!-- *******************************************************  -->
-    
-    <section xml:id="working-with-tutorial">
-      <title>Working with the Exercises in this Guide</title>
-      <para>The main purpose of this guide is to get you up and running quickly with &MAAS;. To help
-        you accomplish this goal, we've included a tutorial that lets you try out the basic
-        operations for creating a monitor. To run through the exercises you can use the cURL command
-        line tool or <code>raxmon</code>, the &MAAS; command line interface. Read on for a brief
-        introduction to both of these tools.</para>
-      <section xml:id="curl">
-        <title>Using cURL</title>
-        <para>The cURL command line makes it easier to interact with RESTful APIs. It lets you
-          transmit and receive HTTP requests and responses from the command line or from within a
-          shell script. It is available on most UNIX®-like environments, on Mac OS X®, and Windows®.
-          For more information on cURL, visit <link xlink:href="http://curl.haxx.se"/>.</para>
-        <para>This guide uses the following cURL command line options: </para>
-        <itemizedlist>
-          <listitem>
-            <para><code>-i </code></para>
-            <para>Includes the HTTP header in the output.</para>
-          </listitem>
-          <listitem>
-            <para><code>--data-binary</code></para>
-            <para>Sends the specified data in a POST request to the HTTP server.</para>
-          </listitem>
-          <listitem>
-            <para><code>-H HEADER</code></para>
-            <para>Specifies an HTTP header in the request.</para>
-          </listitem>
-        </itemizedlist>
-        <section xml:id="curl-copying-examples">
-          <title>Copying Request Examples</title>
-          <para>To avoid a lot of typing, you can copy, edit, and paste the cURL request examples
-            from this guide into a terminal or command window.</para>
-          <procedure xml:id="curl-copy-examples">
-            <title>To copy and paste the cURL request examples</title>
-            <step>
-              <para>Copy and paste the example request into your favorite text editor. </para>
-            </step>
-            <step>
-              <para>Replace <code>auth_token</code> with your authorization token and <replaceable
-                role="italic">1234</replaceable> with your account number. </para>
-            </step>
-            <step>
-              <para>Paste the revised example into a terminal or command window and press
-                <guilabel>Enter</guilabel> to execute the command.</para>
-            </step>
-          </procedure>
-        </section>
-        <section xml:id="curl-escaping-returns">
-          <title>Escaping Carriage Returns</title>
-          <para security="internal">For cutting and pasting purposes, do CRs need to be escaped for
-            XML and JSON when using cURL?</para>
-          <para>To make the cURL commands easier to read, the examples have carriage returns at the
-            end of each line,  followed by a backslash ('\') to avoid prematurely terminating the
-            command when it's executed. Note that you shouldn't escape carriage returns inside the
-            message body.</para>
-          <para>In the following XML example, you can see that the lines that are part of the cURL
-            command syntax have all been escaped with a backslash ('\') to indicate that the command
-            continues on the next line:</para>
-          <example>
-            <title>Escaping Carriage Returns in cURL</title>
-            <?dbfo keep-together="always"?>
-            <screen><command>curl</command> <option>-i</option> <option>-d</option> \
-'&lt;?xml version="1.0" encoding="UTF-8"?>  
-&lt;credentials xmlns="http://docs.rackspacecloud.com/auth/api/v1.1" 
-             username="your_username" 
-             key="your_api_key"/>' \
-<option>-H "Content-Type: application/xml"</option> \
-<option>-H "Accept: application/xml"</option> \
-<uri>'https://auth.api.rackspacecloud.com/v1.1/auth'</uri></screen>
-          </example>
-          <para>However, the lines <emphasis>within</emphasis> the body of the message are
-            <emphasis>not</emphasis> escaped with a backslash ('\') to avoid issues with
-            processing the command:</para>
-          <screen>'&lt;?xml version="1.0" encoding="UTF-8"?>  
-&lt;credentials xmlns="http://docs.rackspacecloud.com/auth/api/v1.1" 
-             username="your_username" 
-             key="your_api_key"/>' \
-</screen>
-        </section>
-      </section>
-    </section>
-  </chapter>
-  
-
-
-  <chapter xml:id="GetStarted">
-    <title>Get Started</title>
-    <section xml:id="using-volumes">
-      <title>Using Volumes</title>
-      <para>Once you have a Next Generation Server set up on your Cloud account, you can
-        add additional storage volumes without changing your server flavor. The steps to 
-        get you started are outlined in brief below. However, for a full description of
-        everything you can do with Cloud Block Storage, see the Cloud Block Storage Developer
-        Guide.
-      </para>
-      <para>
-        The following steps will help you locate your server information, create a volume,
-        attach the volume to the server so that you may begin using your new storage. 
-      </para>
-    </section>
-    
-      <section xml:id="list-servers">
-        <title>List Severs: list</title>
-        <para>The <code>list</code> command lists all the servers that are currently established
-          on your Cloud account.  For any actions you do with your Cloud Block Storage, you will 
-          need to know which server you are using. 
-          </para>
-          <para>
-            If you need to limit the amount of data returned, you may use the following arguments.
-            All of these arguments are optional.
-   <literallayout>
-   <code>--reservation_id &lt;reservation_id&gt;</code>     Only return instances that match reservation_id.
-   <code>--ip &lt;ip_regexp&gt;</code>      Search with regular expression match by IP address
-   <code>--ip6 &lt;ip6_regexp&gt;</code>    Search with regular expression match by IPv6 address
-   <code>--name &lt;name_regexp&gt;</code>  Search with regular expression match by name
-   <code>--instance_name &lt;name_regexp&gt;</code>     Search with regular expression match by instance name
-   <code>--status &lt;status&gt;</code>     Search by server status
-   <code>--flavor &lt;flavor&gt;</code>     Search by flavor ID
-   <code>--image &lt;image&gt;</code>       Search by image ID
-   <code>--host &lt;hostname&gt; </code>    Search instances by hostname to which they are assigned
-   <code>--all_tenants [&lt;0|1&gt;]</code> 	Display information from all tenants (Admin only).
-   </literallayout>
-          </para>                    
-      <para>
-        NEED: sample return values and what information the user will need for CBS.
-      </para>
-      </section>
-    
-    <section xml:id="create-volume">
-          <title>Using Volumes</title>
-          <para>
-          The following steps will help you locate your server information, create a volume,
-          attach the volume to the server so that you may begin using your new storage. 
+<book version="5.0" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+    xml:id="cbs-getting-started">
+    <?rax title.font.size="40px" subtitle.font.size="30px"?>
+    <title>Rackspace Cloud Block Storage Getting Started Guide</title>
+    <?rax status.bar.text.font.size="40px"
+          status.bar.text=""?>
+    <titleabbrev>Rackspace Cloud Block Storage Getting Started Guide</titleabbrev>
+    <info>
+        <copyright>
+            <year>2014</year>
+            <holder>Rackspace US, Inc.</holder>
+        </copyright>
+        <releaseinfo>API v1</releaseinfo>
+        <productname>Rackspace Cloud Block Storage</productname>
+        <pubdate>2014-04-30</pubdate>
+        <legalnotice role="rs-api">
+            <annotation>
+                <remark>Copyright details are filled in by the doc build process.</remark>
+            </annotation>
+        </legalnotice>
+        <abstract>
+            <para>This document is intended for software developers interested in developing
+                applications using the Rackspace Cloud Block Storage Application Programming
+                Interface (<abbrev>API</abbrev>). </para>
+        </abstract>
+        <revhistory>
+            <revision>
+                <date>2014-04-30</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Initial publishing of this guide.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+        </revhistory>
+        <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+            <raxm:displayname>Getting Started Guide</raxm:displayname>
+            <raxm:product version="v1">cbs</raxm:product>
+            <raxm:priority>10</raxm:priority>
+        </raxm:metadata>
+    </info>
+    <chapter xml:id="Doc_Change_History">
+        <title>Document change history</title>
+        <para>This version of the guide replaces and obsoletes all earlier versions. The most recent
+            changes are described in the following table:</para>
+        <?rax revhistory?>
+    </chapter>
+    <chapter xml:id="Overview-d1e01">
+        <title>Overview</title>
+        <para> Rackspace Cloud Block Storage (CBS) is a block level storage solution that allows you
+            to mount drives or volumes to your Next Generation Cloud Servers™. The primary use cases
+            for Cloud Block Storage are to enable you to do the following tasks:<itemizedlist>
+                <listitem>
+                    <para>Scale your storage independently from your compute resources.</para>
+                </listitem>
+                <listitem>
+                    <para>Use high performance storage to serve database or I/O-intensive
+                        applications.</para>
+                </listitem>
+            </itemizedlist>
         </para>
-        
-      
-      <para>
-        Once you have chosen the type of volume to create, you reated your volumes, you attach
-        
-        The <code>raxmon</code> command line interface lets you interact with the &MAAS; API
-        in a quick and efficient manner. If you're not a programmer by nature, we suggest using
-        <code>raxmon</code> to become familiar with the product and its capabilities. Even if
-        you're a programming guru, we think you'll like the speed at which you can set up monitors
-        using <code>raxmon</code>. To try out <code>raxmon</code>, go to <link
-          xlink:href="https://github.com/racker/rackspace-monitoring-cli"
-          >https://github.com/racker/rackspace-monitoring-cli</link> for the installation and
-        configuration information. </para>
-      <para>Once you have installed <code>raxmon</code>, type the following command in a terminal
-        or command window to see a list of the available <code>raxmon</code> commands:</para>
-      <para><code>raxmon --help</code> or <code>raxmon --h</code></para>
-      <para>To get help for a particular command, type:</para>
-      <para><code>raxmon-command-name --help</code> or <code>raxmon-command-name --h</code>
-      </para>
-      <para>For example, you can see a brief description of each option you would use to create an
-        entity in the monitoring system by typing the following command:</para>
-      <para><code>raxmon-entities-create --h</code></para>
-    </section>
-  </chapter>
-  
-
-
-
-      
- <chapter xml:id="leftovers">
-    <title>leftover</title>
-    <section xml:id="using-raxmon">
-      <title>Using the raxmon Command Line Interface</title>
-      <para>The <code>raxmon</code> command line interface lets you interact with the &MAAS; API
-        in a quick and efficient manner. If you're not a programmer by nature, we suggest using
-        <code>raxmon</code> to become familiar with the product and its capabilities. Even if
-        you're a programming guru, we think you'll like the speed at which you can set up monitors
-        using <code>raxmon</code>. To try out <code>raxmon</code>, go to <link
-          xlink:href="https://github.com/racker/rackspace-monitoring-cli"
-          >https://github.com/racker/rackspace-monitoring-cli</link> for the installation and
-        configuration information. </para>
-      <para>Once you have installed <code>raxmon</code>, type the following command in a terminal
-        or command window to see a list of the available <code>raxmon</code> commands:</para>
-      <para><code>raxmon --help</code> or <code>raxmon --h</code></para>
-      <para>To get help for a particular command, type:</para>
-      <para><code>raxmon-command-name --help</code> or <code>raxmon-command-name --h</code>
-      </para>
-      <para>For example, you can see a brief description of each option you would use to create an
-        entity in the monitoring system by typing the following command:</para>
-      <para><code>raxmon-entities-create --h</code></para>
-    </section>
- </chapter>
-
-
-
-  
-    
-    
-
-  
-  
-  
-  
-  <chapter xml:id="tutorials"><title>Create Your First Monitor</title>
-    <para>This chapter contains some simple exercises that will help you become familiar with basic
-      monitoring operations. Examples are provided in cURL with JSON formatting. You can also
-      complete this tutorial using the &MAAS; command line interface. If you would rather use the
-      command line interface, an example <command>raxmon</command> command is also given for each
-      operation. For information on installing and configuring <command>raxmon</command>
-      <link xlink:href="https://github.com/racker/rackspace-monitoring-cli"
-        >https://github.com/racker/rackspace-monitoring-cli</link>.</para>
-    <para>For the purpose of this tutorial assume that you have a new web server that you want to
-      make sure is running and responding to requests within a reasonable amount of time. Using this
-      example, you'll perform the following tasks:<orderedlist>
-        <listitem>
-          <para>Create an <glossterm baseform="Entity" linkend="entity.glossary">entity</glossterm> to
-            represent the server in the monitoring system.</para>
-        </listitem>
-        <listitem>
-          <para>Review the list of available <glossterm baseform="Monitoring Zone"
-              linkend="monitoring-zone.glossary">monitoring zones</glossterm>.</para>
-        </listitem>
-        <listitem>
-          <para>Define three <glossterm baseform="Check" linkend="check.glossary">checks</glossterm> for the new
-            entity.</para>
-        </listitem>
-        <listitem>
-          <para>Set up a webhook <glossterm baseform="Notification" linkend="notification.glossary">notification</glossterm> and a
-              <glossterm baseform="Notification Plan" linkend="notification-plan.glossary">notification plan</glossterm> so you can
-            receive information about the entity.</para>
-        </listitem>
-        <listitem>
-          <para>Define two <glossterm baseform="Alarm" linkend="alarm.glossary">alarms</glossterm> and assign them to a check
-            to begin the monitoring process.</para>
-        </listitem>
-        <listitem>
-          <para>Make a simple modification to the original entity.</para>
-        </listitem>
-        <listitem>
-          <para>And finally, you'll delete the entity and it's child objects--the checks and alarms.
-          </para>
-        </listitem>
-      </orderedlist></para>
-    <note>
-      <para>When performing the following exercises, you'll need to include your authorization token
-        where you see "<code>auth_token</code>" and your account number where you see <emphasis
-          role="italic">1234</emphasis>. If you haven't requested an authentication token yet,
-        follow the instructions in <link linkend="example-auth"> Example Authentication</link> and
-        then go to Section 2.1, Create an Entity. </para>
-    </note>
-    <section xml:id="concepts-tutorial-create-entity">
-      <?dbhtml stop-chunking?>
-      <title>Create an Entity</title>
-      <para>The first thing you'll do to begin monitoring a resource is to create an entity that
-        represents the resource in the monitoring system. </para>
-      <para>You'll use the following attributes to create the entity: <variablelist>
-          <varlistentry>
-            <term><parameter>label</parameter></term>
-            <listitem>
-              <para>Assigns a meaningful name to the entity. In the examples below, we've named the
-                server "My Rackspace Server". You can choose a different name or use the same one,
-                but note that it's commonly a server name.</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><parameter>ip_address</parameter></term>
-            <listitem>
-              <para>Specifies the server's IP address(es). In the example below, we're specified the
-                IP address and named it "default."</para>
-            </listitem>
-          </varlistentry>
-        </variablelist><note>
-          <para>Remember to insert your authorization token and account number as previously
-            described in <xref linkend="example-auth"/>.</para>
-        </note></para>
-      <example>
-        <title>Create Entity Request JSON</title>
-        <programlisting>curl -i -X POST \
---data-binary \
-'{ "ip_addresses" : { "default" : "192.0.2.15" },
-  "label" : "My Rackspace Server",
-  "metadata" : {  }
-}' \
--H 'X-Auth-Token: auth_token' \
--H 'Content-Type: application/json' \
--H 'Accept: application/json' \
-'&URL;1234/entities/'</programlisting>
-      </example>
-      <example>
-        <title>Create Entity Response JSON</title>
-        <programlisting>HTTP/1.1 201 Created
-Content-Length: 0
-X-Response-Id: .rh-ZWac.h-lon3-maas-prod-api0.r-To4aIzNP.c-25577.ts-1326394448414.v-0c7bb08
-X-Powered-By: Express
-Location: &URL;1234/entities/enn14Ch5mc
-Date: Thu, 12 Jan 2012 18:54:08 GMT
-Content-Type: text/plain</programlisting>
-      </example>
-      <para>If the entity is successfully created, the endpoint returns a response code of
-          <returnvalue>201 Created</returnvalue> and a <code>Location:</code> header with the URI of
-        the entity. Note that the entity ID is located at the end of the URL. In this example, the
-        entity ID is enn14Ch5mc. Every entity has a unique ID, so yours will be different.</para>
-      <example>
-        <title>Create Entity Request using raxmon</title>
-        <programlisting>raxmon-entities-create --label="Monitor Test" --ip-address=default=192.0.2.15</programlisting>
-      </example>
-      <example>
-        <title>Create Entity raxmon Response</title>
-        <programlisting>HTTP/1.1 201 Created
-Content-Length: 0
-X-Response-Id: .rh-ZWac.h-lon3-maas-prod-api0.r-To4aIzNP.c-25577.ts-1326394448414.v-0c7bb08
-X-Powered-By: Express
-Location: &URL;1234/entities/enn14Ch5mc
-Date: Thu, 12 Jan 2012 18:54:08 GMT
-Content-Type: text/plain</programlisting>
-      </example>
-      <para>If an error message is returned, the endpoint was unable to create the entity. See error
-        codes descriptions in the <link
-          xlink:href="http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/general-api-info-api-faults.html"
-          >&MAAS; Developers Guide</link>.</para>
-      <note>
-        <para>For the remaining steps of this tutorial substitute the ID of the entity you created
-          for "enn14Ch5mc".</para>
-      </note>
-      <tip>
-        <para>You can request a list of all entities for your account at any time. You can also list
-          checks, alarms, notifications, and so on. </para>
-        <para>
-          <example>
-            <title>List All Entities Request using cURL</title>
-            <programlisting>curl -i -X GET \
--H 'X-Auth-Token: auth_token' \
--H 'Content-Type: application/json' \ 
--H 'Accept: application/json' \
-'&URL;1234/entities'</programlisting>
-          </example>
-          <example>
-            <title>List All Entities using raxmon</title>
-            <programlisting>raxmon-entities-list --details</programlisting>
-          </example>
+        <para>The following options allow you to mount drives or volumes to your Next Generation
+            Cloud Server: <itemizedlist>
+                <listitem>
+                    <para>The standard performance option offers extra storage capacity with
+                        mountable SATA drives </para>
+                </listitem>
+                <listitem>
+                    <para>The high performance option offers high speed solid state drives (SSDs)
+                        for memory-intensive applications </para>
+                </listitem>
+            </itemizedlist>
         </para>
-        <para>For a complete list of GET commands, see the Quick Reference table in <link
-            xlink:href="http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/maas-core-service-calls.html"
-            >&MAAS; Developers Guide</link>
-        </para>
-      </tip>
-      <para><emphasis role="bold"><link linkend="concepts-tutorial-monitoring-zones">NEXT
-          UP:</link></emphasis> Check out the monitoring zones you can launch your check
-        from.</para>
-    </section>
-    <section xml:id="concepts-tutorial-monitoring-zones">
-      <?dbhtml stop-chunking?>
-      <title>List Monitoring Zones</title>
-      <para>Before creating a check for the new entity, you'll want to choose which monitoring zones
-        to run the check from. &MAAS; is divided into different monitoring zones. You may want to
-        have a single server monitored from several monitoring zones to reduce the risk of false
-        alarms and check the response time from different locations around the world. </para>
-      <para>Examine the response and choose the monitoring zone(s) you want to launch your first
-        check from. </para>
-      <example>
-        <title>List Monitoring Zones using cURL</title>
-        <programlisting>curl -i -X GET \
--H 'X-Auth-Token: auth_token' \
--H 'Accept: application/json' \ 
-'&URL;1234/monitoring_zones'</programlisting>
-      </example>
-      <example>
-        <title>List Monitoring Zones cURL Response</title>
-        <programlisting>HTTP/1.1 200 OK
-X-Ratelimit-Remaining: 49982
-X-Response-Id: .rh-YQzc.h-lon3-maas-prod-api0.r-kCU9r8nq.c-27354.ts-1329332815801.v-3aec925
-Transfer-Encoding: chunked
-Vary: Accept-Encoding
-X-Lb: lon3-maas-prod-api1
-X-Ratelimit-Type: global
-X-Ratelimit-Limit: 50000
-Date: Wed, 15 Feb 2012 19:06:55 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: application/json; charset=UTF-8
-
-428
-{
-    "values": [
-        {
-            "id": "mzdfw",
-            "label": "dfw",
-            "country_code": "US",
-            "source_ips": [
-                "2001:4800:7902:0001::/64",
-                "50.56.142.128/26"
-            ]
-        },
-        {
-            "id": "mzhkg",
-            "label": "hkg",
-            "country_code": "HK",
-            "source_ips": [
-                "180.150.149.64/26",
-                "2401:1800:7902:1:0:0:0:0/64"
-            ]
-        },
-        {
-            "id": "mzlon",
-            "label": "lon",
-            "country_code": "GB",
-            "source_ips": [
-                "2a00:1a48:7902:0001::/64",
-                "78.136.44.0/26"
-            ]
-        },
-        {
-            "id": "mzord",
-            "label": "ord",
-            "country_code": "US",
-            "source_ips": [
-                "2001:4801:7902:0001::/64",
-                "50.57.61.0/26"
-            ]
-        }
-    ],
-    "metadata": {
-        "count": 4,
-        "limit": 100,
-        "marker": null,
-        "next_href": null
-    }
-}
-</programlisting>
-      </example>
-      <example>
-        <title>List Monitoring Zones using raxmon</title>
-        <programlisting>raxmon-monitoring-zones-list --details</programlisting>
-      </example>
-      <example>
-        <title>List Monitoring Zones raxmon Response</title>
-        <programlisting>{'country_code': u'US',
- 'driver': &lt;rackspace_monitoring.drivers.rackspace.RackspaceMonitoringDriver object at 0x100562410>,
- 'extra': {},
- 'id': u'mzdfw',
- 'label': u'dfw',
- 'source_ips': [u'2001:4800:7902:0001::/64', u'50.56.142.128/26']}
-{'country_code': u'HK',
- 'driver': &lt;rackspace_monitoring.drivers.rackspace.RackspaceMonitoringDriver object at 0x100562410>,
- 'extra': {},
- 'id': u'mzhkg',
- 'label': u'hkg',
- 'source_ips': [u'180.150.149.64/26', u'2401:1800:7902:1:0:0:0:0/64']}
-{'country_code': u'GB',
- 'driver': &lt;rackspace_monitoring.drivers.rackspace.RackspaceMonitoringDriver object at 0x100562410>,
- 'extra': {},
- 'id': u'mzlon',
- 'label': u'lon',
- 'source_ips': [u'2a00:1a48:7902:0001::/64', u'78.136.44.0/26']}
-{'country_code': u'US',
- 'driver': &lt;rackspace_monitoring.drivers.rackspace.RackspaceMonitoringDriver object at 0x100562410>,
- 'extra': {},
- 'id': u'mzord',
- 'label': u'ord',
- 'source_ips': [u'2001:4801:7902:0001::/64', u'50.57.61.0/26']}
-
-</programlisting>
-      </example>
-      <para><link linkend="concepts-tutorial-create-checks"><emphasis role="bold">NEXT
-            UP:</emphasis></link> Create several checks for the new entity. </para>
-    </section>
-    <section xml:id="concepts-tutorial-create-checks">
-      <?dbhtml stop-chunking?>
-      <title>Create Checks</title>
-      <section xml:id="tutorial-create-ping-check">
-        <title>Create a PING Check</title>
-        <para>Any entity that you create can have a multitude of checks, each monitoring a different
-          aspect of the entity. And since you can monitor many different aspects of a single entity,
-          you'll practice creating several new checks in this exercise. </para>
-        <para>First, you'll create a PING check to verify the web server is responding to the
-          following attributes to create the ping check: <variablelist>
-            <varlistentry>
-              <term><parameter>label</parameter></term>
-              <listitem>
-                <para>Assigns a meaningful name to the check. In the examples below, we've named the
-                  check "Website check 1". You can choose a different name or use the same
-                  one.</para>
-              </listitem>
-            </varlistentry>
-            <varlistentry>
-              <term><parameter>type</parameter></term>
-              <listitem>
-                <para>Specifies the type of check you're creating.</para>
-              </listitem>
-            </varlistentry>
-            <varlistentry>
-              <term><parameter>monitoring_zones_poll</parameter></term>
-              <listitem>
-                <para>Specifies the monitoring zones that will launch the check. In this example
-                  we'll use "mzdfw".</para>
-              </listitem>
-            </varlistentry>
-            <varlistentry>
-              <term><parameter>timeout</parameter></term>
-              <listitem>
-                <para>Specifies the timeout in seconds for the check. This has to be less than the
-                  period. </para>
-              </listitem>
-            </varlistentry>
-            <varlistentry>
-              <term><parameter>period</parameter></term>
-              <listitem>
-                <para>Specifies the period in seconds for the check. This specifies how often &MAAS;
-                    <glossterm linkend="collector.glossary">collectors</glossterm> run this check. </para>
-              </listitem>
-            </varlistentry>
-            <varlistentry>
-              <term><parameter>target_alias</parameter></term>
-              <listitem>
-                <para> Resolves the check to an IP address. </para>
-              </listitem>
-            </varlistentry>
-          </variablelist></para>
-        <example>
-          <title>Create a PING Check using cURL</title>
-          <programlisting>curl -i \
---data-binary \
-'{ "details" : {  },
-  "label" : "Website check 1",
-  "monitoring_zones_poll" : [ "mzdfw" ],
-  "period" : "60",
-  "target_alias" : "default",
-  "timeout" : 30,
-  "type" : "remote.ping"
-}' \
--H "X-Auth-Token: auth_token" \
--H "Content-Type: application/json" \
--H "Accept: application/json" \
-'&URL;1234/entities/enn14Ch5mc/checks/' </programlisting>
-        </example>
-        <example>
-          <title>Create Ping Check cURL Response</title>
-          <programlisting>HTTP/1.1 201 Created
-Date: Fri, 24 Feb 2012 06:28:51 GMT
-Location: &URL;1234/entities/enn14Ch5mc/checks/chyYWNw59I
-X-RateLimit-Limit: 50000
-X-RateLimit-Remaining: 49969
-X-RateLimit-Window: 24 hours
-X-RateLimit-Type: global
-X-Response-Id: .rh-9pAY.h-lon3-maas-prod-api1.r-2ruPuxLu.c-99739.ts-1330064931513.v-c576983
-X-LB: lon3-maas-prod-api1
-Content-Length: 0
-Content-Type: text/plain
-</programlisting>
-        </example>
-        <para>If the check is successfully created, the endpoint returns a response code of
-            <returnvalue>201</returnvalue> and a <code>Location:</code> Header containing the URL of
-          the check. In this example, the check id is chyYWNw59I, but yours will be
-          different.</para>
-        <para>If an error message is returned, the monitoring system was unable to create the check.
-          For information about errors, see the <link
-            xlink:href="http://docs.rackspace.com/cm/api/v1.0/cm-devguide/general-api-info-api-faults/index.html"
-            >&MAAS; Developers Guide</link>.</para>
-        <note>
-          <para>Checks <emphasis>always</emphasis> have a parent entity associated with them.
-            Therefore all URLs are contained underneath the check URL. For example, if the ID of the
-            entity we created earlier is enn14Ch5mc, then the URLs would be underneath
-            &URL;1234/entities/enn14Ch5mc/.</para>
+        <note xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para>Cloud Block Storage is an add-on feature to Next Generation Cloud Servers.
+                        Customers may not attach Cloud Block Storage volumes to other instances,
+                        like first generation Cloud Servers.</para>
+                </listitem>
+                <listitem>
+                    <para>Cloud Block Storage is multi-tenant rather than dedicated.</para>
+                </listitem>
+                <listitem>
+                    <para>When volumes are destroyed, Rackspace keeps that disk space unavailable
+                        until zeros have been written to the space to ensure that data is not
+                        accessible by any other customers.</para>
+                </listitem>
+                <listitem>
+                    <para>Cloud Block Storage allows you to create snapshots that you can save,
+                        list, and restore.</para>
+                </listitem>
+            </itemizedlist>
         </note>
-        <example>
-          <title>Create a PING Check using raxmon</title>
-          <programlisting>raxmon-checks-create --entity-id=enn14Ch5mc --type=remote.ping --label="Website check 1" --monitoring-zones=mzdfw --timeout=30 --period=60 --target-alias=default</programlisting>
-        </example>
-        <example>
-          <title>Create a PING Check raxmon Response</title>
-          <programlisting>Resource created. ID: chyYWNw59I
-</programlisting>
-        </example>
-        <para><link linkend="tutorial-test-check"><emphasis role="bold">NEXT UP:</emphasis></link>  Test the new check to make sure it works. </para>
-      </section>
-      <section xml:id="tutorial-test-check">
-        <title>Test the Check</title>
-        <para>Testing the check runs the check once and lists the check's metrics. This is an easy
-          way to verify and view your metrics. Later, you can use the test check output to help you
-          build alarms.</para>
-        <example>
-          <title>Create Test Check Request using cURL </title>
-          <programlisting>curl -i \
---data-binary \
-'{ "details" : {  },
-  "label" : "Website check 1",
-  "monitoring_zones_poll" : [ "mzdfw" ],
-  "period" : "60",
-  "target_alias" : "default",
-  "timeout" : 30,
-  "type" : "remote.ping"
-}' \
--H 'X-Auth-Token: auth_code' \
--H 'Content-Type: application/json' \
--H 'Accept: application/json' \
-'&URL;1234/entities/enn14Ch5mc/test-check/' </programlisting>
-        </example>
-        <example>
-          <title>Create Test Check cURL Response</title>
-          <programlisting>HTTP/1.1 200 OK
-X-Ratelimit-Remaining: 497
-X-Response-Id: .rh-VE2m.h-lon3-maas-prod-api0.r-pm6oiwjm.c-37726.ts-1329263604920.v-3aec925
-Transfer-Encoding: chunked
-Vary: Accept-Encoding
-X-Lb: lon3-maas-prod-api1
-X-Ratelimit-Type: test_check
-X-Ratelimit-Limit: 500
-Date: Tue, 14 Feb 2012 23:53:24 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: application/json; charset=UTF-8
-
-[
+        <para>Cloud Block Storage is built on the OpenStack Cinder project. For more information,
+            see <link
+                xlink:href="http://docs.openstack.org/api/openstack-block-storage/1.0/content/"
+                >http://docs.openstack.org/api/openstack-block-storage/1.0/content/</link>.</para>
+        <para>Follow the steps in this <citetitle>Getting Started Guide</citetitle> to get started
+            with Cloud Block Storage. This guide provides step-by-step instructions to enter the
+            necessary URLs or commands to use the Cloud Block Storage API. You can find additional
+            details about Cloud Block Storage in the <emphasis role="italic">Cloud Block Storage
+                Developer Guide</emphasis> at <link xlink:href="http://docs.rackspace.com/"
+                >http://docs.rackspace.com/</link>. </para>
+        <para>For more details about the Cloud Block Storage service, see <link
+                xlink:href="http://www.rackspace.com/cloud/block-storage/"
+                >http://www.rackspace.com/cloud/block-storage/</link> and the Knowledge Center article <link
+                    xlink:href="http://www.rackspace.com/knowledge_center/article/cloud-block-storage-overview"
+                >Cloud Block Storage - Overview</link>. </para>
+        <para>Rackspace welcomes feedback, comments, and bug reports at <link
+                xlink:href="mailto:support@rackspacecloud.com"
+            >support@rackspacecloud.com</link>.</para>
+    </chapter>
+    <chapter xml:id="Send-Requests-To-API-d1e101">
+        <title>Sending requests to the API</title>
+        <para>You have several options for sending requests through an API including the following: </para>
+        <itemizedlist>
+            <listitem>
+                <para>Developers and testers might prefer to use cURL, the command-line tool from
+                        <link xlink:href="http://curl.haxx.se/">http://curl.haxx.se/</link>. With
+                    cURL, you can send HTTP requests and receive responses back from the command
+                    line. </para>
+            </listitem>
+            <listitem>
+                <para>If you like to use a more graphical interface, the REST client for Mozilla
+                    Firefox works well for testing and trying out commands. See <link
+                        xlink:href="https://addons.mozilla.org/en-US/firefox/addon/restclient/"
+                        >https://addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
+            </listitem>
+            <listitem>
+                <para>You can download and install RESTClient, a Java application used to test
+                    RESTful web services, from <link
+                        xlink:href="http://code.google.com/p/rest-client/"
+                        >http://code.google.com/p/rest-client/</link>. </para>
+            </listitem>
+        </itemizedlist>
+        <para>This guide uses the API directly with cURL (<xref linkend="Using_the_API_Directly"/>). </para>
+        <section xml:id="Prerequisites_Examples">
+            <title>Prerequisites for running examples</title>
+            <para>To run the examples in this guide, you must have the following prerequisites:
+                    <itemizedlist spacing="compact">
+                    <listitem>
+                        <para>Rackspace Cloud account</para>
+                        <para>To sign up for a Rackspace Cloud account, go to the <link
+                                xlink:href="https://cart.rackspace.com/cloud/"
+                                xmlns:m="http://www.w3.org/the key 1998/Math/MathML">signup
+                                page</link>.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Rackspace Cloud user name and password, as specified during
+                            registration</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>You also need to know your API key. To find your API key, use the following
+                steps:</para>
+            <para>
+                <itemizedlist spacing="compact">
+                    <listitem>
+                        <para><emphasis role="bold">To find your API key:</emphasis>
+                        </para>
+                        <orderedlist>
+                            <listitem>
+                                <para>Log in to the Cloud Control Panel (<link
+                                        xlink:href="https://mycloud.rackspace.com"
+                                        >https://mycloud.rackspace.com</link>).</para>
+                            </listitem>
+                            <listitem>
+                                <para>On the upper-right side of the top navigation pane, click your
+                                    username.</para>
+                            </listitem>
+                            <listitem>
+                                <para>From the menu, select <guilabel>Account
+                                    Settings</guilabel>.</para>
+                            </listitem>
+                            <listitem>
+                                <para>In the Login Details section of the Account Settings page,
+                                    locate the <guilabel>API Key</guilabel> field and click
+                                        <guibutton>Show</guibutton>.</para>
+                            </listitem>
+                            <listitem>
+                                <para>Copy the value of the API Key and paste it into a text editor
+                                    of your choice.</para>
+                            </listitem>
+                            <listitem>
+                                <para>Click <guibutton>Hide</guibutton> to hide the value of the API
+                                    Key.</para>
+                            </listitem>
+                        </orderedlist>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section xml:id="Using-Curl-d1e101">
+            <title>Sending API requests by using cURL</title>
+            <para>cURL is a command-line tool that you can use to interact with REST interfaces.
+                cURL lets you to transmit and receive HTTP requests and responses from the command
+                line or a shell script, which enables you to work with the API directly (without
+                using one of the language-specific APIs). cURL is available for most UNIX
+                system-based environments, Apple Mac OS X®, and Microsoft Windows®. For more
+                information about cURL, see <link xlink:href="http://curl.haxx.se/"
+                    >http://curl.haxx.se/</link>. </para>
+            <para>The following cURL command-line options are used in this guide to run the
+                examples:</para>
+            <table rules="all">
+                <caption>cURL command-line options</caption>
+                <col width="25%"/>
+                <col width="75%"/>
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>-d</code></td>
+                        <td>Sends the specified data in a <command>POST</command> request to the
+                            HTTP server.</td>
+                    </tr>
+                    <tr>
+                        <td><code>-i</code></td>
+                        <td>Includes the HTTP header in the output.</td>
+                    </tr>
+                    <tr>
+                        <td><code>-H HEADER</code></td>
+                        <td>Specifies an HTTP header in the request. You can specify any number of
+                            extra headers. Precede each header with the -H option. </td>
+                    </tr>
+                    <tr>
+                        <td><code>-s</code></td>
+                        <td>Specifies silent or quiet mode. Does not show progress or error
+                            messages. If your cURL command is not generating any output, try
+                            replacing the <code>-s</code> option with <code>-i</code>. </td>
+                    </tr>
+                    <tr>
+                        <td><code>-X</code></td>
+                        <td>Specifies the request operation to use when communicating with the HTTP
+                            server. The specified request is used instead of the default operation,
+                            which is <command>GET</command>. For example, <code>-X PUT</code>
+                            specifies to use the <command>PUT</command> operation.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <note>
+                <para>If you have the tools, you can run the cURL JSON request examples with the
+                    following option to format the output from cURL: <?sbr?><command>&lt;cURL JSON
+                        request example> | python -m json.tool</command>.</para>
+            </note>
+        </section>
+        <section xml:id="Copy-Past-Curl-d1e101">
+            <title>Copying and pasting cURL request examples into a terminal window</title>
+            <para>To run the cURL request examples shown in this guide, perform the following
+                actions:</para>
+            <orderedlist>
+                <listitem>
+                    <para>Copy each example from the HTML version of this guide and paste it into an
+                        ASCII text editor (for example, vi or TextEdit). You can click on the small
+                        document icon to the right of each request example to select it.</para>
+                </listitem>
+                <listitem>
+                    <para>Modify each example with your required account information and other
+                        information, as detailed in this guide.</para>
+                    <note>
+                        <para>The carriage returns in the cURL request examples are escaped with a
+                            backslash (\) character. The escape character allows continuation of the
+                            command across multiple lines. However, do not include the escape
+                            character in the JSON or XML request body within the cURL
+                            command.</para>
+                    </note>
+                </listitem>
+                <listitem>
+                    <para>After you are finished modifying the text for the cURL request example
+                        with your information (for example, user name and API key), copy and paste
+                        the text into your terminal window.</para>
+                </listitem>
+                <listitem>
+                    <para>Press <keycombo>
+                            <keycap>Enter</keycap>
+                        </keycombo> to run the cURL command.</para>
+                </listitem>
+            </orderedlist>
+            <para>Consider the following cURL authentication request JSON example, which is
+                described in detail in <xref linkend="Gen-Auth-Token"/>.</para>
+            <example>
+                <title>cURL authentication request: JSON</title>
+                <?dbfo keep-together="always"?>
+                <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+'{
+    "auth":
     {
-        "timestamp": 1329263613579,
-        "monitoring_zone_id": "mzdfw",
-        "available": true,
-        "status": "cnt=5,avail=100,min=0.0018,max=0.0020,avg=0.0019",
-        "metrics": {
-            "minimum": {
-                "type": "n",
-                "data": "1.808000029996e-03"
-            },
-            "available": {
-                "type": "n",
-                "data": "1.000000000000e+02"
-            },
-            "maximum": {
-                "type": "n",
-                "data": "1.990000018850e-03"
-            },
-            "count": {
-                "type": "i",
-                "data": "5"
-            },
-            "average": {
-                "type": "n",
-                "data": "1.866600010544e-03"
-            }
-        }
+       "RAX-KSKEY:apiKeyCredentials":
+       {
+          "username": "<emphasis role="bold">yourUserName</emphasis>",
+          "apiKey": "<emphasis role="bold">yourApiKey</emphasis>"}
     }
-]</programlisting>
-        </example>
-        <example>
-          <title>Test Check Request using raxmon</title>
-          <programlisting>raxmon-checks-test --entity-id=enn14Ch5mc --type=remote.ping --monitoring-zones=mzdfw --timeout=30 --period=60 --target-alias=default</programlisting>
-        </example>
-        <example>
-          <title>Test Check raxmon Response</title>
-          <programlisting>[{u'available': True, u'timestamp': 1329334696399, 
-u'monitoring_zone_id': u'mzdfw', 
-u'status': u'cnt=5,avail=100,min=0.0018,max=0.0020,avg=0.0019', 
-u'metrics': {u'count': {u'data': u'5', u'type': u'i'}, 
-u'available': {u'data': u'1.000000000000e+02', u'type': u'n'}, 
-u'average': {u'data': u'1.874800003134e-03', u'type': u'n'}, 
-u'minimum': {u'data': u'1.803999999538e-03', u'type': u'n'}, 
-u'maximum': {u'data': u'2.022000029683e-03', u'type': u'n'}}}]</programlisting>
-        </example>
-        <para><link linkend="concepts-tutorial-create-checks"><emphasis role="bold">NEXT
-              UP:</emphasis></link> A PING check doesn't tell you if your web server is running, it
-          only tells you that the server is up. So, let's create an HTTP check to monitor the
-          website directly. </para>
-      </section>
-      <section xml:id="tutorial-create-http-check">
-        <title>Create HTTP Checks</title>
-        <para>The HTTP check attempts to retrieve the given URL from the server's IP address. Since
-          an HTTP server might host pages for multiple, different domain names on a single IP
-          address, the check needs a full URL to know which server name and which URL to examine.
-          Likewise, a heavy traffic site might have multiple HTTP servers for the same domain name.
-          The HTTP check lets you monitor each individual web server.</para>
-        <example>
-          <title>Create HTTP Check Request using cURL</title>
-          <programlisting>curl -i -X POST \
---data-binary \
-{ "details" : { "body" : "foo",
-      "method" : "GET",
-      "url" : "www.examples.org"
-    },
-  "label" : "Website check 1",
-  "monitoring_zones_poll" : [ "mzdfw" ],
-  "period" : "60",
-  "target_alias" : "default",
-  "type" : "remote.http"
-} \
--H 'X-Auth-Token: auth_token' \
--H 'Content-Type: application/json' \
--H 'Accept: application/json' \
-'&URL;1234/entities/enn14Ch5mc/'
-
-</programlisting>
-        </example>
-        <example>
-          <title>Create HTTP Check cURL Response</title>
-          <programlisting>HTTP/1.1 201 Created
-X-Ratelimit-Remaining: 49960
-X-Response-Id: .rh-vgB4.h-ord1-maas-prod-api1.r-W0REfAoy.c-2650.ts-1329337042872.v-b9d7626
-Content-Length: 0
-X-Lb: ord1-maas-prod-api0
-X-Ratelimit-Type: global
-X-Ratelimit-Limit: 50000
-Location: &URL;1234/entities/enn14Ch5mc/checks/chTTslRf7v
-Date: Wed, 15 Feb 2012 20:17:22 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: text/plain
-
-</programlisting>
-        </example>
-        <example>
-          <title>Create HTTP Check Request using raxmon</title>
-          <programlisting>raxmon-checks-create --entity-id=enn14Ch5mc --type=remote.http --label="Website check 1" --monitoring-zones=mzdfw --details=url=www.examples.org,body=foo,method=GET timeout=30 --period=60 --target-alias=default</programlisting>
-        </example>
-        <example>
-          <title>Create HTTP Check raxmon Response</title>
-          <programlisting>Resource created. ID: chTTslRf7v
-</programlisting>
-        </example>
-        <para><emphasis role="bold">NEXT UP:</emphasis> Now let's configure a second HTTP check to
-          monitor a <emphasis role="italic">different</emphasis> page on the web server. </para>
-        <example>
-          <title>Create a Second HTTP Check Request using cURL</title>
-          <programlisting>curl -i -X POST \
---data-binary \
-'{ "details" : { "body" : "foo",
-      "method" : "GET",
-      "url" : "www.examples.org/test/"
-    },
-  "label" : "RemoteHTTP for Test page",
-  "monitoring_zones_poll" : [ "mzdfw" ],
-  "period" : "60",
-  "target_alias" : "default",
-  "timeout" : "30",
-  "type" : "remote.http"
 }' \
--H 'X-Auth-Token: auth_token' \
--H "Content-Type: application/json" \
--H 'Accept: application/json' \
-'&URL;1234/entities/enn14Ch5mc/checks</programlisting>
-        </example>
-        <example>
-          <title>Create a Second HTTP Check cURL Response</title>
-          <programlisting>HTTP/1.1 201 Created
-X-Ratelimit-Remaining: 49957
-X-Response-Id: .rh-pBYi.h-lon3-maas-prod-api0.r-5VLDWtbw.c-4363.ts-1329346442692.v-b9d7626
-Content-Length: 0
-X-Lb: lon3-maas-prod-api0
-X-Ratelimit-Type: global
-X-Ratelimit-Limit: 50000
-Location: &URL;1234/entities/enn14Ch5mc/checks/ch4ccHWyyI
-Date: Wed, 15 Feb 2012 22:54:02 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: text/plain
-</programlisting>
-        </example>
-        <example>
-          <title>Create a Second HTTP Check Request using raxmon</title>
-          <programlisting>raxmon-checks-create --entity-id=enn14Ch5mc --type=remote.http --label="RemoteHTTP for Test page" --monitoring-zones=mzdfw --details=url=www.examples.org/test/,body=foo,method=GET --timeout=30 --period=60 --target-alias=default</programlisting>
-        </example>
-        <example>
-          <title>Create a Second HTTP Check raxmon Response</title>
-          <programlisting>Resource created. ID: ch4ccHWyyI</programlisting>
-        </example>
-        <para><link linkend="tutorial-list-all-checks"><emphasis role="bold">NEXT UP:
-            </emphasis></link>Get a list of the checks you've created for your entity.</para>
-      </section>
-    </section>
-    <section xml:id="tutorial-list-all-checks">
-      <?dbhtml stop-chunking?>
-      <title>List All Checks for the Entity</title>
-      <para>You can list the checks for a specific entity at any time by doing <code>GET</code> for
-        a specific entity id. </para>
-      <example>
-        <title>List All Checks for an Entity using cURL</title>
-        <programlisting>curl -i -X GET \
--H 'X-Auth-Token: auth_token' \
--H 'Accept: application/json' \
-'&URL;1234/entities/enn14Ch5mc/checks'</programlisting>
-      </example>
-      <example>
-        <title>List all Checks cURL Response</title>
-        <programlisting>HTTP/1.1 200 OK
-X-Ratelimit-Remaining: 49967
-X-Response-Id: .rh-NGRc.h-dfw1-maas-prod-api0.r-fKxxaymj.c-34581.ts-1329407832952.v-b9d7626
-Transfer-Encoding: chunked
-Vary: Accept-Encoding
-X-Lb: dfw1-maas-prod-api1
-X-Ratelimit-Type: global
-X-Ratelimit-Limit: 50000
-Date: Thu, 16 Feb 2012 15:57:12 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: application/json; charset=UTF-8
+<option>-H 'Content-Type: application/json'</option> \
+<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri> | python  -m  json.tool </screen>
+            </example>
+            <para>You can see that the lines that are part of the cURL command syntax have all been
+                escaped with a backslash ('\') to indicate that the command continues on the next
+                line:</para>
+            <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> <emphasis role="bold">\</emphasis>
+  
+   
+(... lines within the JSON portion of the message are not shown in this example)
+(... the example shows only lines that are part of cURL syntax)     
+     
 
-f37
-{
-    "values": [
-        {
-            "id": "ch4ccHWyyI",
-            "label": "RemoteHTTP for Test page",
-            "type": "remote.http",
-            "details": {
-                "url": "www.foo.com/test/",
-                "body": "foo",
-                "method": "GET"
-            },
-            "monitoring_zones_poll": [
-                "mzord"
-            ],
-            "timeout": 30,
-            "period": "60",
-            "target_alias": "default",
-            "target_hostname": null,
-            "target_resolver": null,
-            "disabled": false,
-            "collectors": [
-                "coviYlq3jx"
-            ],
-            "created_at": 1329346442715,
-            "updated_at": 1329346442715
-        },
-        {
-            "id": "chyYWNw59I",
-            "label": "Website Ping Check",
-            "type": "remote.ping",
-            "details": {},
-            "monitoring_zones_poll": [
-                "mzord"
-            ],
-            "timeout": 30,
-            "period": "60",
-            "target_alias": "default",
-            "target_hostname": null,
-            "target_resolver": null,
-            "disabled": false,
-            "collectors": [
-                "co1LKEam0X"
-            ],
-            "created_at": 1328285429554,
-            "updated_at": 1328285429554
-        },
-        {
-            "id": "chTTslRf7v",
-            "label": "RemoteHTTP",
-            "type": "remote.http",
-            "details": {
-                "url": "www.examples.org",
-                "body": "foo",
-                "method": "GET"
-            },
-            "monitoring_zones_poll": [
-                "mzord"
-            ],
-            "timeout": 30,
-            "period": "60",
-            "target_alias": "default",
-            "target_hostname": null,
-            "target_resolver": null,
-            "disabled": false,
-            "collectors": [
-                "coKaALv9Ml"
-            ],
-            "created_at": 1329337042992,
-            "updated_at": 1329337042992
-        },
-}
-</programlisting>
-      </example>
-      <example>
-        <title>List All Checks using raxmon</title>
-        <programlisting>raxmon-checks-list --entity-id=enn14Ch5mc</programlisting>
-      </example>
-      <example>
-        <title>List All Checks raxmon response</title>
-        <programlisting>&lt;Check: id=ch4ccHWyyI label=RemoteHTTP for Test page...>
-&lt;Check: id=chyYWNw59I label=Website Ping Check...>
-&lt;Check: id=chTTs1RF7v label=RemoteHTTP...></programlisting>
-      </example>
-      <para><link linkend="concepts-tutorial-setup-notifications"><emphasis role="bold">NEXT UP:</emphasis></link> With three new checks created, it's now time
-        to set up notifications.</para>
-    </section>
-    <section xml:id="concepts-tutorial-setup-notifications">
-      <?dbhtml stop-chunking?>
-      <title>Set Up Notifications</title>
-      <para>In most cases you, and perhaps several people on your team, will be interested in
-        multiple alerts. &MAAS; lets you set up notification plans that can be shared between
-        multiple alerts. In this exercise, you'll create the notification first, then the
-        notification plan, and then finally the alarms. Note that you can create alarms and
-        notifications in any order you choose, or simply modify an existing record to create a new
-        one. However, to create an a notification plan, you do need to create a notification
-        first.</para>
-      <para>
-        <example>
-          <title>Create Notification Request using cURL</title>
-          <programlisting>curl -i -X POST \
---data-binary \
-   '{ "details" : { "url" : "https://systems.example.org/alert" },
-  "label" : "Alert webhook 1",
-  "type" : "webhook"
-}' \
--H 'X-Auth-Token: auth_token' \
--H 'Content-Type: application/json' \
-'&URL;1234/notifications'
-
-</programlisting>
-        </example>
-        <example>
-          <title>Create Notification cURL Response</title>
-          <programlisting>HTTP/1.1 201 Created
-X-Ratelimit-Remaining: 49964
-X-Response-Id: .rh-00oi.h-ord1-maas-prod-api1.r-WZWtj0Vc.c-5711.ts-1329408343356.v-b9d7626
-Content-Length: 0
-X-Lb: ord1-maas-prod-api1
-X-Ratelimit-Type: global
-X-Ratelimit-Limit: 50000
-Location: &URL;1234/notifications/nt2T8WtWte
-Date: Thu, 16 Feb 2012 16:05:43 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: text/plain
-</programlisting>
-        </example>
-        <example>
-          <title>Create Notification Request using raxmon</title>
-          <programlisting>raxmon-notifications-create --label="Alert webhook 1" --type=webhook --details=url=https://systems.example.org/alert </programlisting>
-        </example>
-        <example>
-          <title>Create Notification raxmon Response</title>
-          <programlisting>Resource created. ID: nt2T8WtWte
-</programlisting>
-        </example>
-      </para>
-      <para>If the notification is successfully created, the endpoint returns a response code of
-          <returnvalue>201</returnvalue> and a <code>Location:</code> Header containing the URL of
-        the notification. If an error message is returned, the endpoint was unable to create the
-        notification.</para>
-      <para><link linkend="create-notification-plan"><emphasis role="bold">NEXT
-          UP:</emphasis></link> Create a notification plan so you can receive a message when your
-        entity is in different states. </para>
-      <section xml:id="create-notification-plan">
-        <title>Create a Notification Plan</title>
-        <para>A notification represents a single action, whereas a notification plan represents a
-          set of actions. Assuming the ID of the notification you created is nt2T8WtWte, here's an
-          example of how you might specify the attributes for a notification plan: </para>
-        <variablelist>
-          <varlistentry>
-            <term><parameter>label</parameter></term>
-            <listitem>
-              <para>Specifies a descriptive name for the notification plan.</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><parameter>warning_state</parameter></term>
-            <listitem>
-              <para>Specifies a list of notification ids to send when the state is WARNING.</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><parameter>critical_state</parameter></term>
-            <listitem>
-              <para>Specifies a list of notification ids to send when the state is CRITICAL.</para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><parameter>ok_state</parameter></term>
-            <listitem>
-              <para>Specifies a list of notification ids to send when the state is OK.</para>
-            </listitem>
-          </varlistentry>
-        </variablelist>
-        <para>In this case, you're only configuring the system to hit a webhook when something
-          happens.</para>
-        <example>
-          <title>Create Notification Plan Request using cURL</title>
-          <programlisting>curl -i -X POST \
---data-binary \
+   
+ }' <emphasis role="bold">\</emphasis> 
+-H 'Content-Type: application/json' <emphasis role="bold">\</emphasis> 
+<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri>  | python  -m  json.tool </screen>
+            <para>However, the lines <emphasis role="italic">within</emphasis> the JSON portion of
+                the message are not escaped with a backslash, to avoid issues with the JSON
+                processing. </para>
+            <screen language="bash">'{
+    "auth":
+    { 
+       "RAX-KSKEY:apiKeyCredentials": 
+       {   
+          "username": "<emphasis role="bold">yourUserName</emphasis>",   
+          "apiKey": "<emphasis role="bold">yourApiKey</emphasis>"} 
+    }  
+}' \ 
+</screen>
+            <para>The final line of the JSON message is escaped, but the backslash lies outside the
+                JSON message and continues the cURL command to the next line. </para>
+            <tip>
+                <para>If you have trouble copying and pasting the examples as described, try typing
+                    the entire example on one long line, removing all the backslash
+                    line-continuation characters.</para>
+            </tip>
+        </section>
+    </chapter>
+    <chapter xml:id="Service_Access_Endpoints-d1e753">
+        <title>Service access endpoints</title>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The Cloud Block Storage service is a
+            regionalized service. The user of the service is responsible for appropriate
+            replication, caching, and overall maintenance of Cloud Block Storage data across
+            regional boundaries to other Cloud Block Storage servers.</para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">You can find the available service
+            access endpoints for Cloud Block Storage summarized in the table below.</para>
+        <?rax-fo keep-with-next?>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <table rules="all">
+                <caption>Cloud Block Storage regionalized service endpoints</caption>
+                <thead>
+                    <tr align="center">
+                        <td colspan="2">Region</td>
+                        <td colspan="5">Endpoint</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="left">
+                        <td colspan="2">Chicago (ORD)</td>
+                        <td colspan="5"
+                                ><code>https://ord.blockstorage.api.rackspacecloud.com/v1/</code><parameter>1234</parameter>/
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Dallas/Ft. Worth (DFW)</td>
+                        <td colspan="5"
+                                ><code>https://dfw.blockstorage.api.rackspacecloud.com/v1/</code><parameter>1234</parameter>/</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Northern Virginia (IAD)</td>
+                        <td colspan="5"
+                                ><code>https://iad.blockstorage.api.rackspacecloud.com/v1/</code><parameter>1234</parameter>/</td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="2">London (LON)</td>
+                        <td colspan="5"
+                                ><code>https://lon.blockstorage.api.rackspacecloud.com/v1/</code><parameter>1234</parameter>/
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Sydney (SYD)</td>
+                        <td colspan="5"
+                                ><code>https://syd.blockstorage.api.rackspacecloud.com/v1/</code><parameter>1234</parameter>/</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Hong Kong (HKG)</td>
+                        <td colspan="5"
+                                ><code>https://hkg.blockstorage.api.rackspacecloud.com/v1/</code><parameter>1234</parameter>/</td>
+                    </tr>
+                </tbody>
+            </table>
+        </para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Replace the sample account ID number,
+                <parameter>1234</parameter>, with your actual account number returned as part of the
+            authentication service response.</para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">You will find the actual account number
+            after the final '/' in the <code>publicURL</code> field returned by the authentication
+            response (<xref linkend="authResponse-d1e"/>.</para>
+    </chapter>
+    <chapter xml:id="Using_the_API_Directly">
+        <title>Using the API directly by using cURL</title>
+        <para>The main purpose of this guide is to get you up and running quickly with Cloud Block
+            Storage. To help you accomplish this goal, this chapter contains simple examples for
+            authentication and some basic Cloud Block Storage requests that you will commonly use.
+            Example requests are provided in cURL, followed by the response. </para>
+        <para>For more information about all Cloud Block Storage operations, see the <emphasis
+                role="italic">Cloud Block Storage Developer Guide</emphasis>.</para>
+        <section xml:id="Gen-Auth-Token">
+            <title>Generating an authentication token</title>
+            <para>Your first step must always be to generate an authentication token. You must then
+                include the authentication token in each request in the <code>X-Auth-Token</code>
+                header. </para>
+            <para>For more details about authentication, see the <citetitle>Cloud Block Storage
+                    Developer Guide</citetitle>.</para>
+            <para>Remember to replace the placeholders in the following authentication request
+                example with your information:<itemizedlist spacing="compact">
+                    <listitem>
+                        <para><emphasis role="bold">yourUserName</emphasis> &mdash;Your common
+                            Rackspace Cloud user name, as supplied during registration.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="bold">yourApiKey</emphasis> &mdash; Your API key. </para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>Notice that you authenticate by using the URL for the Cloud Identity service,
+                    <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>, as shown in
+                the following authentication request example. </para>
+            <note>
+                <para>For UK-based accounts, you might use
+                        <code>'https://lon.identity.api.rackspacecloud.com/v2.0/tokens'</code>
+                    instead.</para>
+            </note>
+            <para>The cURL request uses the <code>-d</code> switch to send the specified data in a
+                    <command>POST</command> request to the HTTP server and the <code>-i</code>
+                switch to send the HTTP response to terminal output.</para>
+            <example>
+                <title>cURL authentication request: JSON</title>
+                <?dbfo keep-together="always"?>
+                <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
 '{
-      "label": "Notification Plan 1",
-      "warning_state": [
-          "nt2T8WtWte"
-      ], 
-      "critical_state": [
-          "nt2T8WtWte"
-      ], 
-      "ok_state": [
-         "nt2T8WtWte"
-      ]
-}' \
--H 'X-Auth-Token: 6auth_token' \
--H 'Content-Type: application/json' \
--H 'Accept: application/json' \
-'&URL;1234/notification_plans'
-</programlisting>
-        </example>
-        <example>
-          <title>Create Notification Plan cURL Response</title>
-          <programlisting>HTTP/1.1 201 Created
-X-Ratelimit-Remaining: 49958
-X-Response-Id: .rh-ew99.h-dfw1-maas-prod-api1.r-dRuk75SF.c-35593.ts-1329410023443.v-b9d7626
-Content-Length: 0
-X-Lb: dfw1-maas-prod-api0
-X-Ratelimit-Type: global
-X-Ratelimit-Limit: 50000
-Location: &URL;1234/notification_plans/npkmLh5vVk
-Date: Thu, 16 Feb 2012 16:33:43 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: text/plain
-</programlisting>
-        </example>
-        <example>
-          <title>Create Notification Plan Request using raxmon</title>
-          <programlisting>raxmon-notification-plans-create --label="Notification Plan 1" --critical-state=nt2T8WtWte --warning-state=nt2T8WtWte --ok-state=nt2T8WtWte </programlisting>
-        </example>
-        <example>
-          <title>Create Notification Plan raxmon Response</title>
-          <programlisting>Resource created. ID: npkmLh5vVk</programlisting>
-        </example>
-        <para>If the endpoint responds with a <returnvalue>201</returnvalue> and a
-            <code>Location:</code> Header containing the URL of the new notification plan, the
-          notification plan was created. If the notification plan was not created, an error is
-          returned. </para>
-        <para><link linkend="concepts-tutorial-create-alarm"><emphasis role="bold">NEXT
-              UP:</emphasis>
-          </link>Create an alarm for the entity and associate it with your notification plan.</para>
-      </section>
-    </section>
-    <section xml:id="concepts-tutorial-create-alarm">
-      <?dbhtml stop-chunking?>
-      <title>Create an Alarm</title>
-      <para>In this exercise, you'll set an alarm for the entity. Here's an example alarm that will
-        send you a warning alert if the average PING response time is over 50ms. Remember that
-        alarms always have a parent entity associated with them, so all URLs are contained
-        underneath the alarm URL. In this example, the entity ID is enn14Ch5mc, so we issue the
-        following request to create the alarm and associate it to the entity:</para>
-      <example>
-        <title>Create Alarm Request using cURL</title>
-        <programlisting>curl -i -X POST \
---data-binary \
-'{
-  "check_type": "remote.ping", 
-  "notification_plan_id": "npkmLh5vVk", 
-  "criteria": "if (metric[\"duration\"] &lt; 50) { return OK } return WARNING"
-}' \
--H 'X-Auth-Token: auth_token' \
--H 'Content-Type: application/json' \
--H 'Accept: application/json' \
-'&URL;1234/entities/enn14Ch5mc/alarms'</programlisting>
-      </example>
-      <example>
-        <title>Create Alarm cURL Response</title>
-        <programlisting>HTTP/1.1 201 Created
-X-Ratelimit-Remaining: 49947
-X-Response-Id: .rh-ew99.h-dfw1-maas-prod-api1.r-Kti7H0py.c-39599.ts-1329418764114.v-b9d7626
-Content-Length: 0
-X-Lb: dfw1-maas-prod-api0
-X-Ratelimit-Type: global
-X-Ratelimit-Limit: 50000
-Location: &URL;1234/entities/enn14Ch5mc/alarms/alIxnPKcZp
-Date: Thu, 16 Feb 2012 18:59:24 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: text/plain</programlisting>
-      </example>
-      <example>
-        <title>Create Alarm Request using raxmon</title>
-        <programlisting>raxmon-alarms-create --check-type=remote.ping --criteria="if (metric[\"average\"] &lt; 50) { return OK } return WARNING" --notification-plan=npkmLh5vVk --entity-id=enn14Ch5mc</programlisting>
-      </example>
-      <example>
-        <title>Create Alarm raxmon Response</title>
-        <programlisting>Resource created. ID: alIxnPKcZp</programlisting>
-      </example>
-      <para>If the endpoint returns a response code is <returnvalue>201</returnvalue> and a
-          <code>Location:</code> header containing the URL of the new alarm, the alarm was
-        successfully created, otherwise the endpoint returns an error. </para>
-      <para>Since we're monitoring two items, both PING times and the HTTP response time, let's add
-        a second alarm to go off when the web response time takes longer than 100ms. Here's an
-        example of how you might specify the attributes for this alarm:</para>
-      <example>
-        <title>Create an Alarm HTTP Request using cURL</title>
-        <programlisting>curl -i -X POST \
---data-binary \
-'{ "check_type" : "remote.http",
-  "criteria" : "if (metric[\"code\"] regex \"^[23]..$\") { return OK } return WARNING",
-  "notification_plan_id" : "npkmLh5vVk"
-}' \
--H 'X-Auth-Token: your_auth_key' \
--H 'Content-Type: application/json' \
--H 'Accept: application/json' \
-'&URL;1234/entities/enn14Ch5mc/alarms'
-</programlisting>
-      </example>
-      <example>
-        <title>Create an Alarm cURL Response</title>
-        <programlisting>HTTP/1.1 201 Created
-X-Ratelimit-Remaining: 49946
-X-Response-Id: .rh-E79I.h-ord1-maas-prod-api1.r-HDDENoUp.c-106.ts-1329419675047.v-a037e7a
-Content-Length: 0
-X-Lb: ord1-maas-prod-api0
-X-Ratelimit-Type: global
-X-Ratelimit-Limit: 50000
-Location: &URL;1234/entities/enn14Ch5mc/alarms/alVwP6z00k
-Date: Thu, 16 Feb 2012 19:14:34 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: text/plain
-</programlisting>
-      </example>
-      <example>
-        <title>Create an Alarm Request using raxmon</title>
-        <programlisting>raxmon-alarms-create --check-type=remote.http --criteria="if (metric[\"duration\"] &lt; 100) { return OK } return WARNING" --notification-plan=npkmLh5vVk --entity-id=enn14Ch5mc</programlisting>
-      </example>
-      <example>
-        <title>Create an Alarm raxmon Response</title>
-        <programlisting>Resource created. ID: alVwP6z00k</programlisting>
-      </example>
-      <para>Note that because alarms are shared between all of the checks on an entity, if you have
-        multiple HTTP URLs, you will receive alerts if any of the checks are lagging.</para>
-      <para>You can always list the available alarms by retrieving:</para>
-      <example>
-        <title>List Alarms Request using cURL</title>
-        <programlisting>curl -i -X GET \
--H 'X-Auth-Token: auth_token' \
--H 'Accept: application/json' \
-'&URL;1234/entities/enn14Ch5mc/alarms'
-</programlisting>
-      </example>
-      <example>
-        <title>List Alarms cURL Response</title>
-        <programlisting>HTTP/1.1 200 OK
-X-Ratelimit-Remaining: 49941
-X-Response-Id: .rh-qRGT.h-ord1-maas-prod-api0.r-UH0HesoS.c-404.ts-1329420284585.v-a037e7a
-Transfer-Encoding: chunked
-Vary: Accept-Encoding
-X-Lb: ord1-maas-prod-api0
-X-Ratelimit-Type: global
-X-Ratelimit-Limit: 50000
-Date: Thu, 16 Feb 2012 19:24:44 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: application/json; charset=UTF-8
-
-36e
-{
-    "values": [
-        {
-            "id": "alIxnPKcZp",
-            "label": null,
-            "check_type": "remote.ping",
-            "check_id": null,
-            "criteria": "if (metric[\"average\"] &lt; 50) { return OK } return WARNING",
-            "notification_plan_id": "npkmLh5vVk",
-            "created_at": 1329418764882,
-            "updated_at": 1329418764882
-        },
-        {
-            "id": "alVwP6z00k",
-            "label": null,
-            "check_type": "remote.http",
-            "check_id": null,
-            "criteria": "if (metric[\"average\"] &lt; 100) { return OK } return WARNING",
-            "notification_plan_id": "npkmLh5vVk",
-            "created_at": 1329419675727,
-            "updated_at": 1329419675727
-        }
-    ],
-    "metadata": {
-        "count": 2,
-        "limit": 100,
-        "marker": null,
-        "next_href": null
+    "auth":
+    {
+       "RAX-KSKEY:apiKeyCredentials":
+       {
+          "username": "<emphasis role="bold">yourUserName</emphasis>",
+          "apiKey": "<emphasis role="bold">yourApiKey</emphasis>"}
     }
-}
-</programlisting>
-      </example>
-      <example>
-        <title>List Alarms Request using raxmon</title>
-        <programlisting>raxmon-alarms-list --entity-id=enn14Ch5mc --details</programlisting>
-      </example>
-      <example>
-        <title>List Alarms raxmon Response</title>
-        <programlisting>{'criteria': u'if (metric["average"] &lt; 50) { return OK } return WARNING',
- 'driver': &lt;rackspace_monitoring.drivers.rackspace.RackspaceMonitoringDriver object at 0x100649ad0>,
- 'entity_id': u'enn14Ch5mc',
- 'id': u'alIxnPKcZp',
- 'notification_plan_id': u'npkmLh5vVk',
- 'type': u'remote.ping'}
-{'criteria': u'if (metric["average"] &lt; 100) { return OK } return WARNING',
- 'driver': &lt;rackspace_monitoring.drivers.rackspace.RackspaceMonitoringDriver object at 0x100649ad0>,
- 'entity_id': u'enn14Ch5mc',
- 'id': u'alVwP6z00k',
- 'notification_plan_id': u'npkmLh5vVk',
- 'type': u'remote.http'}
-
-Total: 2
-</programlisting>
-      </example>
-      <para>The results show there are now two alarms for the entity. </para>
-      <para><link linkend="concepts-tutorial-modify-entity"><emphasis role="bold">NEXT
-            UP:</emphasis>
-        </link>Make a modification to the entity.</para>
-    </section>
-    <section xml:id="concepts-tutorial-modify-entity">
-      <?dbhtml stop-chunking?>
-      <title>Modify an Entity</title>
-      <para>Let's assume that the IP address for the web server has changed. You can issue a &PUT;
-        request for only those fields that have changed and the change is reflected in all
-        downstream checks.</para>
-      <example>
-        <title>Modify an Entity Request using cURL</title>
-        <programlisting>curl -i -X PUT \
---data-binary \
-'{
-   "ip_addresses": {
-      "default": "192.168.0.1"
-          }
 }' \
--H 'X-Auth-Token: auth_token' \
 -H 'Content-Type: application/json' \
--H 'Accept: application/json' \
-'&URL;1234/entities/enn14Ch5mc'</programlisting>
-      </example>
-      <example>
-        <title>Modify an Entity cURL Response</title>
-        <programlisting>HTTP/1.1 204 No Content
-X-Ratelimit-Remaining: 49953
-X-Response-Id: .rh-NGRc.h-dfw1-maas-prod-api0.r-AudSFsQj.c-36911.ts-1329412867712.v-b9d7626
-Content-Length: 0
-X-Lb: dfw1-maas-prod-api1
-X-Ratelimit-Type: global
-X-Ratelimit-Limit: 50000
-Location: &URL;1234/entities/enn14Ch5mc
-Date: Thu, 16 Feb 2012 17:21:07 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: text/plain
+<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri> | python  -m  json.tool </screen>
+            </example>
+            <para>An HTTP status code of 200 (OK) in the response indicates that the authentication
+                request completed successfully.</para>
+            <para>In the authentication response, the authentication token <code>id</code> is
+                returned with an <code>expires</code> attribute that specifies when the token
+                expires. Tokens are valid for a finite duration, typically for 24 hours. Remember to
+                supply your authentication token wherever you see the placeholder <emphasis
+                    role="bold">yourAuthToken</emphasis> in the examples in this guide.</para>
+            <para>The <code>publicURL</code> endpoints for Cloud Block Storage (for example <code
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02"
+                    >https://dfw.blockstorage.api.rackspacecloud.com/v1/</code><parameter
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02">1234</parameter>/) are also
+                returned in the authentication response. </para>
+            <para>Your actual account number is after the final slash (/) in the
+                    <code>publicURL</code> field, for example <code>1234</code> in the preceding
+                endpoint. You must specify <emphasis role="italic">your</emphasis> account number in
+                the Cloud Block Storage API request, wherever you see the placeholder <emphasis
+                    role="bold">yourAccountID</emphasis> specified in the examples in this
+                guide.</para>
+            <example xml:id="authResponse-d1e">
+                <title>Authenticate response with partial service catalog showing cloudBlockStorage:
+                    JSON</title>
+                <programlisting language="json"><xi:include href="../../src/docbkx/samples/auth-20-gettingStartedGuide.json" parse="text"/></programlisting>
+            </example>
+            <para>After authentication, you can use cURL to perform <command>POST</command>,
+                    <command>GET</command>, <command>PUT</command>, and <command>DELETE</command>
+                requests for the Cloud Block Storage API.</para>
+        </section>
+        <section xml:id="Creating_a_Storage_Container-d1e3026"
+            xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+            <title>Creating a Block Storage volume</title>
+            <para> Before uploading any data to Cloud Files, you must create a storage container.
+                You do this with a &PUT; request. </para>
+            <para xmlns:m="http://www.w3.org/1998/Math/MathML">The HTTP request must include a
+                header to specify the authentication token. </para>
+            <para xmlns:m="http://www.w3.org/1998/Math/MathML">The cURL request uses the
+                    <code>-X</code> switch to specify the correct HTTP method and the
+                    <code>-i</code> switch to send the HTTP response to terminal output.</para>
+            <para>An HTTP status code of 201 (Created) in the response indicates that the container
+                was successfully created.</para>
+            <example>
+                <title>cURL Create Storage Container</title>
+                <programlisting>
+curl -i -X PUT https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis> \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" 
 </programlisting>
-      </example>
-      <example>
-        <title>Modify an Entity Request using raxmon</title>
-        <programlisting>raxmon-entities-update --id=enn14Ch5mc --ip-addresses=default=192.168.0.1</programlisting>
-      </example>
-      <example>
-        <title>Modify an Entity raxmon Response</title>
-        <programlisting>Resource has been successfully updated
-</programlisting>
-      </example>
-      <para>Note that a PUT updates all top level fields. If a top level field contains a hash, the
-        PUT overwrites the entire field. To avoid this, you must specify the complete hash.</para>
-      <para><link linkend="concepts-tutorial-delete-entity"><emphasis role="bold">NEXT
-            UP:</emphasis>
-        </link>Deleting an entity.</para>
-    </section>
-    <section xml:id="concepts-tutorial-delete-entity">
-      <?dbhtml stop-chunking?>
-      <title>Delete an Entity</title>
-      <para>Now that you have completed the exercises in this tutorial, let's remove the entity we
-        created. Entities may not be removed until all of their checks and alarms have been removed.
-        In this exercise, you'll practise removing one of the checks you created, one of the alarms,
-        and then entity.<note>
-          <para>To quickly delete an entity and its children, use <link
-              xlink:href="#raxmon-entities-delete"><code>raxmon--entities-delete</code></link>. This
-            command lets you delete the entity and all of its children in a single command.</para>
-        </note></para>
-      <example>
-        <title>Delete Checks Request using cURL</title>
-        <programlisting>curl -i -X \
-DELETE \
--H 'X-Auth-Token: auth_token' \
--H 'Accept: application/json' \ 
-'&URL;1234/entities/enn14Ch5mc/checks/chyYWNw59I</programlisting>
-      </example>
-      <example>
-        <title>Delete Checks cURL Response</title>
-        <programlisting>HTTP/1.1 204 No Content
-X-Ratelimit-Remaining: 49993
-X-Response-Id: .rh-Fxp3.h-ord1-maas-prod-api0.r-4Fb5IwLs.c-455.ts-1330554327071.v-50c8c2d
+                <programlisting>
+HTTP/1.1 201 Created
 Content-Length: 0
-X-Lb: ord1-maas-prod-api1
-X-Ratelimit-Type: global
-X-Ratelimit-Limit: 50000
-Date: Wed, 29 Feb 2012 22:25:27 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: text/plain</programlisting>
-      </example>
-      <example>
-        <title>Delete Alarms Requests using cURL</title>
-        <programlisting>curl -i -X \
-DELETE \
--H 'X-Auth-Token: auth_key' \
-'&URL;1234/entities/enn14CH5mc/alarms/alIxnPKczp</programlisting>
-      </example>
-      <example>
-        <title>Delete Alarms cURL Response</title>
-        <programlisting>HTTP/1.1 204 No Content
-X-Ratelimit-Remaining: 49987
-X-Response-Id: .rh-GLyy.h-dfw1-maas-prod-api0.r-2Ulro75y.c-32883.ts-1330554811888.v-6fee2d2
-Content-Length: 0
-X-Lb: dfw1-maas-prod-api1
-X-Ratelimit-Type: global
-X-Ratelimit-Limit: 50000
-Date: Wed, 29 Feb 2012 22:33:31 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: text/plain
+Content-Type: text/html; charset=UTF-8
+X-Trans-Id: txfaf60e1d2a844e5ca9998-0053569d54dfw1
+Date: Tue, 22 Apr 2014 16:48:21 GMT
 </programlisting>
-      </example>
-      <example>
-        <title>Delete Entity Request using cURL</title>
-        <programlisting>H 'X-Auth-Token: auth_token' \
--H 'Accept: application/json' \
-'&URL;1234/entities/enn14CH5mc'</programlisting>
-      </example>
-      <example>
-        <title>Delete Entity cURL Response</title>
-        <programlisting>HTTP/1.1 204 No Content
-X-Ratelimit-Remaining: 49984
-X-Response-Id: .rh-zyPa.h-dfw1-maas-prod-api0.r-6RuOWE2V.c-236.ts-1330555655887.v-50c8c2d
-Content-Length: 0
-X-Lb: dfw1-maas-prod-api0
-X-Ratelimit-Type: global
-X-Ratelimit-Limit: 50000
-Date: Wed, 29 Feb 2012 22:47:35 GMT
-X-Ratelimit-Window: 24 hours
-Content-Type: text/plain
+            </example>
+        </section>
+        <section xml:id="Uploading_a_Storage_Object-d1e3067"
+            xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+            <title>Attaching a volume to a server</title>
+            <para>After creating a container, you can upload a file to it. You do this with a &PUT;
+                request. You must ensure that the object's <code>Content-Type</code> is set
+                correctly so that the receiving server knows what kind of file it is. This is the
+                mechanism by which a user's web browser knows how to display the file or launch a
+                helper application to view the file.</para>
+            <para xmlns:m="http://www.w3.org/1998/Math/MathML">The HTTP request must include a
+                header to specify the authentication token. </para>
+            <para xmlns:m="http://www.w3.org/1998/Math/MathML">The cURL request uses the
+                    <code>-X</code> switch to specify the correct HTTP method and the
+                    <code>-i</code> switch to send the HTTP response to terminal output.</para>
+            <para>An HTTP status code of 201 (Created) in the response indicates that the object was
+                successfully uploaded.</para>
+            <example>
+                <title>cURL Upload an Object</title>
+                <programlisting>
+curl -i -X PUT https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis>/<emphasis role="bold">yourObjectName</emphasis> /
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+-H "Content-Type: image/jpeg" \
+-H "Content-Length: 0"
 </programlisting>
-      </example>
-      <example xml:id="raxmon-entities-delete">
-        <title>Delete Entity Request using raxmon</title>
-        <programlisting>raxmon-entities-delete --id=ennCH15mc</programlisting>
-      </example>
-      <example>
-        <title>Delete Entity raxmon Response</title>
-        <programlisting>Resource deleted</programlisting>
-      </example>
-      <para>This completes the tutorial on creating, modifying, and deleting a monitor using the
-        &MAAS; API. </para>
-      <para><emphasis role="bold"><link linkend="additional-resources">GET MORE INFO</link></emphasis></para>
-    </section>
-  </chapter>
-  
-  
-  <chapter xml:id="additional-resources">
-    <title>Additional Resources</title>
-    <section xml:id="resources-monitoring-docs">
-      <title>More on Monitoring </title>
-      <para>Find out more about &MAAS; in these documents:</para>
-      <itemizedlist>
-        <listitem>
-          <para><link
-              xlink:href="http://docs.rackspace.com/cm/api/v1.0/cm-releasenotes/content/index.html"
-              >&MAAS; API Release Notes</link></para>
-        </listitem>
-        <listitem>
-          <para><link
-            xlink:href="http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/index.html"
-              >&MAAS; Developers Guide</link></para>
-        </listitem>
-      </itemizedlist>
-    </section>
-    <section xml:id="resources-talk">
-      <title>Talk to Us</title>
-      <para>Do you have questions about &MAAS;? Join us in our chat room at:</para>
-      <itemizedlist>
-        <listitem>
-          <para>Freenode IRC at #cloudmonitoring</para>
-        </listitem>
-        <listitem>
-          <para>Or just click the following link:</para>
-          <para><link xlink:href="http://webchat.freenode.net?channels=cloudmonitoring&amp;uio=d4"
-            /></para>
-        </listitem>
-      </itemizedlist>
-    </section>
-    <section xml:id="resouces-talk">
-      <title>More From Rackspace</title>
-      <para>
-        <itemizedlist>
-          <listitem>
-            <para>Find API documentation for additional Rackspace products at:</para>
-            <para><link xlink:href="http://docs.rackspacecloud.com/api">
-                http://www.docs.rackspacecloud.com/api/</link></para>
-          </listitem>
-        </itemizedlist>
-        <itemizedlist>
-          <listitem>
-            <para>For technical articles, videos, and more check out the Rackspace Knowledge Center
-              at:</para>
-            <para><link xlink:href="http://www.rackspace.com/knowledge_center/"
-                >http://www.rackspace.com/knowledge_center/</link></para>
-          </listitem>
-        </itemizedlist>
-      </para>
-    </section>
-  </chapter>
-  <xi:include href="glossary.xml">
-    <xi:fallback/>
-  </xi:include>
-  
+                <programlisting>
+HTTP/1.1 201 Created
+Last-Modified: Tue, 22 Apr 2014 17:02:35 GMT
+Content-Length: 0
+Etag: d41d8cd98f00b204e9800998ecf8427e
+Content-Type: text/html; charset=UTF-8
+X-Trans-Id: tx4f2953d5969d4c40ada04-005356a0aadfw1
+Date: Tue, 22 Apr 2014 17:02:34 GMT
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="updateObjectMetadata-d1e">
+            <title>Updating (or Prepare your volume for use with a server) </title>
+            <para>You can send a <command>POST</command> request to set or update custom metadata
+                for existing objects. Metadata is set by using the header <code>X-Object-Meta-name:
+                    value</code>, where <emphasis role="italic">name</emphasis> is the custom name
+                for your metadata and <emphasis role="italic">value</emphasis> is the data value. </para>
+            <para>The HTTP request must include a header to specify the authentication token. </para>
+            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
+                method and the <code>-i</code> switch to send the HTTP response to terminal
+                output.</para>
+            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 202
+                (Accepted) in the response indicates that the metadata for the object was
+                successfully updated.</para>
+            <example>
+                <title>cURL Get Storage Space</title>
+                <programlisting language="bash">
+curl -i -X POST https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis>/<emphasis role="bold">yourObjectName</emphasis> \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+-H "X-Object-Meta-ImageType: png" \
+-H "X-Object-Meta-ImageSize: 400 MB"
+</programlisting>
+                <programlisting>
+HTTP/1.1 202 Accepted
+Content-Length: 76
+Content-Type: text/html; charset=UTF-8
+X-Trans-Id: txffc66e0337ae4cd19e79c-005356a1abdfw1
+Date: Tue, 22 Apr 2014 17:06:51 GMT
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="deleteContainer-d1e">
+            <title>Listing existing Block Storage volumes</title>
+            <para>You can send a <command>DELETE</command> request to the storage service to delete
+                a container. The container must be empty before you can delete it. </para>
+            <para>The HTTP request must include a header to specify the authentication token. </para>
+            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
+                method and the <code>-i</code> switch to send the HTTP response to terminal
+                output.</para>
+            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 204
+                (No Content) in the response indicates that the container was successfully
+                deleted.</para>
+            <example>
+                <title>cURL Get Storage Space</title>
+                <programlisting language="bash">
+curl -i -X DELETE https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis> \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>"  
+</programlisting>
+                <programlisting>
+HTTP/1.1 204 No Content
+Content-Length: 0
+Content-Type: text/html; charset=UTF-8
+X-Trans-Id: tx4b8836bcc20a457d9bbe4-005356a30fdfw1
+Date: Tue, 22 Apr 2014 17:12:47 GMT     
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="retrieveObject-d1e">
+            <title>Detaching a volume from a server</title>
+            <para>You can send a <command>GET</command> request to get the object content and
+                metadata. </para>
+            <para>The HTTP request must include a header to specify the authentication token. </para>
+            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
+                method and the <code>-i</code> switch to send the HTTP response to terminal
+                output.</para>
+            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 200
+                (OK) in the response indicates that the object was successfully retrieved.</para>
+            <example>
+                <title>cURL Get Storage Space</title>
+                <programlisting language="bash">
+curl -i -X GET https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis>/<emphasis role="bold">yourObjectName</emphasis> \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" 
+</programlisting>
+                <programlisting>
+HTTP/1.1 200 OK
+Content-Length: 0
+Accept-Ranges: bytes
+X-Object-Meta-Imagetype: png
+Last-Modified: Tue, 22 Apr 2014 17:06:52 GMT
+X-Object-Meta-Imagesize: 400 MB
+Etag: d41d8cd98f00b204e9800998ecf8427e
+X-Timestamp: 1398186411.61064
+Content-Type: image/jpeg
+X-Trans-Id: txad3571ebcee24cabb387a-005356a229dfw1
+Date: Tue, 22 Apr 2014 17:08:57 GMT 
+
+[ ...object content...]
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="deleteObject-d1e">
+            <title>Deleting a volume</title>
+            <para>You can send a <command>DELETE</command> request to the storage service to delete
+                an object in a container. </para>
+            <para>The HTTP request must include a header to specify the authentication token. </para>
+            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
+                method and the <code>-i</code> switch to send the HTTP response to terminal
+                output.</para>
+            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 204
+                (No Content) in the response indicates that the object was successfully
+                deleted.</para>
+            <para>The object is removed from the storage system, both the data and metadata. Object
+                deletion is processed immediately at the time of the request. Any subsequent GET,
+                HEAD, POST, PUT, or DELETE operations return a 404 (Not Found) error (unless object
+                versioning is on and other versions exist. For more details about object versioning,
+                see the <citetitle>Cloud Files Developer Guide</citetitle>.). </para>
+            <example>
+                <title>cURL Get Storage Space</title>
+                <programlisting language="bash">
+curl -i -X DELETE https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis>/<emphasis role="bold">yourObjectName</emphasis> \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" 
+</programlisting>
+                <programlisting>
+HTTP/1.1 204 No Content
+Content-Length: 0
+Content-Type: text/html; charset=UTF-8
+X-Trans-Id: tx32fae72bccc94cb68d605-005356a2badfw1
+Date: Tue, 22 Apr 2014 17:11:22 GMT
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="Show-Account-Details-d1e101">
+            <title>Creating a snapshot</title>
+            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">You can send a
+                    <command>GET</command> request to show account details and lists containers.
+                Using the <code>format</code> query parameter on the request causes the list to
+                include details (<code>count</code>, <code>bytes</code>, and <code>name</code>)
+                about each container. Without it, you would receive just a list of the container
+                names.</para>
+            <para>The HTTP request must include a header to specify the authentication token. </para>
+            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
+                method and the <code>-i</code> switch to send the HTTP response to terminal
+                output.</para>
+            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 200
+                (OK) in the response indicates that the account and container details were
+                successfully retrieved.</para>
+            <example>
+                <title>cURL Show Account Details</title>
+                <programlisting>
+curl -i -X GET https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold" xmlns:m="http://www.w3.org/the key 1998/Math/MathML">yourAccountID</emphasis>?format=json \
+-H "X-Auth-Token: <emphasis role="bold" xmlns:m="http://www.w3.org/the key 1998/Math/MathML">yourAuthToken</emphasis>"  
+</programlisting>
+                <programlisting>
+HTTP/1.1 200 OK
+Content-Length: 111
+X-Account-Object-Count: 573
+X-Timestamp: 1369081921.78518
+X-Account-Meta-Temp-Url-Key: ed6a04a9f70458575112811a9af5284e
+X-Account-Meta-Subject: Whaling
+X-Account-Bytes-Used: 14268918
+X-Account-Container-Count: 2
+Content-Type: application/json; charset=utf-8
+Accept-Ranges: bytes
+X-Trans-Id: tx6c802728f41b4804812ee-005356a3c8dfw1
+Date: Tue, 22 Apr 2014 17:15:52 GMT
+
+[{"count": 0, "bytes": 0, "name": "newcontainer"}, {"count": 573, "bytes": 14268918, "name": "wordpressfiles"}]
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="Determining_Storage_Usage-d1e2976"
+            xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+            <title>Listing snapshots</title>
+            <para>You can send a <command>HEAD</command> request to the storage service to determine
+                how much data you have stored in the system and the number of containers you are
+                using. </para>
+            <para xmlns:m="http://www.w3.org/1998/Math/MathML">The HTTP request must include a
+                header to specify the authentication token. </para>
+            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
+                method and the <code>-i</code> switch to send the HTTP response to terminal
+                output.</para>
+            <para>An HTTP status code of 204 (No Content) in the response indicates that the storage
+                data were successfully retrieved. The HTTP headers in the response indicate the
+                number of containers in this storage account and the total bytes stored for the
+                entire account.</para>
+            <example>
+                <title>cURL Get Storage Space</title>
+                <programlisting language="bash">
+curl -i -X HEAD https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis> \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" 
+</programlisting>
+                <programlisting>
+HTTP/1.1 204 No Content
+Content-Length: 0
+X-Account-Object-Count: 573
+X-Timestamp: 1369081921.78518
+X-Account-Meta-Temp-Url-Key: ed6a04a9f70458575112811a9af5284e
+X-Account-Meta-Subject: Whaling
+X-Account-Bytes-Used: 14268918
+X-Account-Container-Count: 2
+Content-Type: text/plain; charset=utf-8
+Accept-Ranges: bytes
+X-Trans-Id: tx0618e82d44394a6b8c5fb-005356a46fdfw1
+Date: Tue, 22 Apr 2014 17:18:39 GMT
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="CDN-Enabling_the_Container-d1e3123"
+            xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+            <title>Deleting snapshots</title>
+            <para>After creating a container and storing a file in it, you can choose to make the
+                file publicly readable. Because the data in Cloud Files is private, you share your
+                files through the content delivery network (CDN). To CDN-enable a container, issue a
+                &PUT; request with <code>X-CDN-Enabled: True</code> against the CDN management
+                service. (Note that the service access endpoint URL specifies the CDN system.) The
+                default time to live (TTL) value is 72 hours (259200 seconds), with a minimum of 15
+                minutes (900 seconds) and a maximum of 1 year (31536000 seconds). The following
+                request sets the TTL to 1 week (604800 seconds) with <code>X-TTL:
+                604800</code>.</para>
+            <para xmlns:m="http://www.w3.org/1998/Math/MathML">The HTTP request must include a
+                header to specify the authentication token. </para>
+            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
+                method and the <code>-i</code> switch to send the HTTP response to terminal
+                output.</para>
+            <para>An HTTP status code of 201 (Created) in the response indicates that the container
+                was successfully CDN-enabled. </para>
+            <para>When the container is CDN-enabled, the service returns its public URI in the
+                    <code>X-Cdn-Uri</code> header of the response, and returns the SSL URI in the
+                    <code>X-Cdn-Ssl-Uri</code> header of the response. You can combine the public
+                URI with the object name to access the file through the CDN, or you can use the SSL
+                URI with the object name to access the file over a secure SSL connection through the
+                CDN.</para>
+            <example>
+                <title>cURL CDN-Enable Container and Set TTL</title>
+                <programlisting>
+curl -i -X PUT https://<emphasis role="bold">cdn1.clouddrive.com</emphasis>/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis> /
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+-H "<emphasis role="bold">X-CDN-Enabled: True</emphasis>" \
+-H "<emphasis role="bold">X-TTL: 604800</emphasis>"
+</programlisting>
+                <programlisting>
+HTTP/1.1 201 Created
+Content-Length: 0
+<emphasis role="bold">X-Cdn-Ssl-Uri: https://c93f9b29cd3c6bd865ee-24695493c49b279502b280c6ecd262b5.ssl.cf6.rackcdn.com</emphasis>
+X-Cdn-Ios-Uri: http://7a701469fe9980c577e9-24695493c49b279502b280c6ecd262b5.iosr.cf6.rackcdn.com
+<emphasis role="bold">X-Cdn-Uri: http://98199d7b2503ac330f05-24695493c49b279502b280c6ecd262b5.r17.cf6.rackcdn.com</emphasis>
+Content-Type: text/html; charset=UTF-8
+X-Cdn-Streaming-Uri: http://ce3a54aaf724a75455d6-24695493c49b279502b280c6ecd262b5.r17.stream.cf6.rackcdn.com
+X-Trans-Id: txc2b9b4ef77fd45f28c2d2-005356adfchkg1
+Date: Tue, 22 Apr 2014 17:59:24 GMT
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="Other_cURL_Commands-d1e3222"
+            xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+            <title>Other cURL Commands</title>
+            <para>You can issue any of the REST methods defined for Cloud Block Storage with the
+                cURL utility. </para>
+            <para>Note that generally each time <code>curl</code> is invoked to perform an
+                operation, a separate TCP/IP and SSL connection is created and thrown away. The
+                language APIs, in contrast, are designed to re-use connections between operations
+                and therefore provide much better performance. We recommend that you use one of the
+                language APIs in your production applications and limit cURL to quick-and-easy
+                testing and troubleshooting.</para>
+        </section>
+    </chapter>
+    <chapter xml:id="Additional_Resources-d1e436">
+        <title>Additional Resources</title>
+        <para>For information about all Cloud Block Storage API operations, see the <citetitle>Cloud
+                Block Storage Developer Guide</citetitle> at <link
+                xlink:href="http://docs.rackspace.com/">http://docs.rackspace.com/</link>. All you
+            need to get started with the Cloud Block Storage API is in this getting started guide
+            and the developer guide. For additional information about Cloud Block Storage, see <link
+                xlink:href="http://www.rackspace.com/knowledge_center/product-page/cloud-block-storage">the
+                Knowledge Center</link>.</para>
+        <para>The official support channels (phone, chat, email, forums, and knowledge base
+            articles) for Cloud Block Storage are available through the Rackspace Cloud web site at <link
+                xlink:href="http://www.rackspace.com/cloud/block-storage/"
+                >http://www.rackspace.com/cloud/block-storage/</link>. </para>
+        <para> The system status page at <link
+                xlink:href="http://status.rackspacecloud.com/cloudblockstorage/"
+                >http://status.rackspacecloud.com/cloudblockstorage/</link> can be reviewed if you believe
+            the Cloud Block Storage system is not functioning to your expectations. This page is updated to
+            reflect up-to-date information about the system’s current health and status. </para>
+        <para>Interested users can also follow updates/announcements via twitter at <link
+                xlink:href="http://www.twitter.com/rackspace"
+                >http://www.twitter.com/rackspace</link>. </para>
+        <para>Visit the <link
+                xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/"
+                >Product Feedback Forum</link> and tell us what you think about Cloud Block
+            Storage.</para>
+        <para> Developers are also encouraged to join some of the members of the Cloud BlockStorage
+            team at external.irc.rackspace.com on the #cbs channel. This is not an official Cloud
+            Block Storage support channel but should rather be viewed as a community meeting place
+            to share ideas and discuss Cloud Block Storage. </para>
+        <para>This API uses standard HTTP 1.1 response codes as documented at <link
+                xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
+                >www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>. </para>
+    </chapter>
 </book>
