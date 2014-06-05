@@ -53,7 +53,7 @@
         </copyright>
         <releaseinfo>API v1</releaseinfo>
         <productname>Rackspace Cloud Block Storage</productname>
-        <pubdate>2014-04-30</pubdate>
+        <pubdate>2014-06-15</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -66,7 +66,7 @@
         </abstract>
         <revhistory>
             <revision>
-                <date>2014-04-30</date>
+                <date>2014-06-15</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -82,17 +82,17 @@
             <raxm:priority>10</raxm:priority>
         </raxm:metadata>
     </info>
-    <chapter xml:id="Doc_Change_History">
+    <chapter xml:id="Doc_change_history_d1e060">
         <title>Document change history</title>
         <para>This version of the guide replaces and obsoletes all earlier versions. The most recent
             changes are described in the following table:</para>
         <?rax revhistory?>
     </chapter>
-    <chapter xml:id="Overview-d1e01">
+    <chapter xml:id="Overview_d1e060">
         <title>Overview</title>
         <para> Rackspace Cloud Block Storage (CBS) is a block level storage solution that allows you
             to mount drives or volumes to your Next Generation Cloud Servers™. The primary use cases
-            for Cloud Block Storage are to enable you to do the following tasks:<itemizedlist>
+            for Cloud Block Storage are to enable you to perform the following tasks:<itemizedlist>
                 <listitem>
                     <para>Scale your storage independently from your compute resources.</para>
                 </listitem>
@@ -102,15 +102,15 @@
                 </listitem>
             </itemizedlist>
         </para>
-        <para>The following options allow you to mount drives or volumes to your Next Generation
-            Cloud Server: <itemizedlist>
+        <para>The following options are available for mounting drives or volumes to your Next
+            Generation Cloud Server: <itemizedlist>
                 <listitem>
                     <para>The standard performance option offers extra storage capacity with
-                        mountable SATA drives </para>
+                        mountable SATA drives. </para>
                 </listitem>
                 <listitem>
                     <para>The high performance option offers high speed solid state drives (SSDs)
-                        for memory-intensive applications </para>
+                        for memory-intensive applications. </para>
                 </listitem>
             </itemizedlist>
         </para>
@@ -119,8 +119,8 @@
             <itemizedlist>
                 <listitem>
                     <para>Cloud Block Storage is an add-on feature to Next Generation Cloud Servers.
-                        Customers may not attach Cloud Block Storage volumes to other instances,
-                        like first generation Cloud Servers.</para>
+                        You cannot attach Cloud Block Storage volumes to other instances, such as
+                        first generation Cloud Servers.</para>
                 </listitem>
                 <listitem>
                     <para>Cloud Block Storage is multi-tenant rather than dedicated.</para>
@@ -136,8 +136,8 @@
                 </listitem>
             </itemizedlist>
         </note>
-        <para>Cloud Block Storage is built on the OpenStack Cinder project. For more information,
-            see <link
+        <para>Cloud Block Storage is built on the OpenStack Cinder project. For more information
+            about OpenStack Cinder, see <link
                 xlink:href="http://docs.openstack.org/api/openstack-block-storage/1.0/content/"
                 >http://docs.openstack.org/api/openstack-block-storage/1.0/content/</link>.</para>
         <para>Follow the steps in this <citetitle>Getting Started Guide</citetitle> to get started
@@ -155,7 +155,7 @@
                 xlink:href="mailto:support@rackspacecloud.com"
             >support@rackspacecloud.com</link>.</para>
     </chapter>
-    <chapter xml:id="Send-Requests-To-API-d1e101">
+    <chapter xml:id="Send_requests_to_API_d1e060">
         <title>Sending requests to the API</title>
         <para>You have several options for sending requests through an API including the following: </para>
         <itemizedlist>
@@ -178,8 +178,9 @@
                         >http://code.google.com/p/rest-client/</link>. </para>
             </listitem>
         </itemizedlist>
-        <para>This guide uses the API directly with cURL (<xref linkend="Using_the_API_Directly"/>). </para>
-        <section xml:id="Prerequisites_Examples">
+        <para>This guide uses the API directly with cURL (<xref
+                linkend="Using_the_API_directly_d1e060"/>). </para>
+        <section xml:id="Prerequisites_for_examples_d1e060">
             <title>Prerequisites for running examples</title>
             <para>To run the examples in this guide, you must have the following prerequisites:
                     <itemizedlist spacing="compact">
@@ -192,49 +193,43 @@
                     </listitem>
                     <listitem>
                         <para>Rackspace Cloud user name and password, as specified during
-                            registration</para>
+                            registration.</para>
                     </listitem>
                 </itemizedlist></para>
             <para>You also need to know your API key. To find your API key, use the following
                 steps:</para>
+            <para/>
             <para>
-                <itemizedlist spacing="compact">
+                <orderedlist>
                     <listitem>
-                        <para><emphasis role="bold">To find your API key:</emphasis>
-                        </para>
-                        <orderedlist>
-                            <listitem>
-                                <para>Log in to the Cloud Control Panel (<link
-                                        xlink:href="https://mycloud.rackspace.com"
-                                        >https://mycloud.rackspace.com</link>).</para>
-                            </listitem>
-                            <listitem>
-                                <para>On the upper-right side of the top navigation pane, click your
-                                    username.</para>
-                            </listitem>
-                            <listitem>
-                                <para>From the menu, select <guilabel>Account
-                                    Settings</guilabel>.</para>
-                            </listitem>
-                            <listitem>
-                                <para>In the Login Details section of the Account Settings page,
-                                    locate the <guilabel>API Key</guilabel> field and click
-                                        <guibutton>Show</guibutton>.</para>
-                            </listitem>
-                            <listitem>
-                                <para>Copy the value of the API Key and paste it into a text editor
-                                    of your choice.</para>
-                            </listitem>
-                            <listitem>
-                                <para>Click <guibutton>Hide</guibutton> to hide the value of the API
-                                    Key.</para>
-                            </listitem>
-                        </orderedlist>
+                        <para>Log in to the Cloud Control Panel (<link
+                                xlink:href="https://mycloud.rackspace.com"
+                                >https://mycloud.rackspace.com</link>).</para>
                     </listitem>
-                </itemizedlist>
+                    <listitem>
+                        <para>On the upper-right side of the top navigation pane, click your
+                            username.</para>
+                    </listitem>
+                    <listitem>
+                        <para>From the menu, select <guilabel>Account Settings</guilabel>.</para>
+                    </listitem>
+                    <listitem>
+                        <para>In the Login Details section of the Account Settings page, locate the
+                                <guilabel>API Key</guilabel> field and click
+                                <guibutton>Show</guibutton>.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Copy the value of the API Key and paste it into a text editor of your
+                            choice.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Click <guibutton>Hide</guibutton> to hide the value of the API
+                            Key.</para>
+                    </listitem>
+                </orderedlist>
             </para>
         </section>
-        <section xml:id="Using-Curl-d1e101">
+        <section xml:id="Sending_requests_with_curl_d1e060">
             <title>Sending API requests by using cURL</title>
             <para>cURL is a command-line tool that you can use to interact with REST interfaces.
                 cURL lets you to transmit and receive HTTP requests and responses from the command
@@ -291,7 +286,7 @@
                         request example> | python -m json.tool</command>.</para>
             </note>
         </section>
-        <section xml:id="Copy-Past-Curl-d1e101">
+        <section xml:id="Copy_paste_curl_d1e060">
             <title>Copying and pasting cURL request examples into a terminal window</title>
             <para>To run the cURL request examples shown in this guide, perform the following
                 actions:</para>
@@ -324,7 +319,7 @@
                 </listitem>
             </orderedlist>
             <para>Consider the following cURL authentication request JSON example, which is
-                described in detail in <xref linkend="Gen-Auth-Token"/>.</para>
+                described in detail in <xref linkend="Gen_auth-token_d1e060"/>.</para>
             <example>
                 <title>cURL authentication request: JSON</title>
                 <?dbfo keep-together="always"?>
@@ -377,7 +372,7 @@
             </tip>
         </section>
     </chapter>
-    <chapter xml:id="Service_Access_Endpoints-d1e753">
+    <chapter xml:id="Service_access_endpoints_d1e060">
         <title>Service access endpoints</title>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The Cloud Block Storage service is a
             regionalized service. The user of the service is responsible for appropriate
@@ -438,7 +433,7 @@
             after the final '/' in the <code>publicURL</code> field returned by the authentication
             response (<xref linkend="authResponse-d1e"/>.</para>
     </chapter>
-    <chapter xml:id="Using_the_API_Directly">
+    <chapter xml:id="Using_the_API_directly_d1e060">
         <title>Using the API directly by using cURL</title>
         <para>The main purpose of this guide is to get you up and running quickly with Cloud Block
             Storage. To help you accomplish this goal, this chapter contains simple examples for
@@ -446,7 +441,7 @@
             Example requests are provided in cURL, followed by the response. </para>
         <para>For more information about all Cloud Block Storage operations, see the <emphasis
                 role="italic">Cloud Block Storage Developer Guide</emphasis>.</para>
-        <section xml:id="Gen-Auth-Token">
+        <section xml:id="Gen_auth-token_d1e060">
             <title>Generating an authentication token</title>
             <para>Your first step must always be to generate an authentication token. You must then
                 include the authentication token in each request in the <code>X-Auth-Token</code>
@@ -496,14 +491,14 @@
                 returned with an <code>expires</code> attribute that specifies when the token
                 expires. Tokens are valid for a finite duration, typically for 24 hours. Remember to
                 supply your authentication token wherever you see the placeholder <emphasis
-                    role="bold">yourAuthToken</emphasis> in the examples in this guide.</para>
-            <para>The <code>publicURL</code> endpoints for Cloud Block Storage (for example <code
-                    xmlns:wadl="http://wadl.dev.java.net/2009/02"
+                    role="bold">yourAuthToken</emphasis> in the examples in this guide. </para>
+            <para>You also see the service catalog in the authentication response. For example,
+                    <code xmlns:wadl="http://wadl.dev.java.net/2009/02"
                     >https://dfw.blockstorage.api.rackspacecloud.com/v1/</code><parameter
-                    xmlns:wadl="http://wadl.dev.java.net/2009/02">1234</parameter>/) are also
-                returned in the authentication response. </para>
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02">1234</parameter>/) is one of the
+                    <code>publicURL</code> endpoints for Cloud Block Storage in the service catalog. </para>
             <para>Your actual account number is after the final slash (/) in the
-                    <code>publicURL</code> field, for example <code>1234</code> in the preceding
+                    <code>publicURL</code> field, such as <code>1234</code> in the preceding
                 endpoint. You must specify <emphasis role="italic">your</emphasis> account number in
                 the Cloud Block Storage API request, wherever you see the placeholder <emphasis
                     role="bold">yourAccountID</emphasis> specified in the examples in this
@@ -517,310 +512,506 @@
                     <command>GET</command>, <command>PUT</command>, and <command>DELETE</command>
                 requests for the Cloud Block Storage API.</para>
         </section>
-        <section xml:id="Creating_a_Storage_Container-d1e3026"
+        <section xml:id="Creating_a_volume_d1e060"
             xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
-            <title>Creating a Block Storage volume</title>
-            <para> Before uploading any data to Cloud Files, you must create a storage container.
-                You do this with a &PUT; request. </para>
+            <title>Creating a block storage volume</title>
+            <para>Your first step in Cloud Block Storage is to create a volume. To do this, send a
+                    <command>POST</command> request. </para>
             <para xmlns:m="http://www.w3.org/1998/Math/MathML">The HTTP request must include a
                 header to specify the authentication token. </para>
             <para xmlns:m="http://www.w3.org/1998/Math/MathML">The cURL request uses the
-                    <code>-X</code> switch to specify the correct HTTP method and the
-                    <code>-i</code> switch to send the HTTP response to terminal output.</para>
-            <para>An HTTP status code of 201 (Created) in the response indicates that the container
-                was successfully created.</para>
+                    <code>-i</code> option to include the HTTP headers in the output, the
+                    <code>-X</code> option to specify the HTTP method to use (instead of using the
+                default <command>GET</command>), and the <code>-d</code> option to send data in the
+                request to the HTTP server.</para>
+            <para>An HTTP status code of 200 (OK) in the response indicates that the volume was
+                successfully created.</para>
+            <note>
+                <para>You use the <code>source_volid</code> parameter for volume cloning, which has
+                    some limitations. You cannot create more than one clone per volume concurrently.
+                    Snapshots and volume cloning use the same locking mechanism, so you cannot run a
+                    snapshot and a clone of the same volume concurrently.</para>
+            </note>
             <example>
-                <title>cURL Create Storage Container</title>
+                <title>cURL create a volume</title>
                 <programlisting>
-curl -i -X PUT https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis> \
--H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" 
+curl -i -X POST -d \
+ '{ 
+ "volume":{ 
+ "display_name": "vol-001",    
+ "size": 100
+ }
+  }' \
+ -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+ -H "Content-Type: application/json" \
+ https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/volumes 
 </programlisting>
                 <programlisting>
-HTTP/1.1 201 Created
-Content-Length: 0
-Content-Type: text/html; charset=UTF-8
-X-Trans-Id: txfaf60e1d2a844e5ca9998-0053569d54dfw1
-Date: Tue, 22 Apr 2014 16:48:21 GMT
+HTTP/1.1 200 OK
+X-Compute-Request-Id: req-2af6c97a-2397-4e52-a0d0-4fde64cfb88c
+Content-Type: application/json
+Content-Length: 399
+Date: Tue, 03 Jun 2014 21:45:46 GMT
+ {
+  "volume": {
+    "status": "available",
+    "display_name": "vol-001",
+    "attachments": [
+      
+    ],
+    "availability_zone": "nova",
+    "bootable": "false",
+    "created_at": "2014-06-03T21:45:45.000000",
+    "display_description": null,
+    "volume_type": "SATA",
+    "snapshot_id": null,
+    "source_volid": null,
+    "metadata": {
+      "storage-node": "3d0a6f43-d1d9-4fea-bffa-8cf9fc7bf7e8"
+    },
+    "id": "a3df5c35-3218-436e-b706-c85edc3f149d",
+    "size": 100
+  }
+} 
 </programlisting>
             </example>
+            <note>
+                <para>You use the <code>os-volume_attachments</code> API call
+                        (<code>/servers/{server_id}/os-volume_attachments</code>) to attach the new
+                    volume to your Next Generation Cloud Server (with the specified
+                        <code>{server_id}</code>). Refer to the <link
+                        xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ch_preface.html"
+                        >Next Generation Cloud Servers Developer Guide</link> for details about the
+                    call. Once the volume is attached, the new volume appears as another device on
+                    the Next Generation Cloud Server. The volume can then be partitioned, formatted,
+                    and mounted for use on the system.</para>
+            </note>
         </section>
-        <section xml:id="Uploading_a_Storage_Object-d1e3067"
-            xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
-            <title>Attaching a volume to a server</title>
-            <para>After creating a container, you can upload a file to it. You do this with a &PUT;
-                request. You must ensure that the object's <code>Content-Type</code> is set
-                correctly so that the receiving server knows what kind of file it is. This is the
-                mechanism by which a user's web browser knows how to display the file or launch a
-                helper application to view the file.</para>
-            <para xmlns:m="http://www.w3.org/1998/Math/MathML">The HTTP request must include a
-                header to specify the authentication token. </para>
-            <para xmlns:m="http://www.w3.org/1998/Math/MathML">The cURL request uses the
-                    <code>-X</code> switch to specify the correct HTTP method and the
-                    <code>-i</code> switch to send the HTTP response to terminal output.</para>
-            <para>An HTTP status code of 201 (Created) in the response indicates that the object was
-                successfully uploaded.</para>
-            <example>
-                <title>cURL Upload an Object</title>
-                <programlisting>
-curl -i -X PUT https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis>/<emphasis role="bold">yourObjectName</emphasis> /
--H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
--H "Content-Type: image/jpeg" \
--H "Content-Length: 0"
-</programlisting>
-                <programlisting>
-HTTP/1.1 201 Created
-Last-Modified: Tue, 22 Apr 2014 17:02:35 GMT
-Content-Length: 0
-Etag: d41d8cd98f00b204e9800998ecf8427e
-Content-Type: text/html; charset=UTF-8
-X-Trans-Id: tx4f2953d5969d4c40ada04-005356a0aadfw1
-Date: Tue, 22 Apr 2014 17:02:34 GMT
-</programlisting>
-            </example>
-        </section>
-        <section xml:id="updateObjectMetadata-d1e">
-            <title>Updating (or Prepare your volume for use with a server) </title>
-            <para>You can send a <command>POST</command> request to set or update custom metadata
-                for existing objects. Metadata is set by using the header <code>X-Object-Meta-name:
-                    value</code>, where <emphasis role="italic">name</emphasis> is the custom name
-                for your metadata and <emphasis role="italic">value</emphasis> is the data value. </para>
+        <section xml:id="Listing_volumes_d1e060">
+            <title>Listing existing block storage volumes</title>
+            <para>To list all of the block storage volumes that you have created in a single region,
+                send a <command>GET</command> request.</para>
             <para>The HTTP request must include a header to specify the authentication token. </para>
-            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
-                method and the <code>-i</code> switch to send the HTTP response to terminal
-                output.</para>
-            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 202
-                (Accepted) in the response indicates that the metadata for the object was
-                successfully updated.</para>
+            <para>The cURL request uses the <code>-i</code> option to include the HTTP headers in
+                the output and the <code>-X</code> option to specify the HTTP method in the
+                request.</para>
+            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 200
+                (OK) in the response indicates that the request successfully completed.</para>
             <example>
-                <title>cURL Get Storage Space</title>
+                <title>cURL list volumes</title>
                 <programlisting language="bash">
-curl -i -X POST https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis>/<emphasis role="bold">yourObjectName</emphasis> \
+curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/volumes \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
--H "X-Object-Meta-ImageType: png" \
--H "X-Object-Meta-ImageSize: 400 MB"
+-H "Content-Type: application/json" 
+</programlisting>
+                <programlisting>
+HTTP/1.1 200 OK
+X-Compute-Request-Id: req-7941b291-f226-459d-9a78-5d38660f3ae7
+Content-Type: application/json
+Content-Length: 1179
+Date: Wed, 04 Jun 2014 16:52:15 GMT  
+
+{ 
+  "volumes": [
+    {
+      "status": "available",
+      "display_name": "vol-001",
+      "attachments": [
+        
+      ],
+      "availability_zone": "nova",
+      "bootable": "false",
+      "created_at": " 2014-06-03T21:45:45.000000 ",
+      "display_description": null,
+      "volume_type": "SATA",
+      "snapshot_id": null,
+      "source_volid": null,
+      "metadata": {
+        "storage-node": " 3d0a6f43-d1d9-4fea-bffa-8cf9fc7bf7e8 "
+      },
+      "id": " a3df5c35-3218-436e-b706-c85edc3f149d ",
+      "size": 100
+    }
+  ]
+} 
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="Showing_a_volume_d1e060">
+            <title>Showing volume details</title>
+            <para>To show details about a specified volume, send a <command>GET</command> request
+                that includes the volume ID.</para>
+            <para>The HTTP request must include a header to specify the authentication token. </para>
+            <para>The cURL request uses the <code>-i</code> option to include the HTTP headers in
+                the output and the <code>-X</code> option to specify the HTTP method in the
+                request.</para>
+            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 200
+                (OK) in the response indicates that the request successfully completed.</para>
+            <example>
+                <title>cURL show volume details </title>
+                <programlisting language="bash">
+curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/volumes/<emphasis role="bold">yourVolumeID</emphasis> \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+-H "Content-Type: application/json" 
+</programlisting>
+                <programlisting>
+HTTP/1.1 200 OK
+X-Compute-Request-Id: req-0ec1d1e0-c591-47d2-a8e7-9a8923e495b2
+Content-Type: application/json
+Content-Length: 554
+Date: Wed, 04 Jun 2014 18:15:24 GMT
+
+ {
+  "volume": {
+    "status": "available",
+    "display_name": "vol-001",
+    "attachments": [
+      
+    ],
+    "availability_zone": "nova",
+    "bootable": "false",
+    "created_at": "2014-06-03T21:45:45.000000",
+    "os-vol-tenant-attr:tenant_id": "<emphasis role="bold">yourAccountID</emphasis>",
+    "display_description": null,
+    "os-vol-host-attr:host": "lunr",
+    "volume_type": "SATA",
+    "snapshot_id": null,
+    "source_volid": null,
+    "os-vol-mig-status-attr:name_id": null,
+    "metadata": {
+      "storage-node": "3d0a6f43-d1d9-4fea-bffa-8cf9fc7bf7e8"
+    },
+    "id": "a3df5c35-3218-436e-b706-c85edc3f149d",
+    "os-vol-mig-status-attr:migstat": null,
+    "size": 100
+  }
+} 
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="Updating_a_volume_d1e060">
+            <title>Updating a volume</title>
+            <para>To modify a volume’s name or description or both, send a <command>PUT</command>
+                request that includes the volume ID.</para>
+            <para>The HTTP request must include a header to specify the authentication token. </para>
+            <para>The cURL request uses the <code>-i</code> option to include the HTTP headers in
+                the output, the <code>-X</code> option to specify the HTTP method to use (instead of
+                using the default ), and the <code>-d</code> option to send data in the request to
+                the HTTP server.</para>
+            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 200
+                (OK) in the response indicates that the request successfully completed.</para>
+            <example>
+                <title>cURL update volume</title>
+                <programlisting language="bash">
+curl -i -X PUT -d \
+  '{
+   "volume":{
+       "display_name":"newName",
+       "display_description":"newDescription"
+       }
+   }'\
+   -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+   -H "Content-Type: application/json" \
+   https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/volumes/<emphasis role="bold">yourVolumeID</emphasis>
+</programlisting>
+                <programlisting>
+HTTP/1.1 200 OK
+X-Compute-Request-Id: req-8a131657-46a3-435b-bee4-b612c79c8c09
+Content-Type: application/json
+Content-Length: 411
+Date: Wed, 04 Jun 2014 18:29:43 GMT
+
+{ 
+  "volume": {
+    "status": "available",
+    "display_name": "newName",
+    "attachments": [
+      
+    ],
+    "availability_zone": "nova",
+    "bootable": "false",
+    "created_at": "2014-06-03T21:45:45.000000",
+    "display_description": "newDescription",
+    "volume_type": "SATA",
+    "snapshot_id": null,
+    "source_volid": null,
+    "metadata": {
+      "storage-node": "3d0a6f43-d1d9-4fea-bffa-8cf9fc7bf7e8"
+    },
+    "id": "a3df5c35-3218-436e-b706-c85edc3f149d",
+    "size": 100
+  }
+} 
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="Deleting_a_volume_d1e060">
+            <title>Deleting a volume</title>
+            <para>To delete a volume when it is no longer in use and the data that it contains is
+                not needed, send a <command>DELETE</command> request that includes the volume
+                ID.</para>
+            <note>
+                <para>Deleting a volume deletes all the data within it. You cannot recover the data
+                    unless it is backed up before the volume is deleted.</para>
+            </note>
+            <para>The HTTP request must include a header to specify the authentication token. </para>
+            <para>The cURL request uses the <code>-i</code> option to include the HTTP headers in
+                the output and the <code>-X</code> option to specify the HTTP method to use (instead
+                of using the default).</para>
+            <para>An HTTP status code of 202 (Accepted) in the response indicates that the delete
+                request has been accepted for processing and the volume will be deleted.</para>
+            <example>
+                <title>cURL delete volume</title>
+                <programlisting language="bash">
+curl -i -X DELETE https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/volumes/<emphasis role="bold">yourVolumeID</emphasis> \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+-H "Content-Type: application/json" 
 </programlisting>
                 <programlisting>
 HTTP/1.1 202 Accepted
-Content-Length: 76
 Content-Type: text/html; charset=UTF-8
-X-Trans-Id: txffc66e0337ae4cd19e79c-005356a1abdfw1
-Date: Tue, 22 Apr 2014 17:06:51 GMT
-</programlisting>
-            </example>
-        </section>
-        <section xml:id="deleteContainer-d1e">
-            <title>Listing existing Block Storage volumes</title>
-            <para>You can send a <command>DELETE</command> request to the storage service to delete
-                a container. The container must be empty before you can delete it. </para>
-            <para>The HTTP request must include a header to specify the authentication token. </para>
-            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
-                method and the <code>-i</code> switch to send the HTTP response to terminal
-                output.</para>
-            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 204
-                (No Content) in the response indicates that the container was successfully
-                deleted.</para>
-            <example>
-                <title>cURL Get Storage Space</title>
-                <programlisting language="bash">
-curl -i -X DELETE https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis> \
--H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>"  
-</programlisting>
-                <programlisting>
-HTTP/1.1 204 No Content
 Content-Length: 0
-Content-Type: text/html; charset=UTF-8
-X-Trans-Id: tx4b8836bcc20a457d9bbe4-005356a30fdfw1
-Date: Tue, 22 Apr 2014 17:12:47 GMT     
+Date: Wed, 04 Jun 2014 19:17:35 GMT
 </programlisting>
             </example>
         </section>
-        <section xml:id="retrieveObject-d1e">
-            <title>Detaching a volume from a server</title>
-            <para>You can send a <command>GET</command> request to get the object content and
-                metadata. </para>
-            <para>The HTTP request must include a header to specify the authentication token. </para>
-            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
-                method and the <code>-i</code> switch to send the HTTP response to terminal
-                output.</para>
-            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 200
-                (OK) in the response indicates that the object was successfully retrieved.</para>
-            <example>
-                <title>cURL Get Storage Space</title>
-                <programlisting language="bash">
-curl -i -X GET https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis>/<emphasis role="bold">yourObjectName</emphasis> \
--H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" 
-</programlisting>
-                <programlisting>
-HTTP/1.1 200 OK
-Content-Length: 0
-Accept-Ranges: bytes
-X-Object-Meta-Imagetype: png
-Last-Modified: Tue, 22 Apr 2014 17:06:52 GMT
-X-Object-Meta-Imagesize: 400 MB
-Etag: d41d8cd98f00b204e9800998ecf8427e
-X-Timestamp: 1398186411.61064
-Content-Type: image/jpeg
-X-Trans-Id: txad3571ebcee24cabb387a-005356a229dfw1
-Date: Tue, 22 Apr 2014 17:08:57 GMT 
-
-[ ...object content...]
-</programlisting>
-            </example>
-        </section>
-        <section xml:id="deleteObject-d1e">
-            <title>Deleting a volume</title>
-            <para>You can send a <command>DELETE</command> request to the storage service to delete
-                an object in a container. </para>
-            <para>The HTTP request must include a header to specify the authentication token. </para>
-            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
-                method and the <code>-i</code> switch to send the HTTP response to terminal
-                output.</para>
-            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 204
-                (No Content) in the response indicates that the object was successfully
-                deleted.</para>
-            <para>The object is removed from the storage system, both the data and metadata. Object
-                deletion is processed immediately at the time of the request. Any subsequent GET,
-                HEAD, POST, PUT, or DELETE operations return a 404 (Not Found) error (unless object
-                versioning is on and other versions exist. For more details about object versioning,
-                see the <citetitle>Cloud Files Developer Guide</citetitle>.). </para>
-            <example>
-                <title>cURL Get Storage Space</title>
-                <programlisting language="bash">
-curl -i -X DELETE https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis>/<emphasis role="bold">yourObjectName</emphasis> \
--H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" 
-</programlisting>
-                <programlisting>
-HTTP/1.1 204 No Content
-Content-Length: 0
-Content-Type: text/html; charset=UTF-8
-X-Trans-Id: tx32fae72bccc94cb68d605-005356a2badfw1
-Date: Tue, 22 Apr 2014 17:11:22 GMT
-</programlisting>
-            </example>
-        </section>
-        <section xml:id="Show-Account-Details-d1e101">
+        <section xml:id="Creating_a_snapshot_d1e060">
             <title>Creating a snapshot</title>
-            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">You can send a
-                    <command>GET</command> request to show account details and lists containers.
-                Using the <code>format</code> query parameter on the request causes the list to
-                include details (<code>count</code>, <code>bytes</code>, and <code>name</code>)
-                about each container. Without it, you would receive just a list of the container
-                names.</para>
+            <para>A snapshot is a point-in-time copy of the data that a volume contains. You must
+                flush all writes to the volume before you create a snapshot. To do so, either
+                unmount any file systems on the volume or detach the volume. Snapshots are
+                incremental, so each time that you create a snapshot, the incremental changes for
+                the new snapshot are appended to the previous snapshot, which is still available.
+                Note that you can create a volume from the snapshot if desired.</para>
+            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">To create a snapshot of a
+                block storage volume, send a <command>POST</command> request. </para>
             <para>The HTTP request must include a header to specify the authentication token. </para>
-            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
-                method and the <code>-i</code> switch to send the HTTP response to terminal
-                output.</para>
+            <para>The cURL request uses the <code>-i</code> option to include the HTTP headers in
+                the output, the <code>-X</code> option to specify the HTTP method to use (instead of
+                using the default <command>GET</command>), and the <code>-d</code> option to send
+                data in the request to the HTTP server.</para>
             <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 200
-                (OK) in the response indicates that the account and container details were
-                successfully retrieved.</para>
-            <example>
-                <title>cURL Show Account Details</title>
+                (OK) indicates that the request was accepted and <code>"status": "creating"</code>
+                indicates that the snapshot is in progress.</para>
+            <example xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+                <title>cURL create a snapshot</title>
                 <programlisting>
-curl -i -X GET https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold" xmlns:m="http://www.w3.org/the key 1998/Math/MathML">yourAccountID</emphasis>?format=json \
--H "X-Auth-Token: <emphasis role="bold" xmlns:m="http://www.w3.org/the key 1998/Math/MathML">yourAuthToken</emphasis>"  
+curl -i -X POST -d \
+  '{
+  "snapshot": {
+      "display_name": "snap-001",
+      "display_description": "Daily Backup",
+      "volume_id": "<emphasis role="bold">yourVolumeID</emphasis>"
+    }
+  }'\
+  -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+  -H "Content-Type: application/json" \
+ https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/snapshots 
 </programlisting>
                 <programlisting>
 HTTP/1.1 200 OK
-Content-Length: 111
-X-Account-Object-Count: 573
-X-Timestamp: 1369081921.78518
-X-Account-Meta-Temp-Url-Key: ed6a04a9f70458575112811a9af5284e
-X-Account-Meta-Subject: Whaling
-X-Account-Bytes-Used: 14268918
-X-Account-Container-Count: 2
-Content-Type: application/json; charset=utf-8
-Accept-Ranges: bytes
-X-Trans-Id: tx6c802728f41b4804812ee-005356a3c8dfw1
-Date: Tue, 22 Apr 2014 17:15:52 GMT
+X-Compute-Request-Id: req-99d94a3a-1086-4c19-99b4-65d05e2e02f1
+Content-Type: application/json
+Content-Length: 275
+Date: Wed, 04 Jun 2014 20:16:19 GMT
 
-[{"count": 0, "bytes": 0, "name": "newcontainer"}, {"count": 573, "bytes": 14268918, "name": "wordpressfiles"}]
+{
+  "snapshot": {
+    "status": "creating",
+    "display_name": "snap-001",
+    "created_at": "2014-06-04T20:16:17.000000",
+    "display_description": "Daily Backup",
+    "volume_id": "c849a193-5275-4527-9e5a-69b2a05933aa",
+    "metadata": {
+      
+    },
+    "id": "a6211a94-937f-4770-8dae-1813cb643213",
+    "size": 100
+  }
+} 
 </programlisting>
             </example>
         </section>
-        <section xml:id="Determining_Storage_Usage-d1e2976"
+        <section xml:id="Listing_snapshots_d1e060"
             xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
             <title>Listing snapshots</title>
-            <para>You can send a <command>HEAD</command> request to the storage service to determine
-                how much data you have stored in the system and the number of containers you are
-                using. </para>
+            <para xmlns:m="http://www.w3.org/1998/Math/MathML">To list all of the snapshots that you
+                have created in a single region, send a <command>GET</command> request.</para>
             <para xmlns:m="http://www.w3.org/1998/Math/MathML">The HTTP request must include a
                 header to specify the authentication token. </para>
-            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
-                method and the <code>-i</code> switch to send the HTTP response to terminal
-                output.</para>
-            <para>An HTTP status code of 204 (No Content) in the response indicates that the storage
-                data were successfully retrieved. The HTTP headers in the response indicate the
-                number of containers in this storage account and the total bytes stored for the
-                entire account.</para>
-            <example>
-                <title>cURL Get Storage Space</title>
+            <para xmlns:m="http://www.w3.org/1998/Math/MathML">The cURL request uses the
+                    <code>-i</code> option to include the HTTP headers in the output and the
+                    <code>-X</code> option to specify the HTTP method in the request.</para>
+            <para>An HTTP status code of 200 (OK) in the response indicates that the request
+                successfully completed.</para>
+            <example xmlns:m="http://www.w3.org/1998/Math/MathML">
+                <title>cURL list snapshots</title>
                 <programlisting language="bash">
-curl -i -X HEAD https://storage101.ord1.clouddrive.com/v1/<emphasis role="bold">yourAccountID</emphasis> \
--H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" 
+curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/snapshots \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+-H "Content-Type: application/json" 
 </programlisting>
                 <programlisting>
-HTTP/1.1 204 No Content
-Content-Length: 0
-X-Account-Object-Count: 573
-X-Timestamp: 1369081921.78518
-X-Account-Meta-Temp-Url-Key: ed6a04a9f70458575112811a9af5284e
-X-Account-Meta-Subject: Whaling
-X-Account-Bytes-Used: 14268918
-X-Account-Container-Count: 2
-Content-Type: text/plain; charset=utf-8
-Accept-Ranges: bytes
-X-Trans-Id: tx0618e82d44394a6b8c5fb-005356a46fdfw1
-Date: Tue, 22 Apr 2014 17:18:39 GMT
+HTTP/1.1 200 OK
+X-Compute-Request-Id: req-1a938da7-cf74-4ac6-a72f-4c927ae23605
+Content-Type: application/json
+Content-Length: 541
+Date: Wed, 04 Jun 2014 20:28:01 GMT 
+
+ {
+  "snapshots": [
+    {
+      "status": "creating",
+      "display_name": "snap-001",
+      "created_at": "2014-06-04T20:16:17.000000",
+      "display_description": "Daily Backup",
+      "volume_id": "c849a193-5275-4527-9e5a-69b2a05933aa",
+      "metadata": {
+        
+      },
+      "id": "a6211a94-937f-4770-8dae-1813cb643213",
+      "size": 100
+    },
+    {
+      "status": "available",
+      "display_name": "snap-002",
+      "created_at": "2014-06-04T20:13:34.000000",
+      "display_description": "Weekly Backup",
+      "volume_id": "1a036384-99b2-4fed-ac05-31f964d6925d",
+      "metadata": {
+        
+      },
+      "id": "ca320eb7-b371-4dbe-b2e9-2543c952f507",
+      "size": 100
+    }
+  ]
+} 
 </programlisting>
             </example>
         </section>
-        <section xml:id="CDN-Enabling_the_Container-d1e3123"
+        <section xml:id="Showing_snapshot_details_d1e060">
+            <title>Showing snapshot details</title>
+            <para>To show details about a specified volume, send a <command>GET</command> request
+                that includes the volume ID.</para>
+            <para>The HTTP request must include a header to specify the authentication token. </para>
+            <para>The cURL request uses the <code>-i</code> option to include the HTTP headers in
+                the output and the <code>-X</code> option to specify the HTTP method in the
+                request.</para>
+            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 200
+                (OK) in the response indicates that the request successfully completed.</para>
+            <note>
+                <para><code>os-extended-snapshot-attributes:progress</code> in the response body
+                    shows snapshot progress.</para>
+            </note>
+            <example>
+                <title>cURL show snapshot details </title>
+                <programlisting language="bash">
+curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/snapshots/<emphasis role="bold">yourSnapshotID</emphasis> \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+-H "Content-Type: application/json" 
+</programlisting>
+                <programlisting>
+HTTP/1.1 200 OK
+X-Compute-Request-Id: req-7314746b-0670-4160-b6a7-388cafbfd082
+Content-Type: application/json
+Content-Length: 383
+Date: Wed, 04 Jun 2014 20:47:48 GMT
+
+{
+  "snapshot": {
+    "status": "available",
+    "display_name": "snap-002",
+    "created_at": "2014-06-04T20:13:34.000000",
+    "display_description": "Weekly Backup",
+    "os-extended-snapshot-attributes:progress": "100%",
+    "volume_id": "1a036384-99b2-4fed-ac05-31f964d6925d",
+    "os-extended-snapshot-attributes:project_id": "<emphasis role="bold">yourAccountID</emphasis>",
+    "metadata": {
+      
+    },
+    "id": "ca320eb7-b371-4dbe-b2e9-2543c952f507",
+    "size": 100
+  }
+} 
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="Updating_a_snapshot_d1e060">
+            <title>Updating a snapshot</title>
+            <para>To modify a snapshot’s name or description or both, send a <command>PUT</command>
+                request that includes the snapshot ID.</para>
+            <para>The HTTP request must include a header to specify the authentication token. </para>
+            <para>The cURL request uses the <code>-i</code> option to include the HTTP headers in
+                the output, the <code>-X</code> option to specify the HTTP method to use (instead of
+                using the default ), and the <code>-d</code> option to send data in the request to
+                the HTTP server.</para>
+            <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 200
+                (OK) in the response indicates that the request successfully completed.</para>
+            <example>
+                <title>cURL update a snapshot</title>
+                <programlisting language="bash">
+curl -i -X PUT -d \
+  '{
+   "snapshot":{
+       "display_name":"newSnapshotName",
+       "display_description":"newSnapshotDescription"
+       }
+   }' \
+   -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+   -H "Content-Type: application/json" \
+   https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/snapshots/<emphasis role="bold">yourSnapshotID</emphasis>
+</programlisting>
+                <programlisting>
+HTTP/1.1 200 OK
+X-Compute-Request-Id: req-8a131657-46a3-435b-bee4-b612c79c8c09
+Content-Length: 358
+Content-Type: text/html; charset=UTF-8
+Date: Wed, 04 Jun 2014 20:59:12 GMT
+
+{ 
+  "snapshot": {
+    "created_at" : "2014-06-04T20:13:34.000000", 
+    "status": "available",
+    "display_name": "newSnapshotName",
+    "display_description": "newSnapshotDescription",
+    "id": "a3df5c35-3218-436e-b706-c85edc3f149d",
+    "size": 100,
+    "volume_id" : "1a036384-99b2-4fed-ac05-31f964d6925d" 
+  }
+} 
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="Deleting_a_snapshot_d1e060"
             xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
-            <title>Deleting snapshots</title>
-            <para>After creating a container and storing a file in it, you can choose to make the
-                file publicly readable. Because the data in Cloud Files is private, you share your
-                files through the content delivery network (CDN). To CDN-enable a container, issue a
-                &PUT; request with <code>X-CDN-Enabled: True</code> against the CDN management
-                service. (Note that the service access endpoint URL specifies the CDN system.) The
-                default time to live (TTL) value is 72 hours (259200 seconds), with a minimum of 15
-                minutes (900 seconds) and a maximum of 1 year (31536000 seconds). The following
-                request sets the TTL to 1 week (604800 seconds) with <code>X-TTL:
-                604800</code>.</para>
+            <title>Deleting a snapshot</title>
+            <para xmlns:m="http://www.w3.org/1998/Math/MathML">To delete a snapshot, send a
+                    <command>DELETE</command> request that includes the snapshot ID.</para>
             <para xmlns:m="http://www.w3.org/1998/Math/MathML">The HTTP request must include a
                 header to specify the authentication token. </para>
-            <para>The cURL request uses the <code>-X</code> switch to specify the correct HTTP
-                method and the <code>-i</code> switch to send the HTTP response to terminal
-                output.</para>
-            <para>An HTTP status code of 201 (Created) in the response indicates that the container
-                was successfully CDN-enabled. </para>
-            <para>When the container is CDN-enabled, the service returns its public URI in the
-                    <code>X-Cdn-Uri</code> header of the response, and returns the SSL URI in the
-                    <code>X-Cdn-Ssl-Uri</code> header of the response. You can combine the public
-                URI with the object name to access the file through the CDN, or you can use the SSL
-                URI with the object name to access the file over a secure SSL connection through the
-                CDN.</para>
-            <example>
-                <title>cURL CDN-Enable Container and Set TTL</title>
-                <programlisting>
-curl -i -X PUT https://<emphasis role="bold">cdn1.clouddrive.com</emphasis>/v1/<emphasis role="bold">yourAccountID</emphasis>/<emphasis role="bold">yourContainerName</emphasis> /
+            <para xmlns:m="http://www.w3.org/1998/Math/MathML">The cURL request uses the
+                    <code>-i</code> option to include the HTTP headers in the output and the
+                    <code>-X</code> option to specify the HTTP method to use (instead of using the
+                default).</para>
+            <para xmlns:m="http://www.w3.org/1998/Math/MathML">An HTTP status code of 202 (Accepted)
+                in the response indicates that the delete request has been accepted for processing
+                and the volume will be deleted.</para>
+            <example xmlns:m="http://www.w3.org/1998/Math/MathML">
+                <title>cURL delete a snapshot</title>
+                <programlisting language="bash">
+curl -i -X DELETE https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/snapshots/<emphasis role="bold">yourSnapshotID</emphasis> \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
--H "<emphasis role="bold">X-CDN-Enabled: True</emphasis>" \
--H "<emphasis role="bold">X-TTL: 604800</emphasis>"
+-H "Content-Type: application/json" 
 </programlisting>
                 <programlisting>
-HTTP/1.1 201 Created
-Content-Length: 0
-<emphasis role="bold">X-Cdn-Ssl-Uri: https://c93f9b29cd3c6bd865ee-24695493c49b279502b280c6ecd262b5.ssl.cf6.rackcdn.com</emphasis>
-X-Cdn-Ios-Uri: http://7a701469fe9980c577e9-24695493c49b279502b280c6ecd262b5.iosr.cf6.rackcdn.com
-<emphasis role="bold">X-Cdn-Uri: http://98199d7b2503ac330f05-24695493c49b279502b280c6ecd262b5.r17.cf6.rackcdn.com</emphasis>
+HTTP/1.1 202 Accepted
 Content-Type: text/html; charset=UTF-8
-X-Cdn-Streaming-Uri: http://ce3a54aaf724a75455d6-24695493c49b279502b280c6ecd262b5.r17.stream.cf6.rackcdn.com
-X-Trans-Id: txc2b9b4ef77fd45f28c2d2-005356adfchkg1
-Date: Tue, 22 Apr 2014 17:59:24 GMT
+Content-Length: 0
+Date: Wed, 04 Jun 2014 21:09:15 GMT
 </programlisting>
             </example>
         </section>
-        <section xml:id="Other_cURL_Commands-d1e3222"
+        <section xml:id="Other_cURL_Commands_d1e3222"
             xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
             <title>Other cURL Commands</title>
             <para>You can issue any of the REST methods defined for Cloud Block Storage with the
@@ -833,7 +1024,7 @@ Date: Tue, 22 Apr 2014 17:59:24 GMT
                 testing and troubleshooting.</para>
         </section>
     </chapter>
-    <chapter xml:id="Additional_Resources-d1e436">
+    <chapter xml:id="Additional_Resources_d1e436">
         <title>Additional Resources</title>
         <para>For information about all Cloud Block Storage API operations, see the <citetitle>Cloud
                 Block Storage Developer Guide</citetitle> at <link
@@ -858,7 +1049,7 @@ Date: Tue, 22 Apr 2014 17:59:24 GMT
                 xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/"
                 >Product Feedback Forum</link> and tell us what you think about Cloud Block
             Storage.</para>
-        <para> Developers are also encouraged to join some of the members of the Cloud BlockStorage
+        <para> Developers are also encouraged to join some of the members of the Cloud Block Storage
             team at external.irc.rackspace.com on the #cbs channel. This is not an official Cloud
             Block Storage support channel but should rather be viewed as a community meeting place
             to share ideas and discuss Cloud Block Storage. </para>
