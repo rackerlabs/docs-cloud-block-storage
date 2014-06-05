@@ -13,7 +13,7 @@
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
-      <plugin>
+     <plugin>
         <groupId>com.rackspace.cloud.api</groupId>
         <artifactId>olink-maven-plugin</artifactId>
         <version>1.0</version>
@@ -29,7 +29,7 @@
       <plugin>
         <groupId>com.rackspace.cloud.api</groupId>
         <artifactId>clouddocs-maven-plugin</artifactId>
-        <version>2.0.3</version>
+        <version>2.0.4</version>
         <executions>
           <execution>
             <id>cbs-devguide</id>
