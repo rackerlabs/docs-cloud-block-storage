@@ -73,7 +73,7 @@
         <configuration>
           <enableDisqus>internet</enableDisqus>
           <socialIcons>0</socialIcons>
-          <!-- notify these people when comments are posted on docs-internal.rackspace.com -->
+         <!--  notify these people when comments are posted on docs-internal.rackspace.com -->
           <branding>rackspace</branding>
           <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
           <enableGoogleAnalytics>1</enableGoogleAnalytics>

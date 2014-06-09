@@ -1022,7 +1022,7 @@ Date: Wed, 04 Jun 2014 21:09:15 GMT
         </section>
     </chapter>
     <chapter xml:id="Additional_Resources_d1e436">
-        <title>Additional Resources</title>
+        <title>Additional resources</title>
         <para>For information about all Cloud Block Storage API operations, see the <citetitle>Cloud
                 Block Storage Developer Guide</citetitle> at <link
                 xlink:href="http://docs.rackspace.com/">http://docs.rackspace.com/</link>. All you
