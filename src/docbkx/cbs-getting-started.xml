@@ -88,9 +88,9 @@
     </chapter>
     <chapter xml:id="Overview_d1e060">
         <title>Overview</title>
-        <para> Rackspace Cloud Block Storage (CBS) is a block level storage solution that allows you
-            to mount drives or volumes to your Next Generation Cloud Servers™. The primary use cases
-            for Cloud Block Storage are to enable you to perform the following tasks:<itemizedlist>
+        <para> Rackspace Cloud Block Storage is a block level storage solution that allows you to
+            mount drives or volumes to your Next Generation Cloud Servers™. The primary use cases
+            for Cloud Block Storage are to allow you to perform the following tasks:<itemizedlist>
                 <listitem>
                     <para>Scale your storage independently from your compute resources.</para>
                 </listitem>
@@ -188,6 +188,7 @@
                                 xlink:href="https://cart.rackspace.com/cloud/"
                                 xmlns:m="http://www.w3.org/the key 1998/Math/MathML">signup
                                 page</link>.</para>
+                        <para/>
                     </listitem>
                     <listitem>
                         <para>Rackspace Cloud user name and password, as specified during
@@ -196,7 +197,6 @@
                 </itemizedlist></para>
             <para>You also need to know your API key. To find your API key, use the following
                 steps:</para>
-            <para/>
             <para>
                 <orderedlist>
                     <listitem>
@@ -217,12 +217,12 @@
                                 <guibutton>Show</guibutton>.</para>
                     </listitem>
                     <listitem>
-                        <para>Copy the value of the API Key and paste it into a text editor of your
+                        <para>Copy the value of the API key and paste it into a text editor of your
                             choice.</para>
                     </listitem>
                     <listitem>
                         <para>Click <guibutton>Hide</guibutton> to hide the value of the API
-                            Key.</para>
+                            key.</para>
                     </listitem>
                 </orderedlist>
             </para>
@@ -335,7 +335,7 @@
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri> | python  -m  json.tool </screen>
             </example>
             <para>You can see that the lines that are part of the cURL command syntax have all been
-                escaped with a backslash ('\') to indicate that the command continues on the next
+                escaped with a backslash (\) to indicate that the command continues on the next
                 line:</para>
             <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> <emphasis role="bold">\</emphasis>
   
@@ -448,24 +448,26 @@
             <para>Remember to replace the placeholders in the following authentication request
                 example with your information:<itemizedlist spacing="compact">
                     <listitem>
-                        <para><emphasis role="bold">yourUserName</emphasis> &mdash;Your common
-                            Rackspace Cloud user name, as supplied during registration.</para>
+                        <para><emphasis role="bold"><emphasis role="italic"
+                                >yourUserName</emphasis></emphasis> &mdash;Your common Rackspace
+                            Cloud user name, as supplied during registration.</para>
                     </listitem>
                     <listitem>
-                        <para><emphasis role="bold">yourApiKey</emphasis> &mdash; Your API key. </para>
+                        <para><emphasis role="bold"><emphasis role="italic"
+                                >yourApiKey</emphasis></emphasis> &mdash; Your API key. </para>
                     </listitem>
                 </itemizedlist></para>
-            <para>Notice that you authenticate by using the URL for the Cloud Identity service,
+            <para>You authenticate by using the URL for the Cloud Identity service,
                     <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>, as shown in
                 the following authentication request example. </para>
             <note>
                 <para>For UK-based accounts, you might use
-                        <code>'https://lon.identity.api.rackspacecloud.com/v2.0/tokens'</code>
+                        <code>https://lon.identity.api.rackspacecloud.com/v2.0/tokens</code>
                     instead.</para>
             </note>
-            <para>The cURL request uses the <code>-d</code> switch to send the specified data in a
+            <para>The cURL request uses the <code>-d</code> option to send the specified data in a
                     <command>POST</command> request to the HTTP server and the <code>-i</code>
-                switch to send the HTTP response to terminal output.</para>
+                option to send the HTTP response to terminal output.</para>
             <example>
                 <title>cURL authentication request: JSON</title>
                 <?dbfo keep-together="always"?>
@@ -1034,12 +1036,12 @@ Date: Wed, 04 Jun 2014 21:09:15 GMT
             articles) for Cloud Block Storage are available through the Rackspace Cloud web site at <link
                 xlink:href="http://www.rackspace.com/cloud/block-storage/"
                 >http://www.rackspace.com/cloud/block-storage/</link>. </para>
-        <para> The system status page at <link
+        <para>If the Cloud Block Storage system is not functioning as expected, you can review the
+            system status page at <link
                 xlink:href="http://status.rackspacecloud.com/cloudblockstorage/"
-                >http://status.rackspacecloud.com/cloudblockstorage/</link> can be reviewed if you believe
-            the Cloud Block Storage system is not functioning to your expectations. This page is updated to
+                >http://status.rackspacecloud.com/cloudblockstorage/</link>. This page is updated to
             reflect up-to-date information about the system’s current health and status. </para>
-        <para>Interested users can also follow updates/announcements via twitter at <link
+        <para>Interested users can also follow updates and announcements via Twitter at <link
                 xlink:href="http://www.twitter.com/rackspace"
                 >http://www.twitter.com/rackspace</link>. </para>
         <para>Visit the <link

@@ -208,16 +208,23 @@ format="SVG" scale="60"/>
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:html="http://www.w3.org/1999/xhtml">
     <title>Overview</title>
-    <para>Rackspace Cloud Block Storage is a block level storage
-      solution that allows customers to mount drives or volumes to
-      their Rackspace Next Generation Cloud Servers<trademark/>. The
-      two primary use cases are (1) to allow customers to scale their
-      storage independently from their compute resources, and (2) to
-      allow customers to utilize high performance storage to serve
-      database or I/O-intensive applications. </para>
-    <para>Interactions with Cloud Block Storage occur programmatically
-      via the Cloud Block Storage API as described in this developer
-      guide. </para>
+    <para>Rackspace Cloud Block Storage is a block level storage solution that allows customers to
+      mount drives or volumes to their Rackspace Next Generation Cloud Servers<trademark/>. The
+      primary use cases for Cloud Block Storage are to allow you to perform the following tasks:<itemizedlist>
+        <listitem>
+          <para>Scale your storage independently from your compute resources.</para>
+        </listitem>
+        <listitem>
+          <para>Use high performance storage to serve database or I/O-intensive applications.</para>
+        </listitem>
+      </itemizedlist></para>
+    <para>Interactions with Cloud Block Storage occur programmatically via the Cloud Block Storage
+      API as described in this developer guide. Cloud Block Storage uses a RESTful (Representational
+      State Transfer) web services interface. Rackspace also provides language-specific SDKs in
+      several popular programming languages. For more information, see the <link
+        xlink:href="http://developer.rackspace.com/#home-sdks"
+        xmlns:m="http://www.w3.org/the key 1998/Math/MathML"><citetitle>Official SDKs and
+          Tools</citetitle></link>.</para>
     <para>Rackspace offers both a low cost/gigabyte (GB) option with
       standard performance for customers who only require more storage
       and a high performance option that provides increased storage
@@ -228,13 +235,12 @@ format="SVG" scale="60"/>
             without paying for more compute capability.</para>
         </listitem>
         <listitem>
-          <para>A high performance option for databases and high
-            performance applications, leveraging solid state drives
-            for speed.</para>
+          <para>A high performance option for databases and high performance applications,
+            leveraging solid state drives (SSDs) for speed.</para>
         </listitem>
         <listitem>
-          <para>A standard speed option for customers who just need
-            additional storage on their Cloud Server.</para>
+          <para>A standard speed option using SATA drive for customers who just need additional
+            storage on their Cloud Server.</para>
         </listitem>
         <listitem>
           <para>Two simple price options:</para>
@@ -276,6 +282,23 @@ format="SVG" scale="60"/>
         </listitem>
       </itemizedlist>
     </note>
+    <para>Cloud Block Storage is built on the OpenStack Cinder project. For more information about
+      OpenStack Cinder, see <link
+        xlink:href="http://docs.openstack.org/api/openstack-block-storage/1.0/content/"
+        >http://docs.openstack.org/api/openstack-block-storage/1.0/content/</link>.</para>
+    <para>You can find additional details about Cloud Block Storage in the <emphasis role="italic"
+        >Cloud Block Storage Getting Started Guide Guide</emphasis> at <link
+        xlink:href="http://docs.rackspace.com/">http://docs.rackspace.com/</link>. This guide
+      provides step-by-step instructions to enter the necessary URLs or commands to use the Cloud
+      Block Storage API.</para>
+    <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">For more details about the Cloud Block
+      Storage service, see <link xlink:href="http://www.rackspace.com/cloud/block-storage/"
+        >http://www.rackspace.com/cloud/block-storage/</link> and the Knowledge Center article <link
+          xlink:href="http://www.rackspace.com//knowledge_center/article/cloud-block-storage-overview"
+        >Cloud Block Storage - Overview</link>. </para>
+    <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">Rackspace welcomes feedback,
+      comments, and bug reports at <link xlink:href="mailto:support@rackspacecloud.com"
+        >support@rackspacecloud.com</link>. </para>
     <!-- 
     <para security="writeronly">The following figure shows an overview
       of Cloud Block Storage: <informalfigure>
@@ -292,20 +315,13 @@ format="SVG" scale="60"/>
     </para>
     <remark security="reviewer">Writer: need to get architecture diagram for CBS and
       include it above. Ask Megan to provide.</remark>
-    <para security="writeronly">We welcome feedback, comments, and bug
-      reports at <link xlink:href="http://feedback.rackspacecloud.com"
-        >http://feedback.rackspacecloud.com</link>.</para>
-    <remark security="reviewer">Writer: check whether following statement should be added
-      back in for public (not private) beta: Issues and bug reports
-      can be directed to your support team via ticket, chat, email, or
-      phone.</remark>
 -->
     <?hard-pagebreak?>   
     <section xml:id="Intended_Audience-d1e122">
       <title>Intended audience</title>
-      <para> This guide assists software developers who want to develop applications using the Cloud
-        Block Storage API. It assumes the reader has a general understanding of storage and is
-        familiar with: </para>
+      <para>This document is intended for software developers who are interested in developing
+        applications that use the Rackspace Cloud Block Storage API. It assumes that you have the
+        following skills: </para>
       <itemizedlist spacing="compact">
         <listitem>
           <para>RESTful web services</para>
@@ -314,15 +330,15 @@ format="SVG" scale="60"/>
           <para>HTTP/1.1 conventions</para>
         </listitem>
         <listitem>
-          <para>JSON and/or XML data serialization formats</para>
+          <para>JSON or XML data serialization formats</para>
         </listitem>
       </itemizedlist>
     </section>
     <?hard-pagebreak?>
     <section xml:id="Document_Change_History-d1e166">
       <title>Document change history</title>
-      <para>This version of the developer guide replaces and obsoletes all previous versions. The
-        most recent changes are described in the table below:</para>
+      <para>This version of the developer guide replaces and obsoletes all earlier versions. The
+        most recent changes are described in the following table:</para>
       <?rax revhistory?>
     </section>
     <?hard-pagebreak?> 
@@ -349,8 +365,8 @@ format="SVG" scale="60"/>
       -->
       <para>You can download the most current versions of the
         API-related documents from <link
-          xlink:href="http://docs.rackspace.com/api/"
-          >docs.rackspace.com/api/</link>. </para>
+          xlink:href="http://docs.rackspace.com/"
+          >docs.rackspace.com/</link>. </para>
  <!--     <para>For information about getting started using Cloud Block
         Storage and Cloud Servers, refer to <citetitle>Getting Started
           with Rackspace Cloud Block Storage and
@@ -370,6 +386,16 @@ format="SVG" scale="60"/>
       <title>API contract changes</title>
       <para>Rackspace will notify customers in release notes when and if the contract does
         change.</para>
+    </section>
+    <section xml:id="Pricing_SLA-d1e1362">
+      <title>Pricing and service level</title>
+      <para>Cloud Block Storage is part of the Rackspace Cloud and your use of Cloud Block Storage
+        is billed according to the pricing schedule at <link
+          xlink:href="http://www.rackspace.com/cloud/block-storage/"
+          >http://www.rackspace.com/cloud/block-storage</link>.</para>
+      <para>The Service Level Agreement (SLA) for Cloud Queues is available at <link
+        xlink:href="http://www.rackspace.com/information/legal/cloud/sla?page=blockstorage#cloud_block_storage_sla"
+        >http://www.rackspace.com/information/legal/cloud/sla?page=blockstorage#cloud_block_storage_sla</link>.</para>
     </section>
     <!-- </chapter>
   <chapter xml:id="Concepts-d1e563"

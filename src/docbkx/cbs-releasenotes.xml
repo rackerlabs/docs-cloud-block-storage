@@ -6,7 +6,7 @@
     xml:id="cbs-releasenotes"
     version="5.0">
 
-<?rax title.font.size="30px" subtitle.font.size="20px" canonical.url.base="http://docs.rackspace.com/cbs/api/v1.0/cbs-releasenotes/content"?>
+<?rax title.font.size="35px" subtitle.font.size="30px" canonical.url.base="http://docs.rackspace.com/cbs/api/v1.0/cbs-releasenotes/content"?>
 	<title>Rackspace Cloud Block Storage Release Notes</title>
 
     <info>
@@ -31,7 +31,7 @@
 		</copyright>
 		<releaseinfo>API v1</releaseinfo>
 		<productname>Rackspace Cloud Block Storage</productname>
-		<pubdate>2014-03-12</pubdate>
+		<pubdate/>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
@@ -44,6 +44,15 @@
 				Interface (<abbrev>API</abbrev>).</para>
 		</abstract>
 		<revhistory>
+			<revision xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml">
+				<date>2014-06-13</date>
+				<revdescription>
+					<para>Published the <citetitle>Cloud Block Storage Getting Started Guide</citetitle> for the
+						API. The example requests in this guide use cURL.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2014-03-12</date>
 				<revdescription>
@@ -180,11 +189,17 @@
 		<title>Preface</title>
 		<para>This document describes new features and changes for the
 			Cloud Block Storage API. </para>
-		<para>For detailed information about the Cloud Block Storage
-			API, see the <citetitle>Cloud Block Storage Developer
-				Guide</citetitle> at <link
-				xlink:href="http://docs.rackspace.com/"
-				>http://docs.rackspace.com/</link>.</para>
+		<para>For detailed information about the Cloud Block Storage API, see the following guides at
+				<link xlink:href="http://docs.rackspace.com/">http://docs.rackspace.com/</link>:<itemizedlist>
+				<listitem>
+					<para><citetitle>Cloud Block Storage Getting Started Guide</citetitle>
+					</para>
+				</listitem>
+				<listitem>
+					<para><citetitle>Cloud Block Storage Developer Guide</citetitle>
+					</para>
+				</listitem>
+			</itemizedlist></para>
 		<para>Support for Cloud Block Storage is available 24x7x365
 			via phone or chat, or you can also <link
 				xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
@@ -204,6 +219,25 @@
 			all earlier versions. The most recent changes are
 			described in the following table:</para>
 		<?rax revhistory?>
+	</chapter>
+	<chapter xml:id="Jun13">
+		<?dbhtml stop-chunking?>
+		<title>June 13, 2014</title>
+		<para>This release contains documentation changes for the Cloud Block Storage API.</para>
+		<!-- New Features -->
+		<!-- Enchancements -->
+		<!-- Resolved Issues -->
+		<!-- Documentation Changes -->
+		<itemizedlist>
+			<title>Documentation</title>
+			<listitem>
+				<para xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
+					xmlns:html="http://www.w3.org/1999/xhtml">Published the <citetitle>Cloud Block
+						Storage Getting Started Guide</citetitle> for the API. The example requests
+					in this guide use cURL.</para>
+			</listitem>
+		</itemizedlist>
 	</chapter>
 	<chapter xml:id="Mar12">
 		<?dbhtml stop-chunking?>
