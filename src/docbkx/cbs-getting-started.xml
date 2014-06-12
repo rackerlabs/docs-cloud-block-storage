@@ -88,37 +88,35 @@
     </chapter>
     <chapter xml:id="Overview_d1e060">
         <title>Overview</title>
-        <para> Rackspace Cloud Block Storage is a block level storage solution that allows you to
+        <para> Rackspace Cloud Block Storage is a block-level storage solution that enables you to
             mount drives or volumes to your Next Generation Cloud Servers™. The primary use cases
             for Cloud Block Storage are to allow you to perform the following tasks:<itemizedlist>
                 <listitem>
                     <para>Scale your storage independently from your compute resources.</para>
                 </listitem>
                 <listitem>
-                    <para>Use high performance storage to serve database or I/O-intensive
+                    <para>Use high-performance storage to serve database or I/O-intensive
                         applications.</para>
                 </listitem>
             </itemizedlist>
         </para>
-        <para>The following options are available for mounting drives or volumes to your Next
-            Generation Cloud Server: <itemizedlist>
+        <para>The following options are available for mounting drives or volumes to your server: <itemizedlist>
                 <listitem>
-                    <para>The standard performance option offers extra storage capacity with
+                    <para>The standard-performance option offers extra storage capacity with
                         mountable SATA drives. </para>
                 </listitem>
                 <listitem>
-                    <para>The high performance option offers high speed solid state drives (SSDs)
+                    <para>The high-performance option offers high speed solid state drives (SSDs)
                         for memory-intensive applications. </para>
                 </listitem>
             </itemizedlist>
         </para>
-        <note xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <title>Notes</title>
-            <itemizedlist>
+        <para>Cloud Block Storage includes the following functionality:<itemizedlist
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <listitem>
                     <para>Cloud Block Storage is an add-on feature to Next Generation Cloud Servers.
                         You cannot attach Cloud Block Storage volumes to other instances, such as
-                        first generation Cloud Servers.</para>
+                        First Generation Cloud Servers.</para>
                 </listitem>
                 <listitem>
                     <para>Cloud Block Storage is multi-tenant rather than dedicated.</para>
@@ -129,20 +127,14 @@
                         accessible by any other customers.</para>
                 </listitem>
                 <listitem>
-                    <para>Cloud Block Storage allows you to create snapshots that you can save,
+                    <para>Cloud Block Storage enables you to create snapshots that you can save,
                         list, and restore.</para>
                 </listitem>
-            </itemizedlist>
-        </note>
-        <para>Cloud Block Storage is built on the OpenStack Cinder project. For more information
-            about OpenStack Cinder, see <link
-                xlink:href="http://docs.openstack.org/api/openstack-block-storage/1.0/content/"
-                >http://docs.openstack.org/api/openstack-block-storage/1.0/content/</link>.</para>
-        <para>Follow the steps in this <citetitle>Getting Started Guide</citetitle> to get started
-            with Cloud Block Storage. This guide provides step-by-step instructions to enter the
-            necessary URLs or commands to use the Cloud Block Storage API. You can find additional
-            details about Cloud Block Storage in the <emphasis role="italic">Cloud Block Storage
-                Developer Guide</emphasis> at <link xlink:href="http://docs.rackspace.com/"
+            </itemizedlist></para>
+        <para>This guide provides step-by-step instructions for entering the necessary URLs or
+            commands to use the Cloud Block Storage API. You can find additional details about Cloud
+            Block Storage in the <emphasis role="italic">Cloud Block Storage Developer
+                Guide</emphasis> at <link xlink:href="http://docs.rackspace.com/"
                 >http://docs.rackspace.com/</link>. </para>
         <para>For more details about the Cloud Block Storage service, see <link
                 xlink:href="http://www.rackspace.com/cloud/block-storage/"
@@ -152,10 +144,16 @@
         <para>Rackspace welcomes feedback, comments, and bug reports at <link
                 xlink:href="mailto:support@rackspacecloud.com"
             >support@rackspacecloud.com</link>.</para>
+        <note>
+            <para>Cloud Block Storage is built on the OpenStack Cinder project. For more information
+                about OpenStack Cinder, see <link
+                    xlink:href="http://docs.openstack.org/api/openstack-block-storage/1.0/content/"
+                    >http://docs.openstack.org/api/openstack-block-storage/1.0/content/</link>.</para>
+        </note>
     </chapter>
     <chapter xml:id="Send_requests_to_API_d1e060">
         <title>Sending requests to the API</title>
-        <para>You have several options for sending requests through an API including the following: </para>
+        <para>You have several options for sending requests through an API: </para>
         <itemizedlist>
             <listitem>
                 <para>Developers and testers might prefer to use cURL, the command-line tool from
@@ -165,7 +163,7 @@
             </listitem>
             <listitem>
                 <para>If you like to use a more graphical interface, the REST client for Mozilla
-                    Firefox works well for testing and trying out commands. See <link
+                    Firefox works well for testing commands. See <link
                         xlink:href="https://addons.mozilla.org/en-US/firefox/addon/restclient/"
                         >https://addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
             </listitem>
@@ -233,11 +231,11 @@
                 cURL lets you to transmit and receive HTTP requests and responses from the command
                 line or a shell script, which enables you to work with the API directly (without
                 using one of the language-specific APIs). cURL is available for most UNIX
-                system-based environments, Apple Mac OS X®, and Microsoft Windows®. For more
+                system-based environments, Apple Mac OS X, and Microsoft Windows. For more
                 information about cURL, see <link xlink:href="http://curl.haxx.se/"
                     >http://curl.haxx.se/</link>. </para>
             <para>The following cURL command-line options are used in this guide to run the
-                examples:</para>
+                examples.</para>
             <table rules="all">
                 <caption>cURL command-line options</caption>
                 <col width="25%"/>
@@ -265,7 +263,7 @@
                     </tr>
                     <tr>
                         <td><code>-s</code></td>
-                        <td>Specifies silent or quiet mode. Does not show progress or error
+                        <td>Specifies silent or quiet mode; does not show progress or error
                             messages. If your cURL command is not generating any output, try
                             replacing the <code>-s</code> option with <code>-i</code>. </td>
                     </tr>
@@ -334,7 +332,7 @@
 <option>-H 'Content-Type: application/json'</option> \
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri> | python  -m  json.tool </screen>
             </example>
-            <para>You can see that the lines that are part of the cURL command syntax have all been
+            <para>In the example, the lines that are part of the cURL command syntax have all been
                 escaped with a backslash (\) to indicate that the command continues on the next
                 line:</para>
             <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> <emphasis role="bold">\</emphasis>
@@ -347,10 +345,10 @@
    
  }' <emphasis role="bold">\</emphasis> 
 -H 'Content-Type: application/json' <emphasis role="bold">\</emphasis> 
-<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri>  | python  -m  json.tool </screen>
+<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri> | python  -m  json.tool </screen>
             <para>However, the lines <emphasis role="italic">within</emphasis> the JSON portion of
                 the message are not escaped with a backslash, to avoid issues with the JSON
-                processing. </para>
+                processing: </para>
             <screen language="bash">'{
     "auth":
     { 
@@ -376,8 +374,8 @@
             regionalized service. The user of the service is responsible for appropriate
             replication, caching, and overall maintenance of Cloud Block Storage data across
             regional boundaries to other Cloud Block Storage servers.</para>
-        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">You can find the available service
-            access endpoints for Cloud Block Storage summarized in the table below.</para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The available service access endpoints
+            for Cloud Block Storage are summarized in the following table.</para>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <table rules="all">
                 <caption>Cloud Block Storage regionalized service endpoints</caption>
@@ -424,16 +422,16 @@
             </table>
         </para>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Replace the sample account ID number,
-                <parameter>1234</parameter>, with your actual account number returned as part of the
-            authentication service response.</para>
-        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">You will find the actual account number
-            after the final '/' in the <code>publicURL</code> field returned by the authentication
-            response (<xref linkend="authResponse-d1e"/>.</para>
+                <parameter>1234</parameter>, with your actual account number, which is returned as
+            part of the authentication service response.</para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Your actual account number is located
+            after the final slash (/) in the <code>publicURL</code> field returned by the
+            authentication response (see <xref linkend="authResponse-d1e"/>).</para>
     </chapter>
     <chapter xml:id="Using_the_API_directly_d1e060">
         <title>Using the API directly by using cURL</title>
-        <para>The main purpose of this guide is to get you up and running quickly with Cloud Block
-            Storage. To help you accomplish this goal, this chapter contains simple examples for
+        <para>The main purpose of this guide is to get you started quickly with Cloud Block Storage.
+            To help you accomplish this goal, this chapter contains simple examples for
             authentication and some basic Cloud Block Storage requests that you will commonly use.
             Example requests are provided in cURL, followed by the response. </para>
         <para>For more information about all Cloud Block Storage operations, see the <emphasis
@@ -491,8 +489,9 @@
                 expires. Tokens are valid for a finite duration, typically for 24 hours. Remember to
                 supply your authentication token wherever you see the placeholder <emphasis
                     role="bold">yourAuthToken</emphasis> in the examples in this guide. </para>
-            <para>You also see the service catalog in the authentication response. For example,
-                    <code xmlns:wadl="http://wadl.dev.java.net/2009/02"
+            <para>The authentication response also contains the service catalog, which provides
+                endpoints for Rackspace Cloud services. For example, <code
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02"
                     >https://dfw.blockstorage.api.rackspacecloud.com/v1/</code><parameter
                     xmlns:wadl="http://wadl.dev.java.net/2009/02">1234</parameter>/) is one of the
                     <code>publicURL</code> endpoints for Cloud Block Storage in the service catalog. </para>
@@ -532,7 +531,7 @@
                     snapshot and a clone of the same volume concurrently.</para>
             </note>
             <example>
-                <title>cURL create a volume</title>
+                <title>Create a volume: cURL</title>
                 <programlisting>
 curl -i -X POST -d \
  '{ 
@@ -578,12 +577,12 @@ Date: Tue, 03 Jun 2014 21:45:46 GMT
                 <para>You use the <code>os-volume_attachments</code> API call
                         (<code>/servers/{server_id}/os-volume_attachments</code>) to attach the new
                     volume to your Next Generation Cloud Server (with the specified
-                        <code>{server_id}</code>). Refer to the <link
+                        <code>{server_id}</code>). For details, see the <link
                         xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ch_preface.html"
-                        >Next Generation Cloud Servers Developer Guide</link> for details about the
-                    call. Once the volume is attached, the new volume appears as another device on
-                    the Next Generation Cloud Server. The volume can then be partitioned, formatted,
-                    and mounted for use on the system.</para>
+                        >Next Generation Cloud Servers Developer Guide</link>. After the volume is
+                    attached, the new volume appears as another device on the Next Generation Cloud
+                    Server. The volume can then be partitioned, formatted, and mounted for use on
+                    the system.</para>
             </note>
         </section>
         <section xml:id="Listing_volumes_d1e060">
@@ -597,7 +596,7 @@ Date: Tue, 03 Jun 2014 21:45:46 GMT
             <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 200
                 (OK) in the response indicates that the request successfully completed.</para>
             <example>
-                <title>cURL list volumes</title>
+                <title>List volumes: cURL</title>
                 <programlisting language="bash">
 curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/volumes \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
@@ -647,7 +646,7 @@ Date: Wed, 04 Jun 2014 16:52:15 GMT
             <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 200
                 (OK) in the response indicates that the request successfully completed.</para>
             <example>
-                <title>cURL show volume details </title>
+                <title>Show volume details: cURL </title>
                 <programlisting language="bash">
 curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/volumes/<emphasis role="bold">yourVolumeID</emphasis> \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
@@ -690,7 +689,7 @@ Date: Wed, 04 Jun 2014 18:15:24 GMT
         </section>
         <section xml:id="Updating_a_volume_d1e060">
             <title>Updating a volume</title>
-            <para>To modify a volume’s name or description or both, send a <command>PUT</command>
+            <para>To modify a volume’s name, description, or both, send a <command>PUT</command>
                 request that includes the volume ID.</para>
             <para>The HTTP request must include a header to specify the authentication token. </para>
             <para>The cURL request uses the <code>-i</code> option to include the HTTP headers in
@@ -700,7 +699,7 @@ Date: Wed, 04 Jun 2014 18:15:24 GMT
             <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 200
                 (OK) in the response indicates that the request successfully completed.</para>
             <example>
-                <title>cURL update volume</title>
+                <title>Update volume: cURL</title>
                 <programlisting language="bash">
 curl -i -X PUT -d \
   '{
@@ -760,7 +759,7 @@ Date: Wed, 04 Jun 2014 18:29:43 GMT
             <para>An HTTP status code of 202 (Accepted) in the response indicates that the delete
                 request has been accepted for processing and the volume will be deleted.</para>
             <example>
-                <title>cURL delete volume</title>
+                <title>Delete volume: cURL</title>
                 <programlisting language="bash">
 curl -i -X DELETE https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/volumes/<emphasis role="bold">yourVolumeID</emphasis> \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
@@ -781,7 +780,7 @@ Date: Wed, 04 Jun 2014 19:17:35 GMT
                 unmount any file systems on the volume or detach the volume. Snapshots are
                 incremental, so each time that you create a snapshot, the incremental changes for
                 the new snapshot are appended to the previous snapshot, which is still available.
-                Note that you can create a volume from the snapshot if desired.</para>
+                Note that you can create a volume from the snapshot.</para>
             <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">To create a snapshot of a
                 block storage volume, send a <command>POST</command> request. </para>
             <para>The HTTP request must include a header to specify the authentication token. </para>
@@ -793,7 +792,7 @@ Date: Wed, 04 Jun 2014 19:17:35 GMT
                 (OK) indicates that the request was accepted and <code>"status": "creating"</code>
                 indicates that the snapshot is in progress.</para>
             <example xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
-                <title>cURL create a snapshot</title>
+                <title>Create a snapshot: cURL</title>
                 <programlisting>
 curl -i -X POST -d \
   '{
@@ -844,7 +843,7 @@ Date: Wed, 04 Jun 2014 20:16:19 GMT
             <para>An HTTP status code of 200 (OK) in the response indicates that the request
                 successfully completed.</para>
             <example xmlns:m="http://www.w3.org/1998/Math/MathML">
-                <title>cURL list snapshots</title>
+                <title>List snapshots: cURL</title>
                 <programlisting language="bash">
 curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/snapshots \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
@@ -890,8 +889,8 @@ Date: Wed, 04 Jun 2014 20:28:01 GMT
         </section>
         <section xml:id="Showing_snapshot_details_d1e060">
             <title>Showing snapshot details</title>
-            <para>To show details about a specified volume, send a <command>GET</command> request
-                that includes the volume ID.</para>
+            <para>To show details about a specified snapshot, send a <command>GET</command> request
+                that includes the snapshot ID.</para>
             <para>The HTTP request must include a header to specify the authentication token. </para>
             <para>The cURL request uses the <code>-i</code> option to include the HTTP headers in
                 the output and the <code>-X</code> option to specify the HTTP method in the
@@ -900,10 +899,10 @@ Date: Wed, 04 Jun 2014 20:28:01 GMT
                 (OK) in the response indicates that the request successfully completed.</para>
             <note>
                 <para><code>os-extended-snapshot-attributes:progress</code> in the response body
-                    shows snapshot progress.</para>
+                    shows snapshot creation progress.</para>
             </note>
             <example>
-                <title>cURL show snapshot details </title>
+                <title>Show snapshot details: cURL </title>
                 <programlisting language="bash">
 curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/snapshots/<emphasis role="bold">yourSnapshotID</emphasis> \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
@@ -937,7 +936,7 @@ Date: Wed, 04 Jun 2014 20:47:48 GMT
         </section>
         <section xml:id="Updating_a_snapshot_d1e060">
             <title>Updating a snapshot</title>
-            <para>To modify a snapshot’s name or description or both, send a <command>PUT</command>
+            <para>To modify a snapshot’s name, description, or both, send a <command>PUT</command>
                 request that includes the snapshot ID.</para>
             <para>The HTTP request must include a header to specify the authentication token. </para>
             <para>The cURL request uses the <code>-i</code> option to include the HTTP headers in
@@ -947,7 +946,7 @@ Date: Wed, 04 Jun 2014 20:47:48 GMT
             <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">An HTTP status code of 200
                 (OK) in the response indicates that the request successfully completed.</para>
             <example>
-                <title>cURL update a snapshot</title>
+                <title>Update a snapshot: cURL</title>
                 <programlisting language="bash">
 curl -i -X PUT -d \
   '{
@@ -994,9 +993,9 @@ Date: Wed, 04 Jun 2014 20:59:12 GMT
                 default).</para>
             <para xmlns:m="http://www.w3.org/1998/Math/MathML">An HTTP status code of 202 (Accepted)
                 in the response indicates that the delete request has been accepted for processing
-                and the volume will be deleted.</para>
+                and the snapshot will be deleted.</para>
             <example xmlns:m="http://www.w3.org/1998/Math/MathML">
-                <title>cURL delete a snapshot</title>
+                <title>Delete a snapshot: cURL</title>
                 <programlisting language="bash">
 curl -i -X DELETE https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/snapshots/<emphasis role="bold">yourSnapshotID</emphasis> \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
@@ -1015,12 +1014,12 @@ Date: Wed, 04 Jun 2014 21:09:15 GMT
             <title>Other cURL Commands</title>
             <para>You can issue any of the REST methods defined for Cloud Block Storage with the
                 cURL utility. </para>
-            <para>Note that generally each time <code>curl</code> is invoked to perform an
-                operation, a separate TCP/IP and SSL connection is created and thrown away. The
-                language APIs, in contrast, are designed to re-use connections between operations
-                and therefore provide much better performance. We recommend that you use one of the
-                language APIs in your production applications and limit cURL to quick-and-easy
-                testing and troubleshooting.</para>
+            <para>Note that generally each time <code>cURL</code> is invoked to perform an
+                operation, a separate TCP/IP and SSL connection is created and then discarded. The
+                language APIs, in contrast, are designed to reuse connections between operations and
+                therefore provide much better performance. We recommend that you use one of the
+                language APIs (for example, Python or Ruby) in your production applications and
+                limit cURL to quick-and-easy testing and troubleshooting.</para>
         </section>
     </chapter>
     <chapter xml:id="Additional_Resources_d1e436">
@@ -1033,8 +1032,8 @@ Date: Wed, 04 Jun 2014 21:09:15 GMT
                 xlink:href="http://www.rackspace.com/knowledge_center/product-page/cloud-block-storage">the
                 Knowledge Center</link>.</para>
         <para>The official support channels (phone, chat, email, forums, and knowledge base
-            articles) for Cloud Block Storage are available through the Rackspace Cloud web site at <link
-                xlink:href="http://www.rackspace.com/cloud/block-storage/"
+            articles) for Cloud Block Storage are available through the Rackspace Cloud website at
+                <link xlink:href="http://www.rackspace.com/cloud/block-storage/"
                 >http://www.rackspace.com/cloud/block-storage/</link>. </para>
         <para>If the Cloud Block Storage system is not functioning as expected, you can review the
             system status page at <link
@@ -1049,9 +1048,10 @@ Date: Wed, 04 Jun 2014 21:09:15 GMT
                 >Product Feedback Forum</link> and tell us what you think about Cloud Block
             Storage.</para>
         <para> Developers are also encouraged to join some of the members of the Cloud Block Storage
-            team at external.irc.rackspace.com on the #cbs channel. This is not an official Cloud
-            Block Storage support channel but should rather be viewed as a community meeting place
-            to share ideas and discuss Cloud Block Storage. </para>
+            team at <emphasis role="bold">external.irc.rackspace.com</emphasis> on the <emphasis
+                role="bold">#cbs</emphasis> channel. This is not an official Cloud Block Storage
+            support channel but should rather be viewed as a community meeting place to share ideas
+            and discuss Cloud Block Storage. </para>
         <para>This API uses standard HTTP 1.1 response codes as documented at <link
                 xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
                 >www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>. </para>
