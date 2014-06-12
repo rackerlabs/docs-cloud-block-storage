@@ -41,7 +41,7 @@
     xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
     xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
     xml:id="cbs-getting-started">
-    <?rax title.font.size="40px" subtitle.font.size="30px"?>
+    <?rax title.font.size="35px" subtitle.font.size="30px"?>
     <title>Rackspace Cloud Block Storage Getting Started Guide</title>
     <titleabbrev>Block Storage Getting Started Guide</titleabbrev>
     <info>
@@ -51,7 +51,7 @@
         </copyright>
         <releaseinfo>API v1</releaseinfo>
         <productname>Rackspace Cloud Block Storage</productname>
-        <pubdate/>
+        <pubdate>2014-06-12</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -64,7 +64,7 @@
         </abstract>
         <revhistory>
             <revision>
-                <date>2014-06-15</date>
+                <date>2014-06-12</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>

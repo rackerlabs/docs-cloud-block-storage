@@ -45,7 +45,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2014-03-12</pubdate>
+    <pubdate>2014-06-12</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.
@@ -59,6 +59,14 @@ format="SVG" scale="60"/>
           (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory>
+      <revision>
+        <date>2014-06-12</date>
+        <revdescription>
+          <para linkend="overview">Added a reference to the <citetitle>Cloud Block Storage Getting
+              Started Guide</citetitle>, which uses cURL to show example requests (<xref
+              linkend="overview"/>). </para>
+        </revdescription>
+      </revision>
       <revision>
         <date>2013-03-12</date>
         <revdescription>
