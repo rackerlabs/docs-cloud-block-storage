@@ -223,7 +223,7 @@
 	</chapter>
 	<chapter xml:id="Jun13">
 		<?dbhtml stop-chunking?>
-		<title>June 13, 2014</title>
+		<title>June 12, 2014</title>
 		<para>This release contains documentation changes for the Cloud Block Storage API.</para>
 		<!-- New Features -->
 		<!-- Enchancements -->
@@ -234,9 +234,9 @@
 			<listitem>
 				<para xmlns:svg="http://www.w3.org/2000/svg"
 					xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
-					xmlns:html="http://www.w3.org/1999/xhtml">Published the <citetitle>Cloud Block
-						Storage Getting Started Guide</citetitle> for the API. The example requests
-					in this guide use cURL.</para>
+					xmlns:html="http://www.w3.org/1999/xhtml">Published the new <citetitle>Cloud
+						Block Storage Getting Started Guide</citetitle> for the API. The example
+					requests in this guide use cURL.</para>
 			</listitem>
 		</itemizedlist>
 	</chapter>
