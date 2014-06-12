@@ -9,6 +9,7 @@ Contributions are welcome! To suggest changes to the documentation, please submi
 
 Source files are for the following documents:
 
+    o Cloud Block Storage Getting Started Guide
     o Cloud Block Storage Developer Guide
     o Cloud Block Storage Release Notes
     
@@ -17,6 +18,7 @@ reviewed and merged into the master branch as appropriate.
 
 You can use any editor to work with the files. The files that are most likely to be of interest are:
 
+    o src/docbkx/cbs-getting-started.xml
     o src/docbkx/cbs-devguide.xml
     o src/docbkx/cbs-releasenotes.xml
     o src/wadls/volume-api/src/os-volume-1.wadl
