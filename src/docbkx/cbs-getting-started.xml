@@ -319,7 +319,7 @@
             <example>
                 <title>cURL authentication request: JSON</title>
                 <?dbfo keep-together="always"?>
-                <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+                <screen language="bash"><command>curl</command> <option>-d</option> \
 '{
     "auth":
     {
@@ -335,7 +335,7 @@
             <para>In the example, the lines that are part of the cURL command syntax have all been
                 escaped with a backslash (\) to indicate that the command continues on the next
                 line:</para>
-            <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> <emphasis role="bold">\</emphasis>
+            <screen language="bash"><command>curl</command> <option>-d</option> <emphasis role="bold">\</emphasis>
   
    
 (... lines within the JSON portion of the message are not shown in this example)
@@ -464,12 +464,11 @@
                     instead.</para>
             </note>
             <para>The cURL request uses the <code>-d</code> option to send the specified data in a
-                    <command>POST</command> request to the HTTP server and the <code>-i</code>
-                option to send the HTTP response to terminal output.</para>
+                    <command>POST</command> request to the HTTP server.</para>
             <example>
                 <title>cURL authentication request: JSON</title>
                 <?dbfo keep-together="always"?>
-                <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+                <screen language="bash"><command>curl</command> <option>-d</option> \
 '{
     "auth":
     {
