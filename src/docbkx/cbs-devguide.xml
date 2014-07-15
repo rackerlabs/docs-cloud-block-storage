@@ -352,33 +352,10 @@ format="SVG" scale="60"/>
     <?hard-pagebreak?> 
     <section xml:id="Additional_Resources-d1e532">
       <title>Additional resources</title>
-      <!-- 
-      <para>Descriptive information about Cloud Block Storage is also
-        published in its Web Application Description Language (WADL)
-        and XML Schema Definition (XSD). You are welcome to read this
-        information here:
-        </para>
-      <itemizedlist>
-        <listitem>
-          <para>The WADL is <link
-              xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs.wadl"
-            />.</para>
-        </listitem>
-        <listitem>
-          <para>The XSD is <link
-              xlink:href="http://docs.rackspace.com/cbs/api/v1.0/xsd/cbs.xsd"
-            />. </para>
-        </listitem>
-      </itemizedlist>
-      -->
       <para>You can download the most current versions of the
         API-related documents from <link
           xlink:href="http://docs.rackspace.com/"
           >docs.rackspace.com/</link>. </para>
- <!--     <para>For information about getting started using Cloud Block
-        Storage and Cloud Servers, refer to <citetitle>Getting Started
-          with Rackspace Cloud Block Storage and
-        Servers</citetitle>.</para> -->
       <para>For information about Rackspace Cloud products, refer to
           <link xlink:href="http://www.rackspace.com/cloud/"
           >www.rackspace.com/cloud</link>. This site also offers links
@@ -405,12 +382,6 @@ format="SVG" scale="60"/>
         xlink:href="http://www.rackspace.com/information/legal/cloud/sla?page=blockstorage#cloud_block_storage_sla"
         >http://www.rackspace.com/information/legal/cloud/sla?page=blockstorage#cloud_block_storage_sla</link>.</para>
     </section>
-    <!-- </chapter>
-  <chapter xml:id="Concepts-d1e563"
-    xmlns:svg="http://www.w3.org/2000/svg"
-    xmlns:m="http://www.w3.org/1998/Math/MathML"
-    xmlns:html="http://www.w3.org/1999/xhtml">
--->
     <section xml:id="Terminology">
       <title>Terminology</title>
       <?dbhtml stop-chunking?>
