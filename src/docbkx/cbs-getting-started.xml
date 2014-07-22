@@ -51,7 +51,7 @@
         </copyright>
         <releaseinfo>API v1</releaseinfo>
         <productname>Rackspace Cloud Block Storage</productname>
-        <pubdate>2014-06-12</pubdate>
+        <pubdate>2014-07-22</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -63,6 +63,14 @@
                 Interface (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision xmlns:wadl="http://wadl.dev.java.net/2009/02"
+                xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+                <date>2014-07-22</date>
+                <revdescription>
+                    <para>Added a link to guidance on choosing a regionalized endpoint in <xref
+                            linkend="Service_access_endpoints_d1e060"/>.</para>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-06-12</date>
                 <revdescription>
@@ -376,6 +384,19 @@
             regional boundaries to other Cloud Block Storage servers.</para>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The available service access endpoints
             for Cloud Block Storage are summarized in the following table.</para>
+        <tip xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <para>To help you decide which regionalized endpoint to use, read about special
+                considerations for choosing a data center at <link
+                    xlink:href="http://www.rackspace.com/knowledge_center/article/what-is-ord-and-dfw"
+                    >http://www.rackspace.com/knowledge_center/article/what-is-ord-and-dfw</link>.
+                <!--
+2014-07-21 rose.coste
+David Hendler confirms this is the right KC article:
+at the same location, it has a new page title, "Where are the Rackspace data centers (DFW, LON, HKG, etc.)?"
+<link xlink:href="http://www.rackspace.com/knowledge_center/article/what-is-ord-and-dfw">http://www.rackspace.com/knowledge_center/article/what-is-ord-and-dfw</link>.
+-->
+            </para>
+        </tip>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <table rules="all">
                 <caption>Cloud Block Storage regionalized service endpoints</caption>
