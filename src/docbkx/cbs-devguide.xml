@@ -45,7 +45,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2014-07-22</pubdate>
+    <pubdate>2014-08-22</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.
@@ -59,6 +59,13 @@ format="SVG" scale="60"/>
           (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory>
+      <revision>
+        <date>2014-08-22</date>
+        <revdescription>
+          <para>Added <xref linkend="serviceQuotas-d1e01"/> to provide information about Cloud Block
+            Storage quotas and how to list quota information.</para>
+        </revdescription>
+      </revision>
       <revision>
         <date>2014-07-22</date>
         <revdescription xmlns:html="http://www.w3.org/1999/xhtml"
@@ -483,11 +490,9 @@ format="SVG" scale="60"/>
         your tenant ID or cloud account number—form the authentication
         credentials that are required to connect to the Rackspace
         cloud.</para>
-      <para>To find your tenant ID or cloud account number, locate
-        your username on the upper-right side of the top navigation
-        pane in the Cloud Control Panel. The tenant ID or account
-        number is in parentheses just to the right of your
-        username.</para>
+      <para>To find your tenant ID or cloud account number, locate your username on the upper-right
+        side of the top navigation pane in the Cloud Control Panel. The tenant ID or account number
+        is in the drop down menu under your username. </para>
       <para> Your account may be based in either the US or the UK. This is not determined by your
         physical location but by the location of the Rackspace retail site that was used to create
         your account. </para>
@@ -991,6 +996,105 @@ format="SVG" scale="60"/>
           </tbody>
         </table>
       </section>
+    <section xml:id="serviceQuotas-d1e01">
+      <title>Cloud Block Storage quotas</title>
+      <para>By default, all new Cloud Block Storage users are assigned a 10 TB / 50 volume quota in
+        each region. This quota is primarily to help with capacity planning and to prevent system
+        abuse. If your application requires more storage or volumes than the default quota, simply
+        submit a support request to ask for an increase. In your request, be sure to include the
+        storage amount that you need (TBs or volume count), storage type (SATA or SSD), and region
+        (for example, DFW or LON).</para>
+      <note>
+        <para>Your Cloud Block Storage quota is independent from any other account quotas that you
+          might have.</para>
+      </note>
+      <para>You can use the OpenStack Cinder client or API to see your current block storage quotas. </para>
+      <para>To view the Cloud Block Storage quotas using the Cinder client, use the following
+        command:<programlisting>cinder quota-show <emphasis role="bold">yourAccountID</emphasis></programlisting>
+      </para>
+      <note>
+        <para>Your account ID or account number is often referred to as your tenant ID or tenant
+          name. For information about how to find your account ID, see <xref
+            linkend="Authentication-d1e647"/>.</para>
+      </note>
+      <para>This results in a quota listing similar to the following example.</para>
+      <example>
+        <title>Quota listing example</title>
+        <programlisting> +----------------+-------+
+ |    Property    | Value |
+ +----------------+-------+
+ |   gigabytes    | 10240 |
+ | gigabytes_SATA |   -1  |
+ | gigabytes_SSD  |   -1  |
+ |   snapshots    |   -1  |
+ | snapshots_SATA |   -1  |
+ | snapshots_SSD  |   -1  |
+ |    volumes     |   50  |
+ |  volumes_SATA  |   -1  |
+ |  volumes_SSD   |   -1  |
+ +----------------+-------+</programlisting>
+      </example>
+      <para>The following table describes the information in the quota listing.</para>
+      <table rules="all">
+        <caption>Cloud Block Storage quota properties</caption>
+        <col width="25%"/>
+        <col width="75%"/>
+        <thead>
+          <tr>
+            <td colspan="1">Property name</td>
+            <td colspan="1">Value description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="1">gigabytes</td>
+            <td colspan="1">Volume gigabytes allowed for each tenant. Gigabytes for SATA and SSD are
+              given.</td>
+          </tr>
+          <tr>
+            <td colspan="1">snapshots</td>
+            <td colspan="1">Volume snapshots allowed for each tenant. Snapshots for SATA and SSD are
+              given. </td>
+          </tr>
+          <tr>
+            <td colspan="1">volumes</td>
+            <td colspan="1">Volumes allowed for each tenant. Volumes for SATA and SSD are given.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <para>To use the Cinder API, you can use a cURL request similar to the following example to
+        show additional information about your quotas. If you use the <code>usage=True</code> query
+        parameter, the response includes the usage information. If you do not include the query
+        parameter, the response includes only quota information. </para>
+      <example>
+        <title>cURL request to show quota and usage information</title>
+        <programlisting language="bash">curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/os-quota-sets/<emphasis role="bold">yourAccountID</emphasis>?usage=True \
+-H "X-Auth-Project-Id: <emphasis role="bold">yourAccountID</emphasis>" \
+-H "User-Agent: python-cinderclient" \
+-H "Accept: application/json" \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>"</programlisting>
+      </example>
+      <example>
+        <title>Response showing quota and usage information</title>
+        <programlisting> +----------------+--------+----------+-------+
+ |      Type      | In_use | Reserved | Limit |
+ +----------------+--------+----------+-------+
+ |   gigabytes    |  200   |    0     | 10240 |
+ | gigabytes_SATA |  200   |    0     |   -1  |
+ | gigabytes_SSD  |   0    |    0     |   -1  |
+ |   snapshots    |   5    |    0     |   -1  |
+ | snapshots_SATA |   0    |    0     |   -1  |
+ | snapshots_SSD  |   0    |    0     |   -1  |
+ |    volumes     |   2    |    0     |   50  |
+ |  volumes_SATA  |   2    |    0     |   -1  |
+ |  volumes_SSD   |   0    |    0     |   -1  |
+ +----------------+--------+----------+-------+</programlisting>
+      </example>
+      <para>For information in the Knowledge Center about quotas, see <link
+          xlink:href="http://www.rackspace.com/knowledge_center/article/cloud-block-storage-quotas"
+          >www.rackspace.com/knowledge_center/article/cloud-block-storage-quotas</link>.</para>
+    </section>
 
     <section xml:id="datetimeformat">
       <title>Date and time format</title>
