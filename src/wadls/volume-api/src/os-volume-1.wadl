@@ -77,7 +77,7 @@
             </resource>
         </resource>
     </resources>
-<!--    Not a valid method.
+<!--    <remark>Not a valid method for Rackspace API docs.</remark>
         <resource_type id="VersionDetails">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Version details">
@@ -91,17 +91,37 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Create volume">
             <para role="shortdesc">Creates a volume.</para>
-<!--
-    The below are examples of how to insert new text into the wadl and have it display.
-    Two forms of text are given, Comment to the Reviewer and Straight Text 
-            <para>
-            <remark xmlns="http://docbook.org/ns/docbook" security="reviewer">Reviewer - Here is my question!</remark>
-            </para>
-            <para>Create a Volume - hey! this is old text. 
-            The example below creates a volume called vol-001.
-            </para>
- -->
-            <para>The examples in the following table create a 100 GB
+<para>Following are several considerations when using this operation:
+<itemizedlist>
+      <listitem><para>When you use
+          <code>source_volid</code> for volume
+          cloning, note that this feature currently has
+          the following constraints. You cannot create
+          more than one clone per volume concurrently.
+          Snapshots and volume cloning use the same
+          locking mechanism, so you cannot run a
+          snapshot and a clone of the same volume
+          concurrently.</para></listitem>
+      <listitem><para>Note that you use the
+          <code>os-volume_attachments</code> API
+          call
+          (/servers/{server_id}/os-volume_attachments)
+          to attach the new volume to your Next
+          Generation Cloud Server (with the specified
+          {server_id}). Refer to the <link
+              xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ch_preface.html"
+              >Next Generation Cloud Servers Developer
+              Guide</link> for details of the call. Once
+          the volume is attached, the new volume appears
+          as another device on the Next Generation Cloud
+          Server. It can then be partitioned, formatted,
+          and mounted for use on the
+          system.</para></listitem>
+<!--    <listitem><para>To create a bootable volume, include the <code>imageRef</code> parameter in the request. For more information about this feature, see the Knowledge Center article <link
+        xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/how-to-boot-a-server-from-a-cloud-block-storage-volume"
+        >How to boot a server from a Cloud Block Storage volume.</link></para></listitem> -->
+</itemizedlist> </para>          
+            <para>The examples in this section create a 100 GB
                 SATA volume called vol-001.</para>
         </wadl:doc>
         <request>
@@ -120,7 +140,7 @@
                             operation.</para></wadl:doc>
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
-                    name="size" style="plain" type="string"
+                    name="size" style="plain" type="int"
                     required="true" path="/account/volumes/size">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>The size (in GB) of the
@@ -148,11 +168,11 @@
                         optional.</para></wadl:doc>
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
-                    name="snapshot_id" style="plain" type="string"
+                    name="snapshot_id" style="plain" type="uuid"
                     required="false"
                     path="/account/volumes/snapshot_id">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                        xml:lang="EN"><para>The optional snapshot from
+                        xml:lang="EN"><para>The snapshot from
                             which to create a volume. This parameter
                             is optional. </para></wadl:doc>
                 </param>
@@ -163,10 +183,10 @@
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>The type of volume to
                             create, either SATA or SSD. This parameter
-                            is optional. If not defined, then the
+                            is optional. If not defined, the
                             default, SATA, is used. </para></wadl:doc>
                 </param>
-                <param name="source_volid" style="plain" type="string"
+                <param name="source_volid" style="plain" type="uuid"
                     required="false"
                     path="/account/volumes/source_volid">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -176,20 +196,13 @@
                             new volume. This parameter is
                             optional.</para></wadl:doc>
                 </param>
-<!--            <param name="status" style="template" type="string" required="false">
-                <doc><para>
-                    Status is typically <code>available</code> although 
-                    it can be <code>creating</code> if the volume is from a snapshot operation.
-                </para></wadl:doc>
-                </param>
--->
                 <param name="availability_zone" style="plain"
                     type="string" required="false">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>This parameter is no
                             longer used. Therefore, you can supply any
                             value for <code>availability_zone</code>.
-                            If you specify no value, it defaults to
+                            If you specify no value, the default is
                                 <code>nova</code>.</para></wadl:doc>
                 </param>
 <!--           <param name="bootable" style="template" type="string" required="false">
@@ -205,6 +218,11 @@
                             available if you want to set any metadata
                             values on the volume.</para></wadl:doc>
                 </param>
+<!--                <param name="imageRef" style="plain" type="uuid"
+                required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>Specifying this parameter is required to create a bootable volume. This parameter is the ID of the image from which you want to create the volume.</para></wadl:doc>
+                        </param> -->
             </representation>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -225,32 +243,7 @@
                     xml:lang="EN">
                     <xsdxt:code href="samples/volume_show.json"/>
                 </wadl:doc>
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN"><para>When you use
-                            <code>source_volid</code> for volume
-                        cloning, note that this feature currently has
-                        the following constraints. You cannot create
-                        more than one clone per volume concurrently.
-                        Snapshots and volume cloning use the same
-                        locking mechanism, so you cannot run a
-                        snapshot and a clone of the same volume
-                        concurrently.</para></wadl:doc>
-                <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN"><para>Note that you use the
-                            <code>os-volume_attachments</code> API
-                        call
-                        (/servers/{server_id}/os-volume_attachments)
-                        to attach the new volume to your Next
-                        Generation Cloud Server (with the specified
-                        {server_id}). Refer to the <link
-                            xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ch_preface.html"
-                            >Next Generation Cloud Servers Developer
-                            Guide</link> for details of the call. Once
-                        the volume is attached, the new volume appears
-                        as another device on the Next Generation Cloud
-                        Server. It can then be partitioned, formatted,
-                        and mounted for use on the
-                    system.</para></wadl:doc>
+                
             </representation>
         </response>
     </method>
@@ -451,6 +444,13 @@
                 progress.</para>
             <para>When the <code>POST</code> operation returns the 201
                 response code, the snapshot is complete.</para>
+            <para>For more information about snapshots, see the following articles in the Knowledge Center:
+                <itemizedlist>
+                    <listitem><para><link xlink:href="http://www.rackspace.com/knowledge_center/article/create-and-use-cloud-block-storage-snapshots"
+                        >Create and Use Cloud Block Storage Snapshots</link></para></listitem>
+                    <listitem><para><link xlink:href="http://www.rackspace.com/knowledge_center/whitepaper/allowing-snapshots-without-detaching-the-volumes"
+                        >Allowing Snapshots Without Detaching the Volumes</link></para></listitem>
+                </itemizedlist></para>
         </wadl:doc>
         <request>
             <representation mediaType="application/xml" element="cbs:cbs">
@@ -468,7 +468,7 @@
                     </wadl:doc>
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
-                    name="volume_id" style="plain" type="string"
+                    name="volume_id" style="plain" type="uuid"
                     required="true"
                     path="/account/snapshots/volume_id">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -477,12 +477,12 @@
                     </wadl:doc>
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
-                    name="force" style="plain" type="string"
+                    name="force" style="plain" type="boolean"
                     required="false" path="/account/snapshots/force">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>[True/False] Indicate
                             whether to snapshot, even if the volume is
-                            attached. Default==False.</para>
+                            attached. The default is False.</para>
                     </wadl:doc>
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
@@ -491,7 +491,7 @@
                     path="/account/snapshots/display_name">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>Name of the snapshot.
-                            Default==None.</para>
+                            The default is None.</para>
                     </wadl:doc>
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
@@ -500,7 +500,7 @@
                     path="/account/snapshots/display_description">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para> Description of snapshot.
-                            Default==None. </para>
+                            The default is None. </para>
                     </wadl:doc>
                 </param>
             </representation>

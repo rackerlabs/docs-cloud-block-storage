@@ -44,10 +44,22 @@
 				Interface (<abbrev>API</abbrev>).</para>
 		</abstract>
 		<revhistory>
+<!--			<revision>
+				<date>2014-09-30</date>
+				<revdescription>
+					<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Added the
+							<code>imageRef</code> request parameter to the <link
+							xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/POST_createVolume_v1__tenant_id__volumes_volumes.html"
+							>create volume operation</link>. Use this parameter for the boot from
+						volume feature.</para>
+				</revdescription>
+			</revision> -->
 			<revision>
 				<date>2014-08-22</date>
 				<revdescription>
-					<para>Added the section "Cloud Block Storage quotas" to the <citetitle>Cloud Block Storage
+					<para>Added the section <link
+						xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/serviceQuotas-d1e01.html"
+						>Cloud Block Storage quotas</link> to the <citetitle>Cloud Block Storage
 							Developer Guide</citetitle> to provide information about Cloud Block
 						Storage quotas and how to list quota information.</para>
 				</revdescription>
@@ -59,9 +71,9 @@
 				<revdescription>
 					<para>In the "Service access endpoints" sections in the <citetitle>Cloud Block
 							Storage Getting Started Guide</citetitle> and in the <citetitle>Cloud
-								Block Storage Developer Guide</citetitle>, added a link to <link
-									xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions"
-									>http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</link>
+								Block Storage Developer Guide</citetitle>, added a link to the Knowledge Center article <link
+									xlink:href="http://www.rackspace.com/knowledge_center/article/about-regions"
+									>About Regions</link>
 						to provide guidance on choosing a regionalized endpoint.</para> 
 				</revdescription>
 			</revision>
@@ -70,9 +82,8 @@
 				xmlns:html="http://www.w3.org/1999/xhtml">
 				<date>2014-06-12</date>
 				<revdescription>
-					<para>Published the <citetitle>Cloud Block Storage Getting Started
-							Guide</citetitle> for the API. The example requests in this guide use
-						cURL.</para>
+					<para>Published the new <citetitle>Cloud Block Storage Getting Started Guide</citetitle> for
+						the API. The example requests in this guide use cURL.</para>
 				</revdescription>
 			</revision>
 			<revision>
@@ -212,7 +223,7 @@
 		<para>This document describes new features and changes for the
 			Cloud Block Storage API. </para>
 		<para>For detailed information about the Cloud Block Storage API, see the following guides at
-				<link xlink:href="http://docs.rackspace.com/">http://docs.rackspace.com/</link>:<itemizedlist>
+				<link xlink:href="http://docs.rackspace.com/">docs.rackspace.com</link>:<itemizedlist>
 				<listitem>
 					<para><citetitle>Cloud Block Storage Getting Started Guide</citetitle>
 					</para>
@@ -223,14 +234,13 @@
 				</listitem>
 			</itemizedlist></para>
 		<para>Support for Cloud Block Storage is available 24x7x365
-			via phone or chat, or you can also <link
-				xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+			via phone or chat, or by filing a ticket. For more information, see <link
+				xlink:href="http://www.rackspace.com/knowledge_center/article/rackspace-cloud-essentials-getting-fanatical-support"
 				xmlns:svg="http://www.w3.org/2000/svg"
 				xmlns:m="http://www.w3.org/1998/Math/MathML"
-				xmlns:html="http://www.w3.org/1999/xhtml">file a
-				ticket</link>.</para>
+				xmlns:html="http://www.w3.org/1999/xhtml">Rackspace Cloud Essentials - Getting Fanatical Support</link>.</para>
 		<para>You can also provide feedback by using the <link
-			xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81978-cloud-block-storage"
+			xlink:href="http://feedback.rackspace.com"
 				>Product Feedback forum</link>.</para>
 		<para>Rackspace welcomes your comments, feedback, and bug
 			reports.</para>
@@ -242,6 +252,25 @@
 			described in the following table:</para>
 		<?rax revhistory?>
 	</chapter>
+<!--	<chapter xml:id="Sep30">
+		<title>September 30, 2014</title>
+		<para>This release includes the following changes for the Cloud Block Storage API.</para>
+		<itemizedlist>
+			<title>Documentation</title>
+			<listitem>
+				<para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:m="http://www.w3.org/the key 1998/Math/MathML">In the <citetitle>Cloud
+						Block Storage Developer Guide</citetitle>, the <code>imageRef</code> request
+					parameter to the <link
+						xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/POST_createVolume_v1__tenant_id__volumes_volumes.html"
+						>create volume operation</link>. Use this parameter for the boot from volume
+					feature. For more information about this feature, see the Knowledge Center article, <link
+						xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/how-to-boot-a-server-from-a-cloud-block-storage-volume"
+						>"How to boot a server from a Cloud Block Storage volume."</link></para>
+			</listitem>
+		</itemizedlist>
+	</chapter> -->
 	<chapter xml:id="Aug22">
 		<title>August 22, 2014</title>
 		<para>This release includes the following changes for the Cloud Block Storage API.</para>
@@ -251,9 +280,10 @@
 				<para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
 					xmlns:svg="http://www.w3.org/2000/svg"
 					xmlns:m="http://www.w3.org/the key 1998/Math/MathML">In the <citetitle>Cloud
-						Block Storage Developer Guide</citetitle>, the section "Cloud Block Storage
-					quotas" was added to provide information about Cloud Block Storage quotas and
-					how to list quota information.</para>
+						Block Storage Developer Guide</citetitle>, added the section <link
+							xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/serviceQuotas-d1e01.html"
+						>Cloud Block Storage quotas</link> to provide information about Cloud Block
+					Storage quotas and how to list quota information.</para>
 			</listitem>
 		</itemizedlist>
 	</chapter>
@@ -263,16 +293,15 @@
 		<itemizedlist>
 			<title>Documentation</title>
 			<listitem>
-				<para xmlns:html="http://www.w3.org/1999/xhtml"
-					xmlns:wadl="http://wadl.dev.java.net/2009/02"
+				<para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
 					xmlns:svg="http://www.w3.org/2000/svg"
 					xmlns:m="http://www.w3.org/the key 1998/Math/MathML">In the "Service access
 					endpoints" sections in the <citetitle>Cloud Block Storage Getting Started
 						Guide</citetitle> and in the <citetitle>Cloud Block Storage Developer
-							Guide</citetitle>, a link to <link
-								xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions"
-								>http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</link>
-					was added to provide guidance on choosing a regionalized endpoint.</para>
+						Guide</citetitle>, added a link to the Knowledge Center article <link
+						xlink:href="http://www.rackspace.com/knowledge_center/article/about-regions"
+						>About Regions</link> to provide guidance on choosing a regionalized
+					endpoint.</para>
 			</listitem>
 		</itemizedlist>
 	</chapter>
@@ -363,8 +392,8 @@
 		<itemizedlist>
 			<title>Documentation</title>
 			<listitem>
-				<para>The description of the show snapshot details operation in the API operations chapter was
-					updated to include the progress indicator, <code
+				<para>Updated the description of the show snapshot details operation in the API operations
+					chapter to include the progress indicator, <code
 						xmlns:wadl="http://wadl.dev.java.net/2009/02"
 						>os-extended-snapshot-attributes:progress</code>, and show it in the example
 					responses. </para>
@@ -392,9 +421,9 @@
 		<itemizedlist>
 			<title>Documentation</title>
 			<listitem>
-				<para>The documentation was updated to include new information based on the addition of the
-						<code xmlns:wadl="http://wadl.dev.java.net/2009/02">source_volid</code>
-					parameter to the create volume operation.</para>
+				<para>Updated the documentation to include new information based on the addition of the <code
+						xmlns:wadl="http://wadl.dev.java.net/2009/02">source_volid</code> parameter
+					to the create volume operation.</para>
 			</listitem>
 		</itemizedlist>
 	</chapter>

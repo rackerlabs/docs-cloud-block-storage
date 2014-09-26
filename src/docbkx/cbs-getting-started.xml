@@ -143,20 +143,20 @@
             commands to use the Cloud Block Storage API. You can find additional details about Cloud
             Block Storage in the <emphasis role="italic">Cloud Block Storage Developer
                 Guide</emphasis> at <link xlink:href="http://docs.rackspace.com/"
-                >http://docs.rackspace.com/</link>. </para>
-        <para>For more details about the Cloud Block Storage service, see <link
+                >docs.rackspace.com</link>. </para>
+        <para>For more details about the Cloud Block Storage service, see the information at <link
                 xlink:href="http://www.rackspace.com/cloud/block-storage/"
-                >http://www.rackspace.com/cloud/block-storage/</link> and the Knowledge Center article <link
+                >www.rackspace.com</link> and the Knowledge Center article <link
                     xlink:href="http://www.rackspace.com/knowledge_center/article/cloud-block-storage-overview"
-                >Cloud Block Storage - Overview</link>. </para>
+                >Cloud Block Storage Overview</link>. </para>
         <para>Rackspace welcomes feedback, comments, and bug reports at <link
                 xlink:href="mailto:support@rackspacecloud.com"
             >support@rackspacecloud.com</link>.</para>
         <note>
             <para>Cloud Block Storage is built on the OpenStack Cinder project. For more information
-                about OpenStack Cinder, see <link
+                about OpenStack Cinder, see the <link
                     xlink:href="http://docs.openstack.org/api/openstack-block-storage/1.0/content/"
-                    >http://docs.openstack.org/api/openstack-block-storage/1.0/content/</link>.</para>
+                    >OpenStack Block Storage API v1 Reference</link>.</para>
         </note>
     </chapter>
     <chapter xml:id="Send_requests_to_API_d1e060">
@@ -164,22 +164,22 @@
         <para>You have several options for sending requests through an API: </para>
         <itemizedlist>
             <listitem>
-                <para>Developers and testers might prefer to use cURL, the command-line tool from
-                        <link xlink:href="http://curl.haxx.se/">http://curl.haxx.se/</link>. With
+                <para>Developers and testers might prefer to use the command-line tool cURL. For more information about cURL, see the
+                        <link xlink:href="http://curl.haxx.se/">cURL website</link>. With
                     cURL, you can send HTTP requests and receive responses back from the command
                     line. </para>
             </listitem>
             <listitem>
-                <para>If you like to use a more graphical interface, the REST client for Mozilla
-                    Firefox works well for testing commands. See <link
+                <para>If you like to use a more graphical interface, the RESTClient for Mozilla
+                    Firefox works well for testing commands. For more information, see the <link
                         xlink:href="https://addons.mozilla.org/en-US/firefox/addon/restclient/"
-                        >https://addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
+                        >Mozilla RESTclient website</link>. </para>
             </listitem>
             <listitem>
                 <para>You can download and install RESTClient, a Java application used to test
-                    RESTful web services, from <link
+                    RESTful web services. For more information, see the the <link
                         xlink:href="http://code.google.com/p/rest-client/"
-                        >http://code.google.com/p/rest-client/</link>. </para>
+                        >Java application RESTClient website</link>. </para>
             </listitem>
         </itemizedlist>
         <para>This guide uses the API directly with cURL (<xref
@@ -208,7 +208,7 @@
                     <listitem>
                         <para>Log in to the Cloud Control Panel (<link
                                 xlink:href="https://mycloud.rackspace.com"
-                                >https://mycloud.rackspace.com</link>).</para>
+                                >mycloud.rackspace.com</link>).</para>
                     </listitem>
                     <listitem>
                         <para>On the upper-right side of the top navigation pane, click your
@@ -240,8 +240,8 @@
                 line or a shell script, which enables you to work with the API directly (without
                 using one of the language-specific APIs). cURL is available for most UNIX
                 system-based environments, Apple Mac OS X, and Microsoft Windows. For more
-                information about cURL, see <link xlink:href="http://curl.haxx.se/"
-                    >http://curl.haxx.se/</link>. </para>
+                information about cURL, see the <link xlink:href="http://curl.haxx.se/"
+                    >cURL website</link>. </para>
             <para>The following cURL command-line options are used in this guide to run the
                 examples.</para>
             <table rules="all">
@@ -384,13 +384,12 @@
             regional boundaries to other Cloud Block Storage servers.</para>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The available service access endpoints
             for Cloud Block Storage are summarized in the following table.</para>
-        <tip>
-            <para>To help you decide which regionalized endpoint to use, read about special
-                considerations for choosing a data center at <link
-                    xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions"
-                    >http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</link>.
-            </para>
-        </tip> 
+
+            <para>To help you decide which regionalized endpoint to use, read the Knowledge Center
+                article about special considerations for choosing a data center at <link
+                    xlink:href="http://www.rackspace.com/knowledge_center/article/about-regions"
+                    >About Regions</link>. </para>
+         
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <table rules="all">
                 <caption>Cloud Block Storage regionalized service endpoints</caption>
@@ -1040,25 +1039,23 @@ Date: Wed, 04 Jun 2014 21:09:15 GMT
         <title>Additional resources</title>
         <para>For information about all Cloud Block Storage API operations, see the <citetitle>Cloud
                 Block Storage Developer Guide</citetitle> at <link
-                xlink:href="http://docs.rackspace.com/">http://docs.rackspace.com/</link>. All you
+                xlink:href="http://docs.rackspace.com/">docs.rackspace.com</link>. All you
             need to get started with the Cloud Block Storage API is in this getting started guide
-            and the developer guide. For additional information about Cloud Block Storage, see <link
-                xlink:href="http://www.rackspace.com/knowledge_center/product-page/cloud-block-storage">the
-                Knowledge Center</link>.</para>
+            and the developer guide. For additional information about Cloud Block Storage, see the <link
+                xlink:href="http://www.rackspace.com/knowledge_center/product-page/cloud-block-storage">Knowledge Center</link>.</para>
         <para>The official support channels (phone, chat, email, forums, and knowledge base
             articles) for Cloud Block Storage are available through the Rackspace Cloud website at
                 <link xlink:href="http://www.rackspace.com/cloud/block-storage/"
-                >http://www.rackspace.com/cloud/block-storage/</link>. </para>
-        <para>If the Cloud Block Storage system is not functioning as expected, you can review the
-            system status page at <link
+                >www.rackspace.com</link>. </para>
+        <para>If the Cloud Block Storage system is not functioning as expected, you can review the <link
                 xlink:href="http://status.rackspacecloud.com/cloudblockstorage/"
-                >http://status.rackspacecloud.com/cloudblockstorage/</link>. This page is updated to
+                >System Status</link> page. This page is updated to
             reflect up-to-date information about the system’s current health and status. </para>
-        <para>Interested users can also follow updates and announcements via Twitter at <link
+        <para>Interested users can also follow updates and announcements for Rackspace on <link
                 xlink:href="http://www.twitter.com/rackspace"
-                >http://www.twitter.com/rackspace</link>. </para>
+                >Twitter</link>. </para>
         <para>Visit the <link
-                xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/"
+            xlink:href="http://feedback.rackspace.com/"
                 >Product Feedback Forum</link> and tell us what you think about Cloud Block
             Storage.</para>
         <para> Developers are also encouraged to join some of the members of the Cloud Block Storage
@@ -1068,6 +1065,6 @@ Date: Wed, 04 Jun 2014 21:09:15 GMT
             and discuss Cloud Block Storage. </para>
         <para>This API uses standard HTTP 1.1 response codes as documented at <link
                 xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
-                >www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>. </para>
+                >HTTP Status Code Definitions</link>. </para>
     </chapter>
 </book>

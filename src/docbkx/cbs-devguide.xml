@@ -59,7 +59,16 @@ format="SVG" scale="60"/>
           (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory>
-      <revision>
+<!--      <revision>
+        <date>2014-09-30</date>
+        <revdescription>
+          <para>Added the <code>imageRef</code> request parameter to the <link
+              xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/POST_createVolume_v1__tenant_id__volumes_volumes.html"
+              >create volume operation</link>. Use this parameter for the boot from volume
+            feature.</para>
+        </revdescription>
+      </revision> -->
+      <revision> 
         <date>2014-08-22</date>
         <revdescription>
           <para>Added <xref linkend="serviceQuotas-d1e01"/> to provide information about Cloud Block
@@ -307,19 +316,20 @@ format="SVG" scale="60"/>
       </itemizedlist>
     </note>
     <para>Cloud Block Storage is built on the OpenStack Cinder project. For more information about
-      OpenStack Cinder, see <link
-        xlink:href="http://docs.openstack.org/api/openstack-block-storage/1.0/content/"
-        >http://docs.openstack.org/api/openstack-block-storage/1.0/content/</link>.</para>
+      OpenStack Cinder, see the <link
+        xlink:href="http://docs.openstack.org/api/openstack-block-storage/1.0/content/">OpenStack
+        Block Storage API v1 Reference</link>.</para>
     <para>You can find additional details about Cloud Block Storage in the <emphasis role="italic"
         >Cloud Block Storage Getting Started Guide Guide</emphasis> at <link
-        xlink:href="http://docs.rackspace.com/">http://docs.rackspace.com/</link>. This guide
+        xlink:href="http://docs.rackspace.com/">docs.rackspace.com</link>. This guide
       provides step-by-step instructions to enter the necessary URLs or commands to use the Cloud
       Block Storage API.</para>
-    <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">For more details about the Cloud Block
-      Storage service, see <link xlink:href="http://www.rackspace.com/cloud/block-storage/"
-        >http://www.rackspace.com/cloud/block-storage/</link> and the Knowledge Center article <link
-          xlink:href="http://www.rackspace.com//knowledge_center/article/cloud-block-storage-overview"
-        >Cloud Block Storage - Overview</link>. </para>
+    <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">For more details about the Cloud
+      Block Storage service, see the Cloud Block Storage page at <link
+        xlink:href="http://www.rackspace.com/cloud/block-storage/">www.rackspace.com</link> and the
+      Knowledge Center article <link
+        xlink:href="http://www.rackspace.com//knowledge_center/article/cloud-block-storage-overview"
+        >Cloud Block Storage Overview</link>. </para>
     <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">Rackspace welcomes feedback,
       comments, and bug reports at <link xlink:href="mailto:support@rackspacecloud.com"
         >support@rackspacecloud.com</link>. </para>
@@ -371,17 +381,16 @@ format="SVG" scale="60"/>
       <para>You can download the most current versions of the
         API-related documents from <link
           xlink:href="http://docs.rackspace.com/"
-          >docs.rackspace.com/</link>. </para>
-      <para>For information about Rackspace Cloud products, refer to
-          <link xlink:href="http://www.rackspace.com/cloud/"
-          >www.rackspace.com/cloud</link>. This site also offers links
-        to the Rackspace official support channels, including
-        knowledge base articles, forums, phone, chat, and email. </para>
-      <para>You can follow Rackspace updates and announcements via twitter at <link
-          xlink:href="http://www.twitter.com/rackspace">www.twitter.com/rackspace</link>. </para>
+          >docs.rackspace.com</link>. </para>
+      <para>For information about Rackspace Cloud products, refer to <link
+          xlink:href="http://www.rackspace.com/cloud/">www.rackspace.com</link>. This site also
+        offers links to the Rackspace official support channels, including knowledge base articles,
+        forums, phone, chat, and email. </para>
+      <para>You can follow Rackspace updates and announcements via <link
+          xlink:href="http://www.twitter.com/rackspace">Twitter</link>. </para>
       <para>This API uses standard HTTP 1.1 response codes as documented at <link
-          xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
-          >www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>. </para>
+          xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP Status Code
+          Definitions</link>. </para>
     </section>
     <section xml:id="API_Contract_Changes-d1e363">
       <title>API contract changes</title>
@@ -391,12 +400,11 @@ format="SVG" scale="60"/>
     <section xml:id="Pricing_SLA-d1e1362">
       <title>Pricing and service level</title>
       <para>Cloud Block Storage is part of the Rackspace Cloud and your use of Cloud Block Storage
-        is billed according to the pricing schedule at <link
-          xlink:href="http://www.rackspace.com/cloud/block-storage/"
-          >http://www.rackspace.com/cloud/block-storage</link>.</para>
-      <para>The Service Level Agreement (SLA) for Cloud Queues is available at <link
-        xlink:href="http://www.rackspace.com/information/legal/cloud/sla?page=blockstorage#cloud_block_storage_sla"
-        >http://www.rackspace.com/information/legal/cloud/sla?page=blockstorage#cloud_block_storage_sla</link>.</para>
+        is billed according to the pricing schedule on the Cloud Block Storage page at <link
+          xlink:href="http://www.rackspace.com/cloud/block-storage/">www.rackspace.com</link>.</para>
+      <para>The Service Level Agreement (SLA) for Cloud Block Storage is available on the <link
+          xlink:href="http://www.rackspace.com/information/legal/cloud/sla?page=blockstorage#cloud_block_storage_sla"
+          >Rackspace Legal Information</link> page.</para>
     </section>
     <section xml:id="Terminology">
       <title>Terminology</title>
@@ -458,7 +466,7 @@ format="SVG" scale="60"/>
         <listitem>
           <para>Log in to the Cloud Control Panel (<link
               xlink:href="https://mycloud.rackspace.com"
-              >https://mycloud.rackspace.com</link>).</para>
+              >mycloud.rackspace.com</link>).</para>
         </listitem>
         <listitem>
           <para>On the upper-right side of the top navigation pane,
@@ -580,10 +588,9 @@ format="SVG" scale="60"/>
         </orderedlist>
       </para>
       <tip>
-        <para> For links to language binding examples you can adapt to
-          work with the Cloud Identity service, visit <link
-            xlink:href="https://github.com/rackspace"
-            >https://github.com/rackspace</link>.</para>
+        <para> For links to language binding examples you can adapt to work with the Cloud Identity
+          service, visit <link xlink:href="https://developer.rackspace.com/sdks/">SDKs &amp;
+          Tools</link>.</para>
       </tip>
 
       <para>Authentication tokens are typically valid for 24 hours.
@@ -606,10 +613,9 @@ format="SVG" scale="60"/>
             <code>type="compute"</code> identifies compute services such as cloudServers and
           cloudServersOpenStack. Some developers have found the service type attribute to be useful
           in parsing the service catalog. For Auth 2.0 (also known as the Cloud Identity Service),
-          you can see the service type attribute in the "Service Catalog in Authentication Response"
-          samples in the <citetitle>Cloud Identity Client Developer Guide</citetitle> at <link
+          you can see the service type attribute in the <link
             xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html"
-            >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html</link>.</para>
+            >Sample Authentication Request and Response examples</link> in the <citetitle>Cloud Identity Client Developer Guide</citetitle>.</para>
       </tip>
     </section>
 <?hard-pagebreak?> 
@@ -641,17 +647,17 @@ format="SVG" scale="60"/>
         <itemizedlist spacing="compact">
           <listitem>
             <para><link
-                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html"
-                > Create account users</link></para>
+              xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser__v2.0_users_User_Calls.html"
+                > Add account users</link></para>
           </listitem>
           <listitem>
             <para><link
-                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__Role_Calls.html"
+              xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html"
                 > Assign roles to account users</link></para>
           </listitem>
           <listitem>
             <para><link
-                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__Role_Calls.html"
+              xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html"
                 > Delete roles from account users</link></para>
           </listitem>
         </itemizedlist>
@@ -781,9 +787,9 @@ format="SVG" scale="60"/>
         <title>RBAC permissions cross-reference to Cloud Block Storage API operations</title>
         <para>API operations for Cloud Block Storage may or may not be
           available to all roles. To see which operations are
-          permitted to invoke which calls, please review <link
+          permitted to invoke which calls, please review the <link
             xlink:href="http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac"
-            >the Knowledge Center article</link>.</para>
+            >Knowledge Center article</link>.</para>
       </section>
     </section>
     <section xml:id="Service_Access_Endpoints-d1e753">
@@ -793,13 +799,12 @@ format="SVG" scale="60"/>
         appropriate replication, caching, and overall maintenance of
         Cloud Block Storage data across regional boundaries to other
         Cloud Block Storage servers.</para>
-      <tip>
-        <para>To help you decide which regionalized endpoint to use, read about special
-          considerations for choosing a data center at <link
-            xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions"
-            >http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</link>.
-        </para>
-      </tip> 
+
+        <para>To help you decide which regionalized endpoint to use, read the Knowledge Center
+          article about special considerations for choosing a data center at <link
+            xlink:href="http://www.rackspace.com/knowledge_center/article/about-regions">About
+            Regions</link>. </para>
+       
       <para>You can find the available service access/endpoints for Cloud Block Storage summarized
         in the table below.</para>
       <?rax-fo keep-with-next?>
@@ -1091,9 +1096,9 @@ format="SVG" scale="60"/>
  |  volumes_SSD   |   0    |    0     |   -1  |
  +----------------+--------+----------+-------+</programlisting>
       </example>
-      <para>For information in the Knowledge Center about quotas, see <link
+      <para>For information about quotas, see the Knowledge Center article <link
           xlink:href="http://www.rackspace.com/knowledge_center/article/cloud-block-storage-quotas"
-          >www.rackspace.com/knowledge_center/article/cloud-block-storage-quotas</link>.</para>
+        >Cloud Block Storage Quotas</link>.</para>
     </section>
 
     <section xml:id="datetimeformat">
@@ -1332,7 +1337,7 @@ format="SVG" scale="60"/>
           </tr>
           <tr>
             <td>AVAILABLE</td>
-            <td>The volume is read to be attached to an instance.</td>
+            <td>The volume is ready to be attached to an instance.</td>
           </tr>
           <tr>
             <td>ATTACHING</td>
@@ -1348,11 +1353,11 @@ format="SVG" scale="60"/>
           </tr>
           <tr>
             <td>ERROR</td>
-            <td>There has been some error with the volume.</td>
+            <td>An error occurred with the volume.</td>
           </tr>
           <tr>
             <td>ERROR_DELETING</td>
-            <td>There was an error deleting the volume.</td>
+            <td>An error occurred during volume deletion. </td>
           </tr>
         </tbody>
       </informaltable>
@@ -1413,7 +1418,7 @@ format="SVG" scale="60"/>
           </tr>
           <tr>
             <td>AVAILABLE</td>
-            <td>The snapshot is ready to be used. </td>
+            <td>The snapshot is ready for use. </td>
           </tr>
           <tr>
             <td>DELETING</td>
@@ -1458,14 +1463,14 @@ format="SVG" scale="60"/>
         <raxm:priority>50</raxm:priority>
       </raxm:metadata>
     </info>
-    <glossentry xml:id="claim-d1e017">
+    <glossentry xml:id="instance-d1e017">
       <glossterm>Instance</glossterm>
       <glossdef>
         <para> An instance is a virtual machine that runs inside the
           cloud.</para>
       </glossdef>
     </glossentry>
-    <glossentry xml:id="message-d1e016">
+    <glossentry xml:id="intanceType-d1e016">
       <glossterm>Instance type</glossterm>
       <glossdef>
         <para>An instance type describes the compute, memory, and storage capacity of Nova computing
@@ -1473,14 +1478,14 @@ format="SVG" scale="60"/>
           the virtual server that you will be launching.</para>
       </glossdef>
     </glossentry>
-    <glossentry xml:id="producer-d1e020">
+    <glossentry xml:id="snapshot-d1e020">
       <glossterm>Snapshot</glossterm>
       <glossdef>
         <para>A snapshot is a point-in-time copy of the data contained
           in a volume.</para>
       </glossdef>
     </glossentry>
-    <glossentry xml:id="queue-d1e019">
+    <glossentry xml:id="volume-d1e019">
       <glossterm>Volume</glossterm>
       <glossdef>
         <para>A volume is a detachable block storage device. You can
@@ -1488,7 +1493,7 @@ format="SVG" scale="60"/>
           one instance at a time.</para>
       </glossdef>
     </glossentry>
-    <glossentry xml:id="subscriber-d1e018">
+    <glossentry xml:id="volumeType-d1e018">
       <glossterm>Volume type</glossterm>
       <glossdef>
         <para>The volume type is the type of a block storage volume. There are two types: SATA for
