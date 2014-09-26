@@ -545,7 +545,7 @@
             </note>
             <example>
                 <title>Create a volume: cURL</title>
-                <programlisting>
+                <programlisting language="bash">
 curl -i -X POST -d \
  '{ 
  "volume":{ 
@@ -557,7 +557,7 @@ curl -i -X POST -d \
  -H "Content-Type: application/json" \
  https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/volumes 
 </programlisting>
-                <programlisting>
+                <programlisting language="json">
 HTTP/1.1 200 OK
 X-Compute-Request-Id: req-2af6c97a-2397-4e52-a0d0-4fde64cfb88c
 Content-Type: application/json
@@ -615,7 +615,7 @@ curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Content-Type: application/json" 
 </programlisting>
-                <programlisting>
+                <programlisting language="json">
 HTTP/1.1 200 OK
 X-Compute-Request-Id: req-7941b291-f226-459d-9a78-5d38660f3ae7
 Content-Type: application/json
@@ -665,7 +665,7 @@ curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Content-Type: application/json" 
 </programlisting>
-                <programlisting>
+                <programlisting language="json">
 HTTP/1.1 200 OK
 X-Compute-Request-Id: req-0ec1d1e0-c591-47d2-a8e7-9a8923e495b2
 Content-Type: application/json
@@ -725,7 +725,7 @@ curl -i -X PUT -d \
    -H "Content-Type: application/json" \
    https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/volumes/<emphasis role="bold">yourVolumeID</emphasis>
 </programlisting>
-                <programlisting>
+                <programlisting language="json">
 HTTP/1.1 200 OK
 X-Compute-Request-Id: req-8a131657-46a3-435b-bee4-b612c79c8c09
 Content-Type: application/json
@@ -778,7 +778,7 @@ curl -i -X DELETE https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis r
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Content-Type: application/json" 
 </programlisting>
-                <programlisting>
+                <programlisting language="json">
 HTTP/1.1 202 Accepted
 Content-Type: text/html; charset=UTF-8
 Content-Length: 0
@@ -806,7 +806,7 @@ Date: Wed, 04 Jun 2014 19:17:35 GMT
                 indicates that the snapshot is in progress.</para>
             <example xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
                 <title>Create a snapshot: cURL</title>
-                <programlisting>
+                <programlisting language="bash">
 curl -i -X POST -d \
   '{
   "snapshot": {
@@ -819,7 +819,7 @@ curl -i -X POST -d \
   -H "Content-Type: application/json" \
  https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/snapshots 
 </programlisting>
-                <programlisting>
+                <programlisting language="json">
 HTTP/1.1 200 OK
 X-Compute-Request-Id: req-99d94a3a-1086-4c19-99b4-65d05e2e02f1
 Content-Type: application/json
@@ -862,7 +862,7 @@ curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Content-Type: application/json" 
 </programlisting>
-                <programlisting>
+                <programlisting language="json">
 HTTP/1.1 200 OK
 X-Compute-Request-Id: req-1a938da7-cf74-4ac6-a72f-4c927ae23605
 Content-Type: application/json
@@ -921,7 +921,7 @@ curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Content-Type: application/json" 
 </programlisting>
-                <programlisting>
+                <programlisting language="json">
 HTTP/1.1 200 OK
 X-Compute-Request-Id: req-7314746b-0670-4160-b6a7-388cafbfd082
 Content-Type: application/json
@@ -972,7 +972,7 @@ curl -i -X PUT -d \
    -H "Content-Type: application/json" \
    https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/snapshots/<emphasis role="bold">yourSnapshotID</emphasis>
 </programlisting>
-                <programlisting>
+                <programlisting language="json">
 HTTP/1.1 200 OK
 X-Compute-Request-Id: req-8a131657-46a3-435b-bee4-b612c79c8c09
 Content-Length: 358
@@ -1014,7 +1014,7 @@ curl -i -X DELETE https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis r
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Content-Type: application/json" 
 </programlisting>
-                <programlisting>
+                <programlisting language="json">
 HTTP/1.1 202 Accepted
 Content-Type: text/html; charset=UTF-8
 Content-Length: 0
