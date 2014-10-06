@@ -117,9 +117,9 @@
           Server. It can then be partitioned, formatted,
           and mounted for use on the
           system.</para></listitem>
-<!--    <listitem><para>To create a bootable volume, include the <code>imageRef</code> parameter in the request. For more information about this feature, see the Knowledge Center article <link
+    <listitem><para>To create a bootable volume, include the <code>imageRef</code> parameter in the request. The corresponding response parameter is <code>image_id</code>. For more information about this feature, see the Knowledge Center article <link
         xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/how-to-boot-a-server-from-a-cloud-block-storage-volume"
-        >How to boot a server from a Cloud Block Storage volume.</link></para></listitem> -->
+        >How to boot a server from a Cloud Block Storage volume.</link></para></listitem>
 </itemizedlist> </para>          
             <para>The examples in this section create a 100 GB
                 SATA volume called vol-001.</para>
@@ -218,11 +218,11 @@
                             available if you want to set any metadata
                             values on the volume.</para></wadl:doc>
                 </param>
-<!--                <param name="imageRef" style="plain" type="uuid"
+                <param name="imageRef" style="plain" type="uuid"
                 required="false">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"><para>Specifying this parameter is required to create a bootable volume. This parameter is the ID of the image from which you want to create the volume.</para></wadl:doc>
-                        </param> -->
+                        </param>
             </representation>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -235,13 +235,13 @@
             <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
-                    <xsdxt:code href="samples/volume_show.xml"/>
+                    <xsdxt:code href="samples/bfv-volume_show.xml"/>
                 </wadl:doc>
             </representation>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
-                    <xsdxt:code href="samples/volume_show.json"/>
+                    <xsdxt:code href="samples/bfv-volume_show.json"/>
                 </wadl:doc>
                 
             </representation>
@@ -304,13 +304,13 @@
             <representation mediaType="application/xml" element="cbs:cbs">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
-                    <xsdxt:code href="samples/volume_show.xml"/>
+                    <xsdxt:code href="samples/bfv-volume_show.xml"/>
                 </wadl:doc>
             </representation>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN">
-                    <xsdxt:code href="samples/volume_show.json"/>
+                    <xsdxt:code href="samples/bfv-volume_show.json"/>
                 </wadl:doc>
             </representation>
         </response>

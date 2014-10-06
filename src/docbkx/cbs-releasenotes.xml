@@ -31,7 +31,7 @@
 		</copyright>
 		<releaseinfo>API v1</releaseinfo>
 		<productname>Rackspace Cloud Block Storage</productname>
-		<pubdate>2014-08-22</pubdate>
+		<pubdate>2014-10-09</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
@@ -44,16 +44,27 @@
 				Interface (<abbrev>API</abbrev>).</para>
 		</abstract>
 		<revhistory>
-<!--			<revision>
-				<date>2014-09-30</date>
+			<revision>
+				<date>2014-10-09</date>
 				<revdescription>
-					<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Added the
-							<code>imageRef</code> request parameter to the <link
-							xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/POST_createVolume_v1__tenant_id__volumes_volumes.html"
-							>create volume operation</link>. Use this parameter for the boot from
-						volume feature.</para>
+					<itemizedlist>
+						<listitem>
+							<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Added the <code>imageRef</code> request
+								parameter to the <link
+									xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/POST_createVolume_v1__tenant_id__volumes_volumes.html"
+									>create volume operation</link>. Use this parameter for the boot
+								from volume capability. The corresponding response parameter is
+									<code>image_id</code>.</para>
+						</listitem>
+						<listitem>
+							<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Updated the default
+								quotas in <olink targetdoc="cbs-devguide"
+									targetptr="serviceQuotas-d1e01">“Cloud Block Storage
+									quotas”</olink>.</para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
-			</revision> -->
+			</revision>
 			<revision>
 				<date>2014-08-22</date>
 				<revdescription>
@@ -252,25 +263,47 @@
 			described in the following table:</para>
 		<?rax revhistory?>
 	</chapter>
-<!--	<chapter xml:id="Sep30">
-		<title>September 30, 2014</title>
+	<chapter xml:id="Oct09">
+		<title>October 9, 2014</title>
 		<para>This release includes the following changes for the Cloud Block Storage API.</para>
+		<itemizedlist>
+			<title>Enhancements</title>
+			<listitem>
+				<para xmlns:html="http://www.w3.org/1999/xhtml"
+					xmlns:wadl="http://wadl.dev.java.net/2009/02"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:m="http://www.w3.org/the key 1998/Math/MathML">Added the
+						<code>imageRef</code> request parameter and the <code>image_id</code>
+					response parameter to the create volume operation to support the boot from
+					volume capability. </para>
+			</listitem>
+			<listitem>
+				<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Updated the default
+					quotas.</para>
+			</listitem>
+		</itemizedlist>
 		<itemizedlist>
 			<title>Documentation</title>
 			<listitem>
 				<para xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
 					xmlns:svg="http://www.w3.org/2000/svg"
 					xmlns:m="http://www.w3.org/the key 1998/Math/MathML">In the <citetitle>Cloud
-						Block Storage Developer Guide</citetitle>, the <code>imageRef</code> request
-					parameter to the <link
+						Block Storage Developer Guide</citetitle>, added the <code>imageRef</code>
+					request parameter to the <link
 						xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/POST_createVolume_v1__tenant_id__volumes_volumes.html"
 						>create volume operation</link>. Use this parameter for the boot from volume
-					feature. For more information about this feature, see the Knowledge Center article, <link
+					capability. The corresponding response parameter is <code>image_id</code>. For
+					more information about this feature, see the Knowledge Center article, <link
 						xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/how-to-boot-a-server-from-a-cloud-block-storage-volume"
 						>"How to boot a server from a Cloud Block Storage volume."</link></para>
 			</listitem>
+			<listitem>
+				<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Updated the default quotas in
+						<olink targetdoc="cbs-devguide" targetptr="serviceQuotas-d1e01">“Cloud Block
+						Storage quotas”</olink>.</para>
+			</listitem>
 		</itemizedlist>
-	</chapter> -->
+	</chapter> 
 	<chapter xml:id="Aug22">
 		<title>August 22, 2014</title>
 		<para>This release includes the following changes for the Cloud Block Storage API.</para>
