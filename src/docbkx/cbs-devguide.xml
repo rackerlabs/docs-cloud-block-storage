@@ -1010,12 +1010,12 @@ format="SVG" scale="60"/>
       </section>
     <section xml:id="serviceQuotas-d1e01">
       <title>Cloud Block Storage quotas</title>
-      <para>By default, all new Cloud Block Storage users are assigned default quotas limiting the
-        amount of block storage that can be provisioned in each region. Default quotas allow you to
+      <para>All new Cloud Block Storage users are assigned default quotas that limit the amount of
+        block storage that can be provisioned in each region. Default quotas enable users to
         provision up to 10 TB of SATA and 10 TB of SSD and are primarily used to help with capacity
         planning and to prevent system abuse. If your application requires more storage or volumes
-        than the default quota, submit a support request to ask for an increase. In your request, be
-        sure to include the following information:<itemizedlist>
+        than the default quotas, simply submit a support request to ask for an increase. In your
+        request, be sure to include the following information:<itemizedlist>
           <listitem>
             <para>Total storage amount that you need (in GBs or TBs)</para>
           </listitem>
@@ -1027,15 +1027,15 @@ format="SVG" scale="60"/>
           </listitem>
         </itemizedlist></para>
       <note>
-        <para>Your Cloud Block Storage quota is independent from any other account quotas that you
-          might have. Cloud Block Storage no longer supports account quotas (previously shared by
-          SATA and SSD) or number of volumes quotas. Both are replaced by the storage type quotas,
-          which are specific to SATA and SSD per account per region.</para>
+        <para>Cloud Block Storage quotas are independent from any other account quotas that you
+          might have. In addition, Cloud Block Storage no longer supports account quotas (previously
+          shared by SATA and SSD) or number-of-volumes quotas. Both of these quotas were replaced by
+          the storage-type quotas, which are specific to SATA and SSD per account per region.</para>
       </note>
-      <para>You can use the OpenStack Cinder client or API to see your current block storage quotas
+      <para>You can use the OpenStack Cinder client or API to see your current block storage quota
         and your current utilization against it. </para>
       <para>For Cinder client users, use the following
-        command:<programlisting>cinder quota-show <emphasis role="bold">yourAccountID</emphasis></programlisting>
+        command:<programlisting>$ cinder quota-usage <emphasis role="bold">yourAccountID</emphasis></programlisting>
       </para>
       <note>
         <para>Your account ID or account number is often referred to as your tenant ID or tenant
@@ -1089,9 +1089,9 @@ format="SVG" scale="60"/>
         </tbody>
       </table>
       <para>To use the Cinder API, you can use a cURL request similar to the following example to
-        show additional information about your quotas. If you use the <code>usage=True</code> query
-        parameter, the response includes the usage information. If you do not include the query
-        parameter, the response includes only quota information. </para>
+        see your current block storage quota and your current activity against it. If you use the
+          <code>usage=True</code> query parameter, the response includes the usage information. If
+        you do not include the query parameter, the response includes only quota information. </para>
       <example>
         <title>cURL request to show quota and usage information</title>
         <programlisting language="bash">curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/<emphasis role="bold">yourAccountID</emphasis>/os-quota-sets/<emphasis role="bold">yourAccountID</emphasis>?usage=True \
@@ -1155,9 +1155,6 @@ format="SVG" scale="60"/>
 }
 </programlisting>
       </example>
-      <para>For information about quotas, see the Knowledge Center article <link
-          xlink:href="http://www.rackspace.com/knowledge_center/article/cloud-block-storage-quotas"
-        >Cloud Block Storage Quotas</link>.</para>
     </section>
 
     <section xml:id="datetimeformat">
