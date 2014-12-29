@@ -45,7 +45,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2014-10-09</pubdate>
+    <pubdate>2014-12-29</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.
@@ -59,6 +59,13 @@ format="SVG" scale="60"/>
           (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory>
+      <revision>
+        <date>2014-12-29</date>
+        <revdescription>
+          <para>Added 412 for <code>invalidImage</code> to the table of faults in  <xref
+              linkend="DB_faults"/>.</para>
+        </revdescription>
+      </revision>
       <revision>
         <date>2014-10-09</date>
         <revdescription>
@@ -1264,6 +1271,13 @@ format="SVG" scale="60"/>
             <td><code>badMethod</code></td>
             <td>405</td>
             <td>The requested method is not allowed for this resource.</td>
+          </tr>
+          <tr>
+            <td>
+              <code>invalidImage</code></td>
+            <td>412</td>
+            <td>This fault is related to creating volumes for the boot from volume feature. The
+              uncompressed image size must be 127 GB or less.</td>
           </tr>
           <tr>
             <td><code>overLimit</code></td>
