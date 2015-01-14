@@ -42,10 +42,11 @@ format="SVG" scale="60"/>
       <year>2012</year>
       <year>2013</year>
       <year>2014</year>
+      <year>2015</year>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2014-12-29</pubdate>
+    <pubdate>2015-01-14</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.
@@ -59,6 +60,14 @@ format="SVG" scale="60"/>
           (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory>
+      <revision>
+        <date>2015-01-14</date>
+        <revdescription>
+          <para>Updated <xref linkend="Authentication-d1e647"/> documentation with information about
+            using multi-factor authentication for added security when a user authenticates with
+            username and password credentials.</para>
+        </revdescription>
+      </revision>
       <revision>
         <date>2014-12-29</date>
         <revdescription>
@@ -334,10 +343,10 @@ format="SVG" scale="60"/>
         xlink:href="http://docs.openstack.org/api/openstack-block-storage/1.0/content/">OpenStack
         Block Storage API v1 Reference</link>.</para>
     <para>You can find additional details about Cloud Block Storage in the <emphasis role="italic"
-        >Cloud Block Storage Getting Started Guide Guide</emphasis> at <link
-        xlink:href="http://docs.rackspace.com/">docs.rackspace.com</link>. This guide
-      provides step-by-step instructions to enter the necessary URLs or commands to use the Cloud
-      Block Storage API.</para>
+        >Cloud Block Storage Getting Started Guide</emphasis> at <link
+        xlink:href="http://docs.rackspace.com/">docs.rackspace.com</link>. This guide provides
+      step-by-step instructions to enter the necessary URLs or commands to use the Cloud Block
+      Storage API.</para>
     <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">For more details about the Cloud
       Block Storage service, see the Cloud Block Storage page at <link
         xlink:href="http://www.rackspace.com/cloud/block-storage/">www.rackspace.com</link> and the
@@ -455,7 +464,7 @@ format="SVG" scale="60"/>
         access key. </para>
       <para> To authenticate, submit a <code>POST/v2.0/tokens</code>
         request, presenting valid Rackspace customer credentials in
-        the message body to a Rackspace authentication endpoint . </para>
+        the message body to a Rackspace authentication endpoint. </para>
       <para>
         <emphasis role="bold">GET YOUR CREDENTIALS</emphasis>
       </para>
@@ -474,6 +483,14 @@ format="SVG" scale="60"/>
         the ones you use to login to the Rackspace Cloud Control
         Panel. Once you are logged in, you can use the Cloud Control
         Panel to obtain your <code>API key</code>. </para>
+      <note>
+        <para>If you authenticate with username and password credentials, you can use multi-factor
+          authentication to add an additional level of account security. This feature is not
+          implemented for username and API credentials. For more information, see <link
+            xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html"
+            >Multi-factor authentication</link> in the <citetitle>Cloud Identity Client Developer
+            Guide</citetitle>. </para>
+      </note>
       <para><emphasis role="bold">To find your API key:</emphasis>
       </para>
       <orderedlist>
@@ -579,12 +596,47 @@ format="SVG" scale="60"/>
               <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
 '{"auth":{"passwordCredentials":{"username":"yourUserName","password":"yourPassword"}}}' -H "Content-type: application/json"</literallayout>
             </para>
-            <para> Successful authentication returns a token which you can use as evidence that your
-              identity has already been authenticated. To use the token, pass it to other services
-              as an <code>X-Auth-Token</code> header. </para>
-            <para> Authentication also returns a service catalog, listing the endpoints you can use
-              for Cloud services. </para>
           </listitem>
+          <listitem>
+            <para>Review the authentication response.
+              <itemizedlist>
+                <listitem>
+                  <para>Successful authentication returns a token that you can use as evidence that your
+                    identity has already been authenticated along with a service catalog, which lists the
+                    endpoints that you can use for Rackspace Cloud services. To use the token, pass it to
+                    other services as an <code>X-Auth-Token</code> header.</para>
+                </listitem>
+                <listitem>
+                  <para>If the Identity service returns a returns a 401 message with a request for
+                    additional credentials, your account requires <link
+                      xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-admin-devguide/content/MFA_Ops.htmlmulti-factor authentication"
+                      >multi-factor authentication</link>. To complete the authentication process,
+                    submit a second <guilabel>POST tokens</guilabel> request with these multi-factor
+                    authentication credentials: <itemizedlist>
+                      <listitem>
+                        <para>The session ID value returned in the <code>WWW-Authenticate: OS-MF
+                          sessionId</code> header parameter that is included in the response to
+                          the initial authentication request.</para>
+                      </listitem>
+                      <listitem>
+                        <para>The passcode from the mobile phone associated with your user
+                          account.</para>
+                        <example>
+                          <title>Authentication request with multi-factor authentication
+                            credentials</title>
+                          <programlisting language="bash" role="gutter: false"><?db-font-size 60%?><prompt>$</prompt>curl https://identity.api.rackspacecloud.com/v2.0/tokens \
+     -X POST \
+     -d '{"auth": {"RAX-AUTH:passcodeCredentials": {"passcode":"1411594"}}}'\
+     -H "X-SessionId: $SESSION_ID" \
+     -H "Content-Type: application/json" --verbose | python -m json.tool</programlisting>
+                        </example>
+                      </listitem>
+                    </itemizedlist></para>
+                </listitem>
+              </itemizedlist>
+            </para>
+          </listitem>
+
           <listitem>
             <para><emphasis role="bold">Use the authentication token to send a GET to a service you
                 would like to use.</emphasis>

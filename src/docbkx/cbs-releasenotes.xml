@@ -27,11 +27,14 @@
 			<year xmlns:svg="http://www.w3.org/2000/svg"
 				xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
 				xmlns:html="http://www.w3.org/1999/xhtml">2014</year>
+			<year xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml">2015</year>
 			<holder>Rackspace US, Inc.</holder>
 		</copyright>
 		<releaseinfo>API v1</releaseinfo>
 		<productname>Rackspace Cloud Block Storage</productname>
-		<pubdate>2014-12-29</pubdate>
+		<pubdate>2015-01-14</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
@@ -44,6 +47,27 @@
 				Interface (<abbrev>API</abbrev>).</para>
 		</abstract>
 		<revhistory>
+			<revision>
+				<date>2015-01-14</date>
+				<revdescription>
+					<para xmlns:html="http://www.w3.org/1999/xhtml"
+						xmlns:wadl="http://wadl.dev.java.net/2009/02"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/the key 1998/Math/MathML">Added information and
+						links about multi-factor authentication in the following documents:<itemizedlist>
+							<listitem>
+								<para><olink targetdoc="cbs-getting-started"
+										targetptr="Gen_auth-token_d1e060">“Generating an
+										authentication token”</olink></para>
+							</listitem>
+							<listitem>
+								<para><olink targetdoc="cbs-devguide"
+										targetptr="Authentication-d1e647"
+									>“Authentication”</olink></para>
+							</listitem>
+						</itemizedlist></para>
+				</revdescription>
+			</revision>
 			<revision xmlns:wadl="http://wadl.dev.java.net/2009/02">
 				<date>2014-12-29</date>
 				<revdescription>
@@ -269,6 +293,30 @@
 			all earlier versions. The most recent changes are
 			described in the following table:</para>
 		<?rax revhistory?>
+	</chapter>
+	<chapter xml:id="Jan14">
+		<title>January 14, 2015</title>
+		<para>This release includes the following change for the Cloud Block Storage API.</para>
+		<itemizedlist>
+			<title>Documentation</title>
+			<listitem>
+				<para xmlns:html="http://www.w3.org/1999/xhtml"
+					xmlns:wadl="http://wadl.dev.java.net/2009/02"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:m="http://www.w3.org/the key 1998/Math/MathML">Added information and links
+					about multi-factor authentication in the following documents:<itemizedlist>
+						<listitem>
+							<para><olink targetdoc="cbs-getting-started"
+									targetptr="Gen_auth-token_d1e060">“Generating an authentication
+									token”</olink></para>
+						</listitem>
+						<listitem>
+							<para><olink targetdoc="cbs-devguide" targetptr="Authentication-d1e647"
+									>“Authentication”</olink></para>
+						</listitem>
+					</itemizedlist></para>
+			</listitem>
+		</itemizedlist>
 	</chapter>
 	<chapter xml:id="Dec29">
 		<title>December 29, 2014</title>

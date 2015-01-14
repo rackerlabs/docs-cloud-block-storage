@@ -47,11 +47,12 @@
     <info>
         <copyright>
             <year>2014</year>
+            <year>2015</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1</releaseinfo>
         <productname>Rackspace Cloud Block Storage</productname>
-        <pubdate>2014-07-22</pubdate>
+        <pubdate>2015-01-14</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -63,6 +64,13 @@
                 Interface (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <date>2015-01-14</date>
+                <revdescription>
+                    <para>Added a link to additional authentication methods, including multi-factor
+                        authentication, in <xref linkend="Gen_auth-token_d1e060"/>.</para>
+                </revdescription>
+            </revision>
             <revision xmlns:wadl="http://wadl.dev.java.net/2009/02"
                 xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
                 <date>2014-07-22</date>
@@ -469,6 +477,14 @@
                                 >yourApiKey</emphasis></emphasis> &mdash; Your API key. </para>
                     </listitem>
                 </itemizedlist></para>
+            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">This guide uses <emphasis
+                    role="bold"><emphasis role="italic">yourUserName</emphasis></emphasis> and
+                    <emphasis role="bold"><emphasis role="italic">yourApiKey</emphasis></emphasis>
+                for authentication.  For information about other  supported authentication methods,
+                see the <link
+                    xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Token_Calls.html"
+                    >Authentication tokens</link> in the <citetitle>Cloud Identity Client Developer
+                    Guide</citetitle>.</para>
             <para>You authenticate by using the URL for the Cloud Identity service,
                     <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>, as shown in
                 the following authentication request example. </para>
