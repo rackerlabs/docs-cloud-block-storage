@@ -356,16 +356,17 @@ format="SVG" scale="60"/>
     <para xmlns:m="http://www.w3.org/the key 1998/Math/MathML">Rackspace welcomes feedback,
       comments, and bug reports at <link xlink:href="mailto:support@rackspacecloud.com"
         >support@rackspacecloud.com</link>. </para>
-    <!-- 
+
+<!-- 
     <para security="writeronly">The following figure shows an overview
       of Cloud Block Storage: <informalfigure>
         <mediaobject>
           <imageobject role="fo">
-            <imagedata fileref="images/Cloud_DB_Infographic-1.svg"
+            <imagedata fileref="images/CBS_HighLevelOverview.svg"
               contentwidth="6in"/>
           </imageobject>
           <imageobject role="html">
-            <imagedata fileref="images/Cloud_DB_Infographic-1.png"/>
+            <imagedata fileref="figures/CBS_HighLevelOverview.png"/>
           </imageobject>
         </mediaobject>
       </informalfigure>
@@ -373,6 +374,7 @@ format="SVG" scale="60"/>
     <remark security="reviewer">Writer: need to get architecture diagram for CBS and
       include it above. Ask Megan to provide.</remark>
 -->
+    
     <?hard-pagebreak?>   
     <section xml:id="Intended_Audience-d1e122">
       <title>Intended audience</title>
