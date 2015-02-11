@@ -27,7 +27,7 @@
 		</copyright>
 		<releaseinfo>API v1</releaseinfo>
 		<productname>Rackspace Cloud Block Storage</productname>
-		<pubdate>2015-02-10</pubdate>
+		<pubdate>2015-02-11</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
@@ -41,11 +41,11 @@
 		</abstract>
 		<revhistory>
 			<revision>
-				<date>2015-02-10</date>
+				<date>2015-02-11</date>
 				<revdescription>
 					<para>Fixed a bug in Cloud Block Storage that was introduced in the Cinder
-						Volume Manager deployments on January 27, 2015 and January 29, 2015.  When
-							<code>size="100"</code> was used for the create volume operation,  the
+						Volume Manager deployments on January 27, 2015 and January 29, 2015. When
+							<code>size="100"</code> was used for the create volume operation, the
 						value was not properly converted to an integer. This issue resulted in a
 						response code of <code>400</code>. </para>
 				</revdescription>
@@ -298,7 +298,7 @@
 		<?rax revhistory?>
 	</chapter>
 	<chapter xml:id="feb10">
-		<title>February 10, 2015</title>
+		<title>February 11, 2015</title>
 		<para>This release includes the following change for the Cloud Block Storage API.</para>
 		<itemizedlist>
 			<title>Bug fix</title>
