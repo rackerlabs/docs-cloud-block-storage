@@ -11,9 +11,10 @@
 <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
 <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
 
-<!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
-<!ENTITY ENDPOINT-US "https://auth.api.rackspacecloud.com/v2.0/">
-<!ENTITY ENDPOINT-UK "https://lon.identity.api.rackspacecloud.com/v1.1/">
+<!-- Authentication endpoints -->
+<!ENTITY ENDPOINT-US "https://identity.api.rackspacecloud.com/v1.1/">
+<!ENTITY ENDPOINT-US-20 "https://identity.api.rackspacecloud.com/v2.0/">
+
 
 <!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
 <imageobject>
@@ -46,7 +47,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2015-01-14</pubdate>
+    <pubdate>2015-03-04</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.
@@ -60,6 +61,19 @@ format="SVG" scale="60"/>
           (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory>
+      <revision xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+        xmlns:html="http://www.w3.org/1999/xhtml">
+        <date>2015-03-04</date>
+        <revdescription>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Removed the London endpoint, since Rackspace now has one global endpoint for
+                authentication using the Rackspace Cloud Identity service. See <xref
+                  linkend="Authentication-d1e647"/>.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
       <revision>
         <date>2015-01-14</date>
         <revdescription>
@@ -551,34 +565,21 @@ format="SVG" scale="60"/>
             account. </para>
         </listitem>
       </itemizedlist>
-
-      <para>
-        <emphasis role="bold">CHOOSE YOUR AUTHENTICATION
-          ENDPOINT</emphasis>
-      </para>
-      <para> Use the authentication endpoint for the region in which
-        your account is based: <itemizedlist spacing="compact">
-          <listitem>
-            <para> US-based accounts authenticate through <link
-                xlink:href="&ENDPOINT-US;"
-              >&ENDPOINT-US;</link>.</para>
-          </listitem>
-          <!--
-         <listitem>
-            <para> UK-based accounts authenticate through
-              <link xlink:href="&ENDPOINT-UK;">&ENDPOINT-UK;</link>.</para>
-          </listitem>
-          -->
-        </itemizedlist>
-      </para>
       <para>
         <emphasis role="bold">SEND YOUR CREDENTIALS TO YOUR
           AUTHENTICATION ENDPOINT</emphasis>
       </para>
-      <para> If you know your credentials and your authentication
-        endpoint, and you can issue a <code>POST /v2.0/tokens</code>
-        request in an API call, you have all the basic information you
-        need to use the Rackspace Cloud Identity Service. </para>
+      <para>Use the following endpoint to access the Cloud Identity service for authentication,
+        regardless of US or UK identities: </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para><link xlink:href="&ENDPOINT-US-20;">&ENDPOINT-US-20;</link>
+          </para>
+        </listitem>
+      </itemizedlist>
+      <para>With your credentials and the authentication endpoint, you issue a <code>POST
+          /v2.0/tokens</code> request in an API call, you have all the basic information you need to
+        use the Rackspace Cloud Identity Service. </para>
       <para> You can use <link xlink:href="http://curl.haxx.se/">cURL</link> to try the
         authentication process in two steps: <orderedlist>
           <listitem>
@@ -680,10 +681,11 @@ format="SVG" scale="60"/>
           identify services that perform similar functions but have different names. For example,
             <code>type="compute"</code> identifies compute services such as cloudServers and
           cloudServersOpenStack. Some developers have found the service type attribute to be useful
-          in parsing the service catalog. For Auth 2.0 (also known as the Cloud Identity Service),
-          you can see the service type attribute in the <link
+          in parsing the service catalog. For the Cloud Identity 2.0 service for authentication, you
+          can see the service type attribute in the <link
             xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html"
-            >Sample Authentication Request and Response examples</link> in the <citetitle>Cloud Identity Client Developer Guide</citetitle>.</para>
+            >Sample Authentication Request and Response examples</link> in the <citetitle>Cloud
+            Identity Client Developer Guide</citetitle>.</para>
       </tip>
     </section>
 <?hard-pagebreak?> 
