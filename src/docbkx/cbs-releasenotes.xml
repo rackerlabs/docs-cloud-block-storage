@@ -46,13 +46,8 @@
 				xmlns:wadl="http://wadl.dev.java.net/2009/02">
 				<date>2015-03-04</date>
 				<revdescription>
-					<itemizedlist spacing="compact">
-						<listitem>
-							<para>Removed the London endpoint, since Rackspace now has one global
-								endpoint for authentication using the Rackspace Cloud Identity
-								service.</para>
-						</listitem>
-					</itemizedlist>
+					<para>For the Rackspace Cloud Identity service, removed the London endpoint.
+						Rackspace now has one global endpoint for authentication.</para>
 				</revdescription>
 			</revision>
 			<revision>
@@ -318,9 +313,8 @@
 		<itemizedlist>
 			<title>Documentation</title>
 			<listitem>
-				<para>Removed the London endpoint, since Rackspace now has one global endpoint for
-					authentication using the Rackspace Cloud Identity service. See the following
-					documents: <itemizedlist>
+				<para>For the Rackspace Cloud Identity service, removed the London endpoint. Rackspace now has
+					one global endpoint for authentication. See the following documents: <itemizedlist>
 						<listitem>
 							<para><olink targetdoc="cbs-getting-started"
 									targetptr="Gen_auth-token_d1e060">“Generating an authentication

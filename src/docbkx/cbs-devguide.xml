@@ -65,13 +65,9 @@ format="SVG" scale="60"/>
         xmlns:html="http://www.w3.org/1999/xhtml">
         <date>2015-03-04</date>
         <revdescription>
-          <itemizedlist spacing="compact">
-            <listitem>
-              <para>Removed the London endpoint, since Rackspace now has one global endpoint for
-                authentication using the Rackspace Cloud Identity service. See <xref
-                  linkend="Authentication-d1e647"/>.</para>
-            </listitem>
-          </itemizedlist>
+          <para>For the Rackspace Cloud Identity service, removed the London endpoint. Rackspace now
+            has one global endpoint for authentication. See <xref linkend="Authentication-d1e647"
+            />.</para>
         </revdescription>
       </revision>
       <revision>
@@ -548,7 +544,7 @@ format="SVG" scale="60"/>
       <para>To find your tenant ID or cloud account number, locate your username on the upper-right
         side of the top navigation pane in the Cloud Control Panel. The tenant ID or account number
         is in the drop down menu under your username. </para>
-      <para> Your account may be based in either the US or the UK. This is not determined by your
+<!--      <para> Your account may be based in either the US or the UK. This is not determined by your
         physical location but by the location of the Rackspace retail site that was used to create
         your account. </para>
       <itemizedlist spacing="compact">
@@ -565,12 +561,13 @@ format="SVG" scale="60"/>
             account. </para>
         </listitem>
       </itemizedlist>
+-->      
       <para>
         <emphasis role="bold">SEND YOUR CREDENTIALS TO YOUR
           AUTHENTICATION ENDPOINT</emphasis>
       </para>
-      <para>Use the following endpoint to access the Cloud Identity service for authentication,
-        regardless of US or UK identities: </para>
+      <para>Use the following global endpoint to access the Cloud Identity service for
+        authentication: </para>
       <itemizedlist spacing="compact">
         <listitem>
           <para><link xlink:href="&ENDPOINT-US-20;">&ENDPOINT-US-20;</link>

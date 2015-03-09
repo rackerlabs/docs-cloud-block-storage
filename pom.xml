@@ -65,7 +65,7 @@
                <includes>cbs-getting-started.xml</includes>
                <security>external</security>
                <canonicalUrlBase>http://docs.rackspace.com/cbs/api/v1/cbs-getting-started/content</canonicalUrlBase>
-               <!-- <webhelpDefaultTopic>Overview_d1e060.html</webhelpDefaultTopic> -->
+               <webhelpDefaultTopic>Overview_d1e060.html</webhelpDefaultTopic>
              </configuration> 
            </execution> 
         </executions>

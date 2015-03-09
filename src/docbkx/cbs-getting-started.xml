@@ -65,13 +65,9 @@
             <revision>
                 <date>2015-03-04</date>
                 <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Removed the London endpoint, since Rackspace now has one global
-                                endpoint for authentication using the Rackspace Cloud Identity
-                                service. See <xref linkend="Gen_auth-token_d1e060"/>.</para>
-                        </listitem>
-                    </itemizedlist>
+                    <para>For the Rackspace Cloud Identity service, removed the London endpoint.
+                        Rackspace now has one global endpoint for authentication. See <xref
+                            linkend="Gen_auth-token_d1e060"/>.</para>
                 </revdescription>
             </revision>
             <revision xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -495,15 +491,15 @@
                     xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Token_Calls.html"
                     >Authentication tokens</link> in the <citetitle>Cloud Identity Client Developer
                     Guide</citetitle>.</para>
-            <para>Use the following endpoint to access the Cloud Identity service for
-                authentication, regardless of US or UK identities: </para>
+            <para>Use the following global endpoint to access the Cloud Identity service for
+                authentication: </para>
             <itemizedlist spacing="compact">
                 <listitem>
                     <para><link xlink:href="&ENDPOINT-US-20;">&ENDPOINT-US-20;</link>
                     </para>
                 </listitem>
             </itemizedlist>
-            <para>Your account may be based in either the US or the UK. This is not determined by
+<!--            <para>Your account may be based in either the US or the UK. This is not determined by
                 your physical location but by the location of the Rackspace retail site that was
                 used to create your account: </para>
             <itemizedlist spacing="compact">
@@ -518,11 +514,11 @@
                             >http://www.rackspace.co.uk</link>, it is a UK-based account. </para>
                 </listitem>
             </itemizedlist>
-            <para linkend="authenticationRequest">Notice in <xref linkend="authenticationRequest"/>
-                that you authenticate using the URL for the Cloud Identity services
-                    <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>. The
-                    <code>v2.0</code> component in the URL indicates that you are using version 2.0
-                of the Cloud Identity API.</para>
+-->            
+            <para linkend="authenticationRequest">In <xref linkend="authenticationRequest"/>, you
+                authenticate using <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>,
+                the URL for the Cloud Identity services. The <code>v2.0</code> component in the URL
+                indicates that you are using version 2.0 of the Cloud Identity API.</para>
             <para>The cURL request uses the <code>-d</code> option to send the specified data in a
                     <command>POST</command> request to the HTTP server.</para>
             <example xml:id="authenticationRequest">
