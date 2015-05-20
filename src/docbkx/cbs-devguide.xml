@@ -47,7 +47,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2015-04-23</pubdate>
+    <pubdate>2015-05-20</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.
@@ -61,6 +61,21 @@ format="SVG" scale="60"/>
           (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory>
+      <revision>
+        <date>2015-05-20</date>
+        <revdescription xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml">
+          <itemizedlist>
+            <listitem>
+              <para>Corrected the <code>size</code> description to show that <code>size</code> is in
+                gibibytes (GiB) rather than GB in <link
+                  xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/POST_createVolume_v1__tenant_id__volumes_volumes.html"
+                  >Create volume</link>.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
       <revision xmlns:svg="http://www.w3.org/2000/svg"
         xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
         xmlns:html="http://www.w3.org/1999/xhtml">
@@ -70,7 +85,7 @@ format="SVG" scale="60"/>
             <listitem>
               <para>Corrected links in <link
                 xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/Assigning-Roles-d1e001.html"
-                  >Assigning roles to account users</link>.</para>
+                >Assigning roles to account users</link>.</para>
             </listitem>
           </itemizedlist>
         </revdescription>
@@ -305,10 +320,11 @@ format="SVG" scale="60"/>
         xlink:href="http://developer.rackspace.com/#home-sdks"
         xmlns:m="http://www.w3.org/the key 1998/Math/MathML"><citetitle>Official SDKs and
           Tools</citetitle></link>.</para>
-    <para>Rackspace offers both a low cost/gigabyte (GB) option with
-      standard performance for customers who only require more storage
-      and a high performance option that provides increased storage
-      with higher performance (at a higher cost/GB). </para>
+    <para>Rackspace offers both a low cost/gigabyte (GB) option with standard performance for
+      customers who only require more storage and a high performance option that provides increased
+      storage with higher performance (at a higher cost/GB). For more information, see the <link
+        xlink:href=" http://www.rackspace.com/cloud/block-storage"
+        xmlns:m="http://www.w3.org/the key 1998/Math/MathML">Cloud Block Storage product page</link>.</para>
     <para>Highlights of Rackspace Cloud Block Storage include:<itemizedlist>
         <listitem>
           <para>Mount a drive to a Cloud Server to scale storage
@@ -321,19 +337,6 @@ format="SVG" scale="60"/>
         <listitem>
           <para>A standard speed option using SATA drive for customers who just need additional
             storage on their Cloud Server.</para>
-        </listitem>
-        <listitem>
-          <para>Two simple price options:</para>
-          <itemizedlist>
-            <listitem>
-              <para>Lower cost per GB for standard performance and
-                additional storage.</para>
-            </listitem>
-            <listitem>
-              <para>Higher cost per GB for high performance and
-                additional storage.</para>
-            </listitem>
-          </itemizedlist>
         </listitem>
       </itemizedlist>
     </para>

@@ -121,7 +121,7 @@
         xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/how-to-boot-a-server-from-a-cloud-block-storage-volume"
         >How to boot a server from a Cloud Block Storage volume.</link></para></listitem>
 </itemizedlist> </para>          
-            <para>The examples in this section create a 100 GB
+            <para>The examples in this section create a 100 gibibytes (GiB)
                 SATA volume called vol-001.</para>
         </wadl:doc>
         <request>
@@ -143,8 +143,7 @@
                     name="size" style="plain" type="int"
                     required="true" path="/account/volumes/size">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                        xml:lang="EN"><para>The size (in GB) of the
-                            volume. This is a required parameter.
+                        xml:lang="EN"><para>The size of the volume, in gibibytes (GiB). This is a required parameter.
                             Note: When creating a volume from a
                             snapshot, the volume size must be greater
                             than the snapshot size. </para></wadl:doc>

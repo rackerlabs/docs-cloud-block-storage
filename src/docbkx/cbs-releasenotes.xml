@@ -27,7 +27,7 @@
 		</copyright>
 		<releaseinfo>API v1</releaseinfo>
 		<productname>Rackspace Cloud Block Storage</productname>
-		<pubdate>2015-03-04</pubdate>
+		<pubdate>2015-05-20</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the template.</remark>
@@ -40,52 +40,89 @@
 				Interface (<abbrev>API</abbrev>).</para>
 		</abstract>
 		<revhistory>
+			<revision>
+				<date>2015-05-20</date>
+				<revdescription xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
+					xmlns:html="http://www.w3.org/1999/xhtml"
+					xmlns:wadl="http://wadl.dev.java.net/2009/02">
+					<itemizedlist>
+						<listitem>
+							<para>In the <citetitle>Cloud Block Storage Developer Guide</citetitle>, corrected the
+									<code>size</code> description to show that <code>size</code> is
+								in gibibytes (GiB) rather than GB in <link
+									xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/POST_createVolume_v1__tenant_id__volumes_volumes.html"
+									>Create volume</link>.</para>
+						</listitem>
+					</itemizedlist>
+				</revdescription>
+			</revision>
 			<revision xmlns:svg="http://www.w3.org/2000/svg"
 				xmlns:m="http://www.w3.org/1998/Math/MathML"
 				xmlns:html="http://www.w3.org/1999/xhtml"
 				xmlns:wadl="http://wadl.dev.java.net/2009/02">
 				<date>2015-03-04</date>
 				<revdescription>
-					<para>For the Rackspace Cloud Identity service, removed the London endpoint.
-						Rackspace now has one global endpoint for authentication.</para>
+					<itemizedlist>
+						<listitem>
+							<para>For the Rackspace Cloud Identity service, removed the London
+								endpoint. Rackspace now has one global endpoint for
+								authentication.</para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
 			</revision>
 			<revision>
 				<date>2015-02-11</date>
 				<revdescription>
-					<para>Fixed a bug in Cloud Block Storage that was introduced in the Cinder
-						Volume Manager deployments on January 27, 2015 and January 29, 2015. When
-							<code>size="100"</code> was used for the create volume operation, the
-						value was not properly converted to an integer. This issue resulted in a
-						response code of <code>400</code>. </para>
+					<itemizedlist>
+						<listitem>
+							<para>Fixed a bug in Cloud Block Storage that was introduced in the
+								Cinder Volume Manager deployments on January 27, 2015 and January
+								29, 2015. When <code>size="100"</code> was used for the create
+								volume operation, the value was not properly converted to an
+								integer. This issue resulted in a response code of <code>400</code>.
+							</para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
 			</revision>
 			<revision>
 				<date>2015-01-14</date>
 				<revdescription>
-					<para xmlns:html="http://www.w3.org/1999/xhtml"
-						xmlns:wadl="http://wadl.dev.java.net/2009/02"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/the key 1998/Math/MathML">Added information and
-						links about multi-factor authentication in the following documents:<itemizedlist>
-							<listitem>
-								<para><olink targetdoc="cbs-getting-started"
-										targetptr="Gen_auth-token_d1e060">“Generating an
-										authentication token”</olink></para>
-							</listitem>
-							<listitem>
-								<para><olink targetdoc="cbs-devguide"
-										targetptr="Authentication-d1e647"
-									>“Authentication”</olink></para>
-							</listitem>
-						</itemizedlist></para>
+					<itemizedlist>
+						<listitem>
+							<para xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:wadl="http://wadl.dev.java.net/2009/02"
+								xmlns:svg="http://www.w3.org/2000/svg"
+								xmlns:m="http://www.w3.org/the key 1998/Math/MathML">Added
+								information and links about multi-factor authentication in the
+								following documents:<itemizedlist>
+									<listitem>
+										<para><olink targetdoc="cbs-getting-started"
+												targetptr="Gen_auth-token_d1e060">“Generating an
+												authentication token”</olink></para>
+									</listitem>
+									<listitem>
+										<para><olink targetdoc="cbs-devguide"
+												targetptr="Authentication-d1e647"
+												>“Authentication”</olink></para>
+									</listitem>
+								</itemizedlist></para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
 			</revision>
 			<revision xmlns:wadl="http://wadl.dev.java.net/2009/02">
 				<date>2014-12-29</date>
 				<revdescription>
-					<para>Added 412 for <code>invalidImage</code> to the table of faults in <olink
-							targetdoc="cbs-devguide" targetptr="DB_faults">“Faults”</olink>.</para>
+					<itemizedlist>
+						<listitem>
+							<para>Added 412 for <code>invalidImage</code> to the table of faults in
+									<olink targetdoc="cbs-devguide" targetptr="DB_faults"
+									>“Faults”</olink>.</para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
 			</revision>
 			<revision>
@@ -112,11 +149,15 @@
 			<revision>
 				<date>2014-08-22</date>
 				<revdescription>
-					<para>Added the section <link
-						xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/serviceQuotas-d1e01.html"
-						>Cloud Block Storage quotas</link> to the <citetitle>Cloud Block Storage
-							Developer Guide</citetitle> to provide information about Cloud Block
-						Storage quotas and how to list quota information.</para>
+					<itemizedlist>
+						<listitem>
+							<para>Added the section <link
+									xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/serviceQuotas-d1e01.html"
+									>Cloud Block Storage quotas</link> to the <citetitle>Cloud Block
+									Storage Developer Guide</citetitle> to provide information about
+								Cloud Block Storage quotas and how to list quota information.</para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
 			</revision>
 			<revision xmlns:html="http://www.w3.org/1999/xhtml"
@@ -124,12 +165,17 @@
 				xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
 				<date>2014-07-22</date>
 				<revdescription>
-					<para>In the "Service access endpoints" sections in the <citetitle>Cloud Block
-							Storage Getting Started Guide</citetitle> and in the <citetitle>Cloud
-								Block Storage Developer Guide</citetitle>, added a link to the Knowledge Center article <link
+					<itemizedlist>
+						<listitem>
+							<para>In the "Service access endpoints" sections in the <citetitle>Cloud
+									Block Storage Getting Started Guide</citetitle> and in the
+									<citetitle>Cloud Block Storage Developer Guide</citetitle>,
+								added a link to the Knowledge Center article <link
 									xlink:href="http://www.rackspace.com/knowledge_center/article/about-regions"
-									>About Regions</link>
-						to provide guidance on choosing a regionalized endpoint.</para> 
+									>About Regions</link> to provide guidance on choosing a
+								regionalized endpoint.</para>
+						</listitem>
+					</itemizedlist> 
 				</revdescription>
 			</revision>
 			<revision xmlns:svg="http://www.w3.org/2000/svg"
@@ -137,24 +183,37 @@
 				xmlns:html="http://www.w3.org/1999/xhtml">
 				<date>2014-06-12</date>
 				<revdescription>
-					<para>Published the new <citetitle>Cloud Block Storage Getting Started Guide</citetitle> for
-						the API. The example requests in this guide use cURL.</para>
+					<itemizedlist>
+						<listitem>
+							<para>Published the new <citetitle>Cloud Block Storage Getting Started
+									Guide</citetitle> for the API. The example requests in this
+								guide use cURL.</para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
 			</revision>
 			<revision>
 				<date>2014-03-12</date>
 				<revdescription>
-					<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Added the version and tenant
-						ID to URIs in the API operations chapter of the <citetitle>Cloud Block
-							Storage Developer Guide</citetitle>. </para>
+					<itemizedlist>
+						<listitem>
+							<para>Added the version and tenant ID to URIs in the API operations
+								chapter of the <emphasis role="italic">Cloud Block Storage Developer
+									Guide</emphasis>. </para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
 			</revision>
 			<revision>
 				<date>2014-02-10</date>
 				<revdescription>
-					<para>Added the <code>availability_zone</code> and <code>metadata</code> request parameter
-						descriptions to the create volume operation description in the API
-						operations chapter.</para>
+					<itemizedlist>
+						<listitem>
+							<para>Added the <code>availability_zone</code> and <code>metadata</code>
+								request parameter descriptions to the create volume operation
+								description in the API operations chapter.</para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
 			</revision>
 			<revision>
@@ -176,10 +235,14 @@
 			<revision>
 				<date>2014-01-28</date>
 				<revdescription>
-					<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Updated the show snapshot details operation
-						description to mention the progress indicator,
-							<code>os-extended-snapshot-attributes:progress</code>, and show it in
-						the example responses. </para>
+					<itemizedlist>
+						<listitem>
+							<para xmlns:wadl="http://wadl.dev.java.net/2009/02">Updated the show
+								snapshot details operation description to mention the progress
+								indicator, <code>os-extended-snapshot-attributes:progress</code>,
+								and show it in the example responses. </para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
 			</revision>
 			<revision>
@@ -206,7 +269,11 @@
 				xmlns:wadl="http://wadl.dev.java.net/2009/02">
 				<date>2013-10-21</date>
 				<revdescription>
-					<para>Added the HKG service endpoint.</para>
+					<itemizedlist>
+						<listitem>
+							<para>Added the HKG service endpoint.</para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
 			</revision>
 			<revision xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -256,13 +323,21 @@
 			<revision>
 				<date>2013-01-04</date>
 				<revdescription>
-					<para>Removed camel-case for JSON examples. </para>
+					<itemizedlist>
+						<listitem>
+							<para>Removed camel-case for JSON examples. </para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
 			</revision>
 			<revision>
 				<date>2012-10-23</date>
 				<revdescription>
-					<para>First public release.</para>
+					<itemizedlist>
+						<listitem>
+							<para>First public release.</para>
+						</listitem>
+					</itemizedlist>
 				</revdescription>
 			</revision>
 		</revhistory>
@@ -306,6 +381,23 @@
 			all earlier versions. The most recent changes are
 			described in the following table:</para>
 		<?rax revhistory?>
+	</chapter>
+	<chapter xml:id="May20">
+		<title>May 20, 2015</title>
+		<para>This release includes the following changes for the Cloud Block Storage API.</para>
+		<itemizedlist>
+			<title>Documentation</title>
+			<listitem xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml"
+				xmlns:wadl="http://wadl.dev.java.net/2009/02">
+				<para>In the <citetitle>Cloud Block Storage Developer Guide</citetitle>, corrected
+					the <code>size</code> description to show that <code>size</code> is in gibibytes
+					(GiB) rather than GB in <link
+						xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/POST_createVolume_v1__tenant_id__volumes_volumes.html"
+						>Create volume</link>.</para>
+			</listitem>
+		</itemizedlist>
 	</chapter>
 	<chapter xml:id="Mar04">
 		<title>March 04, 2015</title>
