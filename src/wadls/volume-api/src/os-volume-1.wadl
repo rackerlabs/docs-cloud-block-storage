@@ -118,8 +118,8 @@
           and mounted for use on the
           system.</para></listitem>
     <listitem><para>To create a bootable volume, include the <code>imageRef</code> parameter in the request. The corresponding response parameter is <code>image_id</code>. For more information about this feature, see the Knowledge Center article <link
-        xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/how-to-boot-a-server-from-a-cloud-block-storage-volume"
-        >How to boot a server from a Cloud Block Storage volume.</link></para></listitem>
+        xlink:href="http://www.rackspace.com/knowledge_center/article/boot-a-server-from-a-cloud-block-storage-volume"
+        >Boot a server from a Cloud Block Storage volume</link>.</para></listitem>
 </itemizedlist> </para>          
             <para>The examples in this section create a 100 gibibytes (GiB)
                 SATA volume called vol-001.</para>
