@@ -371,6 +371,7 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="Delete volume">
             <para role="shortdesc">Deletes a volume.</para>
+            <note><para>If a snapshot of the volume exists, you cannot delete the volume until you delete the snapshot.</para></note>
             </wadl:doc>
         <response status="202">
         <representation mediaType="application/json"/>
