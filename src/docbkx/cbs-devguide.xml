@@ -47,7 +47,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2015-06-04</pubdate>
+    <pubdate>2015-07-27</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.
@@ -61,6 +61,21 @@ format="SVG" scale="60"/>
           (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory>
+      <revision>
+        <date>2015-07-27</date>
+        <revdescription xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml">
+          <itemizedlist>
+            <listitem>
+              <para>Added OnMetal Cloud Servers in the <link
+                xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/overview.html"
+                  >Overview</link> because you can now attach an OnMetal server to a Cloud
+                Block Storage volume.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
       <revision>
         <date>2015-06-04</date>
         <revdescription xmlns:svg="http://www.w3.org/2000/svg"
@@ -320,8 +335,9 @@ format="SVG" scale="60"/>
     xmlns:html="http://www.w3.org/1999/xhtml">
     <title>Overview</title>
     <para>Rackspace Cloud Block Storage is a block level storage solution that allows customers to
-      mount drives or volumes to their Rackspace Next Generation Cloud Servers<trademark/>. The
-      primary use cases for Cloud Block Storage are to allow you to perform the following tasks:<itemizedlist>
+      mount drives or volumes to their Rackspace Next Generation Cloud Servers<trademark/> and
+      OnMetal<trademark/> Cloud Servers. The primary use cases for Cloud Block Storage are to allow you to
+      perform the following tasks:<itemizedlist>
         <listitem>
           <para>Scale your storage independently from your compute resources.</para>
         </listitem>
@@ -357,13 +373,11 @@ format="SVG" scale="60"/>
       </itemizedlist>
     </para>
     <note>
-      <title>Notes</title>
       <itemizedlist>
         <listitem>
-          <para>Cloud Block Storage is an add-on feature to Next
-            Generation Cloud Servers. Customers may not attach Cloud
-            Block Storage volumes to other instances, like first
-            generation Cloud Servers.</para>
+          <para>Cloud Block Storage is an add-on feature to Next Generation Cloud Servers and
+            OnMetal Cloud Servers.You cannot attach Cloud Block Storage volumes to other instances,
+            like First Generation Cloud Servers.</para>
         </listitem>
         <listitem>
           <para>Cloud Block Storage is multi-tenant rather than
@@ -744,20 +758,22 @@ format="SVG" scale="60"/>
         <para>See the <citetitle>Cloud Identity Client Developer
             Guide</citetitle> for information about how to perform the
           following tasks:</para>
-        <itemizedlist>
+        <itemizedlist spacing="compact">
           <listitem>
-            <para><link
-              xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html"
-              >Create account users</link></para>
+            <para>
+              <link
+                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_.html"
+                >Add account users</link>
+            </para>
           </listitem>
           <listitem>
             <para><link
-              xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles__roleid__Role_Calls.html"
+              xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html"
               >Assign roles to account users</link></para>
           </listitem>
           <listitem>
             <para><link
-              xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles__roleid__Role_Calls.html"                            
+              xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html"                            
               >Delete roles from account users</link></para>
           </listitem>
         </itemizedlist>

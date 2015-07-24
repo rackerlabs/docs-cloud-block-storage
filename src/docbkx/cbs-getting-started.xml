@@ -50,7 +50,7 @@
         </copyright>
         <releaseinfo>API v1</releaseinfo>
         <productname>Rackspace Cloud Block Storage</productname>
-        <pubdate>2015-03-04</pubdate>
+        <pubdate>2015-07-27</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -62,27 +62,53 @@
                 Interface (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <date>2015-07-27</date>
+                <revdescription xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+                    <itemizedlist>
+                        <listitem>
+                            <para>Added OnMetal Cloud Servers in the <link
+                                xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-getting-started/content/Overview_d1e060.html"
+                                    >Overview</link> because you can now attach an OnMetal server to
+                                a Cloud Block Storage volume.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-03-04</date>
                 <revdescription>
-                    <para>For the Rackspace Cloud Identity service, removed the London endpoint.
-                        Rackspace now has one global endpoint for authentication. See <xref
-                            linkend="Gen_auth-token_d1e060"/>.</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>For the Rackspace Cloud Identity service, removed the London
+                                endpoint. Rackspace now has one global endpoint for authentication.
+                                See <xref linkend="Gen_auth-token_d1e060"/>.</para>
+                        </listitem>
+                    </itemizedlist>
                 </revdescription>
             </revision>
             <revision xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <date>2015-01-14</date>
                 <revdescription>
-                    <para>Added a link to additional authentication methods, including multi-factor
-                        authentication, in <xref linkend="Gen_auth-token_d1e060"/>.</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Added a link to additional authentication methods, including
+                                multi-factor authentication, in <xref
+                                    linkend="Gen_auth-token_d1e060"/>.</para>
+                        </listitem>
+                    </itemizedlist>
                 </revdescription>
             </revision>
             <revision xmlns:wadl="http://wadl.dev.java.net/2009/02"
                 xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
                 <date>2014-07-22</date>
                 <revdescription>
-                    <para>Added a link to guidance on choosing a regionalized endpoint in <xref
-                            linkend="Service_access_endpoints_d1e060"/>.</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Added a link to guidance on choosing a regionalized endpoint in
+                                    <xref linkend="Service_access_endpoints_d1e060"/>.</para>
+                        </listitem>
+                    </itemizedlist>
                 </revdescription>
             </revision>
             <revision>
@@ -106,7 +132,8 @@
     <chapter xml:id="Overview_d1e060">
         <title>Overview</title>
         <para> Rackspace Cloud Block Storage is a block-level storage solution that enables you to
-            mount drives or volumes to your Next Generation Cloud Servers™. The primary use cases
+            mount drives or volumes to your Next Generation Cloud Servers™ and OnMetal<trademark
+                xmlns:wadl="http://wadl.dev.java.net/2009/02"/> Cloud Servers. The primary use cases
             for Cloud Block Storage are to allow you to perform the following tasks:<itemizedlist>
                 <listitem>
                     <para>Scale your storage independently from your compute resources.</para>
@@ -131,9 +158,9 @@
         <para>Cloud Block Storage includes the following functionality:<itemizedlist
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <listitem>
-                    <para>Cloud Block Storage is an add-on feature to Next Generation Cloud Servers.
-                        You cannot attach Cloud Block Storage volumes to other instances, such as
-                        First Generation Cloud Servers.</para>
+                    <para>Cloud Block Storage is an add-on feature to Next Generation Cloud Servers
+                        and OnMetal Cloud Servers. You cannot attach Cloud Block Storage volumes to
+                        other instances, such as First Generation Cloud Servers.</para>
                 </listitem>
                 <listitem>
                     <para>Cloud Block Storage is multi-tenant rather than dedicated.</para>
