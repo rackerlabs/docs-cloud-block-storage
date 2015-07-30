@@ -4,6 +4,9 @@
 Glossary
 ========
 
+Instance
+    An instance is a virtual machine that runs inside the cloud.
+
 Instance type
     An instance type describes the compute, memory, and storage capacity
     of Nova computing instances. In layman's terms, this is the size (in
