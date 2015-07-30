@@ -13,7 +13,7 @@
         <resource id="v1" path="v1">
             <resource id="tenant_id" path="{tenant_id}">
                 <param name="tenant_id" style="template"
-                    type="xsd:string">
+                    type="String" required="true">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN">
                         <para>The unique identifier of the tenant or
@@ -27,7 +27,7 @@
                     </resource>
                     <resource path="{volume_id}" id="volume_id">
                         <param name="volume_id" style="template"
-                            required="true">
+                            type="String" required="true">
                             <wadl:doc
                                 xmlns="http://docbook.org/ns/docbook"
                                 xml:lang="EN"><para>The unique
@@ -44,7 +44,7 @@
                     <resource path="{volume_type_id}"
                         id="volume_type_id">
                         <param name="volume_type_id" style="template"
-                            required="true">
+                            type="String" required="true">
                             <wadl:doc
                                 xmlns="http://docbook.org/ns/docbook"
                                 xml:lang="EN"><para>The unique
@@ -61,8 +61,9 @@
                         <method href="#getSnapshotsDetail"/>
                     </resource>
                     <resource path="{snapshot_id}" id="snapshot_id">
+                        
                         <param name="snapshot_id" style="template"
-                            required="true">
+                            type="String" required="true">
                             <wadl:doc
                                 xmlns="http://docbook.org/ns/docbook"
                                 xml:lang="EN"><para>The unique
@@ -131,7 +132,7 @@
                     <xsdxt:code href="samples/volume_create.xml"/>
                 </wadl:doc>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
-                    name="volume" style="plain" type="string"
+                    name="volume" style="plain" type="String"
                     required="true" path="/account/volumes/volume">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>A partial representation
@@ -140,7 +141,7 @@
                             operation.</para></wadl:doc>
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
-                    name="size" style="plain" type="int"
+                    name="size" style="plain" type="Int"
                     required="true" path="/account/volumes/size">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>The size of the volume, in gibibytes (GiB). This is a required parameter.
@@ -150,7 +151,7 @@
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
                     name="display_description" style="plain"
-                    type="string" required="false"
+                    type="String" required="false"
                     path="/account/volumes/display_description">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>A description of the
@@ -158,7 +159,7 @@
                         optional.</para></wadl:doc>
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
-                    name="display_name" style="plain" type="string"
+                    name="display_name" style="plain" type="String"
                     required="false"
                     path="/account/volumes/display_name">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -167,7 +168,7 @@
                         optional.</para></wadl:doc>
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
-                    name="snapshot_id" style="plain" type="uuid"
+                    name="snapshot_id" style="plain" type="Uuid"
                     required="false"
                     path="/account/volumes/snapshot_id">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -176,7 +177,7 @@
                             is optional. </para></wadl:doc>
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
-                    name="volume_type" style="plain" type="string"
+                    name="volume_type" style="plain" type="String"
                     required="false"
                     path="/account/volumes/volume_type">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -185,7 +186,7 @@
                             is optional. If not defined, the
                             default, SATA, is used. </para></wadl:doc>
                 </param>
-                <param name="source_volid" style="plain" type="uuid"
+                <param name="source_volid" style="plain" type="Uuid"
                     required="false"
                     path="/account/volumes/source_volid">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -196,7 +197,7 @@
                             optional.</para></wadl:doc>
                 </param>
                 <param name="availability_zone" style="plain"
-                    type="string" required="false">
+                    type="String" required="false">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>This parameter is no
                             longer used. Therefore, you can supply any
@@ -204,20 +205,20 @@
                             If you specify no value, the default is
                                 <code>nova</code>.</para></wadl:doc>
                 </param>
-<!--           <param name="bootable" style="template" type="string" required="false">
+<!--           <param name="bootable" style="template" type="String" required="false">
                 <doc><para>
                     This parameter is currently is currently always <code>false</code>.
                </para></wadl:doc>
                </param>
 -->
-                <param name="metadata" style="plain" type="string"
+                <param name="metadata" style="plain" type="String"
                     required="false">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>This optional parameter is
                             available if you want to set any metadata
                             values on the volume.</para></wadl:doc>
                 </param>
-                <param name="imageRef" style="plain" type="uuid"
+                <param name="imageRef" style="plain" type="Uuid"
                 required="false">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"><para>Specifying this parameter is required to create a bootable volume. This parameter is the ID of the image from which you want to create the volume.</para></wadl:doc>
@@ -250,7 +251,7 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List volumes">
             <para role="shortdesc">Lists summary information for all
-                Block Storage volumes that the tenant who submits the
+                Cloud Block Storage volumes that the tenant who submits the
                 request can access.</para>
         </wadl:doc>
         <response status="200">
@@ -274,7 +275,7 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List volumes (detailed)">
             <para role="shortdesc">Lists detailed information for all
-                Block Storage volumes that the tenant who submits the
+                Cloud Block Storage volumes that the tenant who submits the
                 request can access.</para>
         </wadl:doc>
         <response status="200">
@@ -328,13 +329,13 @@
                         href="samples/volume_rename_request.xml"/>
                 </wadl:doc>
                 <param name="display_description" style="plain"
-                    type="string" required="false"
+                    type="String" required="false"
                     path="/account/volumes/display_description">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>A description of the
                             volume.</para></wadl:doc>
                 </param>
-                <param name="display_name" style="plain" type="string"
+                <param name="display_name" style="plain" type="String"
                     required="false"
                     path="/account/volumes/display_name">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -459,7 +460,7 @@
                     <xsdxt:code href="samples/snapshot_create.xml"/>
                 </wadl:doc>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
-                    name="snapshot" style="plain" type="string"
+                    name="snapshot" style="plain" type="String"
                     required="true" path="/account/snapshots/snapshot">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>A partial representation
@@ -468,7 +469,7 @@
                     </wadl:doc>
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
-                    name="volume_id" style="plain" type="uuid"
+                    name="volume_id" style="plain" type="Uuid"
                     required="true"
                     path="/account/snapshots/volume_id">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -477,7 +478,7 @@
                     </wadl:doc>
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
-                    name="force" style="plain" type="boolean"
+                    name="force" style="plain" type="Boolean"
                     required="false" path="/account/snapshots/force">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para>[True/False] Indicate
@@ -486,7 +487,7 @@
                     </wadl:doc>
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
-                    name="display_name" style="plain" type="string"
+                    name="display_name" style="plain" type="String"
                     required="false"
                     path="/account/snapshots/display_name">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
@@ -496,7 +497,7 @@
                 </param>
                 <param xmlns="http://wadl.dev.java.net/2009/02"
                     name="display_description" style="plain"
-                    type="string" required="false"
+                    type="String" required="false"
                     path="/account/snapshots/display_description">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
                         xml:lang="EN"><para> Description of snapshot.
@@ -530,7 +531,7 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List snapshots">
             <para role="shortdesc">Lists summary information for all
-                Block Storage snapshots that the tenant who submits
+                Cloud Block Storage snapshots that the tenant who submits
                 the request can access.</para>
         </wadl:doc>
         <response status="200">
@@ -554,7 +555,7 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
             title="List snapshots (detailed)">
             <para role="shortdesc">Lists detailed information for all
-                Block Storage snapshots that the tenant who submits
+                Cloud Block Storage snapshots that the tenant who submits
                 the request can access.</para>
         </wadl:doc>
         <response status="200">
@@ -608,12 +609,12 @@
         </wadl:doc>
         <request>
             <param name="display_description" style="query"
-                type="string" required="false">
+                type="String" required="false">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"><para>Describes the
                         snapshot.</para></wadl:doc>
             </param>
-            <param name="display_name" style="query" type="string"
+            <param name="display_name" style="query" type="String"
                 required="false">
                 
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"

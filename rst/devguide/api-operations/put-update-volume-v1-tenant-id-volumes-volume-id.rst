@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Update Volume -  Rackspace Cloud Block Storage Developer Guide
-=============================================================================
-
 Update Volume
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <put-update-volume-v1-tenant-id-volumes-volume-id.html#request>`__
-`Response <put-update-volume-v1-tenant-id-volumes-volume-id.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -30,17 +23,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The unique identifier of |
+|{tenant_id}               |String *(Required)*      |The unique identifier of |
 |                          |                         |the tenant or account.   |
 +--------------------------+-------------------------+-------------------------+
-|{volume_id}               |*(Required)*             |The unique identifier of |
+|{volume_id}               |String *(Required)*      |The unique identifier of |
 |                          |                         |an existing volume.      |
 +--------------------------+-------------------------+-------------------------+
 
@@ -53,10 +46,10 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|display_description       |string *(Required)*      |A description of the     |
+|display_description       |String *(Optional)*      |A description of the     |
 |                          |                         |volume.                  |
 +--------------------------+-------------------------+-------------------------+
-|display_name              |string *(Required)*      |The name of the volume.  |
+|display_name              |String *(Optional)*      |The name of the volume.  |
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -89,8 +82,10 @@ This table shows the body parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body
 
 
 

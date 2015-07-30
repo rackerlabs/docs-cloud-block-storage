@@ -1,21 +1,19 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Delete Snapshot -  Rackspace Cloud Block Storage Developer Guide
-=============================================================================
-
-Delete Snapshot
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <delete-delete-snapshot-v1-tenant-id-snapshots-snapshot-id.html#request>`__
-`Response <delete-delete-snapshot-v1-tenant-id-snapshots-snapshot-id.html#response>`__
+Delete Volume
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    DELETE /v1/{tenant_id}/snapshots/{snapshot_id}
+    DELETE /v1/{tenant_id}/volumes/{volume_id}
 
-Deletes a snapshot.
+Deletes a volume.
+
+.. note::
+   If a snapshot of the volume exists, you cannot delete the volume until you delete the snapshot.
+   
+   
 
 
 
@@ -30,30 +28,34 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The unique identifier of |
+|{tenant_id}               |String *(Required)*      |The unique identifier of |
 |                          |                         |the tenant or account.   |
 +--------------------------+-------------------------+-------------------------+
-|{snapshot_id}             |*(Required)*             |The unique identifier of |
-|                          |                         |an existing snapshot.    |
+|{volume_id}               |String *(Required)*      |The unique identifier of |
+|                          |                         |an existing volume.      |
 +--------------------------+-------------------------+-------------------------+
 
 
 
 
+
+This operation does not accept a request body
 
 
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body
 
 
 

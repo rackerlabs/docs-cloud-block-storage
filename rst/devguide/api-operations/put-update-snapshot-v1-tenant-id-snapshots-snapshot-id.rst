@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Update Snapshot -  Rackspace Cloud Block Storage Developer Guide
-=============================================================================
-
 Update Snapshot
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <put-update-snapshot-v1-tenant-id-snapshots-snapshot-id.html#request>`__
-`Response <put-update-snapshot-v1-tenant-id-snapshots-snapshot-id.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -30,17 +23,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The unique identifier of |
+|{tenant_id}               |String *(Required)*      |The unique identifier of |
 |                          |                         |the tenant or account.   |
 +--------------------------+-------------------------+-------------------------+
-|{snapshot_id}             |*(Required)*             |The unique identifier of |
+|{snapshot_id}             |String *(Required)*      |The unique identifier of |
 |                          |                         |an existing snapshot.    |
 +--------------------------+-------------------------+-------------------------+
 
@@ -51,13 +44,15 @@ This table shows the query parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|display_description       |string *(Required)*      |Describes the snapshot.  |
+|display_description       |String *(Optional)*      |Describes the snapshot.  |
 +--------------------------+-------------------------+-------------------------+
-|display_name              |string *(Required)*      |The name of the snapshot.|
+|display_name              |String *(Optional)*      |The name of the snapshot.|
 +--------------------------+-------------------------+-------------------------+
 
 
 
+
+This operation does not accept a request body
 
 
 
@@ -89,8 +84,10 @@ This table shows the query parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body
 
 
 

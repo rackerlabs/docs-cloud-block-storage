@@ -6,8 +6,7 @@ Role Based Access Control (RBAC) restricts access to the capabilities of
 Rackspace Cloud services, including the Cloud Block Storage API, to
 authorized users only. RBAC enables Rackspace Cloud customers to specify
 which account users of their Cloud account have access to which Cloud
-Block Storage API service capabilities, based on roles defined by
-Rackspace. The permissions to perform certain operations in Cloud Block Storage
+Block Storage API service capabilities, based on :ref:`roles defined by Rackspace <cbs-dg-rbac-available>`. The permissions to perform certain operations in Cloud Block Storage
 API – create, read, update, delete – are assigned to specific roles, and these
 roles can be assigned by the Cloud account admin user to account users
 of the account.
@@ -38,6 +37,8 @@ how to perform the following tasks:
    The account admin user (identity:user-admin) role cannot hold any
    additional roles because it already has full access to all capabilities
    by default.
+
+.. _cbs-dg-rbac-available:
 
 Roles available for Cloud Block Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Create Volume -  Rackspace Cloud Block Storage Developer Guide
-=============================================================================
-
 Create Volume
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-create-volume-v1-tenant-id-volumes.html#request>`__
-`Response <post-create-volume-v1-tenant-id-volumes.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -41,14 +34,14 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The unique identifier of |
+|{tenant_id}               |String *(Required)*      |The unique identifier of |
 |                          |                         |the tenant or account.   |
 +--------------------------+-------------------------+-------------------------+
 
@@ -61,13 +54,13 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|volume                    |string *(Required)*      |A partial representation |
+|volume                    |String *(Required)*      |A partial representation |
 |                          |                         |of a volume used in the  |
 |                          |                         |creation process. This   |
 |                          |                         |parameter is required    |
 |                          |                         |for this operation.      |
 +--------------------------+-------------------------+-------------------------+
-|size                      |int *(Required)*         |The size of the volume,  |
+|size                      |Int *(Required)*         |The size of the volume,  |
 |                          |                         |in gibibytes (GiB). This |
 |                          |                         |is a required parameter. |
 |                          |                         |Note: When creating a    |
@@ -76,26 +69,26 @@ This table shows the body parameters for the request:
 |                          |                         |greater than the         |
 |                          |                         |snapshot size.           |
 +--------------------------+-------------------------+-------------------------+
-|display_description       |string *(Required)*      |A description of the     |
+|display_description       |String *(Optional)*      |A description of the     |
 |                          |                         |volume. This parameter   |
 |                          |                         |is optional.             |
 +--------------------------+-------------------------+-------------------------+
-|display_name              |string *(Required)*      |The name of the volume.  |
+|display_name              |String *(Optional)*      |The name of the volume.  |
 |                          |                         |This parameter is        |
 |                          |                         |optional.                |
 +--------------------------+-------------------------+-------------------------+
-|snapshot_id               |uuid *(Required)*        |The snapshot from which  |
+|snapshot_id               |Uuid *(Optional)*        |The snapshot from which  |
 |                          |                         |to create a volume. This |
 |                          |                         |parameter is optional.   |
 +--------------------------+-------------------------+-------------------------+
-|volume_type               |string *(Required)*      |The type of volume to    |
+|volume_type               |String *(Optional)*      |The type of volume to    |
 |                          |                         |create, either SATA or   |
 |                          |                         |SSD. This parameter is   |
 |                          |                         |optional. If not         |
 |                          |                         |defined, the default,    |
 |                          |                         |SATA, is used.           |
 +--------------------------+-------------------------+-------------------------+
-|source_volid              |uuid *(Required)*        |The source identifier of |
+|source_volid              |Uuid *(Optional)*        |The source identifier of |
 |                          |                         |an existing Cloud Block  |
 |                          |                         |Storage volume that you  |
 |                          |                         |want to clone (copy) to  |
@@ -103,7 +96,7 @@ This table shows the body parameters for the request:
 |                          |                         |This parameter is        |
 |                          |                         |optional.                |
 +--------------------------+-------------------------+-------------------------+
-|availability_zone         |string *(Required)*      |This parameter is no     |
+|availability_zone         |String *(Optional)*      |This parameter is no     |
 |                          |                         |longer used. Therefore,  |
 |                          |                         |you can supply any value |
 |                          |                         |for                      |
@@ -111,12 +104,12 @@ This table shows the body parameters for the request:
 |                          |                         |If you specify no value, |
 |                          |                         |the default is ``nova``. |
 +--------------------------+-------------------------+-------------------------+
-|metadata                  |string *(Required)*      |This optional parameter  |
+|metadata                  |String *(Optional)*      |This optional parameter  |
 |                          |                         |is available if you want |
 |                          |                         |to set any metadata      |
 |                          |                         |values on the volume.    |
 +--------------------------+-------------------------+-------------------------+
-|imageRef                  |uuid *(Required)*        |Specifying this          |
+|imageRef                  |Uuid *(Optional)*        |Specifying this          |
 |                          |                         |parameter is required to |
 |                          |                         |create a bootable        |
 |                          |                         |volume. This parameter   |
@@ -164,8 +157,10 @@ This table shows the body parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body
 
 
 

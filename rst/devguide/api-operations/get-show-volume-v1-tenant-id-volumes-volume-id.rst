@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Show Volume -  Rackspace Cloud Block Storage Developer Guide
-=============================================================================
-
 Show Volume
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-show-volume-v1-tenant-id-volumes-volume-id.html#request>`__
-`Response <get-show-volume-v1-tenant-id-volumes-volume-id.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -30,17 +23,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The unique identifier of |
+|{tenant_id}               |String *(Required)*      |The unique identifier of |
 |                          |                         |the tenant or account.   |
 +--------------------------+-------------------------+-------------------------+
-|{volume_id}               |*(Required)*             |The unique identifier of |
+|{volume_id}               |String *(Required)*      |The unique identifier of |
 |                          |                         |an existing volume.      |
 +--------------------------+-------------------------+-------------------------+
 
@@ -48,12 +41,16 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body
+
 
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body
 
 
 

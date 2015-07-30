@@ -1,21 +1,14 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Snapshots (Detailed) -  Rackspace Cloud Block Storage Developer Guide
-=============================================================================
-
 List Snapshots (Detailed)
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-snapshots-(detailed)-v1-tenant-id-snapshots-detail.html#request>`__
-`Response <get-list-snapshots-(detailed)-v1-tenant-id-snapshots-detail.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /v1/{tenant_id}/snapshots/detail
 
-Lists detailed information for all Block Storage snapshots that the tenant who submits the request can access.
+Lists detailed information for all Cloud Block Storage snapshots that the tenant who submits the request can access.
 
 
 
@@ -30,14 +23,14 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The unique identifier of |
+|{tenant_id}               |String *(Required)*      |The unique identifier of |
 |                          |                         |the tenant or account.   |
 +--------------------------+-------------------------+-------------------------+
 
@@ -45,12 +38,16 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body
+
 
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body
 
 
 

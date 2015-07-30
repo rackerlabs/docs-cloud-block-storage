@@ -26,6 +26,15 @@ General API Information
    cloud-block-storage-quotas
    date-and-time-format
    faults
+   
+API Operations
+-------------------
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    api-operations/*   
 
 Glossary
 --------

@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Create Snapshot -  Rackspace Cloud Block Storage Developer Guide
-=============================================================================
-
 Create Snapshot
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-create-snapshot-v1-tenant-id-snapshots.html#request>`__
-`Response <post-create-snapshot-v1-tenant-id-snapshots.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -46,14 +39,14 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The unique identifier of |
+|{tenant_id}               |String *(Required)*      |The unique identifier of |
 |                          |                         |the tenant or account.   |
 +--------------------------+-------------------------+-------------------------+
 
@@ -66,23 +59,23 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|snapshot                  |string *(Required)*      |A partial representation |
+|snapshot                  |String *(Required)*      |A partial representation |
 |                          |                         |of a snapshot used in    |
 |                          |                         |the creation process.    |
 +--------------------------+-------------------------+-------------------------+
-|volume_id                 |uuid *(Required)*        |The ID of the volume to  |
+|volume_id                 |Uuid *(Required)*        |The ID of the volume to  |
 |                          |                         |snapshot.                |
 +--------------------------+-------------------------+-------------------------+
-|force                     |boolean *(Required)*     |[True/False] Indicate    |
+|force                     |Boolean *(Optional)*     |[True/False] Indicate    |
 |                          |                         |whether to snapshot,     |
 |                          |                         |even if the volume is    |
 |                          |                         |attached. The default is |
 |                          |                         |False.                   |
 +--------------------------+-------------------------+-------------------------+
-|display_name              |string *(Required)*      |Name of the snapshot.    |
+|display_name              |String *(Optional)*      |Name of the snapshot.    |
 |                          |                         |The default is None.     |
 +--------------------------+-------------------------+-------------------------+
-|display_description       |string *(Required)*      |Description of snapshot. |
+|display_description       |String *(Optional)*      |Description of snapshot. |
 |                          |                         |The default is None.     |
 +--------------------------+-------------------------+-------------------------+
 
@@ -122,8 +115,10 @@ This table shows the body parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body
 
 
 
