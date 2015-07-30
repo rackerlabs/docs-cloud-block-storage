@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.1.2. Get image details - Rackspace Cloud Images Developer Guide  - API v2.2 &mdash; Rackspace Developer Portal 1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="Rackspace Developer Portal 1 documentation" href="../../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Rackspace Developer Portal 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="get-image-details-rackspace-cloud-images-developer-guide-api-v2-2">
+<h1>4.1.2.&nbsp;Get image details&nbsp;-&nbsp;Rackspace Cloud Images Developer Guide &nbsp;-&nbsp;API v2.2<a class="headerlink" href="#get-image-details-rackspace-cloud-images-developer-guide-api-v2-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-image-details">
+<h2>&nbsp;4.1.2.&nbsp;Get image details<a class="headerlink" href="#get-image-details" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="GET_getImage_images__image_id__Image_Calls.html#GET_getImage_images__image_id__Image_Calls-Request">4.1.2.1.
+Request</a>
+<a class="reference external" href="GET_getImage_images__image_id__Image_Calls.html#GET_getImage_images__image_id__Image_Calls-Response">4.1.2.2.
+Response</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="39%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">URI</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>GET</strong></td>
+<td><code class="docutils literal"><span class="pre">/images/{image_id}</span></code></td>
+<td>Gets the details for the specified
+image.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation shows the details for the image. The response body is a
+single image entity and conforms to the schema found in <a class="reference external" href="http://docs.rackspace.com/images/api/v2/ci-devguide/content/GET_getImageSchema_schemas_image_Schema_Calls.html">4.5.2. Get
+image
+schema</a>.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="30%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Respons
+e
+Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>400</td>
+<td>Error</td>
+<td>A general error has occured.</td>
+</tr>
+<tr class="row-even"><td>401</td>
+<td>Unauthorized</td>
+<td>Unauthorized.</td>
+</tr>
+<tr class="row-odd"><td>403</td>
+<td>Forbidden</td>
+<td>Forbidden.</td>
+</tr>
+<tr class="row-even"><td>404</td>
+<td>Not Found</td>
+<td>Resource not found.</td>
+</tr>
+<tr class="row-odd"><td>405</td>
+<td>Bad Method</td>
+<td>Bad method.</td>
+</tr>
+<tr class="row-even"><td>413</td>
+<td>Over Limit</td>
+<td>The number of items returned is above the
+allowed limit.</td>
+</tr>
+<tr class="row-odd"><td>500</td>
+<td>API Fault</td>
+<td>API fault.</td>
+</tr>
+<tr class="row-even"><td>503</td>
+<td>Service Unavailable</td>
+<td>The requested service is unavailable.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="request">
+<h3>&nbsp;4.1.2.1.&nbsp;Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h3>
+<p>This table shows the URI parameters for the get image details request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="12%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">{image_id}</span></code></td>
+<td>Uuid</td>
+<td>Image ID stored through the image API,
+typically a UUID.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation does not accept a request body.</p>
+</div>
+<div class="section" id="response">
+<h3>&nbsp;4.1.2.2.&nbsp;Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h3>
+<p>This list shows the body parameters for the response:</p>
+<p><a class="reference external" href="#">|image2|Collapse All</a> | <a class="reference external" href="#">|image3|Expand All</a> |
+<a class="reference external" href="#">Toggle All</a></p>
+<ul>
+<li><p class="first"><strong>parameters</strong>:</p>
+<ul>
+<li><p class="first"><strong>id</strong>: Xsd:string.</p>
+<p>The UUID of the image.</p>
+</li>
+<li><p class="first"><strong>name</strong>: Xsd:string.</p>
+<p>The name of the image.</p>
+</li>
+<li><p class="first"><strong>status</strong>: Xsd:string.</p>
+<p>The status of the image. For possible image statuses, see <a class="reference external" href="http://docs.rackspace.com/images/api/v2/ci-devguide/content/image-statuses.html">1.4.1.
+Image
+statuses</a>.</p>
+</li>
+<li><p class="first"><strong>visibility</strong>: Xsd:string.</p>
+<p>Specifies image visibility as either <code class="docutils literal"><span class="pre">public</span></code>, <code class="docutils literal"><span class="pre">private</span></code>, or
+<code class="docutils literal"><span class="pre">shared</span></code>.</p>
+</li>
+<li><p class="first"><strong>checksum</strong>: Xsd:string.</p>
+<p>The checksum of the image.</p>
+</li>
+<li><p class="first"><strong>minRam</strong>: Xsd:string.</p>
+<p>The minimum server RAM required for this image.</p>
+</li>
+<li><p class="first"><strong>minDisk</strong>: Xsd:string.</p>
+<p>The minimum server disk size required for this image.</p>
+</li>
+<li><p class="first"><strong>tags</strong>: Array.</p>
+<p>An array of user-defined image tags.</p>
+</li>
+<li><p class="first"><strong>created</strong>: Xsd:string.</p>
+<p>The date and time that the image was created.</p>
+</li>
+<li><p class="first"><strong>updated</strong>: Xsd:string.</p>
+<p>The date and time that the image was updated.</p>
+</li>
+<li><p class="first"><strong>schema</strong>: Xsd:string.</p>
+<p>The schema of the image.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example&nbsp;4.2.&nbsp;Get image details: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;container_format&quot;</span><span class="p">:</span> <span class="s">&quot;ovf&quot;</span><span class="p">,</span>
+    <span class="s">&quot;min_ram&quot;</span><span class="p">:</span> <span class="mi">512</span><span class="p">,</span>
+    <span class="s">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s">&quot;2015-03-09T19:32:29Z&quot;</span><span class="p">,</span>
+    <span class="s">&quot;owner&quot;</span><span class="p">:</span> <span class="s">&quot;657197&quot;</span><span class="p">,</span>
+    <span class="s">&quot;file&quot;</span><span class="p">:</span> <span class="s">&quot;/v2/images/126a6674-6308-421f-801e-fc302ab4f53f/file&quot;</span><span class="p">,</span>
+    <span class="s">&quot;flavor_classes&quot;</span><span class="p">:</span> <span class="s">&quot;*,!onmetal&quot;</span><span class="p">,</span>
+    <span class="s">&quot;vm_mode&quot;</span><span class="p">:</span> <span class="s">&quot;hvm&quot;</span><span class="p">,</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;126a6674-6308-421f-801e-fc302ab4f53f&quot;</span><span class="p">,</span>
+    <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">758777106</span><span class="p">,</span>
+    <span class="s">&quot;os_distro&quot;</span><span class="p">:</span> <span class="s">&quot;centos&quot;</span><span class="p">,</span>
+    <span class="s">&quot;image_type&quot;</span><span class="p">:</span> <span class="s">&quot;base&quot;</span><span class="p">,</span>
+    <span class="s">&quot;self&quot;</span><span class="p">:</span> <span class="s">&quot;/v2/images/126a6674-6308-421f-801e-fc302ab4f53f&quot;</span><span class="p">,</span>
+    <span class="s">&quot;disk_format&quot;</span><span class="p">:</span> <span class="s">&quot;vhd&quot;</span><span class="p">,</span>
+    <span class="s">&quot;schema&quot;</span><span class="p">:</span> <span class="s">&quot;/v2/schemas/image&quot;</span><span class="p">,</span>
+    <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;active&quot;</span><span class="p">,</span>
+    <span class="s">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s">&quot;visibility&quot;</span><span class="p">:</span> <span class="s">&quot;public&quot;</span><span class="p">,</span>
+    <span class="s">&quot;auto_disk_config&quot;</span><span class="p">:</span> <span class="s">&quot;disabled&quot;</span><span class="p">,</span>
+    <span class="s">&quot;min_disk&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;CentOS 7 (PVHVM)&quot;</span><span class="p">,</span>
+    <span class="s">&quot;checksum&quot;</span><span class="p">:</span> <span class="s">&quot;554bd2ad5b3a275c46b6d8983ae4da26&quot;</span><span class="p">,</span>
+    <span class="s">&quot;created_at&quot;</span><span class="p">:</span> <span class="s">&quot;2015-01-28T19:31:37Z&quot;</span><span class="p">,</span>
+    <span class="s">&quot;cache_in_nova&quot;</span><span class="p">:</span> <span class="s">&quot;True&quot;</span><span class="p">,</span>
+    <span class="s">&quot;protected&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s">&quot;os_type&quot;</span><span class="p">:</span> <span class="s">&quot;linux&quot;</span><span class="p">,</span>
+    <span class="s">&quot;com.rackspace__1__release_id&quot;</span><span class="p">:</span> <span class="s">&quot;220&quot;</span><span class="p">,</span>
+    <span class="s">&quot;com.rackspace__1__build_core&quot;</span><span class="p">:</span> <span class="s">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s">&quot;com.rackspace__1__options&quot;</span><span class="p">:</span> <span class="s">&quot;0&quot;</span><span class="p">,</span>
+    <span class="s">&quot;com.rackspace__1__release_version&quot;</span><span class="p">:</span> <span class="s">&quot;10&quot;</span><span class="p">,</span>
+    <span class="s">&quot;com.rackspace__1__platform_target&quot;</span><span class="p">:</span> <span class="s">&quot;PublicCloud&quot;</span><span class="p">,</span>
+    <span class="s">&quot;com.rackspace__1__build_managed&quot;</span><span class="p">:</span> <span class="s">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s">&quot;com.rackspace__1__visible_managed&quot;</span><span class="p">:</span> <span class="s">&quot;0&quot;</span><span class="p">,</span>
+    <span class="s">&quot;com.rackspace__1__source&quot;</span><span class="p">:</span> <span class="s">&quot;kickstart&quot;</span><span class="p">,</span>
+    <span class="s">&quot;com.rackspace__1__ui_default_show&quot;</span><span class="p">:</span> <span class="s">&quot;True&quot;</span><span class="p">,</span>
+    <span class="s">&quot;com.rackspace__1__release_build_date&quot;</span><span class="p">:</span> <span class="s">&quot;2015-01-28_18-59-30&quot;</span><span class="p">,</span>
+    <span class="s">&quot;com.rackspace__1__visible_core&quot;</span><span class="p">:</span> <span class="s">&quot;0&quot;</span><span class="p">,</span>
+    <span class="s">&quot;com.rackspace__1__build_rackconnect&quot;</span><span class="p">:</span> <span class="s">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s">&quot;com.rackspace__1__visible_rackconnect&quot;</span><span class="p">:</span> <span class="s">&quot;0&quot;</span><span class="p">,</span>
+    <span class="s">&quot;org.openstack__1__os_version&quot;</span><span class="p">:</span> <span class="s">&quot;7&quot;</span><span class="p">,</span>
+    <span class="s">&quot;org.openstack__1__architecture&quot;</span><span class="p">:</span> <span class="s">&quot;x64&quot;</span><span class="p">,</span>
+    <span class="s">&quot;org.openstack__1__os_distro&quot;</span><span class="p">:</span> <span class="s">&quot;org.centos&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.1.2.&nbsp;Get image details&nbsp;-&nbsp;Rackspace Cloud Images Developer Guide &nbsp;-&nbsp;API v2.2</a><ul>
+<li><a class="reference internal" href="#get-image-details">&nbsp;4.1.2.&nbsp;Get image details</a><ul>
+<li><a class="reference internal" href="#request">&nbsp;4.1.2.1.&nbsp;Request</a></li>
+<li><a class="reference internal" href="#response">&nbsp;4.1.2.2.&nbsp;Response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/src/wadl2rst/samples/sample.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Rackspace Developer Portal 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Rackspace.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>
