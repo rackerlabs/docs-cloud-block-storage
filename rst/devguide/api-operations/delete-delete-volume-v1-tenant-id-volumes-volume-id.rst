@@ -46,7 +46,7 @@ This table shows the URI parameters for the request:
 
 
 
-This operation does not accept a request body
+This operation does not accept a request body.
 
 
 
@@ -55,7 +55,8 @@ Response
 """"""""""""""""
 
 
-This operation does not accept a response body
 
 
+
+This operation does not return a response body.
 

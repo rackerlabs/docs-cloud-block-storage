@@ -52,7 +52,7 @@ This table shows the query parameters for the request:
 
 
 
-This operation does not accept a request body
+This operation does not accept a request body.
 
 
 
@@ -86,8 +86,6 @@ This operation does not accept a request body
 Response
 """"""""""""""""
 
-
-This operation does not accept a response body
 
 
 
@@ -131,4 +129,5 @@ This operation does not accept a response body
             "volume_id":"2402b902-0b7a-458c-9c07-7435a826f794"
         }
     }
+
 

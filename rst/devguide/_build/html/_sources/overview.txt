@@ -4,7 +4,7 @@
 Overview
 ========
 
-Rackspace Cloud Block Storage is a block level storage solution that allows customers to mount drives or volumes to their Rackspace Next Generation Cloud Servers™. The primary use cases for Cloud Block Storage are to allow you to perform the following tasks:
+Rackspace Cloud Block Storage is a block level storage solution that allows customers to mount drives or volumes to their Rackspace Next Generation Cloud Servers™ and OnMetal™ Cloud Servers. The primary use cases for Cloud Block Storage are to allow you to perform the following tasks:
 
 -  Scale your storage independently from your compute resources.
 
@@ -23,7 +23,7 @@ Highlights of Rackspace Cloud Block Storage include:
 -  A standard speed option using SATA drive for customers who just need additional storage on their Cloud Server.
 
 ..  note::
-    Cloud Block Storage is an add-on feature to Next Generation Cloud Servers. Customers may not attach Cloud Block Storage volumes to other instances, like first generation Cloud Servers.
+    Cloud Block Storage is an add-on feature to Next Generation Cloud Servers and OnMetal Cloud Servers. Customers may not attach Cloud Block Storage volumes to other instances, like first generation Cloud Servers.
 
     Cloud Block Storage is multi-tenant rather than dedicated.
 
@@ -72,6 +72,9 @@ This version of this guide replaces and obsoletes all earlier versions. The most
 +----------------+-------------------------------------------------------------------------------------------------+
 | Revision Date  |         Summary of Changes                                                                      |
 +================+=================================================================================================+
+| July 27, 2015  | Added OnMetal Cloud Servers in the Overview because you can now attach an OnMetal               |
+|                | server to a Cloud Block Storage volume.                                                         |
++----------------+-------------------------------------------------------------------------------------------------+
 | June 4, 2015   | Updated the "Delete volume" operation description by adding a note that if a snapshot of the    |
 |                | volume exists, you cannot delete the volume until you delete the snapshot.                      |
 +----------------+-------------------------------------------------------------------------------------------------+

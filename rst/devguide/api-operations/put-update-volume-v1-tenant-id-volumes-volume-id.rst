@@ -85,8 +85,6 @@ Response
 """"""""""""""""
 
 
-This operation does not accept a response body
-
 
 
 
@@ -137,4 +135,5 @@ This operation does not accept a response body
         "size": 100
       }
     }
+
 

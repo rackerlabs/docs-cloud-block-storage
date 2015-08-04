@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Rackspace Developer Portal 1 documentation" href="index.html" />
-    <link rel="next" title="Authentication" href="authentication.html" />
+    <link rel="next" title="General API information" href="general-api-info.html" />
     <link rel="prev" title="Cloud Block Storage" href="index.html" /> 
   </head>
   <body role="document">
@@ -35,7 +35,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="authentication.html" title="Authentication"
+          <a href="general-api-info.html" title="General API information"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Cloud Block Storage"
@@ -51,7 +51,7 @@
             
   <div class="section" id="overview">
 <span id="cbs-dg-overview"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<p>Rackspace Cloud Block Storage is a block level storage solution that allows customers to mount drives or volumes to their Rackspace Next Generation Cloud Servers™. The primary use cases for Cloud Block Storage are to allow you to perform the following tasks:</p>
+<p>Rackspace Cloud Block Storage is a block level storage solution that allows customers to mount drives or volumes to their Rackspace Next Generation Cloud Servers™ and OnMetal™ Cloud Servers. The primary use cases for Cloud Block Storage are to allow you to perform the following tasks:</p>
 <ul class="simple">
 <li>Scale your storage independently from your compute resources.</li>
 <li>Use high performance storage to serve database or I/O-intensive applications.</li>
@@ -66,7 +66,7 @@
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Cloud Block Storage is an add-on feature to Next Generation Cloud Servers. Customers may not attach Cloud Block Storage volumes to other instances, like first generation Cloud Servers.</p>
+<p>Cloud Block Storage is an add-on feature to Next Generation Cloud Servers and OnMetal Cloud Servers. Customers may not attach Cloud Block Storage volumes to other instances, like first generation Cloud Servers.</p>
 <p>Cloud Block Storage is multi-tenant rather than dedicated.</p>
 <p>When volumes are destroyed, Rackspace keeps that disk space unavailable until zeros have been written to the space to ensure that data is not accessible by any other customers.</p>
 <p class="last">Cloud Block Storage allows you to create snapshots that you can save, list, and restore.</p>
@@ -98,15 +98,19 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>June 4, 2015</td>
+<tr class="row-even"><td>July 27, 2015</td>
+<td>Added OnMetal Cloud Servers in the Overview because you can now attach an OnMetal
+server to a Cloud Block Storage volume.</td>
+</tr>
+<tr class="row-odd"><td>June 4, 2015</td>
 <td>Updated the &#8220;Delete volume&#8221; operation description by adding a note that if a snapshot of the
 volume exists, you cannot delete the volume until you delete the snapshot.</td>
 </tr>
-<tr class="row-odd"><td>May 20, 2015</td>
+<tr class="row-even"><td>May 20, 2015</td>
 <td>Corrected the size description to show that size is in gibibytes (GiB) rather than GB in
 &#8220;Create volume&#8221;.</td>
 </tr>
-<tr class="row-even"><td>April 23, 2015</td>
+<tr class="row-odd"><td>April 23, 2015</td>
 <td>Corrected links in &#8220;Assigning roles to account users&#8221;.</td>
 </tr>
 </tbody>
@@ -157,8 +161,8 @@ volume exists, you cannot delete the volume until you delete the snapshot.</td>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Cloud Block Storage</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="authentication.html"
-                        title="next chapter">Authentication</a></p>
+  <p class="topless"><a href="general-api-info.html"
+                        title="next chapter">General API information</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -190,7 +194,7 @@ volume exists, you cannot delete the volume until you delete the snapshot.</td>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="authentication.html" title="Authentication"
+          <a href="general-api-info.html" title="General API information"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Cloud Block Storage"
