@@ -47,7 +47,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2015-07-27</pubdate>
+    <pubdate>2015-08-05</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.
@@ -61,6 +61,20 @@ format="SVG" scale="60"/>
           (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory>
+      <revision>
+        <date>2015-08-05</date>
+        <revdescription xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml">
+          <itemizedlist>
+            <listitem>
+              <para>Updated the considerations for concurrent volume cloning in the <link
+                  xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/POST_createVolume_v1__tenant_id__volumes_volumes.html"
+                  >Create volume</link> operation description.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
       <revision>
         <date>2015-07-27</date>
         <revdescription xmlns:svg="http://www.w3.org/2000/svg"

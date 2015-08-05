@@ -97,12 +97,9 @@
       <listitem><para>When you use
           <code>source_volid</code> for volume
           cloning, note that this feature currently has
-          the following constraints. You cannot create
-          more than one clone per volume concurrently.
-          Snapshots and volume cloning use the same
-          locking mechanism, so you cannot run a
-          snapshot and a clone of the same volume
-          concurrently.</para></listitem>
+          the following constraints. Concurrent clone requests are queued for processing. 
+          When one clone request completes, the next clone request in the queue starts.
+          </para></listitem>
       <listitem><para>Note that you use the
           <code>os-volume_attachments</code> API
           call
