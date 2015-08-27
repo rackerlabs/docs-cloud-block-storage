@@ -73,6 +73,9 @@
                         <method href="#getSnapshot"/>
                         <method href="#updateSnapshot"/>
                         <method href="#deleteSnapshot"/>
+                        <resource path="metadata" id="snapshot_metadata">
+                            <method href="#getSnapshotMetadata"/>
+                        </resource>
                     </resource>
                 </resource>
             </resource>
@@ -666,4 +669,19 @@
         </response>
         
     </method>
+    <method name="GET" id="getSnapshotMetadata">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show snapshot metadata">
+            <para role="shortdesc">Shows the metadata for the specified snapshot.</para>
+        </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <xsdxt:code
+                        href="samples/snapshot_list_metadata.json"/>
+                </wadl:doc>
+            </representation>
+        </response>
+    </method>   
 </application>

@@ -47,7 +47,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Block Storage</productname>
-    <pubdate>2015-08-05</pubdate>
+    <pubdate>2015-08-27</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.
@@ -61,6 +61,20 @@ format="SVG" scale="60"/>
           (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory>
+      <revision>
+        <date>2015-08-27</date>
+        <revdescription xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
+          xmlns:html="http://www.w3.org/1999/xhtml">
+          <itemizedlist>
+            <listitem>
+              <para>Added the <link
+                xlink:href="http://docs.rackspace.com/cbs/api/v1.0/cbs-devguide/content/GET_getSnapshotMetadata_v1__tenant_id__snapshots__snapshot_id__metadata_snapshots.html"
+                  >Show snapshot metadata</link> operation description.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
       <revision>
         <date>2015-08-05</date>
         <revdescription xmlns:svg="http://www.w3.org/2000/svg"
@@ -139,24 +153,36 @@ format="SVG" scale="60"/>
         xmlns:html="http://www.w3.org/1999/xhtml">
         <date>2015-03-04</date>
         <revdescription>
-          <para>For the Rackspace Cloud Identity service, removed the London endpoint. Rackspace now
-            has one global endpoint for authentication. See <xref linkend="Authentication-d1e647"
-            />.</para>
+          <itemizedlist>
+            <listitem>
+              <para>For the Rackspace Cloud Identity service, removed the London endpoint. Rackspace
+                now has one global endpoint for authentication. See <xref
+                  linkend="Authentication-d1e647"/>.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2015-01-14</date>
         <revdescription>
-          <para>Updated <xref linkend="Authentication-d1e647"/> documentation with information about
-            using multi-factor authentication for added security when a user authenticates with
-            username and password credentials.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Updated <xref linkend="Authentication-d1e647"/> documentation with information
+                about using multi-factor authentication for added security when a user authenticates
+                with username and password credentials.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2014-12-29</date>
         <revdescription>
-          <para>Added 412 for <code>invalidImage</code> to the table of faults in  <xref
-              linkend="DB_faults"/>.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Added 412 for <code>invalidImage</code> to the table of faults in <xref
+                  linkend="DB_faults"/>.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
@@ -178,8 +204,12 @@ format="SVG" scale="60"/>
      <revision> 
         <date>2014-08-22</date>
         <revdescription>
-          <para>Added <xref linkend="serviceQuotas-d1e01"/> to provide information about Cloud Block
-            Storage quotas and how to list quota information.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Added <xref linkend="serviceQuotas-d1e01"/> to provide information about Cloud
+                Block Storage quotas and how to list quota information.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
@@ -187,30 +217,47 @@ format="SVG" scale="60"/>
         <revdescription xmlns:html="http://www.w3.org/1999/xhtml"
           xmlns:svg="http://www.w3.org/2000/svg"
           xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
-          <para>Added a link to guidance on choosing a regionalized endpoint in <xref
-              linkend="Service_Access_Endpoints-d1e753"/>.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Added a link to guidance on choosing a regionalized endpoint in <xref
+                  linkend="Service_Access_Endpoints-d1e753"/>.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2014-06-12</date>
         <revdescription>
-          <para linkend="overview">Added a reference to the <citetitle>Cloud Block Storage Getting
-              Started Guide</citetitle>, which uses cURL to show example requests (<xref
-              linkend="overview"/>). </para>
+          <itemizedlist>
+            <listitem>
+              <para linkend="overview">Added a reference to the <citetitle>Cloud Block Storage
+                  Getting Started Guide</citetitle>, which uses cURL to show example requests (<xref
+                  linkend="overview"/>). </para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2013-03-12</date>
         <revdescription>
-          <para>Added the version and tenant ID to URIs in <xref linkend="API_Operations"/>. </para>
+          <itemizedlist>
+            <listitem>
+              <para>Added the version and tenant ID to URIs in <xref linkend="API_Operations"/>.
+              </para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2013-02-10</date>
         <revdescription>
-          <para>Added <code>availability_zone</code> and <code>metadata</code> request parameter
-            descriptions to the create volume operation description in <xref
-              linkend="API_Operations"/>.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Added <code>availability_zone</code> and <code>metadata</code> request parameter
+                descriptions to the create volume operation description in <xref
+                  linkend="API_Operations"/>.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
@@ -231,10 +278,14 @@ format="SVG" scale="60"/>
       <revision>
         <date>2014-01-28</date>
         <revdescription>
-          <para>Updated the show snapshot details operation description in <xref
-              linkend="API_Operations"/> to include the progress indicator,
-              <code>os-extended-snapshot-attributes:progress</code>, and show it in the example
-            responses. </para>
+          <itemizedlist>
+            <listitem>
+              <para>Updated the show snapshot details operation description in <xref
+                  linkend="API_Operations"/> to include the progress indicator,
+                  <code>os-extended-snapshot-attributes:progress</code>, and show it in the example
+                responses. </para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
@@ -261,8 +312,12 @@ format="SVG" scale="60"/>
         xmlns:html="http://www.w3.org/1999/xhtml">
         <date>2013-10-21</date>
         <revdescription>
-          <para>Added the HKG service endpoint to <xref
-              linkend="Service_Access_Endpoints-d1e753"/>.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Added the HKG service endpoint to <xref
+                  linkend="Service_Access_Endpoints-d1e753"/>.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
@@ -1635,6 +1690,10 @@ format="SVG" scale="60"/>
           <wadl:method href="#getSnapshot"/>
           <wadl:method href="#updateSnapshot"/>
           <wadl:method href="#deleteSnapshot"/>
+        </wadl:resource>
+        <wadl:resource
+          href="../wadls/volume-api/src/os-volume-1.wadl#snapshot_metadata">         
+          <wadl:method href="#getSnapshotMetadata"/>          
         </wadl:resource>
       </wadl:resources>
     </section>
