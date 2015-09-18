@@ -1,0 +1,2858 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Rackspace Cloud Block Storage Version 1.0 API Developer Guide</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="None" href="index.html#document-index" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="rackspace-cloud-block-storage-version-1-0-api-developer-guide">
+<span id="index"></span><h1>Rackspace Cloud Block Storage Version 1.0 API Developer Guide<a class="headerlink" href="#rackspace-cloud-block-storage-version-1-0-api-developer-guide" title="Permalink to this headline">#</a></h1>
+<p>Rackspace Cloud Block Storage is a block level storage solution that allows customers to mount drives or volumes to their Rackspace Next Generation Cloud Servers™ and OnMetal™ Cloud Servers.</p>
+<div class="toctree-wrapper compound">
+<span id="document-overview/index"></span><div class="section" id="overview">
+<span id="id1"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>Rackspace Cloud Block Storage is a block level storage solution that allows customers to mount drives or volumes to their Rackspace Next Generation Cloud Servers™ and OnMetal™ Cloud Servers. The primary use cases for Cloud Block Storage are to allow you to perform the following tasks:</p>
+<ul class="simple">
+<li>Scale your storage independently from your compute resources.</li>
+<li>Use high performance storage to serve database or I/O-intensive applications.</li>
+</ul>
+<p>Interactions with Cloud Block Storage occur programmatically via the Cloud Block Storage API as described in this developer guide. Cloud Block Storage uses a RESTful (Representational State Transfer) web services interface. Rackspace also provides language-specific SDKs in several popular programming languages. For more information, see the <a class="reference external" href="https://developer.rackspace.com/sdks">official SDKs and tools</a>.</p>
+<p>Rackspace offers both a low cost/gigabyte (GB) option with standard performance for customers who only require more storage and a high performance option that provides increased storage with higher performance (at a higher cost/GB). For more information, see the <a class="reference external" href="http://www.rackspace.com/cloud/block-storage">Cloud Block Storage product page</a>.</p>
+<p>Highlights of Rackspace Cloud Block Storage include:</p>
+<ul class="simple">
+<li>Mount a drive to a Cloud Server to scale storage without paying for more compute capability.</li>
+<li>A high performance option for databases and high performance applications, leveraging solid state drives (SSDs) for speed.</li>
+<li>A standard speed option using SATA drive for customers who just need additional storage on their Cloud Server.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Cloud Block Storage is an add-on feature to Next Generation Cloud Servers and OnMetal Cloud Servers. Customers may not attach Cloud Block Storage volumes to other instances, like first generation Cloud Servers.</p>
+<p>Cloud Block Storage is multi-tenant rather than dedicated.</p>
+<p>When volumes are destroyed, Rackspace keeps that disk space unavailable until zeros have been written to the space to ensure that data is not accessible by any other customers.</p>
+<p class="last">Cloud Block Storage allows you to create snapshots that you can save, list, and restore.</p>
+</div>
+<p>Cloud Block Storage is built on the OpenStack Cinder project. For more information about OpenStack Cinder, see the <a class="reference external" href="http://developer.openstack.org/api-ref-blockstorage-v1.html">OpenStack Block Storage API v1 Reference</a>.</p>
+<p>You can find additional details about Cloud Block Storage in the <a class="reference external" href="http://docs.rackspace.com/cbs/api/v1.0/cbs-getting-started/content/Overview_d1e060.html">Cloud Block Storage Getting Started Guide</a>. This guide provides step-by-step instructions to enter the necessary URLs or commands to use the Cloud Block Storage API.</p>
+<p>For additional information about the Cloud Block Storage service, see the <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/cloud-block-storage-overview">Cloud Block Storage Overview</a>.</p>
+<p>Rackspace welcomes feedback, comments, and bug reports at <a class="reference external" href="mailto:support&#37;&#52;&#48;rackspacecloud&#46;com">support<span>&#64;</span>rackspacecloud<span>&#46;</span>com</a>.</p>
+<div class="toctree-wrapper compound">
+<span id="document-overview/intended-audience"></span><div class="section" id="intended-audience">
+<span id="id1"></span><h3>Intended audience<a class="headerlink" href="#intended-audience" title="Permalink to this headline">#</a></h3>
+<p>This guide is intended to assist software developers who want to develop applications by using the Rackspace Cloud Block Storage API. It assumes the reader has a general understanding of storage and is familiar with the following items:</p>
+<ul class="simple">
+<li>RESTful web services</li>
+<li>HTTP/1.1 conventions</li>
+<li>JSON data serialization formats</li>
+</ul>
+</div>
+<span id="document-overview/additional-resources"></span><div class="section" id="additional-resources">
+<span id="id1"></span><h3>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h3>
+<p>You can download the most current versions of the API-related documents
+from <a class="reference external" href="http://docs.rackspace.com/">docs.rackspace.com</a>.</p>
+<p>For information about Rackspace Cloud products, refer to
+<a class="reference external" href="http://www.rackspace.com/cloud/">www.rackspace.com</a>. This site also
+offers links to the Rackspace official support channels, including
+knowledge base articles, forums, phone, chat, and email.</p>
+<p>You can follow Rackspace updates and announcements via
+<a class="reference external" href="http://www.twitter.com/rackspace">Twitter</a>.</p>
+<p>This API uses standard HTTP 1.1 response codes as documented at <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP
+Status Code
+Definitions</a>.</p>
+</div>
+<span id="document-overview/api-contract-changes"></span><div class="section" id="api-contract-changes">
+<span id="id1"></span><h3>API contract changes<a class="headerlink" href="#api-contract-changes" title="Permalink to this headline">#</a></h3>
+<p>Rackspace will notify customers in release notes when and if the
+contract does change.</p>
+</div>
+<span id="document-overview/pricing-service-level"></span><div class="section" id="pricing-and-service-level">
+<span id="pricing-service-level"></span><h3>Pricing and service level<a class="headerlink" href="#pricing-and-service-level" title="Permalink to this headline">#</a></h3>
+<p>Cloud Block Storage is part of the Rackspace Cloud and your use of the Cloud Block Storage API will be billed according to the <a class="reference external" href="http://www.rackspace.com/cloud/block-storage/">pricing schedule</a>.</p>
+<p>The Service Level Agreement (SLA) for Cloud Block Storage is available on the <a class="reference external" href="http://www.rackspace.com/information/legal/cloud/sla?page">Rackspace Legal Information</a> page.</p>
+</div>
+<span id="document-overview/terminology"></span><div class="section" id="terminology">
+<span id="cbs-dg-terminology"></span><h3>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">#</a></h3>
+<p>To use the Cloud Block Storage API effectively, you should understand
+the following terms:</p>
+<div class="section" id="instance">
+<h4>Instance<a class="headerlink" href="#instance" title="Permalink to this headline">#</a></h4>
+<p>An instance is a virtual machine that runs inside the cloud.</p>
+</div>
+<div class="section" id="instance-type">
+<h4>Instance type<a class="headerlink" href="#instance-type" title="Permalink to this headline">#</a></h4>
+<p>An instance type describes the compute, memory, and storage capacity of Nova computing instances. In layman&#8217;s terms, this is the size (in terms of vCPUs, RAM, and so forth) of the virtual server that you will be launching.</p>
+</div>
+<div class="section" id="snapshot">
+<h4>Snapshot<a class="headerlink" href="#snapshot" title="Permalink to this headline">#</a></h4>
+<p>A snapshot is a point-in-time copy of the data contained in a volume.</p>
+</div>
+<div class="section" id="volume">
+<h4>Volume<a class="headerlink" href="#volume" title="Permalink to this headline">#</a></h4>
+<p>A volume is a detachable block storage device. You can think of it as a USB hard drive. It can only be attached to one instance at a time.</p>
+</div>
+<div class="section" id="volume-type">
+<h4>Volume type<a class="headerlink" href="#volume-type" title="Permalink to this headline">#</a></h4>
+<p>The volume type is the type of a block storage volume. There are two types: SATA for standard performance and SSD for high performance.</p>
+</div>
+</div>
+</div>
+</div>
+<span id="document-general-api-info/index"></span><div class="section" id="general-api-information">
+<span id="general-api-info"></span><h2>General API information<a class="headerlink" href="#general-api-information" title="Permalink to this headline">#</a></h2>
+<p>The Cloud Block Storage API is defined as a RESTful HTTP service that uses all aspects of the
+HTTP protocol, including methods, URIs, media types, and response codes. Review the topics
+in this section to learn more about these API components and how to access and use the
+API for this service.</p>
+<p>Like other products in the Rackspace Cloud suite, Cloud Block Storage shares a common token-based authentication system that allows seamless access between products and services.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All requests to authenticate against and operate the service are performed using SSL
+over HTTP (HTTPS) on TCP port 443.</p>
+</div>
+<div class="toctree-wrapper compound">
+<span id="document-general-api-info/authentication"></span><div class="section" id="authentication">
+<span id="cbs-dg-general-auth"></span><h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">#</a></h3>
+<p>Every REST request against the Rackspace Cloud Block Storage service requires the inclusion of a specific authorization token, supplied by the <code class="docutils literal"><span class="pre">X-Auth-Token</span></code> HTTP header. Customers obtain this token by first using the Rackspace Cloud Identity Service and supplying a valid user name and API access key.</p>
+<p>To authenticate, submit a <code class="docutils literal"><span class="pre">POST/v2.0/tokens</span></code> request, presenting valid Rackspace customer credentials in the message body to a Rackspace authentication endpoint.</p>
+<div class="section" id="get-your-credentials">
+<span id="cbs-dg-general-auth-cred"></span><h4>Get your credentials<a class="headerlink" href="#get-your-credentials" title="Permalink to this headline">#</a></h4>
+<p>You can use either of two sets of credentials:</p>
+<ul class="simple">
+<li>your user name and password</li>
+<li>your user name and API key</li>
+</ul>
+<p>Your user name and password are the ones that you use to login to the Cloud Control Panel. After you are logged in, you can use the Cloud Control Panel to obtain your API key.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you authenticate with username and password credentials, you can set up multi-factor authentication to add an additional level of security to your account. This feature is not available for username and API credentials. For information about setting up and using multi-factor authentication, see <a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html">Multi-factor authentication</a>.</p>
+</div>
+<p><strong>To find your API key:</strong></p>
+<ol class="arabic simple">
+<li>Log in to the Cloud Control Panel (<a class="reference external" href="https://mycloud.rackspace.com">https://mycloud.rackspace.com</a>).</li>
+<li>On the upper-right side of the top navigation pane, click your
+username.</li>
+<li>From the menu, select <strong>Account Settings</strong>.</li>
+<li>In the Login Details section of the Account Settings page, locate the
+<strong>API Key</strong> field and click <strong>Show</strong>.</li>
+<li>Copy the value of the API key and paste it into a text editor of your
+choice.</li>
+<li>Click <strong>Hide</strong> to hide the value of the API key.</li>
+</ol>
+<p>You also need your cloud account number. In the documentation, the account number is often referred to as your tenant name or tenant ID (technically, the ID is different from the name, but at Rackspace, they are the same thing). Together, three components—your user name, your API key, and your tenant ID or cloud account number—form the authentication credentials that are required to connect to the Rackspace cloud.</p>
+<p>To find your tenant ID or cloud account number, locate your user name on the upper-right side of the top navigation pane in the Cloud Control Panel. The tenant ID or account number is in parentheses just to the right of your user name.</p>
+</div>
+<div class="section" id="use-the-global-authentication-endpoint">
+<span id="cbs-dg-general-auth-global"></span><h4>Use the global authentication endpoint<a class="headerlink" href="#use-the-global-authentication-endpoint" title="Permalink to this headline">#</a></h4>
+<p>Use the following global endpoint to access the Cloud Identity Service:</p>
+<p><code class="docutils literal"><span class="pre">https://identity.api.rackspacecloud.com/v2.0/</span></code></p>
+</div>
+<div class="section" id="send-your-credentials-to-your-authentication-endpoint">
+<span id="cbs-dg-general-auth-send"></span><h4>Send your credentials to your authentication endpoint<a class="headerlink" href="#send-your-credentials-to-your-authentication-endpoint" title="Permalink to this headline">#</a></h4>
+<p>If you know your credentials and your authentication endpoint, and you can issue a <code class="docutils literal"><span class="pre">POST</span> <span class="pre">/v2.0/tokens</span></code> request in an API call, you have all the basic information that you need to use the Rackspace Cloud Identity Service.</p>
+<p>You can use <a class="reference external" href="http://curl.haxx.se/">cURL</a> to try the authentication process in two steps: 1) get a token; 2) send the token to a service.</p>
+<ol class="arabic simple">
+<li>Get an authentication token by providing your user name and either your API key or your password. Following are examples of both approaches:</li>
+</ol>
+<ul class="simple">
+<li>You can request a token by providing your user name and your API key.</li>
+</ul>
+<div class="code highlight-python"><div class="highlight"><pre>curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
+&#39;{ &quot;auth&quot;:{ &quot;RAX-KSKEY:apiKeyCredentials&quot;:{ &quot;username&quot;:&quot;yourUserName&quot;, &quot;apiKey&quot;:&quot;yourApiKey&quot; } } }&#39; -H &quot;Content-type: application/json&quot;
+</pre></div>
+</div>
+<ul class="simple">
+<li>You can request a token by providing your user name and your password.</li>
+</ul>
+<div class="code highlight-python"><div class="highlight"><pre>curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
+&#39;{&quot;auth&quot;:{&quot;passwordCredentials&quot;:{&quot;username&quot;:&quot;yourUserName&quot;,&quot;password&quot;:&quot;yourPassword&quot;}}}&#39; -H &quot;Content-type: application/json&quot;
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Review the authentication response.</li>
+</ol>
+<ul>
+<li><p class="first">Successful authentication returns a token that you can use as evidence that your identity has already been authenticated. To use the token, pass it to other services as in the <cite>X-Auth-Token</cite> header.</p>
+</li>
+<li><p class="first">If the Identity service returns a returns a 401 message with a request for additional credentials, your account requires multi-factor authentication. To complete the authentication process, submit a second POST tokens request with these multi-factor authentication credentials:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The session ID value returned in the WWW-Authenticate: OS-MF sessionId header parameter that is included in the response to the initial authentication request.</li>
+<li>The passcode from the mobile phone associated with your user account.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Example: Authentication request with multi-factor authentication credentials</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>$ curl https://identity.api.rackspacecloud.com/v2.0/tokens \
+  -X POST \
+  -d &#39;{&quot;auth&quot;: {&quot;RAX-AUTH:passcodeCredentials&quot;: {&quot;passcode&quot;:&quot;1411594&quot;}}}&#39;\
+  -H &quot;X-SessionId: $SESSION_ID&quot; \
+  -H &quot;Content-Type: application/json&quot; --verbose | python -m json.tool
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Use the authentication token to send a <strong>GET</strong> to a service you would like to use. Here is an example of passing an authentication token to the Cloud Files service, using the Cloud Files service catalog endpoint that was returned along with the token.</li>
+</ol>
+<div class="code highlight-python"><div class="highlight"><pre>curl -X GET https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+-H &#39;X-Auth-Token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39; --verbose
+</pre></div>
+</div>
+<p>Find links to language binding examples you can adapt to work with the Cloud Identity service at <a class="reference external" href="http://docs.rackspace.com/sdks/guide/content/index.html">http://docs.rackspace.com/sdks/guide/content/index.html</a>.</p>
+<p>Authentication tokens are typically valid for 24 hours. Applications should be designed to re-authenticate after receiving a 401 (Unauthorized) response from a service endpoint.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are programmatically parsing an authentication response, be aware that service names are stable for the life of the particular service and can be used as keys. You should also be aware that a user&#8217;s service catalog can include multiple uniquely-named services that perform similar functions. For example, cloudServersOpenStack is the OpenStack version of compute whereas cloudServers is the legacy version of compute. The same user can have access to both services. In the Cloud Identity Service v2.0, the service type attribute can be used as a key to recognize similar services. See the following tip.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Beginning with Rackspace Cloud Identity Service v2.0 (earlier versions were called Rackspace Cloud Authentication Service), the service catalog includes a service type attribute to identify services that perform similar functions but have different names; for example, <cite>type=&#8221;compute&#8221;</cite> identifies compute services such as cloudServers and cloudServersOpenStack. Some developers have found the service type attribute to be useful in parsing the service catalog. For Cloud Identity Service v2.0, you can see the service type attribute in the &#8220;Service Catalog in Authentication Response&#8221; samples in the <a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html">Cloud Identity Client Developer Guide</a>.</p>
+</div>
+</div>
+</div>
+<span id="document-general-api-info/role-based-access-control"></span><div class="section" id="role-based-access-control">
+<span id="id1"></span><h3>Role Based Access Control<a class="headerlink" href="#role-based-access-control" title="Permalink to this headline">#</a></h3>
+<p>Role Based Access Control (RBAC) restricts access to the capabilities of
+Rackspace Cloud services, including the Cloud Block Storage API, to
+authorized users only. RBAC enables Rackspace Cloud customers to specify
+which account users of their Cloud account have access to which Cloud
+Block Storage API service capabilities, based on roles defined by Rackspace (see Roles available for Cloud Block Storage below). The permissions to perform certain operations in Cloud Block Storage
+API – create, read, update, delete – are assigned to specific roles. The account owner user assigns these roles, either product-specific or global (multiproduct), to account users.</p>
+<div class="section" id="assigning-roles-to-account-users">
+<h4>Assigning roles to account users<a class="headerlink" href="#assigning-roles-to-account-users" title="Permalink to this headline">#</a></h4>
+<p>The account owner (identity:user-admin) can create account users on the
+account and then assign roles to those users. The roles grant the
+account users specific permissions for accessing the capabilities of the
+Cloud Block Storage service. Each account has only one account owner,
+and that role is assigned by default to any Rackspace Cloud account when
+the account is created.</p>
+<p>See the <em>Cloud Identity Client Developer Guide</em> for information about
+how to perform the following tasks:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html">Create account
+users</a></li>
+<li><a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html">Assign roles to account
+users</a></li>
+<li><a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html">Delete roles from account
+users</a></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The account admin user (identity:user-admin) role cannot hold any
+additional roles because it already has full access to all capabilities
+by default.</p>
+</div>
+</div>
+<div class="section" id="roles-available-for-cloud-block-storage">
+<span id="cbs-dg-rbac-available"></span><h4>Roles available for Cloud Block Storage<a class="headerlink" href="#roles-available-for-cloud-block-storage" title="Permalink to this headline">#</a></h4>
+<p>Three roles (admin, creator, and observer) can be used to access the
+Cloud Block Storage API specifically. The following table describes
+these roles and their permissions.</p>
+<p><strong>Table: Cloud Block Storage product roles and capabilities</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Role name</th>
+<th class="head">Role permissions</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>cbs:admin</td>
+<td>This role provides Create, Read, Update, and Delete
+permissions in Cloud Block Storage, where access is granted.</td>
+</tr>
+<tr class="row-odd"><td>cbs:creator</td>
+<td>This role provides Create, Read and Update permissions in
+Cloud Block Storage, where access is granted.</td>
+</tr>
+<tr class="row-even"><td>cbs:observer</td>
+<td>This role provides Read permission in Cloud Block Storage,
+where access is granted.</td>
+</tr>
+</tbody>
+</table>
+<p>Additionally, two multiproduct roles apply to all products. Users with
+multiproduct roles inherit access to future products when those products
+become RBAC-enabled. The following table describes these roles and their
+permissions.</p>
+<p><strong>Table: Multiproduct (global) roles and permissions</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Role name</td>
+<td>Role permissions</td>
+</tr>
+<tr class="row-even"><td>admin</td>
+<td>This role provides Create, Read, Update, and Delete permissions
+in all products, where access is granted.</td>
+</tr>
+<tr class="row-odd"><td>observer</td>
+<td>This role provides Read permission in all products, where access
+is granted.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="resolving-conflicts-between-rbac-multiproduct-vs-custom-product-specific-roles">
+<h4>Resolving conflicts between RBAC multiproduct vs. custom (product-specific) roles<a class="headerlink" href="#resolving-conflicts-between-rbac-multiproduct-vs-custom-product-specific-roles" title="Permalink to this headline">#</a></h4>
+<p>The account owner can set roles for both multiproduct and Cloud Block
+Storage scope, and it is important to understand how any potential
+conflicts among these roles are resolved. When two roles appear to
+conflict, the role that provides the more extensive permissions takes
+precedence. Therefore, admin roles take precedence over observer and
+creator roles, because admin roles provide more permissions.</p>
+<p>The following shows two examples of how potential conflicts
+between user roles in the Control Panel are resolved.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="25%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Permission configuration</th>
+<th class="head">View of permission
+in the control panel</th>
+<th class="head">Can the user perform product admin
+functions in the Control Panel?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>User is assigned the following
+roles: multiproduct observer
+and Cloud Block Storage admin</td>
+<td>Appears that the user
+has only the
+multiproduct observer
+role</td>
+<td>Yes, for Cloud Block Storage only.
+The user has the observer role for
+the rest of the products.</td>
+</tr>
+<tr class="row-odd"><td>User is assigned the following
+roles: multiproduct admin and
+Cloud Block Storage observer</td>
+<td>Appears that the user
+has only the
+multiproduct admin
+role</td>
+<td>Yes, for all of the products.
+The Cloud Block Storage observer
+is ignored.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rbac-permissions-cross-reference-to-cloud-block-storage-api-operations">
+<h4>RBAC permissions cross-reference to Cloud Block Storage API operations<a class="headerlink" href="#rbac-permissions-cross-reference-to-cloud-block-storage-api-operations" title="Permalink to this headline">#</a></h4>
+<p>API operations for Cloud Block Storage may or may not be available to
+all roles. To see which operations are permitted to invoke which calls,
+please review the <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac">Permissions Matrix for Role-Based Access Control</a>.</p>
+</div>
+</div>
+<span id="document-general-api-info/service-access-endpoints"></span><div class="section" id="service-access-endpoints">
+<span id="id1"></span><h3>Service access endpoints<a class="headerlink" href="#service-access-endpoints" title="Permalink to this headline">#</a></h3>
+<p>The Cloud Block Storage service is a regionalized service. The user of
+the service is therefore responsible for appropriate replication,
+caching, and overall maintenance of Cloud Block Storage data across
+regional boundaries to other Cloud Block Storage servers.</p>
+<p>To help you decide which regionalized endpoint to use, read the
+Knowledge Center article about special considerations for choosing a
+data center at <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/about-regions">About
+Regions</a>.</p>
+<p>You can find the available service access/endpoints for Cloud Block
+Storage summarized in the table below.</p>
+<p><strong>Table: Regionalized service endpoints</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Region</th>
+<th class="head">Endpoint</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Chicago (ORD)</td>
+<td><a class="reference external" href="https://ord.blockstorage.api.rackspacecloud.com">https://ord.blockstorage.api.rackspacecloud.com</a>
+/v1/1234/</td>
+</tr>
+<tr class="row-odd"><td>Dallas/Ft. Worth (DFW)</td>
+<td><a class="reference external" href="https://dfw.blockstorage.api.rackspacecloud.com">https://dfw.blockstorage.api.rackspacecloud.com</a>
+/v1/1234/</td>
+</tr>
+<tr class="row-even"><td>Northern Virginia (IAD)</td>
+<td><a class="reference external" href="https://iad.blockstorage.api.rackspacecloud.com">https://iad.blockstorage.api.rackspacecloud.com</a>
+/v1/1234/</td>
+</tr>
+<tr class="row-odd"><td>London (LON)</td>
+<td><a class="reference external" href="https://lon.blockstorage.api.rackspacecloud.com">https://lon.blockstorage.api.rackspacecloud.com</a>
+/v1/1234/</td>
+</tr>
+<tr class="row-even"><td>Sydney (SYD)</td>
+<td><a class="reference external" href="https://syd.blockstorage.api.rackspacecloud.com">https://syd.blockstorage.api.rackspacecloud.com</a>
+/v1/1234/</td>
+</tr>
+<tr class="row-odd"><td>Hong Kong (HKG)</td>
+<td><a class="reference external" href="https://hkg.blockstorage.api.rackspacecloud.com">https://hkg.blockstorage.api.rackspacecloud.com</a>
+/v1/1234/</td>
+</tr>
+</tbody>
+</table>
+<p>Replace the sample account ID number, <code class="docutils literal"><span class="pre">1234</span></code>, with your actual
+account number returned as part of the authentication service response.</p>
+<p>You will find the actual account number after the final <strong>/</strong> in the
+<code class="docutils literal"><span class="pre">publicURL</span></code> field returned by the authentication response.</p>
+</div>
+<span id="document-general-api-info/cloud-block-storage-service-versions"></span><div class="section" id="cloud-block-storage-service-versions">
+<span id="contract-version"></span><h3>Cloud Block Storage service versions<a class="headerlink" href="#cloud-block-storage-service-versions" title="Permalink to this headline">#</a></h3>
+<p>The Cloud Block Storage version defines the contract and build
+information for the API.</p>
+<p>The contract version denotes the data model and behavior that the API
+supports. The requested contract version is included in all request
+URLs. Different contract versions of the API may be available at any
+given time and are not guaranteed to be compatible with one another.</p>
+<p><strong>Example: Request URL (contract version is v1)</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>https://dfw.blockstorage.api.rackspacecloud.com/v1/1234/
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This document pertains to contract v1.</p>
+</div>
+</div>
+<span id="document-general-api-info/request-and-response-types"></span><div class="section" id="request-and-response-types">
+<span id="request-response-types"></span><h3>Request and response types<a class="headerlink" href="#request-and-response-types" title="Permalink to this headline">#</a></h3>
+<p>The Cloud Block Storage API supports both the JSON and XML data
+serialization formats. The request format is specified using the
+<code class="docutils literal"><span class="pre">Content-Type</span></code> header and is required for calls that have a request
+body. The response format can be specified in requests either by using
+the <code class="docutils literal"><span class="pre">Accept</span></code> header or by adding an <code class="docutils literal"><span class="pre">.xml</span></code> or <code class="docutils literal"><span class="pre">.json</span></code> extension to
+the request URI. Note that it is possible for a response to be
+serialized using a format different from the request. If no response
+format is specified, JSON is the default. If conflicting formats are
+specified using both an <code class="docutils literal"><span class="pre">Accept</span></code> header and a query extension, the
+query extension takes precedence.</p>
+<p><strong>Table: Response formats</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="35%" />
+<col width="33%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Format</th>
+<th class="head">Accept header</th>
+<th class="head">Query extension</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>JSON</td>
+<td>application/json</td>
+<td>.json</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>XML</td>
+<td>application/xml</td>
+<td>.xml</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>In the request example below, notice that <code class="docutils literal"><span class="pre">Content-Type</span></code> is set to
+<code class="docutils literal"><span class="pre">application/json</span></code>, but <code class="docutils literal"><span class="pre">application/xml</span></code> is requested via the
+<code class="docutils literal"><span class="pre">Accept</span></code> header.</p>
+<p><strong>Example: Request with headers (listing volume types)</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>GET /v1/441446/types HTTP/1.1
+Host: dfw.blockstorage.api.rackspacecloud.com
+X-Auth-Token: eaaafd18-0fed-4b3a-81b4-663c99ec1cbb
+Content-Type: application/json
+Accept: application/xml
+</pre></div>
+</div>
+<p>An XML response format is returned.</p>
+<p><strong>Example: XML response with headers</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+Date: Fri, 20 Jul 2012 20:32:13 GMT
+Content-Length: 187
+Content-Type: application/xml
+X-Compute-Request-Id: req-8e0295cd-a283-46e4-96da-cae05cbfd1c7
+
+&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
+&lt;volume_types&gt;
+    &lt;volume_type id=&quot;1&quot; name=&quot;SATA&quot;&gt;
+        &lt;extra_specs/&gt;
+    &lt;/volume_type&gt;
+    &lt;volume_type id=&quot;2&quot; name=&quot;SSD&quot;&gt;
+        &lt;extra_specs/&gt;
+    &lt;/volume_type&gt;
+&lt;/volume_types&gt;
+</pre></div>
+</div>
+</div>
+<span id="document-general-api-info/absolute-limits"></span><div class="section" id="absolute-limits">
+<span id="id1"></span><h3>Absolute limits<a class="headerlink" href="#absolute-limits" title="Permalink to this headline">#</a></h3>
+<p>All accounts, by default, have a preconfigured set of thresholds (or
+limits) to manage capacity and prevent abuse of the system. Absolute
+limits are fixed.</p>
+<p>Refer to the following table for the absolute limits that are set.</p>
+<p><strong>Table: Absolute limits</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="27%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Limit</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Standard Performance Storage</td>
+<td>Maximum amount of
+standard
+performance
+storage per
+region for
+applications that
+just need
+additional
+storage on their
+Cloud Server.</td>
+<td>10 TB or 50 volumes</td>
+</tr>
+<tr class="row-odd"><td>High Performance Storage</td>
+<td>Maximum amount of
+High performance
+storage per region
+for databases and
+high performance
+applications
+leveraging solid
+state drives for
+speed and
+performance.</td>
+<td>10 TB or 50 volumes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span id="document-general-api-info/cloud-block-storage-quotas"></span><div class="section" id="cloud-block-storage-quotas">
+<span id="quotas"></span><h3>Cloud Block Storage quotas<a class="headerlink" href="#cloud-block-storage-quotas" title="Permalink to this headline">#</a></h3>
+<p>All new Cloud Block Storage users are assigned default quotas that limit
+the amount of block storage that can be provisioned in each region.
+Default quotas enable users to provision up to 10 TB of SATA and 10 TB
+of SSD and are primarily used to help with capacity planning and to
+prevent system abuse. If your application requires more storage or
+volumes than the default quotas, simply submit a support request to ask
+for an increase. In your request, be sure to include the following
+information:</p>
+<ul class="simple">
+<li>Total storage amount that you need (in GBs or TBs)</li>
+<li>Storage type (SATA or SSD)</li>
+<li>Region (for example, DFW or LON)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Cloud Block Storage quotas are independent from any other account quotas that you might have. In addition, Cloud Block Storage no longer supports account quotas (previously shared by SATA and SSD) or number-of-volumes quotas. Both of these quotas were replaced by the storage-type quotas, which are specific to SATA and SSD per account per region.</p>
+</div>
+<p>You can use the OpenStack Cinder client or API to see your current block
+storage quota and your current utilization against it.</p>
+<p>For Cinder client users, use the following command:</p>
+<div class="code highlight-python"><div class="highlight"><pre>$ cinder quota-usage yourAccountID
+</pre></div>
+</div>
+<p>Your account ID or account number is often referred to as your tenant ID or tenant name. For information about how to find your account ID, see the Authentication section.</p>
+<p>This results in a quota listing similar to the following example.</p>
+<p><strong>Example: Response showing quota and usage information</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>+----------------+--------+----------+-------+
+|      Type      | In_use | Reserved | Limit |
++----------------+--------+----------+-------+
+|   gigabytes    |  100   |    0     |   -1  |
+| gigabytes_SATA |  100   |    0     | 10240 |
+| gigabytes_SSD  |   0    |    0     | 10240 |
+|   snapshots    |  12    |    0     |   -1  |
+| snapshots_SATA |   1    |    0     |   -1  |
+| snapshots_SSD  |   0    |    0     |   -1  |
+|    volumes     |   1    |    0     |   -1  |
+|  volumes_SATA  |   1    |    0     |   -1  |
+|  volumes_SSD   |   0    |    0     |   -1  |
++----------------+--------+----------+-------+
+</pre></div>
+</div>
+<p>The following table describes the information in the quota listing.</p>
+<p><strong>Table: Cloud Block Storage quota properties</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property name</th>
+<th class="head">Value description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>gigabytes</td>
+<td>Volume gigabytes allowed for each tenant. Gigabytes for
+SATA and SSD are given.</td>
+</tr>
+<tr class="row-odd"><td>snapshots</td>
+<td>Volume snapshots allowed for each tenant. Snapshots for
+SATA and SSD are given.</td>
+</tr>
+<tr class="row-even"><td>volumes</td>
+<td>Volumes allowed for each tenant. Volumes for SATA and SSD
+are given.</td>
+</tr>
+</tbody>
+</table>
+<p>To use the Cinder API, you can use a cURL request similar to the
+following example to see your current block storage quota and your
+current activity against it. If you use the <code class="docutils literal"><span class="pre">usage=True</span></code> query
+parameter, the response includes the usage information. If you do not
+include the query parameter, the response includes only quota information.</p>
+<p><strong>Example: cURL request to show quota and usage information</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/os-quota-sets/yourAccountID?usage=True \
+-H &quot;X-Auth-Project-Id: yourAccountID&quot; \
+-H &quot;User-Agent: python-cinderclient&quot; \
+-H &quot;Accept: application/json&quot; \
+-H &quot;X-Auth-Token: yourAuthToken&quot;
+</pre></div>
+</div>
+<p><strong>Example: Response from the cURL request to show quota and usage information</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;quota_set&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;gigabytes&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;in_use&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="s">&quot;limit&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;reserved&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="s">&quot;gigabytes_SATA&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;in_use&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="s">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">10240</span><span class="p">,</span>
+            <span class="s">&quot;reserved&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="s">&quot;gigabytes_SSD&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;in_use&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">10240</span><span class="p">,</span>
+            <span class="s">&quot;reserved&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;yourAccountID&quot;</span><span class="p">,</span>
+        <span class="s">&quot;snapshots&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;in_use&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+            <span class="s">&quot;limit&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;reserved&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="s">&quot;snapshots_SATA&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;in_use&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;limit&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;reserved&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="s">&quot;snapshots_SSD&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;in_use&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s">&quot;limit&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;reserved&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="s">&quot;volumes&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;in_use&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;limit&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;reserved&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="s">&quot;volumes_SATA&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;in_use&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;limit&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;reserved&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="s">&quot;volumes_SSD&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;in_use&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s">&quot;limit&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;reserved&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<span id="document-general-api-info/date-and-time-format"></span><div class="section" id="date-and-time-format">
+<span id="date-time-formats"></span><h3>Date and time format<a class="headerlink" href="#date-and-time-format" title="Permalink to this headline">#</a></h3>
+<p>The Cloud Block Storage service uses an ISO-8601 compliant date format
+for the display and consumption of date/time values.</p>
+<p><strong>Example: Service date and time format</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ
+</pre></div>
+</div>
+<p>May 19th, 2011 at 8:07:08 AM, GMT-5 would have the following format:</p>
+<div class="code highlight-python"><div class="highlight"><pre>2011-05-19T08:07:08-05:00
+</pre></div>
+</div>
+<p>The following table describes the date time format codes.</p>
+<p><strong>Table: Explanation of date and time format codes</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Code</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>yyyy</td>
+<td>Four digit year</td>
+</tr>
+<tr class="row-odd"><td>MM</td>
+<td>Two digit month</td>
+</tr>
+<tr class="row-even"><td>dd</td>
+<td>Two digit day of month</td>
+</tr>
+<tr class="row-odd"><td>T</td>
+<td>Separator for date/time</td>
+</tr>
+<tr class="row-even"><td>HH</td>
+<td>Two digit hour of day (00-23)</td>
+</tr>
+<tr class="row-odd"><td>mm</td>
+<td>Two digit minutes of hour</td>
+</tr>
+<tr class="row-even"><td>ss</td>
+<td>Two digit seconds of the minute</td>
+</tr>
+<tr class="row-odd"><td>SSS</td>
+<td>Three digit milliseconds of the second</td>
+</tr>
+<tr class="row-even"><td>Z</td>
+<td>RFC 822 timezone</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span id="document-general-api-info/faults"></span><div class="section" id="faults">
+<span id="id1"></span><h3>Faults<a class="headerlink" href="#faults" title="Permalink to this headline">#</a></h3>
+<p>When an error occurs, the Cloud Block Storage service returns a fault
+object containing an HTTP error response code that denotes the type of
+error. The response body returns additional information about the fault.</p>
+<p>The following table lists possible fault types with their associated
+error codes and descriptions.</p>
+<p><strong>Table: Faults</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="31%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Fault type</th>
+<th class="head">Associated error code</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>badRequest</td>
+<td>400</td>
+<td>There was one or more errors
+in the user request.</td>
+</tr>
+<tr class="row-odd"><td>unauthorized</td>
+<td>401</td>
+<td>The supplied token is not
+authorized to access the
+resources, either it&#8217;s
+expired or invalid.</td>
+</tr>
+<tr class="row-even"><td>forbidden</td>
+<td>403</td>
+<td>Access to the requested
+resource was denied.</td>
+</tr>
+<tr class="row-odd"><td>itemNotFound</td>
+<td>404</td>
+<td>The back-end services did not
+find anything matching the
+Request-URI.</td>
+</tr>
+<tr class="row-even"><td>badMethod</td>
+<td>405</td>
+<td>The requested method is not
+allowed for this resource.</td>
+</tr>
+<tr class="row-odd"><td>invalidImage</td>
+<td>412</td>
+<td>This fault is related to
+creating volumes for the boot
+from volume feature. The
+uncompressed image size must
+be 127 GB or less.</td>
+</tr>
+<tr class="row-even"><td>overLimit</td>
+<td>413</td>
+<td>Either the number of entities
+in the request is larger than
+allowed limits, or the user
+has exceeded allowable
+request rate limits. See the
+details element for more
+specifics. Contact support if
+you think you need higher
+request rate limits.</td>
+</tr>
+<tr class="row-odd"><td>badMediaType</td>
+<td>415</td>
+<td>The requested content type is
+not supported by this service</td>
+</tr>
+<tr class="row-even"><td>unprocessableEntity</td>
+<td>422</td>
+<td>The requested resource could
+not be processed on at the
+moment.</td>
+</tr>
+<tr class="row-odd"><td>instanceFault</td>
+<td>500</td>
+<td>This is a generic server error
+and the message contains the
+reason for the error. This
+error could wrap several error
+messages and is a catch all.</td>
+</tr>
+<tr class="row-even"><td>notImplemented</td>
+<td>501</td>
+<td>The requested method or
+resource is not implemented.</td>
+</tr>
+<tr class="row-odd"><td>serviceUnavailable</td>
+<td>503</td>
+<td>The Cloud Block Storage
+service is not available.</td>
+</tr>
+</tbody>
+</table>
+<p>The following <code class="docutils literal"><span class="pre">instanceFault</span></code> examples show errors when the server has
+erred or cannot perform the requested operation.</p>
+<p><strong>Example: instanceFault response: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 500 Internal Server Error
+Content-Type: application/xml
+Content-Length: 121
+Date: Mon, 28 Nov 2011 18:19:37 GMT
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;instanceFault code=&quot;500&quot;
+    xmlns=&quot;http://docs.rackspace.com/cbs/api/v1.0&quot;&gt;
+    &lt;message&gt; The server has either erred or is incapable of
+        performing the requested operation. &lt;/message&gt;
+&lt;/instanceFault&gt;
+</pre></div>
+</div>
+<p><strong>Example: fault response: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 500 Internal Server Error
+Content-Length: 120
+Content-Type: application/json; charset=UTF-8
+Date: Tue, 29 Nov 2011 00:33:48 GMT
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+   <span class="s">&quot;instance_fault&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;code&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span>
+      <span class="s">&quot;message&quot;</span><span class="p">:</span><span class="s">&quot;The server has either erred or is incapable of performing the requested operation.&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The error code (<code class="docutils literal"><span class="pre">code</span></code>) is returned in the body of the response for
+convenience. The <code class="docutils literal"><span class="pre">message</span></code> element returns a human-readable message
+that is appropriate for display to the end user. The <code class="docutils literal"><span class="pre">details</span></code> element
+is optional and may contain information that is useful for tracking down
+an error, such as a stack trace. The <code class="docutils literal"><span class="pre">details</span></code> element may or may not
+be appropriate for display to an end user, depending on the role and
+experience of the end user.</p>
+<p>The root element of the fault (for example, <code class="docutils literal"><span class="pre">instanceFault</span></code>) may
+change depending on the type of error.</p>
+<p>The following <code class="docutils literal"><span class="pre">badRequest</span></code> examples show errors when the volume size
+is invalid.</p>
+<p><strong>Example: badRequest fault on volume size errors: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 400 None
+Content-Type: application/xml
+Content-Length: 121
+Date: Mon, 28 Nov 2011 18:19:37 GMT
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;badRequest code=&quot;400&quot; xmlns=&quot;http://docs.rackspace.com/cbs/api/v1.0&quot;&gt;
+    &lt;message&gt; Volume &#39;size&#39; needs to be a positive integer value, -1.0
+        cannot be accepted. &lt;/message&gt;
+&lt;/badRequest&gt;
+</pre></div>
+</div>
+<p><strong>Example: badRequest fault on volume size errors: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 400 None
+Content-Length: 120
+Content-Type: application/json; charset=UTF-8
+Date: Tue, 29 Nov 2011 00:33:48 GMT
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+   <span class="s">&quot;badRequest&quot;</span><span class="p">:{</span>
+      <span class="s">&quot;code&quot;</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span>
+      <span class="s">&quot;message&quot;</span><span class="p">:</span><span class="s">&quot;Volume &#39;size&#39; needs to be a positive integer value, -1.0 cannot be accepted.&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The next examples show <code class="docutils literal"><span class="pre">itemNotFound</span></code> errors.</p>
+<p><strong>Example: itemNotFound fault: XML</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 404 Not Found
+Content-Length: 147
+Content-Type: application/xml; charset=UTF-8
+Date: Mon, 28 Nov 2011 19:50:15 GMT
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;itemNotFound code=&quot;404&quot;
+    xmlns=&quot;http://docs.rackspace.com/cbs/api/v1.0&quot;&gt;
+    &lt;message&gt; The resource could not be found. &lt;/message&gt;
+&lt;/itemNotFound&gt;
+</pre></div>
+</div>
+<p><strong>Example: itemNotFound fault: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 404 Not Found
+Content-Length: 78
+Content-Type: application/json; charset=UTF-8
+Date: Tue, 29 Nov 2011 00:35:24 GMT
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;item_not_found&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;code&quot;</span><span class="p">:</span> <span class="mi">404</span><span class="p">,</span>
+        <span class="s">&quot;message&quot;</span><span class="p">:</span> <span class="s">&quot;The resource could not be found.&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-api-operations/index"></span><div class="section" id="api-operations">
+<span id="api-operations-index"></span><h2>API Operations<a class="headerlink" href="#api-operations" title="Permalink to this headline">#</a></h2>
+<p>The Cloud Block Storage API allows you to manage volumes and snapshots.</p>
+<div class="toctree-wrapper compound">
+<span id="document-api-operations/cbs-volumes-operations"></span><div class="section" id="volumes">
+<span id="cbs-volumes-operations"></span><h3>Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">#</a></h3>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#create-volume" id="id11">Create volume</a></li>
+<li><a class="reference internal" href="#list-volumes" id="id12">List volumes</a></li>
+<li><a class="reference internal" href="#list-volumes-detailed" id="id13">List volumes (detailed)</a></li>
+<li><a class="reference internal" href="#show-volume" id="id14">Show volume</a></li>
+<li><a class="reference internal" href="#update-volume" id="id15">Update volume</a></li>
+<li><a class="reference internal" href="#delete-volume" id="id16">Delete volume</a></li>
+</ul>
+</div>
+<p>A volume is a detachable block storage device. You can think of it as a USB hard drive. You can attach a volume to one instance at a time.</p>
+<p>When you make an API call to create, list, or delete volumes, the following volume status values are possible:</p>
+<ul class="simple">
+<li>CREATING: The volume is being created.</li>
+<li>AVAILABLE: The volume is ready to be attached to any instance.</li>
+<li>ATTACHING: The volume is attaching to an instance.</li>
+<li>IN-USE: The volume is attached to an instance.</li>
+<li>DELETING: The volume is being deleted.</li>
+<li>ERROR: An error occurred with the volume.</li>
+<li>ERROR_DELETING: An error occurred during volume deletion.</li>
+</ul>
+<div class="section" id="create-volume">
+<span id="post-create-volume-v1-tenant-id-volumes"></span><h4><a class="toc-backref" href="#id11">Create volume</a><a class="headerlink" href="#create-volume" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">POST</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span>
+</pre></div>
+</div>
+<p>Creates a volume.</p>
+<p>Following are several considerations when using this operation:</p>
+<ul class="simple">
+<li>When you use <code class="docutils literal"><span class="pre">source_volid</span></code> for volume cloning, note that this feature currently has the following constraints. Concurrent clone requests are queued for processing. When one clone request completes, the next clone request in the queue starts.</li>
+<li>Note that you use the <code class="docutils literal"><span class="pre">os-volume_attachments</span></code> API call (/servers/{server_id}/os-volume_attachments) to attach the new volume to your Next Generation Cloud Server (with the specified {server_id}). Refer to the <a class="reference external" href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Volume_Attachment_Actions.html">Next Generation Cloud Servers Developer Guide</a> for details of the call. Once the volume is attached, the new volume appears as another device on the Next Generation Cloud Server. It can then be partitioned, formatted, and mounted for use on the system.</li>
+<li>To create a bootable volume, include the <code class="docutils literal"><span class="pre">imageRef</span></code> parameter in the request. The corresponding response parameter is <code class="docutils literal"><span class="pre">image_id</span></code>. For more information about this feature, see the Knowledge Center article <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/boot-a-server-from-a-cloud-block-storage-volume">Boot a server from a Cloud Block Storage volume</a>.</li>
+</ul>
+<p>The examples in this section create a 100 gibibytes (GiB) SATA volume called vol-001.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="request">
+<h5>Request<a class="headerlink" href="#request" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+</tbody>
+</table>
+<p>This table shows the body parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>volume</td>
+<td>String <em>(Required)</em></td>
+<td>A partial representation
+of a volume used in the
+creation process. This
+parameter is required
+for this operation.</td>
+</tr>
+<tr class="row-odd"><td>size</td>
+<td>Int <em>(Required)</em></td>
+<td>The size of the volume,
+in gibibytes (GiB). This
+is a required parameter.
+Note: When creating a
+volume from a snapshot,
+the volume size must be
+greater than the
+snapshot size.</td>
+</tr>
+<tr class="row-even"><td>display_description</td>
+<td>String <em>(Optional)</em></td>
+<td>A description of the
+volume. This parameter
+is optional.</td>
+</tr>
+<tr class="row-odd"><td>display_name</td>
+<td>String <em>(Optional)</em></td>
+<td>The name of the volume.
+This parameter is
+optional.</td>
+</tr>
+<tr class="row-even"><td>snapshot_id</td>
+<td>Uuid <em>(Optional)</em></td>
+<td>The snapshot from which
+to create a volume. This
+parameter is optional.</td>
+</tr>
+<tr class="row-odd"><td>volume_type</td>
+<td>String <em>(Optional)</em></td>
+<td>The type of volume to
+create, either SATA or
+SSD. This parameter is
+optional. If not
+defined, the default,
+SATA, is used.</td>
+</tr>
+<tr class="row-even"><td>source_volid</td>
+<td>Uuid <em>(Optional)</em></td>
+<td>The source identifier of
+an existing Cloud Block
+Storage volume that you
+want to clone (copy) to
+create a new volume.
+This parameter is
+optional.</td>
+</tr>
+<tr class="row-odd"><td>availability_zone</td>
+<td>String <em>(Optional)</em></td>
+<td>This parameter is no
+longer used. Therefore,
+you can supply any value
+for
+<code class="docutils literal"><span class="pre">availability_zone</span></code>.
+If you specify no value,
+the default is <code class="docutils literal"><span class="pre">nova</span></code>.</td>
+</tr>
+<tr class="row-even"><td>metadata</td>
+<td>String <em>(Optional)</em></td>
+<td>This optional parameter
+is available if you want
+to set any metadata
+values on the volume.</td>
+</tr>
+<tr class="row-odd"><td>imageRef</td>
+<td>Uuid <em>(Optional)</em></td>
+<td>Specifying this
+parameter is required to
+create a bootable
+volume. This parameter
+is the ID of the image
+from which you want to
+create the volume.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Create volume: XML request</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;volume xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
+        display_name=&quot;vol-001&quot;
+        display_description=&quot;Another volume.&quot;
+        size=&quot;100&quot;
+        source_volid=&quot;e3611474-589b-46b7-9bdf-5555e2e4999b&quot;
+        volume_type=&quot;SATA&quot;&gt;
+
+&lt;/volume&gt;
+</pre></div>
+</div>
+<p><strong>Example Create volume: JSON request</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;volume&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;vol-001&quot;</span><span class="p">,</span>
+        <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;Another volume.&quot;</span><span class="p">,</span>
+        <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s">&quot;source_volid&quot;</span><span class="p">:</span> <span class="s">&quot;e3611474-589b-46b7-9bdf-5555e2e4999b&quot;</span><span class="p">,</span>
+        <span class="s">&quot;volume_type&quot;</span><span class="p">:</span> <span class="s">&quot;SATA&quot;</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="response">
+<h5>Response<a class="headerlink" href="#response" title="Permalink to this headline">#</a></h5>
+<p><strong>Example Create volume: XML response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
+&lt;volume xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
+        status=&quot;available&quot;
+        display_name=&quot;vol-001&quot;
+        attachments=&quot;&quot;
+        availability_zone=&quot;nova&quot;
+        bootable=&quot;false&quot;
+        created_at=&quot;2012-02-14T20:53:07Z&quot;
+        display_description=&quot;Another volume.&quot;
+        image_id=&quot;null&quot;
+        volume_type=&quot;SATA&quot;
+        snapshot_id=&quot;null&quot;
+        source_volid=&quot;e3611474-589b-46b7-9bdf-5555e2e4999b&quot;
+        metadata=&quot;&quot;
+        id=&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot;
+        size=&quot;100&quot;/&gt;
+</pre></div>
+</div>
+<p><strong>Example Create volume: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;volume&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;available&quot;</span><span class="p">,</span>
+    <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;vol-001&quot;</span><span class="p">,</span>
+    <span class="s">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s">&quot;availability_zone&quot;</span><span class="p">:</span> <span class="s">&quot;nova&quot;</span><span class="p">,</span>
+    <span class="s">&quot;bootable&quot;</span><span class="p">:</span> <span class="s">&quot;false&quot;</span><span class="p">,</span>
+    <span class="s">&quot;created_at&quot;</span><span class="p">:</span> <span class="s">&quot;2012-02-14T20:53:07Z&quot;</span><span class="p">,</span>
+    <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;Another volume.&quot;</span><span class="p">,</span>
+    <span class="s">&quot;image_id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;volume_type&quot;</span><span class="p">:</span> <span class="s">&quot;SATA&quot;</span><span class="p">,</span>
+    <span class="s">&quot;snapshot_id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;source_volid&quot;</span><span class="p">:</span> <span class="s">&quot;e3611474-589b-46b7-9bdf-5555e2e4999b&quot;</span><span class="p">,</span>
+    <span class="s">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot;</span><span class="p">,</span>
+    <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">100</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="list-volumes">
+<span id="get-list-volumes-v1-tenant-id-volumes"></span><h4><a class="toc-backref" href="#id12">List volumes</a><a class="headerlink" href="#list-volumes" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span>
+</pre></div>
+</div>
+<p>Lists summary information for all Cloud Block Storage volumes that the tenant who submits the request can access.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id1">
+<h5>Request<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation does not accept a request body.</p>
+</div>
+<div class="section" id="id2">
+<h5>Response<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h5>
+<p><strong>Example List volumes: XML response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;volumes xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;&gt;
+    &lt;volume xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
+            id=&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot;
+            display_name=&quot;vol-001&quot;
+            display_description=&quot;Another volume.&quot;
+            status=&quot;active&quot;
+            size=&quot;100&quot;
+            volume_type=&quot;SATA&quot;
+            createdAt=&quot;2012-02-14T20:53:07Z&quot;&gt;
+    &lt;/volume&gt;
+    &lt;volume xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
+            id=&quot;76b8950a-8594-4e5b-8dce-0dfa9c696358&quot;
+            display_name=&quot;vol-002&quot;
+            display_description=&quot;Yet another volume.&quot;
+            status=&quot;active&quot;
+            size=&quot;100&quot;
+            volume_type=&quot;SATA&quot;
+            createdAt=&quot;2012-03-15T19:10:03Z&quot; /&gt;
+&lt;/volumes&gt;
+</pre></div>
+</div>
+<p><strong>Example List volumes: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;volumes&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot;</span><span class="p">,</span>
+            <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;vol-001&quot;</span><span class="p">,</span>
+            <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;Another volume.&quot;</span><span class="p">,</span>
+            <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="s">&quot;volume_type&quot;</span><span class="p">:</span> <span class="s">&quot;SATA&quot;</span><span class="p">,</span>
+            <span class="s">&quot;snapshot_id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s">&quot;2012-02-14T20:53:07Z&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;76b8950a-8594-4e5b-8dce-0dfa9c696358&quot;</span><span class="p">,</span>
+            <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;vol-002&quot;</span><span class="p">,</span>
+            <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;Yet another volume.&quot;</span><span class="p">,</span>
+            <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="s">&quot;volume_type&quot;</span><span class="p">:</span> <span class="s">&quot;SATA&quot;</span><span class="p">,</span>
+            <span class="s">&quot;snapshot_id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s">&quot;2012-03-15T19:10:03Z&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="list-volumes-detailed">
+<span id="get-list-volumes-detailed-v1-tenant-id-volumes-detail"></span><h4><a class="toc-backref" href="#id13">List volumes (detailed)</a><a class="headerlink" href="#list-volumes-detailed" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span><span class="o">/</span><span class="n">detail</span>
+</pre></div>
+</div>
+<p>Lists detailed information for all Cloud Block Storage volumes that the tenant who submits the request can access.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id3">
+<h5>Request<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation does not accept a request body.</p>
+</div>
+<div class="section" id="id4">
+<h5>Response<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h5>
+<p><strong>Example List volumes (detailed): XML response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
+&lt;volumes xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;&gt;
+    &lt;volume xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
+        status=&quot;available&quot; name=&quot;vol-004&quot; availability_zone=&quot;nova&quot;
+        created_at=&quot;2013-02-25 06:36:28&quot; description=&quot;Another volume.&quot;
+        volume_type=&quot;None&quot; source_volid=&quot;None&quot; snapshot_id=&quot;None&quot;
+        id=&quot;45baf976-c20a-4894-a7c3-c94b7376bf55&quot; size=&quot;1&quot;
+        tenant_id=&quot;0c2eba2c5af04d3f9e9d0d410b371fde&quot;
+        host=&quot;ip-10-168-107-25&quot;&gt;
+        &lt;attachments/&gt;
+        &lt;metadata&gt;
+            &lt;meta key=&quot;contents&quot;&gt;junk&lt;/meta&gt;
+        &lt;/metadata&gt;
+    &lt;/volume&gt;
+    &lt;volume status=&quot;available&quot; name=&quot;vol-003&quot; availability_zone=&quot;nova&quot;
+        created_at=&quot;2013-02-25 02:40:21&quot;
+        description=&quot;This is yet, another volume.&quot; volume_type=&quot;None&quot;
+        source_volid=&quot;None&quot; snapshot_id=&quot;None&quot;
+        id=&quot;5aa119a8-d25b-45a7-8d1b-88e127885635&quot; size=&quot;1&quot;
+        tenant_id=&quot;0c2eba2c5af04d3f9e9d0d410b371fde&quot;
+        host=&quot;ip-10-168-107-25&quot;&gt;
+        &lt;attachments/&gt;
+        &lt;metadata&gt;
+            &lt;meta key=&quot;contents&quot;&gt;not junk&lt;/meta&gt;
+        &lt;/metadata&gt;
+    &lt;/volume&gt;
+&lt;/volumes&gt;
+</pre></div>
+</div>
+<p><strong>Example List volumes (detailed): JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;volumes&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot;</span><span class="p">,</span>
+            <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;vol-001&quot;</span><span class="p">,</span>
+            <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;Another volume.&quot;</span><span class="p">,</span>
+            <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="s">&quot;volume_type&quot;</span><span class="p">:</span> <span class="s">&quot;SATA&quot;</span><span class="p">,</span>
+            <span class="s">&quot;snapshot_id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s">&quot;2012-02-14T20:53:07Z&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;76b8950a-8594-4e5b-8dce-0dfa9c696358&quot;</span><span class="p">,</span>
+            <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;vol-002&quot;</span><span class="p">,</span>
+            <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;Yet another volume.&quot;</span><span class="p">,</span>
+            <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="s">&quot;volume_type&quot;</span><span class="p">:</span> <span class="s">&quot;SATA&quot;</span><span class="p">,</span>
+            <span class="s">&quot;snapshot_id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s">&quot;2012-03-15T19:10:03Z&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="p">{</span>
+    <span class="s">&quot;volumes&quot;</span><span class="p">:[</span>
+       <span class="p">{</span>
+          <span class="s">&quot;status&quot;</span><span class="p">:</span><span class="s">&quot;available&quot;</span><span class="p">,</span>
+          <span class="s">&quot;attachments&quot;</span><span class="p">:[</span>
+
+          <span class="p">],</span>
+          <span class="s">&quot;links&quot;</span><span class="p">:[</span>
+             <span class="p">{</span>
+                <span class="s">&quot;href&quot;</span><span class="p">:</span><span class="s">&quot;http://localhost:8776/v2/0c2eba2c5af04d3f9e9d0d410b371fde/volumes/45baf976-c20a-4894-a7c3-c94b7376bf55&quot;</span><span class="p">,</span>
+                <span class="s">&quot;rel&quot;</span><span class="p">:</span><span class="s">&quot;self&quot;</span>
+             <span class="p">},</span>
+             <span class="p">{</span>
+                <span class="s">&quot;href&quot;</span><span class="p">:</span><span class="s">&quot;http://localhost:8776/0c2eba2c5af04d3f9e9d0d410b371fde/volumes/45baf976-c20a-4894-a7c3-c94b7376bf55&quot;</span><span class="p">,</span>
+                <span class="s">&quot;rel&quot;</span><span class="p">:</span><span class="s">&quot;bookmark&quot;</span>
+             <span class="p">}</span>
+               <span class="p">],</span>
+               <span class="s">&quot;availability_zone&quot;</span><span class="p">:</span><span class="s">&quot;nova&quot;</span><span class="p">,</span>
+               <span class="s">&quot;host&quot;</span><span class="p">:</span><span class="s">&quot;ip-10-168-107-25&quot;</span><span class="p">,</span>
+               <span class="s">&quot;source_volid&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+               <span class="s">&quot;snapshot_id&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+               <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;45baf976-c20a-4894-a7c3-c94b7376bf55&quot;</span><span class="p">,</span>
+               <span class="s">&quot;description&quot;</span><span class="p">:</span><span class="s">&quot;Another volume.&quot;</span><span class="p">,</span>
+               <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;vol-004&quot;</span><span class="p">,</span>
+               <span class="s">&quot;created_at&quot;</span><span class="p">:</span><span class="s">&quot;2013-02-25T06:36:28.000000&quot;</span><span class="p">,</span>
+               <span class="s">&quot;volume_type&quot;</span><span class="p">:</span><span class="s">&quot;None&quot;</span><span class="p">,</span>
+               <span class="s">&quot;tenant_id&quot;</span><span class="p">:</span><span class="s">&quot;0c2eba2c5af04d3f9e9d0d410b371fde&quot;</span><span class="p">,</span>
+               <span class="s">&quot;size&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+               <span class="s">&quot;metadata&quot;</span><span class="p">:{</span>
+               <span class="s">&quot;contents&quot;</span><span class="p">:</span><span class="s">&quot;junk&quot;</span>
+               <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+               <span class="s">&quot;status&quot;</span><span class="p">:</span><span class="s">&quot;available&quot;</span><span class="p">,</span>
+               <span class="s">&quot;attachments&quot;</span><span class="p">:[</span>
+
+               <span class="p">],</span>
+               <span class="s">&quot;links&quot;</span><span class="p">:[</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;href&quot;</span><span class="p">:</span><span class="s">&quot;http://localhost:8776/v2/0c2eba2c5af04d3f9e9d0d410b371fde/volumes/5aa119a8-d25b-45a7-8d1b-88e127885635&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;rel&quot;</span><span class="p">:</span><span class="s">&quot;self&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;href&quot;</span><span class="p">:</span><span class="s">&quot;http://localhost:8776/0c2eba2c5af04d3f9e9d0d410b371fde/volumes/5aa119a8-d25b-45a7-8d1b-88e127885635&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;rel&quot;</span><span class="p">:</span><span class="s">&quot;bookmark&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s">&quot;availability_zone&quot;</span><span class="p">:</span><span class="s">&quot;nova&quot;</span><span class="p">,</span>
+            <span class="s">&quot;host&quot;</span><span class="p">:</span><span class="s">&quot;ip-10-168-107-25&quot;</span><span class="p">,</span>
+            <span class="s">&quot;source_volid&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;snapshot_id&quot;</span><span class="p">:</span><span class="n">null</span><span class="p">,</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;5aa119a8-d25b-45a7-8d1b-88e127885635&quot;</span><span class="p">,</span>
+            <span class="s">&quot;description&quot;</span><span class="p">:</span><span class="s">&quot;This is yet, another volume.&quot;</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span><span class="s">&quot;vol-003&quot;</span><span class="p">,</span>
+            <span class="s">&quot;created_at&quot;</span><span class="p">:</span><span class="s">&quot;2013-02-25T02:40:21.000000&quot;</span><span class="p">,</span>
+            <span class="s">&quot;volume_type&quot;</span><span class="p">:</span><span class="s">&quot;None&quot;</span><span class="p">,</span>
+            <span class="s">&quot;tenant_id&quot;</span><span class="p">:</span><span class="s">&quot;0c2eba2c5af04d3f9e9d0d410b371fde&quot;</span><span class="p">,</span>
+            <span class="s">&quot;size&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;metadata&quot;</span><span class="p">:{</span>
+            <span class="s">&quot;contents&quot;</span><span class="p">:</span><span class="s">&quot;not junk&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="show-volume">
+<span id="get-show-volume-v1-tenant-id-volumes-volume-id"></span><h4><a class="toc-backref" href="#id14">Show volume</a><a class="headerlink" href="#show-volume" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span><span class="o">/</span><span class="p">{</span><span class="n">volume_id</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Shows volume details.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id5">
+<h5>Request<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+<tr class="row-odd"><td>{volume_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+an existing volume.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation does not accept a request body.</p>
+</div>
+<div class="section" id="id6">
+<h5>Response<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h5>
+<p><strong>Example Show volume: XML response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
+&lt;volume xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
+        status=&quot;available&quot;
+        display_name=&quot;vol-001&quot;
+        attachments=&quot;&quot;
+        availability_zone=&quot;nova&quot;
+        bootable=&quot;false&quot;
+        created_at=&quot;2012-02-14T20:53:07Z&quot;
+        display_description=&quot;Another volume.&quot;
+        image_id=&quot;null&quot;
+        volume_type=&quot;SATA&quot;
+        snapshot_id=&quot;null&quot;
+        source_volid=&quot;e3611474-589b-46b7-9bdf-5555e2e4999b&quot;
+        metadata=&quot;&quot;
+        id=&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot;
+        size=&quot;100&quot;/&gt;
+</pre></div>
+</div>
+<p><strong>Example Show volume: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;volume&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;available&quot;</span><span class="p">,</span>
+    <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;vol-001&quot;</span><span class="p">,</span>
+    <span class="s">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s">&quot;availability_zone&quot;</span><span class="p">:</span> <span class="s">&quot;nova&quot;</span><span class="p">,</span>
+    <span class="s">&quot;bootable&quot;</span><span class="p">:</span> <span class="s">&quot;false&quot;</span><span class="p">,</span>
+    <span class="s">&quot;created_at&quot;</span><span class="p">:</span> <span class="s">&quot;2012-02-14T20:53:07Z&quot;</span><span class="p">,</span>
+    <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;Another volume.&quot;</span><span class="p">,</span>
+    <span class="s">&quot;image_id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;volume_type&quot;</span><span class="p">:</span> <span class="s">&quot;SATA&quot;</span><span class="p">,</span>
+    <span class="s">&quot;snapshot_id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;source_volid&quot;</span><span class="p">:</span> <span class="s">&quot;e3611474-589b-46b7-9bdf-5555e2e4999b&quot;</span><span class="p">,</span>
+    <span class="s">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot;</span><span class="p">,</span>
+    <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">100</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="update-volume">
+<span id="put-update-volume-v1-tenant-id-volumes-volume-id"></span><h4><a class="toc-backref" href="#id15">Update volume</a><a class="headerlink" href="#update-volume" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">PUT</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span><span class="o">/</span><span class="p">{</span><span class="n">volume_id</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Updates the name and description for a volume.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id7">
+<h5>Request<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+<tr class="row-odd"><td>{volume_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+an existing volume.</td>
+</tr>
+</tbody>
+</table>
+<p>This table shows the body parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>display_description</td>
+<td>String <em>(Optional)</em></td>
+<td>A description of the
+volume.</td>
+</tr>
+<tr class="row-odd"><td>display_name</td>
+<td>String <em>(Optional)</em></td>
+<td>The name of the volume.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Update volume: XML request</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;volume xmlns=&quot;&quot;
+        display_description=&quot;New Description&quot;
+        display_name=&quot;New Name&quot;&gt;
+&lt;/volume&gt;
+</pre></div>
+</div>
+<p><strong>Example Update volume: JSON request</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;volume&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;new name&quot;</span><span class="p">,</span>
+    <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;new description&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h5>Response<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h5>
+<p><strong>Example Update volume: XML response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
+&lt;volume xmlns:atom=&quot;http://www.w3.org/2005/Atom&quot;
+        xmlns=&quot;http://docs.openstack.org/volume/api/v1&quot;
+        status=&quot;available&quot;
+        display_name=&quot;New Name&quot;
+        availability_zone=&quot;nova&quot;
+        created_at=&quot;2013-07-25 21:53:58&quot;
+        display_description=&quot;New Description&quot;
+        volume_type=&quot;SATA&quot;
+        snapshot_id=&quot;null&quot;
+        source_volid=&quot;null&quot;
+        id=&quot;82c9971b-3953-4ca7-b3d4-e671c71d6335&quot;
+        size=&quot;2&quot;&gt;
+&lt;attachments/&gt;
+&lt;metadata/&gt;
+&lt;/volume&gt;
+</pre></div>
+</div>
+<p><strong>Example Update volume: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;volume&quot;</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;in-use&quot;</span><span class="p">,</span>
+    <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;new name&quot;</span><span class="p">,</span>
+    <span class="s">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s">&quot;availability_zone&quot;</span><span class="p">:</span> <span class="s">&quot;nova&quot;</span><span class="p">,</span>
+    <span class="s">&quot;bootable&quot;</span><span class="p">:</span> <span class="s">&quot;false&quot;</span><span class="p">,</span>
+    <span class="s">&quot;created_at&quot;</span><span class="p">:</span> <span class="s">&quot;2012-10-23T17:12:40.000000&quot;</span><span class="p">,</span>
+    <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;new description&quot;</span><span class="p">,</span>
+    <span class="s">&quot;volume_type&quot;</span><span class="p">:</span> <span class="s">&quot;SATA&quot;</span><span class="p">,</span>
+    <span class="s">&quot;snapshot_id&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;source_volid&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;5e9c00de-60b3-48de-ae58-0a07ec842d51&quot;</span><span class="p">,</span>
+    <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">100</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="delete-volume">
+<span id="delete-delete-volume-v1-tenant-id-volumes-volume-id"></span><h4><a class="toc-backref" href="#id16">Delete volume</a><a class="headerlink" href="#delete-volume" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">DELETE</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span><span class="o">/</span><span class="p">{</span><span class="n">volume_id</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Deletes a volume.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If a snapshot of the volume exists, you cannot delete the volume until you delete the snapshot.</p>
+</div>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>202</td>
+<td>Accepted</td>
+<td>The request has been
+accepted for processing.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id9">
+<h5>Request<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+<tr class="row-odd"><td>{volume_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+an existing volume.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation does not accept a request body.</p>
+</div>
+<div class="section" id="id10">
+<h5>Response<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h5>
+<p>This operation does not return a response body.</p>
+</div>
+</div>
+</div>
+<span id="document-api-operations/cbs-volume-types-operations"></span><div class="section" id="volume-types">
+<span id="cbs-volume-types-operations"></span><h3>Volume types<a class="headerlink" href="#volume-types" title="Permalink to this headline">#</a></h3>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#list-volume-types" id="id3">List volume types</a></li>
+<li><a class="reference internal" href="#show-volume-type-details" id="id4">Show volume type details</a></li>
+</ul>
+</div>
+<p>Use volume type operations to list volume types and show volume type details.</p>
+<div class="section" id="list-volume-types">
+<span id="get-list-volume-types-v1-tenant-id-types"></span><h4><a class="toc-backref" href="#id3">List volume types</a><a class="headerlink" href="#list-volume-types" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">types</span>
+</pre></div>
+</div>
+<p>Lists volume types.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="request">
+<h5>Request<a class="headerlink" href="#request" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation does not accept a request body.</p>
+</div>
+<div class="section" id="response">
+<h5>Response<a class="headerlink" href="#response" title="Permalink to this headline">#</a></h5>
+<p><strong>Example List volume types: XML response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
+&lt;volume_types xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;&gt;&gt;
+    &lt;volume_type id=&quot;1&quot; name=&quot;SATA&quot;&gt;
+         &lt;extra_specs/&gt;
+     &lt;/volume_type&gt;
+     &lt;volume_type id=&quot;2&quot; name=&quot;SSD&quot;&gt;
+         &lt;extra_specs/&gt;
+    &lt;/volume_type&gt;
+&lt;/volume_types&gt;
+</pre></div>
+</div>
+<p><strong>Example List volume types: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;volume_types&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;SATA&quot;</span><span class="p">,</span>
+            <span class="s">&quot;extra_specs&quot;</span><span class="p">:</span> <span class="p">{}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;SSD&quot;</span><span class="p">,</span>
+            <span class="s">&quot;extra_specs&quot;</span><span class="p">:</span> <span class="p">{}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that two storage types are currently supported: SATA and SSD. SATA is the standard performance storage option and SSD is the high performance option.</p>
+</div>
+</div>
+<div class="section" id="show-volume-type-details">
+<span id="get-show-volume-type-details-v1-tenant-id-types-volume-type-id"></span><h4><a class="toc-backref" href="#id4">Show volume type details</a><a class="headerlink" href="#show-volume-type-details" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">types</span><span class="o">/</span><span class="p">{</span><span class="n">volume_type_id</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Shows volume type details.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id1">
+<h5>Request<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+<tr class="row-odd"><td>{volume_type_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+an existing volume type.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation does not accept a request body.</p>
+</div>
+<div class="section" id="id2">
+<h5>Response<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h5>
+<p><strong>Example Show volume type details: XML response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
+    &lt;volume_type xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
+        id=&quot;1&quot; name=&quot;SATA&quot;&gt;
+        &lt;extra_specs/&gt;
+    &lt;/volume_type&gt;
+</pre></div>
+</div>
+<p><strong>Example Show volume type details: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;volume_type&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;1&quot;</span><span class="p">,</span>
+        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;SATA&quot;</span><span class="p">,</span>
+        <span class="s">&quot;extra_specs&quot;</span><span class="p">:</span> <span class="p">{}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-api-operations/cbs-snapshots-operations"></span><div class="section" id="snapshots">
+<span id="cbs-snapshots-operations"></span><h3>Snapshots<a class="headerlink" href="#snapshots" title="Permalink to this headline">#</a></h3>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#create-snapshot" id="id13">Create snapshot</a></li>
+<li><a class="reference internal" href="#list-snapshots" id="id14">List snapshots</a></li>
+<li><a class="reference internal" href="#list-snapshots-detailed" id="id15">List snapshots (detailed)</a></li>
+<li><a class="reference internal" href="#show-snapshot-details" id="id16">Show snapshot details</a></li>
+<li><a class="reference internal" href="#update-snapshot" id="id17">Update snapshot</a></li>
+<li><a class="reference internal" href="#delete-snapshot" id="id18">Delete snapshot</a></li>
+<li><a class="reference internal" href="#show-snapshot-metadata" id="id19">Show snapshot metadata</a></li>
+</ul>
+</div>
+<p>A snapshot is a point-in-time copy of the data that a volume contains.</p>
+<p>When you make an API call to create, list, or delete snapshots, the following status values are possible</p>
+<ul class="simple">
+<li>CREATING: The snapshot is being created.</li>
+<li>AVAILABLE: The snapshot is ready for use.</li>
+<li>DELETING: The snapshot is being deleted.</li>
+<li>ERROR: An error occurred during snapshot creation.</li>
+<li>ERROR_DELETING: An error occurred during snapshot deletion.</li>
+</ul>
+<div class="section" id="create-snapshot">
+<span id="post-create-snapshot-v1-tenant-id-snapshots"></span><h4><a class="toc-backref" href="#id13">Create snapshot</a><a class="headerlink" href="#create-snapshot" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">POST</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span>
+</pre></div>
+</div>
+<p>Creates a snapshot.</p>
+<p>A snapshot is a point-in-time copy of the volume. You must flush all writes to the volume before you create a snapshot. To do so, either unmount any file systems on the volume or detach the volume.</p>
+<p>Snapshots are incremental, so each time that you create a snapshot, the incremental changes for the new snapshot are appended to the previous snapshot, which is still available. Note that you can create a volume from the snapshot if desired.</p>
+<p>The <code class="docutils literal"><span class="pre">os-extended-snapshot-attributes:progress</span></code> field in the response body shows the snapshot progress.</p>
+<p>When the <code class="docutils literal"><span class="pre">POST</span></code> operation returns the 201 response code, the snapshot is complete.</p>
+<p>For more information about snapshots, see the following articles in the Knowledge Center:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.rackspace.com/knowledge_center/article/create-and-use-cloud-block-storage-snapshots">Create and Use Cloud Block Storage Snapshots</a></li>
+<li><a class="reference external" href="http://www.rackspace.com/knowledge_center/whitepaper/allowing-snapshots-without-detaching-the-volumes">Allowing Snapshots Without Detaching the Volumes</a></li>
+</ul>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>201</td>
+<td>Created</td>
+<td>The request has been
+fulfilled and a resource
+was created.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="request">
+<h5>Request<a class="headerlink" href="#request" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+</tbody>
+</table>
+<p>This table shows the body parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>snapshot</td>
+<td>String <em>(Required)</em></td>
+<td>A partial representation
+of a snapshot used in
+the creation process.</td>
+</tr>
+<tr class="row-odd"><td>volume_id</td>
+<td>Uuid <em>(Required)</em></td>
+<td>The ID of the volume to
+snapshot.</td>
+</tr>
+<tr class="row-even"><td>force</td>
+<td>Boolean <em>(Optional)</em></td>
+<td>[True/False] Indicate
+whether to snapshot,
+even if the volume is
+attached. The default is
+False.</td>
+</tr>
+<tr class="row-odd"><td>display_name</td>
+<td>String <em>(Optional)</em></td>
+<td>Name of the snapshot.
+The default is None.</td>
+</tr>
+<tr class="row-even"><td>display_description</td>
+<td>String <em>(Optional)</em></td>
+<td>Description of snapshot.
+The default is None.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Create snapshot: XML request</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;snapshot xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
+          name=&quot;snap-001&quot;
+          display_name=&quot;snap-001&quot;
+          display_description=&quot;Daily backup&quot;
+          volume_id=&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot;
+          force=&quot;true&quot; /&gt;
+</pre></div>
+</div>
+<p><strong>Example Create snapshot: JSON request</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;snapshot&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;snap-001&quot;</span><span class="p">,</span>
+        <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;Daily backup&quot;</span><span class="p">,</span>
+        <span class="s">&quot;volume_id&quot;</span><span class="p">:</span> <span class="s">&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot;</span><span class="p">,</span>
+        <span class="s">&quot;force&quot;</span><span class="p">:</span> <span class="n">true</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="response">
+<h5>Response<a class="headerlink" href="#response" title="Permalink to this headline">#</a></h5>
+<p><strong>Example Create snapshot: XML response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;snapshot xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
+          createdAt=&quot;2014-01-28T16:56:56.000000&quot;
+          display_name=&quot;snap-001&quot;
+          display_description=&quot;Daily backup&quot;
+          id=&quot;3fbbcccf-d058-4502-8844-6feeffdf4cb5&quot;
+          metadata=&quot;null&quot;
+          os-extended-snapshot-attributes:progress=&quot;25.39%&quot;
+          os-extended-snapshot-attributes:project_id=&quot;696059&quot;
+          size=&quot;100&quot;
+          status=&quot;creating&quot;
+          volume_id=&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot; /&gt;
+</pre></div>
+</div>
+<p><strong>Example Create snapshot: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;snapshot&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;created_at&quot;</span><span class="p">:</span> <span class="s">&quot;2014-01-28T16:56:56.000000&quot;</span><span class="p">,</span>
+        <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;Daily backup&quot;</span><span class="p">,</span>
+        <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;snap-001&quot;</span><span class="p">,</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;3fbbcccf-d058-4502-8844-6feeffdf4cb5&quot;</span><span class="p">,</span>
+        <span class="s">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s">&quot;os-extended-snapshot-attributes:progress&quot;</span><span class="p">:</span> <span class="s">&quot;25.39%&quot;</span><span class="p">,</span>
+        <span class="s">&quot;os-extended-snapshot-attributes:project_id&quot;</span><span class="p">:</span> <span class="s">&quot;123456&quot;</span><span class="p">,</span>
+        <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;creating&quot;</span><span class="p">,</span>
+        <span class="s">&quot;volume_id&quot;</span><span class="p">:</span> <span class="s">&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot;</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="list-snapshots">
+<span id="get-list-snapshots-v1-tenant-id-snapshots"></span><h4><a class="toc-backref" href="#id14">List snapshots</a><a class="headerlink" href="#list-snapshots" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span>
+</pre></div>
+</div>
+<p>Lists summary information for all Cloud Block Storage snapshots that the tenant who submits the request can access.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id1">
+<h5>Request<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation does not accept a request body.</p>
+</div>
+<div class="section" id="id2">
+<h5>Response<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h5>
+<p><strong>Example List snapshots: XML response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;snapshots xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;&gt;
+    &lt;snapshot id=&quot;3fbbcccf-d058-4502-8844-6feeffdf4cb5&quot;
+              display_name=&quot;snap-001&quot;
+              display_description=&quot;Daily backup&quot;
+              volume_id=&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot;
+              status=&quot;available&quot;
+              size=&quot;100&quot;
+              createdAt=&quot;2012-02-29T03:50:07Z&quot; /&gt;
+    &lt;snapshot id=&quot;e479997c-650b-40a4-9dfe-77655818b0d2&quot;
+              display_name=&quot;snap-002&quot;
+              dislay_description=&quot;Weekly backup&quot;
+              volume_id=&quot;76b8950a-8594-4e5b-8dce-0dfa9c696358&quot;
+              status=&quot;available&quot;
+              size=&quot;100&quot;
+              createdAt=&quot;2012-03-19T01:52:47Z&quot; /&gt;
+&lt;/snapshots&gt;
+</pre></div>
+</div>
+<p><strong>Example List snapshots: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;snapshots&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;3fbbcccf-d058-4502-8844-6feeffdf4cb5&quot;</span><span class="p">,</span>
+            <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;snap-001&quot;</span><span class="p">,</span>
+            <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;Daily backup&quot;</span><span class="p">,</span>
+            <span class="s">&quot;volume_id&quot;</span><span class="p">:</span> <span class="s">&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot;</span><span class="p">,</span>
+            <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;available&quot;</span><span class="p">,</span>
+            <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="s">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s">&quot;2012-02-29T03:50:07Z&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;e479997c-650b-40a4-9dfe-77655818b0d2&quot;</span><span class="p">,</span>
+            <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;snap-002&quot;</span><span class="p">,</span>
+            <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;Weekly backup&quot;</span><span class="p">,</span>
+            <span class="s">&quot;volume_id&quot;</span><span class="p">:</span> <span class="s">&quot;76b8950a-8594-4e5b-8dce-0dfa9c696358&quot;</span><span class="p">,</span>
+            <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;available&quot;</span><span class="p">,</span>
+            <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="s">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s">&quot;2012-03-19T01:52:47Z&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="list-snapshots-detailed">
+<span id="get-list-snapshots-detailed-v1-tenant-id-snapshots-detail"></span><h4><a class="toc-backref" href="#id15">List snapshots (detailed)</a><a class="headerlink" href="#list-snapshots-detailed" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="n">detail</span>
+</pre></div>
+</div>
+<p>Lists detailed information for all Cloud Block Storage snapshots that the tenant who submits the request can access.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id3">
+<h5>Request<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation does not accept a request body.</p>
+</div>
+<div class="section" id="id4">
+<h5>Response<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h5>
+<p><strong>Example List snapshots (detailed): XML response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
+&lt;snapshots
+    xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;&gt;
+    &lt;snapshot status=&quot;available&quot; description=&quot;Daily backup&quot;
+        created_at=&quot;2013-02-25 07:30:12&quot;
+        volume_id=&quot;5aa119a8-d25b-45a7-8d1b-88e127885635&quot; size=&quot;30&quot;
+        id=&quot;43f20e0e-2c2c-4770-9d4e-c3d769ae5470&quot; name=&quot;snap-001&quot;
+        os-extended-snapshot-attributes:project_id=&quot;0c2eba2c5af04d3f9e9d0d410b371fde&quot;
+        os-extended-snapshot-attributes:progress=&quot;100%&quot;&gt;
+        &lt;metadata/&gt;
+    &lt;/snapshot&gt;
+    &lt;snapshot status=&quot;available&quot; description=&quot;Weekly backup&quot;
+        created_at=&quot;2013-02-25 07:20:38&quot;
+        volume_id=&quot;806092e3-7551-4fff-a005-49016f4943b1&quot; size=&quot;1&quot;
+        id=&quot;e820db06-58b5-439d-bac6-c01faa3f6499&quot; name=&quot;snap-002&quot;
+        os-extended-snapshot-attributes:project_id=&quot;0c2eba2c5af04d3f9e9d0d410b371fde&quot;
+        os-extended-snapshot-attributes:progress=&quot;100%&quot;&gt;
+        &lt;metadata/&gt;
+    &lt;/snapshot&gt;
+&lt;/snapshots&gt;
+</pre></div>
+</div>
+<p><strong>Example List snapshots (detailed): JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;snapshots&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;available&quot;</span><span class="p">,</span>
+            <span class="s">&quot;os-extended-snapshot-attributes:progress&quot;</span><span class="p">:</span> <span class="s">&quot;100%&quot;</span><span class="p">,</span>
+            <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;Daily backup&quot;</span><span class="p">,</span>
+            <span class="s">&quot;created_at&quot;</span><span class="p">:</span> <span class="s">&quot;2013-02-25T07:30:12.000000&quot;</span><span class="p">,</span>
+            <span class="s">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s">&quot;volume_id&quot;</span><span class="p">:</span> <span class="s">&quot;5aa119a8-d25b-45a7-8d1b-88e127885635&quot;</span><span class="p">,</span>
+            <span class="s">&quot;os-extended-snapshot-attributes:project_id&quot;</span><span class="p">:</span> <span class="s">&quot;0c2eba2c5af04d3f9e9d0d410b371fde&quot;</span><span class="p">,</span>
+            <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;43f20e0e-2c2c-4770-9d4e-c3d769ae5470&quot;</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;snap-001&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;available&quot;</span><span class="p">,</span>
+            <span class="s">&quot;os-extended-snapshot-attributes:progress&quot;</span><span class="p">:</span> <span class="s">&quot;100%&quot;</span><span class="p">,</span>
+            <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;Weekly backup&quot;</span><span class="p">,</span>
+            <span class="s">&quot;created_at&quot;</span><span class="p">:</span> <span class="s">&quot;2013-02-25T07:20:38.000000&quot;</span><span class="p">,</span>
+            <span class="s">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s">&quot;volume_id&quot;</span><span class="p">:</span> <span class="s">&quot;806092e3-7551-4fff-a005-49016f4943b1&quot;</span><span class="p">,</span>
+            <span class="s">&quot;os-extended-snapshot-attributes:project_id&quot;</span><span class="p">:</span> <span class="s">&quot;0c2eba2c5af04d3f9e9d0d410b371fde&quot;</span><span class="p">,</span>
+            <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;e820db06-58b5-439d-bac6-c01faa3f6499&quot;</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;snap-002&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="show-snapshot-details">
+<span id="get-show-snapshot-details-v1-tenant-id-snapshots-snapshot-id"></span><h4><a class="toc-backref" href="#id16">Show snapshot details</a><a class="headerlink" href="#show-snapshot-details" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="p">{</span><span class="n">snapshot_id</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Shows snapshot details.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal"><span class="pre">os-extended-snapshot-attributes:progress</span></code> field in the response body shows snapshot progress. See the following examples.</p>
+</div>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id5">
+<h5>Request<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+<tr class="row-odd"><td>{snapshot_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+an existing snapshot.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation does not accept a request body.</p>
+</div>
+<div class="section" id="id6">
+<h5>Response<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h5>
+<p><strong>Example Show snapshot details: XML response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;snapshot xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
+          createdAt=&quot;2014-01-28T16:56:56.000000&quot;
+          display_name=&quot;snap-001&quot;
+          display_description=&quot;Daily backup&quot;
+          id=&quot;3fbbcccf-d058-4502-8844-6feeffdf4cb5&quot;
+          metadata=&quot;null&quot;
+          os-extended-snapshot-attributes:progress=&quot;25.39%&quot;
+          os-extended-snapshot-attributes:project_id=&quot;696059&quot;
+          size=&quot;100&quot;
+          status=&quot;creating&quot;
+          volume_id=&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot; /&gt;
+</pre></div>
+</div>
+<p><strong>Example Show snapshot details: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;snapshot&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;created_at&quot;</span><span class="p">:</span> <span class="s">&quot;2014-01-28T16:56:56.000000&quot;</span><span class="p">,</span>
+        <span class="s">&quot;display_description&quot;</span><span class="p">:</span> <span class="s">&quot;Daily backup&quot;</span><span class="p">,</span>
+        <span class="s">&quot;display_name&quot;</span><span class="p">:</span> <span class="s">&quot;snap-001&quot;</span><span class="p">,</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;3fbbcccf-d058-4502-8844-6feeffdf4cb5&quot;</span><span class="p">,</span>
+        <span class="s">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s">&quot;os-extended-snapshot-attributes:progress&quot;</span><span class="p">:</span> <span class="s">&quot;25.39%&quot;</span><span class="p">,</span>
+        <span class="s">&quot;os-extended-snapshot-attributes:project_id&quot;</span><span class="p">:</span> <span class="s">&quot;123456&quot;</span><span class="p">,</span>
+        <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;creating&quot;</span><span class="p">,</span>
+        <span class="s">&quot;volume_id&quot;</span><span class="p">:</span> <span class="s">&quot;521752a6-acf6-4b2d-bc7a-119f9148cd8c&quot;</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="update-snapshot">
+<span id="put-update-snapshot-v1-tenant-id-snapshots-snapshot-id"></span><h4><a class="toc-backref" href="#id17">Update snapshot</a><a class="headerlink" href="#update-snapshot" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">PUT</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="p">{</span><span class="n">snapshot_id</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Updates a specified snapshot.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id7">
+<h5>Request<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+<tr class="row-odd"><td>{snapshot_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+an existing snapshot.</td>
+</tr>
+</tbody>
+</table>
+<p>This table shows the parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>display_description</td>
+<td>String <em>(Optional)</em></td>
+<td>Snapshot description.</td>
+</tr>
+<tr class="row-odd"><td>display_name</td>
+<td>String <em>(Optional)</em></td>
+<td>Name of the snapshot.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation does not accept a request body.</p>
+<p><strong>Example Update snapshot: XML request</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;snapshot xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
+          display_name=&quot;snap-001&quot;
+          display_description=&quot;This is yet, another snapshot.&quot;/&gt;
+</pre></div>
+</div>
+<p><strong>Example Update snapshot: JSON request</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;snapshot&quot;</span><span class="p">:{</span>
+        <span class="s">&quot;display_name&quot;</span><span class="p">:</span><span class="s">&quot;snap-001&quot;</span><span class="p">,</span>
+        <span class="s">&quot;display_description&quot;</span><span class="p">:</span><span class="s">&quot;This is yet, another snapshot.&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h5>Response<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h5>
+<p><strong>Example Update snapshot: XML response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
+&lt;snapshot
+    xmlns:os-extended-snapshot-attributes=&quot;http://docs.rackspace.com/volume/api/v1&quot;
+    status=&quot;available&quot;
+    display_description=&quot;This is yet, another snapshot&quot;
+    created_at=&quot;2013-02-20T08:11:34.000000&quot;
+    volume_id=&quot;2402b902-0b7a-458c-9c07-7435a826f794&quot;
+    size=&quot;1&quot;
+    id=&quot;4b502fcb-1f26-45f8-9fe5-3b9a0a52eaf2&quot;
+    display_name=&quot;vol-001&quot;
+    os-extended-snapshot-attributes:project_id=&quot;0c2eba2c5af04d3f9e9d0d410b371fde&quot;
+    os-extended-snapshot-attributes:progress=&quot;100%&quot;&gt;
+    &lt;metadata/&gt;
+&lt;/snapshot&gt;
+</pre></div>
+</div>
+<p><strong>Example Update snapshot: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;snapshot&quot;</span><span class="p">:{</span>
+        <span class="s">&quot;created_at&quot;</span><span class="p">:</span><span class="s">&quot;2013-02-20T08:11:34.000000&quot;</span><span class="p">,</span>
+        <span class="s">&quot;display_description&quot;</span><span class="p">:</span><span class="s">&quot;This is yet, another snapshot&quot;</span><span class="p">,</span>
+        <span class="s">&quot;display_name&quot;</span><span class="p">:</span><span class="s">&quot;vol-001&quot;</span><span class="p">,</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;4b502fcb-1f26-45f8-9fe5-3b9a0a52eaf2&quot;</span><span class="p">,</span>
+        <span class="s">&quot;size&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s">&quot;status&quot;</span><span class="p">:</span><span class="s">&quot;available&quot;</span><span class="p">,</span>
+        <span class="s">&quot;volume_id&quot;</span><span class="p">:</span><span class="s">&quot;2402b902-0b7a-458c-9c07-7435a826f794&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="delete-snapshot">
+<span id="delete-delete-snapshot-v1-tenant-id-snapshots-snapshot-id"></span><h4><a class="toc-backref" href="#id18">Delete snapshot</a><a class="headerlink" href="#delete-snapshot" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">DELETE</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="p">{</span><span class="n">snapshot_id</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Deletes a snapshot.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>202</td>
+<td>Accepted</td>
+<td>The request has been
+fulfilled and a resource
+was created.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id9">
+<h5>Request<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+<tr class="row-odd"><td>{snapshot_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+an existing snapshot.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation does not accept a request body.</p>
+</div>
+<div class="section" id="id10">
+<h5>Response<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h5>
+<p>This operation does not return a response body.</p>
+</div>
+</div>
+<div class="section" id="show-snapshot-metadata">
+<span id="get-show-snapshot-metadata-v1-tenant-id-snapshots-snapshot-id-metadata"></span><h4><a class="toc-backref" href="#id19">Show snapshot metadata</a><a class="headerlink" href="#show-snapshot-metadata" title="Permalink to this headline">#</a></h4>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="p">{</span><span class="n">snapshot_id</span><span class="p">}</span><span class="o">/</span><span class="n">metadata</span>
+</pre></div>
+</div>
+<p>Shows the metadata for the specified snapshot.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id11">
+<h5>Request<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h5>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{tenant_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+the tenant or account.</td>
+</tr>
+<tr class="row-odd"><td>{snapshot_id}</td>
+<td>String <em>(Required)</em></td>
+<td>The unique identifier of
+an existing snapshot.</td>
+</tr>
+</tbody>
+</table>
+<p>This operation does not accept a request body.</p>
+</div>
+<div class="section" id="id12">
+<h5>Response<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h5>
+<p><strong>Example Show snapshot metadata: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;snapshot&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;available&quot;</span><span class="p">,</span>
+        <span class="s">&quot;os-extended-snapshot-attributes:progress&quot;</span><span class="p">:</span> <span class="s">&quot;0%&quot;</span><span class="p">,</span>
+        <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;created_at&quot;</span><span class="p">:</span> <span class="s">&quot;2014-05-06T17:59:52.000000&quot;</span><span class="p">,</span>
+        <span class="s">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;v1&quot;</span>
+        <span class="p">},</span>
+        <span class="s">&quot;volume_id&quot;</span><span class="p">:</span> <span class="s">&quot;ebd80b99-bc3d-4154-9d28-5583baa80580&quot;</span><span class="p">,</span>
+        <span class="s">&quot;os-extended-snapshot-attributes:project_id&quot;</span><span class="p">:</span> <span class="s">&quot;7e0105e19cd2466193729ef78b604f79&quot;</span><span class="p">,</span>
+        <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;dfcd17fe-3b64-44ba-b95f-1c9c7109ef95&quot;</span><span class="p">,</span>
+        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;my-snapshot&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html#document-index">Table Of Contents</a></h3>
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-overview/index">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/intended-audience">Intended audience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/additional-resources">Additional resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/api-contract-changes">API contract changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/pricing-service-level">Pricing and service level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/terminology">Terminology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#instance">Instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#instance-type">Instance type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#snapshot">Snapshot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#volume">Volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#volume-type">Volume type</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-general-api-info/index">General API information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/authentication">Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#get-your-credentials">Get your credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#use-the-global-authentication-endpoint">Use the global authentication endpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#send-your-credentials-to-your-authentication-endpoint">Send your credentials to your authentication endpoint</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/role-based-access-control">Role Based Access Control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#assigning-roles-to-account-users">Assigning roles to account users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#roles-available-for-cloud-block-storage">Roles available for Cloud Block Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#resolving-conflicts-between-rbac-multiproduct-vs-custom-product-specific-roles">Resolving conflicts between RBAC multiproduct vs. custom (product-specific) roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#rbac-permissions-cross-reference-to-cloud-block-storage-api-operations">RBAC permissions cross-reference to Cloud Block Storage API operations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/service-access-endpoints">Service access endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/cloud-block-storage-service-versions">Cloud Block Storage service versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/request-and-response-types">Request and response types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/absolute-limits">Absolute limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/cloud-block-storage-quotas">Cloud Block Storage quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/date-and-time-format">Date and time format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/faults">Faults</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-api-operations/index">API Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-api-operations/cbs-volumes-operations">Volumes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#create-volume">Create volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#list-volumes">List volumes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#list-volumes-detailed">List volumes (detailed)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#show-volume">Show volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#update-volume">Update volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#delete-volume">Delete volume</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-api-operations/cbs-volume-types-operations">Volume types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#list-volume-types">List volume types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#show-volume-type-details">Show volume type details</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-api-operations/cbs-snapshots-operations">Snapshots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#create-snapshot">Create snapshot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#list-snapshots">List snapshots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#list-snapshots-detailed">List snapshots (detailed)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#show-snapshot-details">Show snapshot details</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#update-snapshot">Update snapshot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#delete-snapshot">Delete snapshot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#show-snapshot-metadata">Show snapshot metadata</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html#document-index">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Rackspace.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
