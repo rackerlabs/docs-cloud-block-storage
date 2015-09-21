@@ -1,5 +1,8 @@
 # Rackspace Cloud Block Storage API documentation
 
+[![Build Status](https://travis-ci.org/rackerlabs/docs-cloud-block-storage.svg?branch=master)](https://travis-ci.org/rackerlabs/docs-cloud-block-storage)
+
+
 ## Resources
 
 This github repository contains the source files for the following Rackspace Cloud Block Storage API documentation:
