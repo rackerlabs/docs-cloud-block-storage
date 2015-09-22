@@ -3,9 +3,6 @@
 Snapshots
 ~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 A snapshot is a point-in-time copy of the data that a volume contains.
 

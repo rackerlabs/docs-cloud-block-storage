@@ -1,7 +1,7 @@
 .. _overview:
 
-Overview
-----------
+About the API
+-----------------------------------------
 
 Rackspace Cloud Block Storage is a block level storage solution that allows customers to mount drives or volumes to their Rackspace Next Generation Cloud Servers™ and OnMetal™ Cloud Servers. The primary use cases for Cloud Block Storage are to allow you to perform the following tasks:
 
@@ -52,7 +52,6 @@ Rackspace welcomes feedback, comments, and bug reports at support@rackspacecloud
 .. toctree:: :hidden:
    :maxdepth: 3
    
-   intended-audience
    additional-resources
    api-contract-changes
    pricing-service-level

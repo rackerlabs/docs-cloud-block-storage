@@ -1,17 +1,21 @@
-:deconsttitle: Cloud Block Storage Developer Guide
-
 .. _index:
 
 =============================================================
-Rackspace Cloud Block Storage Version 1.0 API Developer Guide
+Rackspace Cloud Block Storage API 1.0
 =============================================================
 
-Rackspace Cloud Block Storage is a block level storage solution that allows customers to mount drives or volumes to their Rackspace Next Generation Cloud Servers™ and OnMetal™ Cloud Servers. 
+Learn how to use the Rackspace Cloud Block Storage service by using the REST API. 
+
+- For details about using the API, see the :ref:`Developer Guide <developer-guide>`.
+- For details about API resources, operations, requests and responses, see the 
+  :ref:`API reference <api-reference>`.
 
 .. toctree:: :hidden:
    :maxdepth: 3
 
-   overview/index
+   About the API <overview/index>
+   developer-guide
    general-api-info/index
+   api-reference
    api-operations/index
 

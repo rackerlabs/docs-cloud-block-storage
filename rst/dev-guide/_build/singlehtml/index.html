@@ -5,7 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta content="Rackspace Cloud Block Storage API Reference" name="description" />
+<meta content="Rackspace, Cloud Block Storage ReST API, API resources, API methods" name="keywords" />
+
     <title>Rackspace Cloud Block Storage Version 1.0 API Developer Guide</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
@@ -36,12 +38,17 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="rackspace-cloud-block-storage-version-1-0-api-developer-guide">
-<span id="index"></span><h1>Rackspace Cloud Block Storage Version 1.0 API Developer Guide<a class="headerlink" href="#rackspace-cloud-block-storage-version-1-0-api-developer-guide" title="Permalink to this headline">#</a></h1>
-<p>Rackspace Cloud Block Storage is a block level storage solution that allows customers to mount drives or volumes to their Rackspace Next Generation Cloud Servers™ and OnMetal™ Cloud Servers.</p>
+  <div class="section" id="rackspace-cloud-block-storage-api-1-0">
+<span id="index"></span><h1>Rackspace Cloud Block Storage API 1.0<a class="headerlink" href="#rackspace-cloud-block-storage-api-1-0" title="Permalink to this headline">#</a></h1>
+<p>Learn how to use the Rackspace Cloud Block Storage service by using the REST API.</p>
+<ul class="simple">
+<li>For details about using the API, see the <a class="reference internal" href="index.html#developer-guide"><span>Developer Guide</span></a>.</li>
+<li>For details about API resources, operations, requests and responses, see the
+<a class="reference internal" href="index.html#api-reference"><span>API reference</span></a>.</li>
+</ul>
 <div class="toctree-wrapper compound">
-<span id="document-overview/index"></span><div class="section" id="overview">
-<span id="id1"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<span id="document-overview/index"></span><div class="section" id="about-the-api">
+<span id="overview"></span><h2>About the API<a class="headerlink" href="#about-the-api" title="Permalink to this headline">#</a></h2>
 <p>Rackspace Cloud Block Storage is a block level storage solution that allows customers to mount drives or volumes to their Rackspace Next Generation Cloud Servers™ and OnMetal™ Cloud Servers. The primary use cases for Cloud Block Storage are to allow you to perform the following tasks:</p>
 <ul class="simple">
 <li>Scale your storage independently from your compute resources.</li>
@@ -67,15 +74,6 @@
 <p>For additional information about the Cloud Block Storage service, see the <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/cloud-block-storage-overview">Cloud Block Storage Overview</a>.</p>
 <p>Rackspace welcomes feedback, comments, and bug reports at <a class="reference external" href="mailto:support&#37;&#52;&#48;rackspacecloud&#46;com">support<span>&#64;</span>rackspacecloud<span>&#46;</span>com</a>.</p>
 <div class="toctree-wrapper compound">
-<span id="document-overview/intended-audience"></span><div class="section" id="intended-audience">
-<span id="id1"></span><h3>Intended audience<a class="headerlink" href="#intended-audience" title="Permalink to this headline">#</a></h3>
-<p>This guide is intended to assist software developers who want to develop applications by using the Rackspace Cloud Block Storage API. It assumes the reader has a general understanding of storage and is familiar with the following items:</p>
-<ul class="simple">
-<li>RESTful web services</li>
-<li>HTTP/1.1 conventions</li>
-<li>JSON data serialization formats</li>
-</ul>
-</div>
 <span id="document-overview/additional-resources"></span><div class="section" id="additional-resources">
 <span id="id1"></span><h3>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h3>
 <p>You can download the most current versions of the API-related documents
@@ -126,6 +124,19 @@ the following terms:</p>
 </div>
 </div>
 </div>
+</div>
+<span id="document-developer-guide"></span><div class="section" id="developer-guide">
+<span id="id1"></span><h2><strong>Developer Guide</strong><a class="headerlink" href="#developer-guide" title="Permalink to this headline">#</a></h2>
+<p>This guide is intended to assist software developers who want to develop applications by
+using the REST application programming interface (API) for the Rackspace Cloud Block Storage service.</p>
+<p>To use the information provided here, you should have a general understanding of the
+Cloud Block Storage service and have access to an installation of the Cloud Block Storage service. You
+should also be familiar with the following technologies:</p>
+<ul class="simple">
+<li><em>RESTful</em> web services</li>
+<li><em>HTTP</em>/1.1</li>
+<li>JSON data serialization format</li>
+</ul>
 </div>
 <span id="document-general-api-info/index"></span><div class="section" id="general-api-information">
 <span id="general-api-info"></span><h2>General API information<a class="headerlink" href="#general-api-information" title="Permalink to this headline">#</a></h2>
@@ -974,22 +985,13 @@ Date: Tue, 29 Nov 2011 00:35:24 GMT
 </div>
 </div>
 </div>
-<span id="document-api-operations/index"></span><div class="section" id="api-operations">
-<span id="api-operations-index"></span><h2>API Operations<a class="headerlink" href="#api-operations" title="Permalink to this headline">#</a></h2>
-<p>The Cloud Block Storage API allows you to manage volumes and snapshots.</p>
-<div class="toctree-wrapper compound">
-<span id="document-api-operations/cbs-volumes-operations"></span><div class="section" id="volumes">
-<span id="cbs-volumes-operations"></span><h3>Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">#</a></h3>
-<div class="contents local topic" id="contents">
-<ul class="simple">
-<li><a class="reference internal" href="#create-volume" id="id11">Create volume</a></li>
-<li><a class="reference internal" href="#list-volumes" id="id12">List volumes</a></li>
-<li><a class="reference internal" href="#list-volumes-detailed" id="id13">List volumes (detailed)</a></li>
-<li><a class="reference internal" href="#show-volume" id="id14">Show volume</a></li>
-<li><a class="reference internal" href="#update-volume" id="id15">Update volume</a></li>
-<li><a class="reference internal" href="#delete-volume" id="id16">Delete volume</a></li>
-</ul>
+<span id="document-api-reference"></span><div class="section" id="api-reference">
+<span id="id1"></span><h2><strong>API Reference</strong><a class="headerlink" href="#api-reference" title="Permalink to this headline">#</a></h2>
+<p>Learn about the available Cloud Block Storage API resources and methods and see request and response examples.</p>
 </div>
+<span id="document-api-operations/index"></span><div class="toctree-wrapper compound" id="api-reference">
+<span id="document-api-operations/cbs-volumes-operations"></span><div class="section" id="volumes">
+<span id="cbs-volumes-operations"></span><h2>Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">#</a></h2>
 <p>A volume is a detachable block storage device. You can think of it as a USB hard drive. You can attach a volume to one instance at a time.</p>
 <p>When you make an API call to create, list, or delete volumes, the following volume status values are possible:</p>
 <ul class="simple">
@@ -1002,7 +1004,7 @@ Date: Tue, 29 Nov 2011 00:35:24 GMT
 <li>ERROR_DELETING: An error occurred during volume deletion.</li>
 </ul>
 <div class="section" id="create-volume">
-<span id="post-create-volume-v1-tenant-id-volumes"></span><h4><a class="toc-backref" href="#id11">Create volume</a><a class="headerlink" href="#create-volume" title="Permalink to this headline">#</a></h4>
+<span id="post-create-volume-v1-tenant-id-volumes"></span><h3>Create volume<a class="headerlink" href="#create-volume" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">POST</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span>
 </pre></div>
 </div>
@@ -1035,7 +1037,7 @@ Date: Tue, 29 Nov 2011 00:35:24 GMT
 </tbody>
 </table>
 <div class="section" id="request">
-<h5>Request<a class="headerlink" href="#request" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#request" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1182,7 +1184,7 @@ create the volume.</td>
 </div>
 </div>
 <div class="section" id="response">
-<h5>Response<a class="headerlink" href="#response" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#response" title="Permalink to this headline">#</a></h4>
 <p><strong>Example Create volume: XML response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
 &lt;volume xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
@@ -1226,7 +1228,7 @@ create the volume.</td>
 </div>
 </div>
 <div class="section" id="list-volumes">
-<span id="get-list-volumes-v1-tenant-id-volumes"></span><h4><a class="toc-backref" href="#id12">List volumes</a><a class="headerlink" href="#list-volumes" title="Permalink to this headline">#</a></h4>
+<span id="get-list-volumes-v1-tenant-id-volumes"></span><h3>List volumes<a class="headerlink" href="#list-volumes" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span>
 </pre></div>
 </div>
@@ -1252,7 +1254,7 @@ create the volume.</td>
 </tbody>
 </table>
 <div class="section" id="id1">
-<h5>Request<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1277,7 +1279,7 @@ the tenant or account.</td>
 <p>This operation does not accept a request body.</p>
 </div>
 <div class="section" id="id2">
-<h5>Response<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <p><strong>Example List volumes: XML response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;volumes xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;&gt;
@@ -1331,7 +1333,7 @@ the tenant or account.</td>
 </div>
 </div>
 <div class="section" id="list-volumes-detailed">
-<span id="get-list-volumes-detailed-v1-tenant-id-volumes-detail"></span><h4><a class="toc-backref" href="#id13">List volumes (detailed)</a><a class="headerlink" href="#list-volumes-detailed" title="Permalink to this headline">#</a></h4>
+<span id="get-list-volumes-detailed-v1-tenant-id-volumes-detail"></span><h3>List volumes (detailed)<a class="headerlink" href="#list-volumes-detailed" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span><span class="o">/</span><span class="n">detail</span>
 </pre></div>
 </div>
@@ -1357,7 +1359,7 @@ the tenant or account.</td>
 </tbody>
 </table>
 <div class="section" id="id3">
-<h5>Request<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1382,7 +1384,7 @@ the tenant or account.</td>
 <p>This operation does not accept a request body.</p>
 </div>
 <div class="section" id="id4">
-<h5>Response<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <p><strong>Example List volumes (detailed): XML response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
 &lt;volumes xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;&gt;
@@ -1508,7 +1510,7 @@ the tenant or account.</td>
 </div>
 </div>
 <div class="section" id="show-volume">
-<span id="get-show-volume-v1-tenant-id-volumes-volume-id"></span><h4><a class="toc-backref" href="#id14">Show volume</a><a class="headerlink" href="#show-volume" title="Permalink to this headline">#</a></h4>
+<span id="get-show-volume-v1-tenant-id-volumes-volume-id"></span><h3>Show volume<a class="headerlink" href="#show-volume" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span><span class="o">/</span><span class="p">{</span><span class="n">volume_id</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -1534,7 +1536,7 @@ the tenant or account.</td>
 </tbody>
 </table>
 <div class="section" id="id5">
-<h5>Request<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1564,7 +1566,7 @@ an existing volume.</td>
 <p>This operation does not accept a request body.</p>
 </div>
 <div class="section" id="id6">
-<h5>Response<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
 <p><strong>Example Show volume: XML response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
 &lt;volume xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
@@ -1608,7 +1610,7 @@ an existing volume.</td>
 </div>
 </div>
 <div class="section" id="update-volume">
-<span id="put-update-volume-v1-tenant-id-volumes-volume-id"></span><h4><a class="toc-backref" href="#id15">Update volume</a><a class="headerlink" href="#update-volume" title="Permalink to this headline">#</a></h4>
+<span id="put-update-volume-v1-tenant-id-volumes-volume-id"></span><h3>Update volume<a class="headerlink" href="#update-volume" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">PUT</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span><span class="o">/</span><span class="p">{</span><span class="n">volume_id</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -1634,7 +1636,7 @@ an existing volume.</td>
 </tbody>
 </table>
 <div class="section" id="id7">
-<h5>Request<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1705,7 +1707,7 @@ volume.</td>
 </div>
 </div>
 <div class="section" id="id8">
-<h5>Response<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
 <p><strong>Example Update volume: XML response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
 &lt;volume xmlns:atom=&quot;http://www.w3.org/2005/Atom&quot;
@@ -1749,7 +1751,7 @@ volume.</td>
 </div>
 </div>
 <div class="section" id="delete-volume">
-<span id="delete-delete-volume-v1-tenant-id-volumes-volume-id"></span><h4><a class="toc-backref" href="#id16">Delete volume</a><a class="headerlink" href="#delete-volume" title="Permalink to this headline">#</a></h4>
+<span id="delete-delete-volume-v1-tenant-id-volumes-volume-id"></span><h3>Delete volume<a class="headerlink" href="#delete-volume" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">DELETE</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span><span class="o">/</span><span class="p">{</span><span class="n">volume_id</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -1780,7 +1782,7 @@ accepted for processing.</td>
 </tbody>
 </table>
 <div class="section" id="id9">
-<h5>Request<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1810,22 +1812,16 @@ an existing volume.</td>
 <p>This operation does not accept a request body.</p>
 </div>
 <div class="section" id="id10">
-<h5>Response<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
 <p>This operation does not return a response body.</p>
 </div>
 </div>
 </div>
 <span id="document-api-operations/cbs-volume-types-operations"></span><div class="section" id="volume-types">
-<span id="cbs-volume-types-operations"></span><h3>Volume types<a class="headerlink" href="#volume-types" title="Permalink to this headline">#</a></h3>
-<div class="contents local topic" id="contents">
-<ul class="simple">
-<li><a class="reference internal" href="#list-volume-types" id="id3">List volume types</a></li>
-<li><a class="reference internal" href="#show-volume-type-details" id="id4">Show volume type details</a></li>
-</ul>
-</div>
+<span id="cbs-volume-types-operations"></span><h2>Volume types<a class="headerlink" href="#volume-types" title="Permalink to this headline">#</a></h2>
 <p>Use volume type operations to list volume types and show volume type details.</p>
 <div class="section" id="list-volume-types">
-<span id="get-list-volume-types-v1-tenant-id-types"></span><h4><a class="toc-backref" href="#id3">List volume types</a><a class="headerlink" href="#list-volume-types" title="Permalink to this headline">#</a></h4>
+<span id="get-list-volume-types-v1-tenant-id-types"></span><h3>List volume types<a class="headerlink" href="#list-volume-types" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">types</span>
 </pre></div>
 </div>
@@ -1851,7 +1847,7 @@ an existing volume.</td>
 </tbody>
 </table>
 <div class="section" id="request">
-<h5>Request<a class="headerlink" href="#request" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#request" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1876,7 +1872,7 @@ the tenant or account.</td>
 <p>This operation does not accept a request body.</p>
 </div>
 <div class="section" id="response">
-<h5>Response<a class="headerlink" href="#response" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#response" title="Permalink to this headline">#</a></h4>
 <p><strong>Example List volume types: XML response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
 &lt;volume_types xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;&gt;&gt;
@@ -1910,7 +1906,7 @@ the tenant or account.</td>
 </div>
 </div>
 <div class="section" id="show-volume-type-details">
-<span id="get-show-volume-type-details-v1-tenant-id-types-volume-type-id"></span><h4><a class="toc-backref" href="#id4">Show volume type details</a><a class="headerlink" href="#show-volume-type-details" title="Permalink to this headline">#</a></h4>
+<span id="get-show-volume-type-details-v1-tenant-id-types-volume-type-id"></span><h3>Show volume type details<a class="headerlink" href="#show-volume-type-details" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">types</span><span class="o">/</span><span class="p">{</span><span class="n">volume_type_id</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -1936,7 +1932,7 @@ the tenant or account.</td>
 </tbody>
 </table>
 <div class="section" id="id1">
-<h5>Request<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1966,7 +1962,7 @@ an existing volume type.</td>
 <p>This operation does not accept a request body.</p>
 </div>
 <div class="section" id="id2">
-<h5>Response<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <p><strong>Example Show volume type details: XML response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
     &lt;volume_type xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
@@ -1989,20 +1985,9 @@ an existing volume type.</td>
 </div>
 </div>
 <span id="document-api-operations/cbs-snapshots-operations"></span><div class="section" id="snapshots">
-<span id="cbs-snapshots-operations"></span><h3>Snapshots<a class="headerlink" href="#snapshots" title="Permalink to this headline">#</a></h3>
-<div class="contents local topic" id="contents">
-<ul class="simple">
-<li><a class="reference internal" href="#create-snapshot" id="id13">Create snapshot</a></li>
-<li><a class="reference internal" href="#list-snapshots" id="id14">List snapshots</a></li>
-<li><a class="reference internal" href="#list-snapshots-detailed" id="id15">List snapshots (detailed)</a></li>
-<li><a class="reference internal" href="#show-snapshot-details" id="id16">Show snapshot details</a></li>
-<li><a class="reference internal" href="#update-snapshot" id="id17">Update snapshot</a></li>
-<li><a class="reference internal" href="#delete-snapshot" id="id18">Delete snapshot</a></li>
-<li><a class="reference internal" href="#show-snapshot-metadata" id="id19">Show snapshot metadata</a></li>
-</ul>
-</div>
+<span id="cbs-snapshots-operations"></span><h2>Snapshots<a class="headerlink" href="#snapshots" title="Permalink to this headline">#</a></h2>
 <p>A snapshot is a point-in-time copy of the data that a volume contains.</p>
-<p>When you make an API call to create, list, or delete snapshots, the following status values are possible</p>
+<p>When you make an API call to create, list, or delete snapshots, the following status values are possible:</p>
 <ul class="simple">
 <li>CREATING: The snapshot is being created.</li>
 <li>AVAILABLE: The snapshot is ready for use.</li>
@@ -2011,7 +1996,7 @@ an existing volume type.</td>
 <li>ERROR_DELETING: An error occurred during snapshot deletion.</li>
 </ul>
 <div class="section" id="create-snapshot">
-<span id="post-create-snapshot-v1-tenant-id-snapshots"></span><h4><a class="toc-backref" href="#id13">Create snapshot</a><a class="headerlink" href="#create-snapshot" title="Permalink to this headline">#</a></h4>
+<span id="post-create-snapshot-v1-tenant-id-snapshots"></span><h3>Create snapshot<a class="headerlink" href="#create-snapshot" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">POST</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span>
 </pre></div>
 </div>
@@ -2048,7 +2033,7 @@ was created.</td>
 </tbody>
 </table>
 <div class="section" id="request">
-<h5>Request<a class="headerlink" href="#request" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#request" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2138,7 +2123,7 @@ The default is None.</td>
 </div>
 </div>
 <div class="section" id="response">
-<h5>Response<a class="headerlink" href="#response" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#response" title="Permalink to this headline">#</a></h4>
 <p><strong>Example Create snapshot: XML response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;snapshot xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
@@ -2174,7 +2159,7 @@ The default is None.</td>
 </div>
 </div>
 <div class="section" id="list-snapshots">
-<span id="get-list-snapshots-v1-tenant-id-snapshots"></span><h4><a class="toc-backref" href="#id14">List snapshots</a><a class="headerlink" href="#list-snapshots" title="Permalink to this headline">#</a></h4>
+<span id="get-list-snapshots-v1-tenant-id-snapshots"></span><h3>List snapshots<a class="headerlink" href="#list-snapshots" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span>
 </pre></div>
 </div>
@@ -2200,7 +2185,7 @@ The default is None.</td>
 </tbody>
 </table>
 <div class="section" id="id1">
-<h5>Request<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2225,7 +2210,7 @@ the tenant or account.</td>
 <p>This operation does not accept a request body.</p>
 </div>
 <div class="section" id="id2">
-<h5>Response<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <p><strong>Example List snapshots: XML response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;snapshots xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;&gt;
@@ -2274,7 +2259,7 @@ the tenant or account.</td>
 </div>
 </div>
 <div class="section" id="list-snapshots-detailed">
-<span id="get-list-snapshots-detailed-v1-tenant-id-snapshots-detail"></span><h4><a class="toc-backref" href="#id15">List snapshots (detailed)</a><a class="headerlink" href="#list-snapshots-detailed" title="Permalink to this headline">#</a></h4>
+<span id="get-list-snapshots-detailed-v1-tenant-id-snapshots-detail"></span><h3>List snapshots (detailed)<a class="headerlink" href="#list-snapshots-detailed" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="n">detail</span>
 </pre></div>
 </div>
@@ -2300,7 +2285,7 @@ the tenant or account.</td>
 </tbody>
 </table>
 <div class="section" id="id3">
-<h5>Request<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2325,7 +2310,7 @@ the tenant or account.</td>
 <p>This operation does not accept a request body.</p>
 </div>
 <div class="section" id="id4">
-<h5>Response<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <p><strong>Example List snapshots (detailed): XML response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
 &lt;snapshots
@@ -2383,7 +2368,7 @@ the tenant or account.</td>
 </div>
 </div>
 <div class="section" id="show-snapshot-details">
-<span id="get-show-snapshot-details-v1-tenant-id-snapshots-snapshot-id"></span><h4><a class="toc-backref" href="#id16">Show snapshot details</a><a class="headerlink" href="#show-snapshot-details" title="Permalink to this headline">#</a></h4>
+<span id="get-show-snapshot-details-v1-tenant-id-snapshots-snapshot-id"></span><h3>Show snapshot details<a class="headerlink" href="#show-snapshot-details" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="p">{</span><span class="n">snapshot_id</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -2413,7 +2398,7 @@ the tenant or account.</td>
 </tbody>
 </table>
 <div class="section" id="id5">
-<h5>Request<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2443,7 +2428,7 @@ an existing snapshot.</td>
 <p>This operation does not accept a request body.</p>
 </div>
 <div class="section" id="id6">
-<h5>Response<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
 <p><strong>Example Show snapshot details: XML response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;snapshot xmlns=&quot;http://docs.rackspace.com/volume/api/v1&quot;
@@ -2479,7 +2464,7 @@ an existing snapshot.</td>
 </div>
 </div>
 <div class="section" id="update-snapshot">
-<span id="put-update-snapshot-v1-tenant-id-snapshots-snapshot-id"></span><h4><a class="toc-backref" href="#id17">Update snapshot</a><a class="headerlink" href="#update-snapshot" title="Permalink to this headline">#</a></h4>
+<span id="put-update-snapshot-v1-tenant-id-snapshots-snapshot-id"></span><h3>Update snapshot<a class="headerlink" href="#update-snapshot" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">PUT</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="p">{</span><span class="n">snapshot_id</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -2505,7 +2490,7 @@ an existing snapshot.</td>
 </tbody>
 </table>
 <div class="section" id="id7">
-<h5>Request<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2575,7 +2560,7 @@ an existing snapshot.</td>
 </div>
 </div>
 <div class="section" id="id8">
-<h5>Response<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
 <p><strong>Example Update snapshot: XML response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;
 &lt;snapshot
@@ -2610,7 +2595,7 @@ an existing snapshot.</td>
 </div>
 </div>
 <div class="section" id="delete-snapshot">
-<span id="delete-delete-snapshot-v1-tenant-id-snapshots-snapshot-id"></span><h4><a class="toc-backref" href="#id18">Delete snapshot</a><a class="headerlink" href="#delete-snapshot" title="Permalink to this headline">#</a></h4>
+<span id="delete-delete-snapshot-v1-tenant-id-snapshots-snapshot-id"></span><h3>Delete snapshot<a class="headerlink" href="#delete-snapshot" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">DELETE</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="p">{</span><span class="n">snapshot_id</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -2638,7 +2623,7 @@ was created.</td>
 </tbody>
 </table>
 <div class="section" id="id9">
-<h5>Request<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2668,12 +2653,12 @@ an existing snapshot.</td>
 <p>This operation does not accept a request body.</p>
 </div>
 <div class="section" id="id10">
-<h5>Response<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
 <p>This operation does not return a response body.</p>
 </div>
 </div>
 <div class="section" id="show-snapshot-metadata">
-<span id="get-show-snapshot-metadata-v1-tenant-id-snapshots-snapshot-id-metadata"></span><h4><a class="toc-backref" href="#id19">Show snapshot metadata</a><a class="headerlink" href="#show-snapshot-metadata" title="Permalink to this headline">#</a></h4>
+<span id="get-show-snapshot-metadata-v1-tenant-id-snapshots-snapshot-id-metadata"></span><h3>Show snapshot metadata<a class="headerlink" href="#show-snapshot-metadata" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="p">{</span><span class="n">snapshot_id</span><span class="p">}</span><span class="o">/</span><span class="n">metadata</span>
 </pre></div>
 </div>
@@ -2699,7 +2684,7 @@ an existing snapshot.</td>
 </tbody>
 </table>
 <div class="section" id="id11">
-<h5>Request<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h5>
+<h4>Request<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2729,7 +2714,7 @@ an existing snapshot.</td>
 <p>This operation does not accept a request body.</p>
 </div>
 <div class="section" id="id12">
-<h5>Response<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h5>
+<h4>Response<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
 <p><strong>Example Show snapshot metadata: JSON response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
     <span class="s">&quot;snapshot&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -2755,7 +2740,6 @@ an existing snapshot.</td>
 </div>
 </div>
 </div>
-</div>
 
 
           </div>
@@ -2765,8 +2749,7 @@ an existing snapshot.</td>
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html#document-index">Table Of Contents</a></h3>
   <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html#document-overview/index">Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/intended-audience">Intended audience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-overview/index">About the API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/additional-resources">Additional resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/api-contract-changes">API contract changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/pricing-service-level">Pricing and service level</a></li>
@@ -2780,6 +2763,7 @@ an existing snapshot.</td>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-developer-guide"><strong>Developer Guide</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-general-api-info/index">General API information</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/authentication">Authentication</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="index.html#get-your-credentials">Get your credentials</a></li>
@@ -2803,29 +2787,87 @@ an existing snapshot.</td>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/faults">Faults</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#document-api-operations/index">API Operations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-api-operations/cbs-volumes-operations">Volumes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#create-volume">Create volume</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#list-volumes">List volumes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#list-volumes-detailed">List volumes (detailed)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#show-volume">Show volume</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#update-volume">Update volume</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#delete-volume">Delete volume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-api-reference"><strong>API Reference</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-api-operations/cbs-volumes-operations">Volumes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#create-volume">Create volume</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#request">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#response">Response</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-api-operations/cbs-volume-types-operations">Volume types</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#list-volume-types">List volume types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#show-volume-type-details">Show volume type details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#list-volumes">List volumes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id1">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id2">Response</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-api-operations/cbs-snapshots-operations">Snapshots</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#create-snapshot">Create snapshot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#list-snapshots">List snapshots</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#list-snapshots-detailed">List snapshots (detailed)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#show-snapshot-details">Show snapshot details</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#update-snapshot">Update snapshot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#delete-snapshot">Delete snapshot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#show-snapshot-metadata">Show snapshot metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#list-volumes-detailed">List volumes (detailed)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id3">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id4">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#show-volume">Show volume</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id5">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id6">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#update-volume">Update volume</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id7">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id8">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#delete-volume">Delete volume</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id9">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id10">Response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-api-operations/cbs-volume-types-operations">Volume types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#list-volume-types">List volume types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#request">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#show-volume-type-details">Show volume type details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id1">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id2">Response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-api-operations/cbs-snapshots-operations">Snapshots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#create-snapshot">Create snapshot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#request">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#list-snapshots">List snapshots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id1">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id2">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#list-snapshots-detailed">List snapshots (detailed)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id3">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id4">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#show-snapshot-details">Show snapshot details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id5">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id6">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#update-snapshot">Update snapshot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id7">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id8">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#delete-snapshot">Delete snapshot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id9">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id10">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#show-snapshot-metadata">Show snapshot metadata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id11">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#id12">Response</a></li>
 </ul>
 </li>
 </ul>
