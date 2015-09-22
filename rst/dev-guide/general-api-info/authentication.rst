@@ -106,7 +106,7 @@ You can use `cURL`_ to try the authentication process in two steps: 1) get a tok
     -H 'X-Auth-Token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' --verbose 
 
 
-Find links to language binding examples you can adapt to work with the Cloud Identity service at http://docs.rackspace.com/sdks/guide/content/index.html.
+Find links to SDK examples you can adapt to work with the Cloud Identity service at `Software Development Kits & Tools`_.
 
 Authentication tokens are typically valid for 24 hours. Applications should be designed to re-authenticate after receiving a 401 (Unauthorized) response from a service endpoint.
 
@@ -119,3 +119,4 @@ Authentication tokens are typically valid for 24 hours. Applications should be d
 .. _Multi-factor authentication: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html
 .. _cURL: http://curl.haxx.se/
 .. _Cloud Identity Client Developer Guide: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html
+.. _Software Development Kits & Tools: https://developer.rackspace.com/docs/#sdks

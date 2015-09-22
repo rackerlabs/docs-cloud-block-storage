@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _get-list-snapshots-(detailed)-v1-tenant-id-snapshots-detail:
+.. _get-list-snapshots-detail:
 
 List snapshots (detailed)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10,7 +10,7 @@ List snapshots (detailed)
 
     GET /v1/{tenant_id}/snapshots/detail
 
-Lists detailed information for all Cloud Block Storage snapshots that the tenant who submits the request can access.
+This operation lists detailed information for all Cloud Block Storage snapshots that the tenant who submits the request can access.
 
 
 

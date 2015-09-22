@@ -5,7 +5,6 @@
    :keywords: Rackspace, Cloud Block Storage ReST API, API resources, API methods
        
 .. toctree:: 
-   :caption: API Reference
    :maxdepth: 2
    
    cbs-volumes-operations

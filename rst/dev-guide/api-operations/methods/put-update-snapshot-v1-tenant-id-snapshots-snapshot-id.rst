@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _put-update-snapshot-v1-tenant-id-snapshots-snapshot-id:
+.. _put-update-snapshot:
 
 Update snapshot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10,7 +10,7 @@ Update snapshot
 
     PUT /v1/{tenant_id}/snapshots/{snapshot_id}
 
-Updates a specified snapshot.
+This operation updates a specified snapshot.
 
 
 
@@ -49,9 +49,14 @@ This table shows the parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|display_description       |String *(Optional)*      |Snapshot description.    |
+|**snapshot**              |String *(Required)*      |Information about the    |
+|                          |                         |snapshot.                |
 +--------------------------+-------------------------+-------------------------+
-|display_name              |String *(Optional)*      |Name of the snapshot.    |
+|snapshot.\                |String *(Optional)*      |A description of the     |
+|**display_description**   |                         |snapshot.                |
++--------------------------+-------------------------+-------------------------+
+|snapshot.\                |String *(Optional)*      |The name of the          |
+|**display_name**          |                         |snapshot.                |
 +--------------------------+-------------------------+-------------------------+
 
 

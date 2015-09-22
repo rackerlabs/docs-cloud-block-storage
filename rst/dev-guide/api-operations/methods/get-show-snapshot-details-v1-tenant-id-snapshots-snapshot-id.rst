@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _get-show-snapshot-details-v1-tenant-id-snapshots-snapshot-id:
+.. _get-show-snapshot-details:
 
 Show snapshot details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10,7 +10,7 @@ Show snapshot details
 
     GET /v1/{tenant_id}/snapshots/{snapshot_id}
 
-Shows snapshot details.
+This operation shows snapshot details.
 
 .. note::
    The ``os-extended-snapshot-attributes:progress`` field in the response body shows snapshot progress. See the following examples.

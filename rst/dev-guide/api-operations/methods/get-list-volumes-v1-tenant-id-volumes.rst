@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _get-list-volumes-v1-tenant-id-volumes:
+.. _get-list-volumes:
 
 List volumes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10,7 +10,7 @@ List volumes
 
     GET /v1/{tenant_id}/volumes
 
-Lists summary information for all Cloud Block Storage volumes that the tenant who submits the request can access.
+This operation lists summary information for all Cloud Block Storage volumes that the tenant who submits the request can access.
 
 
 

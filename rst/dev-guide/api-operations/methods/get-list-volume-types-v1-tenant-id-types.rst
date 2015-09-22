@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _get-list-volume-types-v1-tenant-id-types:
+.. _get-list-volume-types:
 
 List volume types
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10,7 +10,7 @@ List volume types
 
     GET /v1/{tenant_id}/types
 
-Lists volume types.
+This operation lists volume types.
 
 
 

@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _put-update-volume-v1-tenant-id-volumes-volume-id:
+.. _put-update-volume:
 
 Update volume
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10,7 +10,7 @@ Update volume
 
     PUT /v1/{tenant_id}/volumes/{volume_id}
 
-Updates the name and description for a volume.
+This operation updates the name and description for a volume.
 
 
 
@@ -51,11 +51,14 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|display_description       |String *(Optional)*      |A description of the     |
+|**volume**                |String *(Required)*      |Information about the    |
 |                          |                         |volume.                  |
 +--------------------------+-------------------------+-------------------------+
-|display_name              |String *(Optional)*      |The name of the volume.  |
-|                          |                         |                         |
+|volume.\                  |String *(Optional)*      |A description of the     |
+|**display_description**   |                         |volume.                  |
++--------------------------+-------------------------+-------------------------+
+|volume.\                  |String *(Optional)*      |The name of the volume.  |
+|**display_name**          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
 
 

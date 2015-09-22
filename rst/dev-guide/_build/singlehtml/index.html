@@ -76,17 +76,27 @@
 <div class="toctree-wrapper compound">
 <span id="document-overview/additional-resources"></span><div class="section" id="additional-resources">
 <span id="id1"></span><h3>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h3>
-<p>You can download the most current versions of the API-related documents
-from <a class="reference external" href="http://docs.rackspace.com/">docs.rackspace.com</a>.</p>
-<p>For information about Rackspace Cloud products, refer to
+<p>We welcome feedback, comments, and bug reports. Visit the Rackspace customer portal
+at <a class="reference external" href="https://feedback.rackspace.com/">https://feedback.rackspace.com/</a>.</p>
+<p>Use the links below to learn more about the Rackspace Cloud Block Storage service and API.</p>
+<ul class="simple">
+<li>For general information about Cloud Block Storage , see the <a class="reference external" href="https://www.rackspace.com/knowledge_center/product-faq/cloud-block-storage">Cloud Block Storage FAQ</a>
+in the Rackspace Knowledge Center.</li>
+<li>To learn more about the Cloud Block Storage service and the various ways you can interact
+with it (API, SDK, CLI, and Control Panel), see the <a class="reference external" href="https://developer.rackspace.com/docs/user-guides/infrastructure/">Rackspace Cloud Guide to Core Infrastructure Services</a>.</li>
+<li>To learn about using Rackspace Cloud SDKs, see <a class="reference external" href="https://developer.rackspace.com/docs/#sdks">Software Development Kits &amp; Tools</a>.</li>
+<li>To get information about other Rackspace Cloud services APIs, see the
+<a class="reference external" href="https://developer.rackspace.com/docs/">Rackspace API Documentation</a>.</li>
+<li>To get more information about Rackspace Cloud products, refer to
 <a class="reference external" href="http://www.rackspace.com/cloud/">www.rackspace.com</a>. This site also
 offers links to the Rackspace official support channels, including
-knowledge base articles, forums, phone, chat, and email.</p>
-<p>You can follow Rackspace updates and announcements via
-<a class="reference external" href="http://www.twitter.com/rackspace">Twitter</a>.</p>
-<p>This API uses standard HTTP 1.1 response codes as documented at <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP
+knowledge base articles, forums, phone, chat, and email.</li>
+<li>You can follow Rackspace updates and announcements via
+<a class="reference external" href="http://www.twitter.com/rackspace">Twitter</a>.</li>
+<li>This API uses standard HTTP 1.1 response codes as documented at <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP
 Status Code
-Definitions</a>.</p>
+Definitions</a>.</li>
+</ul>
 </div>
 <span id="document-overview/api-contract-changes"></span><div class="section" id="api-contract-changes">
 <span id="id1"></span><h3>API contract changes<a class="headerlink" href="#api-contract-changes" title="Permalink to this headline">#</a></h3>
@@ -97,31 +107,6 @@ contract does change.</p>
 <span id="pricing-service-level"></span><h3>Pricing and service level<a class="headerlink" href="#pricing-and-service-level" title="Permalink to this headline">#</a></h3>
 <p>Cloud Block Storage is part of the Rackspace Cloud and your use of the Cloud Block Storage API will be billed according to the <a class="reference external" href="http://www.rackspace.com/cloud/block-storage/">pricing schedule</a>.</p>
 <p>The Service Level Agreement (SLA) for Cloud Block Storage is available on the <a class="reference external" href="http://www.rackspace.com/information/legal/cloud/sla?page">Rackspace Legal Information</a> page.</p>
-</div>
-<span id="document-overview/terminology"></span><div class="section" id="terminology">
-<span id="cbs-dg-terminology"></span><h3>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">#</a></h3>
-<p>To use the Cloud Block Storage API effectively, you should understand
-the following terms:</p>
-<div class="section" id="instance">
-<h4>Instance<a class="headerlink" href="#instance" title="Permalink to this headline">#</a></h4>
-<p>An instance is a virtual machine that runs inside the cloud.</p>
-</div>
-<div class="section" id="instance-type">
-<h4>Instance type<a class="headerlink" href="#instance-type" title="Permalink to this headline">#</a></h4>
-<p>An instance type describes the compute, memory, and storage capacity of Nova computing instances. In layman&#8217;s terms, this is the size (in terms of vCPUs, RAM, and so forth) of the virtual server that you will be launching.</p>
-</div>
-<div class="section" id="snapshot">
-<h4>Snapshot<a class="headerlink" href="#snapshot" title="Permalink to this headline">#</a></h4>
-<p>A snapshot is a point-in-time copy of the data contained in a volume.</p>
-</div>
-<div class="section" id="volume">
-<h4>Volume<a class="headerlink" href="#volume" title="Permalink to this headline">#</a></h4>
-<p>A volume is a detachable block storage device. You can think of it as a USB hard drive. It can only be attached to one instance at a time.</p>
-</div>
-<div class="section" id="volume-type">
-<h4>Volume type<a class="headerlink" href="#volume-type" title="Permalink to this headline">#</a></h4>
-<p>The volume type is the type of a block storage volume. There are two types: SATA for standard performance and SSD for high performance.</p>
-</div>
 </div>
 </div>
 </div>
@@ -137,6 +122,31 @@ should also be familiar with the following technologies:</p>
 <li><em>HTTP</em>/1.1</li>
 <li>JSON data serialization format</li>
 </ul>
+</div>
+<span id="document-concepts"></span><div class="section" id="concepts">
+<span id="cbs-dg-concepts"></span><h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
+<p>To use the Cloud Block Storage API effectively, you should understand
+the following terms:</p>
+<div class="section" id="instance">
+<h3>Instance<a class="headerlink" href="#instance" title="Permalink to this headline">#</a></h3>
+<p>An instance is a virtual machine that runs inside the cloud.</p>
+</div>
+<div class="section" id="instance-type">
+<h3>Instance type<a class="headerlink" href="#instance-type" title="Permalink to this headline">#</a></h3>
+<p>An instance type describes the compute, memory, and storage capacity of Nova computing instances. In layman&#8217;s terms, this is the size (in terms of vCPUs, RAM, and so forth) of the virtual server that you will be launching.</p>
+</div>
+<div class="section" id="snapshot">
+<h3>Snapshot<a class="headerlink" href="#snapshot" title="Permalink to this headline">#</a></h3>
+<p>A snapshot is a point-in-time copy of the data contained in a volume.</p>
+</div>
+<div class="section" id="volume">
+<h3>Volume<a class="headerlink" href="#volume" title="Permalink to this headline">#</a></h3>
+<p>A volume is a detachable block storage device. You can think of it as a USB hard drive. It can only be attached to one instance at a time.</p>
+</div>
+<div class="section" id="volume-type">
+<h3>Volume type<a class="headerlink" href="#volume-type" title="Permalink to this headline">#</a></h3>
+<p>The volume type is the type of a block storage volume. There are two types: SATA for standard performance and SSD for high performance.</p>
+</div>
 </div>
 <span id="document-general-api-info/index"></span><div class="section" id="general-api-information">
 <span id="general-api-info"></span><h2>General API information<a class="headerlink" href="#general-api-information" title="Permalink to this headline">#</a></h2>
@@ -238,7 +248,7 @@ choice.</li>
 -H &#39;X-Auth-Token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39; --verbose
 </pre></div>
 </div>
-<p>Find links to language binding examples you can adapt to work with the Cloud Identity service at <a class="reference external" href="http://docs.rackspace.com/sdks/guide/content/index.html">http://docs.rackspace.com/sdks/guide/content/index.html</a>.</p>
+<p>Find links to SDK examples you can adapt to work with the Cloud Identity service at <a class="reference external" href="https://developer.rackspace.com/docs/#sdks">Software Development Kits &amp; Tools</a>.</p>
 <p>Authentication tokens are typically valid for 24 hours. Applications should be designed to re-authenticate after receiving a 401 (Unauthorized) response from a service endpoint.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -989,7 +999,7 @@ Date: Tue, 29 Nov 2011 00:35:24 GMT
 <span id="id1"></span><h2><strong>API Reference</strong><a class="headerlink" href="#api-reference" title="Permalink to this headline">#</a></h2>
 <p>Learn about the available Cloud Block Storage API resources and methods and see request and response examples.</p>
 </div>
-<span id="document-api-operations/index"></span><div class="toctree-wrapper compound" id="api-reference">
+<span id="document-api-operations/index"></span><div class="toctree-wrapper compound">
 <span id="document-api-operations/cbs-volumes-operations"></span><div class="section" id="volumes">
 <span id="cbs-volumes-operations"></span><h2>Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">#</a></h2>
 <p>A volume is a detachable block storage device. You can think of it as a USB hard drive. You can attach a volume to one instance at a time.</p>
@@ -1004,11 +1014,11 @@ Date: Tue, 29 Nov 2011 00:35:24 GMT
 <li>ERROR_DELETING: An error occurred during volume deletion.</li>
 </ul>
 <div class="section" id="create-volume">
-<span id="post-create-volume-v1-tenant-id-volumes"></span><h3>Create volume<a class="headerlink" href="#create-volume" title="Permalink to this headline">#</a></h3>
+<span id="post-create-volume"></span><h3>Create volume<a class="headerlink" href="#create-volume" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">POST</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span>
 </pre></div>
 </div>
-<p>Creates a volume.</p>
+<p>This operation creates a volume.</p>
 <p>Following are several considerations when using this operation:</p>
 <ul class="simple">
 <li>When you use <code class="docutils literal"><span class="pre">source_volid</span></code> for volume cloning, note that this feature currently has the following constraints. Concurrent clone requests are queued for processing. When one clone request completes, the next clone request in the queue starts.</li>
@@ -1073,7 +1083,7 @@ the tenant or account.</td>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>volume</td>
+<tr class="row-even"><td><strong>volume</strong></td>
 <td>String <em>(Required)</em></td>
 <td>A partial representation
 of a volume used in the
@@ -1081,7 +1091,7 @@ creation process. This
 parameter is required
 for this operation.</td>
 </tr>
-<tr class="row-odd"><td>size</td>
+<tr class="row-odd"><td>volume.<strong>size</strong></td>
 <td>Int <em>(Required)</em></td>
 <td>The size of the volume,
 in gibibytes (GiB). This
@@ -1092,25 +1102,25 @@ the volume size must be
 greater than the
 snapshot size.</td>
 </tr>
-<tr class="row-even"><td>display_description</td>
+<tr class="row-even"><td>volume.<strong>display_description</strong></td>
 <td>String <em>(Optional)</em></td>
 <td>A description of the
 volume. This parameter
 is optional.</td>
 </tr>
-<tr class="row-odd"><td>display_name</td>
+<tr class="row-odd"><td>volume.<strong>display_name</strong></td>
 <td>String <em>(Optional)</em></td>
 <td>The name of the volume.
 This parameter is
 optional.</td>
 </tr>
-<tr class="row-even"><td>snapshot_id</td>
+<tr class="row-even"><td>volume.<strong>snapshot_id</strong></td>
 <td>Uuid <em>(Optional)</em></td>
 <td>The snapshot from which
 to create a volume. This
 parameter is optional.</td>
 </tr>
-<tr class="row-odd"><td>volume_type</td>
+<tr class="row-odd"><td>volume.<strong>volume_type</strong></td>
 <td>String <em>(Optional)</em></td>
 <td>The type of volume to
 create, either SATA or
@@ -1119,7 +1129,7 @@ optional. If not
 defined, the default,
 SATA, is used.</td>
 </tr>
-<tr class="row-even"><td>source_volid</td>
+<tr class="row-even"><td>volume.<strong>source_volid</strong></td>
 <td>Uuid <em>(Optional)</em></td>
 <td>The source identifier of
 an existing Cloud Block
@@ -1129,7 +1139,7 @@ create a new volume.
 This parameter is
 optional.</td>
 </tr>
-<tr class="row-odd"><td>availability_zone</td>
+<tr class="row-odd"><td>volume.<strong>availability_zone</strong></td>
 <td>String <em>(Optional)</em></td>
 <td>This parameter is no
 longer used. Therefore,
@@ -1139,14 +1149,14 @@ for
 If you specify no value,
 the default is <code class="docutils literal"><span class="pre">nova</span></code>.</td>
 </tr>
-<tr class="row-even"><td>metadata</td>
+<tr class="row-even"><td>volume.<strong>metadata</strong></td>
 <td>String <em>(Optional)</em></td>
 <td>This optional parameter
 is available if you want
 to set any metadata
 values on the volume.</td>
 </tr>
-<tr class="row-odd"><td>imageRef</td>
+<tr class="row-odd"><td>volume.<strong>imageRef</strong></td>
 <td>Uuid <em>(Optional)</em></td>
 <td>Specifying this
 parameter is required to
@@ -1228,11 +1238,11 @@ create the volume.</td>
 </div>
 </div>
 <div class="section" id="list-volumes">
-<span id="get-list-volumes-v1-tenant-id-volumes"></span><h3>List volumes<a class="headerlink" href="#list-volumes" title="Permalink to this headline">#</a></h3>
+<span id="get-list-volumes"></span><h3>List volumes<a class="headerlink" href="#list-volumes" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span>
 </pre></div>
 </div>
-<p>Lists summary information for all Cloud Block Storage volumes that the tenant who submits the request can access.</p>
+<p>This operation lists summary information for all Cloud Block Storage volumes that the tenant who submits the request can access.</p>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1333,11 +1343,11 @@ the tenant or account.</td>
 </div>
 </div>
 <div class="section" id="list-volumes-detailed">
-<span id="get-list-volumes-detailed-v1-tenant-id-volumes-detail"></span><h3>List volumes (detailed)<a class="headerlink" href="#list-volumes-detailed" title="Permalink to this headline">#</a></h3>
+<span id="get-list-volumes-detail"></span><h3>List volumes (detailed)<a class="headerlink" href="#list-volumes-detailed" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span><span class="o">/</span><span class="n">detail</span>
 </pre></div>
 </div>
-<p>Lists detailed information for all Cloud Block Storage volumes that the tenant who submits the request can access.</p>
+<p>This operation lists detailed information for all Cloud Block Storage volumes that the tenant who submits the request can access.</p>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1510,11 +1520,11 @@ the tenant or account.</td>
 </div>
 </div>
 <div class="section" id="show-volume">
-<span id="get-show-volume-v1-tenant-id-volumes-volume-id"></span><h3>Show volume<a class="headerlink" href="#show-volume" title="Permalink to this headline">#</a></h3>
+<span id="get-show-volume"></span><h3>Show volume<a class="headerlink" href="#show-volume" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span><span class="o">/</span><span class="p">{</span><span class="n">volume_id</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Shows volume details.</p>
+<p>This operation hows volume details.</p>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1610,11 +1620,11 @@ an existing volume.</td>
 </div>
 </div>
 <div class="section" id="update-volume">
-<span id="put-update-volume-v1-tenant-id-volumes-volume-id"></span><h3>Update volume<a class="headerlink" href="#update-volume" title="Permalink to this headline">#</a></h3>
+<span id="put-update-volume"></span><h3>Update volume<a class="headerlink" href="#update-volume" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">PUT</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span><span class="o">/</span><span class="p">{</span><span class="n">volume_id</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Updates the name and description for a volume.</p>
+<p>This operation updates the name and description for a volume.</p>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1677,12 +1687,17 @@ an existing volume.</td>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>display_description</td>
+<tr class="row-even"><td><strong>volume</strong></td>
+<td>String <em>(Required)</em></td>
+<td>Information about the
+volume.</td>
+</tr>
+<tr class="row-odd"><td>volume.<strong>display_description</strong></td>
 <td>String <em>(Optional)</em></td>
 <td>A description of the
 volume.</td>
 </tr>
-<tr class="row-odd"><td>display_name</td>
+<tr class="row-even"><td>volume.<strong>display_name</strong></td>
 <td>String <em>(Optional)</em></td>
 <td>The name of the volume.</td>
 </tr>
@@ -1751,11 +1766,11 @@ volume.</td>
 </div>
 </div>
 <div class="section" id="delete-volume">
-<span id="delete-delete-volume-v1-tenant-id-volumes-volume-id"></span><h3>Delete volume<a class="headerlink" href="#delete-volume" title="Permalink to this headline">#</a></h3>
+<span id="id9"></span><h3>Delete volume<a class="headerlink" href="#delete-volume" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">DELETE</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">volumes</span><span class="o">/</span><span class="p">{</span><span class="n">volume_id</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Deletes a volume.</p>
+<p>This operation deletes a volume.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If a snapshot of the volume exists, you cannot delete the volume until you delete the snapshot.</p>
@@ -1781,8 +1796,8 @@ accepted for processing.</td>
 </tr>
 </tbody>
 </table>
-<div class="section" id="id9">
-<h4>Request<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
+<div class="section" id="id10">
+<h4>Request<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1811,8 +1826,8 @@ an existing volume.</td>
 </table>
 <p>This operation does not accept a request body.</p>
 </div>
-<div class="section" id="id10">
-<h4>Response<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
+<div class="section" id="id11">
+<h4>Response<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
 <p>This operation does not return a response body.</p>
 </div>
 </div>
@@ -1821,11 +1836,11 @@ an existing volume.</td>
 <span id="cbs-volume-types-operations"></span><h2>Volume types<a class="headerlink" href="#volume-types" title="Permalink to this headline">#</a></h2>
 <p>Use volume type operations to list volume types and show volume type details.</p>
 <div class="section" id="list-volume-types">
-<span id="get-list-volume-types-v1-tenant-id-types"></span><h3>List volume types<a class="headerlink" href="#list-volume-types" title="Permalink to this headline">#</a></h3>
+<span id="get-list-volume-types"></span><h3>List volume types<a class="headerlink" href="#list-volume-types" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">types</span>
 </pre></div>
 </div>
-<p>Lists volume types.</p>
+<p>This operation lists volume types.</p>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1906,11 +1921,11 @@ the tenant or account.</td>
 </div>
 </div>
 <div class="section" id="show-volume-type-details">
-<span id="get-show-volume-type-details-v1-tenant-id-types-volume-type-id"></span><h3>Show volume type details<a class="headerlink" href="#show-volume-type-details" title="Permalink to this headline">#</a></h3>
+<span id="get-show-volume-type-details"></span><h3>Show volume type details<a class="headerlink" href="#show-volume-type-details" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">types</span><span class="o">/</span><span class="p">{</span><span class="n">volume_type_id</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Shows volume type details.</p>
+<p>This operation hows volume type details.</p>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -1996,11 +2011,11 @@ an existing volume type.</td>
 <li>ERROR_DELETING: An error occurred during snapshot deletion.</li>
 </ul>
 <div class="section" id="create-snapshot">
-<span id="post-create-snapshot-v1-tenant-id-snapshots"></span><h3>Create snapshot<a class="headerlink" href="#create-snapshot" title="Permalink to this headline">#</a></h3>
+<span id="post-create-snapshot"></span><h3>Create snapshot<a class="headerlink" href="#create-snapshot" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">POST</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span>
 </pre></div>
 </div>
-<p>Creates a snapshot.</p>
+<p>This operation creates a snapshot.</p>
 <p>A snapshot is a point-in-time copy of the volume. You must flush all writes to the volume before you create a snapshot. To do so, either unmount any file systems on the volume or detach the volume.</p>
 <p>Snapshots are incremental, so each time that you create a snapshot, the incremental changes for the new snapshot are appended to the previous snapshot, which is still available. Note that you can create a volume from the snapshot if desired.</p>
 <p>The <code class="docutils literal"><span class="pre">os-extended-snapshot-attributes:progress</span></code> field in the response body shows the snapshot progress.</p>
@@ -2069,18 +2084,18 @@ the tenant or account.</td>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>snapshot</td>
+<tr class="row-even"><td><strong>snapshot</strong></td>
 <td>String <em>(Required)</em></td>
 <td>A partial representation
 of a snapshot used in
 the creation process.</td>
 </tr>
-<tr class="row-odd"><td>volume_id</td>
+<tr class="row-odd"><td>snapshot.<strong>volume_id</strong></td>
 <td>Uuid <em>(Required)</em></td>
 <td>The ID of the volume to
 snapshot.</td>
 </tr>
-<tr class="row-even"><td>force</td>
+<tr class="row-even"><td>snapshot.<strong>force</strong></td>
 <td>Boolean <em>(Optional)</em></td>
 <td>[True/False] Indicate
 whether to snapshot,
@@ -2088,12 +2103,12 @@ even if the volume is
 attached. The default is
 False.</td>
 </tr>
-<tr class="row-odd"><td>display_name</td>
+<tr class="row-odd"><td>snapshot.<strong>display_name</strong></td>
 <td>String <em>(Optional)</em></td>
 <td>Name of the snapshot.
 The default is None.</td>
 </tr>
-<tr class="row-even"><td>display_description</td>
+<tr class="row-even"><td>snapshot.<strong>display_description</strong></td>
 <td>String <em>(Optional)</em></td>
 <td>Description of snapshot.
 The default is None.</td>
@@ -2159,11 +2174,11 @@ The default is None.</td>
 </div>
 </div>
 <div class="section" id="list-snapshots">
-<span id="get-list-snapshots-v1-tenant-id-snapshots"></span><h3>List snapshots<a class="headerlink" href="#list-snapshots" title="Permalink to this headline">#</a></h3>
+<span id="get-list-snapshots"></span><h3>List snapshots<a class="headerlink" href="#list-snapshots" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span>
 </pre></div>
 </div>
-<p>Lists summary information for all Cloud Block Storage snapshots that the tenant who submits the request can access.</p>
+<p>This operation lists summary information for all Cloud Block Storage snapshots that the tenant who submits the request can access.</p>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2259,11 +2274,11 @@ the tenant or account.</td>
 </div>
 </div>
 <div class="section" id="list-snapshots-detailed">
-<span id="get-list-snapshots-detailed-v1-tenant-id-snapshots-detail"></span><h3>List snapshots (detailed)<a class="headerlink" href="#list-snapshots-detailed" title="Permalink to this headline">#</a></h3>
+<span id="get-list-snapshots-detail"></span><h3>List snapshots (detailed)<a class="headerlink" href="#list-snapshots-detailed" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="n">detail</span>
 </pre></div>
 </div>
-<p>Lists detailed information for all Cloud Block Storage snapshots that the tenant who submits the request can access.</p>
+<p>This operation lists detailed information for all Cloud Block Storage snapshots that the tenant who submits the request can access.</p>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2368,11 +2383,11 @@ the tenant or account.</td>
 </div>
 </div>
 <div class="section" id="show-snapshot-details">
-<span id="get-show-snapshot-details-v1-tenant-id-snapshots-snapshot-id"></span><h3>Show snapshot details<a class="headerlink" href="#show-snapshot-details" title="Permalink to this headline">#</a></h3>
+<span id="get-show-snapshot-details"></span><h3>Show snapshot details<a class="headerlink" href="#show-snapshot-details" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="p">{</span><span class="n">snapshot_id</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Shows snapshot details.</p>
+<p>This operation shows snapshot details.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The <code class="docutils literal"><span class="pre">os-extended-snapshot-attributes:progress</span></code> field in the response body shows snapshot progress. See the following examples.</p>
@@ -2464,11 +2479,11 @@ an existing snapshot.</td>
 </div>
 </div>
 <div class="section" id="update-snapshot">
-<span id="put-update-snapshot-v1-tenant-id-snapshots-snapshot-id"></span><h3>Update snapshot<a class="headerlink" href="#update-snapshot" title="Permalink to this headline">#</a></h3>
+<span id="put-update-snapshot"></span><h3>Update snapshot<a class="headerlink" href="#update-snapshot" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">PUT</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="p">{</span><span class="n">snapshot_id</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Updates a specified snapshot.</p>
+<p>This operation updates a specified snapshot.</p>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2531,13 +2546,20 @@ an existing snapshot.</td>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>display_description</td>
-<td>String <em>(Optional)</em></td>
-<td>Snapshot description.</td>
+<tr class="row-even"><td><strong>snapshot</strong></td>
+<td>String <em>(Required)</em></td>
+<td>Information about the
+snapshot.</td>
 </tr>
-<tr class="row-odd"><td>display_name</td>
+<tr class="row-odd"><td>snapshot.<strong>display_description</strong></td>
 <td>String <em>(Optional)</em></td>
-<td>Name of the snapshot.</td>
+<td>A description of the
+snapshot.</td>
+</tr>
+<tr class="row-even"><td>snapshot.<strong>display_name</strong></td>
+<td>String <em>(Optional)</em></td>
+<td>The name of the
+snapshot.</td>
 </tr>
 </tbody>
 </table>
@@ -2595,11 +2617,11 @@ an existing snapshot.</td>
 </div>
 </div>
 <div class="section" id="delete-snapshot">
-<span id="delete-delete-snapshot-v1-tenant-id-snapshots-snapshot-id"></span><h3>Delete snapshot<a class="headerlink" href="#delete-snapshot" title="Permalink to this headline">#</a></h3>
+<span id="id9"></span><h3>Delete snapshot<a class="headerlink" href="#delete-snapshot" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">DELETE</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="p">{</span><span class="n">snapshot_id</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Deletes a snapshot.</p>
+<p>This operation deletes a snapshot.</p>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2622,8 +2644,8 @@ was created.</td>
 </tr>
 </tbody>
 </table>
-<div class="section" id="id9">
-<h4>Request<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
+<div class="section" id="id10">
+<h4>Request<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2652,17 +2674,17 @@ an existing snapshot.</td>
 </table>
 <p>This operation does not accept a request body.</p>
 </div>
-<div class="section" id="id10">
-<h4>Response<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
+<div class="section" id="id11">
+<h4>Response<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
 <p>This operation does not return a response body.</p>
 </div>
 </div>
 <div class="section" id="show-snapshot-metadata">
-<span id="get-show-snapshot-metadata-v1-tenant-id-snapshots-snapshot-id-metadata"></span><h3>Show snapshot metadata<a class="headerlink" href="#show-snapshot-metadata" title="Permalink to this headline">#</a></h3>
+<span id="get-show-snapshot-metadata"></span><h3>Show snapshot metadata<a class="headerlink" href="#show-snapshot-metadata" title="Permalink to this headline">#</a></h3>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="p">{</span><span class="n">tenant_id</span><span class="p">}</span><span class="o">/</span><span class="n">snapshots</span><span class="o">/</span><span class="p">{</span><span class="n">snapshot_id</span><span class="p">}</span><span class="o">/</span><span class="n">metadata</span>
 </pre></div>
 </div>
-<p>Shows the metadata for the specified snapshot.</p>
+<p>This operation shows the metadata for the specified snapshot.</p>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2683,8 +2705,8 @@ an existing snapshot.</td>
 </tr>
 </tbody>
 </table>
-<div class="section" id="id11">
-<h4>Request<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
+<div class="section" id="id12">
+<h4>Request<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
 <p>This table shows the URI parameters for the request:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -2713,8 +2735,8 @@ an existing snapshot.</td>
 </table>
 <p>This operation does not accept a request body.</p>
 </div>
-<div class="section" id="id12">
-<h4>Response<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
+<div class="section" id="id13">
+<h4>Response<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
 <p><strong>Example Show snapshot metadata: JSON response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
     <span class="s">&quot;snapshot&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -2753,31 +2775,20 @@ an existing snapshot.</td>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/additional-resources">Additional resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/api-contract-changes">API contract changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/pricing-service-level">Pricing and service level</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/terminology">Terminology</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#instance">Instance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#instance-type">Instance type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#snapshot">Snapshot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#volume">Volume</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#volume-type">Volume type</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-developer-guide"><strong>Developer Guide</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-concepts">Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#instance">Instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#instance-type">Instance type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#snapshot">Snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#volume">Volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#volume-type">Volume type</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-general-api-info/index">General API information</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/authentication">Authentication</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#get-your-credentials">Get your credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#use-the-global-authentication-endpoint">Use the global authentication endpoint</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#send-your-credentials-to-your-authentication-endpoint">Send your credentials to your authentication endpoint</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/role-based-access-control">Role Based Access Control</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#assigning-roles-to-account-users">Assigning roles to account users</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#roles-available-for-cloud-block-storage">Roles available for Cloud Block Storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#resolving-conflicts-between-rbac-multiproduct-vs-custom-product-specific-roles">Resolving conflicts between RBAC multiproduct vs. custom (product-specific) roles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#rbac-permissions-cross-reference-to-cloud-block-storage-api-operations">RBAC permissions cross-reference to Cloud Block Storage API operations</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/authentication">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/role-based-access-control">Role Based Access Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/service-access-endpoints">Service access endpoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/cloud-block-storage-service-versions">Cloud Block Storage service versions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/request-and-response-types">Request and response types</a></li>
@@ -2789,87 +2800,27 @@ an existing snapshot.</td>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-api-reference"><strong>API Reference</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-api-operations/cbs-volumes-operations">Volumes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#create-volume">Create volume</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#request">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#response">Response</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#list-volumes">List volumes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id1">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id2">Response</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#list-volumes-detailed">List volumes (detailed)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id3">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id4">Response</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#show-volume">Show volume</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id5">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id6">Response</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#update-volume">Update volume</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id7">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id8">Response</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#delete-volume">Delete volume</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id9">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id10">Response</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#create-volume">Create volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#list-volumes">List volumes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#list-volumes-detailed">List volumes (detailed)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#show-volume">Show volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#update-volume">Update volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#delete-volume">Delete volume</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-api-operations/cbs-volume-types-operations">Volume types</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#list-volume-types">List volume types</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#request">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#response">Response</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#show-volume-type-details">Show volume type details</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id1">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id2">Response</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#list-volume-types">List volume types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#show-volume-type-details">Show volume type details</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-api-operations/cbs-snapshots-operations">Snapshots</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#create-snapshot">Create snapshot</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#request">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#response">Response</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#list-snapshots">List snapshots</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id1">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id2">Response</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#list-snapshots-detailed">List snapshots (detailed)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id3">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id4">Response</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#show-snapshot-details">Show snapshot details</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id5">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id6">Response</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#update-snapshot">Update snapshot</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id7">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id8">Response</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#delete-snapshot">Delete snapshot</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id9">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id10">Response</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#show-snapshot-metadata">Show snapshot metadata</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id11">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#id12">Response</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#create-snapshot">Create snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#list-snapshots">List snapshots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#list-snapshots-detailed">List snapshots (detailed)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#show-snapshot-details">Show snapshot details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#update-snapshot">Update snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#delete-snapshot">Delete snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#show-snapshot-metadata">Show snapshot metadata</a></li>
 </ul>
 </li>
 </ul>

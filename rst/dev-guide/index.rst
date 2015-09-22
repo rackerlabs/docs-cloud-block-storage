@@ -11,10 +11,11 @@ Learn how to use the Rackspace Cloud Block Storage service by using the REST API
   :ref:`API reference <api-reference>`.
 
 .. toctree:: :hidden:
-   :maxdepth: 3
+   :maxdepth: 2
 
    About the API <overview/index>
    developer-guide
+   concepts
    general-api-info/index
    api-reference
    api-operations/index

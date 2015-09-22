@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _post-create-snapshot-v1-tenant-id-snapshots:
+.. _post-create-snapshot:
 
 Create snapshot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10,7 +10,7 @@ Create snapshot
 
     POST /v1/{tenant_id}/snapshots
 
-Creates a snapshot.
+This operation creates a snapshot.
 
 A snapshot is a point-in-time copy of the volume. You must flush all writes to the volume before you create a snapshot. To do so, either unmount any file systems on the volume or detach the volume.
 
@@ -66,24 +66,24 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|snapshot                  |String *(Required)*      |A partial representation |
+|**snapshot**              |String *(Required)*      |A partial representation |
 |                          |                         |of a snapshot used in    |
 |                          |                         |the creation process.    |
 +--------------------------+-------------------------+-------------------------+
-|volume_id                 |Uuid *(Required)*        |The ID of the volume to  |
+|snapshot.\ **volume_id**  |Uuid *(Required)*        |The ID of the volume to  |
 |                          |                         |snapshot.                |
 +--------------------------+-------------------------+-------------------------+
-|force                     |Boolean *(Optional)*     |[True/False] Indicate    |
+|snapshot.\ **force**      |Boolean *(Optional)*     |[True/False] Indicate    |
 |                          |                         |whether to snapshot,     |
 |                          |                         |even if the volume is    |
 |                          |                         |attached. The default is |
 |                          |                         |False.                   |
 +--------------------------+-------------------------+-------------------------+
-|display_name              |String *(Optional)*      |Name of the snapshot.    |
-|                          |                         |The default is None.     |
+|snapshot.\                |String *(Optional)*      |Name of the snapshot.    |
+|**display_name**          |                         |The default is None.     |
 +--------------------------+-------------------------+-------------------------+
-|display_description       |String *(Optional)*      |Description of snapshot. |
-|                          |                         |The default is None.     |
+|snapshot.\                |String *(Optional)*      |Description of snapshot. |
+|**display_description**   |                         |The default is None.     |
 +--------------------------+-------------------------+-------------------------+
 
 

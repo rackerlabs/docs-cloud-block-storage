@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _delete-delete-snapshot-v1-tenant-id-snapshots-snapshot-id:
+.. _delete-snapshot:
 
 Delete snapshot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10,7 +10,7 @@ Delete snapshot
 
     DELETE /v1/{tenant_id}/snapshots/{snapshot_id}
 
-Deletes a snapshot.
+This operation deletes a snapshot.
 
 
 

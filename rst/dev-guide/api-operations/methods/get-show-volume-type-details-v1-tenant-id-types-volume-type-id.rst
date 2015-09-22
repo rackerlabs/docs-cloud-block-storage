@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _get-show-volume-type-details-v1-tenant-id-types-volume-type-id:
+.. _get-show-volume-type-details:
 
 Show volume type details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10,7 +10,7 @@ Show volume type details
 
     GET /v1/{tenant_id}/types/{volume_type_id}
 
-Shows volume type details.
+This operation hows volume type details.
 
 
 

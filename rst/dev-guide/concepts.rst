@@ -1,8 +1,8 @@
-.. _cbs-dg-terminology:
+.. _cbs-dg-concepts:
 
 
-Terminology
-~~~~~~~~~~~
+Concepts
+~~~~~~~~
 
 To use the Cloud Block Storage API effectively, you should understand
 the following terms:

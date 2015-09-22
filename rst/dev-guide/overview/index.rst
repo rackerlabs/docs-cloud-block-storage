@@ -55,4 +55,3 @@ Rackspace welcomes feedback, comments, and bug reports at support@rackspacecloud
    additional-resources
    api-contract-changes
    pricing-service-level
-   terminology

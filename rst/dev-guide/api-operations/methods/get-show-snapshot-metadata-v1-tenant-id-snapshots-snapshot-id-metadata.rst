@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _get-show-snapshot-metadata-v1-tenant-id-snapshots-snapshot-id-metadata:
+.. _get-show-snapshot-metadata:
 
 Show snapshot metadata
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10,7 +10,7 @@ Show snapshot metadata
 
     GET /v1/{tenant_id}/snapshots/{snapshot_id}/metadata
 
-Shows the metadata for the specified snapshot.
+This operation shows the metadata for the specified snapshot.
 
 
 

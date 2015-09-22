@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _delete-delete-volume-v1-tenant-id-volumes-volume-id:
+.. _delete-volume:
 
 Delete volume
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10,7 +10,7 @@ Delete volume
 
     DELETE /v1/{tenant_id}/volumes/{volume_id}
 
-Deletes a volume.
+This operation deletes a volume.
 
 .. note::
    If a snapshot of the volume exists, you cannot delete the volume until you delete the snapshot.
