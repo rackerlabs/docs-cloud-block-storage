@@ -1,4 +1,4 @@
-.. _cbs-dg-general-auth:
+.. _general-auth:
 
 Authentication
 --------------
@@ -7,7 +7,7 @@ Every REST request against the Rackspace Cloud Block Storage service requires th
 
 To authenticate, submit a ``POST/v2.0/tokens`` request, presenting valid Rackspace customer credentials in the message body to a Rackspace authentication endpoint.
 
-.. _cbs-dg-general-auth-cred:
+.. _general-auth-cred:
 
 Get your credentials
 ~~~~~~~~~~~~~~~~~~~~
@@ -44,7 +44,7 @@ You also need your cloud account number. In the documentation, the account numbe
 
 To find your tenant ID or cloud account number, locate your user name on the upper-right side of the top navigation pane in the Cloud Control Panel. The tenant ID or account number is in parentheses just to the right of your user name.
 
-.. _cbs-dg-general-auth-global:
+.. _general-auth-global:
 
 Use the global authentication endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,7 +53,7 @@ Use the following global endpoint to access the Cloud Identity Service:
 
 ``https://identity.api.rackspacecloud.com/v2.0/``
 
-.. _cbs-dg-general-auth-send:
+.. _general-auth-send:
 
 Send your credentials to your authentication endpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

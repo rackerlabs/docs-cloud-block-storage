@@ -40,7 +40,7 @@
             
   <div class="section" id="rackspace-cloud-block-storage-api-1-0">
 <span id="index"></span><h1>Rackspace Cloud Block Storage API 1.0<a class="headerlink" href="#rackspace-cloud-block-storage-api-1-0" title="Permalink to this headline">#</a></h1>
-<p><em>Last updated:</em> September 28, 2015</p>
+<p><em>Last updated:</em> September 29, 2015</p>
 <p>Learn how to use the Rackspace Cloud Block Storage service by using the REST API.</p>
 <ul class="simple">
 <li>For details about using the API, see the <a class="reference internal" href="index.html#developer-guide"><span>Developer Guide</span></a>.</li>
@@ -125,7 +125,7 @@ should also be familiar with the following technologies:</p>
 </ul>
 </div>
 <span id="document-concepts"></span><div class="section" id="concepts">
-<span id="cbs-dg-concepts"></span><h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
+<span id="id1"></span><h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
 <p>To use the Cloud Block Storage API effectively, you should understand
 the following terms:</p>
 <div class="section" id="instance">
@@ -163,11 +163,11 @@ over HTTP (HTTPS) on TCP port 443.</p>
 </div>
 <div class="toctree-wrapper compound">
 <span id="document-general-api-info/authentication"></span><div class="section" id="authentication">
-<span id="cbs-dg-general-auth"></span><h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">#</a></h3>
+<span id="general-auth"></span><h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">#</a></h3>
 <p>Every REST request against the Rackspace Cloud Block Storage service requires the inclusion of a specific authorization token, supplied by the <code class="docutils literal"><span class="pre">X-Auth-Token</span></code> HTTP header. Customers obtain this token by first using the Rackspace Cloud Identity Service and supplying a valid user name and API access key.</p>
 <p>To authenticate, submit a <code class="docutils literal"><span class="pre">POST/v2.0/tokens</span></code> request, presenting valid Rackspace customer credentials in the message body to a Rackspace authentication endpoint.</p>
 <div class="section" id="get-your-credentials">
-<span id="cbs-dg-general-auth-cred"></span><h4>Get your credentials<a class="headerlink" href="#get-your-credentials" title="Permalink to this headline">#</a></h4>
+<span id="general-auth-cred"></span><h4>Get your credentials<a class="headerlink" href="#get-your-credentials" title="Permalink to this headline">#</a></h4>
 <p>You can use either of two sets of credentials:</p>
 <ul class="simple">
 <li>your user name and password</li>
@@ -194,12 +194,12 @@ choice.</li>
 <p>To find your tenant ID or cloud account number, locate your user name on the upper-right side of the top navigation pane in the Cloud Control Panel. The tenant ID or account number is in parentheses just to the right of your user name.</p>
 </div>
 <div class="section" id="use-the-global-authentication-endpoint">
-<span id="cbs-dg-general-auth-global"></span><h4>Use the global authentication endpoint<a class="headerlink" href="#use-the-global-authentication-endpoint" title="Permalink to this headline">#</a></h4>
+<span id="general-auth-global"></span><h4>Use the global authentication endpoint<a class="headerlink" href="#use-the-global-authentication-endpoint" title="Permalink to this headline">#</a></h4>
 <p>Use the following global endpoint to access the Cloud Identity Service:</p>
 <p><code class="docutils literal"><span class="pre">https://identity.api.rackspacecloud.com/v2.0/</span></code></p>
 </div>
 <div class="section" id="send-your-credentials-to-your-authentication-endpoint">
-<span id="cbs-dg-general-auth-send"></span><h4>Send your credentials to your authentication endpoint<a class="headerlink" href="#send-your-credentials-to-your-authentication-endpoint" title="Permalink to this headline">#</a></h4>
+<span id="general-auth-send"></span><h4>Send your credentials to your authentication endpoint<a class="headerlink" href="#send-your-credentials-to-your-authentication-endpoint" title="Permalink to this headline">#</a></h4>
 <p>If you know your credentials and your authentication endpoint, and you can issue a <code class="docutils literal"><span class="pre">POST</span> <span class="pre">/v2.0/tokens</span></code> request in an API call, you have all the basic information that you need to use the Rackspace Cloud Identity Service.</p>
 <p>You can use <a class="reference external" href="http://curl.haxx.se/">cURL</a> to try the authentication process in two steps: 1) get a token; 2) send the token to a service.</p>
 <ol class="arabic simple">
@@ -1002,7 +1002,7 @@ Date: Tue, 29 Nov 2011 00:35:24 GMT
 </div>
 <span id="document-api-operations/index"></span><div class="toctree-wrapper compound">
 <span id="document-api-operations/cbs-volumes-operations"></span><div class="section" id="volumes">
-<span id="cbs-volumes-operations"></span><h2>Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">#</a></h2>
+<span id="volumes-operations"></span><h2>Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">#</a></h2>
 <p>A volume is a detachable block storage device. You can think of it as a USB hard drive. You can attach a volume to one instance at a time.</p>
 <p>When you make an API call to create, list, or delete volumes, the following volume status values are possible:</p>
 <ul class="simple">
@@ -1834,7 +1834,7 @@ an existing volume.</td>
 </div>
 </div>
 <span id="document-api-operations/cbs-volume-types-operations"></span><div class="section" id="volume-types">
-<span id="cbs-volume-types-operations"></span><h2>Volume types<a class="headerlink" href="#volume-types" title="Permalink to this headline">#</a></h2>
+<span id="volume-types-operations"></span><h2>Volume types<a class="headerlink" href="#volume-types" title="Permalink to this headline">#</a></h2>
 <p>Use volume type operations to list volume types and show volume type details.</p>
 <div class="section" id="list-volume-types">
 <span id="get-list-volume-types"></span><h3>List volume types<a class="headerlink" href="#list-volume-types" title="Permalink to this headline">#</a></h3>
@@ -2001,7 +2001,7 @@ an existing volume type.</td>
 </div>
 </div>
 <span id="document-api-operations/cbs-snapshots-operations"></span><div class="section" id="snapshots">
-<span id="cbs-snapshots-operations"></span><h2>Snapshots<a class="headerlink" href="#snapshots" title="Permalink to this headline">#</a></h2>
+<span id="snapshots-operations"></span><h2>Snapshots<a class="headerlink" href="#snapshots" title="Permalink to this headline">#</a></h2>
 <p>A snapshot is a point-in-time copy of the data that a volume contains.</p>
 <p>When you make an API call to create, list, or delete snapshots, the following status values are possible:</p>
 <ul class="simple">

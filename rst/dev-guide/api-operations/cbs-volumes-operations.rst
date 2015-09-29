@@ -1,4 +1,4 @@
-.. _cbs-volumes-operations:
+.. _volumes-operations:
 
 Volumes
 ~~~~~~~  

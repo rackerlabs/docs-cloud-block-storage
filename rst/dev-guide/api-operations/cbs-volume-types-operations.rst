@@ -1,4 +1,4 @@
-.. _cbs-volume-types-operations:
+.. _volume-types-operations:
 
 Volume types
 ~~~~~~~~~~~~~

@@ -1,4 +1,4 @@
-.. _cbs-snapshots-operations:
+.. _snapshots-operations:
 
 Snapshots
 ~~~~~~~~~

@@ -1,4 +1,4 @@
-.. _cbs-dg-concepts:
+.. _concepts:
 
 
 Concepts
