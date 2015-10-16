@@ -34,6 +34,6 @@ Use the links below to learn more about the Rackspace Cloud Block Storage servic
 .. _Rackspace Cloud Guide to Core Infrastructure Services: https://developer.rackspace.com/docs/user-guides/infrastructure/
 .. _Cloud Block Storage FAQ: https://www.rackspace.com/knowledge_center/product-faq/cloud-block-storage
 .. _Rackspace API Documentation: https://developer.rackspace.com/docs/
-.. _Software Development Kits & Tools: https://developer.rackspace.com/docs/#sdks
+.. _Software Development Kits & Tools: https://developer.rackspace.com/sdks
 
 
