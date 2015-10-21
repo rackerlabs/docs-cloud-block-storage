@@ -22,9 +22,8 @@ When the ``POST`` operation returns the 201 response code, the snapshot is compl
 
 For more information about snapshots, see the following articles in the Knowledge Center: 
 
-* `Create and Use Cloud Block Storage Snapshots <http://www.rackspace.com/knowledge_center/article/create-and-use-cloud-block-storage-snapshots>`__
-* `Allowing Snapshots Without Detaching the Volumes <http://www.rackspace.com/knowledge_center/whitepaper/allowing-snapshots-without-detaching-the-volumes>`__
-
+* :kc-article:`Create and Use Cloud Block Storage Snapshots<create-and-use-cloud-block-storage-snapshots>`
+* :kc:`Allowing Snapshots Without Detaching the Volumes<whitepaper/allowing-snapshots-without-detaching-the-volumes>`
 
 
 

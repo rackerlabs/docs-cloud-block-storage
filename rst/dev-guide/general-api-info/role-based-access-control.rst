@@ -23,14 +23,11 @@ the account is created.
 See the *Cloud Identity Client Developer Guide* for information about
 how to perform the following tasks:
 
-*  `Create account
-   users <http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html>`__
+*  :rax-devdocs:`Add user<cloud-identity/v2/developer-guide/#post-add-user-v2-0-users>`
 
-*  `Assign roles to account
-   users <http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html>`__
+*  :rax-devdocs:`Add role to user <cloud-identity/v2/developer-guide/#add-role-to-user-v2-0-os-ksadm>`
 
-*  `Delete roles from account
-   users <http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html>`__
+*  :rax-devdocs:`Delete global role from user <cloud-identity/v2/developer-guide/#delete-global-role-from-user-v2-0-os-ksadm>`
 
 .. note::
    The account admin user (identity:user-admin) role cannot hold any
@@ -111,5 +108,5 @@ RBAC permissions cross-reference to Cloud Block Storage API operations
 
 API operations for Cloud Block Storage may or may not be available to
 all roles. To see which operations are permitted to invoke which calls,
-please review the `Permissions Matrix for Role-Based Access Control <http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac>`_.
+please review the :kc-article:`Permissions Matrix for Role-Based Access Control<permissions-matrix-for-role-based-access-control-rbac>`.
 

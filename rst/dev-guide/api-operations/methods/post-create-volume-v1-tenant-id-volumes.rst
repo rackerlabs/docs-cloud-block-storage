@@ -15,8 +15,8 @@ This operation creates a volume.
 Following are several considerations when using this operation: 
 
 * When you use ``source_volid`` for volume cloning, note that this feature currently has the following constraints. Concurrent clone requests are queued for processing. When one clone request completes, the next clone request in the queue starts.
-* Note that you use the ``os-volume_attachments`` API call (/servers/{server_id}/os-volume_attachments) to attach the new volume to your Next Generation Cloud Server (with the specified {server_id}). Refer to the `Next Generation Cloud Servers Developer Guide <http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Volume_Attachment_Actions.html>`__ for details of the call. Once the volume is attached, the new volume appears as another device on the Next Generation Cloud Server. It can then be partitioned, formatted, and mounted for use on the system.
-* To create a bootable volume, include the ``imageRef`` parameter in the request. The corresponding response parameter is ``image_id``. For more information about this feature, see the Knowledge Center article `Boot a server from a Cloud Block Storage volume <http://www.rackspace.com/knowledge_center/article/boot-a-server-from-a-cloud-block-storage-volume>`__.
+* Note that you use the ``os-volume_attachments`` API call (/servers/{server_id}/os-volume_attachments) to attach the new volume to your Next Generation Cloud Server (with the specified {server_id}). Refer to the :rax-devdocs:`Next Generation Cloud Servers Developer Guide <cloud-servers/v2/developer-guide/#put-attach-volume-to-server-servers-server-id-os-volume-attachments>` for details of the call. Once the volume is attached, the new volume appears as another device on the Next Generation Cloud Server. It can then be partitioned, formatted, and mounted for use on the system.
+* To create a bootable volume, include the ``imageRef`` parameter in the request. The corresponding response parameter is ``image_id``. For more information about this feature, see :kc-article:`Boot a server from a Cloud Block Storage volume<boot-a-server-from-a-cloud-block-storage-volume>`.
 
 
 

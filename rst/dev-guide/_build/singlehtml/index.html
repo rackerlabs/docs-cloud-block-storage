@@ -40,7 +40,7 @@
             
   <div class="section" id="rackspace-cloud-block-storage-api-1-0">
 <span id="index"></span><h1>Rackspace Cloud Block Storage API 1.0<a class="headerlink" href="#rackspace-cloud-block-storage-api-1-0" title="Permalink to this headline">#</a></h1>
-<p><em>Last updated:</em> October 16, 2015</p>
+<p><em>Last updated:</em> October 21, 2015</p>
 <p>Learn how to use the Rackspace Cloud Block Storage service by using the REST API.</p>
 <ul class="simple">
 <li>For details about using the API, see the <a class="reference internal" href="index.html#developer-guide"><span>Developer Guide</span></a>.</li>
@@ -55,7 +55,7 @@
 <li>Scale your storage independently from your compute resources.</li>
 <li>Use high performance storage to serve database or I/O-intensive applications.</li>
 </ul>
-<p>Interactions with Cloud Block Storage occur programmatically via the Cloud Block Storage API as described in this developer guide. Cloud Block Storage uses a RESTful (Representational State Transfer) web services interface. Rackspace also provides language-specific SDKs in several popular programming languages. For more information, see the <a class="reference external" href="https://developer.rackspace.com/sdks">official SDKs and tools</a>.</p>
+<p>Interactions with Cloud Block Storage occur programmatically via the Cloud Block Storage API as described in this developer guide. Cloud Block Storage uses a RESTful (Representational State Transfer) web services interface. Rackspace also provides language-specific software development kits (SDKs) in several popular programming languages. For more information, see <a class="reference external" href="https://developer.rackspace.com/sdks">SDKs and tools</a>.</p>
 <p>Rackspace offers both a low cost/gigabyte (GB) option with standard performance for customers who only require more storage and a high performance option that provides increased storage with higher performance (at a higher cost/GB). For more information, see the <a class="reference external" href="http://www.rackspace.com/cloud/block-storage">Cloud Block Storage product page</a>.</p>
 <p>Highlights of Rackspace Cloud Block Storage include:</p>
 <ul class="simple">
@@ -77,20 +77,16 @@
 <div class="toctree-wrapper compound">
 <span id="document-overview/additional-resources"></span><div class="section" id="additional-resources">
 <span id="id1"></span><h3>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h3>
-<p>We welcome feedback, comments, and bug reports. Visit the Rackspace customer portal
-at <a class="reference external" href="https://feedback.rackspace.com/">https://feedback.rackspace.com/</a>.</p>
+<p>We welcome feedback, comments, and bug reports. Visit the Rackspace <a class="reference external" href="https://feedback.rackspace.com/forums/298161-storage/category/107817-cloud-block-storage">Product Feedback page</a>.</p>
 <p>Use the links below to learn more about the Rackspace Cloud Block Storage service and API.</p>
 <ul class="simple">
-<li>For general information about Cloud Block Storage , see the <a class="reference external" href="https://www.rackspace.com/knowledge_center/product-faq/cloud-block-storage">Cloud Block Storage FAQ</a>
-in the Rackspace Knowledge Center.</li>
+<li>For general information about Cloud Block Storage , see the <a class="reference external" href="http://www.rackspace.com/knowledge_center/product-faq/cloud-block-storage">Cloud Block Storage FAQ</a> in the Rackspace Knowledge Center.</li>
 <li>To learn more about the Cloud Block Storage service and the various ways you can interact
 with it (API, SDK, CLI, and Control Panel), see the <a class="reference external" href="https://developer.rackspace.com/docs/user-guides/infrastructure/">Rackspace Cloud Guide to Core Infrastructure Services</a>.</li>
-<li>To learn about using Rackspace Cloud SDKs, see <a class="reference external" href="https://developer.rackspace.com/sdks">Software Development Kits &amp; Tools</a>.</li>
-<li>To get information about other Rackspace Cloud services APIs, see the
-<a class="reference external" href="https://developer.rackspace.com/docs/">Rackspace API Documentation</a>.</li>
-<li>To get more information about Rackspace Cloud products, refer to
-<a class="reference external" href="http://www.rackspace.com/cloud/">www.rackspace.com</a>. This site also
-offers links to the Rackspace official support channels, including
+<li>To learn about using Rackspace Cloud SDKs, see <a class="reference external" href="https://developer.rackspace.com/sdks">SDKs and tools</a>.</li>
+<li>To get information about other Rackspace Cloud services APIs, see the <a class="reference external" href="http://developer.rackspace.com/docs/">Rackspace API Documentation</a>.</li>
+<li>To get more information about Rackspace Cloud products, refer to <a class="reference external" href="http://www.rackspace.com/cloud/">www.rackspace.com</a>.
+This site als offers links to the Rackspace official support channels, including
 knowledge base articles, forums, phone, chat, and email.</li>
 <li>You can follow Rackspace updates and announcements via
 <a class="reference external" href="http://www.twitter.com/rackspace">Twitter</a>.</li>
@@ -106,7 +102,7 @@ contract does change.</p>
 </div>
 <span id="document-overview/pricing-service-level"></span><div class="section" id="pricing-and-service-level">
 <span id="pricing-service-level"></span><h3>Pricing and service level<a class="headerlink" href="#pricing-and-service-level" title="Permalink to this headline">#</a></h3>
-<p>Cloud Block Storage is part of the Rackspace Cloud and your use of the Cloud Block Storage API will be billed according to the <a class="reference external" href="http://www.rackspace.com/cloud/block-storage/">pricing schedule</a>.</p>
+<p>Cloud Block Storage is part of the Rackspace Cloud and your use of the Cloud Block Storage API will be billed according to the <a class="reference external" href="http://www.rackspace.com/cloud/block-storage">pricing schedule</a>.</p>
 <p>The Service Level Agreement (SLA) for Cloud Block Storage is available on the <a class="reference external" href="http://www.rackspace.com/information/legal/cloud/sla?page">Rackspace Legal Information</a> page.</p>
 </div>
 </div>
@@ -176,7 +172,7 @@ over HTTP (HTTPS) on TCP port 443.</p>
 <p>Your user name and password are the ones that you use to login to the Cloud Control Panel. After you are logged in, you can use the Cloud Control Panel to obtain your API key.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you authenticate with username and password credentials, you can set up multi-factor authentication to add an additional level of security to your account. This feature is not available for username and API credentials. For information about setting up and using multi-factor authentication, see <a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html">Multi-factor authentication</a>.</p>
+<p class="last">If you authenticate with username and password credentials, you can set up multi-factor authentication to add an additional level of security to your account. This feature is not available for username and API credentials. For information about setting up and using multi-factor authentication, see <a class="reference external" href="http://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#document-authentication-info/use-mfa-ops">Multi-factor authentication</a>.</p>
 </div>
 <p><strong>To find your API key:</strong></p>
 <ol class="arabic simple">
@@ -257,7 +253,7 @@ choice.</li>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Beginning with Rackspace Cloud Identity Service v2.0 (earlier versions were called Rackspace Cloud Authentication Service), the service catalog includes a service type attribute to identify services that perform similar functions but have different names; for example, <cite>type=&#8221;compute&#8221;</cite> identifies compute services such as cloudServers and cloudServersOpenStack. Some developers have found the service type attribute to be useful in parsing the service catalog. For Cloud Identity Service v2.0, you can see the service type attribute in the &#8220;Service Catalog in Authentication Response&#8221; samples in the <a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Sample_Request_Response-d1e64.html">Cloud Identity Client Developer Guide</a>.</p>
+<p class="last">Beginning with Rackspace Cloud Identity Service v2.0 (earlier versions were called Rackspace Cloud Authentication Service), the service catalog includes a service type attribute to identify services that perform similar functions but have different names; for example, <cite>type=&#8221;compute&#8221;</cite> identifies compute services such as cloudServers and cloudServersOpenStack. Some developers have found the service type attribute to be useful in parsing the service catalog. For Cloud Identity Service v2.0, you can see the service type attribute in <a class="reference external" href="http://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#document-authentication-info/sample-auth-req-response">Annotated authentication request and response</a>.</p>
 </div>
 </div>
 </div>
@@ -280,12 +276,9 @@ the account is created.</p>
 <p>See the <em>Cloud Identity Client Developer Guide</em> for information about
 how to perform the following tasks:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html">Create account
-users</a></li>
-<li><a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html">Assign roles to account
-users</a></li>
-<li><a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html">Delete roles from account
-users</a></li>
+<li><a class="reference external" href="http://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#post-add-user-v2-0-users">Add user</a></li>
+<li><a class="reference external" href="http://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#add-role-to-user-v2-0-os-ksadm">Add role to user</a></li>
+<li><a class="reference external" href="http://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#delete-global-role-from-user-v2-0-os-ksadm">Delete global role from user</a></li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -415,8 +408,7 @@ caching, and overall maintenance of Cloud Block Storage data across
 regional boundaries to other Cloud Block Storage servers.</p>
 <p>To help you decide which regionalized endpoint to use, read the
 Knowledge Center article about special considerations for choosing a
-data center at <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/about-regions">About
-Regions</a>.</p>
+data center at <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/about-regions">About Regions</a>.</p>
 <p>You can find the available service access/endpoints for Cloud Block
 Storage summarized in the table below.</p>
 <p><strong>Table: Regionalized service endpoints</strong></p>
@@ -1023,8 +1015,8 @@ Date: Tue, 29 Nov 2011 00:35:24 GMT
 <p>Following are several considerations when using this operation:</p>
 <ul class="simple">
 <li>When you use <code class="docutils literal"><span class="pre">source_volid</span></code> for volume cloning, note that this feature currently has the following constraints. Concurrent clone requests are queued for processing. When one clone request completes, the next clone request in the queue starts.</li>
-<li>Note that you use the <code class="docutils literal"><span class="pre">os-volume_attachments</span></code> API call (/servers/{server_id}/os-volume_attachments) to attach the new volume to your Next Generation Cloud Server (with the specified {server_id}). Refer to the <a class="reference external" href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Volume_Attachment_Actions.html">Next Generation Cloud Servers Developer Guide</a> for details of the call. Once the volume is attached, the new volume appears as another device on the Next Generation Cloud Server. It can then be partitioned, formatted, and mounted for use on the system.</li>
-<li>To create a bootable volume, include the <code class="docutils literal"><span class="pre">imageRef</span></code> parameter in the request. The corresponding response parameter is <code class="docutils literal"><span class="pre">image_id</span></code>. For more information about this feature, see the Knowledge Center article <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/boot-a-server-from-a-cloud-block-storage-volume">Boot a server from a Cloud Block Storage volume</a>.</li>
+<li>Note that you use the <code class="docutils literal"><span class="pre">os-volume_attachments</span></code> API call (/servers/{server_id}/os-volume_attachments) to attach the new volume to your Next Generation Cloud Server (with the specified {server_id}). Refer to the <a class="reference external" href="http://developer.rackspace.com/docs/cloud-servers/v2/developer-guide/#put-attach-volume-to-server-servers-server-id-os-volume-attachments">Next Generation Cloud Servers Developer Guide</a> for details of the call. Once the volume is attached, the new volume appears as another device on the Next Generation Cloud Server. It can then be partitioned, formatted, and mounted for use on the system.</li>
+<li>To create a bootable volume, include the <code class="docutils literal"><span class="pre">imageRef</span></code> parameter in the request. The corresponding response parameter is <code class="docutils literal"><span class="pre">image_id</span></code>. For more information about this feature, see <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/boot-a-server-from-a-cloud-block-storage-volume">Boot a server from a Cloud Block Storage volume</a>.</li>
 </ul>
 <p>The examples in this section create a 100 gibibytes (GiB) SATA volume called vol-001.</p>
 <p>This table shows the possible response codes for this operation:</p>

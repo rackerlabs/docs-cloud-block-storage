@@ -9,9 +9,9 @@ Rackspace Cloud Block Storage is a block level storage solution that allows cust
 
 -  Use high performance storage to serve database or I/O-intensive applications.
 
-Interactions with Cloud Block Storage occur programmatically via the Cloud Block Storage API as described in this developer guide. Cloud Block Storage uses a RESTful (Representational State Transfer) web services interface. Rackspace also provides language-specific SDKs in several popular programming languages. For more information, see the `official SDKs and tools`_.
+Interactions with Cloud Block Storage occur programmatically via the Cloud Block Storage API as described in this developer guide. Cloud Block Storage uses a RESTful (Representational State Transfer) web services interface. Rackspace also provides language-specific software development kits (SDKs) in several popular programming languages. For more information, see :rax-dev:`SDKs and tools<sdks>`.
 
-Rackspace offers both a low cost/gigabyte (GB) option with standard performance for customers who only require more storage and a high performance option that provides increased storage with higher performance (at a higher cost/GB). For more information, see the `Cloud Block Storage product page`_.
+Rackspace offers both a low cost/gigabyte (GB) option with standard performance for customers who only require more storage and a high performance option that provides increased storage with higher performance (at a higher cost/GB). For more information, see the :rax-cloud:`Cloud Block Storage product page<block-storage>`.
 
 Highlights of Rackspace Cloud Block Storage include:
 
@@ -34,19 +34,14 @@ Cloud Block Storage is built on the OpenStack Cinder project. For more informati
 
 You can find additional details about Cloud Block Storage in the `Cloud Block Storage Getting Started Guide`_. This guide provides step-by-step instructions to enter the necessary URLs or commands to use the Cloud Block Storage API.
 
-For additional information about the Cloud Block Storage service, see the `Cloud Block Storage Overview`_.
+For additional information about the Cloud Block Storage service, see the :kc-article:`Cloud Block Storage Overview<cloud-block-storage-overview>`.
 
 Rackspace welcomes feedback, comments, and bug reports at support@rackspacecloud.com. 
 
-.. _official SDKs and tools: https://developer.rackspace.com/sdks
-
-.. _Cloud Block Storage product page: http://www.rackspace.com/cloud/block-storage
 
 .. _OpenStack Block Storage API v1 Reference: http://developer.openstack.org/api-ref-blockstorage-v1.html
 
 .. _Cloud Block Storage Getting Started Guide: http://docs.rackspace.com/cbs/api/v1.0/cbs-getting-started/content/Overview_d1e060.html
-
-.. _Cloud Block Storage Overview: http://www.rackspace.com/knowledge_center/article/cloud-block-storage-overview
 
 
 .. toctree:: :hidden:
