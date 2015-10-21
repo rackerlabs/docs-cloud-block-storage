@@ -21,7 +21,7 @@ You can use either of two sets of credentials:
 Your user name and password are the ones that you use to login to the Cloud Control Panel. After you are logged in, you can use the Cloud Control Panel to obtain your API key.
 
 .. note::
-  If you authenticate with username and password credentials, you can set up multi-factor authentication to add an additional level of security to your account. This feature is not available for username and API credentials. For information about setting up and using multi-factor authentication, see :rax-devdocs:`Multi-factor authentication <cloud-identity/v2/developer-guide/#document-authentication-info/use-mfa-ops>`.
+  If you authenticate with username and password credentials, you can set up multi-factor authentication to add an additional level of security to your account. This feature is not available for username and API credentials. For information about setting up and using multi-factor authentication, see `Multi-factor authentication`_.
 
 **To find your API key:**
 
@@ -117,3 +117,4 @@ Authentication tokens are typically valid for 24 hours. Applications should be d
   Beginning with Rackspace Cloud Identity Service v2.0 (earlier versions were called Rackspace Cloud Authentication Service), the service catalog includes a service type attribute to identify services that perform similar functions but have different names; for example, `type="compute"` identifies compute services such as cloudServers and cloudServersOpenStack. Some developers have found the service type attribute to be useful in parsing the service catalog. For Cloud Identity Service v2.0, you can see the service type attribute in :rax-devdocs:`Annotated authentication request and response <cloud-identity/v2/developer-guide/#document-authentication-info/sample-auth-req-response>`.
 
 .. _cURL: http://curl.haxx.se/
+.. _Multi-factor authentication: https://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#document-authentication-info/use-mfa-ops

@@ -23,11 +23,11 @@ the account is created.
 See the *Cloud Identity Client Developer Guide* for information about
 how to perform the following tasks:
 
-*  :rax-devdocs:`Add user<cloud-identity/v2/developer-guide/#post-add-user-v2-0-users>`
+*  `Add user`_
 
-*  :rax-devdocs:`Add role to user <cloud-identity/v2/developer-guide/#add-role-to-user-v2-0-os-ksadm>`
+*  `Add role to user`_
 
-*  :rax-devdocs:`Delete global role from user <cloud-identity/v2/developer-guide/#delete-global-role-from-user-v2-0-os-ksadm>`
+*  `Delete global role from user`_
 
 .. note::
    The account admin user (identity:user-admin) role cannot hold any
@@ -110,3 +110,6 @@ API operations for Cloud Block Storage may or may not be available to
 all roles. To see which operations are permitted to invoke which calls,
 please review the :kc-article:`Permissions Matrix for Role-Based Access Control<permissions-matrix-for-role-based-access-control-rbac>`.
 
+.. _Add user: https://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#post-add-user-v2-0-users
+.. _Add role to user: https://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#add-role-to-user-v2-0-os-ksadm
+.. _Delete global role from user: https://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#delete-global-role-from-user-v2-0-os-ksadm
