@@ -273,8 +273,8 @@ account users specific permissions for accessing the capabilities of the
 Cloud Block Storage service. Each account has only one account owner,
 and that role is assigned by default to any Rackspace Cloud account when
 the account is created.</p>
-<p>See the <em>Cloud Identity Client Developer Guide</em> for information about
-how to perform the following tasks:</p>
+<p>See the <a class="reference external" href="http:/developer.rackspace.com/docs/cloud-identity/v2/developer-guide/">Cloud Identity Client Developer Guide</a> for
+information about how to perform these tasks:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#post-add-user-v2-0-users">Add user</a></li>
 <li><a class="reference external" href="https://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#add-role-to-user-v2-0-os-ksadm">Add role to user</a></li>
@@ -1015,7 +1015,7 @@ Date: Tue, 29 Nov 2011 00:35:24 GMT
 <p>Following are several considerations when using this operation:</p>
 <ul class="simple">
 <li>When you use <code class="docutils literal"><span class="pre">source_volid</span></code> for volume cloning, note that this feature currently has the following constraints. Concurrent clone requests are queued for processing. When one clone request completes, the next clone request in the queue starts.</li>
-<li>Note that you use the <code class="docutils literal"><span class="pre">os-volume_attachments</span></code> API call (/servers/{server_id}/os-volume_attachments) to attach the new volume to your Next Generation Cloud Server (with the specified {server_id}). Refer to the <a class="reference external" href="https://developer.rackspace.com/docs/cloud-servers/v2/developer-guide/#put-attach-volume-to-server-servers-server-id-os-volume-attachments">Next Generation Cloud Servers Developer Guide</a> for details of the call. Once the volume is attached, the new volume appears as another device on the Next Generation Cloud Server. It can then be partitioned, formatted, and mounted for use on the system.</li>
+<li>Note that you use the <code class="docutils literal"><span class="pre">os-volume_attachments</span></code> API call (/servers/{server_id}/os-volume_attachments) to attach the new volume to your Next Generation Cloud Server (with the specified {server_id}). Refer to the <a class="reference external" href="https://developer.rackspace.com/docs/cloud-servers/v2/developer-guide/#put-attach-volume-to-server-servers-server-id-os-volume-attachments">Next Generation Cloud Servers Developer Guide</a> for details of the call. Once the volume is attached, the new volume appears as another device on the Next Generation Cloud Server. Once the volume is attached, the new volume appears as another device on the Next Generation Cloud Server. It can then be partitioned, formatted, and mounted for use on the system.</li>
 <li>To create a bootable volume, include the <code class="docutils literal"><span class="pre">imageRef</span></code> parameter in the request. The corresponding response parameter is <code class="docutils literal"><span class="pre">image_id</span></code>. For more information about this feature, see <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/boot-a-server-from-a-cloud-block-storage-volume">Boot a server from a Cloud Block Storage volume</a>.</li>
 </ul>
 <p>The examples in this section create a 100 gibibytes (GiB) SATA volume called vol-001.</p>
