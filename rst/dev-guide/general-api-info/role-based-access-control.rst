@@ -20,8 +20,7 @@ Cloud Block Storage service. Each account has only one account owner,
 and that role is assigned by default to any Rackspace Cloud account when
 the account is created.
 
-See the :rax-devguide:`Cloud Identity Client Developer Guide
-<cloud-identity/v2>` for
+See the :rax-devguide:`Cloud Identity Client Developer Guide <cloud-identity/v2>` for
 information about how to perform these tasks:
 
 * :rax-devdocs:`Add user <cloud-identity/v2/developer-guide/#add-user>`  
