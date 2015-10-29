@@ -24,7 +24,7 @@ See the :rax-devguide:`Cloud Identity Client Developer Guide
 <cloud-identity/v2>` for
 information about how to perform these tasks:
 
-* :rax-devdocs:`Add account users <cloud-identity/v2/developer-guide/#add-user>`  
+* :rax-devdocs:`Add user <cloud-identity/v2/developer-guide/#add-user>`  
 
 * :rax-devdocs:`Add role to user <cloud-identity/v2/developer-guide/#add-role-to-user>`  
 
@@ -109,5 +109,5 @@ RBAC permissions cross-reference to Cloud Block Storage API operations
 
 API operations for Cloud Block Storage may or may not be available to
 all roles. To see which operations are permitted to invoke which calls,
-please review the :kc-article:`Permissions Matrix for Role-Based Access Control<permissions-matrix-for-role-based-access-control-rbac>`.
+please review the :kc-article:`Permissions Matrix for Role Based Access Control<permissions-matrix-for-role-based-access-control-rbac>`.
 
