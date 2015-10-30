@@ -1,0 +1,19 @@
+API |contract version| updates, October 3, 2013
+------------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+-  Added Role Based Access Control (RBAC).
+
+-  Updated the service access endpoints.
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|
