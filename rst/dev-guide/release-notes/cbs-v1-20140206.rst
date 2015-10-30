@@ -1,0 +1,19 @@
+API |contract version| updates, February 6, 2014
+------------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+-  Added the list volumes (detailed) operation.
+
+-  Added the list snapshots (detailed) operation.
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

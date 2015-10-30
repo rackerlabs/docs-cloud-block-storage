@@ -36,8 +36,9 @@ You can find additional details about Cloud Block Storage in the `Cloud Block St
 
 For additional information about the Cloud Block Storage service, see the :kc-article:`Cloud Block Storage Overview<cloud-block-storage-overview>`.
 
-Rackspace welcomes feedback, comments, and bug reports at support@rackspacecloud.com. 
-
+Rackspace welcomes feedback, comments, and bug reports at support@rackspacecloud.com.
+ 
+This document describes the features available with API |contract version|.
 
 .. _OpenStack Block Storage API v1 Reference: http://developer.openstack.org/api-ref-blockstorage-v1.html
 
@@ -50,3 +51,4 @@ Rackspace welcomes feedback, comments, and bug reports at support@rackspacecloud
    additional-resources
    api-contract-changes
    pricing-service-level
+   api-service-updates

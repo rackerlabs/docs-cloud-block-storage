@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1',
+        VERSION:     'v1.',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -38,14 +38,15 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="rackspace-cloud-block-storage-api-1-0">
-<span id="index"></span><h1>Rackspace Cloud Block Storage API 1.0<a class="headerlink" href="#rackspace-cloud-block-storage-api-1-0" title="Permalink to this headline">#</a></h1>
-<p><em>Last updated:</em> October 21, 2015</p>
+  <div class="section" id="rackspace-cloud-block-storage-api-contract-version">
+<span id="index"></span><h1>Rackspace Cloud Block Storage API v1<a class="headerlink" href="#rackspace-cloud-block-storage-api-contract-version" title="Permalink to this headline">#</a></h1>
+<p><em>Last updated:</em> October 30, 2015</p>
 <p>Learn how to use the Rackspace Cloud Block Storage service by using the REST API.</p>
 <ul class="simple">
 <li>For details about using the API, see the <a class="reference internal" href="index.html#developer-guide"><span>Developer Guide</span></a>.</li>
 <li>For details about API resources, operations, requests and responses, see the
 <a class="reference internal" href="index.html#api-reference"><span>API reference</span></a>.</li>
+<li>For service release notes, see the <a class="reference internal" href="index.html#release-notes"><span>Release Notes</span></a>.</li>
 </ul>
 <div class="toctree-wrapper compound">
 <span id="document-overview/index"></span><div class="section" id="about-the-api">
@@ -74,6 +75,7 @@
 <p>You can find additional details about Cloud Block Storage in the <a class="reference external" href="http://docs.rackspace.com/cbs/api/v1.0/cbs-getting-started/content/Overview_d1e060.html">Cloud Block Storage Getting Started Guide</a>. This guide provides step-by-step instructions to enter the necessary URLs or commands to use the Cloud Block Storage API.</p>
 <p>For additional information about the Cloud Block Storage service, see the <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/cloud-block-storage-overview">Cloud Block Storage Overview</a>.</p>
 <p>Rackspace welcomes feedback, comments, and bug reports at <a class="reference external" href="mailto:support&#37;&#52;&#48;rackspacecloud&#46;com">support<span>&#64;</span>rackspacecloud<span>&#46;</span>com</a>.</p>
+<p>This document describes the features available with API v1.</p>
 <div class="toctree-wrapper compound">
 <span id="document-overview/additional-resources"></span><div class="section" id="additional-resources">
 <span id="id1"></span><h3>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h3>
@@ -104,6 +106,15 @@ contract does change.</p>
 <span id="pricing-service-level"></span><h3>Pricing and service level<a class="headerlink" href="#pricing-and-service-level" title="Permalink to this headline">#</a></h3>
 <p>Cloud Block Storage is part of the Rackspace Cloud and your use of the Cloud Block Storage API will be billed according to the <a class="reference external" href="http://www.rackspace.com/cloud/block-storage">pricing schedule</a>.</p>
 <p>The Service Level Agreement (SLA) for Cloud Block Storage is available on the <a class="reference external" href="http://www.rackspace.com/information/legal/cloud/sla?page">Rackspace Legal Information</a> page.</p>
+</div>
+<span id="document-overview/api-service-updates"></span><div class="section" id="service-updates">
+<h3>Service updates<a class="headerlink" href="#service-updates" title="Permalink to this headline">#</a></h3>
+<p>Rackspace provides service updates to introduce backward-compatible updates and
+modifications to Rackspace Cloud Block Storage API v1. These changes are not intended to break
+any existing code that relies on the API (SDK, web applications, scripts, and so on).
+However, you might want to update or extend your code to use new features and enhancements.</p>
+<p>To learn about updates and changes included in this and other releases, see the
+<a class="reference internal" href="index.html#release-notes"><span>Release Notes</span></a>.</p>
 </div>
 </div>
 </div>
@@ -276,7 +287,7 @@ the account is created.</p>
 <p>See the <a class="reference external" href="http:/developer.rackspace.com/docs/cloud-identity/v2/developer-guide/">Cloud Identity Client Developer Guide</a> for
 information about how to perform these tasks:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#add-user">Add account users</a></li>
+<li><a class="reference external" href="http://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#add-user">Add user</a></li>
 <li><a class="reference external" href="http://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#add-role-to-user">Add role to user</a></li>
 <li><a class="reference external" href="http://developer.rackspace.com/docs/cloud-identity/v2/developer-guide/#delete-global-role-from-user">Delete global role from user</a></li>
 </ul>
@@ -397,7 +408,7 @@ is ignored.</td>
 <h4>RBAC permissions cross-reference to Cloud Block Storage API operations<a class="headerlink" href="#rbac-permissions-cross-reference-to-cloud-block-storage-api-operations" title="Permalink to this headline">#</a></h4>
 <p>API operations for Cloud Block Storage may or may not be available to
 all roles. To see which operations are permitted to invoke which calls,
-please review the <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac">Permissions Matrix for Role-Based Access Control</a>.</p>
+please review the <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac">Permissions Matrix for Role Based Access Control</a>.</p>
 </div>
 </div>
 <span id="document-general-api-info/service-access-endpoints"></span><div class="section" id="service-access-endpoints">
@@ -408,7 +419,7 @@ caching, and overall maintenance of Cloud Block Storage data across
 regional boundaries to other Cloud Block Storage servers.</p>
 <p>To help you decide which regionalized endpoint to use, read the
 Knowledge Center article about special considerations for choosing a
-data center at <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/about-regions">About Regions</a>.</p>
+data center at <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/about-regions">About regions</a>.</p>
 <p>You can find the available service access/endpoints for Cloud Block
 Storage summarized in the table below.</p>
 <p><strong>Table: Regionalized service endpoints</strong></p>
@@ -2753,6 +2764,237 @@ an existing snapshot.</td>
 </div>
 </div>
 </div>
+<span id="document-release-notes"></span><div class="section" id="release-notes">
+<span id="id1"></span><h2><strong>Release Notes</strong><a class="headerlink" href="#release-notes" title="Permalink to this headline">#</a></h2>
+<p>This section describes, for each release, the new features, changes to existing features,
+and any known issues.</p>
+<div class="toctree-wrapper compound">
+<span id="document-release-notes/cbs-v1-20150827"></span><div class="section" id="api-contract-version-updates-august-27-2015">
+<h3>API v1 updates, August 27, 2015<a class="headerlink" href="#api-contract-version-updates-august-27-2015" title="Permalink to this headline">#</a></h3>
+<div class="section" id="what-s-new">
+<h4>What&#8217;s new<a class="headerlink" href="#what-s-new" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li>Added the show snapshot metadata operation.</li>
+</ul>
+</div>
+<div class="section" id="resolved-issues">
+<h4>Resolved issues<a class="headerlink" href="#resolved-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+<div class="section" id="known-issues">
+<h4>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+</div>
+<span id="document-release-notes/cbs-v1-20150211"></span><div class="section" id="api-contract-version-updates-february-11-2015">
+<h3>API v1 updates, February 11, 2015<a class="headerlink" href="#api-contract-version-updates-february-11-2015" title="Permalink to this headline">#</a></h3>
+<div class="section" id="what-s-new">
+<h4>What&#8217;s new<a class="headerlink" href="#what-s-new" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+<div class="section" id="resolved-issues">
+<h4>Resolved issues<a class="headerlink" href="#resolved-issues" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li>Fixed a bug in Cloud Block Storage that was introduced in the
+Cinder Volume Manager deployments on January 27, 2015 and January 29, 2015.
+When size=&#8221;100&#8221; was used for the create volume operation, the value was
+not properly converted to an integer. This issue resulted in a response
+code of 400.</li>
+</ul>
+</div>
+<div class="section" id="known-issues">
+<h4>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+</div>
+<span id="document-release-notes/cbs-v1-20141229"></span><div class="section" id="api-contract-version-updates-december-29-2014">
+<h3>API v1 updates, December 29, 2014<a class="headerlink" href="#api-contract-version-updates-december-29-2014" title="Permalink to this headline">#</a></h3>
+<div class="section" id="what-s-new">
+<h4>What&#8217;s new<a class="headerlink" href="#what-s-new" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li>Added 412 for <code class="docutils literal"><span class="pre">invalidImage</span></code> to the table of faults.</li>
+</ul>
+</div>
+<div class="section" id="resolved-issues">
+<h4>Resolved issues<a class="headerlink" href="#resolved-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+<div class="section" id="known-issues">
+<h4>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+</div>
+<span id="document-release-notes/cbs-v1-20141009"></span><div class="section" id="api-contract-version-updates-october-9-2014">
+<h3>API v1 updates, October 9, 2014<a class="headerlink" href="#api-contract-version-updates-october-9-2014" title="Permalink to this headline">#</a></h3>
+<div class="section" id="what-s-new">
+<h4>What&#8217;s new<a class="headerlink" href="#what-s-new" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li>Added the <code class="docutils literal"><span class="pre">imageRef</span></code> request parameter and the <code class="docutils literal"><span class="pre">image_id</span></code>
+response parameter to the create volume operation to support the boot
+from volume capability.</li>
+<li>Updated the default quotas.</li>
+</ul>
+</div>
+<div class="section" id="resolved-issues">
+<h4>Resolved issues<a class="headerlink" href="#resolved-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+<div class="section" id="known-issues">
+<h4>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+</div>
+<span id="document-release-notes/cbs-v1-20140210"></span><div class="section" id="api-contract-version-updates-february-10-2014">
+<h3>API v1 updates, February 10, 2014<a class="headerlink" href="#api-contract-version-updates-february-10-2014" title="Permalink to this headline">#</a></h3>
+<div class="section" id="what-s-new">
+<h4>What&#8217;s new<a class="headerlink" href="#what-s-new" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li>Added the <code class="docutils literal"><span class="pre">availability_zone</span></code> and <code class="docutils literal"><span class="pre">metadata</span></code> request parameters
+to the create volume operation.</li>
+</ul>
+</div>
+<div class="section" id="resolved-issues">
+<h4>Resolved issues<a class="headerlink" href="#resolved-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+<div class="section" id="known-issues">
+<h4>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+</div>
+<span id="document-release-notes/cbs-v1-20140206"></span><div class="section" id="api-contract-version-updates-february-6-2014">
+<h3>API v1 updates, February 6, 2014<a class="headerlink" href="#api-contract-version-updates-february-6-2014" title="Permalink to this headline">#</a></h3>
+<div class="section" id="what-s-new">
+<h4>What&#8217;s new<a class="headerlink" href="#what-s-new" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li>Added the list volumes (detailed) operation.</li>
+<li>Added the list snapshots (detailed) operation.</li>
+</ul>
+</div>
+<div class="section" id="resolved-issues">
+<h4>Resolved issues<a class="headerlink" href="#resolved-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+<div class="section" id="known-issues">
+<h4>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+</div>
+<span id="document-release-notes/cbs-v1-20140128"></span><div class="section" id="api-contract-version-updates-january-28-2014">
+<h3>API v1 updates, January 28, 2014<a class="headerlink" href="#api-contract-version-updates-january-28-2014" title="Permalink to this headline">#</a></h3>
+<div class="section" id="what-s-new">
+<h4>What&#8217;s new<a class="headerlink" href="#what-s-new" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li>Added the progress indicator,``os-extended-snapshot-attributes:progress``, to the show
+snapshot details operation.</li>
+</ul>
+</div>
+<div class="section" id="resolved-issues">
+<h4>Resolved issues<a class="headerlink" href="#resolved-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+<div class="section" id="known-issues">
+<h4>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+</div>
+<span id="document-release-notes/cbs-v1-20140102"></span><div class="section" id="api-contract-version-updates-january-2-2014">
+<h3>API v1 updates, January 2, 2014<a class="headerlink" href="#api-contract-version-updates-january-2-2014" title="Permalink to this headline">#</a></h3>
+<div class="section" id="what-s-new">
+<h4>What&#8217;s new<a class="headerlink" href="#what-s-new" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li>Added the volume cloning capability that allows you to create a new
+Cloud Block Storage volume from an existing volume by adding the
+<code class="docutils literal"><span class="pre">source_volid</span></code> parameter to the create volume operation.</li>
+</ul>
+</div>
+<div class="section" id="resolved-issues">
+<h4>Resolved issues<a class="headerlink" href="#resolved-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+<div class="section" id="known-issues">
+<h4>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+</div>
+<span id="document-release-notes/cbs-v1-20131021"></span><div class="section" id="api-contract-version-updates-october-21-2013">
+<h3>API v1 updates, October 21, 2013<a class="headerlink" href="#api-contract-version-updates-october-21-2013" title="Permalink to this headline">#</a></h3>
+<div class="section" id="what-s-new">
+<h4>What&#8217;s new<a class="headerlink" href="#what-s-new" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li>Added the HKG service endpoint.</li>
+</ul>
+</div>
+<div class="section" id="resolved-issues">
+<h4>Resolved issues<a class="headerlink" href="#resolved-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+<div class="section" id="known-issues">
+<h4>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+</div>
+<span id="document-release-notes/cbs-v1-20131003"></span><div class="section" id="api-contract-version-updates-october-3-2013">
+<h3>API v1 updates, October 3, 2013<a class="headerlink" href="#api-contract-version-updates-october-3-2013" title="Permalink to this headline">#</a></h3>
+<div class="section" id="what-s-new">
+<h4>What&#8217;s new<a class="headerlink" href="#what-s-new" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li>Added Role Based Access Control (RBAC).</li>
+<li>Updated the service access endpoints.</li>
+</ul>
+</div>
+<div class="section" id="resolved-issues">
+<h4>Resolved issues<a class="headerlink" href="#resolved-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+<div class="section" id="known-issues">
+<h4>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+</div>
+<span id="document-release-notes/cbs-v1-20130809"></span><div class="section" id="api-contract-version-updates-august-9-2013">
+<h3>API v1 updates, August 9, 2013<a class="headerlink" href="#api-contract-version-updates-august-9-2013" title="Permalink to this headline">#</a></h3>
+<div class="section" id="what-s-new">
+<h4>What&#8217;s new<a class="headerlink" href="#what-s-new" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li>Added the update volume operation.</li>
+<li>For the create snapshot operation, added snapshot progress. The
+progress is visible in the &#8220;os-extended-snapshot-attributes:progress&#8221;
+field of the snapshot.</li>
+</ul>
+</div>
+<div class="section" id="resolved-issues">
+<h4>Resolved issues<a class="headerlink" href="#resolved-issues" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li>For the create volume operation, changed the way creating a volume
+from a snapshot works. The API for creating a volume from a snapshot
+was ignoring the <code class="docutils literal"><span class="pre">size</span></code> parameter and was creating a volume the
+same size as the snapshot. Now the volume size must be greater than
+the snapshot size.</li>
+</ul>
+</div>
+<div class="section" id="known-issues">
+<h4>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+</div>
+<span id="document-release-notes/cbs-v1-20121023"></span><div class="section" id="api-contract-version-updates-october-23-2012">
+<h3>API v1 updates, October 23, 2012<a class="headerlink" href="#api-contract-version-updates-october-23-2012" title="Permalink to this headline">#</a></h3>
+<div class="section" id="what-s-new">
+<h4>What&#8217;s new<a class="headerlink" href="#what-s-new" title="Permalink to this headline">#</a></h4>
+<p>First public release for Cloud Block Storage.</p>
+</div>
+<div class="section" id="resolved-issues">
+<h4>Resolved issues<a class="headerlink" href="#resolved-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+<div class="section" id="known-issues">
+<h4>Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">#</a></h4>
+<p>None for this release.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -2768,6 +3010,7 @@ an existing snapshot.</td>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/additional-resources">Additional resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/api-contract-changes">API contract changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/pricing-service-level">Pricing and service level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-overview/api-service-updates">Service updates</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-developer-guide"><strong>Developer Guide</strong></a></li>
@@ -2814,6 +3057,21 @@ an existing snapshot.</td>
 <li class="toctree-l2"><a class="reference internal" href="index.html#update-snapshot">Update snapshot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#delete-snapshot">Delete snapshot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#show-snapshot-metadata">Show snapshot metadata</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-release-notes"><strong>Release Notes</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20150827">API v1 updates, August 27, 2015</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20150211">API v1 updates, February 11, 2015</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20141229">API v1 updates, December 29, 2014</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20141009">API v1 updates, October 9, 2014</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20140210">API v1 updates, February 10, 2014</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20140206">API v1 updates, February 6, 2014</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20140128">API v1 updates, January 28, 2014</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20140102">API v1 updates, January 2, 2014</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20131021">API v1 updates, October 21, 2013</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20131003">API v1 updates, October 3, 2013</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20130809">API v1 updates, August 9, 2013</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20121023">API v1 updates, October 23, 2012</a></li>
 </ul>
 </li>
 </ul>

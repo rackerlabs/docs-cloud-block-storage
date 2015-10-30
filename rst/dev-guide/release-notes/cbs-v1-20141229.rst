@@ -1,0 +1,17 @@
+API |contract version| updates, December 29, 2014
+-------------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+-  Added 412 for ``invalidImage`` to the table of faults.
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

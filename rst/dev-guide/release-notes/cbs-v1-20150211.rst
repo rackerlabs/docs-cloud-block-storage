@@ -1,0 +1,21 @@
+API |contract version| updates, February 11, 2015
+-------------------------------------------------
+
+What's new
+~~~~~~~~~~
+
+|no changes|
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+-  Fixed a bug in Cloud Block Storage that was introduced in the 
+   Cinder Volume Manager deployments on January 27, 2015 and January 29, 2015. 
+   When size="100" was used for the create volume operation, the value was 
+   not properly converted to an integer. This issue resulted in a response 
+   code of 400.
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|
