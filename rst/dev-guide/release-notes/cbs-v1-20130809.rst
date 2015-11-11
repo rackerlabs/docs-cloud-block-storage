@@ -4,21 +4,19 @@ API |contract version| updates, August 9, 2013
 What's new
 ~~~~~~~~~~
 
--  Added the update volume operation.
+-  The :ref:`update volume <put-update-volume>` operation was added.
 
--  For the create snapshot operation, added snapshot progress. The
-   progress is visible in the "os-extended-snapshot-attributes:progress"
-   field of the snapshot.
+-  For the :ref:`create snapshot <post-create-snapshot>` operation, snapshot 
+   progress was added. The progress is visible in the 
+   ``os-extended-snapshot-attributes:progress`` field of the snapshot.
 
 
 Resolved issues
 ~~~~~~~~~~~~~~~
 
--  For the create volume operation, changed the way creating a volume
-   from a snapshot works. The API for creating a volume from a snapshot
-   was ignoring the ``size`` parameter and was creating a volume the
-   same size as the snapshot. Now the volume size must be greater than
-   the snapshot size.
+Fixed an issue in which the method for creating a volume from a snapshot was 
+ignoring the ``size`` parameter and was creating a volume the same size as the 
+snapshot. Now the volume size must be greater than the snapshot size.
 
 Known issues
 ~~~~~~~~~~~~

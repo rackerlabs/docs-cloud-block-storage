@@ -1,10 +1,10 @@
-API |contract version| updates, October 23, 2012
+API |contract version| release, October 23, 2012
 ------------------------------------------------
 
 What's new
 ~~~~~~~~~~
 
-First public release for Cloud Block Storage.
+This is the initial public release for the Rackspace Cloud Block Storage API.
 
 Resolved issues
 ~~~~~~~~~~~~~~~
