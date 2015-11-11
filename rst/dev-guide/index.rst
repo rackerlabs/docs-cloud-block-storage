@@ -16,6 +16,8 @@ Learn how to use the Rackspace Cloud Block Storage service by using the REST API
 .. toctree:: :hidden:
    :maxdepth: 2
 
+   Cloud Block Storage 1.0 <self>
+   API Status <http://www.rackspacestatus.com/>
    About the API <overview/index>
    developer-guide
    concepts
