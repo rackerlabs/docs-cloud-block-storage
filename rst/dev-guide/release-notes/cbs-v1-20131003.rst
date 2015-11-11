@@ -4,9 +4,9 @@ API |contract version| updates, October 3, 2013
 What's new
 ~~~~~~~~~~
 
--  Added Role Based Access Control (RBAC).
+-  :ref:`Role Based Access Control (RBAC) <role-based-access-control>` was added.
 
--  Updated the service access endpoints.
+-  The service access endpoints were updated.
 
 Resolved issues
 ~~~~~~~~~~~~~~~

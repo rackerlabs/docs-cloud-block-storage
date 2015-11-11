@@ -4,11 +4,11 @@ API |contract version| updates, October 9, 2014
 What's new
 ~~~~~~~~~~
 
--  Added the ``imageRef`` request parameter and the ``image_id``
-   response parameter to the create volume operation to support the boot
-   from volume capability.
+-  The ``imageRef`` request parameter and the ``image_id``
+   response parameter were added to the :ref:`create volume <post-create-volume>` 
+   operation to support the boot from volume capability.
 
--  Updated the default quotas.
+-  The default quotas were updated. See :ref:`Cloud Block Storage quotas <quotas>`.
 
 Resolved issues
 ~~~~~~~~~~~~~~~
