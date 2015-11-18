@@ -1,0 +1,81 @@
+.. _gsg-create-volume:
+
+Creating a block storage volume 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Your first step in Cloud Block Storage is to create a volume. To do
+this, send a **POST** request.
+
+The HTTP request must include a header to specify the authentication
+token.
+
+The cURL request uses the ``-i`` option to include the HTTP headers in
+the output, the ``-X`` option to specify the HTTP method to use (instead
+of using the default **GET**), and the ``-d`` option to send data in the
+request to the HTTP server.
+
+An HTTP status code of 200 (OK) in the response indicates that the
+volume was successfully created.
+
+..  note:: 
+    You use the ``source_volid`` parameter for volume cloning, which has
+    some limitations. You cannot create more than one clone per volume
+    concurrently. Snapshots and volume cloning use the same locking
+    mechanism, so you cannot run a snapshot and a clone of the same volume
+    concurrently.
+
+ 
+**Example: Create a volume: cURL**
+
+.. code::  
+
+   curl -i -X POST -d \
+    '{ 
+    "volume":{ 
+    "display_name": "vol-001",    
+    "size": 100
+    }
+     }' \
+    -H "X-Auth-Token: yourAuthToken" \
+    -H "Content-Type: application/json" \
+    https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/volumes 
+
+.. code::  
+
+   HTTP/1.1 200 OK
+   X-Compute-Request-Id: req-2af6c97a-2397-4e52-a0d0-4fde64cfb88c
+   Content-Type: application/json
+   Content-Length: 399
+   Date: Tue, 03 Jun 2014 21:45:46 GMT
+    {
+      "volume": {
+        "status": "available",
+        "display_name": "vol-001",
+        "attachments": [
+          
+        ],
+        "availability_zone": "nova",
+        "bootable": "false",
+        "created_at": "2014-06-03T21:45:45.000000",
+        "display_description": null,
+        "volume_type": "SATA",
+        "snapshot_id": null,
+        "source_volid": null,
+        "metadata": {
+          "storage-node": "3d0a6f43-d1d9-4fea-bffa-8cf9fc7bf7e8"
+        },
+        "id": "a3df5c35-3218-436e-b706-c85edc3f149d",
+        "size": 100
+      }
+     } 
+
+..  note:: 
+    You use the ``os-volume_attachments`` API call
+    (``/servers/{server_id}/os-volume_attachments``) to attach the new
+    volume to your Next Generation Cloud Server (with the specified
+    ``{server_id}``). For details, see the `Next Generation Cloud Servers
+    Developer Guide <http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ch_preface.html>`__.
+
+After the volume is attached, the new volume appears as another device
+on the Next Generation Cloud Server. The volume can then be partitioned,
+formatted, and mounted for use on the system.

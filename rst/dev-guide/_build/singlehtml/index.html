@@ -40,13 +40,14 @@
             
   <div class="section" id="rackspace-cloud-block-storage-api-contract-version">
 <span id="index"></span><h1>Rackspace Cloud Block Storage API 1.0<a class="headerlink" href="#rackspace-cloud-block-storage-api-contract-version" title="Permalink to this headline">#</a></h1>
-<p><em>Last updated:</em> November 11, 2015</p>
+<p><em>Last updated:</em> November 18, 2015</p>
 <p>Learn how to use the Rackspace Cloud Block Storage service by using the REST API.</p>
 <ul class="simple">
 <li>For details about using the API, see the <a class="reference internal" href="index.html#developer-guide"><span>Developer Guide</span></a>.</li>
 <li>For details about API resources, operations, requests and responses, see the
 <a class="reference internal" href="index.html#api-reference"><span>API reference</span></a>.</li>
 <li>For service release notes, see the <a class="reference internal" href="index.html#release-notes"><span>Release Notes</span></a>.</li>
+<li>For instructions on quickly getting started, see the <a class="reference internal" href="index.html#getting-started"><span>Getting Started Guide</span></a>.</li>
 </ul>
 <div class="toctree-wrapper compound">
 <span id="document-overview/index"></span><div class="section" id="about-the-api">
@@ -2979,6 +2980,971 @@ snapshot. Now the volume size must be greater than the snapshot size.</p>
 </div>
 </div>
 </div>
+<span id="document-getting-started"></span><div class="section" id="getting-started-guide">
+<span id="getting-started"></span><h2><strong>Getting Started Guide</strong><a class="headerlink" href="#getting-started-guide" title="Permalink to this headline">#</a></h2>
+<p>This guide provides step-by-step instructions for entering the necessary URLs or commands
+to use some of the basic operations of the Cloud Block Storage API. For additional details
+about all of the API operations, see the <a class="reference internal" href="index.html#api-reference"><span>API reference</span></a>.</p>
+<div class="toctree-wrapper compound">
+<span id="document-getting-started/overview"></span><div class="section" id="overview">
+<span id="gsg-overview"></span><h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h3>
+<p>Rackspace Cloud Block Storage is a block-level storage solution that
+enables you to mount drives or volumes to your Next Generation Cloud
+Servers™ and OnMetal™ Cloud Servers. The primary use cases for Cloud
+Block Storage are to allow you to perform the following tasks:</p>
+<ul class="simple">
+<li>Scale your storage independently from your compute resources.</li>
+<li>Use high-performance storage to serve database or I/O-intensive
+applications.</li>
+</ul>
+<p>The following options are available for mounting drives or volumes to
+your server:</p>
+<ul class="simple">
+<li>The standard-performance option offers extra storage capacity with
+mountable SATA drives.</li>
+<li>The high-performance option offers high speed solid state drives
+(SSDs) for memory-intensive applications.</li>
+</ul>
+<p>Cloud Block Storage includes the following functionality:</p>
+<ul class="simple">
+<li>Cloud Block Storage is an add-on feature to Next Generation Cloud
+Servers and OnMetal Cloud Servers. You cannot attach Cloud Block
+Storage volumes to other instances, such as First Generation Cloud
+Servers.</li>
+<li>Cloud Block Storage is multi-tenant rather than dedicated.</li>
+<li>When volumes are destroyed, Rackspace keeps that disk space
+unavailable until zeros have been written to the space to ensure that
+data is not accessible by any other customers.</li>
+<li>Cloud Block Storage enables you to create snapshots that you can
+save, list, and restore.</li>
+</ul>
+<p>This guide provides step-by-step instructions for entering the necessary
+URLs or commands to use the Cloud Block Storage API. You can find
+additional details about Cloud Block Storage in the Cloud Block Storage
+Developer Guide at <a class="reference external" href="http://docs.rackspace.com/">docs.rackspace.com</a>.</p>
+<p>For more details about the Cloud Block Storage service, see the
+information at
+<a class="reference external" href="http://www.rackspace.com/cloud/block-storage/">www.rackspace.com</a>
+and the Knowledge Center article <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/cloud-block-storage-overview">Cloud Block Storage
+Overview</a>.</p>
+<p>Rackspace welcomes feedback, comments, and bug reports at
+<a class="reference external" href="mailto:support&#37;&#52;&#48;rackspacecloud&#46;com">support<span>&#64;</span>rackspacecloud<span>&#46;</span>com</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Cloud Block Storage is built on the OpenStack Cinder project. For more
+information about OpenStack Cinder, see the <a class="reference external" href="http://docs.openstack.org/api/openstack-block-storage/1.0/content/">OpenStack Block Storage API
+v1 Reference</a>.</p>
+</div>
+</div>
+<span id="document-getting-started/send-requests-to-API"></span><div class="section" id="sending-requests-to-the-api">
+<span id="gsg-send-requests-to-api"></span><h3>Sending requests to the API<a class="headerlink" href="#sending-requests-to-the-api" title="Permalink to this headline">#</a></h3>
+<p>You have several options for sending requests through an API:</p>
+<ul class="simple">
+<li>Developers and testers might prefer to use the command-line tool
+cURL. For more information about cURL, see the <a class="reference external" href="http://curl.haxx.se/">cURL
+website</a>. With cURL, you can send HTTP
+requests and receive responses back from the command line.</li>
+<li>If you like to use a more graphical interface, the RESTClient for
+Mozilla Firefox works well for testing commands. For more
+information, see the <a class="reference external" href="https://addons.mozilla.org/en-US/firefox/addon/restclient/">Mozilla RESTclient
+website</a>.</li>
+<li>You can download and install RESTClient, a Java application used to
+test RESTful web services. For more information, see the <a class="reference external" href="http://code.google.com/p/rest-client/">Java
+application RESTClient
+website</a>.</li>
+</ul>
+<p>This guide uses the API directly with cURL (<a class="reference external" href="Using_the_API_directly_d1e060.html">Chapter&nbsp;4, *Using the API
+directly by using cURL*</a>).</p>
+</div>
+<span id="document-getting-started/prerequisites-for-examples"></span><div class="section" id="prerequisites-for-running-examples">
+<span id="gsg-prerequisites-for-examples"></span><h3>Prerequisites for running examples<a class="headerlink" href="#prerequisites-for-running-examples" title="Permalink to this headline">#</a></h3>
+<p>To run the examples in this guide, you must have the following
+prerequisites:</p>
+<ul>
+<li><p class="first">Rackspace Cloud account</p>
+<p>To sign up for a Rackspace Cloud account, go to the <a class="reference external" href="https://cart.rackspace.com/cloud/">signup
+page</a>.</p>
+</li>
+<li><p class="first">Rackspace Cloud user name and password, as specified during
+registration.</p>
+</li>
+</ul>
+<p>You also need to know your API key. To find your API key, use the
+following steps:</p>
+<ol class="arabic simple">
+<li>Log in to the Cloud Control Panel
+(<a class="reference external" href="https://mycloud.rackspace.com">mycloud.rackspace.com</a>).</li>
+<li>On the upper-right side of the top navigation pane, click your
+username.</li>
+<li>From the menu, select <strong>Account Settings</strong>.</li>
+<li>In the Login Details section of the Account Settings page, locate the
+<strong>API Key</strong> field and click <strong>Show</strong>.</li>
+<li>Copy the value of the API key and paste it into a text editor of your
+choice.</li>
+<li>Click <strong>Hide</strong> to hide the value of the API key.</li>
+</ol>
+</div>
+<span id="document-getting-started/send-requests-with-curl"></span><div class="section" id="sending-api-requests-by-using-curl">
+<span id="gsg-send-requests-with-curl"></span><h3>Sending API requests by using cURL<a class="headerlink" href="#sending-api-requests-by-using-curl" title="Permalink to this headline">#</a></h3>
+<p>cURL is a command-line tool that you can use to interact with REST
+interfaces. cURL lets you to transmit and receive HTTP requests and
+responses from the command line or a shell script, which enables you to
+work with the API directly (without using one of the language-specific
+APIs). cURL is available for most UNIX system-based environments, Apple
+Mac OS X, and Microsoft Windows. For more information about cURL, see
+the <a class="reference external" href="http://curl.haxx.se/">cURL website</a>.</p>
+<p>The following cURL command-line options are used in this guide to run
+the examples.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">-d</span></code></td>
+<td>Sends the specified data in a <strong>POST</strong> request to the
+HTTP server.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">-i</span></code></td>
+<td>Includes the HTTP header in the output.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">-H</span> <span class="pre">HEADER</span></code></td>
+<td>Specifies an HTTP header in the request. You can
+specify any number of extra headers. Precede each
+header with the -H option.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">-s</span></code></td>
+<td>Specifies silent or quiet mode; does not show progress
+or error messages. If your cURL command is not
+generating any output, try replacing the <code class="docutils literal"><span class="pre">-s</span></code> option
+with <code class="docutils literal"><span class="pre">-i</span></code>.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">-X</span></code></td>
+<td>Specifies the request operation to use when
+communicating with the HTTP server. The specified
+request is used instead of the default operation,
+which is <strong>GET</strong>. For example, <code class="docutils literal"><span class="pre">-X</span> <span class="pre">PUT</span></code> specifies to
+use the <strong>PUT</strong> operation.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table: &nbsp;cURL command-line options</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have the tools, you can run the cURL JSON request examples with
+the following option to format the output from cURL: <strong>&lt;cURL JSON
+request example&gt; | python -m json.tool</strong>.</p>
+</div>
+</div>
+<span id="document-getting-started/copy-paste-curl"></span><div class="section" id="copying-and-pasting-curl-request-examples-into-a-terminal-window">
+<span id="gsg-copy-past-curl"></span><h3>Copying and pasting cURL request examples into a terminal window<a class="headerlink" href="#copying-and-pasting-curl-request-examples-into-a-terminal-window" title="Permalink to this headline">#</a></h3>
+<p>To run the cURL request examples shown in this guide, perform the
+following actions:</p>
+<ol class="arabic">
+<li><p class="first">Copy each example from the HTML version of this guide and paste it
+into an ASCII text editor (for example, vi or TextEdit). You can
+click on the small document icon to the right of each request example
+to select it.</p>
+</li>
+<li><p class="first">Modify each example with your required account information and other
+information, as detailed in this guide.</p>
+<blockquote>
+<div><p>style=&#8221;margin-left: 0.5in; margin-right: 0.5in;&#8221;&gt;</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The carriage returns in the cURL request examples are escaped with a
+backslash (\) character. The escape character allows continuation of
+the command across multiple lines. However, do not include the escape
+character in the JSON or XML request body within the cURL command.</p>
+</div>
+</li>
+<li><p class="first">After you are finished modifying the text for the cURL request
+example with your information (for example, user name and API key),
+copy and paste the text into your terminal window.</p>
+</li>
+<li><p class="first">Press <strong>Enter</strong> to run the cURL command.</p>
+</li>
+</ol>
+<p>Consider the following cURL authentication request JSON example, which
+is described in detail in <a class="reference external" href="Gen_auth-token_d1e060.html">Section&nbsp;4.1, “Generating an authentication
+token”</a>.</p>
+<p><strong>Example:&nbsp;cURL authentication request: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -d \
+ &#39;{
+     &quot;auth&quot;:
+     {
+        &quot;RAX-KSKEY:apiKeyCredentials&quot;:
+        {
+           &quot;username&quot;: &quot;yourUserName&quot;,
+           &quot;apiKey&quot;: &quot;yourApiKey&quot;}
+     }
+ }&#39; \
+ -H &#39;Content-Type: application/json&#39; \
+ &#39;https://identity.api.rackspacecloud.com/v2.0/tokens&#39; | python  -m  json.tool
+</pre></div>
+</div>
+<p>In the example, the lines that are part of the cURL command syntax have
+all been escaped with a backslash (\) to indicate that the command
+continues on the next line:</p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -d \
+
+
+ (... lines within the JSON portion of the message are not shown in this example)
+ (... the example shows only lines that are part of cURL syntax)
+
+
+
+  }&#39; \
+ -H &#39;Content-Type: application/json&#39; \
+ &#39;https://identity.api.rackspacecloud.com/v2.0/tokens&#39; | python  -m  json.tool
+</pre></div>
+</div>
+<p>However, the lines within the JSON portion of the message are not
+escaped with a backslash, to avoid issues with the JSON processing:</p>
+<div class="code highlight-python"><div class="highlight"><pre>&#39;{
+     &quot;auth&quot;:
+     {
+        &quot;RAX-KSKEY:apiKeyCredentials&quot;:
+        {
+           &quot;username&quot;: &quot;yourUserName&quot;,
+           &quot;apiKey&quot;: &quot;yourApiKey&quot;}
+     }
+ }&#39; \
+</pre></div>
+</div>
+<p>The final line of the JSON message is escaped, but the backslash lies
+outside the JSON message and continues the cURL command to the next
+line.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If you have trouble copying and pasting the examples as described, try
+typing the entire example on one long line, removing all the backslash
+line-continuation characters.</p>
+</div>
+</div>
+<span id="document-getting-started/service-access-endpoints"></span><div class="section" id="service-access-endpoints">
+<span id="gsg-service-access-endpoints"></span><h3>Service access endpoints<a class="headerlink" href="#service-access-endpoints" title="Permalink to this headline">#</a></h3>
+<p>The Cloud Block Storage service is a regionalized service. The user of
+the service is responsible for appropriate replication, caching, and
+overall maintenance of Cloud Block Storage data across regional
+boundaries to other Cloud Block Storage servers.</p>
+<p>To help you decide which regionalized endpoint to use, read the
+Knowledge Center article about special considerations for choosing a
+data center at <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/about-regions">About regions</a>.</p>
+<p>You can find the available service access/endpoints for Cloud Block
+Storage summarized in the table below.</p>
+<p><strong>Table:&nbsp;Cloud Block Storage regionalized service endpoints</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Region</th>
+<th class="head">Endpoint</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Chicago (ORD)</td>
+<td><a class="reference external" href="https://ord.blockstorage.api.rackspacecloud.com">https://ord.blockstorage.api.rackspacecloud.com</a>
+/v1/1234/</td>
+</tr>
+<tr class="row-odd"><td>Dallas/Ft. Worth (DFW)</td>
+<td><a class="reference external" href="https://dfw.blockstorage.api.rackspacecloud.com">https://dfw.blockstorage.api.rackspacecloud.com</a>
+/v1/1234/</td>
+</tr>
+<tr class="row-even"><td>Northern Virginia (IAD)</td>
+<td><a class="reference external" href="https://iad.blockstorage.api.rackspacecloud.com">https://iad.blockstorage.api.rackspacecloud.com</a>
+/v1/1234/</td>
+</tr>
+<tr class="row-odd"><td>London (LON)</td>
+<td><a class="reference external" href="https://lon.blockstorage.api.rackspacecloud.com">https://lon.blockstorage.api.rackspacecloud.com</a>
+/v1/1234/</td>
+</tr>
+<tr class="row-even"><td>Sydney (SYD)</td>
+<td><a class="reference external" href="https://syd.blockstorage.api.rackspacecloud.com">https://syd.blockstorage.api.rackspacecloud.com</a>
+/v1/1234/</td>
+</tr>
+<tr class="row-odd"><td>Hong Kong (HKG)</td>
+<td><a class="reference external" href="https://hkg.blockstorage.api.rackspacecloud.com">https://hkg.blockstorage.api.rackspacecloud.com</a>
+/v1/1234/</td>
+</tr>
+</tbody>
+</table>
+<p>Replace the sample account ID number, <code class="docutils literal"><span class="pre">1234</span></code>, with your actual
+account number returned as part of the authentication service response.</p>
+<p>You will find the actual account number after the final <strong>/</strong> in the
+<code class="docutils literal"><span class="pre">publicURL</span></code> field returned by the authentication response.</p>
+</div>
+<span id="document-getting-started/use-API-directly"></span><div class="section" id="using-the-api-directly-by-using-curl">
+<span id="gsg-use-api-directly"></span><h3>Using the API directly by using cURL<a class="headerlink" href="#using-the-api-directly-by-using-curl" title="Permalink to this headline">#</a></h3>
+<p>The main purpose of this guide is to get you started quickly with Cloud
+Block Storage. To help you accomplish this goal, this chapter contains
+simple examples for authentication and some basic Cloud Block Storage
+requests that you will commonly use. Example requests are provided in
+cURL, followed by the response.</p>
+<p>For more information about all Cloud Block Storage operations, see the
+<a class="reference internal" href="index.html#api-reference"><span>API reference</span></a>.</p>
+</div>
+<span id="document-getting-started/gen-auth-token"></span><div class="section" id="generating-an-authentication-token">
+<span id="gsg-gen-auth-token"></span><h3>Generating an authentication token<a class="headerlink" href="#generating-an-authentication-token" title="Permalink to this headline">#</a></h3>
+<p>Your first step must always be to generate an authentication token. You
+must then include the authentication token in each request in the
+<code class="docutils literal"><span class="pre">X-Auth-Token</span></code> header.</p>
+<p>For more details about authentication, see the <em>Cloud Block Storage
+Developer Guide</em>.</p>
+<p>Remember to replace the placeholders in the following authentication
+request example with your information:</p>
+<ul class="simple">
+<li><strong>yourUserName</strong> —Your common Rackspace Cloud user name, as supplied
+during registration.</li>
+<li><strong>yourApiKey</strong> — Your API key.</li>
+</ul>
+<p>This guide uses <strong>yourUserName</strong> and <strong>yourApiKey</strong> for authentication.
+For information about other supported authentication methods, see the
+<a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Token_Calls.html">Authentication
+tokens</a>
+in the <em>Cloud Identity Client Developer Guide</em>.</p>
+<p>Use the following global endpoint to access the Cloud Identity service
+for authentication:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://identity.api.rackspacecloud.com/v2.0/">https://identity.api.rackspacecloud.com/v2.0/</a></li>
+</ul>
+<p>In the following example, you authenticate using
+<code class="docutils literal"><span class="pre">https://identity.api.rackspacecloud.com/v2.0/tokens</span></code>, the URL for the
+Cloud Identity services. The <code class="docutils literal"><span class="pre">v2.0</span></code> component in the URL indicates
+that you are using version 2.0 of the Cloud Identity API.</p>
+<p>The cURL request uses the <code class="docutils literal"><span class="pre">-d</span></code> option to send the specified data in a
+<strong>POST</strong> request to the HTTP server.</p>
+<p><strong>Example:&nbsp;cURL authentication request: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -d \
+ &#39;{
+     &quot;auth&quot;:
+     {
+        &quot;RAX-KSKEY:apiKeyCredentials&quot;:
+        {
+           &quot;username&quot;: &quot;yourUserName&quot;,
+           &quot;apiKey&quot;: &quot;yourApiKey&quot;}
+     }
+ }&#39; \
+ -H &#39;Content-Type: application/json&#39; \
+ &#39;https://identity.api.rackspacecloud.com/v2.0/tokens&#39; | python  -m  json.tool
+</pre></div>
+</div>
+<p>An HTTP status code of 200 (OK) in the response indicates that the
+authentication request completed successfully.</p>
+<p>In the authentication response, the authentication token <code class="docutils literal"><span class="pre">id</span></code> is
+returned with an <code class="docutils literal"><span class="pre">expires</span></code> attribute that specifies when the token
+expires. Tokens are valid for a finite duration, typically for 24 hours.
+Remember to supply your authentication token wherever you see the
+placeholder <strong>yourAuthToken</strong> in the examples in this guide.</p>
+<p>The authentication response also contains the service catalog, which
+provides endpoints for Rackspace Cloud services. For example,
+<code class="docutils literal"><span class="pre">https://dfw.blockstorage.api.rackspacecloud.com/v1/</span></code><code class="docutils literal"><span class="pre">1234</span></code>/) is
+one of the <code class="docutils literal"><span class="pre">publicURL</span></code> endpoints for Cloud Block Storage in the
+service catalog.</p>
+<p>Your actual account number is after the final slash (/) in the
+<code class="docutils literal"><span class="pre">publicURL</span></code> field, such as <code class="docutils literal"><span class="pre">1234</span></code> in the preceding endpoint. You
+must specify your account number in the Cloud Block Storage API request,
+wherever you see the placeholder <strong>yourAccountID</strong> specified in the
+examples in this guide.</p>
+<p><strong>:&nbsp;Authenticate response with partial service catalog
+showing cloudBlockStorage: JSON</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+Date: Tue, 06 May 2014 18:33:04 GMT
+Content-Type: application/json
+
+{
+     &quot;access&quot;: {
+         &quot;token&quot;: {
+             &quot;id&quot;: &quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;,
+             &quot;expires&quot;: &quot;2014-05-07T07:37:46.317Z&quot;,
+             &quot;tenant&quot;: {
+                 &quot;id&quot;: &quot;xxxxxx&quot;,
+                 &quot;name&quot;: &quot;xxxxxx&quot;
+             },
+             &quot;RAX-AUTH:authenticatedBy&quot;: [
+                                          &quot;APIKEY&quot;
+                                          ]
+         },
+         &quot;serviceCatalog&quot;: [
+             {
+                 &quot;name&quot;: &quot;cloudBlockStorage&quot;,
+                 &quot;endpoints&quot;: [
+                 {
+                     &quot;region&quot;: &quot;SYD&quot;,
+                     &quot;tenantId&quot;: &quot;xxxxxx&quot;,
+                     &quot;publicURL&quot;: &quot;https://syd.blockstorage.api.rackspacecloud.com/v1/xxxxxx&quot;
+                 },
+                 {
+                     &quot;region&quot;: &quot;DFW&quot;,
+                     &quot;tenantId&quot;: &quot;xxxxxx&quot;,
+                     &quot;publicURL&quot;: &quot;https://dfw.blockstorage.api.rackspacecloud.com/v1/xxxxxx&quot;
+                 },
+                 {
+                     &quot;region&quot;: &quot;ORD&quot;,
+                     &quot;tenantId&quot;: &quot;xxxxxx&quot;,
+                     &quot;publicURL&quot;: &quot;https://ord.blockstorage.api.rackspacecloud.com/v1/830866&quot;
+                 },
+                 {
+                     &quot;region&quot;: &quot;IAD&quot;,
+                     &quot;tenantId&quot;: &quot;xxxxxx&quot;,
+                     &quot;publicURL&quot;: &quot;https://iad.blockstorage.api.rackspacecloud.com/v1/830866&quot;
+                 },
+                 {
+                     &quot;region&quot;: &quot;HKG&quot;,
+                     &quot;tenantId&quot;: &quot;xxxxxx&quot;,
+                     &quot;publicURL&quot;: &quot;https://hkg.blockstorage.api.rackspacecloud.com/v1/830866&quot;
+                 }
+             ],
+             &quot;type&quot;: &quot;volume&quot;
+             }
+         ]
+     }
+ }
+</pre></div>
+</div>
+<p>After authentication, you can use cURL to perform <strong>POST</strong>, <strong>GET</strong>,
+<strong>PUT</strong>, and <strong>DELETE</strong> requests for the Cloud Block Storage API.</p>
+</div>
+<span id="document-getting-started/create-volume"></span><div class="section" id="creating-a-block-storage-volume">
+<span id="gsg-create-volume"></span><h3>Creating a block storage volume<a class="headerlink" href="#creating-a-block-storage-volume" title="Permalink to this headline">#</a></h3>
+<p>Your first step in Cloud Block Storage is to create a volume. To do
+this, send a <strong>POST</strong> request.</p>
+<p>The HTTP request must include a header to specify the authentication
+token.</p>
+<p>The cURL request uses the <code class="docutils literal"><span class="pre">-i</span></code> option to include the HTTP headers in
+the output, the <code class="docutils literal"><span class="pre">-X</span></code> option to specify the HTTP method to use (instead
+of using the default <strong>GET</strong>), and the <code class="docutils literal"><span class="pre">-d</span></code> option to send data in the
+request to the HTTP server.</p>
+<p>An HTTP status code of 200 (OK) in the response indicates that the
+volume was successfully created.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You use the <code class="docutils literal"><span class="pre">source_volid</span></code> parameter for volume cloning, which has
+some limitations. You cannot create more than one clone per volume
+concurrently. Snapshots and volume cloning use the same locking
+mechanism, so you cannot run a snapshot and a clone of the same volume
+concurrently.</p>
+</div>
+<p><strong>Example:&nbsp;Create a volume: cURL</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -i -X POST -d \
+ &#39;{
+ &quot;volume&quot;:{
+ &quot;display_name&quot;: &quot;vol-001&quot;,
+ &quot;size&quot;: 100
+ }
+  }&#39; \
+ -H &quot;X-Auth-Token: yourAuthToken&quot; \
+ -H &quot;Content-Type: application/json&quot; \
+ https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/volumes
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+X-Compute-Request-Id: req-2af6c97a-2397-4e52-a0d0-4fde64cfb88c
+Content-Type: application/json
+Content-Length: 399
+Date: Tue, 03 Jun 2014 21:45:46 GMT
+ {
+   &quot;volume&quot;: {
+     &quot;status&quot;: &quot;available&quot;,
+     &quot;display_name&quot;: &quot;vol-001&quot;,
+     &quot;attachments&quot;: [
+
+     ],
+     &quot;availability_zone&quot;: &quot;nova&quot;,
+     &quot;bootable&quot;: &quot;false&quot;,
+     &quot;created_at&quot;: &quot;2014-06-03T21:45:45.000000&quot;,
+     &quot;display_description&quot;: null,
+     &quot;volume_type&quot;: &quot;SATA&quot;,
+     &quot;snapshot_id&quot;: null,
+     &quot;source_volid&quot;: null,
+     &quot;metadata&quot;: {
+       &quot;storage-node&quot;: &quot;3d0a6f43-d1d9-4fea-bffa-8cf9fc7bf7e8&quot;
+     },
+     &quot;id&quot;: &quot;a3df5c35-3218-436e-b706-c85edc3f149d&quot;,
+     &quot;size&quot;: 100
+   }
+  }
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You use the <code class="docutils literal"><span class="pre">os-volume_attachments</span></code> API call
+(<code class="docutils literal"><span class="pre">/servers/{server_id}/os-volume_attachments</span></code>) to attach the new
+volume to your Next Generation Cloud Server (with the specified
+<code class="docutils literal"><span class="pre">{server_id}</span></code>). For details, see the <a class="reference external" href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ch_preface.html">Next Generation Cloud Servers
+Developer Guide</a>.</p>
+</div>
+<p>After the volume is attached, the new volume appears as another device
+on the Next Generation Cloud Server. The volume can then be partitioned,
+formatted, and mounted for use on the system.</p>
+</div>
+<span id="document-getting-started/list-volumes"></span><div class="section" id="listing-existing-block-storage-volumes">
+<span id="gsg-list-volumes"></span><h3>Listing existing block storage volumes<a class="headerlink" href="#listing-existing-block-storage-volumes" title="Permalink to this headline">#</a></h3>
+<p>To list all of the block storage volumes that you have created in a
+single region, send a <strong>GET</strong> request.</p>
+<p>The HTTP request must include a header to specify the authentication
+token.</p>
+<p>The cURL request uses the <code class="docutils literal"><span class="pre">-i</span></code> option to include the HTTP headers in
+the output and the <code class="docutils literal"><span class="pre">-X</span></code> option to specify the HTTP method in the
+request.</p>
+<p>An HTTP status code of 200 (OK) in the response indicates that the
+request successfully completed.</p>
+<p><strong>Example:&nbsp;List volumes: cURL</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/volumes \
+-H &quot;X-Auth-Token: yourAuthToken&quot; \
+-H &quot;Content-Type: application/json&quot;
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+X-Compute-Request-Id: req-7941b291-f226-459d-9a78-5d38660f3ae7
+Content-Type: application/json
+Content-Length: 1179
+Date: Wed, 04 Jun 2014 16:52:15 GMT
+
+{
+   &quot;volumes&quot;: [
+     {
+       &quot;status&quot;: &quot;available&quot;,
+       &quot;display_name&quot;: &quot;vol-001&quot;,
+       &quot;attachments&quot;: [
+
+       ],
+       &quot;availability_zone&quot;: &quot;nova&quot;,
+       &quot;bootable&quot;: &quot;false&quot;,
+       &quot;created_at&quot;: &quot; 2014-06-03T21:45:45.000000 &quot;,
+       &quot;display_description&quot;: null,
+       &quot;volume_type&quot;: &quot;SATA&quot;,
+       &quot;snapshot_id&quot;: null,
+       &quot;source_volid&quot;: null,
+       &quot;metadata&quot;: {
+         &quot;storage-node&quot;: &quot; 3d0a6f43-d1d9-4fea-bffa-8cf9fc7bf7e8 &quot;
+       },
+       &quot;id&quot;: &quot; a3df5c35-3218-436e-b706-c85edc3f149d &quot;,
+       &quot;size&quot;: 100
+     }
+   ]
+ }
+</pre></div>
+</div>
+</div>
+<span id="document-getting-started/show-volume-details"></span><div class="section" id="showing-volume-details">
+<span id="gsg-show-volume-details"></span><h3>Showing volume details<a class="headerlink" href="#showing-volume-details" title="Permalink to this headline">#</a></h3>
+<p>To show details about a specified volume, send a <strong>GET</strong> request that
+includes the volume ID.</p>
+<p>The HTTP request must include a header to specify the authentication
+token.</p>
+<p>The cURL request uses the <code class="docutils literal"><span class="pre">-i</span></code> option to include the HTTP headers in
+the output and the <code class="docutils literal"><span class="pre">-X</span></code> option to specify the HTTP method in the
+request.</p>
+<p>An HTTP status code of 200 (OK) in the response indicates that the
+request successfully completed.</p>
+<p><strong>Example:&nbsp;Show volume details: cURL</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/volumes/yourVolumeID \
+-H &quot;X-Auth-Token: yourAuthToken&quot; \
+-H &quot;Content-Type: application/json&quot;
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+X-Compute-Request-Id: req-0ec1d1e0-c591-47d2-a8e7-9a8923e495b2
+Content-Type: application/json
+Content-Length: 554
+Date: Wed, 04 Jun 2014 18:15:24 GMT
+
+ {
+   &quot;volume&quot;: {
+     &quot;status&quot;: &quot;available&quot;,
+     &quot;display_name&quot;: &quot;vol-001&quot;,
+     &quot;attachments&quot;: [
+
+     ],
+     &quot;availability_zone&quot;: &quot;nova&quot;,
+     &quot;bootable&quot;: &quot;false&quot;,
+     &quot;created_at&quot;: &quot;2014-06-03T21:45:45.000000&quot;,
+     &quot;os-vol-tenant-attr:tenant_id&quot;: &quot;yourAccountID&quot;,
+     &quot;display_description&quot;: null,
+     &quot;os-vol-host-attr:host&quot;: &quot;lunr&quot;,
+     &quot;volume_type&quot;: &quot;SATA&quot;,
+     &quot;snapshot_id&quot;: null,
+     &quot;source_volid&quot;: null,
+     &quot;os-vol-mig-status-attr:name_id&quot;: null,
+     &quot;metadata&quot;: {
+       &quot;storage-node&quot;: &quot;3d0a6f43-d1d9-4fea-bffa-8cf9fc7bf7e8&quot;
+     },
+     &quot;id&quot;: &quot;a3df5c35-3218-436e-b706-c85edc3f149d&quot;,
+     &quot;os-vol-mig-status-attr:migstat&quot;: null,
+     &quot;size&quot;: 100
+   }
+ }
+</pre></div>
+</div>
+</div>
+<span id="document-getting-started/update-volume"></span><div class="section" id="updating-a-volume">
+<span id="gsg-update-volume"></span><h3>Updating a volume<a class="headerlink" href="#updating-a-volume" title="Permalink to this headline">#</a></h3>
+<p>To modify a volume’s name, description, or both, send a <strong>PUT</strong> request
+that includes the volume ID.</p>
+<p>The HTTP request must include a header to specify the authentication
+token.</p>
+<p>The cURL request uses the <code class="docutils literal"><span class="pre">-i</span></code> option to include the HTTP headers in
+the output, the <code class="docutils literal"><span class="pre">-X</span></code> option to specify the HTTP method to use (instead
+of using the default ), and the <code class="docutils literal"><span class="pre">-d</span></code> option to send data in the
+request to the HTTP server.</p>
+<p>An HTTP status code of 200 (OK) in the response indicates that the
+request successfully completed.</p>
+<p><strong>Example:&nbsp;Update volume: cURL</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -i -X PUT -d \
+   &#39;{
+    &quot;volume&quot;:{
+        &quot;display_name&quot;:&quot;newName&quot;,
+        &quot;display_description&quot;:&quot;newDescription&quot;
+        }
+    }&#39;\
+    -H &quot;X-Auth-Token: yourAuthToken&quot; \
+    -H &quot;Content-Type: application/json&quot; \
+    https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/volumes/yourVolumeID
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+X-Compute-Request-Id: req-8a131657-46a3-435b-bee4-b612c79c8c09
+Content-Type: application/json
+Content-Length: 411
+Date: Wed, 04 Jun 2014 18:29:43 GMT
+
+ {
+   &quot;volume&quot;: {
+     &quot;status&quot;: &quot;available&quot;,
+     &quot;display_name&quot;: &quot;newName&quot;,
+     &quot;attachments&quot;: [
+
+     ],
+     &quot;availability_zone&quot;: &quot;nova&quot;,
+     &quot;bootable&quot;: &quot;false&quot;,
+     &quot;created_at&quot;: &quot;2014-06-03T21:45:45.000000&quot;,
+     &quot;display_description&quot;: &quot;newDescription&quot;,
+     &quot;volume_type&quot;: &quot;SATA&quot;,
+     &quot;snapshot_id&quot;: null,
+     &quot;source_volid&quot;: null,
+     &quot;metadata&quot;: {
+       &quot;storage-node&quot;: &quot;3d0a6f43-d1d9-4fea-bffa-8cf9fc7bf7e8&quot;
+     },
+     &quot;id&quot;: &quot;a3df5c35-3218-436e-b706-c85edc3f149d&quot;,
+     &quot;size&quot;: 100
+   }
+ }
+</pre></div>
+</div>
+</div>
+<span id="document-getting-started/delete-volume"></span><div class="section" id="deleting-a-volume">
+<span id="gsg-delete-volume"></span><h3>Deleting a volume<a class="headerlink" href="#deleting-a-volume" title="Permalink to this headline">#</a></h3>
+<p>To delete a volume when it is no longer in use and the data that it
+contains is not needed, send a <strong>DELETE</strong> request that includes the
+volume ID.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Deleting a volume deletes all the data within it. You cannot recover the
+data unless it is backed up before the volume is deleted.</p>
+</div>
+<p>The HTTP request must include a header to specify the authentication
+token.</p>
+<p>The cURL request uses the <code class="docutils literal"><span class="pre">-i</span></code> option to include the HTTP headers in
+the output and the <code class="docutils literal"><span class="pre">-X</span></code> option to specify the HTTP method to use
+(instead of using the default).</p>
+<p>An HTTP status code of 202 (Accepted) in the response indicates that the
+delete request has been accepted for processing and the volume will be
+deleted.</p>
+<p><strong>Example:&nbsp;Delete volume: cURL</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -i -X DELETE https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/volumes/yourVolumeID \
+-H &quot;X-Auth-Token: yourAuthToken&quot; \
+-H &quot;Content-Type: application/json&quot;
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 202 Accepted
+Content-Type: text/html; charset=UTF-8
+Content-Length: 0
+Date: Wed, 04 Jun 2014 19:17:35 GMT
+</pre></div>
+</div>
+</div>
+<span id="document-getting-started/create-snapshot"></span><div class="section" id="creating-a-snapshot">
+<span id="gsg-create-snapshot"></span><h3>Creating a snapshot<a class="headerlink" href="#creating-a-snapshot" title="Permalink to this headline">#</a></h3>
+<p>A snapshot is a point-in-time copy of the data that a volume contains.
+You must flush all writes to the volume before you create a snapshot. To
+do so, either unmount any file systems on the volume or detach the
+volume. Snapshots are incremental, so each time that you create a
+snapshot, the incremental changes for the new snapshot are appended to
+the previous snapshot, which is still available. Note that you can
+create a volume from the snapshot.</p>
+<p>To create a snapshot of a block storage volume, send a <strong>POST</strong> request.</p>
+<p>The HTTP request must include a header to specify the authentication
+token.</p>
+<p>The cURL request uses the <code class="docutils literal"><span class="pre">-i</span></code> option to include the HTTP headers in
+the output, the <code class="docutils literal"><span class="pre">-X</span></code> option to specify the HTTP method to use (instead
+of using the default <strong>GET</strong>), and the <code class="docutils literal"><span class="pre">-d</span></code> option to send data in the
+request to the HTTP server.</p>
+<p>An HTTP status code of 200 (OK) indicates that the request was accepted
+and <code class="docutils literal"><span class="pre">&quot;status&quot;:</span> <span class="pre">&quot;creating&quot;</span></code> indicates that the snapshot is in progress.</p>
+<p><strong>Example:&nbsp;Create a snapshot: cURL</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -i -X POST -d \
+   &#39;{
+   &quot;snapshot&quot;: {
+       &quot;display_name&quot;: &quot;snap-001&quot;,
+       &quot;display_description&quot;: &quot;Daily Backup&quot;,
+       &quot;volume_id&quot;: &quot;yourVolumeID&quot;
+     }
+   }&#39;\
+   -H &quot;X-Auth-Token: yourAuthToken&quot; \
+   -H &quot;Content-Type: application/json&quot; \
+  https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/snapshots
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+X-Compute-Request-Id: req-99d94a3a-1086-4c19-99b4-65d05e2e02f1
+Content-Type: application/json
+Content-Length: 275
+Date: Wed, 04 Jun 2014 20:16:19 GMT
+
+{
+   &quot;snapshot&quot;: {
+     &quot;status&quot;: &quot;creating&quot;,
+     &quot;display_name&quot;: &quot;snap-001&quot;,
+     &quot;created_at&quot;: &quot;2014-06-04T20:16:17.000000&quot;,
+     &quot;display_description&quot;: &quot;Daily Backup&quot;,
+     &quot;volume_id&quot;: &quot;c849a193-5275-4527-9e5a-69b2a05933aa&quot;,
+     &quot;metadata&quot;: {
+
+     },
+     &quot;id&quot;: &quot;a6211a94-937f-4770-8dae-1813cb643213&quot;,
+     &quot;size&quot;: 100
+   }
+ }
+</pre></div>
+</div>
+</div>
+<span id="document-getting-started/list-snapshots"></span><div class="section" id="listing-snapshots">
+<span id="gsg-list-snapshots"></span><h3>Listing snapshots<a class="headerlink" href="#listing-snapshots" title="Permalink to this headline">#</a></h3>
+<p>To list all of the snapshots that you have created in a single region,
+send a <strong>GET</strong> request.</p>
+<p>The HTTP request must include a header to specify the authentication
+token.</p>
+<p>The cURL request uses the <code class="docutils literal"><span class="pre">-i</span></code> option to include the HTTP headers in
+the output and the <code class="docutils literal"><span class="pre">-X</span></code> option to specify the HTTP method in the
+request.</p>
+<p>An HTTP status code of 200 (OK) in the response indicates that the
+request successfully completed.</p>
+<p><strong>Example:&nbsp;List snapshots: cURL</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/snapshots \
+-H &quot;X-Auth-Token: yourAuthToken&quot; \
+-H &quot;Content-Type: application/json&quot;
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+X-Compute-Request-Id: req-1a938da7-cf74-4ac6-a72f-4c927ae23605
+Content-Type: application/json
+Content-Length: 541
+Date: Wed, 04 Jun 2014 20:28:01 GMT
+
+  {
+   &quot;snapshots&quot;: [
+     {
+       &quot;status&quot;: &quot;creating&quot;,
+       &quot;display_name&quot;: &quot;snap-001&quot;,
+       &quot;created_at&quot;: &quot;2014-06-04T20:16:17.000000&quot;,
+       &quot;display_description&quot;: &quot;Daily Backup&quot;,
+       &quot;volume_id&quot;: &quot;c849a193-5275-4527-9e5a-69b2a05933aa&quot;,
+       &quot;metadata&quot;: {
+
+       },
+       &quot;id&quot;: &quot;a6211a94-937f-4770-8dae-1813cb643213&quot;,
+       &quot;size&quot;: 100
+     },
+     {
+       &quot;status&quot;: &quot;available&quot;,
+       &quot;display_name&quot;: &quot;snap-002&quot;,
+       &quot;created_at&quot;: &quot;2014-06-04T20:13:34.000000&quot;,
+       &quot;display_description&quot;: &quot;Weekly Backup&quot;,
+       &quot;volume_id&quot;: &quot;1a036384-99b2-4fed-ac05-31f964d6925d&quot;,
+       &quot;metadata&quot;: {
+
+       },
+       &quot;id&quot;: &quot;ca320eb7-b371-4dbe-b2e9-2543c952f507&quot;,
+       &quot;size&quot;: 100
+     }
+   ]
+ }
+</pre></div>
+</div>
+</div>
+<span id="document-getting-started/show-snapshot-details"></span><div class="section" id="showing-snapshot-details">
+<span id="gsg-show-snapshot-details"></span><h3>Showing snapshot details<a class="headerlink" href="#showing-snapshot-details" title="Permalink to this headline">#</a></h3>
+<p>To show details about a specified snapshot, send a <strong>GET</strong> request that
+includes the snapshot ID.</p>
+<p>The HTTP request must include a header to specify the authentication
+token.</p>
+<p>The cURL request uses the <code class="docutils literal"><span class="pre">-i</span></code> option to include the HTTP headers in
+the output and the <code class="docutils literal"><span class="pre">-X</span></code> option to specify the HTTP method in the
+request.</p>
+<p>An HTTP status code of 200 (OK) in the response indicates that the
+request successfully completed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal"><span class="pre">os-extended-snapshot-attributes:progress</span></code> in the response body shows
+snapshot creation progress.</p>
+</div>
+<p><strong>Example:&nbsp;Show snapshot details: cURL</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/snapshots/yourSnapshotID \
+-H &quot;X-Auth-Token: yourAuthToken&quot; \
+-H &quot;Content-Type: application/json&quot;
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+X-Compute-Request-Id: req-7314746b-0670-4160-b6a7-388cafbfd082
+Content-Type: application/json
+Content-Length: 383
+Date: Wed, 04 Jun 2014 20:47:48 GMT
+
+{
+   &quot;snapshot&quot;: {
+     &quot;status&quot;: &quot;available&quot;,
+     &quot;display_name&quot;: &quot;snap-002&quot;,
+     &quot;created_at&quot;: &quot;2014-06-04T20:13:34.000000&quot;,
+     &quot;display_description&quot;: &quot;Weekly Backup&quot;,
+     &quot;os-extended-snapshot-attributes:progress&quot;: &quot;100%&quot;,
+     &quot;volume_id&quot;: &quot;1a036384-99b2-4fed-ac05-31f964d6925d&quot;,
+     &quot;os-extended-snapshot-attributes:project_id&quot;: &quot;yourAccountID&quot;,
+     &quot;metadata&quot;: {
+
+     },
+     &quot;id&quot;: &quot;ca320eb7-b371-4dbe-b2e9-2543c952f507&quot;,
+     &quot;size&quot;: 100
+   }
+ }
+</pre></div>
+</div>
+</div>
+<span id="document-getting-started/update-snapshot"></span><div class="section" id="updating-a-snapshot">
+<span id="gsg-update-snapshot"></span><h3>Updating a snapshot<a class="headerlink" href="#updating-a-snapshot" title="Permalink to this headline">#</a></h3>
+<p>To modify a snapshot’s name, description, or both, send a <strong>PUT</strong>
+request that includes the snapshot ID.</p>
+<p>The HTTP request must include a header to specify the authentication
+token.</p>
+<p>The cURL request uses the <code class="docutils literal"><span class="pre">-i</span></code> option to include the HTTP headers in
+the output, the <code class="docutils literal"><span class="pre">-X</span></code> option to specify the HTTP method to use (instead
+of using the default ), and the <code class="docutils literal"><span class="pre">-d</span></code> option to send data in the
+request to the HTTP server.</p>
+<p>An HTTP status code of 200 (OK) in the response indicates that the
+request successfully completed.</p>
+<p><strong>Example:&nbsp;Update a snapshot: cURL</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -i -X PUT -d \
+   &#39;{
+    &quot;snapshot&quot;:{
+        &quot;display_name&quot;:&quot;newSnapshotName&quot;,
+        &quot;display_description&quot;:&quot;newSnapshotDescription&quot;
+        }
+    }&#39; \
+    -H &quot;X-Auth-Token: yourAuthToken&quot; \
+    -H &quot;Content-Type: application/json&quot; \
+    https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/snapshots/yourSnapshotID
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+X-Compute-Request-Id: req-8a131657-46a3-435b-bee4-b612c79c8c09
+Content-Length: 358
+Content-Type: text/html; charset=UTF-8
+Date: Wed, 04 Jun 2014 20:59:12 GMT
+
+ {
+   &quot;snapshot&quot;: {
+     &quot;created_at&quot; : &quot;2014-06-04T20:13:34.000000&quot;,
+     &quot;status&quot;: &quot;available&quot;,
+     &quot;display_name&quot;: &quot;newSnapshotName&quot;,
+     &quot;display_description&quot;: &quot;newSnapshotDescription&quot;,
+     &quot;id&quot;: &quot;a3df5c35-3218-436e-b706-c85edc3f149d&quot;,
+     &quot;size&quot;: 100,
+     &quot;volume_id&quot; : &quot;1a036384-99b2-4fed-ac05-31f964d6925d&quot;
+   }
+ }
+</pre></div>
+</div>
+</div>
+<span id="document-getting-started/delete-snapshot"></span><div class="section" id="deleting-a-snapshot">
+<span id="gsg-delete-snapshot"></span><h3>Deleting a snapshot<a class="headerlink" href="#deleting-a-snapshot" title="Permalink to this headline">#</a></h3>
+<p>To delete a snapshot, send a <strong>DELETE</strong> request that includes the
+snapshot ID.</p>
+<p>The HTTP request must include a header to specify the authentication
+token.</p>
+<p>The cURL request uses the <code class="docutils literal"><span class="pre">-i</span></code> option to include the HTTP headers in
+the output and the <code class="docutils literal"><span class="pre">-X</span></code> option to specify the HTTP method to use
+(instead of using the default).</p>
+<p>An HTTP status code of 202 (Accepted) in the response indicates that the
+delete request has been accepted for processing and the snapshot will be
+deleted.</p>
+<p><strong>Example:&nbsp;Delete a snapshot: cURL</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>curl -i -X DELETE https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/snapshots/yourSnapshotID \
+-H &quot;X-Auth-Token: yourAuthToken&quot; \
+-H &quot;Content-Type: application/json&quot;
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 202 Accepted
+Content-Type: text/html; charset=UTF-8
+Content-Length: 0
+Date: Wed, 04 Jun 2014 21:09:15 GMT
+</pre></div>
+</div>
+</div>
+<span id="document-getting-started/other-curl-commands"></span><div class="section" id="other-curl-commands">
+<span id="gsg-other-curl-commands"></span><h3>Other cURL Commands<a class="headerlink" href="#other-curl-commands" title="Permalink to this headline">#</a></h3>
+<p>You can issue any of the REST methods defined for Cloud Block Storage
+with the cURL utility.</p>
+<p>Note that generally each time <code class="docutils literal"><span class="pre">cURL</span></code> is invoked to perform an
+operation, a separate TCP/IP and SSL connection is created and then
+discarded. The language APIs, in contrast, are designed to reuse
+connections between operations and therefore provide much better
+performance. We recommend that you use one of the language APIs (for
+example, Python or Ruby) in your production applications and limit cURL
+to quick-and-easy testing and troubleshooting.</p>
+</div>
+<span id="document-getting-started/additional-resources"></span><div class="section" id="additional-resources">
+<span id="gsg-additional-resources"></span><h3>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">#</a></h3>
+<p>For information about all Cloud Block Storage API operations, see the
+<em>Cloud Block Storage Developer Guide</em> at
+<a class="reference external" href="http://docs.rackspace.com/">docs.rackspace.com</a>. All you need to get
+started with the Cloud Block Storage API is in this getting started
+guide and the developer guide. For additional information about Cloud
+Block Storage, see the <a class="reference external" href="http://www.rackspace.com/knowledge_center/product-page/cloud-block-storage">Knowledge
+Center</a>.</p>
+<p>To learn more about the Cloud Block Storage service and the various ways you can interact
+with it (API, SDK, CLI, and Control Panel), see the <a class="reference external" href="https://developer.rackspace.com/docs/user-guides/infrastructure/">Rackspace Cloud Guide to Core Infrastructure Services</a>.</p>
+<p>The official support channels (phone, chat, email, forums, and knowledge
+base articles) for Cloud Block Storage are available through the
+Rackspace Cloud website at
+<a class="reference external" href="http://www.rackspace.com/cloud/block-storage/">www.rackspace.com</a>.</p>
+<p>If the Cloud Block Storage system is not functioning as expected, you
+can review the <a class="reference external" href="http://status.rackspacecloud.com/cloudblockstorage/">System
+Status</a> page.
+This page is updated to reflect up-to-date information about the
+system’s current health and status.</p>
+<p>Interested users can also follow updates and announcements for Rackspace
+on <a class="reference external" href="http://www.twitter.com/rackspace">Twitter</a>.</p>
+<p>Visit the <a class="reference external" href="https://feedback.rackspace.com/forums/298161-storage/category/107817-cloud-block-storage">Product Feedback page</a>
+and tell us what you think about Cloud Block Storage.</p>
+<p>Developers are also encouraged to join some of the members of the Cloud
+Block Storage team at <strong>external.irc.rackspace.com</strong> on the <strong>#cbs</strong>
+channel. This is not an official Cloud Block Storage support channel but
+should rather be viewed as a community meeting place to share ideas and
+discuss Cloud Block Storage.</p>
+<p>This API uses standard HTTP 1.1 response codes as documented at <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP
+Status Code
+Definitions</a>.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -3058,6 +4024,29 @@ snapshot. Now the volume size must be greater than the snapshot size.</p>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20131003">October 3, 2013</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20130809">August 9, 2013</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-release-notes/cbs-v1-20121023">October 23, 2012</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-getting-started"><strong>Getting Started Guide</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/send-requests-to-API">Sending requests to the API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/prerequisites-for-examples">Prerequisites for running examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/send-requests-with-curl">Sending API requests by using cURL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/copy-paste-curl">Copying and pasting cURL request examples into a terminal window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/service-access-endpoints">Service access endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/use-API-directly">Using the API directly by using cURL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/gen-auth-token">Generating an authentication token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/create-volume">Creating a block storage volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/list-volumes">Listing existing block storage volumes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/show-volume-details">Showing volume details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/update-volume">Updating a volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/delete-volume">Deleting a volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/create-snapshot">Creating a snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/list-snapshots">Listing snapshots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/show-snapshot-details">Showing snapshot details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/update-snapshot">Updating a snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/delete-snapshot">Deleting a snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/other-curl-commands">Other cURL Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-getting-started/additional-resources">Additional resources</a></li>
 </ul>
 </li>
 </ul>

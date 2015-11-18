@@ -12,6 +12,8 @@ Learn how to use the Rackspace Cloud Block Storage service by using the REST API
 - For details about API resources, operations, requests and responses, see the 
   :ref:`API reference <api-reference>`.
 - For service release notes, see the :ref:`Release Notes <release-notes>`. 
+- For instructions on quickly getting started, see the :ref:`Getting Started Guide <getting-started>`.
+
 
 .. toctree:: :hidden:
    :maxdepth: 2
@@ -25,4 +27,5 @@ Learn how to use the Rackspace Cloud Block Storage service by using the REST API
    api-reference
    api-operations/index
    release-notes
+   getting-started
 
