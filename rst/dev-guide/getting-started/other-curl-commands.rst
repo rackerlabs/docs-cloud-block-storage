@@ -1,9 +1,9 @@
 .. _gsg-other-curl-commands:
 
-Other cURL Commands 
+Other cURL commands 
 ~~~~~~~~~~~~~~~~~~~~
 
-You can issue any of the REST methods defined for Cloud Block Storage
+You can issue any of the REST requests defined for Cloud Block Storage
 with the cURL utility.
 
 Note that generally each time ``cURL`` is invoked to perform an
