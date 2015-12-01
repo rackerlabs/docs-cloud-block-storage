@@ -1,6 +1,6 @@
 .. _gsg-create-snapshot:
 
-Creating a snapshot
+Create a snapshot
 ~~~~~~~~~~~~~~~~~~~~
 
 A snapshot is a point-in-time copy of the data that a volume contains.

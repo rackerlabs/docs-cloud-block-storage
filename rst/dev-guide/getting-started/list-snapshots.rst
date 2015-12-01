@@ -1,6 +1,6 @@
 .. _gsg-list-snapshots:
 
-Listing snapshots 
+List snapshots 
 ~~~~~~~~~~~~~~~~~~~~
 
 To list all of the snapshots that you have created in a single region,

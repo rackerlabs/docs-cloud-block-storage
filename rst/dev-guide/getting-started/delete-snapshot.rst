@@ -1,6 +1,6 @@
 .. _gsg-delete-snapshot:
 
-Deleting a snapshot
+Delete a snapshot
 ~~~~~~~~~~~~~~~~~~~~
 
 To delete a snapshot, send a **DELETE** request that includes the

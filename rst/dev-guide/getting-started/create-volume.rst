@@ -1,6 +1,6 @@
 .. _gsg-create-volume:
 
-Creating a block storage volume 
+Create a block storage volume 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your first step in Cloud Block Storage is to create a volume. To do

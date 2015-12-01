@@ -1,6 +1,6 @@
 .. _gsg-show-volume-details:
 
-Showing volume details
+Show volume details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To show details about a specified volume, send a **GET** request that

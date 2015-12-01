@@ -1,6 +1,6 @@
 .. _gsg-delete-volume:
 
-Deleting a volume
+Delete a volume
 ~~~~~~~~~~~~~~~~~~~~
 
 To delete a volume when it is no longer in use and the data that it
