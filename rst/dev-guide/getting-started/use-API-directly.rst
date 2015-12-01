@@ -3,16 +3,9 @@
 Create and manage volumes and snapshots
 ---------------------------------------------- 
 
-<<<<<<< HEAD
-The main purpose of this guide is to get you started quickly with Cloud
-Block Storage. To help you accomplish this goal, this section contains
-simple examples for some basic Cloud Block Storage
-requests that you will commonly use. Example requests are provided in
-=======
 You can use the simple examples in the following sections for basic Cloud Block Storage 
 requests that you will commonly use to create and manage volumes and snapshots by using 
 Cloud Block Storage API operations. Example requests are provided in
->>>>>>> 648a11c282ad2e0d024db85c3331e457f868be85
 cURL, followed by the response.
 
 Before running the examples, review the :ref:`Cloud Block Storage concepts<concepts>`.
