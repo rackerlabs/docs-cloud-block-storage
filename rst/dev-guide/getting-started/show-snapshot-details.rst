@@ -1,6 +1,6 @@
 .. _gsg-show-snapshot-details:
 
-Showing snapshot details
+Show snapshot details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To show details about a specified snapshot, send a **GET** request that

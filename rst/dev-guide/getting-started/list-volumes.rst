@@ -1,6 +1,6 @@
 .. _gsg-list-volumes:
 
-Listing existing block storage volumes
+List existing block storage volumes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To list all of the block storage volumes that you have created in a

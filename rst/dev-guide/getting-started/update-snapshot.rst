@@ -1,6 +1,6 @@
 .. _gsg-update-snapshot:
 
-Updating a snapshot
+Update a snapshot
 ~~~~~~~~~~~~~~~~~~~~
 
 To modify a snapshot’s name, description, or both, send a **PUT**

@@ -1,6 +1,6 @@
 .. _gsg-update-volume:
 
-Updating a volume
+Update a volume
 ~~~~~~~~~~~~~~~~~~~~
 
 To modify a volume’s name, description, or both, send a **PUT** request
