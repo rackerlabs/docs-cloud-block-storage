@@ -24,7 +24,7 @@ and ``"status": "creating"`` indicates that the snapshot is in progress.
 
 .. code:: bash 
 
-   curl -i -X POST -d $API_ENDPOINT/v1/$TENANT_ID/snapshots \
+   curl -i -X POST $API_ENDPOINT/v1/$TENANT_ID/snapshots -d \
       '{
       "snapshot": {
           "display_name": "snap-001",

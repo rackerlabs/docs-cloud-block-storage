@@ -24,7 +24,7 @@ volume was successfully created.
 
 .. code:: bash 
 
-   curl -i -X POST -d $API_ENDPOINT/v1/$TENANT_ID/volumes \
+   curl -i -X POST $API_ENDPOINT/v1/$TENANT_ID/volumes -d \
     '{ 
     "volume":{ 
     "display_name": "vol-001",    
