@@ -17,7 +17,7 @@ request successfully completed.
 
 .. code:: bash 
 
-   curl -i -X PUT -d $API_ENDPOINT/v1/$TENANT_ID/volumes/yourVolumeID \
+   curl -i -X PUT $API_ENDPOINT/v1/$TENANT_ID/volumes/yourVolumeID -d \
       '{
        "volume":{
            "display_name":"newName",

@@ -17,7 +17,7 @@ request successfully completed.
 
 .. code:: bash 
 
-   curl -i -X PUT -d $API_ENDPOINT/v1/$TENANT_ID/snapshots/yourSnapshotID \
+   curl -i -X PUT $API_ENDPOINT/v1/$TENANT_ID/snapshots/yourSnapshotID  -d \
       '{
        "snapshot":{
            "display_name":"newSnapshotName",
