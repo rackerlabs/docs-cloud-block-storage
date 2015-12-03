@@ -9,23 +9,22 @@ send a **GET** request.
 The HTTP request must include a header to specify the authentication
 token.
 
-The cURL request uses the ``-i`` option to include the HTTP headers in
-the output and the ``-X`` option to specify the HTTP method in the
-request.
 
 An HTTP status code of 200 (OK) in the response indicates that the
 request successfully completed.
 
  
-**Example: List snapshots: cURL**
+**cURL list snapshots request**
 
-.. code::  
+.. code:: bash  
 
-   curl -i -X GET https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/snapshots \
-   -H "X-Auth-Token: yourAuthToken" \
+   curl -i -X GET $API_ENDPOINT/v1/$TENANT_ID/snapshots \
+   -H "X-Auth-Token: $AUTH_TOKEN" \
    -H "Content-Type: application/json" 
 
-.. code::  
+**List snapshots response**
+
+.. code:: json 
 
    HTTP/1.1 200 OK
    X-Compute-Request-Id: req-1a938da7-cf74-4ac6-a72f-4c927ae23605

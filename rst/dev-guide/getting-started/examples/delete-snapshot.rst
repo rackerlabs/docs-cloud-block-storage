@@ -9,24 +9,22 @@ snapshot ID.
 The HTTP request must include a header to specify the authentication
 token.
 
-The cURL request uses the ``-i`` option to include the HTTP headers in
-the output and the ``-X`` option to specify the HTTP method to use
-(instead of using the default).
-
 An HTTP status code of 202 (Accepted) in the response indicates that the
 delete request has been accepted for processing and the snapshot will be
 deleted.
 
  
-**Example: Delete a snapshot: cURL**
+**cURL delete a snapshot request**
 
-.. code::  
+.. code:: bash
 
-   curl -i -X DELETE https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/snapshots/yourSnapshotID \
-   -H "X-Auth-Token: yourAuthToken" \
+   curl -i -X DELETE $API_ENDPOINT/v1/$TENANT_ID/snapshots/yourSnapshotID \
+   -H "X-Auth-Token: $AUTH_TOKEN" \
    -H "Content-Type: application/json" 
 
-.. code::  
+**Delete a snapshot response**
+
+.. code::  json
 
    HTTP/1.1 202 Accepted
    Content-Type: text/html; charset=UTF-8

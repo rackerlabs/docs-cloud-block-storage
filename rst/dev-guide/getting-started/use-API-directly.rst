@@ -13,14 +13,21 @@ Before running the examples, review the :ref:`Cloud Block Storage concepts<conce
 For more information about all Cloud Block Storage operations, see the
 :ref:`API reference <api-reference>`.
 
-.. include:: ../getting-started/create-volume.rst
-.. include:: ../getting-started/list-volumes.rst
-.. include:: ../getting-started/show-volume-details.rst
-.. include:: ../getting-started/update-volume.rst
-.. include:: ../getting-started/delete-volume.rst
-.. include:: ../getting-started/create-snapshot.rst
-.. include:: ../getting-started/list-snapshots.rst
-.. include:: ../getting-started/show-snapshot-details.rst
-.. include:: ../getting-started/update-snapshot.rst
-.. include:: ../getting-started/delete-snapshot.rst
-.. include:: ../getting-started/other-curl-commands.rst
+.. note:: 
+     These examples use the ``$API_ENDPOINT``, ``$AUTH_TOKEN``, and ``$TENANT_ID`` environment 
+     variables to specify the API endpoint, authentication token, and project ID values 
+     for accessing the service. Make sure you 
+     :ref:`configure these variables<configure-environment-variables>` before running the 
+     code samples. 
+
+.. include:: examples/create-volume.rst
+.. include:: examples/list-volumes.rst
+.. include:: examples/show-volume-details.rst
+.. include:: examples/update-volume.rst
+.. include:: examples/delete-volume.rst
+.. include:: examples/create-snapshot.rst
+.. include:: examples/list-snapshots.rst
+.. include:: examples/show-snapshot-details.rst
+.. include:: examples/update-snapshot.rst
+.. include:: examples/delete-snapshot.rst
+.. include:: examples/other-curl-commands.rst

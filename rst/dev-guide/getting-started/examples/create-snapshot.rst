@@ -16,20 +16,15 @@ To create a snapshot of a block storage volume, send a **POST** request.
 The HTTP request must include a header to specify the authentication
 token.
 
-The cURL request uses the ``-i`` option to include the HTTP headers in
-the output, the ``-X`` option to specify the HTTP method to use (instead
-of using the default **GET**), and the ``-d`` option to send data in the
-request to the HTTP server.
-
 An HTTP status code of 200 (OK) indicates that the request was accepted
 and ``"status": "creating"`` indicates that the snapshot is in progress.
 
  
-**Example: Create a snapshot: cURL**
+**cURL create a snapshot request**
 
-.. code::  
+.. code:: bash 
 
-   curl -i -X POST -d \
+   curl -i -X POST -d $API_ENDPOINT/v1/$TENANT_ID/snapshots \
       '{
       "snapshot": {
           "display_name": "snap-001",
@@ -37,11 +32,12 @@ and ``"status": "creating"`` indicates that the snapshot is in progress.
           "volume_id": "yourVolumeID"
         }
       }'\
-      -H "X-Auth-Token: yourAuthToken" \
-      -H "Content-Type: application/json" \
-     https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/snapshots 
+      -H "X-Auth-Token: $AUTH_TOKEN" \
+      -H "Content-Type: application/json" 
+      
+**Create a snapshot response**
 
-.. code::  
+.. code:: json 
 
    HTTP/1.1 200 OK
    X-Compute-Request-Id: req-99d94a3a-1086-4c19-99b4-65d05e2e02f1

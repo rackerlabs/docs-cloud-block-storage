@@ -9,31 +9,27 @@ request that includes the snapshot ID.
 The HTTP request must include a header to specify the authentication
 token.
 
-The cURL request uses the ``-i`` option to include the HTTP headers in
-the output, the ``-X`` option to specify the HTTP method to use (instead
-of using the default ), and the ``-d`` option to send data in the
-request to the HTTP server.
-
 An HTTP status code of 200 (OK) in the response indicates that the
 request successfully completed.
 
  
-**Example: Update a snapshot: cURL**
+**cURL update a snapshot request**
 
-.. code::  
+.. code:: bash 
 
-   curl -i -X PUT -d \
+   curl -i -X PUT -d $API_ENDPOINT/v1/$TENANT_ID/snapshots/yourSnapshotID \
       '{
        "snapshot":{
            "display_name":"newSnapshotName",
            "display_description":"newSnapshotDescription"
            }
        }' \
-       -H "X-Auth-Token: yourAuthToken" \
-       -H "Content-Type: application/json" \
-       https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/snapshots/yourSnapshotID
+       -H "X-Auth-Token: $AUTH_TOKEN" \
+       -H "Content-Type: application/json" 
+       
+**Update a snapshot response**
 
-.. code::  
+.. code:: json 
 
    HTTP/1.1 200 OK
    X-Compute-Request-Id: req-8a131657-46a3-435b-bee4-b612c79c8c09

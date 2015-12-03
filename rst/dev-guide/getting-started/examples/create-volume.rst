@@ -9,11 +9,6 @@ this, send a **POST** request.
 The HTTP request must include a header to specify the authentication
 token.
 
-The cURL request uses the ``-i`` option to include the HTTP headers in
-the output, the ``-X`` option to specify the HTTP method to use (instead
-of using the default **GET**), and the ``-d`` option to send data in the
-request to the HTTP server.
-
 An HTTP status code of 200 (OK) in the response indicates that the
 volume was successfully created.
 
@@ -25,22 +20,23 @@ volume was successfully created.
     concurrently.
 
  
-**Example: Create a volume: cURL**
+**cURL create a volume request**
 
-.. code::  
+.. code:: bash 
 
-   curl -i -X POST -d \
+   curl -i -X POST -d $API_ENDPOINT/v1/$TENANT_ID/volumes \
     '{ 
     "volume":{ 
     "display_name": "vol-001",    
     "size": 100
     }
      }' \
-    -H "X-Auth-Token: yourAuthToken" \
-    -H "Content-Type: application/json" \
-    https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/volumes 
+    -H "X-Auth-Token: $AUTH_TOKEN" \
+    -H "Content-Type: application/json" 
+     
+**Create a volume response**
 
-.. code::  
+.. code:: json 
 
    HTTP/1.1 200 OK
    X-Compute-Request-Id: req-2af6c97a-2397-4e52-a0d0-4fde64cfb88c
@@ -74,7 +70,7 @@ volume was successfully created.
     (``/servers/{server_id}/os-volume_attachments``) to attach the new
     volume to your Next Generation Cloud Server (with the specified
     ``{server_id}``). For details, see the `Next Generation Cloud Servers
-    Developer Guide <http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ch_preface.html>`__.
+    Developer Guide <https://developer.rackspace.com/docs/cloud-servers/v2/developer-guide/>`__.
 
 After the volume is attached, the new volume appears as another device
 on the Next Generation Cloud Server. The volume can then be partitioned,

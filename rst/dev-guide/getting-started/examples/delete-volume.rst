@@ -14,24 +14,23 @@ volume ID.
 The HTTP request must include a header to specify the authentication
 token.
 
-The cURL request uses the ``-i`` option to include the HTTP headers in
-the output and the ``-X`` option to specify the HTTP method to use
-(instead of using the default).
 
 An HTTP status code of 202 (Accepted) in the response indicates that the
 delete request has been accepted for processing and the volume will be
 deleted.
 
  
-**Example: Delete volume: cURL**
+**cURL delete a volume request**
 
-.. code::  
+.. code:: bash 
 
-   curl -i -X DELETE https://dfw.blockstorage.api.rackspacecloud.com/v1/yourAccountID/volumes/yourVolumeID \
-   -H "X-Auth-Token: yourAuthToken" \
+   curl -i -X DELETE $API_ENDPOINT/v1/$TENANT_ID/volumes/yourVolumeID \
+   -H "X-Auth-Token: $AUTH_TOKEN" \
    -H "Content-Type: application/json" 
 
-.. code::  
+**Delete a volume response**
+
+.. code:: json 
 
    HTTP/1.1 202 Accepted
    Content-Type: text/html; charset=UTF-8
