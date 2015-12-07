@@ -1,6 +1,6 @@
 .. _gsg-list-snapshots:
 
-List snapshots 
+Listing snapshots 
 ~~~~~~~~~~~~~~~~~~~~
 
 To list all of the snapshots that you have created in a single region,
@@ -10,7 +10,7 @@ The HTTP request must include a header to specify the authentication
 token.
 
 
-An HTTP status code of 200 (OK) in the response indicates that the
+An HTTP status code of ``200 (OK)`` in the response indicates that the
 request successfully completed.
 
  

@@ -1,6 +1,6 @@
 .. _gsg-delete-volume:
 
-Delete a volume
+Deleting a volume
 ~~~~~~~~~~~~~~~~~~~~
 
 To delete a volume when it is no longer in use and the data that it
@@ -15,7 +15,7 @@ The HTTP request must include a header to specify the authentication
 token.
 
 
-An HTTP status code of 202 (Accepted) in the response indicates that the
+An HTTP status code of ``202 (Accepted)`` in the response indicates that the
 delete request has been accepted for processing and the volume will be
 deleted.
 

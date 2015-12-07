@@ -1,6 +1,6 @@
 .. _gsg-update-snapshot:
 
-Update a snapshot
+Updating a snapshot
 ~~~~~~~~~~~~~~~~~~~~
 
 To modify a snapshot’s name, description, or both, send a **PUT**
@@ -9,7 +9,7 @@ request that includes the snapshot ID.
 The HTTP request must include a header to specify the authentication
 token.
 
-An HTTP status code of 200 (OK) in the response indicates that the
+An HTTP status code of ``200 (OK)`` in the response indicates that the
 request successfully completed.
 
  

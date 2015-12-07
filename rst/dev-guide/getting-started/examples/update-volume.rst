@@ -1,6 +1,6 @@
 .. _gsg-update-volume:
 
-Update a volume
+Updating a volume
 ~~~~~~~~~~~~~~~~~~~~
 
 To modify a volume’s name, description, or both, send a **PUT** request
@@ -9,7 +9,7 @@ that includes the volume ID.
 The HTTP request must include a header to specify the authentication
 token.
 
-An HTTP status code of 200 (OK) in the response indicates that the
+An HTTP status code of ``200 (OK)`` in the response indicates that the
 request successfully completed.
 
  

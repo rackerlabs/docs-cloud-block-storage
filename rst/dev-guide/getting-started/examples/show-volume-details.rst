@@ -1,6 +1,6 @@
 .. _gsg-show-volume-details:
 
-Show volume details
+Showing volume details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To show details about a specified volume, send a **GET** request that
@@ -10,7 +10,7 @@ The HTTP request must include a header to specify the authentication
 token.
 
 
-An HTTP status code of 200 (OK) in the response indicates that the
+An HTTP status code of ``200 (OK)`` in the response indicates that the
 request successfully completed.
 
  

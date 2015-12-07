@@ -1,6 +1,6 @@
 .. _gsg-create-volume:
 
-Create a block storage volume 
+Creating a block storage volume 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your first step in Cloud Block Storage is to create a volume. To do
@@ -9,7 +9,7 @@ this, send a **POST** request.
 The HTTP request must include a header to specify the authentication
 token.
 
-An HTTP status code of 200 (OK) in the response indicates that the
+An HTTP status code of ``200 (OK)`` in the response indicates that the
 volume was successfully created.
 
 ..  note:: 

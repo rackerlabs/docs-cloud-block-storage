@@ -1,6 +1,6 @@
 .. _gsg-list-volumes:
 
-List existing block storage volumes
+Listing existing block storage volumes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To list all of the block storage volumes that you have created in a
@@ -10,7 +10,7 @@ The HTTP request must include a header to specify the authentication
 token.
 
 
-An HTTP status code of 200 (OK) in the response indicates that the
+An HTTP status code of ``200 (OK)`` in the response indicates that the
 request successfully completed.
 
  
