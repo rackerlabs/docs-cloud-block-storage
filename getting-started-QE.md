@@ -24,7 +24,7 @@
 
 **Getting Started common content**
 
-- [x]  Prerequisites include config environment variables (late change)
+- [issue ]  Prerequisites include config environment variables (late change)
        
        ![Gen API authl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-prereqs.png) 
        
