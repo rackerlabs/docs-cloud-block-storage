@@ -1,6 +1,6 @@
 .. _gsg-create-snapshot:
 
-Create a snapshot
+Creating a snapshot
 ~~~~~~~~~~~~~~~~~~~~
 
 A snapshot is a point-in-time copy of the data that a volume contains.
@@ -16,7 +16,7 @@ To create a snapshot of a block storage volume, send a **POST** request.
 The HTTP request must include a header to specify the authentication
 token.
 
-An HTTP status code of 200 (OK) indicates that the request was accepted
+An HTTP status code of ``200 (OK)`` indicates that the request was accepted
 and ``"status": "creating"`` indicates that the snapshot is in progress.
 
  

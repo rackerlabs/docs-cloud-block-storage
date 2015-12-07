@@ -18,8 +18,8 @@ Like other products in the Rackspace Cloud suite, Cloud Block Storage shares a c
    :maxdepth: 3
    
    authentication
-   role-based-access-control
-   service-access-endpoints   
+   service-access-endpoints
+   role-based-access-control      
    cloud-block-storage-service-versions
    request-and-response-types
    absolute-limits

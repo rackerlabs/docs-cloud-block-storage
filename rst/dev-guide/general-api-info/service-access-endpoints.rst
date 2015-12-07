@@ -38,8 +38,6 @@ regional boundaries to other Cloud Block Storage servers.
 |                         | /v1/123456/                                       |
 +-------------------------+---------------------------------------------------+
 
-Replace the sample account ID number, ``123456``, with your actual
-account number returned as part of the authentication service response.
-
-You will find the actual account number after the final **/** in the
-``publicURL`` field returned by the authentication response. 
+Replace the sample account ID number, ``123456``, with your actual account number, 
+which is returned as part of the :ref:`authentication service response<review-auth-resp>`, after the final 
+**/** in the ``publicURL`` field.

@@ -1,6 +1,6 @@
 .. _gsg-show-snapshot-details:
 
-Show snapshot details
+Showing snapshot details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To show details about a specified snapshot, send a **GET** request that
@@ -9,7 +9,7 @@ includes the snapshot ID.
 The HTTP request must include a header to specify the authentication
 token.
 
-An HTTP status code of 200 (OK) in the response indicates that the
+An HTTP status code of ``200 (OK)`` in the response indicates that the
 request successfully completed.
 
 ..  note:: 

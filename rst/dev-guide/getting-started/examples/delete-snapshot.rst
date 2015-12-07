@@ -1,6 +1,6 @@
 .. _gsg-delete-snapshot:
 
-Delete a snapshot
+Deleting a snapshot
 ~~~~~~~~~~~~~~~~~~~~
 
 To delete a snapshot, send a **DELETE** request that includes the
@@ -9,7 +9,7 @@ snapshot ID.
 The HTTP request must include a header to specify the authentication
 token.
 
-An HTTP status code of 202 (Accepted) in the response indicates that the
+An HTTP status code of ``202 (Accepted)`` in the response indicates that the
 delete request has been accepted for processing and the snapshot will be
 deleted.
 
