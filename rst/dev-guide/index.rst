@@ -19,7 +19,7 @@ using the |apiservice|.
    :maxdepth: 2
 
    Cloud Block Storage 1.0 <self>
-   API Status <http://www.rackspacestatus.com/>
+   API Status <https://status.rackspace.com>
    About the API <overview/index>
    getting-started
    getting-started/index   
