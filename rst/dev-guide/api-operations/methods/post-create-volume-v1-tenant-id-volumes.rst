@@ -46,8 +46,6 @@ Following are several options for consideration when using this operation:
 
 
 
-
-
 This table shows the possible response codes for this operation:
 
 
