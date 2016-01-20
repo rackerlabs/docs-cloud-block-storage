@@ -1,0 +1,31 @@
+API |contract version| updates, January 20, 2016
+------------------------------------------------
+
+
+What's new
+~~~~~~~~~~
+
+The ability to create volumes on a different node or rack than existing volumes was 
+added. Use the ``metadata`` parameter in the body of the request, and specify 
+``different_node`` or ``different_rack`` with a comma-separated list of volume 
+IDs from which you want the volume that you are creating to be distinct. For example, 
+specifying the following parameters in the request body creates a volume on a rack that is different from the three specified volume IDs:
+
+``“metadata”: “different_rack=45c2c5c4-2666-43e9-aa6b-e58eb733410b,
+8d472323-196d-47bf-8f17-a21b978d0f90,f158d108-aa30-4609-9d31-c2b230f8a871”`` 
+
+
+Note that if the criteria specified with ``metadata`` cannot be met, the volume will be in an error state.
+
+See the :ref:`create volume <post-create-volume>` operation for this addition.
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|
+

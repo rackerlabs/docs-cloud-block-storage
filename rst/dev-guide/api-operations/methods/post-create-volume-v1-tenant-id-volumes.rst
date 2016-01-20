@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-create-volume:
 
 Create volume
@@ -12,16 +10,41 @@ Create volume
 
 This operation creates a volume.
 
-Following are several considerations when using this operation: 
+Following are several options for consideration when using this operation: 
 
-* When you use ``source_volid`` for volume cloning, note that this feature currently has the following constraints. Concurrent clone requests are queued for processing. When one clone request completes, the next clone request in the queue starts.
-* Note that you use the ``os-volume_attachments`` API call (/servers/{server_id}/os-volume_attachments) to attach the new volume to your Next Generation Cloud Server (with the specified {server_id}). Refer to the `Next Generation Cloud Servers Developer Guide`_ for details of the call. Once the volume is attached, the new volume appears as another device on the Next Generation Cloud Server. Once the volume is attached, the new volume appears as another device on the Next Generation Cloud Server. It can then be partitioned, formatted, and mounted for use on the system.
-* To create a bootable volume, include the ``imageRef`` parameter in the request. The corresponding response parameter is ``image_id``. For more information about this feature, see :kc-article:`Boot a server from a Cloud Block Storage volume<boot-a-server-from-a-cloud-block-storage-volume>`.
-
-
+- **``source_volid`` for volume cloning**: When you use ``source_volid`` for volume cloning, note that this feature currently has the 
+  following constraints. Concurrent clone requests are queued for processing. When one clone 
+  request completes, the next clone request in the queue starts.
 
 
-The examples in this section create a 100 gibibytes (GiB) SATA volume called vol-001.
+- **``os-volume_attachments``**: Note that you use the ``os-volume_attachments`` API call (/servers/{server_id}/os-volume_attachments) 
+  to attach the new volume to your Next Generation Cloud Server (with the specified {server_id}). 
+  Refer to the `Next Generation Cloud Servers Developer Guide`_ for details of the call. 
+  Once the volume is attached, the new volume appears as another device on the Next Generation 
+  Cloud Server. Once the volume is attached, the new volume appears as another device on the 
+  Next Generation Cloud Server. It can then be partitioned, formatted, and mounted for use on 
+  the system.
+
+
+- **Boot from volume**: To create a bootable volume, include the ``imageRef`` parameter in the request. The 
+  corresponding response parameter is ``image_id``. For more information about this feature, 
+  see :kc-article:`Boot a server from a Cloud Block Storage volume<boot-a-server-from-a-cloud-block-storage-volume>`.
+
+
+- **Disaffinity for volume creation**: To create volumes on a different node or rack than existing volumes, use the ``metadata`` 
+  parameter in the body of the request, and specify ``different_node`` or ``different_rack`` 
+  with a comma-separated list of volume IDs from which you want the volume that you are 
+  creating to be distinct. For example, specifying the following parameters in the request 
+  body creates a volume on a rack that is different from th e threes specified volume IDs: 
+
+      ``“metadata”: “different_rack=45c2c5c4-2666-43e9-aa6b-e58eb733410b,8d472323-196d-47bf-8f17-a21b978d0f90,f158d108-aa30-4609-9d31-c2b230f8a871”``  
+
+  Note that if the criteria specified using ``metadata`` cannot be met, the volume will be in an error state.
+
+
+
+
+
 
 
 
@@ -113,6 +136,19 @@ This table shows the body parameters for the request:
 |**metadata**              |                         |is available if you want |
 |                          |                         |to set any metadata      |
 |                          |                         |values on the volume.    |
+|                          |                         |                         |
+|                          |                         |Use ``different_node`` or|
+|                          |                         |``different_rack`` with a|
+|                          |                         |comma-separated list of  |
+|                          |                         |volume IDs from which you|
+|                          |                         |want the volume that you |
+|                          |                         |are creating to be       |
+|                          |                         |distinct. Using these    |
+|                          |                         |keywords will create the |
+|                          |                         |volume on a node or rack |
+|                          |                         |that is different from   |
+|                          |                         |those whose volume IDs   |
+|                          |                         |are specified.           |
 +--------------------------+-------------------------+-------------------------+
 |volume.\                  |Uuid *(Optional)*        |Specifying this          |
 |**imageRef**              |                         |parameter is required to |
@@ -129,6 +165,7 @@ This table shows the body parameters for the request:
 
 **Example Create volume: XML request**
 
+The example creates a 100 gibibytes (GiB) SATA volume called vol-001.
 
 .. code::
 
@@ -142,8 +179,6 @@ This table shows the body parameters for the request:
    
    </volume>
    
-
-
 
 
 
@@ -171,14 +206,6 @@ Response
 """"""""""""""""
 
 
-
-
-
-
-
-
-
-
 **Example Create volume: XML response**
 
 
@@ -200,8 +227,6 @@ Response
            metadata=""
            id="521752a6-acf6-4b2d-bc7a-119f9148cd8c"
            size="100"/>
-
-
 
 
 
