@@ -7,7 +7,13 @@
 
 This GitHub repository contains the source files for the following Rackspace Cloud Block Storage API documentation:
 
+* [Cloud Block Storage Getting Started Guide](https://developer.rackspace.com/docs/cloud-block-storage/v1/developer-guide/#getting-started)
 * [Cloud Block Storage Developer Guide](https://developer.rackspace.com/docs/cloud-block-storage/v1/developer-guide/)
+* [Cloud Block Storage API Reference](https://developer.rackspace.com/docs/cloud-block-storage/v1/developer-guide/#api-reference)
+* [Cloud Block Storage Release Notes](https://developer.rackspace.com/docs/cloud-block-storage/v1/developer-guide/#release-notes)
+
+
+
 
 ## Contributing
 
