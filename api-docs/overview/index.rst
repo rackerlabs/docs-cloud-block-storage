@@ -50,5 +50,4 @@ This document describes the features available with API |contract version|.
    
    additional-resources
    api-contract-changes
-   pricing-service-level
    api-service-updates
