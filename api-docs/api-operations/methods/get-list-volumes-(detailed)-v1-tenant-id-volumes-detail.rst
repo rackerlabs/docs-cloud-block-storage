@@ -110,7 +110,7 @@ Response
                "volume_type": "SATA",
                "snapshot_id": null,
                "attachments": [],
-               "createdAt": "2012-02-14T20:53:07Z"
+               "created_at": "2012-02-14T20:53:07Z"
            },
            {
                "id": "76b8950a-8594-4e5b-8dce-0dfa9c696358",
@@ -120,7 +120,7 @@ Response
                "volume_type": "SATA",
                "snapshot_id": null,
                "attachments": [],
-               "createdAt": "2012-03-15T19:10:03Z"
+               "created_at": "2012-03-15T19:10:03Z"
            }
        ]
    }

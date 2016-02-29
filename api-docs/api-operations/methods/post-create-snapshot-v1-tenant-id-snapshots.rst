@@ -143,7 +143,7 @@ Response
 
    <?xml version="1.0" encoding="UTF-8"?>
    <snapshot xmlns="http://docs.rackspace.com/volume/api/v1"
-             createdAt="2014-01-28T16:56:56.000000"
+             created_at="2014-01-28T16:56:56.000000"
              display_name="snap-001"
              display_description="Daily backup"
              id="3fbbcccf-d058-4502-8844-6feeffdf4cb5"                    
