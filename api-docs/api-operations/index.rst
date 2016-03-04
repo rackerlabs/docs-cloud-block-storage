@@ -9,6 +9,7 @@
    
    cbs-volumes-operations
    cbs-volume-types-operations
+   cbs-volume-transfer-operations
    cbs-snapshots-operations
 
 
