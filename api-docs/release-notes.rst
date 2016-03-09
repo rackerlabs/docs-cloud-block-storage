@@ -12,6 +12,7 @@ resolved issues, and other important details about |apiservice| |contract versio
 .. toctree::
    :maxdepth: 2  
       
+   March 9, 2016 <release-notes/cbs-v1-20160309>
    January 20, 2016 <release-notes/cbs-v1-20160120>
    August 27, 2015 <release-notes/cbs-v1-20150827>
    February 11, 2015 <release-notes/cbs-v1-20150211>   
