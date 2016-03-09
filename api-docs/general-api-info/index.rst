@@ -26,3 +26,4 @@ Like other products in the Rackspace Cloud suite, Cloud Block Storage shares a c
    cloud-block-storage-quotas      
    date-and-time-format
    faults
+   cbsv1-methods-vs-cinderv2-methods

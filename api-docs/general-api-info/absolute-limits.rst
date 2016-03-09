@@ -36,3 +36,8 @@ Refer to the following table for the absolute limits that are set.
 |                              | speed and         |                     |
 |                              | performance.      |                     |
 +------------------------------+-------------------+---------------------+
+| Number of snapshots          | Maximum number of | 5000 snapshots per  |
+|                              | of snapshots      | volume              |
+|                              | allowed per       |                     |
+|                              | volume.           |                     |
++------------------------------+-------------------+---------------------+
