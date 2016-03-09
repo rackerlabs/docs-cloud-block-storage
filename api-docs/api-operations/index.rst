@@ -2,7 +2,7 @@
 
 .. meta::
    :description: Rackspace Cloud Block Storage API Reference
-   :keywords: Rackspace, Cloud Block Storage ReST API, API resources, API methods
+   :keywords: Rackspace, Cloud Block Storage API, API resources, API methods
        
 .. toctree:: 
    :maxdepth: 2
