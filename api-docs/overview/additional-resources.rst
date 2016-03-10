@@ -7,7 +7,7 @@ We welcome feedback, comments, and bug reports. Visit the Rackspace `Product Fee
 
 Use the links below to learn more about the Rackspace Cloud Block Storage service and API.
 
-- For general information about Cloud Block Storage , see the :kc-product-faq:`Cloud Block Storage FAQ<cloud-block-storage>` in the Rackspace Knowledge Center.
+- For general information about Cloud Block Storage, see the :how-to:`Cloud Block Storage FAQ<cloud-block-storage>`.
 
 - To learn more about the Cloud Block Storage service and the various ways you can interact 
   with it (API, SDK, CLI, and Control Panel), see the `Rackspace Cloud Guide to Core Infrastructure Services`_.

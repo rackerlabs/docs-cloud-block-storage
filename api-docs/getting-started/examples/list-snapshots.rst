@@ -14,7 +14,7 @@ An HTTP status code of ``200 (OK)`` in the response indicates that the
 request successfully completed.
 
  
-**cURL list snapshots request**
+**Example: cURL list snapshots request**
 
 .. code:: bash  
 
@@ -22,7 +22,7 @@ request successfully completed.
    -H "X-Auth-Token: $AUTH_TOKEN" \
    -H "Content-Type: application/json" 
 
-**List snapshots response**
+**Example: List snapshots response**
 
 .. code:: json 
 

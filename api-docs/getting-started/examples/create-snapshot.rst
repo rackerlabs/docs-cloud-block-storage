@@ -20,7 +20,7 @@ An HTTP status code of ``200 (OK)`` indicates that the request was accepted
 and ``"status": "creating"`` indicates that the snapshot is in progress.
 
  
-**cURL create a snapshot request**
+**Example: cURL create a snapshot request**
 
 .. code:: bash 
 
@@ -35,7 +35,7 @@ and ``"status": "creating"`` indicates that the snapshot is in progress.
       -H "X-Auth-Token: $AUTH_TOKEN" \
       -H "Content-Type: application/json" 
       
-**Create a snapshot response**
+**Example: Create a snapshot response**
 
 .. code:: json 
 

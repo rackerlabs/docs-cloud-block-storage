@@ -13,7 +13,7 @@ An HTTP status code of ``200 (OK)`` in the response indicates that the
 request successfully completed.
 
  
-**cURL update a volume request**
+**Example: cURL update a volume request**
 
 .. code:: bash 
 
@@ -28,7 +28,7 @@ request successfully completed.
        -H "Content-Type: application/json" 
 
        
-**Update a volume response**
+**Example: Update a volume response**
 
 .. code:: json 
 

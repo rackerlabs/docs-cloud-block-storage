@@ -10,9 +10,8 @@ regional boundaries to other Cloud Block Storage servers.
 
 .. tip::
      To help you decide which regionalized endpoint to use, see the
-     considerations for choosing a data center in the
-     :kc-article:`About regions <about-regions>` Rackspace Knowledge
-     Center article.
+     considerations for choosing a data center in 
+     :how-to:`About regions <about-regions>`.
 
 **Regionalized service endpoints**
 

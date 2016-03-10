@@ -34,7 +34,7 @@ Cloud Block Storage is built on the OpenStack Cinder project. For more informati
 
 You can find additional details about Cloud Block Storage in the `Cloud Block Storage Getting Started Guide`_. This guide provides step-by-step instructions to enter the necessary URLs or commands to use the Cloud Block Storage API.
 
-For additional information about the Cloud Block Storage service, see the :kc-article:`Cloud Block Storage Overview<cloud-block-storage-overview>`.
+For additional information about the Cloud Block Storage service, see the :how-to:`Cloud Block Storage Overview<cloud-block-storage-overview>`.
 
 Rackspace welcomes feedback, comments, and bug reports at support@rackspacecloud.com.
  

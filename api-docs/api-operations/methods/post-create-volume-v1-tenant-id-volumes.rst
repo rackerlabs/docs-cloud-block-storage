@@ -28,7 +28,7 @@ Following are several options for consideration when using this operation:
 
 - **Boot from volume**: To create a bootable volume, include the ``imageRef`` parameter in the request. The 
   corresponding response parameter is ``image_id``. For more information about this feature, 
-  see :kc-article:`Boot a server from a Cloud Block Storage volume<boot-a-server-from-a-cloud-block-storage-volume>`.
+  see :how-to:`Boot a server from a Cloud Block Storage volume<boot-a-server-from-a-cloud-block-storage-volume>`.
 
 
 - **Disaffinity for volume creation**: To create volumes on a different node or rack than existing volumes, use the ``metadata`` 
@@ -163,7 +163,7 @@ This table shows the body parameters for the request:
 
 
 
-**Example Create volume: XML request**
+**Example: Create volume XML request**
 
 The example creates a 100 gibibytes (GiB) SATA volume called vol-001.
 
@@ -182,7 +182,7 @@ The example creates a 100 gibibytes (GiB) SATA volume called vol-001.
 
 
 
-**Example Create volume: JSON request**
+**Example: Create volume JSON request**
 
 
 .. code::
@@ -206,7 +206,7 @@ Response
 """"""""""""""""
 
 
-**Example Create volume: XML response**
+**Example: Create volume XML response**
 
 
 .. code::
@@ -230,7 +230,7 @@ Response
 
 
 
-**Example Create volume: JSON response**
+**Example: Create volume JSON response**
 
 
 .. code::

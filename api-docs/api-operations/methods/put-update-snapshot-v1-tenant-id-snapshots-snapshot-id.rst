@@ -65,7 +65,7 @@ This operation does not accept a request body.
 
 
 
-**Example Update snapshot: XML request**
+**Example: Update snapshot XML request**
 
 
 .. code::
@@ -81,7 +81,7 @@ This operation does not accept a request body.
 
 
 
-**Example Update snapshot: JSON request**
+**Example: Update snapshot JSON request**
 
 
 .. code::
@@ -109,7 +109,7 @@ Response
 
 
 
-**Example Update snapshot: XML response**
+**Example: Update snapshot XML response**
 
 
 .. code::
@@ -135,7 +135,7 @@ Response
 
 
 
-**Example Update snapshot: JSON response**
+**Example: Update snapshot JSON response**
 
 
 .. code::

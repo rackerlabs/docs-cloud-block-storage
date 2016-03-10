@@ -58,7 +58,7 @@ Response
 
 
 
-**Example List volumes (detailed): XML response**
+**Example: List volumes (detailed) XML response**
 
 
 .. code::
@@ -95,7 +95,7 @@ Response
 
 
 
-**Example List volumes (detailed): JSON response**
+**Example: List volumes (detailed) JSON response**
 
 
 .. code::

@@ -61,7 +61,7 @@ Response
 
 
 
-**Example Show volume type details: XML response**
+**Example: Show volume type details XML response**
 
 
 .. code::
@@ -76,7 +76,7 @@ Response
 
 
 
-**Example Show volume type details: JSON response**
+**Example: Show volume type details JSON response**
 
 
 .. code::

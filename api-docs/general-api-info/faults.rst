@@ -72,7 +72,7 @@ error codes and descriptions.
 The following ``instanceFault`` examples show errors when the server has
 erred or cannot perform the requested operation.
 
-**Example: instanceFault response: XML**
+**Example: instanceFault response in XML**
 
 .. code::
 
@@ -91,7 +91,7 @@ erred or cannot perform the requested operation.
     </instanceFault>
 
 
-**Example: fault response: JSON**
+**Example: fault response in JSON**
 
 .. code::
 
@@ -123,7 +123,7 @@ change depending on the type of error.
 The following ``badRequest`` examples show errors when the volume size
 is invalid.
 
-**Example: badRequest fault on volume size errors: XML**
+**Example: badRequest fault on volume size errors in XML**
 
 .. code::
 
@@ -140,7 +140,7 @@ is invalid.
             cannot be accepted. </message>
     </badRequest>
 
-**Example: badRequest fault on volume size errors: JSON**
+**Example: badRequest fault on volume size errors in JSON**
 
 .. code::
 
@@ -160,7 +160,7 @@ is invalid.
 
 The next examples show ``itemNotFound`` errors.
 
-**Example: itemNotFound fault: XML**
+**Example: itemNotFound fault in XML**
 
 .. code::
 
@@ -177,7 +177,7 @@ The next examples show ``itemNotFound`` errors.
         <message> The resource could not be found. </message>
     </itemNotFound>
 
-**Example: itemNotFound fault: JSON**
+**Example: itemNotFound fault in JSON**
 
 .. code::
 

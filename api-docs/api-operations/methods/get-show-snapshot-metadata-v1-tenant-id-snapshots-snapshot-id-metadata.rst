@@ -61,7 +61,7 @@ Response
 
 
 
-**Example Show snapshot metadata: JSON response**
+**Example: Show snapshot metadata JSON response**
 
 
 .. code::

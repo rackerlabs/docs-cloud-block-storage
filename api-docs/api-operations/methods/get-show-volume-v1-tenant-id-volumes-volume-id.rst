@@ -61,7 +61,7 @@ Response
 
 
 
-**Example Show volume: XML response**
+**Example: Show volume XML response**
 
 
 .. code::
@@ -87,7 +87,7 @@ Response
 
 
 
-**Example Show volume: JSON response**
+**Example: Show volume JSON response**
 
 
 .. code::

@@ -60,7 +60,7 @@ This table shows the body parameters for the request:
 
 
 
-**Example: Accept a volume transfer: JSON request**
+**Example: Accept a volume transfer JSON request**
 
 
 .. code::
@@ -99,7 +99,7 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 
 
-**Example: Accept a volume transfer: JSON response**
+**Example: Accept a volume transfer JSON response**
 
 
 .. code::

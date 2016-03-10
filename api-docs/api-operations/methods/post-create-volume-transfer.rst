@@ -54,7 +54,7 @@ This table shows the body parameters for the request:
 
 
 
-**Example: Create a volume transfer: JSON request**
+**Example: Create a volume transfer JSON request**
 
 
 .. code::
@@ -100,7 +100,7 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 
 
-**Example: Create a volume transfer: JSON response**
+**Example: Create a volume transfer JSON response**
 
 
 .. code::
