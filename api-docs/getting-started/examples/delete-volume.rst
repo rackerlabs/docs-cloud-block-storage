@@ -20,7 +20,7 @@ delete request has been accepted for processing and the volume will be
 deleted.
 
  
-**cURL delete a volume request**
+**Example: cURL delete a volume request**
 
 .. code:: bash 
 
@@ -28,7 +28,7 @@ deleted.
    -H "X-Auth-Token: $AUTH_TOKEN" \
    -H "Content-Type: application/json" 
 
-**Delete a volume response**
+**Example: Delete a volume response**
 
 .. code:: json 
 

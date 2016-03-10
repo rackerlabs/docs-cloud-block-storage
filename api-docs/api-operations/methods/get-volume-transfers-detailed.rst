@@ -75,7 +75,7 @@ This table shows the body parameters for the response:
 
 
 
-**Example: List the volume transfers (detailed): JSON response**
+**Example: List the volume transfers (detailed) JSON response**
 
 
 .. code::

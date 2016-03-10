@@ -66,7 +66,7 @@ Response
 
 
 
-**Example Show snapshot details: XML response**
+**Example: Show snapshot details XML response**
 
 
 .. code::
@@ -89,7 +89,7 @@ Response
 
 
 
-**Example Show snapshot details: JSON response**
+**Example: Show snapshot details JSON response**
 
 
 .. code::

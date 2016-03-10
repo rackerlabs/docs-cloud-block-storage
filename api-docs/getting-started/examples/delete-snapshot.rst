@@ -14,7 +14,7 @@ delete request has been accepted for processing and the snapshot will be
 deleted.
 
  
-**cURL delete a snapshot request**
+**Example: cURL delete a snapshot request**
 
 .. code:: bash
 
@@ -22,7 +22,7 @@ deleted.
    -H "X-Auth-Token: $AUTH_TOKEN" \
    -H "Content-Type: application/json" 
 
-**Delete a snapshot response**
+**Example: Delete a snapshot response**
 
 .. code::  json
 

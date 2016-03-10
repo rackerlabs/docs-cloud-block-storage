@@ -18,10 +18,7 @@ The ``os-extended-snapshot-attributes:progress`` field in the response body show
 
 When the ``POST`` operation returns the 201 response code, the snapshot is complete.
 
-For more information about snapshots, see the following articles in the Knowledge Center: 
-
-* :kc-article:`Create and Use Cloud Block Storage Snapshots<create-and-use-cloud-block-storage-snapshots>`
-* :kc:`Allowing Snapshots Without Detaching the Volumes<whitepaper/allowing-snapshots-without-detaching-the-volumes>`
+For more information about snapshots, see :how-to:`Create and Use Cloud Block Storage Snapshots<create-and-use-cloud-block-storage-snapshots>`.
 
 
 
@@ -87,7 +84,7 @@ This table shows the body parameters for the request:
 
 
 
-**Example Create snapshot: XML request**
+**Example: Create snapshot XML request**
 
 
 .. code::
@@ -105,7 +102,7 @@ This table shows the body parameters for the request:
 
 
 
-**Example Create snapshot: JSON request**
+**Example: Create snapshot JSON request**
 
 
 .. code::
@@ -136,7 +133,7 @@ Response
 
 
 
-**Example Create snapshot: XML response**
+**Example: Create snapshot XML response**
 
 
 .. code::
@@ -159,7 +156,7 @@ Response
 
 
 
-**Example Create snapshot: JSON response**
+**Example: Create snapshot JSON response**
 
 
 .. code::

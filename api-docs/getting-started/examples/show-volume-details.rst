@@ -14,7 +14,7 @@ An HTTP status code of ``200 (OK)`` in the response indicates that the
 request successfully completed.
 
  
-**cURL show volume details request**
+**Example: cURL show volume details request**
 
 .. code:: bash 
 
@@ -22,7 +22,7 @@ request successfully completed.
    -H "X-Auth-Token: $AUTH_TOKEN" \
    -H "Content-Type: application/json" 
 
-**Show volume details response**
+**Example: Show volume details response**
 
 .. code:: json 
 

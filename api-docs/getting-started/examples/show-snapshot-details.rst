@@ -17,7 +17,7 @@ request successfully completed.
     snapshot creation progress.
 
  
-**cURL show snapshot details request**
+**Example: cURL show snapshot details request**
 
 .. code:: bash 
 
@@ -25,7 +25,7 @@ request successfully completed.
    -H "X-Auth-Token: $AUTH_TOKEN" \
    -H "Content-Type: application/json" 
 
-**Show snapshot details response**
+**Example: Show snapshot details response**
 
 .. code:: json 
 

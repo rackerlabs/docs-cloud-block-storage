@@ -20,7 +20,7 @@ volume was successfully created.
     concurrently.
 
  
-**cURL create a volume request**
+**Example: cURL create a volume request**
 
 .. code:: bash 
 
@@ -34,7 +34,7 @@ volume was successfully created.
     -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Content-Type: application/json" 
      
-**Create a volume response**
+**Example: Create a volume response**
 
 .. code:: json 
 

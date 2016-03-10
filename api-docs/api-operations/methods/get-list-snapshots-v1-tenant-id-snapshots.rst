@@ -58,7 +58,7 @@ Response
 
 
 
-**Example List snapshots: XML response**
+**Example: List snapshots XML response**
 
 
 .. code::
@@ -86,7 +86,7 @@ Response
 
 
 
-**Example List snapshots: JSON response**
+**Example: List snapshots JSON response**
 
 
 .. code::

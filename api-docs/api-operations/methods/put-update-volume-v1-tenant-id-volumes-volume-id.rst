@@ -63,7 +63,7 @@ This table shows the body parameters for the request:
 
 
 
-**Example Update volume: XML request**
+**Example: Update volume XML request**
 
 
 .. code::
@@ -78,7 +78,7 @@ This table shows the body parameters for the request:
 
 
 
-**Example Update volume: JSON request**
+**Example: Update volume JSON request**
 
 
 .. code::
@@ -106,7 +106,7 @@ Response
 
 
 
-**Example Update volume: XML response**
+**Example: Update volume XML response**
 
 
 .. code::
@@ -133,7 +133,7 @@ Response
 
 
 
-**Example Update volume: JSON response**
+**Example: Update volume JSON response**
 
 
 .. code::
