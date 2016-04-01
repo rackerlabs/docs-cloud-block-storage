@@ -35,7 +35,7 @@ Following are several options for consideration when using this operation:
   parameter in the body of the request, and specify ``different_node`` or ``different_rack`` 
   with a comma-separated list of volume IDs from which you want the volume that you are 
   creating to be distinct. For example, specifying the following parameters in the request 
-  body creates a volume on a rack that is different from th e threes specified volume IDs: 
+  body creates a volume on a rack that is different from the three specified volume IDs: 
 
       ``“metadata”: “different_rack=45c2c5c4-2666-43e9-aa6b-e58eb733410b,8d472323-196d-47bf-8f17-a21b978d0f90,f158d108-aa30-4609-9d31-c2b230f8a871”``  
 
