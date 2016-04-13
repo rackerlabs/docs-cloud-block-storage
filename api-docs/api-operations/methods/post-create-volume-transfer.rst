@@ -30,7 +30,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |String *(Required)*      |The unique identifier of |
+|{tenant_id}               |String                   |The unique identifier of |
 |                          |                         |the tenant or account.   |
 +--------------------------+-------------------------+-------------------------+
 
@@ -47,7 +47,7 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |transfer.\ **volume_id**  |UUID *(Required)*        |The UUID of the volume.  |
 +--------------------------+-------------------------+-------------------------+
-|transfer.\ **name**       |String *(Optional)*      |The volume transfer name.|
+|transfer.\ **name**       |String                   |The volume transfer name.|
 +--------------------------+-------------------------+-------------------------+
 
 

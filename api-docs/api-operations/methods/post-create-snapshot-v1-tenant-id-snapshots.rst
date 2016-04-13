@@ -47,7 +47,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |String *(Required)*      |The unique identifier of |
+|{tenant_id}               |String                   |The unique identifier of |
 |                          |                         |the tenant or account.   |
 +--------------------------+-------------------------+-------------------------+
 
@@ -67,16 +67,16 @@ This table shows the body parameters for the request:
 |snapshot.\ **volume_id**  |Uuid *(Required)*        |The ID of the volume to  |
 |                          |                         |snapshot.                |
 +--------------------------+-------------------------+-------------------------+
-|snapshot.\ **force**      |Boolean *(Optional)*     |[True/False] Indicate    |
+|snapshot.\ **force**      |Boolean                  |[True/False] Indicate    |
 |                          |                         |whether to snapshot,     |
 |                          |                         |even if the volume is    |
 |                          |                         |attached. The default is |
 |                          |                         |False.                   |
 +--------------------------+-------------------------+-------------------------+
-|snapshot.\                |String *(Optional)*      |Name of the snapshot.    |
+|snapshot.\                |String                   |Name of the snapshot.    |
 |**display_name**          |                         |The default is None.     |
 +--------------------------+-------------------------+-------------------------+
-|snapshot.\                |String *(Optional)*      |Description of snapshot. |
+|snapshot.\                |String                   |Description of snapshot. |
 |**display_description**   |                         |The default is None.     |
 +--------------------------+-------------------------+-------------------------+
 
