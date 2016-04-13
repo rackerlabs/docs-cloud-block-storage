@@ -32,10 +32,10 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |String *(Required)*      |The unique identifier of |
+|{tenant_id}               |String                   |The unique identifier of |
 |                          |                         |the tenant or account.   |
 +--------------------------+-------------------------+-------------------------+
-|{transfer_id}             |String *(Required)*      |The unique identifier for|
+|{transfer_id}             |String                   |The unique identifier for|
 |                          |                         |a volume transfer.       |
 +--------------------------+-------------------------+-------------------------+
 

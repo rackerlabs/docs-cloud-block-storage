@@ -69,7 +69,7 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |String *(Required)*      |The unique identifier of |
+|{tenant_id}               |String                   |The unique identifier of |
 |                          |                         |the tenant or account.   |
 +--------------------------+-------------------------+-------------------------+
 
@@ -97,26 +97,26 @@ This table shows the body parameters for the request:
 |                          |                         |greater than the         |
 |                          |                         |snapshot size.           |
 +--------------------------+-------------------------+-------------------------+
-|volume.\                  |String *(Optional)*      |A description of the     |
+|volume.\                  |String                   |A description of the     |
 |**display_description**   |                         |volume. This parameter   |
 |                          |                         |is optional.             |
 +--------------------------+-------------------------+-------------------------+
-|volume.\                  |String *(Optional)*      |The name of the volume.  |
+|volume.\                  |String                   |The name of the volume.  |
 |**display_name**          |                         |This parameter is        |
 |                          |                         |optional.                |
 +--------------------------+-------------------------+-------------------------+
-|volume.\                  |Uuid *(Optional)*        |The snapshot from which  |
+|volume.\                  |Uuid                     |The snapshot from which  |
 |**snapshot_id**           |                         |to create a volume. This |
 |                          |                         |parameter is optional.   |
 +--------------------------+-------------------------+-------------------------+
-|volume.\                  |String *(Optional)*      |The type of volume to    |
+|volume.\                  |String                   |The type of volume to    |
 |**volume_type**           |                         |create, either SATA or   |
 |                          |                         |SSD. This parameter is   |
 |                          |                         |optional. If not         |
 |                          |                         |defined, the default,    |
 |                          |                         |SATA, is used.           |
 +--------------------------+-------------------------+-------------------------+
-|volume.\                  |Uuid *(Optional)*        |The source identifier of |
+|volume.\                  |Uuid                     |The source identifier of |
 |**source_volid**          |                         |an existing Cloud Block  |
 |                          |                         |Storage volume that you  |
 |                          |                         |want to clone (copy) to  |
@@ -124,7 +124,7 @@ This table shows the body parameters for the request:
 |                          |                         |This parameter is        |
 |                          |                         |optional.                |
 +--------------------------+-------------------------+-------------------------+
-|volume.\                  |String *(Optional)*      |This parameter is no     |
+|volume.\                  |String                   |This parameter is no     |
 |**availability_zone**     |                         |longer used. Therefore,  |
 |                          |                         |you can supply any value |
 |                          |                         |for                      |
@@ -132,7 +132,7 @@ This table shows the body parameters for the request:
 |                          |                         |If you specify no value, |
 |                          |                         |the default is ``nova``. |
 +--------------------------+-------------------------+-------------------------+
-|volume.\                  |String *(Optional)*      |This optional parameter  |
+|volume.\                  |String                   |This optional parameter  |
 |**metadata**              |                         |is available if you want |
 |                          |                         |to set any metadata      |
 |                          |                         |values on the volume.    |
@@ -150,7 +150,7 @@ This table shows the body parameters for the request:
 |                          |                         |those whose volume IDs   |
 |                          |                         |are specified.           |
 +--------------------------+-------------------------+-------------------------+
-|volume.\                  |Uuid *(Optional)*        |Specifying this          |
+|volume.\                  |Uuid                     |Specifying this          |
 |**imageRef**              |                         |parameter is required to |
 |                          |                         |create a bootable        |
 |                          |                         |volume. This parameter   |

@@ -33,10 +33,10 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |String *(Required)*      |The unique identifier of |
+|{tenant_id}               |String                   |The unique identifier of |
 |                          |                         |the tenant or account.   |
 +--------------------------+-------------------------+-------------------------+
-|{volume_id}               |String *(Required)*      |The unique identifier of |
+|{volume_id}               |String                   |The unique identifier of |
 |                          |                         |an existing volume.      |
 +--------------------------+-------------------------+-------------------------+
 
@@ -52,10 +52,10 @@ This table shows the body parameters for the request:
 |**volume**                |String *(Required)*      |Information about the    |
 |                          |                         |volume.                  |
 +--------------------------+-------------------------+-------------------------+
-|volume.\                  |String *(Optional)*      |A description of the     |
+|volume.\                  |String                   |A description of the     |
 |**display_description**   |                         |volume.                  |
 +--------------------------+-------------------------+-------------------------+
-|volume.\                  |String *(Optional)*      |The name of the volume.  |
+|volume.\                  |String                   |The name of the volume.  |
 |**display_name**          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
 

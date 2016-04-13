@@ -33,10 +33,10 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |String *(Required)*      |The unique identifier of |
+|{tenant_id}               |String                   |The unique identifier of |
 |                          |                         |the tenant or account.   |
 +--------------------------+-------------------------+-------------------------+
-|{snapshot_id}             |String *(Required)*      |The unique identifier of |
+|{snapshot_id}             |String                   |The unique identifier of |
 |                          |                         |an existing snapshot.    |
 +--------------------------+-------------------------+-------------------------+
 
@@ -50,10 +50,10 @@ This table shows the parameters for the request:
 |**snapshot**              |String *(Required)*      |Information about the    |
 |                          |                         |snapshot.                |
 +--------------------------+-------------------------+-------------------------+
-|snapshot.\                |String *(Optional)*      |A description of the     |
+|snapshot.\                |String                   |A description of the     |
 |**display_description**   |                         |snapshot.                |
 +--------------------------+-------------------------+-------------------------+
-|snapshot.\                |String *(Optional)*      |The name of the          |
+|snapshot.\                |String                   |The name of the          |
 |**display_name**          |                         |snapshot.                |
 +--------------------------+-------------------------+-------------------------+
 
