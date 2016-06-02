@@ -1,6 +1,0 @@
-{
-    "item_not_found": {
-        "code": 404,
-        "message": "The resource could not be found."
-    }
-}
