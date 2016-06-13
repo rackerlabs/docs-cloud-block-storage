@@ -1,0 +1,8 @@
+{
+  "contentIDBase": "https://github.com/rackerlabs/docs-cloud-block-storage/",
+  "githubUrl": "https://github.com/rackerlabs/docs-cloud-block-storage/",
+  "githubBranch": "master",
+  "meta": {
+    "preferGithubIssues": true
+  }
+}
