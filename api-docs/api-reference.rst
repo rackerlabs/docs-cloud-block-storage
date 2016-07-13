@@ -1,7 +1,7 @@
 .. _api-reference:
 
-===================
-**API Reference**
-===================
+====================
+**API Reference v1**
+====================
 
-Learn about the available Cloud Block Storage API resources and methods and see request and response examples.
+For v1, learn about the available Cloud Block Storage API resources and methods and see request and response examples.

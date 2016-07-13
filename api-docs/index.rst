@@ -11,7 +11,8 @@ using the |apiservice|.
 
 * :ref:`Getting Started Guide<getting-started>`
 * :ref:`Developer Guide<developer-guide>`
-* :ref:`API Reference<api-reference>`
+* :ref:`API Reference v1<api-reference>`
+* :ref:`API Reference v2<api-reference-v2>`
 * :ref:`Release Notes<release-notes>`
 
 
@@ -28,6 +29,8 @@ using the |apiservice|.
    general-api-info/index
    api-reference
    api-operations/index
+   api-reference-v2
+   api-operations-v2/index-v2
    release-notes
    copyright
 
