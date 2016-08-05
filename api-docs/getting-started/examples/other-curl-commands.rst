@@ -1,7 +1,7 @@
 .. _gsg-other-curl-commands:
 
 Other cURL commands 
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 You can issue any of the REST requests defined for Cloud Block Storage
 with the cURL utility.

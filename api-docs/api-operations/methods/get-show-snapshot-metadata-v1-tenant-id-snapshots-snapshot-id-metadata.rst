@@ -1,73 +1,40 @@
 
 .. _get-show-snapshot-metadata:
 
-Show snapshot metadata
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Retrieve metadata for a snapshot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
     GET /v1/{tenant_id}/snapshots/{snapshot_id}/metadata
 
-This operation shows the metadata for the specified snapshot.
-
-
-
-This table shows the possible response codes for this operation:
-
-
-+--------------------------+-------------------------+-------------------------+
-|Response Code             |Name                     |Description              |
-+==========================+=========================+=========================+
-|200                       |OK                       |Success                  |
-+--------------------------+-------------------------+-------------------------+
-
+This operation retrieves the metadata for the specified snapshot.
 
 Request
-""""""""""""""""
+-------
 
+The request has the following URI parameters.
 
-
-
-This table shows the URI parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|{tenant_id}               |String                   |The unique identifier of |
-|                          |                         |the tenant or account.   |
-+--------------------------+-------------------------+-------------------------+
-|{snapshot_id}             |String                   |The unique identifier of |
-|                          |                         |an existing snapshot.    |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|{tenant_id}               |String                   |The unique identifier of|
+|                          |                         |the tenant or account.  |
++--------------------------+-------------------------+------------------------+
+|{snapshot_id}             |String                   |The unique identifier of|
+|                          |                         |an existing snapshot.   |
++--------------------------+-------------------------+------------------------+
 
 This operation does not accept a request body.
 
+Response example
+----------------
 
-
-
-Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
-
-**Example: Show snapshot metadata JSON response**
-
+The following example shows the JSON response for retrieving the metadata for
+a specified snapshot.
 
 .. code::
 
-   
-   
    {
        "snapshot": {
            "status": "available",
@@ -84,8 +51,14 @@ Response
            "name": "my-snapshot"
        }
    }
-   
 
+Response codes
+--------------
 
+This operation can have the following response codes.
 
-
++--------------------------+-------------------------+------------------------+
+|Response Code             |Name                     |Description             |
++==========================+=========================+========================+
+|200                       |OK                       |Success                 |
++--------------------------+-------------------------+------------------------+

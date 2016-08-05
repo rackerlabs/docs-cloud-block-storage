@@ -5,10 +5,12 @@ What's new
 ~~~~~~~~~~
 
 -  The ``imageRef`` request parameter and the ``image_id``
-   response parameter were added to the :ref:`create volume <post-create-volume>` 
-   operation to support the boot from volume capability.
+   response parameter were added to the
+   :ref:`create volume <post-create-volume>` operation to support the boot from
+   volume capability.
 
--  The default quotas were updated. See :ref:`Cloud Block Storage quotas <quotas>`.
+-  The default quotas were updated. See
+   :ref:`Cloud Block Storage quotas <quotas>`.
 
 Resolved issues
 ~~~~~~~~~~~~~~~

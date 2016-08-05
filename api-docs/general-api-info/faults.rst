@@ -194,4 +194,3 @@ The next examples show ``itemNotFound`` errors.
             "message": "The resource could not be found."
         }
     }
-

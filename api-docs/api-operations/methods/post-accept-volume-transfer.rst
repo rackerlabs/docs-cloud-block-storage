@@ -1,7 +1,7 @@
 .. _post-accept-volume-transfer:
 
 Accept a volume transfer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -9,59 +9,38 @@ Accept a volume transfer
 
 This operation accepts a volume transfer.
 
+Request parameters
+------------------
 
+The request has the following URI parameters.
 
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|{tenant_id}               |String                   |The unique identifier of|
+|                          |                         |the tenant or account.  |
++--------------------------+-------------------------+------------------------+
+|{transfer_id}             |String                   |The unique identifier of|
+|                          |                         |a volume transfer.      |
++--------------------------+-------------------------+------------------------+
 
-This table shows the possible response codes for this operation:
+The request has the following body parameters.
 
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|**accept**                |String *(Required)*      |A partial representation|
+|                          |                         |of a volume transfer    |
+|                          |                         |acceptance.             |
++--------------------------+-------------------------+------------------------+
+|accept.\ **auth_key**     |String *(Required)*      |The authentication key  |
+|                          |                         |for the volume transfer.|
++--------------------------+-------------------------+------------------------+
 
-+--------------------------+-------------------------+-------------------------+
-|Response Code             |Name                     |Description              |
-+==========================+=========================+=========================+
-|202                       |Accepted                 |The request has been     |
-|                          |                         |accepted for processing. |
-+--------------------------+-------------------------+-------------------------+
+Request example
+---------------
 
-
-
-Request
-""""""""""""""""
-
-
-
-
-This table shows the URI parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|{tenant_id}               |String                   |The unique identifier of |
-|                          |                         |the tenant or account.   |
-+--------------------------+-------------------------+-------------------------+
-|{transfer_id}             |String                   |The unique identifier of |
-|                          |                         |a volume transfer.       |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-
-This table shows the body parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|**accept**                |String *(Required)*      |A partial representation |
-|                          |                         |of a volume transfer     |
-|                          |                         |acceptance.              |
-+--------------------------+-------------------------+-------------------------+
-|accept.\ **auth_key**     |String *(Required)*      |The authentication key   |
-|                          |                         |for the volume transfer. |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-**Example: Accept a volume transfer JSON request**
-
+The following example accepts a volume transfer.
 
 .. code::
 
@@ -69,38 +48,36 @@ This table shows the body parameters for the request:
        "accept": {
            "auth_key": "9266c59563c84664"
        }
-   }   
+   }
 
+Response parameters
+-------------------
 
+The response has the following body parameters.
 
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|**transfer**              |String                   |A representation        |
+|                          |                         |of a volume transfer in |
+|                          |                         |the creation process.   |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **id**         |UUID                     |The UUID of the volume  |
+|                          |                         |transfer.               |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **name**       |String                   |The volume transfer     |
+|                          |                         |name.                   |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **volume_id**  |UUID                     |The UUID of the volume. |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **links**      |List                     |The links for the volume|
+|                          |                         |transfer.               |
++--------------------------+-------------------------+------------------------+
 
+Response example
+----------------
 
-Response
-""""""""""""""""
-
-This table shows the body parameters for the response:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|**transfer**              |String                   |A representation         |
-|                          |                         |of a volume transfer in  |
-|                          |                         |the creation process.    |
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **id**         |UUID                     |The UUID of the volume   |
-|                          |                         |transfer.                |
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **name**       |String                   |The volume transfer name.|
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **volume_id**  |UUID                     |The UUID of the volume.  |
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **links**      |List                     |The links for the volume |
-|                          |                         |transfer.                |
-+--------------------------+-------------------------+-------------------------+
-
-
-**Example: Accept a volume transfer JSON response**
-
+The following example shows the JSON response for accepting a volume transfer.
 
 .. code::
 
@@ -122,4 +99,14 @@ This table shows the body parameters for the response:
        }
    }
 
+Response codes
+--------------
 
+This operation can have the following response codes.
+
++--------------------------+-------------------------+------------------------+
+|Response Code             |Name                     |Description             |
++==========================+=========================+========================+
+|202                       |Accepted                 |The request has been    |
+|                          |                         |accepted for processing.|
++--------------------------+-------------------------+------------------------+

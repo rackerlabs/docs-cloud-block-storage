@@ -1,17 +1,21 @@
 API |contract version| updates, March 9, 2016
-------------------------------------------------
+---------------------------------------------
 
 
 What's new
 ~~~~~~~~~~
 
-- The maximum number of snapshots per volume is now 5000. See :ref:`absolute limits <absolute-limits>` for this addition.
+- The maximum number of snapshots per volume is now 5000. See
+  :ref:`absolute limits <absolute-limits>` for this addition.
 
   .. note::
 
-    For performance reasons, this maximum will be lowered over time. Any reduction in the maximum number of snapshots per volume will be reported in Release Notes.
+    For performance reasons, this maximum will be lowered over time. Any
+    reduction in the maximum number of snapshots per volume will be reported
+    in Release Notes.
 
-- The methods for volume transfer have been added. For the method descriptions, see :ref:`volume transfer operations <volume-transfer-operations>`.
+- The methods for volume transfer have been added. For the method descriptions,
+  see :ref:`volume transfer operations <volume-transfer-operations>`.
 
 Resolved issues
 ~~~~~~~~~~~~~~~
@@ -22,4 +26,3 @@ Known issues
 ~~~~~~~~~~~~
 
 |no changes|
-

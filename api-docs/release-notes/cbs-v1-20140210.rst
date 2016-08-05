@@ -3,7 +3,7 @@ API |contract version| updates, February 10, 2014
 What's new
 ~~~~~~~~~~
 
-The ``availability_zone`` and ``metadata`` request parameters were added 
+The ``availability_zone`` and ``metadata`` request parameters were added
 to the :ref:`create volume <post-create-volume>` operation.
 
 Resolved issues

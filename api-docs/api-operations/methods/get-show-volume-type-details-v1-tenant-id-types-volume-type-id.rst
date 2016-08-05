@@ -1,68 +1,37 @@
-
 .. _get-show-volume-type-details:
 
-Show volume type details
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Retrieve volume type details
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
     GET /v1/{tenant_id}/types/{volume_type_id}
 
-This operation hows volume type details.
-
-
-
-This table shows the possible response codes for this operation:
-
-
-+--------------------------+-------------------------+-------------------------+
-|Response Code             |Name                     |Description              |
-+==========================+=========================+=========================+
-|200                       |OK                       |Success                  |
-+--------------------------+-------------------------+-------------------------+
+This operation retrieves details for a specified volume type.
 
 
 Request
-""""""""""""""""
+-------
 
+The request has the following URI parameters.
 
-
-
-This table shows the URI parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|{tenant_id}               |String                   |The unique identifier of |
-|                          |                         |the tenant or account.   |
-+--------------------------+-------------------------+-------------------------+
-|{volume_type_id}          |String                   |The unique identifier of |
-|                          |                         |an existing volume type. |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|{tenant_id}               |String                   |The unique identifier of|
+|                          |                         |the tenant or account.  |
++--------------------------+-------------------------+------------------------+
+|{volume_type_id}          |String                   |The unique identifier of|
+|                          |                         |an existing volume type.|
++--------------------------+-------------------------+------------------------+
 
 This operation does not accept a request body.
 
+Response examples
+-----------------
 
-
-
-Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
-
-**Example: Show volume type details XML response**
-
+The following example shows the XML response for retrieving details for a
+specified volume type.
 
 .. code::
 
@@ -72,12 +41,8 @@ Response
            <extra_specs/>
        </volume_type>
 
-
-
-
-
-**Example: Show volume type details JSON response**
-
+The following example shows the JSON response for retrieving details for a
+specified volume type.
 
 .. code::
 
@@ -89,6 +54,13 @@ Response
        }
    }
 
+Response codes
+--------------
 
+This operation can have the following response codes.
 
-
++--------------------------+-------------------------+------------------------+
+|Response Code             |Name                     |Description             |
++==========================+=========================+========================+
+|200                       |OK                       |Success                 |
++--------------------------+-------------------------+------------------------+

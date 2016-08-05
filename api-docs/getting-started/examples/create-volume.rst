@@ -1,7 +1,7 @@
 .. _gsg-create-volume:
 
 Creating a block storage volume 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your first step in Cloud Block Storage is to create a volume. To do
 this, send a **POST** request.
@@ -12,31 +12,30 @@ token.
 An HTTP status code of ``200 (OK)`` in the response indicates that the
 volume was successfully created.
 
-..  note:: 
+..  note::
     You use the ``source_volid`` parameter for volume cloning, which has
     some limitations. You cannot create more than one clone per volume
     concurrently. Snapshots and volume cloning use the same locking
     mechanism, so you cannot run a snapshot and a clone of the same volume
     concurrently.
 
- 
 **Example: cURL create a volume request**
 
-.. code:: bash 
+.. code:: bash
 
    curl -i -X POST $API_ENDPOINT/v1/$TENANT_ID/volumes -d \
-    '{ 
-    "volume":{ 
-    "display_name": "vol-001",    
+    '{
+    "volume":{
+    "display_name": "vol-001",
     "size": 100
     }
      }' \
     -H "X-Auth-Token: $AUTH_TOKEN" \
-    -H "Content-Type: application/json" 
-     
+    -H "Content-Type: application/json"
+
 **Example: Create a volume response**
 
-.. code:: json 
+.. code:: json
 
    HTTP/1.1 200 OK
    X-Compute-Request-Id: req-2af6c97a-2397-4e52-a0d0-4fde64cfb88c
@@ -48,7 +47,7 @@ volume was successfully created.
         "status": "available",
         "display_name": "vol-001",
         "attachments": [
-          
+
         ],
         "availability_zone": "nova",
         "bootable": "false",
@@ -63,9 +62,9 @@ volume was successfully created.
         "id": "a3df5c35-3218-436e-b706-c85edc3f149d",
         "size": 100
       }
-     } 
+     }
 
-..  note:: 
+..  note::
     You use the ``os-volume_attachments`` API call
     (``/servers/{server_id}/os-volume_attachments``) to attach the new
     volume to your Next Generation Cloud Server (with the specified

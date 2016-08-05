@@ -20,7 +20,11 @@ information:
 
 .. note::
 
-   Cloud Block Storage quotas are independent from any other account quotas that you might have. In addition, Cloud Block Storage no longer supports account quotas (previously shared by SATA and SSD) or number-of-volumes quotas. Both of these quotas were replaced by the storage-type quotas, which are specific to SATA and SSD per account per region.
+   Cloud Block Storage quotas are independent from any other account quotas
+   that you might have. In addition, Cloud Block Storage no longer supports
+   account quotas (previously shared by SATA and SSD) or number-of-volumes
+   quotas. Both of these quotas were replaced by the storage-type quotas, which
+   are specific to SATA and SSD per account per region.
 
 You can use the OpenStack Cinder client or API to see your current block
 storage quota and your current utilization against it.
@@ -31,7 +35,9 @@ For Cinder client users, use the following command:
 
     $ cinder quota-usage yourAccountID
 
-Your account ID or account number is often referred to as your tenant ID or tenant name. For information about how to find your account ID, see the Authentication section.
+Your account ID or account number is often referred to as your tenant ID or
+tenant name. For information about how to find your account ID, see the
+Authentication section.
 
 This results in a quota listing similar to the following example.
 
@@ -52,7 +58,6 @@ This results in a quota listing similar to the following example.
      |  volumes_SATA  |   1    |    0     |   -1  |
      |  volumes_SSD   |   0    |    0     |   -1  |
      +----------------+--------+----------+-------+
-
 
 The following table describes the information in the quota listing.
 
@@ -141,5 +146,3 @@ include the query parameter, the response includes only quota information.
             }
         }
     }
-
-

@@ -1,8 +1,7 @@
-
 .. _delete-snapshot:
 
-Delete snapshot
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Delete a snapshot
+~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,57 +9,37 @@ Delete snapshot
 
 This operation deletes a snapshot.
 
-
-
-This table shows the possible response codes for this operation:
-
-
-+--------------------------+-------------------------+-------------------------+
-|Response Code             |Name                     |Description              |
-+==========================+=========================+=========================+
-|202                       |Accepted                 |The request has been     | 
-|                          |                         |fulfilled and a resource |
-|                          |                         |was created.             |
-+--------------------------+-------------------------+-------------------------+
-
-
 Request
-""""""""""""""""
+-------
 
+The request has the following URI parameters.
 
-
-
-This table shows the URI parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|{tenant_id}               |String                   |The unique identifier of |
-|                          |                         |the tenant or account.   |
-+--------------------------+-------------------------+-------------------------+
-|{snapshot_id}             |String                   |The unique identifier of |
-|                          |                         |an existing snapshot.    |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|{tenant_id}               |String                   |The unique identifier of|
+|                          |                         |the tenant or account.  |
++--------------------------+-------------------------+------------------------+
+|{snapshot_id}             |String                   |The unique identifier of|
+|                          |                         |an existing snapshot.   |
++--------------------------+-------------------------+------------------------+
 
 This operation does not accept a request body.
 
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
+--------
 
 This operation does not return a response body.
 
+Response codes
+--------------
 
+This operation can have the following response codes.
 
-
++--------------------------+-------------------------+------------------------+
+|Response Code             |Name                     |Description             |
++==========================+=========================+========================+
+|202                       |Accepted                 |The request has been    |
+|                          |                         |fulfilled and a resource|
+|                          |                         |was created.            |
++--------------------------+-------------------------+------------------------+

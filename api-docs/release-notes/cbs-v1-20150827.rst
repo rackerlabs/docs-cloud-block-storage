@@ -1,11 +1,12 @@
 API |contract version| updates, August 27, 2015
-------------------------------------------------
+-----------------------------------------------
 
 
 What's new
 ~~~~~~~~~~
 
-The :ref:`show snapshot metadata <get-show-snapshot-metadata>` operation was added.
+The :ref:`show snapshot metadata <get-show-snapshot-metadata>` operation was
+added.
 
 Resolved issues
 ~~~~~~~~~~~~~~~
@@ -16,4 +17,3 @@ Known issues
 ~~~~~~~~~~~~
 
 |no changes|
-

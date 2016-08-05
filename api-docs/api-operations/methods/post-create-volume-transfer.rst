@@ -1,7 +1,7 @@
 .. _post-create-volume-transfer:
 
 Create a volume transfer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -9,53 +9,37 @@ Create a volume transfer
 
 This operation creates a volume transfer.
 
+Request parameters
+------------------
 
-This table shows the possible response codes for this operation:
+The request has the following URI parameters.
 
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|{tenant_id}               |String                   |The unique identifier of|
+|                          |                         |the tenant or account.  |
++--------------------------+-------------------------+------------------------+
 
-+--------------------------+-------------------------+-------------------------+
-|Response Code             |Name                     |Description              |
-+==========================+=========================+=========================+
-|202                       |Accepted                 |The request has been     |
-|                          |                         |accepted for processing. |
-+--------------------------+-------------------------+-------------------------+
+The request has the following body parameters.
 
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|**transfer**              |String *(Required)*      |A representation        |
+|                          |                         |of a volume transfer in |
+|                          |                         |the creation process.   |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **volume_id**  |UUID *(Required)*        |The UUID of the volume. |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **name**       |String                   |The volume transfer     |
+|                          |                         |name.                   |
++--------------------------+-------------------------+------------------------+
 
-Request
-""""""""""""""""
+Request example
+---------------
 
-
-This table shows the URI parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|{tenant_id}               |String                   |The unique identifier of |
-|                          |                         |the tenant or account.   |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-This table shows the body parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|**transfer**              |String *(Required)*      |A representation         |
-|                          |                         |of a volume transfer in  |
-|                          |                         |the creation process.    |
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **volume_id**  |UUID *(Required)*        |The UUID of the volume.  |
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **name**       |String                   |The volume transfer name.|
-+--------------------------+-------------------------+-------------------------+
-
-
-
-
-
-**Example: Create a volume transfer JSON request**
-
+The following JSON example creates a volume transfer.
 
 .. code::
 
@@ -64,44 +48,42 @@ This table shows the body parameters for the request:
             "volume_id": "c86b9af4-151d-4ead-b62c-5fb967af0e37",
             "name": "first volume"
         }
-   }   
+   }
 
+Response parameters
+-------------------
 
+The response has the following body parameters.
 
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|**transfer**              |String                   |A representation        |
+|                          |                         |of a volume transfer in |
+|                          |                         |the creation process.   |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **id**         |UUID                     |The UUID of the volume  |
+|                          |                         |transfer.               |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **created_at** |Datetime                 |The date and time when  |
+|                          |                         |the volume was created. |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **name**       |String                   |The volume transfer     |
+|                          |                         |name.                   |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **volume_id**  |UUID                     |The UUID of the volume. |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **auth_key**   |String                   |The authentication key  |
+|                          |                         |for the volume transfer.|
++--------------------------+-------------------------+------------------------+
+|transfer.\ **links**      |List                     |The links for the volume|
+|                          |                         |transfer.               |
++--------------------------+-------------------------+------------------------+
 
+Response example
+----------------
 
-Response
-""""""""""""""""
-
-This table shows the body parameters for the response:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|**transfer**              |String                   |A representation         |
-|                          |                         |of a volume transfer in  |
-|                          |                         |the creation process.    |
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **id**         |UUID                     |The UUID of the volume   |
-|                          |                         |transfer.                |
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **created_at** |Datetime                 |The date and time when   |
-|                          |                         |the volume was created.  |
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **name**       |String                   |The volume transfer name.|
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **volume_id**  |UUID                     |The UUID of the volume.  |
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **auth_key**   |String                   |The authentication key   |
-|                          |                         |for the volume transfer. |
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **links**      |List                     |The links for the volume |
-|                          |                         |transfer.                |
-+--------------------------+-------------------------+-------------------------+
-
-
-**Example: Create a volume transfer JSON response**
-
+The following example shows the JSON response for creating a volume transfer.
 
 .. code::
 
@@ -124,3 +106,15 @@ This table shows the body parameters for the response:
            ]
        }
    }
+
+Response codes
+--------------
+
+This operation can have the following response codes.
+
++--------------------------+-------------------------+------------------------+
+|Response Code             |Name                     |Description             |
++==========================+=========================+========================+
+|202                       |Accepted                 |The request has been    |
+|                          |                         |accepted for processing.|
++--------------------------+-------------------------+------------------------+

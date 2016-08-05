@@ -1,7 +1,7 @@
 .. _gsg-show-volume-details:
 
 Showing volume details
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 To show details about a specified volume, send a **GET** request that
 includes the volume ID.
@@ -9,22 +9,20 @@ includes the volume ID.
 The HTTP request must include a header to specify the authentication
 token.
 
-
 An HTTP status code of ``200 (OK)`` in the response indicates that the
 request successfully completed.
 
- 
 **Example: cURL show volume details request**
 
-.. code:: bash 
+.. code:: bash
 
    curl -i -X GET $API_ENDPOINT/v1/$TENANT_ID/volumes/yourVolumeID \
    -H "X-Auth-Token: $AUTH_TOKEN" \
-   -H "Content-Type: application/json" 
+   -H "Content-Type: application/json"
 
 **Example: Show volume details response**
 
-.. code:: json 
+.. code:: json
 
    HTTP/1.1 200 OK
    X-Compute-Request-Id: req-0ec1d1e0-c591-47d2-a8e7-9a8923e495b2
@@ -37,7 +35,7 @@ request successfully completed.
         "status": "available",
         "display_name": "vol-001",
         "attachments": [
-          
+
         ],
         "availability_zone": "nova",
         "bootable": "false",
@@ -56,4 +54,4 @@ request successfully completed.
         "os-vol-mig-status-attr:migstat": null,
         "size": 100
       }
-    } 
+    }

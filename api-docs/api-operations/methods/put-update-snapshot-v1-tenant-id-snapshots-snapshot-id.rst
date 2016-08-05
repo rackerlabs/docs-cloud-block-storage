@@ -1,8 +1,7 @@
-
 .. _put-update-snapshot:
 
-Update snapshot
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Update a snapshot
+~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -10,63 +9,41 @@ Update snapshot
 
 This operation updates a specified snapshot.
 
+Request parameters
+------------------
+
+The request has the following URI parameters.
+
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|{tenant_id}               |String                   |The unique identifier of|
+|                          |                         |the tenant or account.  |
++--------------------------+-------------------------+------------------------+
+|{snapshot_id}             |String                   |The unique identifier of|
+|                          |                         |an existing snapshot.   |
++--------------------------+-------------------------+------------------------+
+
+The request has the following body parameters.
+
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|**snapshot**              |String *(Required)*      |Information about the   |
+|                          |                         |snapshot.               |
++--------------------------+-------------------------+------------------------+
+|snapshot.\                |String                   |A description of the    |
+|**display_description**   |                         |snapshot.               |
++--------------------------+-------------------------+------------------------+
+|snapshot.\                |String                   |The name of the         |
+|**display_name**          |                         |snapshot.               |
++--------------------------+-------------------------+------------------------+
 
 
-This table shows the possible response codes for this operation:
+Request examples
+----------------
 
-
-+--------------------------+-------------------------+-------------------------+
-|Response Code             |Name                     |Description              |
-+==========================+=========================+=========================+
-|200                       |OK                       |Success                  |
-+--------------------------+-------------------------+-------------------------+
-
-
-Request
-""""""""""""""""
-
-
-
-
-This table shows the URI parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|{tenant_id}               |String                   |The unique identifier of |
-|                          |                         |the tenant or account.   |
-+--------------------------+-------------------------+-------------------------+
-|{snapshot_id}             |String                   |The unique identifier of |
-|                          |                         |an existing snapshot.    |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-This table shows the parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|**snapshot**              |String *(Required)*      |Information about the    |
-|                          |                         |snapshot.                |
-+--------------------------+-------------------------+-------------------------+
-|snapshot.\                |String                   |A description of the     |
-|**display_description**   |                         |snapshot.                |
-+--------------------------+-------------------------+-------------------------+
-|snapshot.\                |String                   |The name of the          |
-|**display_name**          |                         |snapshot.                |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-
-This operation does not accept a request body.
-
-
-
-
-**Example: Update snapshot XML request**
-
+The following XML example updates a snapshot.
 
 .. code::
 
@@ -74,15 +51,8 @@ This operation does not accept a request body.
    <snapshot xmlns="http://docs.rackspace.com/volume/api/v1"
              display_name="snap-001"
              display_description="This is yet, another snapshot."/>
-   
-   
 
-
-
-
-
-**Example: Update snapshot JSON request**
-
+The following JSON example updates a snapshot.
 
 .. code::
 
@@ -93,24 +63,10 @@ This operation does not accept a request body.
        }
    }
 
+Response examples
+-----------------
 
-
-
-
-Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
-
-**Example: Update snapshot XML response**
-
+The following example shows the XML response for updating a snapshot.
 
 .. code::
 
@@ -128,15 +84,8 @@ Response
        os-extended-snapshot-attributes:progress="100%">
        <metadata/>
    </snapshot>
-   
-   
 
-
-
-
-
-**Example: Update snapshot JSON response**
-
+The following example shows the JSON response for updating a snapshot.
 
 .. code::
 
@@ -152,6 +101,13 @@ Response
        }
    }
 
+Response codes
+--------------
 
+This operation can have the following response codes.
 
-
++--------------------------+-------------------------+------------------------+
+|Response Code             |Name                     |Description             |
++==========================+=========================+========================+
+|200                       |OK                       |Success                 |
++--------------------------+-------------------------+------------------------+
