@@ -3,8 +3,9 @@
 Differences between Rackspace Cloud Block Storage v1 methods and OpenStack Block Storage v2 methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Rackspace Cloud Block Storage v1 (referred to as Cloud Block Storage in the rest of this section) can run the 
-corresponding OpenStack Block Storage v2 (referred to as Cinder in the rest of this section) methods. However, 
+Rackspace Cloud Block Storage v1 (referred to as Cloud Block Storage in the
+rest of this section) can run the corresponding OpenStack Block Storage v2
+(referred to as Cinder in the rest of this section) methods. However,
 differences exist between the them.
 
 The following table provides the differences by method.
@@ -80,7 +81,7 @@ The following table provides the differences by method.
 |                             | - ``display_name`` rather than ``name``               |
 |                             |                                                       |
 |                             | The Cloud Block Storage includes the following        |
-|                             | response parameters that Cinder does not include:     |                                      
+|                             | response parameters that Cinder does not include:     |
 |                             |                                                       |
 |                             | - ``display_description``                             |
 |                             |                                                       |
@@ -94,7 +95,7 @@ The following table provides the differences by method.
 |                             |                                                       |
 |                             | The Cloud Block Storage does not includes the         |
 |                             | following response parameters that Cinder does        |
-|                             | include:                                              |                                      
+|                             | include:                                              |
 |                             |                                                       |
 |                             | - ``links`` with ``href`` and ``rel``                 |
 +-----------------------------+-------------------------------------------------------+
@@ -170,7 +171,7 @@ The following table provides the differences by method.
 |                             |                                                       |
 |                             | - ``display_name`` rather than ``name``               |
 |                             |                                                       |
-|                             | - excludes ``metadata``                               | 
+|                             | - excludes ``metadata``                               |
 |                             |                                                       |
 |                             | The Cloud Block Storage response parameters have the  |
 |                             | following differences from Cinder:                    |
@@ -207,7 +208,7 @@ The following table provides the differences by method.
 |                             |                                                       |
 |                             | - ``sort_key``                                        |
 |                             |                                                       |
-|                             | - ``sort_dir``                                        |                                                        
+|                             | - ``sort_dir``                                        |
 |                             |                                                       |
 |                             | - ``limit``                                           |
 |                             |                                                       |
@@ -229,12 +230,12 @@ The following table provides the differences by method.
 |                             | - ``display_description`` rather than ``description`` |
 |                             |                                                       |
 |                             | - ``display_name`` rather than ``name``               |
-|                             |                                                       |                                     
+|                             |                                                       |
 |                             | The Cloud Block Storage response includes the         |
 |                             | following response parameters that Cinder does not    |
 |                             | include:                                              |
 |                             |                                                       |
-|                             | - ``os-extended-snapshot-attributes:progress``        |                                       
+|                             | - ``os-extended-snapshot-attributes:progress``        |
 |                             |                                                       |
 |                             | - ``os-extended-snapshot-attributes:project_id``      |
 |                             |                                                       |
@@ -244,7 +245,7 @@ The following table provides the differences by method.
 |                             |                                                       |
 |                             | - ``sort_key``                                        |
 |                             |                                                       |
-|                             | - ``sort_dir``                                        |                                                        
+|                             | - ``sort_dir``                                        |
 |                             |                                                       |
 |                             | - ``limit``                                           |
 |                             |                                                       |
@@ -299,8 +300,8 @@ The following table provides the differences by method.
 +-----------------------------+-------------------------------------------------------+
 
 
-Cinder v2 returns the following statuses for volume operations, which Cloud Block Storage
-v1 does not include: 
+Cinder v2 returns the following statuses for volume operations, which Cloud
+Block Storage v1 does not include: 
 
 - Backing-up
 - Restoring-backup

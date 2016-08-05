@@ -13,14 +13,13 @@ An HTTP status code of ``202 (Accepted)`` in the response indicates that the
 delete request has been accepted for processing and the snapshot will be
 deleted.
 
- 
 **Example: cURL delete a snapshot request**
 
 .. code:: bash
 
    curl -i -X DELETE $API_ENDPOINT/v1/$TENANT_ID/snapshots/yourSnapshotID \
    -H "X-Auth-Token: $AUTH_TOKEN" \
-   -H "Content-Type: application/json" 
+   -H "Content-Type: application/json"
 
 **Example: Delete a snapshot response**
 

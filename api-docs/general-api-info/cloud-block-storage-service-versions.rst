@@ -1,6 +1,5 @@
 .. _contract-version:
 
-
 Cloud Block Storage service versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -19,4 +18,3 @@ given time and are not guaranteed to be compatible with one another.
     https://dfw.blockstorage.api.rackspacecloud.com/v1/1234/
 
 .. note:: This document pertains to contract v1.
-

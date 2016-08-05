@@ -22,7 +22,7 @@ and ``"status": "creating"`` indicates that the snapshot is in progress.
  
 **Example: cURL create a snapshot request**
 
-.. code:: bash 
+.. code:: bash
 
    curl -i -X POST $API_ENDPOINT/v1/$TENANT_ID/snapshots -d \
       '{
@@ -33,11 +33,11 @@ and ``"status": "creating"`` indicates that the snapshot is in progress.
         }
       }'\
       -H "X-Auth-Token: $AUTH_TOKEN" \
-      -H "Content-Type: application/json" 
-      
+      -H "Content-Type: application/json"
+
 **Example: Create a snapshot response**
 
-.. code:: json 
+.. code:: json
 
    HTTP/1.1 200 OK
    X-Compute-Request-Id: req-99d94a3a-1086-4c19-99b4-65d05e2e02f1
@@ -53,9 +53,9 @@ and ``"status": "creating"`` indicates that the snapshot is in progress.
         "display_description": "Daily Backup",
         "volume_id": "c849a193-5275-4527-9e5a-69b2a05933aa",
         "metadata": {
-          
+
         },
         "id": "a6211a94-937f-4770-8dae-1813cb643213",
         "size": 100
       }
-    } 
+    }

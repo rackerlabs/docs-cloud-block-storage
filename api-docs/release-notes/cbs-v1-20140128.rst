@@ -4,7 +4,8 @@ API |contract version| updates, January 28, 2014
 What's new
 ~~~~~~~~~~
 
-The ``os-extended-snapshot-attributes:progress`` progress indicator was added to the 
+The ``os-extended-snapshot-attributes:progress`` progress indicator was added
+to the
 :ref:`show snapshot details <get-show-snapshot-details>` operation.
 
 Resolved issues

@@ -1,19 +1,18 @@
 .. _index:
 
-=============================================================
+====================================================
 Rackspace Cloud Block Storage API |contract version|
-=============================================================
+====================================================
 
-*Last updated:* |today| 
+*Last updated:* |today|
 
-Use the following links to jump directly to user and reference information for 
-using the |apiservice|. 
+Use the following links to jump directly to user and reference information for
+using the |apiservice|.
 
 * :ref:`Getting Started Guide<getting-started>`
 * :ref:`Developer Guide<developer-guide>`
 * :ref:`API Reference<api-reference>`
 * :ref:`Release Notes<release-notes>`
-
 
 .. toctree:: :hidden:
    :maxdepth: 2
@@ -22,7 +21,7 @@ using the |apiservice|.
    API Status <https://status.rackspace.com>
    About the API <overview/index>
    getting-started
-   getting-started/index   
+   getting-started/index
    developer-guide
    concepts
    general-api-info/index
@@ -30,4 +29,3 @@ using the |apiservice|.
    api-operations/index
    release-notes
    copyright
-

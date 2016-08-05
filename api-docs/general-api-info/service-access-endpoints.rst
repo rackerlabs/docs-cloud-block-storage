@@ -10,7 +10,7 @@ regional boundaries to other Cloud Block Storage servers.
 
 .. tip::
      To help you decide which regionalized endpoint to use, see the
-     considerations for choosing a data center in 
+     considerations for choosing a data center in
      :how-to:`About regions <about-regions>`.
 
 **Regionalized service endpoints**
@@ -37,6 +37,7 @@ regional boundaries to other Cloud Block Storage servers.
 |                         | /v1/123456/                                       |
 +-------------------------+---------------------------------------------------+
 
-Replace the sample account ID number, ``123456``, with your actual account number, 
-which is returned as part of the :ref:`authentication service response<review-auth-resp>`, after the final 
+Replace the sample account ID number, ``123456``, with your actual account number,
+which is returned as part of the
+:ref:`authentication service response<review-auth-resp>`, after the final 
 **/** in the ``publicURL`` field.

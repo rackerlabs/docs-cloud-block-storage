@@ -4,7 +4,8 @@ API |contract version| updates, December 29, 2014
 What's new
 ~~~~~~~~~~
 
-The ``invalidImage`` fault type with error code 412 was added to the list of possible faults.
+The ``invalidImage`` fault type with error code 412 was added to the list of
+possible faults.
 
 Resolved issues
 ~~~~~~~~~~~~~~~

@@ -1,77 +1,57 @@
 .. _get-volume-transfers:
 
-List the volume transfers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Retrieve the volume transfers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
     GET /v1/{tenant_id}/os-volume-transfer
 
-This operation lists the volume transfers for the specified ``tenant_id``.
-
-
-
-This table shows the possible response codes for this operation:
-
-
-+--------------------------+-------------------------+-------------------------+
-|Response Code             |Name                     |Description              |
-+==========================+=========================+=========================+
-|200                       |OK                       |Success                  |
-+--------------------------+-------------------------+-------------------------+
-
+This operation retrieves the volume transfers for the specified ``tenant_id``.
 
 Request
-""""""""""""""""
+-------
 
+The request has the following URI parameters.
 
-This table shows the URI parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|{tenant_id}               |String                   |The unique identifier of |
-|                          |                         |the tenant or account.   |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|{tenant_id}               |String                   |The unique identifier of|
+|                          |                         |the tenant or account.  |
++--------------------------+-------------------------+------------------------+
 
 This operation does not accept a request body.
 
+Response parameters
+-------------------
 
+The response has the following body parameters.
 
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|**transfer**              |String                   |A representation        |
+|                          |                         |of a volume transfer in |
+|                          |                         |the creation process.   |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **id**         |UUID                     |The UUID of the volume  |
+|                          |                         |transfer.               |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **name**       |String                   |The volume transfer     |
+|                          |                         |name.                   |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **volume_id**  |UUID                     |The UUID of the volume. |
++--------------------------+-------------------------+------------------------+
+|transfer.\ **links**      |List                     |The links for the volume|
+|                          |                         |transfer.               |
++--------------------------+-------------------------+------------------------+
 
-Response
-""""""""""""""""
+Response example
+----------------
 
-
-This table shows the body parameters for the response:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|**transfer**              |String                   |A representation         |
-|                          |                         |of a volume transfer in  |
-|                          |                         |the creation process.    |
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **id**         |UUID                     |The UUID of the volume   |
-|                          |                         |transfer.                |
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **name**       |String                   |The volume transfer name.|
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **volume_id**  |UUID                     |The UUID of the volume.  |
-+--------------------------+-------------------------+-------------------------+
-|transfer.\ **links**      |List                     |The links for the volume |
-|                          |                         |transfer.                |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-
-**Example: List the volume transfers JSON response**
-
+The following example shows the JSON response for retrieving the volume
+transfers for the specified ``tenant_id``.
 
 .. code::
 
@@ -110,8 +90,13 @@ This table shows the body parameters for the response:
        ]
    }
 
-   
+Response codes
+--------------
 
+This operation can have the following response codes.
 
-
-
++--------------------------+-------------------------+------------------------+
+|Response Code             |Name                     |Description             |
++==========================+=========================+========================+
+|200                       |OK                       |Success                 |
++--------------------------+-------------------------+------------------------+

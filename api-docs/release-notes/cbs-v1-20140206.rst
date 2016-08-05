@@ -4,9 +4,11 @@ API |contract version| updates, February 6, 2014
 What's new
 ~~~~~~~~~~
 
--  The :ref:`list volumes (detailed) <get-list-volumes-detail>` operation was added.
+-  The :ref:`list volumes (detailed) <get-list-volumes-detail>` operation was
+   added.
 
--  The :ref:`list snapshots (detailed) <get-show-snapshot-details>` operation was added.
+-  The :ref:`list snapshots (detailed) <get-show-snapshot-details>` operation
+   was added.
 
 Resolved issues
 ~~~~~~~~~~~~~~~

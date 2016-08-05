@@ -1,68 +1,37 @@
-
 .. _get-show-volume:
 
-Show volume
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Retrieve details for a volume
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
     GET /v1/{tenant_id}/volumes/{volume_id}
 
-This operation hows volume details.
-
-
-
-This table shows the possible response codes for this operation:
-
-
-+--------------------------+-------------------------+-------------------------+
-|Response Code             |Name                     |Description              |
-+==========================+=========================+=========================+
-|200                       |OK                       |Success                  |
-+--------------------------+-------------------------+-------------------------+
+This operation retrieves details for a specified volume.
 
 
 Request
-""""""""""""""""
+-------
 
+The request has the following URI parameters.
 
-
-
-This table shows the URI parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|{tenant_id}               |String                   |The unique identifier of |
-|                          |                         |the tenant or account.   |
-+--------------------------+-------------------------+-------------------------+
-|{volume_id}               |String                   |The unique identifier of |
-|                          |                         |an existing volume.      |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|{tenant_id}               |String                   |The unique identifier of|
+|                          |                         |the tenant or account.  |
++--------------------------+-------------------------+------------------------+
+|{volume_id}               |String                   |The unique identifier of|
+|                          |                         |an existing volume.     |
++--------------------------+-------------------------+------------------------+
 
 This operation does not accept a request body.
 
+Response examples
+-----------------
 
-
-
-Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
-
-**Example: Show volume XML response**
-
+The following example shows the XML response for retrieving the details for a
+specified volume.
 
 .. code::
 
@@ -84,11 +53,8 @@ Response
            size="100"/>
 
 
-
-
-
-**Example: Show volume JSON response**
-
+The following example shows the JSON response for retrieving the details for a
+specified volume.
 
 .. code::
 
@@ -111,6 +77,13 @@ Response
      }
    }
 
+Response codes
+--------------
 
+This operation can have the following response codes.
 
-
++--------------------------+-------------------------+------------------------+
+|Response Code             |Name                     |Description             |
++==========================+=========================+========================+
+|200                       |OK                       |Success                 |
++--------------------------+-------------------------+------------------------+

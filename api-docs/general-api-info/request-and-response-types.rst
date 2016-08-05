@@ -49,7 +49,7 @@ An XML response format is returned.
       Content-Length: 187
       Content-Type: application/xml
       X-Compute-Request-Id: req-8e0295cd-a283-46e4-96da-cae05cbfd1c7
-      
+
       <?xml version='1.0' encoding='UTF-8'?>
       <volume_types>
           <volume_type id="1" name="SATA">
@@ -59,5 +59,3 @@ An XML response format is returned.
               <extra_specs/>
           </volume_type>
       </volume_types>
-
-

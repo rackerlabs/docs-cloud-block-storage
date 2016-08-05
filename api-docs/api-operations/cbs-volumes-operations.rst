@@ -1,11 +1,14 @@
 .. _volumes-operations:
 
+=======
 Volumes
-~~~~~~~  
-   
-A volume is a detachable block storage device. You can think of it as a USB hard drive. You can attach a volume to one instance at a time.
+=======
 
-When you make an API call to create, list, or delete volumes, the following volume status values are possible:
+A volume is a detachable block storage device. You can think of it as a USB
+hard drive. You can attach a volume to one instance at a time.
+
+When you make an API call to create, list, or delete volumes, the following
+volume status values are possible:
 
 * CREATING: The volume is being created.
 
@@ -21,7 +24,6 @@ When you make an API call to create, list, or delete volumes, the following volu
 
 * ERROR_DELETING: An error occurred during volume deletion.
 
-   
 .. include:: methods/post-create-volume-v1-tenant-id-volumes.rst
 .. include:: methods/get-list-volumes-v1-tenant-id-volumes.rst
 .. include:: methods/get-list-volumes-(detailed)-v1-tenant-id-volumes-detail.rst

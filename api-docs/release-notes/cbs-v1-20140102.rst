@@ -1,10 +1,12 @@
 API |contract version| updates, January 2, 2014
-------------------------------------------------
+-----------------------------------------------
 
 What's new
 ~~~~~~~~~~
 
-You can now create a new Cloud Block Storage volume from an existing volume (clone by volume) by adding the ``source_volid`` parameter to the :ref:`create volume <post-create-volume>` operation.
+You can now create a new Cloud Block Storage volume from an existing volume
+(clone by volume) by adding the ``source_volid`` parameter to the
+:ref:`create volume <post-create-volume>` operation.
 
 Resolved issues
 ~~~~~~~~~~~~~~~

@@ -1,65 +1,34 @@
-
 .. _get-list-snapshots-detail:
 
-List snapshots (detailed)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Retrieve snapshots (detailed)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
     GET /v1/{tenant_id}/snapshots/detail
 
-This operation lists detailed information for all Cloud Block Storage snapshots that the tenant who submits the request can access.
-
-
-
-This table shows the possible response codes for this operation:
-
-
-+--------------------------+-------------------------+-------------------------+
-|Response Code             |Name                     |Description              |
-+==========================+=========================+=========================+
-|200                       |OK                       |Success                  |
-+--------------------------+-------------------------+-------------------------+
-
+This operation retrieves detailed information for all Cloud Block Storage
+snapshots that the tenant who submits the request can access.
 
 Request
-""""""""""""""""
+-------
 
+The request has the following URI parameters.
 
-
-
-This table shows the URI parameters for the request:
-
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Type                     |Description              |
-+==========================+=========================+=========================+
-|{tenant_id}               |String                   |The unique identifier of |
-|                          |                         |the tenant or account.   |
-+--------------------------+-------------------------+-------------------------+
-
-
-
-
++--------------------------+-------------------------+------------------------+
+|Name                      |Type                     |Description             |
++==========================+=========================+========================+
+|{tenant_id}               |String                   |The unique identifier of|
+|                          |                         |the tenant or account.  |
++--------------------------+-------------------------+------------------------+
 
 This operation does not accept a request body.
 
+Response examples
+-----------------
 
-
-
-Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
-
-**Example: List snapshots (detailed) XML response**
-
+The following example shows the XML response for retrieving the snapshots in
+detail.
 
 .. code::
 
@@ -83,18 +52,12 @@ Response
            <metadata/>
        </snapshot>
    </snapshots>
-   
 
-
-
-
-
-**Example: List snapshots (detailed) JSON response**
-
+The following example shows the JSON response for retrieving the snapshots in
+detail.
 
 .. code::
 
-   
    {
        "snapshots": [
            {
@@ -124,6 +87,13 @@ Response
        ]
    }
 
+Response codes
+--------------
 
+This operation can have the following response codes.
 
-
++--------------------------+-------------------------+------------------------+
+|Response Code             |Name                     |Description             |
++==========================+=========================+========================+
+|200                       |OK                       |Success                 |
++--------------------------+-------------------------+------------------------+

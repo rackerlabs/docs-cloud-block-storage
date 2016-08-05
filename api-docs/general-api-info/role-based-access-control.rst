@@ -7,8 +7,11 @@ Role Based Access Control (RBAC) restricts access to the capabilities of
 Rackspace Cloud services, including the Cloud Block Storage API, to
 authorized users only. RBAC enables Rackspace Cloud customers to specify
 which account users of their Cloud account have access to which Cloud
-Block Storage API service capabilities, based on roles defined by Rackspace (see Roles available for Cloud Block Storage below). The permissions to perform certain operations in Cloud Block Storage
-API – create, read, update, delete – are assigned to specific roles. The account owner user assigns these roles, either product-specific or global (multiproduct), to account users.
+Block Storage API service capabilities, based on roles defined by Rackspace
+(see Roles available for Cloud Block Storage below). The permissions to perform
+certain operations in Cloud Block Storage API – create, read, update, delete –
+are assigned to specific roles. The account owner user assigns these roles,
+either product-specific or global (multiproduct), to account users.
 
 Assigning roles to account users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -20,14 +23,14 @@ Cloud Block Storage service. Each account has only one account owner,
 and that role is assigned by default to any Rackspace Cloud account when
 the account is created.
 
-See the :rax-devguide:`Cloud Identity Client Developer Guide <cloud-identity/v2>` for
-information about how to perform these tasks:
+See the :rax-devguide:`Cloud Identity Client Developer Guide <cloud-identity/v2>`
+for information about how to perform these tasks:
 
-* :rax-devdocs:`Add user <cloud-identity/v2/developer-guide/#add-user>`  
+* :rax-devdocs:`Add user <cloud-identity/v2/developer-guide/#add-user>`
 
-* :rax-devdocs:`Add role to user <cloud-identity/v2/developer-guide/#add-role-to-user>`  
+* :rax-devdocs:`Add role to user <cloud-identity/v2/developer-guide/#add-role-to-user>`
 
-* :rax-devdocs:`Delete global role from user <cloud-identity/v2/developer-guide/#delete-global-role-from-user>` 
+* :rax-devdocs:`Delete global role from user <cloud-identity/v2/developer-guide/#delete-global-role-from-user>`
 
 .. note::
    The account admin user (identity:user-admin) role cannot hold any
@@ -98,7 +101,7 @@ between user roles in the Control Panel are resolved.
 |                                | role                  |                                    |
 +--------------------------------+-----------------------+------------------------------------+
 | User is assigned the following | Appears that the user | Yes, for all of the products.      |
-| roles: multiproduct admin and  | has only the          | The Cloud Block Storage observer   | 
+| roles: multiproduct admin and  | has only the          | The Cloud Block Storage observer   |
 | Cloud Block Storage observer   | multiproduct admin    | is ignored.                        |
 |                                | role                  |                                    |
 +--------------------------------+-----------------------+------------------------------------+
@@ -108,5 +111,5 @@ RBAC permissions cross-reference to Cloud Block Storage API operations
 
 API operations for Cloud Block Storage may or may not be available to
 all roles. To see which operations are permitted to invoke which calls,
-please review the :how-to:`Permissions Matrix for Role Based Access Control<permissions-matrix-for-role-based-access-control-rbac>`.
-
+please review the
+:how-to:`Permissions Matrix for Role Based Access Control<permissions-matrix-for-role-based-access-control-rbac>`.

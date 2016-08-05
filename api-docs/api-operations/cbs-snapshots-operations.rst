@@ -1,12 +1,13 @@
 .. _snapshots-operations:
 
+=========
 Snapshots
-~~~~~~~~~
-
+=========
 
 A snapshot is a point-in-time copy of the data that a volume contains.
 
-When you make an API call to create, list, or delete snapshots, the following status values are possible:
+When you make an API call to create, list, or delete snapshots, the following
+status values are possible:
 
 * CREATING: The snapshot is being created.
 
@@ -17,7 +18,6 @@ When you make an API call to create, list, or delete snapshots, the following st
 * ERROR: An error occurred during snapshot creation.
 
 * ERROR_DELETING: An error occurred during snapshot deletion.
-
 
 .. include:: methods/post-create-snapshot-v1-tenant-id-snapshots.rst
 .. include:: methods/get-list-snapshots-v1-tenant-id-snapshots.rst
