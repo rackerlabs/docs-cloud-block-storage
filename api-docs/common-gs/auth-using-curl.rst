@@ -102,7 +102,8 @@ tenant ID
 
 endpoint
 	  The API endpoint provides the URL that you use to access the API service.
-    For guidance on choosing an endpoint, see :ref:`Service access <service-access endpoints>`.
+    For guidance on choosing an endpoint, see :ref:`Service access <service-access-endpoints>`.
+
 
 To make it easier to include the values in API requests, use the export command
 to create environment variables that can be substituted for the actual values.
