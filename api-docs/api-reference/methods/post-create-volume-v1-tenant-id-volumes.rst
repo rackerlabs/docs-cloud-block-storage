@@ -19,7 +19,7 @@ Following are several options for consideration when using this operation:
 - **os-volume_attachments**: Note that you use the ``os-volume_attachments``
   API call (/servers/{server_id}/os-volume_attachments) to attach the new
   volume to your Next Generation Cloud Server (with the specified {server_id}).
-  Refer to the `Next Generation Cloud Servers Developer Guide`_ for details of
+  Refer to the `Next Generation Cloud Servers API reference`_ for details of
   the call. Once the volume is attached, the new volume appears as another device
   on the Next Generation Cloud Server.  The volume can then be partitioned, 
   formatted, and mounted for use on the system.
@@ -229,4 +229,4 @@ This operation can have the following response codes.
 +--------------------------+-------------------------+------------------------+
 
 
-.. _Next Generation Cloud Servers Developer Guide: https://developer.rackspace.com/docs/cloud-servers/v2/api-reference/svr-basic-operations/#attach-volume-to-server
+.. _Next Generation Cloud Servers API reference: https://developer.rackspace.com/docs/cloud-servers/v2/api-reference/svr-basic-operations/#attach-volume-to-server
