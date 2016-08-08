@@ -26,5 +26,4 @@ different APIs for service management for the Rackspace Cloud Block Storage serv
    overview/index
    admin-guide/index
    api-operations/index
-   doc-change-history
    copyright
