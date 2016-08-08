@@ -1,16 +1,18 @@
 .. _send-api-requests:
 
-Send API requests
------------------
+=================================
+Sending API requests to |service|
+=================================
 
-This Getting Started Guide shows how to send requests by using cURL.
+This section shows how to send requests by using cURL.
 
 .. note::
      You can also use Rackspace Cloud API services by using the following
      methods:
 
      -  If you are developing applications or automation, try using
-        `Rackspace SDKs`_, the `Rackspace CLI`_, or
+        :rax-devdocs:`Rackspace SDKs <#sdks>`, the
+        :rax-devdocs:`Rackspace CLI <rack-cli>`, or
         `OpenStack client applications`_.
 
      -  For API development, testing and workflow management in a graphical
@@ -21,9 +23,7 @@ This Getting Started Guide shows how to send requests by using cURL.
 .. include:: ../common-gs/how-to-use-curl.rst
 
 .. _cURL command line tool: http://curl.haxx.se/
-.. _Rackspace SDKs: https://developer.rackspace.com/sdks/
 .. _Rackspace CLI: https://developer.rackspace.com/docs/rack-cli/
 .. _Openstack client applications: https://wiki.openstack.org/wiki/OpenStackClients
 .. _Postman: http://www.getpostman.com
 .. _RESTClient for Firefox: https://addons.mozilla.org/en-US/firefox/addon/restclient
-.. _Cloud Control Panel: https://mycloud.rackspace.com

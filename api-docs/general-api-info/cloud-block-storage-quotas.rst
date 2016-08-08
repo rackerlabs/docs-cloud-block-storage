@@ -1,7 +1,8 @@
 .. _quotas:
 
+==========================
 Cloud Block Storage quotas
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+==========================
 
 All new Cloud Block Storage users are assigned default quotas that limit
 the amount of block storage that can be provisioned in each region.

@@ -1,20 +1,22 @@
-.. _absolute-limits:
+.. _limits:
 
+===============
 Absolute limits
-~~~~~~~~~~~~~~~
+===============
 
 All accounts, by default, have a preconfigured set of thresholds (or
 limits) to manage capacity and prevent abuse of the system. Absolute
 limits are fixed.
 
-Refer to the following table for the absolute limits that are set.
+The following table provides details about the absolute limits for the
+Cloud Block Storage API.
 
 **Table: Absolute limits**
 
 +------------------------------+-------------------+---------------------+
 | Name                         | Description       | Limit               |
 +==============================+===================+=====================+
-| Standard Performance Storage | Maximum amount of | 10 TB or 50 volumes |
+| Standard performance storage | Maximum amount of | 10 TB or 50 volumes |
 |                              | standard          |                     |
 |                              | performance       |                     |
 |                              | storage per       |                     |
@@ -25,7 +27,7 @@ Refer to the following table for the absolute limits that are set.
 |                              | storage on their  |                     |
 |                              | Cloud Server.     |                     |
 +------------------------------+-------------------+---------------------+
-| High Performance Storage     | Maximum amount of | 10 TB or 50 volumes |
+| High performance storage     | Maximum amount of | 10 TB or 50 volumes |
 |                              | High performance  |                     |
 |                              | storage per region|                     |
 |                              | for databases and |                     |

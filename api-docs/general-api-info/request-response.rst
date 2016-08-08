@@ -1,28 +1,41 @@
 .. _request-response-types:
 
+==========================
 Request and response types
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+==========================
 
 The Cloud Block Storage API supports both the JSON and XML data
-serialization formats. The request format is specified using the
-``Content-Type`` header and is required for calls that have a request
-body. The response format can be specified in requests either by using
+serialization formats. 
+
+The request format is specified by using the
+``Content-Type`` header and is required for operations that have a request
+body. 
+
+The response format can be specified in requests either by using
 the ``Accept`` header or by adding an ``.xml`` or ``.json`` extension to
-the request URI. Note that it is possible for a response to be
-serialized using a format different from the request. If no response
-format is specified, JSON is the default. If conflicting formats are
-specified using both an ``Accept`` header and a query extension, the
-query extension takes precedence.
+the request URI. A
+response  can be serialized using a format that is different from the request.
+If no response format is specified, JSON is the default. If conflicting
+formats are specified by using both an ``Accept`` header and a query
+extension, the query extension takes precedence.
 
-**Table: Response formats**
+.. list-table:: **JSON and XML response formats**
+   :widths: 10 20 10 10
+   :header-rows: 1
 
-+--------+------------------+-----------------+---------+
-| Format | Accept header    | Query extension | Default |
-+========+==================+=================+=========+
-| JSON   | application/json | .json           | Yes     |
-+--------+------------------+-----------------+---------+
-| XML    | application/xml  | .xml            | No      |
-+--------+------------------+-----------------+---------+
+   * - Format
+     - Accept header
+     - Query extension
+     - Default
+   * - JSON
+     - application/json
+     - .json
+     - Yes
+   * - XML
+     - application/xml
+     - .xml
+     - No
+
 
 In the request example below, notice that ``Content-Type`` is set to
 ``application/json``, but ``application/xml`` is requested via the

@@ -1,7 +1,8 @@
 .. _faults:
 
+======
 Faults
-~~~~~~
+======
 
 When an error occurs, the Cloud Block Storage service returns a fault
 object containing an HTTP error response code that denotes the type of

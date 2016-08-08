@@ -4,6 +4,10 @@
 Volume transfer
 ===============
 
+.. contents::
+   :depth: 1
+   :local:
+
 You can transfer a volume from one owner to another by using the volumes
 transfer methods. The volume donor, or original owner, creates a transfer
 request and sends the created ``transfer_id`` and ``auth_key`` to the volume
