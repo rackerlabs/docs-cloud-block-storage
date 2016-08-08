@@ -69,7 +69,7 @@ volume was successfully created.
     (``/servers/{server_id}/os-volume_attachments``) to attach the new
     volume to your Next Generation Cloud Server (with the specified
     ``{server_id}``). For details, see the `Next Generation Cloud Servers
-    Developer Guide <https://developer.rackspace.com/docs/cloud-servers/v2/developer-guide/>`__.
+    Developer Guide <https://developer.rackspace.com/docs/cloud-servers/v2/`_.
 
 After the volume is attached, the new volume appears as another device
 on the Next Generation Cloud Server. The volume can then be partitioned,
