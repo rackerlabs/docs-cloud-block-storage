@@ -1,10 +1,10 @@
 .. _gsg-use-API-directly:
 
+=======================================
 Create and manage volumes and snapshots
----------------------------------------
+=======================================
 
-You can use the simple examples in the following sections for basic Cloud Block
-Storage requests that you will commonly use to create and manage volumes and
+You can use the examples in this section to create and manage volumes and
 snapshots by using Cloud Block Storage API operations. Example requests are
 provided in cURL, followed by the response.
 
@@ -18,9 +18,9 @@ For more information about all Cloud Block Storage operations, see the
      These examples use the ``$API_ENDPOINT``, ``$AUTH_TOKEN``, and
      ``$TENANT_ID`` environment variables to specify the API endpoint,
      authentication token, and project ID values for accessing the service.
-     Make sure you
-     :ref:`configure these variables<configure-environment-variables>` before
-     running the code samples. 
+     Be sure to :ref:`configure these
+     variables<configure-environment-variables>` before running the
+     code samples.
 
 .. include:: examples/create-volume.rst
 .. include:: examples/list-volumes.rst

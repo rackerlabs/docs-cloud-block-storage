@@ -1,7 +1,8 @@
 .. _cbs-methods-vs-cinder-methods:
 
+===================================================================================================
 Differences between Rackspace Cloud Block Storage v1 methods and OpenStack Block Storage v2 methods
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===================================================================================================
 
 Rackspace Cloud Block Storage v1 (referred to as Cloud Block Storage in the
 rest of this section) can run the corresponding OpenStack Block Storage v2
@@ -9,7 +10,6 @@ rest of this section) can run the corresponding OpenStack Block Storage v2
 differences exist between the them.
 
 The following table provides the differences by method.
-
 
 **Table: Differences between Cloud Block Storage v1 methods and Cinder v2 methods**
 
@@ -298,7 +298,6 @@ The following table provides the differences by method.
 |                             |                                                       |
 |                             | - ``display_name`` rather than ``name``               |
 +-----------------------------+-------------------------------------------------------+
-
 
 Cinder v2 returns the following statuses for volume operations, which Cloud
 Block Storage v1 does not include: 

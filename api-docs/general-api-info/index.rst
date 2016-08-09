@@ -1,31 +1,33 @@
 .. _general-api-info:
 
+=======================
 General API information
------------------------
+=======================
 
-The Cloud Block Storage API is defined as a RESTful HTTP service that uses
-all aspects of the HTTP protocol, including methods, URIs, media types, and
-response codes. Review the topics in this section to learn more about these
-API components and how to access and use the API for this service.
+The information in this section is relevant to all operations of the API.
+For details about specific operations, see the
+:ref:`API reference <api-reference>`.
 
-Like other products in the Rackspace Cloud suite, Cloud Block Storage shares a
-common token-based authentication system that allows seamless access between
-products and services.
+The |apiservice| is implemented using a RESTful web
+service interface. Like other Rackspace Cloud services, this service
+shares a common token-based authentication system that allows seamless
+access between products and services.
 
 .. note::
-   All requests to authenticate against and operate the service are performed
-   using SSL over HTTP (HTTPS) on TCP port 443. 
 
-.. toctree:: :hidden:
-   :maxdepth: 3
+    All requests to authenticate and operate the service are performed using
+    HTTPS on TCP port 443. For authentication instructions, see
+    :ref:`Authenticate to the Rackspace Cloud <authenticate-to-cloud>`.
 
-   authentication
-   service-access-endpoints
-   role-based-access-control
+.. toctree::
+   :maxdepth: 1
+
+   service-access
    cloud-block-storage-service-versions
-   request-and-response-types
-   absolute-limits
+   request-response
    cloud-block-storage-quotas
-   date-and-time-format
-   faults
+   absolute-limits
+   response-codes
+   date-time-format
+   role-based-access-control
    cbsv1-methods-vs-cinderv2-methods

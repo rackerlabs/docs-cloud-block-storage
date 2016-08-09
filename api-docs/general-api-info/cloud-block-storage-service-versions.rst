@@ -1,7 +1,8 @@
 .. _contract-version:
 
+====================================
 Cloud Block Storage service versions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+====================================
 
 The Cloud Block Storage version defines the contract and build
 information for the API.

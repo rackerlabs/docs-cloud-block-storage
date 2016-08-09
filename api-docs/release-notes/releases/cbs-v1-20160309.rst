@@ -6,7 +6,7 @@ What's new
 ~~~~~~~~~~
 
 - The maximum number of snapshots per volume is now 5000. See
-  :ref:`absolute limits <absolute-limits>` for this addition.
+  :ref:`absolute limits <limits>` for this addition.
 
   .. note::
 

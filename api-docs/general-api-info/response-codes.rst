@@ -1,20 +1,48 @@
-.. _faults:
+.. _response-codes:
 
-Faults
-~~~~~~
+==============
+Response codes
+==============
 
-When an error occurs, the Cloud Block Storage service returns a fault
-object containing an HTTP error response code that denotes the type of
-error. The response body returns additional information about the fault.
+Cloud Block Storage returns an HTTP code that denotes the type of response.
 
-The following table lists possible fault types with their associated
-error codes and descriptions.
+-  Successful response codes are returned only if all configured
+   providers were successful in processing the request.
 
-**Table: Faults**
+-  Error response codes are accompanied by an ``application/xml`` or
+   ``application/json`` response body that contains the error messages.
+
+This API uses `standard HTTP 1.1 response codes`_.
+
+The following table lists possible responses with their associated codes
+and descriptions.
+
+**Table: Response codes**
 
 +---------------------+-----------------------+-------------------------------+
-| Fault type          | Associated error code | Description                   |
+| Response            | Associated response   | Description                   |
+|                     | code                  |                               |
 +=====================+=======================+===============================+
+| OK                  | 200                   | The request has               |
+|                     |                       | succeeded.                    |
+|                     |                       | (Some API calls               |
+|                     |                       | return 201 instead.)          |
++---------------------+-----------------------+-------------------------------+
+| Created             | 201                   | The request has been          |
+|                     |                       | fulfilled and a               |
+|                     |                       | resource was created.         |
++---------------------+-----------------------+-------------------------------+
+| Accepted            | 202                   | The request has been          |
+|                     |                       | accepted for                  |
+|                     |                       | processing.                   |
++---------------------+-----------------------+-------------------------------+
+| No Content          | 204                   | The request has been          |
+|                     |                       | fulfilled but does not        |
+|                     |                       | return a                      |
+|                     |                       | representation (that          |
+|                     |                       | is, the response is           |
+|                     |                       | empty).                       |
++---------------------+-----------------------+-------------------------------+
 | badRequest          | 400                   | There was one or more errors  |
 |                     |                       | in the user request.          |
 +---------------------+-----------------------+-------------------------------+
@@ -194,3 +222,5 @@ The next examples show ``itemNotFound`` errors.
             "message": "The resource could not be found."
         }
     }
+
+.. _standard HTTP 1.1 response codes: http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
