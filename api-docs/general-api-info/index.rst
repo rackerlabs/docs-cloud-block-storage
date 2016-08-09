@@ -27,7 +27,7 @@ access between products and services.
    request-response
    cloud-block-storage-quotas
    absolute-limits
-   faults
+   response-codes
    date-time-format
    role-based-access-control
    cbsv1-methods-vs-cinderv2-methods
