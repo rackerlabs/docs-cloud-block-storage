@@ -20,5 +20,6 @@ Learn about the available Rackspace Cloud Block Storage resources and methods fo
    cbs-volume-type-operations
    cbs-volume-transfer-operations
    cbs-snapshots-operations
+   cbs-support-extra
    
    
