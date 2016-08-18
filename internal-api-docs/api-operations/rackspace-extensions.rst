@@ -1,7 +1,7 @@
 
 
 .. meta::
-   :description: Rackspace Cloud Block Storage API Reference
+   :description: Rackspace Extensions Index
    :keywords: Rackspace, Rackspace Cloud Block Storage ReST API, API resources, API methods
    
 .. _admin-api-reference:
@@ -16,9 +16,5 @@ Learn about the available Rackspace Cloud Block Storage resources and methods fo
 .. toctree:: 
    :maxdepth: 2
 
-   cbs-volume-operations
-   cbs-volume-type-operations
-   cbs-volume-transfer-operations
-   cbs-snapshots-operations
-   rackspace-extensions
-   rackspace-support-roles
+   extension-snapshot-progress
+   extension-lunr-session
