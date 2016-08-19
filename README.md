@@ -4,10 +4,10 @@
 
 This repository contains the source files for the following Rackspace Cloud Block Storage API documentation:
 
-* [Cloud Block Storage Getting Started Guide](https://developer.rackspace.com/docs/cloud-block-storage/v1/developer-guide/#getting-started)
-* [Cloud Block Storage Developer Guide](https://developer.rackspace.com/docs/cloud-block-storage/v1/developer-guide/)
-* [Cloud Block Storage API Reference](https://developer.rackspace.com/docs/cloud-block-storage/v1/developer-guide/#api-reference)
-* [Cloud Block Storage Release Notes](https://developer.rackspace.com/docs/cloud-block-storage/v1/developer-guide/#release-notes)
+* [Getting Started Guide](https://developer.rackspace.com/docs/cloud-block-storage/v1/getting-started/)
+[General API Information ](https://developer.rackspace.com/docs/cloud-block-storage/v1/general-api-info/)
+* [API Reference](https://developer.rackspace.com/docs/cloud-block-storage/v1/api-reference/#api-reference)
+* [Release Notes](https://developer.rackspace.com/docs/cloud-block-storage/v1/release-notes/#release-notes-collection)
 
 When you commit changes to the master branch of this repository, the 
 [Strider CI/CD build job](https://build.developer.rackspace.com/rackerlabs/docs-cloud-block-storage/) 
