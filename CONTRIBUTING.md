@@ -26,9 +26,9 @@ Content | File
 |Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/api-docs/index.rst)
 |Getting Started index|[getting-started/index.rst](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/api-docs/getting-started/index.rst)
 |General API information index|[general-api-info/index.rst](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/api-docs/general-api-info/index.rst)
-|API Reference index|[api-operations/index.rst](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/api-docs/api-reference/index.rst)
+|API Reference index|[api-reference/index.rst](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/api-docs/api-reference/index.rst)
 |API operations methods, including code samples|[api-reference/methods](https://github.com/rackerlabs/docs-cloud-block-storage/tree/master/api-docs/api-reference/methods) 
-|Release notes by version|[release notes folder](https://github.com/rackerlabs/docs-cloud-block-storage/tree/master/api-docs/release-notes)
+|Release notes|[release notes folder](https://github.com/rackerlabs/docs-cloud-block-storage/tree/master/api-docs/release-notes)
 |Sphinx documentation configuration file| [conf.py](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/api-docs/conf.py) (Typically, this file does not require changes.)
 |Linux and OS X build script|``Makefile``|
 |Windows build script|``make.bat``|
