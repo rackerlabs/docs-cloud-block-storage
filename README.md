@@ -5,7 +5,7 @@
 This repository contains the source files for the following Rackspace Cloud Block Storage API documentation:
 
 * [Getting Started Guide](https://developer.rackspace.com/docs/cloud-block-storage/v1/getting-started/)
-[General API Information ](https://developer.rackspace.com/docs/cloud-block-storage/v1/general-api-info/)
+* [General API Information ](https://developer.rackspace.com/docs/cloud-block-storage/v1/general-api-info/)
 * [API Reference](https://developer.rackspace.com/docs/cloud-block-storage/v1/api-reference/#api-reference)
 * [Release Notes](https://developer.rackspace.com/docs/cloud-block-storage/v1/release-notes/#release-notes-collection)
 
