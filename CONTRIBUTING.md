@@ -24,7 +24,7 @@ Following are the key files that define project and content architecture:
 Content | File
 --- | ---
 |Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/api-docs/index.rst)
-|Getting started|[getting-started folder](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/api-docs/getting-startedt)
+|Getting started|[getting-started folder](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/api-docs/getting-started)
 |General API information|[general-api-info folder](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/api-docs/general-api-info)
 |API reference|[api-reference folder](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/api-docs/api-reference)
 |API operations methods, including code samples|[api-reference/methods folder](https://github.com/rackerlabs/docs-cloud-block-storage/tree/master/api-docs/api-reference/methods) 
