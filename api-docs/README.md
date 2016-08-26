@@ -50,8 +50,8 @@ the Sphinx project and content architecture for the documentation:
 
 Content | File
 --- | ---
-|Sphinx documentation configuration file| [conf.py](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/rst/dev-guide/conf.py) (Typically, this file does not require changes.)
-|Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/rst/dev-guide/index.rst)
+|Sphinx documentation configuration file| [conf.py](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/api-docs/conf.py) (Typically, this file does not require changes.)
+|Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-cloud-block-storage/blob/master/api-docs/index.rst)
 |Getting started|[getting-started folder](https://github.com/rackerlabs/docs-cloud-block-storage/tree/master/api-docs/getting-started)
 |General API information|[general-api-info folder](https://github.com/rackerlabs/docs-cloud-block-storage/tree/master/api-docs/general-api-info)
 |API reference|[api-reference folder](https://github.com/rackerlabs/docs-cloud-block-storage/tree/master/api-docs/api-reference)
