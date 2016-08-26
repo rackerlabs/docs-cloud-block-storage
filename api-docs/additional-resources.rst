@@ -4,10 +4,10 @@
 Additional resources
 ====================
 
-We welcome feedback, comments, and bug reports. Visit the :rax-special:`Rackspace 
-Product Feedback forum <feedback>`.
+We welcome feedback, comments, and bug reports. Visit the
+`Rackspace Product Feedback forum`_.
 
-Use the following resources to learn more about the |product name| service and 
+Use the following resources to learn more about the |product name| service and
 API.
 
 - For general information about |product name|, see the
@@ -31,3 +31,4 @@ API.
   forums, phone, chat, and email.
 
 .. _Rackspace Cloud Guide to Core Infrastructure Services: https://developer.rackspace.com/docs/user-guides/infrastructure/
+.. _Rackspace Product Feedback forum: https://community.rackspace.com/feedback/f/68
