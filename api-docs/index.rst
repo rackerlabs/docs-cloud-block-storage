@@ -1,7 +1,7 @@
 .. _index:
 
 ===============================================
-Rackspace |product name| API |contract version|
+|product name| API |contract version|
 ===============================================
 
 *Last updated:* |today|
