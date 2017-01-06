@@ -21,7 +21,7 @@ Following are several options for consideration when using this operation:
   volume to your Next Generation Cloud Server (with the specified {server_id}).
   Refer to the `Next Generation Cloud Servers API reference`_ for details of
   the call. Once the volume is attached, the new volume appears as another device
-  on the Next Generation Cloud Server.  The volume can then be partitioned, 
+  on the Next Generation Cloud Server.  The volume can then be partitioned,
   formatted, and mounted for use on the system.
 
 - **Boot from volume**: To create a bootable volume, include the ``imageRef``
@@ -41,6 +41,9 @@ Following are several options for consideration when using this operation:
 
   Note that if the criteria specified using ``metadata`` is not met, the
   volume is in an error state.
+
+  Also, note that the API does not accept metadata parameters for both
+  ``different_node`` and ``different_rack`` simultaneously.
 
 Request parameters
 ------------------
