@@ -27,6 +27,7 @@ access between products and services.
    request-response
    cloud-block-storage-quotas
    absolute-limits
+   paginated-collections
    response-codes
    date-time-format
    role-based-access-control
