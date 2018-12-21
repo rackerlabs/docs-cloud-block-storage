@@ -131,7 +131,6 @@ If you do not want to pretty-print JSON output, omit this code.
 .. _json encoder and decoder: http://docs.python.org/2/library/json.html
 .. _simplejson encoder and decoder: https://simplejson.readthedocs.io/en/latest
 
-
 .. _convert-cURL-examples-for-windows:
 
 Convert cURL examples to run on Windows
