@@ -26,7 +26,7 @@ or a script.
 .. _auth-curl-json:
 
 The following example shows a cURL command for sending an authentication
-request to the Rackspace Cloud Identity service.
+request to the Rackspace Identity service.
 
 **Example: cURL command for sending a JSON request**
 
@@ -130,7 +130,6 @@ If you do not want to pretty-print JSON output, omit this code.
 
 .. _json encoder and decoder: http://docs.python.org/2/library/json.html
 .. _simplejson encoder and decoder: https://simplejson.readthedocs.io/en/latest
-
 
 .. _convert-cURL-examples-for-windows:
 
