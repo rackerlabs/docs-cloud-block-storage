@@ -20,15 +20,12 @@ API.
 - To learn about using |product name| from the Rackspace Cloud
   Control Panel, see :how-to:`Cloud Block Storage <cloud-block-storage>`.
 
-- To learn about using Rackspace Cloud SDKs, see
-  :rax-devdocs:`Software Development Kits & Tools <#sdks>`.
-
 - To get information about other Rackspace Cloud services APIs, see the
   :rax-devdocs:`API documentation home <>`.
 
 - To get more information about Rackspace Cloud products, refer to
   :rax-cloud:`www.rackspace.com<>`. This site also offers links to the
-  Rackspace official support channels, including knowledge base articles,
+  Rackspace official support channels, including How-To articles,
   forums, phone, chat, and email.
 
 .. _Rackspace Cloud Guide to Core Infrastructure Services: https://developer.rackspace.com/docs/user-guides/infrastructure/
