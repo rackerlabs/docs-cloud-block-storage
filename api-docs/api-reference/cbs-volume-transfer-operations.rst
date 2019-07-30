@@ -23,10 +23,6 @@ Use cases include:
 - Create a custom bootable volume or a volume with a large data set and
   transfer it to a customer.
 
-- For bulk import of data to the cloud, the data ingress system creates a new
-  block storage volume, copies data from the physical device, and transfers
-  device ownership to the end user.
-
 .. include:: methods/post-create-volume-transfer.rst
 .. include:: methods/get-volume-transfers.rst
 .. include:: methods/get-volume-transfers-detailed.rst
