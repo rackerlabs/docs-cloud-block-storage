@@ -1,0 +1,26 @@
+API |contract version| updates, August 11, 2020
+---------------------------------------------
+
+
+What's new
+~~~~~~~~~~
+
+- The maximum number of snapshots per volume is now 500. See
+  :ref:`absolute limits <limits>` for this addition.
+
+  .. note::
+
+    For performance reasons, this limit was changed from 5000 to 500. Any
+    reduction in the maximum number of snapshots per volume will be reported
+    in Release Notes.
+
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+Known issues
+~~~~~~~~~~~~
+
+|no changes|

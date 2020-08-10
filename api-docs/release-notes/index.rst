@@ -17,6 +17,7 @@ following release note information.
    For information about using the API, see the
    :ref:`documentation overview <index>`.
 
+.. include:: releases/cbs-v1-20200811.rst
 .. include:: releases/cbs-v1-20160309.rst
 .. include:: releases/cbs-v1-20160120.rst
 .. include:: releases/cbs-v1-20150827.rst

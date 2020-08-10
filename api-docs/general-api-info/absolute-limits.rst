@@ -38,7 +38,7 @@ Cloud Block Storage API.
 |                              | speed and         |                     |
 |                              | performance.      |                     |
 +------------------------------+-------------------+---------------------+
-| Number of snapshots          | Maximum number of | 5000 snapshots per  |
+| Number of snapshots          | Maximum number of | 500 snapshots per   |
 |                              | of snapshots      | volume              |
 |                              | allowed per       |                     |
 |                              | volume.           |                     |
