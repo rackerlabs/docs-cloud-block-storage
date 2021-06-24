@@ -141,4 +141,7 @@ This operation can have the following response codes.
 |201                       |Created                  |The request has been    |
 |                          |                         |fulfilled and a resource|
 |                          |                         |was created.            |
+|-----------------------------------------------------------------------------|
+|429                       |SnapshotQuotaExceeded    |Snapshot quota limit has|
+|                          |                         |exceeded per volume     |
 +--------------------------+-------------------------+------------------------+
