@@ -234,7 +234,7 @@ This operation can have the following response codes.
 |                          |                         |operation on volume in  |
 |                          |                         |progress.               |
 |--------------------------|-------------------------|------------------------|
-|409                       |CloneConflict            |Existing cloning volume |
+|409                       |CloneConflict            |Existing volume clone   |
 |                          |                         |operation in progress.  |
 +--------------------------+-------------------------+------------------------+
 

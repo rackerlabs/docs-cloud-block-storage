@@ -143,5 +143,6 @@ This operation can have the following response codes.
 |                          |                         |was created.            |
 |-----------------------------------------------------------------------------|
 |429                       |SnapshotQuotaExceeded    |Snapshot quota limit has|
-|                          |                         |exceeded per volume     |
+|                          |                         |been exceeded per       |
+|                          |                         |volume.                 |
 +--------------------------+-------------------------+------------------------+
