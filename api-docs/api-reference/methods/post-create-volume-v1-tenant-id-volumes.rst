@@ -229,6 +229,13 @@ This operation can have the following response codes.
 |Response Code             |Name                     |Description             |
 +==========================+=========================+========================+
 |200                       |OK                       |Success                 |
+|-----------------------------------------------------------------------------|
+|409                       |SnapshotConflict         |Existing snapshot       |
+|                          |                         |operation on volume in  |
+|                          |                         |progress.               |
+|--------------------------|-------------------------|------------------------|
+|409                       |CloneConflict            |Existing volume clone   |
+|                          |                         |operation in progress.  |
 +--------------------------+-------------------------+------------------------+
 
 
